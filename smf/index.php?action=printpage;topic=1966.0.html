@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Useful directory script</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: danc on October 26, 2004, 12:19:43 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Useful directory script</b><br />
+					Post by: <b>danc</b> on <b>October 26, 2004, 12:19:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br /><br />Came across a script recently that I find very useful, and wanted to share it. &nbsp;It gives a nicely formatted listing of the contents/sizes of a directory:<br /><div class="codeheader">Code:</div><div class="code"><br />#!/bin/bash<br /><br /># Script Name&#58; Directory Totals<br /># &nbsp;Created By&#58; Raven Morris<br /># &nbsp;Created on&#58; September 28th, 2001<br /># &nbsp;Updated on&#58; December 25th, 2003<br /># &nbsp; &nbsp; Purpose&#58; List the total sizes of directories<br /><br />TempFile=&quot;$&#123;HOME&#125;/.Directory_Totals&quot;<br /><br />clear<br /><br />if &#91; &quot;$1&quot; == &quot;&quot; &#93;; then<br /><br />&nbsp; &nbsp;UseDir=$&#40;pwd&#41;<br /><br />else<br /><br />&nbsp; &nbsp;if &#91; -d &quot;$1&quot; &#93;; then<br /><br />&nbsp; &nbsp; &nbsp; UseDir=&quot;$1&quot;<br /><br />&nbsp; &nbsp;else<br /><br />&nbsp; &nbsp; &nbsp; echo &quot;PROBLEM&#58;&quot;<br />&nbsp; &nbsp; &nbsp; echo &quot;The directory \&quot;$1\&quot; does not exist !&quot;<br />&nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; exit 1<br /><br />&nbsp; &nbsp;fi<br /><br />fi<br /><br />pushd &quot;$&#123;UseDir&#125;&quot; &gt;/dev/null<br /><br />&#123;<br /><br />&nbsp; &nbsp;echo &quot;Raven's Directory Totals&#58; $&#123;UseDir&#125;&quot;<br />&nbsp; &nbsp;echo<br /><br />&nbsp; &nbsp;echo &quot;#!/bin/bash&quot; &gt;$&#123;TempFile&#125;<br />&nbsp; &nbsp;echo &quot;du --one-file-system --human-readable --summarize --total -- &quot; `\ls -A |awk '&#123; print &quot;\&quot;&quot;$0&quot;\&quot;&quot; &#125;'` &gt;&gt;$&#123;TempFile&#125;<br />&nbsp; &nbsp;chmod u+x $&#123;TempFile&#125;<br />&nbsp; &nbsp;$&#123;TempFile&#125;<br />&nbsp; &nbsp;rm -f $&#123;TempFile&#125;<br /><br />&nbsp; &nbsp;echo<br /><br />&#125; 2&gt;/dev/null |more<br /><br />popd &quot;$&#123;UseDir&#125;&quot; &gt;/dev/null<br /></div><br /><br />Also, I have some other scripts that I've written, and find it useful to have them in my PATH so they are accessible from anywhere in the directory tree that you happen to be. &nbsp;To do this, make a directory to store scripts in your home directory, and then add that directory to your PATH environment variable, by editing the file &quot;.bash_profile&quot; in your home directory. &nbsp;Like this:<br /><div class="codeheader">Code:</div><div class="code"><br />PATH=$PATH&#58;/home/danc/scripts<br />export PATH<br /></div><br /><br />The above example adds the directory &quot;/home/danc/scripts&quot; to the existing path which is set up by the system init scripts.<br /><br />Another thing which must be done here is to make the script executable. &nbsp;There are several ways to do that, but I like to use the method:<br /><div class="codeheader">Code:</div><div class="code">chmod 755 scriptname</div><br />Where &quot;scriptname&quot; is the actual filename of your script, of course.<br /><br />Shell scripting can be fun, and adds functionality to your system. &nbsp;Try out the above script (I named it &quot;dt&quot;) and see for yourself. &nbsp;I plan to post some more script examples here soon.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Useful directory script</b><br />
+					Post by: <b>dpeach</b> on <b>October 26, 2004, 07:10:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nice comments were made about this post in another topic that was split (http://www.pcolalug.org/phpBB2/viewtopic.php?p=9840#9840) off.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Useful directory script</b><br />
+					Post by: <b>Brent</b> on <b>October 27, 2004, 11:15:19 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nice script, <br /><br />I love .sh scripts. &nbsp;They can be so useful when you need to speed things up or do something automatically.<br /><br />I bought a so called 'hardware' modem from a comp shop in pcola last summer. &nbsp;The touted 'linux support' on the box was for rpm based distros. &nbsp;Other users had to go through a nasty process of manually installing the module upon each boot. &nbsp;I just wrote a shell script to do the work for me.<br /><br />I also made a shell script that used winex to start warcraft3 in a bare x server instead of playing it inside gnome. &nbsp;This gave me a full 30fps more when I played the game! &nbsp;Cool huh?<br /><br />I'd like to learn more about scripting in a more powerful lang like python, but the auburn library is kinda sparse on the subject.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

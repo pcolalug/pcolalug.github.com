@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - odd memory problem... [cross-post from Gentoo forum]</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: Martext on January 06, 2003, 01:45:48 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>odd memory problem... [cross-post from Gentoo forum]</b><br />
+					Post by: <b>Martext</b> on <b>January 06, 2003, 01:45:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have 512mb of DDR ram in my box, and I installed Gentoo... and now, even when I'm not running anything, its still using about 445 mb of my 512 mb, though, I can only track down about 120 mb to running programs (and yes, I'm looking at all processes, not just my own.) If someone could point out some way to remedy this, I'd be really greatful.<br /><br />Thanks,<br />Martext</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>odd memory problem... [cross-post from Gentoo forum]</b><br />
+					Post by: <b>steve</b> on <b>January 06, 2003, 06:08:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had looked into this a while back. The way I understand Linux is that will bite off a chunck of memory when it first starts up to use as it sees fit. The more memory you have, the more memory Linux bites off. It willl free it if other programs need it. <br /><br />However, I also found a couple of programs that I used to run that had memory leaks. One example was KDE with the Nvidia card. Everytime I switched from one desktop to another and back again, KDE would eat up more memory and wouldn't release it. Eventually it would freeze the system while it did a constant swap to the hard drive. This was about 8 months ago, though. Gnome did not exhibit this problem and that's why I switched to it and haven't looked back.<br /><br />I do use the Gnome and sometimes KDE system monitors to track which programs are using the most memory. Remember to check program usage as root or you'll only see your processes.<br /><br />Steve</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

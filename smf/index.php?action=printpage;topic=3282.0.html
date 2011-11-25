@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Virtualization Questions</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Computer General => Topic started by: djoed_pcola on December 19, 2007, 09:44:31 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtualization Questions</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 19, 2007, 09:44:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi everyone,<br /><br />Here is what I want to setup on a Dell SC400 Poweredge server with 1 GB of RAM:<br /><br />- A Linux desktop distro, probably Ubuntu, but undecided so far.&nbsp; Other possibilities include Mepis and PC Linux.&nbsp; Of course I&#039;m open to other major distros as well.<br /><br />- Microsoft Windows Server 2003 running as a guest OS under my Linux OS.<br /><br />- If I get the above two steps accomplished, I may want to add Windows XP as another guest OS.&nbsp; However, that is a project for another day.<br /><br />Okay, here are a few of my many questions:<br /><br />- What are some free and easy to use virtualization software programs?<br /><br />- What Linux distros already have virtualization software &quot;baked in&quot;?<br /><br />- What are some good web sites, and other reference sources, that can help &quot;dumb down&quot; the process of setting up a virtual environment?<br /><br />- Any other useful information you can think of?<br /><br />If I get this to work (and understand it), perhaps I could do a presentation at a future LUG meeting?&nbsp; Of course, you guys (and gals) can probably do this stuff in your sleep.<br /><br />Many thanks for any assistance.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Virtualization Questions</b><br />
+					Post by: <b>oneadvent</b> on <b>December 19, 2007, 12:43:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I use Ubuntu 7.10 on a Gateway laptop with 512 RAM and a 1.4 GHz processor.<br /><br />I have VirtualBox set up and working with a guest XP running. I did have to use apt-get to get VirtualBox.<br /><br />It was extremely easy to set up, however I did learn AFTER I set it up that the virtual disk sizes are not &quot;resizable.&quot; So make sure you make them big enough. <br /><br />I do not think I read a guide on it, but really it was all pretty self explanatory. I guess if you get stuck, post what happened and I&#039;ll help from what I know.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Virtualization Questions</b><br />
+					Post by: <b>bhoff</b> on <b>December 19, 2007, 03:28:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I like qemu myself and while not so easy to setup it does have growable img size and some other nice features and the various images can be run same time and connect via tuntap to create virtual network with ability to connect to outside world.<br /><br />I use it for testing new imgs and to run my virtual network honeypot for intruders!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Virtualization Questions</b><br />
+					Post by: <b>Ed</b> on <b>December 19, 2007, 09:18:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">vmplayer and vmserver are both free from vmware. I use vmplayer with pclinuxos and it works well. It runs one virtual machine at a time. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Virtualization Questions</b><br />
+					Post by: <b>bhoff</b> on <b>December 20, 2007, 05:37:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">There is also the Hex live cd that offers virtual services built in!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Virtualization Questions</b><br />
+					Post by: <b>rugmonster</b> on <b>January 05, 2008, 12:07:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3282.msg15836.html#msg15836">Quote from: djoed_pcola on December 19, 2007, 09:44:31 am</a></div><div class="quote">Hi everyone,<br /><br />Here is what I want to setup on a Dell SC400 Poweredge server with 1 GB of RAM:<br /><br />- A Linux desktop distro, probably Ubuntu, but undecided so far.&nbsp; Other possibilities include Mepis and PC Linux.&nbsp; Of course I&#039;m open to other major distros as well.</div><br />For a server, I would suggest either Debian stable, Ubuntu LTS (8.04 will be the next LTS release), or CentOS/RHEL 5.1. OpenSUSE is a little too flaky for my tastes. I list those because they all provide good, stable platforms. You&#039;ll sacrifice the bleeding edge versions for the apps, but I will take stable over new for something I need to be up.<br /><br /><div class="quoteheader">Quote</div><div class="quote">- What are some free and easy to use virtualization software programs?<br /></div><br />Either VMWare Server or VirtualBox. I&#039;ve moved to using VirtualBox because it seems significantly faster than VMWare Server. I&#039;ve heard that VMWare Server is purposely held back to encourage people to use VMWare ESX.<br /><br /><div class="quoteheader">Quote</div><div class="quote">- What are some good web sites, and other reference sources, that can help &quot;dumb down&quot; the process of setting up a virtual environment?<br /></div><br />CentOS, Debian, and Ubuntu all have support for Xen, but that is mostly good for doing Linux virtualization. If your processor supports virtualization, I&#039;ve heard you can run Windows as a guest, but it may not even be worth it. Just keep in mind that you can only use one virtualization technology at a time. Whatever you pick, make sure you keep that in mind and that you likely won&#039;t be able to take a VM from one to another.<br /><br /><div class="quoteheader">Quote</div><div class="quote">- Any other useful information you can think of?<br /></div><br />Memory and disk I/O are going to be your biggest constraints. Make sure you&#039;ve got plenty of memory and if you aren&#039;t running RAID now, you might want to look into it. RAID 5 only requires three drives and provides a good balance of redundancy and performance, even using mdadm software RAID.<br /><br />What is the ultimate goal for your setup? What are you going to be doing with it all? I&#039;ve recently moved away from using a Win2k3 AD VM server in favor of open-source, linux based solutions. If you&#039;re doing some .NET development and need IIS and MS SQL Server or just want to learn/play with AD and the various Windows server tools, I understand. But you may not need Win2k3 and I would be more than happy to recommend some open source options if you have some specific goals in mind.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Virtualization Questions</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 05, 2008, 01:09:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">What is the ultimate goal for your setup? What are you going to be doing with it all? I&#039;ve recently moved away from using a Win2k3 AD VM server in favor of open-source, linux based solutions. If you&#039;re doing some .NET development and need IIS and MS SQL Server or just want to learn/play with AD and the various Windows server tools, I understand. But you may not need Win2k3 and I would be more than happy to recommend some open source options if you have some specific goals in mind. </div><br />We use Windows Server 2003&nbsp; and SQL Server 2000 at work.&nbsp; We&#039;re planning on migrating to SQL Server 2005, so my intent is for some self-study.&nbsp; I just didn&#039;t want to waste a good machine by only having Windows&nbsp; Server on it.&nbsp; I know I could set it up for dual booting, but I really like the notion of being able to jump back and forth between OS&#039;s.<br /><br />Personally, I wish my job involved using more open-source technolgies, but it doesn&#039;t.&nbsp; Although, I do get to play with Perl from time to time.&nbsp; If my wife ever goes back to work, I wouldn&#039;t mind beating the bushes for something else.&nbsp; However, as you probably know, Pensacola is not exactly busting at the seams with IT jobs.<br /><br />Thanks for your input.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Virtualization Questions</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 08, 2008, 11:00:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, I installed VirtualBox using Ubuntu 7.10 as the Host OS.&nbsp; Then I installed Windows Server 2003 as a Virtual Machine.&nbsp; So far, everything seems to work fine.&nbsp; Need to read some of the VirtualBox documentation to understand some things.&nbsp; For example, the difference between a Virtual Machine and a &quot;Guest Addition&quot;.<br /><br />Thanks for everyone&#039;s comments.<br /><br /><br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Virtualization Questions</b><br />
+					Post by: <b>rugmonster</b> on <b>January 09, 2008, 09:24:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3282.msg15900.html#msg15900">Quote from: djoed_pcola on January 08, 2008, 11:00:53 pm</a></div><div class="quote">For example, the difference between a Virtual Machine and a &quot;Guest Addition&quot;.<br /></div><br />The guest additions are basically a set of tools that are loaded on the virtual machine for extra functionality, such as allowing you to move your mouse into and out of the guest&#039;s GUI environment without having to &quot;capture&quot; and &quot;release&quot; it. Additionally, VirtualBox has a shared drive that allows you to share files between the host and guest, but you need the guest additions installed to use it. It&#039;s mostly drivers and enhancements to make using the virtual environment better.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

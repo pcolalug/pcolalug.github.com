@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Burn, Mandrake, BURN!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: SiliconFOXX on June 01, 2004, 10:36:19 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Burn, Mandrake, BURN!</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>June 01, 2004, 10:36:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">No, this isn't anti-Mandrake, but I figured that'd catch some attention. &nbsp; :lol: <br /><br /><br />I'm trying to convert a friend's computer over to Linux since honestly it's free and...well, it's free. &nbsp;However, I didn't want to stick her with Fedora if at all possible after my experience so I figured I'd give her the Mandrake (friendly enough for a Windows user I thought).<br /><br />Well, I've got one small problem. &nbsp;The discs won't burn. &nbsp;I don't know why, but I cannot seem to properly burn these discs. &nbsp;I've now created three unrecognizable coasters and I don't know why.<br /><br />I got all three disc images directly from FTP and ran the MD5 checksum on them, all are golden. &nbsp;I'm using my HP CD-Writer Plus 8100 and burning in single speed (tried both max of 4x and 1x, no avail). &nbsp;I'm burning the image directly using CDROM format (not CDROM-XA) and for whatever reason, the discs simply are toast.<br /><br />No CDROM I've put these things in like 'em. &nbsp;They just read off and on for about 60 seconds and then choke, saying it's not a disc. &nbsp;I've never had problems burning CDs with this burner (music and data primarily) and I doubt the copy of Windows XP and CDRwin are at fault.<br /><br />Is there some mystic voodoo way of burning these or am I going to have to give her Fedora for awhile? &nbsp;I just don't understand what I'm doing wrong.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Burn, Mandrake, BURN!</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 02, 2004, 05:11:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">SiliconFOXX,<br /><br />Could your batch of discs be &nbsp;bad. &nbsp;I had &nbsp;bought a spindle of 50 verbatum discs a month ago and could not figure out why they would not work. I cant tell you how many coasters I made. &nbsp;Come to find out I tried using some other discs I had found that I forgot I had. &nbsp;And it worked. &nbsp;I took the verbatums to the office and tried it and still no luck. &nbsp;Come to find out the whole spindle was bad. &nbsp;First time I had ever run across this. &nbsp;Just an Idea.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Burn, Mandrake, BURN!</b><br />
+					Post by: <b>imnes</b> on <b>June 02, 2004, 05:16:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm not familiar with CDRWin only thing I can think is that it's dumping the .iso file to the disk as a file instead of creating a cd from the image?<br /><br />You can download cdrecord for windows and try that, or even a trial version of some other program like Nero or Roxio?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Burn, Mandrake, BURN!</b><br />
+					Post by: <b>danc</b> on <b>June 02, 2004, 11:05:19 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><br />No CDROM I've put these things in like 'em. &nbsp;They just read off and on for about 60 seconds and then choke, saying it's not a disc. &nbsp;I've never had problems burning CDs with this burner (music and data primarily) and I doubt the copy of Windows XP and CDRwin are at fault.<br /><br />Is there some mystic voodoo way of burning these or am I going to have to give her Fedora for awhile? &nbsp;I just don't understand what I'm doing wrong.</div><br /><br />Are you burning them as ISO's are meant to be done? &nbsp;I don't know how much you know about it, so if you already know this, ignore... &nbsp;ISO's must be burned as &quot;images&quot;, not as a file. &nbsp;Look at one of the coasters you made, and see what you see (with Windows Explorer). &nbsp;Is there a single file on there named &quot;&lt;Mandrake....&gt;.iso&quot;? &nbsp;If so, you burned it incorrectly.<br /><br />Not familiar with CDRwin, but look in menus for things like &quot;burn ISO image&quot;, or &quot;write image&quot;, or something along those lines. &nbsp;You mentioned above that you were using CDROM format (not CDROM-XA). &nbsp;When burning an ISO, those kinds of choices should not even be offered. &nbsp;You just burn the ISO, and there are no choices about ISO9660 type, Joliet extensions, mode 1, mode 2, etc...<br /><br />Have you ever succesfully burned ISO images before? &nbsp;Let us know...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Burn, Mandrake, BURN!</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>June 03, 2004, 12:39:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yep, burned it as an image (it will only allow you to select image, but due to the age of the program it will let you choose the format anyway, go figure).<br /><br />I tried Nero Burning Rom 6 as well and it locked up the drive and system forcing a reboot. &nbsp;When you put any of the discs in a drive the drive (seemingly regardless of OS) does not recognize the image.<br /><br /><br />d**n strange Mandrake. &nbsp;I remember I had this problem before but only on disc two, rather than all three discs. &nbsp;Maybe sometime I'll transfer the files over and test out xcdroast over on Slack to see if that helps, though I don't anticipate it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Burn, Mandrake, BURN!</b><br />
+					Post by: <b>lloydr</b> on <b>June 03, 2004, 12:58:55 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">try k3b for burning it and see if you have any luck....or cdrecord command works well too &nbsp;:wink:</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

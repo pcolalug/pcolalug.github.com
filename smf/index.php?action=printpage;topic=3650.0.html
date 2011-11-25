@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Getting your USB mouse recognized</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: dpeach on February 10, 2010, 12:12:14 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Getting your USB mouse recognized</b><br />
+					Post by: <b>dpeach</b> on <b>February 10, 2010, 12:12:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have an occasional USB mouse problem. I am running Kubuntu 9.10 (some kind of K adjective with a K animal name).*<br /><br />Sometimes when I insert my wireless USB mouse dongle into the computer it seemingly is not recognized. The mouse does not respond. However, when I do a dmesg I see output that indicates that the mouse is indeed recognized and is given all the credentials to work. If I unplug it and plug it back in enough it will eventually work just fine. But this sometimes needs more than 30 tries. I got frustrated this morning and went in search of a solution.<br /><br />It is as simple as issuing this command in a terminal:<br /><br /><div class="codeheader">Code:</div><div class="code">sudo modprobe usbhid</div><br />If you are having problems with other USB devices you can modprobe the kernel module for the device and it should work. I don&#039;t know what those would be since I have not had issues with other devices and looked them up. You can probably easily find your module on Google and just use the &#039;sudo modprobe xxx&#039; command.<br /><br />*I hate the Ubuntu names. Ubuntu&#039;s numbering system is the best I have ever seen. You can know your version based on when it was released. With the animal names I know it is alphabetical, but you have to know what the last letter was that was used to know if you have the latest. I take any opportunity I can to say this in hopes that the Ubuntu community will stop using the names to the exclusion of the version numbers. It is terrible to go to a help site and find that I have to get a chart out to see which version of Ubuntu the site is referring to. If you would just use the numbers it would clear up all doubt.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Getting your USB mouse recognized</b><br />
+					Post by: <b>Ed</b> on <b>February 10, 2010, 04:12:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">David have you tried other usb mice to see if yours may be faulty?&nbsp; Here is a link that may fix your problem.<br />https://bugs.launchpad.net/ubuntu/+source/linux/+bug/36339 (https://bugs.launchpad.net/ubuntu/+source/linux/+bug/36339)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Getting your USB mouse recognized</b><br />
+					Post by: <b>dpeach</b> on <b>February 10, 2010, 04:43:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don&#039;t think it is a faulty mouse since the mouse works in another computer (Windows) flawlessly. And when it does work, it works perfectly and never loses its connection. dmesg sees the mouse every time I plug-unplug-plug it in. It is just that the usbhid module is not loading right. But a sudo modprobe usbhid takes care of it.<br /><br />However, I am curious to try this from that link you provided:<br /><br /><div class="quoteheader">Quote</div><div class="quote">I currently use a workaround for this issue, which might be acceptable for the rest of you:<br /><br />In &quot;/etc/modprobe.d/blacklist&quot; find:<br /><br /># these drivers are very simple, the HID drivers are usually preferred<br />blacklist usbmouse<br />blacklist usbkbd<br /><br />add<br /><br />blacklist usbhid<br /><br />and comment out the entries for usbmouse / usbkbd as needed. I.e.<br /><br /># these drivers are very simple, the HID drivers are usually preferred<br />#blacklist usbmouse<br />blacklist usbkbd<br />blacklist usbhid</div><br />I am not at that machine to try it right now, but will let you know how it works for me.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

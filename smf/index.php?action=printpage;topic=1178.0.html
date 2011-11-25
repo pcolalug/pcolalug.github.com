@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - THE AWESOME POWER OF DUBYA</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: steve on November 21, 2003, 05:51:10 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>THE AWESOME POWER OF DUBYA</b><br />
+					Post by: <b>steve</b> on <b>November 21, 2003, 05:51:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">(This was written and sent to me by one of our members, Chuck Steele)<br /><br />THE AWESOME POWER OF DUBYA<br /><br />Covering one's tracks with the Linux PGP &#8220;wipe&#8221; command.<br /><br />By Chuck Steele, Pensacola LUG<br /><br />20 November 2003<br /><br />INTRODUCTION:<br /><br />In early 1979 militant Iranian students seized the U.S. Embassy in Theran. Among other things found during a joyful looting spree were burn bags of shredded documents that had not made it to the incinerator. The students, apparently with a whole lot of free time on their hands, painstakenly put back together many of the shredded documents.<br /><br />Some of the documents detailed the skullduggery between the CIA and the ousted regime's secret police, SAVAK. At the very least the documents were a source of embarassment to the U.S.<br /><br />Computer forensic wizards with lots of free time on their hands and clients with deep pockets and access to your hard drive or other storage media can access files you have deleted but have yet to be overwritten with other data. Worse, they can read flat files that may detail your personal information (Example: I get monthly bank statements online in PDF format --- more on this later.).<br /><br />DUBYA<br /><br />Linux PGP users have a powerful anti-forensics tool at their disposal, the PGP -w command (There is no equivalent command with Gnu Privacy Guard program yet.). When issued, the command randomizes the contents of a file and then deletes it. When you type:<br /><br />pgp -w evidence.txt<br /><br />You get a nice message back, &#8220;File evidence.txt wiped and deleted.&#8221; A forensic ace may find evidence.txt before it is overwritten but its contents would be a gobbledygook of random bits.<br /><br />The -w command is useful for general house cleaning when used alone.<br /><br />More commonly it is used with other PGP commands. Lets say I want to scramble a message, conspiracy.txt, to my friend Mike but do not want to leave the original document laying around. I'll type:<br /><br />pgp -ew conspiracy.txt Mike<br /><br />And get a message back, &#8220;Pretty Good Privacy(tm) Version 6.5.8<br /><br />(c) 1999 Network Associates Inc.<br /><br />Uses the RSAREF(tm) Toolkit, which is copyright RSA Data Security, Inc.<br /><br />Export of this software may be restricted by the U.S. government.<br /><br />Recipients' public key(s) will be used to encrypt.<br /><br />Key for user ID: Mike Mypal &lt;mike@hisisp.com&gt;<br /><br />2048-bit RSA key, Key ID 0x073D4F71, created 2002/02/17<br /><br />Ciphertext file: conspiracy.txt.pgp<br /><br />File conspiracy.txt wiped and deleted.&#8221;<br /><br />Neato!<br /><br />The conventional encryption feature of PGP for Linux (The -c command.) is generally used to encrypt files on your own computer's hard drive or other storage media (Example: I like to park some encrypted files on a Flash memory card.). Here comes a conditional &#8220;ALWAYS.&#8221; Once you are confident that you know how to unscramble a PGP encrypted file ALWAYS use the wipe command in conjuction with the -ccommand. Lets do it with my last bank statement:<br /><br />pgp -cw october.pdf<br /><br />Lets say I have been in my /home/user/money directory and I type ls. I'll see october.pdf.pgp and no sign of the original file. IF YOU ARE GOING TO BOTHER ENCRYPTING A FILE FOR YOURSELF THERE IS NO SENSE IN LEAVING THE ORIGINAL FILE LAYING AROUND.<br /><br />Also, it is a good idea to wipe once scrambled files from other people once you are finished with them.<br /><br />CONCLUSION<br /><br />You have shredded you paper bank and credit card statements. You have taken the shredded paper out to the rusty old barbecue and burned it. You have let the ashes cool and blasted them with a garden hose. Let the nosy people reassemble the molecules.<br /><br />With a little effort and a consistent approach you can do the equivalent to correspondence with others and to personal files you regard as worth protecting.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>THE AWESOME POWER OF DUBYA</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 22, 2003, 08:11:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Excellent information!<br /><br />Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PGP rocks</b><br />
+					Post by: <b>Brent</b> on <b>November 23, 2003, 11:58:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I used to use this to encrypt 'computer security related material' to keep them out of the eyes of my highschool system admin. &nbsp;Strangely enough, my pgp program kept being deleted. &nbsp;So I renamed it to a .doc file. &nbsp;muhahaha &nbsp; :twisted:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>THE AWESOME POWER OF DUBYA</b><br />
+					Post by: <b>imnes</b> on <b>November 24, 2003, 07:57:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Microsoft hides stuff like that, I think a license file dealing with MS Office is hidden in \windows\fonts as a .ttf file<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>THE AWESOME POWER OF DUBYA</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>February 27, 2004, 01:13:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Out of curiosity, where might I obtain the PGP program?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>THE AWESOME POWER OF DUBYA</b><br />
+					Post by: <b>imnes</b> on <b>February 28, 2004, 12:42:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">http://web.mit.edu/network/pgp.html<br /><br />might be a good start.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

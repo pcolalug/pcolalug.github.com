@@ -1,0 +1,864 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="OpenVPN between Linux and Solaris" />
+	<meta name="robots" content="noindex" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>OpenVPN between Linux and Solaris</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="index.php%3Ftopic=2231.0%3Bprev_next=prev.html" />
+	<link rel="next" href="index.php%3Ftopic=2231.0%3Bprev_next=next.html" />
+	<link rel="index" href="index.php%3Fboard=26.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 02:44:13 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="2231" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg11342"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#2" class="nav">Club Stuff</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=26.0.html" class="nav">Articles</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=2231.0.html" class="nav">OpenVPN between Linux and Solaris</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="index.php%3Ftopic=2231.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=2231.0%3Bprev_next=next.html#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> [<b>1</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=2231.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/normal_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: OpenVPN between Linux and Solaris &nbsp;(Read 9045 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=2231.0" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg11342.html#msg11342"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_11342">
+										<a href="index.php%3Ftopic=2231.msg11342.html#msg11342">OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b> on:</b> January 31, 2005, 09:47:59 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">This past weekend, I spent some time figuring out how to setup a VPN between my network and a friend who lives across town. The goal was to make it so that our two networks could communicate with each other without ports being blocked as well as securely across the Internet. Here is an example of the network layout...pardon the bad ascii<br /><div class="codeheader">Code:</div><div class="code"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Internal Net &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Internal Net<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|-------------| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|-------------|<br />10.20.50.0/24 &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; 192.168.2.0/24<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |-----| &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Internet &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp;|-----|<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |___|___/---/_____________/---/______|____| &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |eth0 &nbsp;/___/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /___/ &nbsp; &nbsp; &nbsp; &nbsp;hme0| &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp;Linksys Router &nbsp; &nbsp;Linksys Router &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |=========================================| &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |_____| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Tunnel &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |_____|<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Gentoo Box &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Solaris Box</div><br /><br />On my network at home, I have my Gentoo Linux box running the 2.6.10 kernel. At my friends house, I have the <a href="index.php%3Fboard=0.html" target="_blank">Netra t1125</a> running Solaris 09/04. Both support IPSec natively, so that was what I looked into first. The problem was that both machines were being NAT'd by routers. The Authentication Header portion of IPSec requires the IP addresses of the source of origin and destination to match what is in the header of the IP packet. With this, NAT breaks the AH portion of IPSec. You can run IPSec without AH, which just encrypts the packet body, but at this point, you have to ask yourself why would I go through the headache of setting up IPSec if I'm not getting the full benefit?<br /><br />Enter <a href="http://www.openvpn.net" target="_blank">OpenVPN</a>. I found OpenVPN in my search for an alternative VPN solution that would support NAT and work on Linux, as well as Solaris 9. OpenVPN is a utility that creates an IP tunnel between two machines, optionally encrypting the tunnel contents via SSL/TLS. OpenVPN can also be used for 802.1d Ethernet Bridging, but that is beyond the scope of this article.<br /><br />The Linux part was easy because there are several VPN solutions of varying degrees. Solaris was another story. While the other solutions may compile, I wanted to find something that said it supported Solaris out of the box. So I emerged OpenVPN on my linux box and started collecting the prerequisites for the Solaris machine.<br /><br />OpenVPN requires three things to work:<br /><br />1. [url-http://vtun.sourceforge.net/tun/]TUN/TAP[/url] driver to allow user-space programs to control a virtual point-to-point IP or Ethernet device.<br />2. <a href="http://www.openssl.org/" target="_blank">OpenSSL</a><br />3. <a href="http://www.oberhumer.com/opensource/lzo/" target="_blank">LZO real-time compression library</a>, required for link compression<br /><br />With Gentoo, all of these requirements were installed for me as dependencies. With the Solaris box, I had to download and compile the TUN/TAP driver and the LZO compression library. OpenSSL was installed via package from <a href="http://www.sunfreeware.com" target="_blank">sunfreeware.com</a>.<br /><br />The only thing I had to do on the Gentoo box to meet this requirement was add TUN/TAP support, which is supported with the 2.6 kernels, found under:<br /><br />&nbsp; &nbsp; Device Drivers -&gt; Network Device Support -&gt;<br />Universal TUN/TAP device driver support<br /><br />After a quick recompile, TUN/TAP was ready to go. Next was the Solaris box.<br /><br />First, I downloaded the source for the LZO library. After a quick compile and install, I moved on to the TUN/TAP driver.<br /><br />One problem I ran into with the TUN/TAP driver was that the latest version was written for Solaris 8. Since I'm running Solaris 9, I had to do some fun things to get it to work with my version.<br /><br />With a standard ./configure &amp;&amp; make &amp;&amp; make install, I first got an error about the driver being compiled as 32-bit, but my kernel was 64-bit and would not load. On Solaris 9 systems that are 64-bit, you add CFLAGS=&quot;-m64&quot; as an environment variable. Unfortunately, the system wasn't using the CFLAG. Thankfully, only one file is compiled, so I took the gcc command that was displayed on the screen during the make and added in -m64.<br /><br />When you run make install, the files <b>tun</b> and <b>tun.conf</b> are installed to /usr/kernel/drv/. Solaris 9 requires <b>tun</b> to be copied to /usr/kernel/drv/solarisv9/, as such:<br /><div class="codeheader">Code:</div><div class="code">cp /usr/kernel/drv/tun /usr/kernel/drv/solarisv9/tun</div><br /><br />Following this, you have to tell the kernel the driver is there.<br /><div class="codeheader">Code:</div><div class="code">add_drv tun</div><br /><br />This should automagically create the tun device as /dev/tun.<br /><br />Back on your Linux box, you may need to create a tun device. If you don't find one, do the following:<br /><div class="codeheader">Code:</div><div class="code"># mknod /dev/net/tun c 10 200</div><br />I didn't have the /dev/net/ directory since I'm using udev. I did have a /dev/netlink/. OpenVPN looks for /dev/net/tun, so I did the following:<br /><div class="codeheader">Code:</div><div class="code"># mkdir /dev/net<br /># mknod /dev/netlink/tun c 10 200<br /># ln -s /dev/netlink/tun /dev/net/tun</div><br /><br />Now, you should have LZO, OpenSSL and tun devices. At this point, I had already installed OpenVPN on my Gentoo box, but had to compile it on the Solaris machine. Here is the configure with options that I used:<br /><div class="codeheader">Code:</div><div class="code">$ ./configure --with-lzo-libs=/usr/local/lib/ \<br />&gt; --with-lzo-headers=/usr/local/include/ \<br />&gt; --with-ssl-libs=/usr/local/ssl/lib/ \<br />&gt; --with-ssl-headers=/usr/local/ssl/include/</div><br />Once this is done, you should be able to do a make and make install and there should be a binary at /usr/local/sbin/openvpn. Easy enough...<br /><br />Next, I had to forward UDP port 5000 to the systems running OpenVPN. UDP port 5000 is used by default by OpenVPN, but you can specify another if you wish.<br /><br />To test your link, the best way is to start up an unencrypted OpenVPN session on each system. The way OpenVPN works is that both sides have to be setup. On machine #1 try this:<br /><div class="codeheader">Code:</div><div class="code"># openvpn --remote &lt;ip or dns name of Machine #2&gt; --dev tun --ifconfig 10.1.1.1 10.1.1.2 --verb 9</div><br />On machine #2:<br /><div class="codeheader">Code:</div><div class="code"># openvpn --remote &lt;ip or dns name of Machine #1&gt; --dev tun --ifconfig 10.1.1.2 10.1.1.1 --verb 9</div><br />What do all those flags mean? --remote is the ip or dns name of the system you want to establish the tunnel with. --dev specifies either the specific device under /dev/net/ you want to use (ex. --dev tun0 uses /dev/net/tun0) or if you just use tun, it will use whatever tun device is available if tun0 is already in use. This is useful if you run multiple tunnels. --ifconfig tells openvpn to setup the tunnel with the ip addresses in the form of --ifconfig &lt;local ip&gt; &lt;remote ip&gt;. --verb 9 sets the verbosity to the highest available, so you will see everything OpenVPN may have to say to include when packets are transferred back and forth through the tunnel.<br /><br />Once the tunnel comes up, from machine #1, you should be able to ping machine #2 at 10.1.1.2. If you can't, then there is a problem. Refer to the OpenVPN website for troubleshooting steps.<br /><br />Here is what my network looks like with the tunnel up:<br /><div class="codeheader">Code:</div><div class="code"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Internal Net &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Internal Net<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|-------------| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|-------------|<br />10.20.50.0/24 &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; 192.168.2.0/24<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |-----| &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Internet &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp;|-----|<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |___|___/---/_____________/---/______|____| &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |eth0 &nbsp;/___/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /___/ &nbsp; &nbsp; &nbsp; &nbsp;hme0| &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp;Linksys Router &nbsp; &nbsp;Linksys Router &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; |=========================================| &nbsp; &nbsp; |<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |_____|tun0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Tunnel &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tun0|_____|<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Gentoo Box &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;10.20.1.0/24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Solaris Box<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;eth0 10.20.50.52 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hme0 192.168.2.101<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tun0 10.20.1.2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tun0 10.20.1.1</div><br /><br />Next, I had to add routes on both systems so they knew how to get traffic destined for the distant end internal subnet and tell them to forward IP traffic across interfaces. This means, my Gentoo box had to know how to get beyond the Solaris machine into the 192.168.2.0/24 network and the Solaris box will allow that traffic to travel from tun0 and out through hme0. To accomplish that, I ran these commands on the Gentoo box:<br /><div class="codeheader">Code:</div><div class="code"># route add -net 192.168.2.0 255.255.255.0 10.20.1.1<br /># echo 1 &gt; /proc/sys/net/ipv4/ip_forward</div><br />On the Solaris system:<br /><div class="codeheader">Code:</div><div class="code"># route add -net 10.20.1.0/24 10.20.1.2<br /># /usr/sbin/ndd -set /dev/ip ip_forwarding 1</div><br />Now, routes are in place on both tunnel gateways and they are both setup to forward traffic across interfaces.<br /><br />In my home network, I run a Linksys WRT54G wireless router with Sveasoft firmware. I was able to put a static route in my WRT54G to make traffic for the 10.20.1.0/24 and 192.168.2.0/24 networks forward to the Gentoo system. On the other network, my friend has a different router that does not give him the option to add static routes like this, so he changed the default gateway on all of his internal systems to point to the Solaris machine. This works because the Solaris machine still has a default gateway of his router, but also has the routes for the tunnel subnet as well as my home subnet. All traffic is routed appropriately so that when he wants a system to go to the Internet, it goes directly out his router and if it is destined for my network, it passes through the tunnel.<br /><br />So now, with routes in place, you should be able to ping all the way across, through the tunnel and into the distant end network. With --verb 9, you should even see a whole bunch of stuff flying scrolling across the screen that OpenVPN is running on as traffic passes by. <br /><br />There are a couple of problems...your tunnel isn't encrypted and as soon as you close the terminal that OpenVPN is running on, your tunnel will go down. <br /><br />First, let's secure that tunnel a bit with some encryption. You have the option of using static keys or using full SSL/TLS keys. I went with static keys because they are simpler. First, you create a key with the command:<br /><div class="codeheader">Code:</div><div class="code"># openvpn --genkey --secret static.key</div><br />A static key will be created in your current directory and stored in the file static.key. You should copy that file over to the other tunnel gateway using scp or some other secure transmission. To utilize static keys, you must use the same key file on both systems.<br /><br />Once this is done, you can test it out much like you did the unencrypted tunnel before:<br /><div class="codeheader">Code:</div><div class="code"># openvpn --remote &lt;ip or dns name of Machine #2&gt; --dev tun --ifconfig &lt;local tun ip&gt; &lt;remote tun ip&gt; --static &lt;location of static.key&gt; --verb 9</div><br />Note that when you take the tun interface down and bring it back up (stopping and starting OpenVPN), you may need to re-enter the static route for the distant end network.<br /><br />Everything working alright now? Well, it is for me. I don't want to have to start up this tunnel everytime the system is rebooted or should the Internet connection drop for one of the systems. Here are my ideas for making this a more robust connection.<br /><br />All of those --<i>flag</i> options can be put into a configuration file. Here is what I plan to use for both of gateways:<br /><br /><a href="http://members.cox.net/dgivens4/solaris.txt" target="_blank">Solaris</a><br /><a href="http://members.cox.net/dgivens4/gentoo.txt" target="_blank">Gentoo</a><br /><br />Solaris will be setup to run OpenVPN in daemon mode. It will start up on boot and ping the other end of the tunnel every 15 seconds. If there is no reply after 30 seconds, it will try to reestablish the connection. On the Gentoo side, I will run it from xinetd, listening for requests on UDP port 5000. It too will try to ping the other side every 15 seconds, but exit after 30 seconds with no reply. I have yet to implement this, but there are instructions on how to setup OpenVPN as daemon and run from inetd/xinetd on the OpenVPN web site.<br /><br />Well, there you have it. I hope this provides some assistance to you. I would also like to point out that there is a Win32 and Mac OS X version of OpenVPN available for those who travel with their laptop that isn't running Linux and still want to have secure access to their internal network. <br /><br />Please let me know if you have any questions. I will do my best to answer them. Happy tunnelling!</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11342">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg11452"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=28.html" title="View the profile of hitechwizard">hitechwizard</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 407<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=8%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=28.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.hitechwizard.net" title="http://www.hitechwizard.net" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg11452.html#msg11452"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_11452">
+										<a href="index.php%3Ftopic=2231.msg11452.html#msg11452">OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #1 on:</b> February 03, 2005, 10:23:03 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Amazingly how appropriate the timing is. My problem is that I need openvpn to work between an openbsd box and windows clients. I've managed to get it mostly setup, but have serious problems getting the actual bridge to work. Sniffing the wire I can see traffic going back and forth on port 1194 (default for the RC6 version) and the two boxes seem to connect, but nothing happens after that. Here's the configs for:<br /><br />OpenBSD Box:<br /><div class="codeheader">Code:</div><div class="code"><br />remote somewhere.onthe.net<br />&nbsp; &nbsp; &nbsp; &nbsp; port 1194<br />&nbsp; &nbsp; &nbsp; &nbsp; float<br />&nbsp; &nbsp; &nbsp; &nbsp; dev tun0<br />&nbsp; &nbsp; &nbsp; &nbsp; ifconfig 192.168.1.200 192.168.1.201<br />&nbsp; &nbsp; &nbsp; &nbsp; ping 15<br />&nbsp; &nbsp; &nbsp; &nbsp; secret openvpn.key<br />&nbsp; &nbsp; &nbsp; &nbsp; verb 9<br />&nbsp; &nbsp; &nbsp; &nbsp; tun-mtu 1500<br />&nbsp; &nbsp; &nbsp; &nbsp; tun-mtu-extra 32<br />&nbsp; &nbsp; &nbsp; &nbsp; mssfix 1450<br />&nbsp; &nbsp; &nbsp; &nbsp; ifconfig-nowarn<br /></div><br /><br />Windows Box:<br /><div class="codeheader">Code:</div><div class="code"><br />remote somewhere.onthe.net<br />&nbsp; &nbsp; dev tap<br />&nbsp; &nbsp; dev-node TAP-Home<br />&nbsp; &nbsp; ping 15<br />&nbsp; &nbsp; ifconfig 192.168.1.201 255.255.255.0<br />&nbsp; &nbsp; secret home.key<br />&nbsp; &nbsp; tun-mtu 1500<br />&nbsp; &nbsp; tun-mtu-extra 32<br />&nbsp; &nbsp; mssfix 1450<br /></div><br /><br />Any hints to getting this work would be great. I thought it might be routing related, but then I realized that I can't even ping across the VPN, so I don't think routing is my issue. On the windows box, the TAP adapter gets the 192.168.1.201 address, and it can ping it, but can not ping 192.168.1.200. On the openBSD box, ifconfig shows:<br /><div class="codeheader">Code:</div><div class="code"><br />tun0&#58; flags=51&lt;UP,POINTOPOINT,RUNNING&gt; mtu 1500<br />&nbsp; &nbsp; &nbsp; &nbsp; inet 192.168.1.200 --&gt; 192.168.1.201 netmask 0xffffffff<br /></div><br />But you can't ping either address from anywhere, including the OpenBSD box.<br /><br />Any Ideas?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11452">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">Jesse<br />Host your application, site or server @ <a href="http://www.hitechwizard.net" target="_blank">www.hitechwizard.net</a></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg11461"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg11461.html#msg11461"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_11461">
+										<a href="index.php%3Ftopic=2231.msg11461.html#msg11461">OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #2 on:</b> February 04, 2005, 08:17:16 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">From my understanding, tap is used for 802.1d bridging and tun is used for tunneling. AFAIK, only Linux and FreeBSD support ethernet bridging unless you can get OpenBSD's <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=bridge&amp;sektion=4" target="_blank">bridge</a> to work. Reading on the openvpn page, Win32 only has support for tap. <br /><br />As a caveat, you can only have one connection per port, so if you have multiple tunnels/bridges, you have to have each running on their own port.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11461">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg11465"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>steve</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg11465.html#msg11465"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_11465">
+										<a href="index.php%3Ftopic=2231.msg11465.html#msg11465">OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #3 on:</b> February 04, 2005, 09:57:45 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: hitechwizard</div><div class="quote">Here's the configs for:<br /><br />OpenBSD Box:<br /><div class="codeheader">Code:</div><div class="code"><br />remote somewhere.onthe.net<br />&nbsp; &nbsp; &nbsp; &nbsp; port 1194<br />&nbsp; &nbsp; &nbsp; &nbsp; float<br />&nbsp; &nbsp; &nbsp; &nbsp; dev tun0<br />&nbsp; &nbsp; &nbsp; &nbsp; ifconfig 192.168.1.200 192.168.1.201<br />&nbsp; &nbsp; &nbsp; &nbsp; ping 15<br />&nbsp; &nbsp; &nbsp; &nbsp; secret openvpn.key<br />&nbsp; &nbsp; &nbsp; &nbsp; verb 9<br />&nbsp; &nbsp; &nbsp; &nbsp; tun-mtu 1500<br />&nbsp; &nbsp; &nbsp; &nbsp; tun-mtu-extra 32<br />&nbsp; &nbsp; &nbsp; &nbsp; mssfix 1450<br />&nbsp; &nbsp; &nbsp; &nbsp; ifconfig-nowarn<br /></div><br /><br />Windows Box:<br /><div class="codeheader">Code:</div><div class="code"><br />remote somewhere.onthe.net<br />&nbsp; &nbsp; dev tap<br />&nbsp; &nbsp; dev-node TAP-Home<br />&nbsp; &nbsp; ping 15<br />&nbsp; &nbsp; ifconfig 192.168.1.201 255.255.255.0<br />&nbsp; &nbsp; secret home.key<br />&nbsp; &nbsp; tun-mtu 1500<br />&nbsp; &nbsp; tun-mtu-extra 32<br />&nbsp; &nbsp; mssfix 1450<br /></div><br /><br />Any hints to getting this work would be great. I thought it might be routing related, but then I realized that I can't even ping across the VPN, so I don't think routing is my issue. On the windows box, the TAP adapter gets the 192.168.1.201 address, and it can ping it, but can not ping 192.168.1.200. On the openBSD box, ifconfig shows:<br /><div class="codeheader">Code:</div><div class="code"><br />tun0&#58; flags=51&lt;UP,POINTOPOINT,RUNNING&gt; mtu 1500<br />&nbsp; &nbsp; &nbsp; &nbsp; inet 192.168.1.200 --&gt; 192.168.1.201 netmask 0xffffffff<br /></div><br />But you can't ping either address from anywhere, including the OpenBSD box.<br /><br />Any Ideas?</div><br /><br />Not sur eif this will help, but...<br /><br />I haven't set anything up using openvpn but I have setup quite a few Windows VPNs and router to router VPNs. I noticed that both, the local and remote computers, are using the same local subnet schema. In my experience, this can't be done. I've found that the two networks had to be using differnt local subnets. ie. 192.168.1.x/24 on one side and 192.168.2.x/24 on the other side.<br /><br />Steve</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11465">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg11469"></a><a name="new"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg11469.html#msg11469"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_11469">
+										<a href="index.php%3Ftopic=2231.msg11469.html#msg11469">OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #4 on:</b> February 04, 2005, 04:18:47 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">The way OpenVPN configures is you tell it the local and remote tunnel IP. While you are correct in that the subnets on either side of the tunnel have to be seperate subnets, so in a tunnel configuration you would have three seperate subnets, I don't think this is the issue. I believe the problem lies in what I said before, being the difference in tunnel and bridge.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11469">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg11474"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=28.html" title="View the profile of hitechwizard">hitechwizard</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 407<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=8%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=28.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.hitechwizard.net" title="http://www.hitechwizard.net" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg11474.html#msg11474"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_11474">
+										<a href="index.php%3Ftopic=2231.msg11474.html#msg11474">OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #5 on:</b> February 04, 2005, 07:51:29 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Ended up going with a much simpler client from Vast Range called &nbsp;<a href="http://vast-range.com" target="_blank">Safe Passage</a>. No setup required on the server other than having a valid user account to SSH into, and the client is about as simple. The great thing about the Safe Passage client is you can identify which networks/clients go through the tunnel, and which ones go as normal. Not a bad product for a $29.95 registration per client.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11474">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">Jesse<br />Host your application, site or server @ <a href="http://www.hitechwizard.net" target="_blank">www.hitechwizard.net</a></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg11479"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a></b>
+							<div class="smalltext">
+								Administrator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 769<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=9%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=118.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://slackwolf.com" title="http://slackwolf.com" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg11479.html#msg11479"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_11479">
+										<a href="index.php%3Ftopic=2231.msg11479.html#msg11479">OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #6 on:</b> February 05, 2005, 10:36:46 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: hitechwizard</div><div class="quote">Ended up going with a much simpler client from Vast Range called &nbsp;<a href="http://vast-range.com" target="_blank">Safe Passage</a>. No setup required on the server other than having a valid user account to SSH into, and the client is about as simple. The great thing about the Safe Passage client is you can identify which networks/clients go through the tunnel, and which ones go as normal. Not a bad product for a $29.95 registration per client.</div><br /><br />can&#039;t you basically get the same thing out of openbsd&#039;s bridging function mixed in with authpf?<br /><a href="http://www.openbsd.org/faq/pf/authpf.html" target="_blank">http://www.openbsd.org/faq/pf/authpf.html</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11479">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://www.megapathdsl.net/~vrandall/sea/slack.gif" alt="" border="0" /><img src="http://www.megapathdsl.net/~vrandall/sea/obsd.gif" alt="" border="0" /><br />&quot;Sending script kiddies to /dev/null since 1995&quot; --OpenBSD<br />OpenBSD is a great OS, but Theo de Raadt is an arse...</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg11480"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=28.html" title="View the profile of hitechwizard">hitechwizard</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 407<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=8%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=28.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.hitechwizard.net" title="http://www.hitechwizard.net" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg11480.html#msg11480"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_11480">
+										<a href="index.php%3Ftopic=2231.msg11480.html#msg11480">OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #7 on:</b> February 05, 2005, 10:57:42 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Not really. While that would poke the holes in the firewall to allow the packets to flow, I needed the packets to actually run inside the ssh tunnel created, which is what the Safe Passage client does. If I didn't need the encryption on the data, authpf would have been the answer.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11480">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">Jesse<br />Host your application, site or server @ <a href="http://www.hitechwizard.net" target="_blank">www.hitechwizard.net</a></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg14550"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=442.html" title="View the profile of jhuang">jhuang</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=442.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg14550.html#msg14550"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_14550">
+										<a href="index.php%3Ftopic=2231.msg14550.html#msg14550">Solaris setting please? - Re: OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #8 on:</b> August 08, 2006, 05:21:06 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Hi Rugmonster,<br /><br />Regarding your article &quot;OpenVPN between Linux and Solaris&quot;, can you tell me what Solaris settings (compiler, make versions etc.) that you use?&nbsp; e.g. what&#039;s your output of the following commands?<br />===============<br /># uname -a<br /># which gcc<br /># gcc -v<br /># which make<br /># make -v<br />===============<br /><br />I&#039;m starting to install OpenVPN on Solaris. I have some old versions like the following that have problem when installing tun driver, and would like to upgrade based on your suggestions. Thanks a lot.<br />---------------------<br /># uname -a<br />SunOS sideswipe 5.9 Generic_117171-09 sun4u sparc SUNW,Serverblade1<br /># which gcc<br />/usr/local/bin/gcc<br /># gcc -v<br />Reading specs from /usr/local/lib/gcc-lib/sparc-sun-solaris2.6/2.95.3/specs<br />gcc version 2.95.3 20010315 (release)<br /># which make<br />/usr/local/bin/make<br /># make -v<br />GNU Make version 3.76.1, by Richard Stallman and Roland McGrath.<br />Copyright (C) 1988, 89, 90, 91, 92, 93, 94, 95, 96, 97<br />&nbsp; &nbsp; &nbsp; &nbsp; Free Software Foundation, Inc.<br />This is free software; see the source for copying conditions.<br />There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.<br /><br />Report bugs to &lt;<a href="mailto:bug-gnu-utils@prep.ai.mit.edu">bug-gnu-utils@prep.ai.mit.edu</a>&gt;.<br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_14550">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg14551"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2231.msg14551.html#msg14551"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_14551">
+										<a href="index.php%3Ftopic=2231.msg14551.html#msg14551">Re: OpenVPN between Linux and Solaris</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #9 on:</b> August 08, 2006, 06:46:07 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I&#039;m not running that system anymore, but at the time the Netra was running Solaris 9 (same as you) and I was using current versions of gcc and make that were part of the Sun Freeware packages.<br /><br />As a suggestion, have you searched the OpenVPN-users mailing list?<br /><br />Here is a post I just found.<br /><br /><a href="http://openvpn.net/archive/openvpn-users/2005-06/msg00241.html" target="_blank">http://openvpn.net/archive/openvpn-users/2005-06/msg00241.html</a><br /><br />WIthout more to go on, we can&#039;t really help you track down a possible solution. What specific errors are you getting?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_14551">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> [<b>1</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=2231.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 2231;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="2231" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=2231.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 9045 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="index.php%3Ftopic=2231.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=2231.0%3Bprev_next=next.html#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0" selected="selected"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0"> => Other Software</option>
+			<option value="?board=32.0"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.479 seconds with 17 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

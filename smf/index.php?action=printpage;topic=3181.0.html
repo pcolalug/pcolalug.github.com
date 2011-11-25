@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Is a firewall necessary for Linux?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: linuxnewbie on June 18, 2007, 03:01:56 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Is a firewall necessary for Linux?</b><br />
+					Post by: <b>linuxnewbie</b> on <b>June 18, 2007, 03:01:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is a firewall necessary for Linux?<br />I just installed Ubuntu 7.04, and I would like to connect to the Internet.&nbsp; Is it possible to download a firewall on my Windows computer and burn it onto CD?&nbsp; Is it safe to access the Internet in Linux without a firewall (at least in the short term)?&nbsp; <br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Is a firewall necessary for Linux?</b><br />
+					Post by: <b>bhoff</b> on <b>June 18, 2007, 03:22:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The short answer yes.<br /><br />now for the bad news.........Most issues on the web are automated scripts that run against a list of known bugs or operating systems.<br />These scripts are then compiled to give the bad guys a list of exploitable machines.<br />A windows computer put on high speed is generally owned within minutes of going on-line But Linux is given a little slack.<br />But just like every other operating system you will have your pants down around your ankles.....There will be ports open that you will not want exposed for long. suggest that you use it to grab what ever files you want and not leave it plugged into network when you are not using it.<br />Also suggest that you read up on setting up a basic firewall.............Ubuntu should have some tools in it to help you.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Is a firewall necessary for Linux?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 18, 2007, 06:24:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Might I suggest Firestarter (http://www.fs-security.com/), for a friendly way to setup a simple firewall. The package is accessible via the Add/Remove Applications. You can just search for Firestarter and it will come up.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Is a firewall necessary for Linux?</b><br />
+					Post by: <b>crowe</b> on <b>June 18, 2007, 06:52:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Assuming that things haven&#039;t changed with the most recent release(s), an install of Ubuntu should have no public services running by default.&nbsp; Installing and configuring a firewall*, such as Firestarter or Lokkit is still a good idea, in the event that you (either knowingly or otherwise) should ever install a server program that opens up a port by default.<br /><br /><br /><br /><br /><br /><br /><br /><br />* Actually, you already have a firewall installed -- iptables.&nbsp; Firestarter, Lokkit, and the like are just GUI frontends that allow you to easily configure iptables, which by default comes with no pre-set configuration.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Is a firewall necessary for Linux?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 18, 2007, 08:35:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">CUPS is installed by default and listening. Still a good idea, especially if you load Samba, ssh, or use nfs.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Is a firewall necessary for Linux?</b><br />
+					Post by: <b>crowe</b> on <b>June 19, 2007, 10:52:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3181.msg15451.html#msg15451">Quote from: rugmonster on June 18, 2007, 08:35:01 pm</a></div><div class="quote">CUPS is installed by default and listening.</div><br />True.&nbsp; But it&#039;s only listening for connections coming from the local machine, unless you&#039;ve futzed with /etc/cups/cupsd.conf.<br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=3181.msg15451.html#msg15451">Quote from: rugmonster on June 18, 2007, 08:35:01 pm</a></div><div class="quote">Still a good idea, especially if you load Samba, ssh, or use nfs.<br /></div><br />It is, assuming that the machine in question is connected directly to the Internet, which is the assumption that I&#039;m going with in this case.&nbsp; However, if there&#039;s a linksys/belkin/d-link/netgear/etc router sitting between said machine(s) and the rest of the world, then setting up iptables is bordering on overkill for the majority of home users.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Is a firewall necessary for Linux?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 20, 2007, 04:40:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3181.msg15457.html#msg15457">Quote from: crowe on June 19, 2007, 10:52:18 pm</a></div><div class="quote"><div class="quoteheader"><a href="index.php%3Ftopic=3181.msg15451.html#msg15451">Quote from: rugmonster on June 18, 2007, 08:35:01 pm</a></div><div class="quote">CUPS is installed by default and listening.</div><br />True.&nbsp; But it&#039;s only listening for connections coming from the local machine, unless you&#039;ve futzed with /etc/cups/cupsd.conf.</div><br />Oh yeah...forgot about that. I just did an nmap of localhost the other day and saw CUPS. I said to myself &quot;that&#039;s wierd&quot; without thinking what my destination was.<br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=3181.msg15457.html#msg15457">Quote from: crowe on June 19, 2007, 10:52:18 pm</a></div><div class="quote"><div class="quoteheader"><a href="index.php%3Ftopic=3181.msg15451.html#msg15451">Quote from: rugmonster on June 18, 2007, 08:35:01 pm</a></div><div class="quote">Still a good idea, especially if you load Samba, ssh, or use nfs.<br /></div><br />It is, assuming that the machine in question is connected directly to the Internet, which is the assumption that I&#039;m going with in this case.&nbsp; However, if there&#039;s a linksys/belkin/d-link/netgear/etc router sitting between said machine(s) and the rest of the world, then setting up iptables is bordering on overkill for the majority of home users.<br /></div><br />I made an assumption that linuxnewbie would be putting it directly on the Internet. I said the very same thing in a response to him/her last night.<br /><br />I think the prevalence of Windows and the attempts to make up for its shortcomings without explaining what firewalls are for has given people a false sense of security as long as they are running an app called a firewall, no matter what, like antivirus and antispyware. Marketing for marketing sake has put the term firewall in most computer user&#039;s vocabulary, but I would say most don&#039;t realize exactly what they are blocking/allowing or why you would even want to do that besides the obvious &quot;to keep things out.&quot; Granted, NAT is not a firewall, but most home routers at least do simple stateful packet inspection, and that is enough for most people and most circumstances. The mindset that every system needs a firewall for security has spread thanks to Microsoft following XP SP2, Norton/Symantec, McAfee, et al. They, like always, wanted to make a buck and it was simply easier to market firewalls to everyone and skip the consumer education part. Most people haven&#039;t looked into it more, so they have bought into the idea, quite literally. </div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

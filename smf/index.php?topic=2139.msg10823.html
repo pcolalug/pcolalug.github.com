@@ -1,0 +1,1088 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="How do I compile a kernel in Debian?" />
+	<meta name="robots" content="noindex" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>How do I compile a kernel in Debian?</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="index.php%3Ftopic=2139.0%3Bprev_next=prev.html" />
+	<link rel="next" href="index.php%3Ftopic=2139.0%3Bprev_next=next.html" />
+	<link rel="index" href="index.php%3Fboard=38.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 07:02:59 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="2139" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg10806"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#6" class="nav">Misc</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=38.0.html" class="nav">Newbie Corner</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=2139.0.html" class="nav">How do I compile a kernel in Debian?</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="index.php%3Ftopic=2139.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=2139.0%3Bprev_next=next.html#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> [<b>1</b>] <a class="navPages" href="index.php%3Ftopic=2139.15.html">2</a> 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=2139.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/hot_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: How do I compile a kernel in Debian? &nbsp;(Read 4146 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=2139.0" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10806.html#msg10806"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10806">
+										<a href="index.php%3Ftopic=2139.msg10806.html#msg10806">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b> on:</b> December 24, 2004, 03:13:19 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Alright, I give up, how do I compile the kernel in Debian? &nbsp;I get the feeling I'm just totally not understanding something.<br /><br />I cannot make xconfig because I get:<br /><br />foxx@anubis:~/Downloads/src/linux-2.6.7$ make xconfig<br />*<br />* Unable to find the QT installation. Please make sure that the<br />* QT development package is correctly installed and the QTDIR<br />* environment variable is set to the correct location.<br />*<br />make[1]: *** [scripts/kconfig/.tmp_qtcheck] Error 1<br />make: *** [xconfig] Error 2<br /><br /><br />Now I've been trying to get the QT runtime libraries installed with the package system but apparently to no avail. &nbsp;Also, when I tried to get libqt it told me it wanted to remove 223 packages, all of those pertaining to kde pretty much.<br /><br /><br />Now I'll admit that I don't exactly understand QT or what it's for, but that doesn't seem like a good thing if it's going to remove quite a few packages central to KDE.<br /><br />Please help.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10806">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10807"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a></b>
+							<div class="smalltext">
+								Administrator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 769<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=9%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=118.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://slackwolf.com" title="http://slackwolf.com" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10807.html#msg10807"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10807">
+										<a href="index.php%3Ftopic=2139.msg10807.html#msg10807">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #1 on:</b> December 24, 2004, 03:15:01 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">then use<br /><div class="codeheader">Code:</div><div class="code">make menuconfig</div></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10807">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://www.megapathdsl.net/~vrandall/sea/slack.gif" alt="" border="0" /><img src="http://www.megapathdsl.net/~vrandall/sea/obsd.gif" alt="" border="0" /><br />&quot;Sending script kiddies to /dev/null since 1995&quot; --OpenBSD<br />OpenBSD is a great OS, but Theo de Raadt is an arse...</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10808"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10808.html#msg10808"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10808">
+										<a href="index.php%3Ftopic=2139.msg10808.html#msg10808">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #2 on:</b> December 24, 2004, 03:21:18 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Somehow I feel this will come up again, though. &nbsp;Surely the sole purpose of the QT libraries isn't only for xconfig, right? &nbsp;I mean, they've got to be used for something else that I might run into?<br /><br /><br />For the moment I suppose I'll have to, though.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10808">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10809"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10809.html#msg10809"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10809">
+										<a href="index.php%3Ftopic=2139.msg10809.html#msg10809">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #3 on:</b> December 24, 2004, 03:22:59 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Heh, funny you should suggest that, I get this:<br /><br />foxx@anubis:~/Downloads/src/linux-2.6.7$ make menuconfig<br />&nbsp; SHIPPED scripts/kconfig/zconf.tab.h<br />&nbsp; HOSTCC &nbsp;scripts/kconfig/conf.o<br />&nbsp; HOSTCC &nbsp;scripts/kconfig/mconf.o<br />&nbsp; SHIPPED scripts/kconfig/zconf.tab.c<br />&nbsp; SHIPPED scripts/kconfig/lex.zconf.c<br />&nbsp; HOSTCC &nbsp;-fPIC scripts/kconfig/zconf.tab.o<br />&nbsp; HOSTLLD -shared scripts/kconfig/libkconfig.so<br />&nbsp; HOSTLD &nbsp;scripts/kconfig/mconf<br />/usr/bin/ld: cannot find -lncurses<br />collect2: ld returned 1 exit status<br /><br />&gt;&gt; Unable to find the Ncurses libraries.<br />&gt;&gt;<br />&gt;&gt; You must install ncurses-devel in order<br />&gt;&gt; to use 'make menuconfig'<br /><br /><br />Suppose I need yet more packages. &nbsp;I know the idea with the package system is to have a &quot;base system&quot; like BSD does and if you need more to just be able to go out and get it but I must confess, this is extremely frustrating to find I don't have what I would imagine are &quot;important&quot; back-end packages.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10809">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10810"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1486<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=65%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=45.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10810.html#msg10810"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10810">
+										<a href="index.php%3Ftopic=2139.msg10810.html#msg10810">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #4 on:</b> December 24, 2004, 03:44:08 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><br />&gt;&gt; You must install ncurses-devel in order<br />&gt;&gt; to use 'make menuconfig'<br /></div><br />So install ncurses-devel .... &nbsp;Isn't it as simple as typing &quot;apt-get install ncurses-devel&quot; in Debian ?<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Suppose I need yet more packages. &nbsp;I know the idea with the package system is to have a &quot;base system&quot; like BSD does and if you need more to just be able to go out and get it but I must confess, this is extremely frustrating to find I don't have what I would imagine are &quot;important&quot; back-end packages.</div><br />It's no different than with any other distro. &nbsp;You need most/all of the &quot;devel&quot; packages to compile stuff, usually.<br /><br />FWIW, the time you spent posting about this could have been used to solve the problem, with some time left over to watch TV... &nbsp; <img src="Smileys/default/shocked.gif" alt="shocked" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10810">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://members.cox.net/danc3/icons/divineSW.gif" alt="" border="0" /></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10814"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=137.html" title="View the profile of L.Rentz">L.Rentz</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 1<br />
+								Posts: 261<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=61%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=137.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10814.html#msg10814"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10814">
+										<a href="index.php%3Ftopic=2139.msg10814.html#msg10814">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #5 on:</b> December 24, 2004, 07:46:18 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Yep, I had to install the developement packages last night as well before I did my SuSE kernel compile. &nbsp;I had the same errors. <br /><br />Lee</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10814">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10816"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10816.html#msg10816"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10816">
+										<a href="index.php%3Ftopic=2139.msg10816.html#msg10816">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #6 on:</b> December 24, 2004, 09:23:01 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: danc</div><div class="quote"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><br />&gt;&gt; You must install ncurses-devel in order<br />&gt;&gt; to use 'make menuconfig'<br /></div><br />So install ncurses-devel .... &nbsp;Isn't it as simple as typing &quot;apt-get install ncurses-devel&quot; in Debian ?</div><br /><br />Yes...assuming you know you need a package entitled &quot;ncurses-devel.&quot; I'm not quite familiar with the package names just yet and searching for packages turns out to be a bit more trial and error.<br /><br /><div class="quoteheader">Quote</div><div class="quote">FWIW, the time you spent posting about this could have been used to solve the problem, with some time left over to watch TV... &nbsp; <img src="Smileys/default/shocked.gif" alt="shocked" border="0" /></div><br /><br />The time taken to post a question was roughly 45~50 seconds. &nbsp;I've spent several hours trying to fix this problem. &nbsp;I figured the less than a minute that it took to ask a question after googling quite a bit for an answer was time well spent. &nbsp;&lt;shrugs&gt;<br /><br />After all, attempting to expand my knowledge of a different distribution of Linux is much more rewarding than &quot;watching TV.&quot; &nbsp; &nbsp;<img src="Smileys/default/shocked.gif" alt="Shocked" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10816">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10817"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10817.html#msg10817"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10817">
+										<a href="index.php%3Ftopic=2139.msg10817.html#msg10817">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #7 on:</b> December 24, 2004, 09:28:45 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: L.Rentz</div><div class="quote">Yep, I had to install the developement packages last night as well before I did my SuSE kernel compile. &nbsp;I had the same errors. <br /><br />Lee</div><br /><br />Yes, the &quot;dev&quot;-tagged packages seem to be the thing I needed. &nbsp;I was expecting &quot;dev&quot; packages to mean &quot;unstable&quot; as in packages that were in development, not packages FOR development (for instance, gcc isn't a &quot;dev&quot; package, it's just gcc). &nbsp;Very useful tidbit.<br /><br /><br />Unless I missed something in the Debian install it didn't have an option to automatically go out and get many common dev packages. &nbsp;Would've been nice as I've been totally clueless this whole time (Slackware, Mandrake, and RedHat all seemed to do it almost automatically). &nbsp;That's not a &quot;bad&quot; thing, just &quot;different.&quot; Oh well, the more you know, right?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10817">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10818"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10818.html#msg10818"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10818">
+										<a href="index.php%3Ftopic=2139.msg10818.html#msg10818">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #8 on:</b> December 24, 2004, 10:36:49 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Debian has their packages structured like this....<br /><br />Stable - The current main distribution. These are stable as stable come and are only updated beyond the release for security purposes. These packages are somewhat dated, but great for servers.<br /><br />Testing - These are packages that are newer than those in Stable, but can be somewhat dated. These are what are being considered for the next release and are considered stable enough to be tested by the large group of Debian users who are comfortable using this set of packages for their desktops.<br /><br />SID (Unstable) - Still in development... this is about as bleeding edge as Debian will get. These are the builds of the latest releases the package maintainers throw out there to the masses to test. Once they are found to be mostly stable, they go into Testing. SID can be quite hairy though.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10818">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10819"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=129.html" title="View the profile of geekforGod">geekforGod</a></b>
+							<div class="smalltext">
+								Experienced<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 105<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=129.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.geekforgod.net" title="geekforGod Consulting" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10819.html#msg10819"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10819">
+										<a href="index.php%3Ftopic=2139.msg10819.html#msg10819">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #9 on:</b> December 24, 2004, 11:01:38 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Yeah, the dev or devel means it is a package for development. It is to seperate it from the normal package that most users need. For instance, most people want trolltech's QT library so that KDE can run or whatever other QT apps you have can use it. But the normal QT library doesn't include all the things you would need if you are using QT to develop an application. So those who want to use it for development install the extra stuff they need(the devel package) and everyone else doesn't have to worry about extras they won't use installed on their system.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10819">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10820"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1486<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=65%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=45.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10820.html#msg10820"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10820">
+										<a href="index.php%3Ftopic=2139.msg10820.html#msg10820">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #10 on:</b> December 24, 2004, 11:17:19 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><div class="quoteheader">Quote from: danc</div><div class="quote"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><br />&gt;&gt; You must install ncurses-devel in order<br />&gt;&gt; to use 'make menuconfig'<br /></div><br />So install ncurses-devel .... &nbsp;Isn't it as simple as typing &quot;apt-get install ncurses-devel&quot; in Debian ?</div><br /><br />Yes...assuming you know you need a package entitled &quot;ncurses-devel.&quot; I'm not quite familiar with the package names just yet and searching for packages turns out to be a bit more trial and error.</div><br />Are you not reading the error messages, or what? &nbsp;You even quoted it above!!! &nbsp;Look! &nbsp;It says &quot;You must install ncurses-devel&quot;. &nbsp;Is that not enough of a hint as to what the package name is??? &nbsp;Hmmm....<br /><br />Looking at error messages and acting accordingly is the key to solving these kinds of problems. &nbsp;You'd have much fewer problems if you'd just think more about what you're doing...</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10820">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://members.cox.net/danc3/icons/divineSW.gif" alt="" border="0" /></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10823"></a><a name="new"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=83.html" title="View the profile of Brent">Brent</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 464<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=37%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								kaboom?<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=83.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10823.html#msg10823"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10823">
+										<a href="index.php%3Ftopic=2139.msg10823.html#msg10823">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #11 on:</b> December 24, 2004, 11:42:59 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Not to grouse, but this is one reason why most binary based distros will never appeal to me. &nbsp;<br /><br />Why distrobutions continue to structure their librarys this way elludes me. &nbsp;Being able to compile just about anything from source is a MUST for me (though I don't have the time to compile everything). &nbsp;One thing I love about slackware is it has a small set of core libs which you can use to compile just about anything. &nbsp;<br /><br />When I look at the list of .rpm or .deb -dev packages it's overwhelming. &nbsp;Most bin distros don't even include the core libs by default. &nbsp;Of course you can install them individually yourself, but there's a bloody dev extension for just about every binary package out there. &nbsp;<br /><br />Of course, I'm sure for those of you who use bin distros you've learned the in's and out's of your particular flavor of linux. &nbsp;I try to learn a new distrobution until it annoys me...which usually doesn't take too long since I have my mothers patience.<br /><br />P.S. &nbsp;Merry christmas everyone! &nbsp;I gtg ...it's 11:48 santa's on his way :^p</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10823">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;Which is worse, ignorance or apathy ?&nbsp; Who knows?&nbsp; Who cares?&quot;</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10824"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10824.html#msg10824"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10824">
+										<a href="index.php%3Ftopic=2139.msg10824.html#msg10824">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #12 on:</b> December 24, 2004, 11:54:34 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">What was the reason for needing to compile your own kernel? &nbsp; Was this talked about in another discussion thread?<br /><br />Nick</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10824">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10837"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=137.html" title="View the profile of L.Rentz">L.Rentz</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 1<br />
+								Posts: 261<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=61%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=137.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10837.html#msg10837"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10837">
+										<a href="index.php%3Ftopic=2139.msg10837.html#msg10837">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #13 on:</b> December 25, 2004, 05:08:23 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote</div><div class="quote">(Slackware, Mandrake, and RedHat all seemed to do it almost automatically). That's not a &quot;bad&quot; thing, just &quot;different.&quot;</div><br /><br />It took me a total of 2 minutes to have both qt and ncurses developement packages installed and up and running compiling my SuSE kernel after I read the error messages it gave me after running make menuconfig or make xconfig. <br /><br /><br />Lee</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10837">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10844"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2139.msg10844.html#msg10844"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10844">
+										<a href="index.php%3Ftopic=2139.msg10844.html#msg10844">How do I compile a kernel in Debian?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #14 on:</b> December 26, 2004, 04:39:16 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: danc</div><div class="quote">Are you not reading the error messages, or what? &nbsp;You even quoted it above!!! &nbsp;Look! &nbsp;It says &quot;You must install ncurses-devel&quot;. &nbsp;Is that not enough of a hint as to what the package name is??? &nbsp;Hmmm....<br /><br />Looking at error messages and acting accordingly is the key to solving these kinds of problems. &nbsp;You'd have much fewer problems if you'd just think more about what you're doing...</div><br /><br />You know, I just had an epiphany. &nbsp;You're right, I don't read error messages, I just blindly go about my business selecting default settings and letting software do whatever it wants without any sort of thought. &nbsp;I didn't spend several hours searching the package area of Debian's site, I didn't read several bits of documentation from Google, and I most certainly did not attempt to fix it on my own first. &nbsp;You're absolutely right. &nbsp; <img src="Smileys/default/rolleyes.gif" alt="rolleyes" border="0" /> <br /><br />Or, perhaps, I looked for &quot;ncurses-devel&quot; and didn't find it and, also as stated earlier and you seem so keen to note, thought that &quot;dev&quot; was not the same as &quot;needing FOR development&quot; but rather &quot;in need OF development.&quot;<br /><br /><br />Thank you for your assistance, I'm having no issues now.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10844">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> [<b>1</b>] <a class="navPages" href="index.php%3Ftopic=2139.15.html">2</a> 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=2139.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 2139;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="2139" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=2139.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 4146 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="index.php%3Ftopic=2139.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=2139.0%3Bprev_next=next.html#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0"> => Other Software</option>
+			<option value="?board=32.0"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0" selected="selected"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.446 seconds with 17 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

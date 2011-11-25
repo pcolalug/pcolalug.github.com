@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - 100% conversion</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Brent on October 01, 2004, 08:22:59 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>100% conversion</b><br />
+					Post by: <b>Brent</b> on <b>October 01, 2004, 08:22:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey all,<br /><br />For a really long time now I've had a dual win2k/slackware boot setup, with a fat32 partition as a middleman for swapping files between the two.<br /><br />However, recently I've started to notice that I spend %80 percent of my time in slackware. &nbsp;Also, I've finally tweaked things out to the point where there is nothing holding me back (thx guys for helping me find the custom ranges for my lcd). &nbsp;<br /><br />So this friday I'm scrapping win2k partition and doing a fresh slackware install. &nbsp;This is a big step since I don't have my win2k install disc anymore. &nbsp;I plan to back up everything worth saving to my middleman partition, then once the install is complete perhaps delete it a and merge with the rest of my rieserfs.<br /><br />Not sure how I'm going to go about merging it, perhaps parted? &nbsp;What do you guys recommend as far as partition setup, now that I've got 120gb to chew on?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>100% conversion</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 01, 2004, 10:09:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm a little curious myself, how DO you repartition Linux once running?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>100% conversion</b><br />
+					Post by: <b>dpeach</b> on <b>October 01, 2004, 02:22:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">I'm a little curious myself, how DO you repartition Linux once running?</div><br />Very carefully!!<br /><br />Mandrake has a tool built into the Mandrak Control Center that allows you to monkey with partitions, but there are certain actions that are destructive. For example. I have one partition that has never been formatted. I have it just sitting there so that if I need it in one application or another I can partition it for whatever. I can do whatever I want with that except make it bigger. Making it bigger means that one of my other partitions will have to shrink, and therefore destroy the data on the shrinking partition. That is what I assume anyway. It gives you a million warnings that you cannot shrink a partition.<br /><br />I know there are other partitioning tools out there, but I don't know how destructive they are or not. This sounds like a good subject for someone to write an article about in our articles section of the forums. :hint hint:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>100% conversion</b><br />
+					Post by: <b>rugmonster</b> on <b>October 01, 2004, 04:19:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">parted (http://www.gnu.org/software/parted/parted.html) is a good tool for this. It supports most linux filesystems, including reiserfs, provided you install libreiserfs. You can create, delete, check, copy and most importantly resize partitions provided the start of the partition stays the same. I've used it before and find it very stable.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

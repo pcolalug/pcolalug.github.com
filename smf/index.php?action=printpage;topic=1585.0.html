@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: dpeach on May 04, 2004, 04:45:06 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>dpeach</b> on <b>May 04, 2004, 04:45:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually it was all working until I installed TeamSpeak. I know we have had TeamSpeak issues discussed before, but those had to do with TS not allowing sound to play through on a game.<br /><br />This happened to me on my Lindows/Linspire install as well. I finally got some Mandrake 10 CDs last night and got Mandrake installed today. Sound was fine until I tried to install TS. After getting TS started the machine locked up. When rebooting, it locked up when trying to start ALSA in the boot up script. I was able to by-pass that, but now I cannot get any sound without ALSA loaded. TS seems to work, but of course, I have no sound or microphone.<br /><br />I am working with a SoundBlaster Live! 5.1.<br /><br />I have uninstalled TS, but I still cannot boot up with ALSA, it locks up every time.<br /><br />I would appreciate your thoughts.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>dpeach</b> on <b>May 05, 2004, 04:10:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Update on the situation.<br /><br />Apparently my sound card is going south (no surprise since I saw sparks flying from it one day a couple of months back).<br /><br />I pulled it and am now using the on board sound which didn't work in Mandrake 9.2 but does in 10. So I happily have sound and am using the snd-intel8x0 sound module. It is the nForce sound card built into my nForce based mobo. I have three other drivers that are available to me.<br /><br />Here is what it is doing now. I started off with TeamSpeak uninstalled. The new sound card was detected and works after I re-enabled alsa and sound to start in the boot process. After installing TeamSpeak my sound still works (this is where it crashed out before). I can start TeamSpeak, but as soon as I do, my sound disappears. When connected to a server, I get no confirmation sounds and it shows that I am connected, but no incoming or outgoing sounds from me.<br /><br />I close TeamSpeak and my sound returns. Here is the interesting twist. If I am using GAIM to IM, I have sound until TS starts. Then no sound till TS closes. I then get all of the blings and beeps from GAIM that have taken place since TS started. Like all the sound is being buffered someplace and then releases after TS closes. That seems like a really big hint as to what the problem might be.<br /><br />Also, I am not able to have TS on and get ET to boot up (not that TS does anything for me since it is not working). I have visited this thread about TS and ET (http://www.pcolalug.org/phpBB2/viewtopic.php?t=1252&amp;highlight=teamspeak) to see if I could get them going. Danc's post about modifying the /etc/rc.d/rc.local file did not do the trick.<br /><br />But TS and ET together right now is a secondary issue. I need to get TS working firts.<br /><br />I appreciate any help you might have. Let me know if you need further information.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>geekforGod</b> on <b>May 06, 2004, 10:07:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had a similar problem in Mandrake 9.1. ET would only start up once with sound and then afterwards the sound would be gone in ET only, all other sounds still worked. I started using soundwrapper to run ET and it would always work after that. I don't know exactly how all the sound modules work in linux(actually I have no clue), but my guess was that maybe ALSA was conflicting with arts(the KDE sound manager). Anyways, maybe something in here can help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2004, 11:09:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I suspected that ARTS was the problem. But arts is not running. Instead I have esd running. Isn't that the Gnome sound thingy? The reason I had suspected arts is that one of my more recent installs (Lindows/Linspire) had an arts problem that rburt3 and crowe solved by disableing it in the KDE setup.<br /><br />Why would I need esd running, which according to it's PID, started after X, KDE, Firebird and Thunderbird? That seems strange as a time for it to start. I don't recollect seeing esd started before.<br /><br />Here is the sound related output from lsmod.<br /><div class="codeheader">Code:</div><div class="code"><br />snd-seq-oss &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;31232 &nbsp;0<br />snd-seq-midi-event &nbsp; &nbsp; &nbsp;7552 &nbsp;1 snd-seq-oss<br />snd-seq &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;51024 &nbsp;4 snd-seq-oss,snd-seq-midi-event<br />snd-pcm-oss &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;51812 &nbsp;0<br />snd-mixer-oss &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;17952 &nbsp;1 snd-pcm-oss<br />snd-intel8x0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 32776 &nbsp;1<br />snd-ac97-codec &nbsp; &nbsp; &nbsp; &nbsp; 58148 &nbsp;1 snd-intel8x0<br />snd-pcm &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;93156 &nbsp;2 snd-pcm-oss,snd-intel8x0<br />snd-timer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;24484 &nbsp;2 snd-seq,snd-pcm<br />gameport &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4480 &nbsp;1 snd-intel8x0<br />snd-page-alloc &nbsp; &nbsp; &nbsp; &nbsp; 11972 &nbsp;2 snd-intel8x0,snd-pcm<br />snd-mpu401-uart &nbsp; &nbsp; &nbsp; &nbsp; 7072 &nbsp;1 snd-intel8x0<br />snd-rawmidi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;23616 &nbsp;1 snd-mpu401-uart<br />snd-seq-device &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8008 &nbsp;3 snd-seq-oss,snd-seq,snd-rawmidi<br />snd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;52484 &nbsp;14 snd-seq-oss,snd-seq-midi-event,snd-seq,snd-pcm-oss,snd-mixer-oss,<br />snd-intel8x0,snd-ac97-codec,snd-pcm,snd-timer,snd-mpu401-uart,<br />snd-rawmidi,snd-seq-device<br />soundcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9248 &nbsp;1 snd<br /></div><br />Another interesting side note. I mentioned that the sound from GAIM is &quot;buffered&quot; until TS is closed. This also happens if I close GAIM while TS is running. After closing TS, then GAIM will fire off all of it's sounds, even though GAIM has already been shut down. That is significant because... I was thinking that if GAIM sounds were buffered &nbsp;while TS is running, but then play afterwords, that the same place that was holding the GAIM sounds was getting the TS sounds. But since TS gets shut off, then it goes ahead and drops out all the sounds from that program. Indicating that if I could find out where the sounds were being &quot;piped&quot; to, then I could find my TS sounds. But that theory has been squashed now that I know that just because the program that was playing the sounds (GAIM) has been closed, the sounds still exist and play.<br /><br />If you didn't understand any of that last paragraph, it makes sense to me and probably has no bearing on the discussion. So you don't have to worry about trying to figure it out.<br /><br />Let me know what else might be helpful.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>geekforGod</b> on <b>May 06, 2004, 03:35:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">lsmod gives me the same exact(and I mean the same exact down to the last digit, other than process IDs) output as you posted. I use KDE so if it is something between GNOME and ALSA fighting I don't think I can help much. That is what I would look into though, sounds like TS is somehow hogging all the sound resources to itself, putting ALSA on hold or something and then when you close TS, ALSA gets the chance to play all the sounds it had buffered, which would make sense considering the sounds are made even after the process has quit running(gAIM) Maybe I'll get TS running and see if I have the same problem.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>crowe</b> on <b>May 06, 2004, 03:37:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Strange. &nbsp;It shouldn't be running at all if you're using KDE.<br /><br />You could try using the 'gnomecc' command if you have it and disable esd in that manner.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2004, 04:52:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't have gnomecc, but I can install it. I was going to try a reboot (which means having to install nVidia drivers again) and see if esd will still be running.<br /><br />Today I have lost all sound, but I think that has to do with trying to use xmms. I thought if I could get xmms running, then I would be able to know which server is actually the one putting out the sound as well as knowing which device it is pumping to. I never got xmms going, but afterwards I have no sound.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2004, 05:57:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">After rebooting esd was not present. I am not sure what sparked it the last time.<br /><br />I have sound this time, but didn't initially until I played around with xmms some more. The problem is that I didn't change anything and the sound just started working (I clicked around in xmms and in kmix but didnt commit anything to being saved).<br /><br />Who knows. Now to see if TS works. &nbsp;:? &nbsp;Nope! Drats.<br /><br />Ah, but now esd is in my ps -e list. Hmm. That should mean something.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alsa-SoundBlaster-Mandrake 10-Kernel 2.6.3?</b><br />
+					Post by: <b>geekforGod</b> on <b>May 06, 2004, 11:13:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, so I installed TeamSpeak. I turned on XMMS and tried to run TS. TS would not run until I closed XMMS. So, run XMMS again and now run TS with soundwrapper. TS now starts up while XMMS is running and I can connect to the beta server, but no sound to be heard. Close XMMS and I can then hear the sounds from TS. They didn't seem to be buffered as you had described though. Oh, and once I close XMMS and connect to a server in TS, if I try to play a song in XMMS it tells me that it can't although it claims that the device is not being used or busy. I don't know if any of this helps. I am tired, so I'll play with it in the morning.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

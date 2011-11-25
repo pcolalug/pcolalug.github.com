@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Backup script</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: danc on August 01, 2003, 03:52:17 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Backup script</b><br />
+					Post by: <b>danc</b> on <b>August 01, 2003, 03:52:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br />I've been experimenting with the wonderful world of shell scripting, and wanted to share my first real useable script. &nbsp;It's for making a backup of my home directory. &nbsp;It's useful to me, and could be for you with some minor tweaks of the variables... &nbsp;Constructive comments welcomed.<br /><br />Here it is:<br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />#<br /># This is a script to back up my home directory &#40;/home/danc&#41;.<br /># It will first perform a tar/gzip of /home/danc, and then write it to a<br /># storage location &#40;/mnt/win_d/backups&#41; and to a CDRW.<br /># The backup filename will be today's date.<br /># Written by Daniel Clough, 2003-08-01.<br />&nbsp;<br /># Define some variables<br />HOMEDIR=/home<br />BACKUPDIR=/mnt/win_d/backups<br />FILENAME=$&#40;date +%Y%m%d&#41;<br />&nbsp;<br /># Start<br />clear<br />echo<br />echo &quot;Starting backup script for $HOME, on $&#40;date +%F&#41;&quot;<br />echo &quot;Make sure the CDRW is inserted &#40;it will be erased first!&#41;&quot;<br />read -p &quot;and then press Return to begin...&quot;<br />cd $HOMEDIR<br /># Tar up the home directory<br />echo &quot;Creating tarball of $HOME...&quot;<br />sudo tar -czf $FILENAME.tar.gz $HOME<br />sleep 3<br /># Copy tarball to vfat storage volume<br />echo &quot;Copying tarball to $BACKUPDIR...&quot;<br />cp $FILENAME.tar.gz $BACKUPDIR<br />sleep 3<br /># Make filesystem to put on CDRW<br />echo &quot;Making iso filesystem to write to CDRW...&quot;<br />sudo mkisofs -l -r -allow-multidot -o $FILENAME.iso $FILENAME.tar.gz<br />sleep 3<br /># Write the tarball to the CDRW<br />echo &quot;Writing backup to CDRW...&quot;<br />cdrecord -v blank=fast speed=4 dev=0,0,0 $FILENAME.iso<br />sleep 3<br />echo &quot;CDRW writing complete!&quot;<br /># Clean up the leftovers<br />sudo rm $FILENAME.tar.gz<br />sudo rm $FILENAME.iso<br />cd $HOME<br />echo &quot;Backup process complete!&quot;<br />exit 0<br /></div></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

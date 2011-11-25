@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Monitor question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by:  on August 18, 2003, 10:26:32 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b></b> on <b>August 18, 2003, 10:26:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I failed to check to see if the monitor I was buying was supported before I bought it &nbsp;:oops: and now I am getting a fatal error in Mandrake 9.1.<br /><br />The monitor is ViewSonic A70f+ &nbsp; &nbsp; &nbsp; &nbsp;<br />I have tried configuring it in generic mode on many different settings and no luck.<br /><br />When I type <b>xinit</b> I get <br />(**)SVGA 24bpp not supported for this chipset<br /><br />*** A configured device found, but display modes could not be resolved.***<br /><br />Fatal server error:<br />no screens found<br /><br />XIO: fatal IO error 104 (Connection reset by peer) on X server &quot;:0.0&quot; after 0 requests (- known processed) with 0 events remaining.<br /><br /><br /><br />Monitor is ViewSonic A70f+ <br />Moboard ASUS A7V8X-X <br />CPU AMD Baton 2400<br />Chipset Northbridge: VIA KTA400<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Southbridge: VIA VT8235<br /><br />Any help would be great.<br /><br />Thank you,<br />Stu</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>dpeach</b> on <b>August 18, 2003, 10:44:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am by no means an expert in the video card field (is there anything I am an expert at?) But here is a thought. Are you sure it is the monitor? I assume that this setup worked before with another monitor? It seems like it is more of a video card issue.<br /><div class="quoteheader">Quote from: phr0gman</div><div class="quote"><br />When I type xinit I get<br />(**)SVGA 24bpp not supported for this chipset<br /><br />*** A configured device found, but display modes could not be resolved.*** </div><br />The first part of that makes me suspect video card. The second half makes me suspect monitor. If you have not already done so, try plugging in a different monitor and set up the system with that monitor and see how it goes.<br /><br />Again, I am assuming you have already done this, but it never hurts to point it out.<br /><br />Oh, I am an expert at eating pizza. :lol:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b></b> on <b>August 19, 2003, 07:08:44 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You are right about the video card. I was hung up on the monitor not working and forgot about my new video card eGeforce 4 ti 4200 8x &nbsp;which is also not supported. <br /><br />That is what happens when you buy before research.<br /><br />Your post made me realize that it is not just a monitor problem.<br /><br />I am new to Linux what is the course of action when your hardware is not supported?<br /><br /><br />CPU is Barton 2400 not Baton &nbsp;:oops: <br /><br />Stu</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>steve</b> on <b>August 19, 2003, 07:25:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: phr0gman</div><div class="quote">You are right about the video card. I was hung up on the monitor not working and forgot about my new video card eGeforce 4 ti 4200 8x &nbsp;which is also not supported. </div><br /><br />Go to Nvidia's web site. They have drivers for Linux and they work quite well.<br /><br />Make sure to follow their directions, though. Read the doumentation first. It's fairly easy but if you don't install the files in the correct order and make the necessary changes to your X config file then it won't work.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b></b> on <b>August 19, 2003, 07:53:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am going there now.<br /><br />Thanks<br /><br />Stu</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>danc</b> on <b>August 19, 2003, 08:05:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Stu,<br /><br />If you don't get things working, post the contents of your /etc/X11/XF86Config-4 file here in a message, and we can tell you how to adjust it.<br /><br />I have the same video card, and it works great with the Nvidia drivers loaded. &nbsp;The monitor is not an issue, although you do need to look in the owner's manual to find out the horizontal and vertical sync frequencies. &nbsp;Very important to have that right as you can damage a monitor by using the wrong numbers in your XF86Config-4 file...<br /><br />I'm home all day today, send me a PM (Private Message) with your phone number and I could give you a call.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>steve</b> on <b>August 19, 2003, 09:45:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">Stu,<br /><br />If you don't get things working, post the contents of your /etc/X11/XF86Config-4 file here in a message, and we can tell you how to adjust it.<br /><br />I have the same video card, and it works great with the Nvidia drivers loaded. &nbsp;The monitor is not an issue, although you do need to look in the owner's manual to find out the horizontal and vertical sync frequencies. &nbsp;Very important to have that right as you can damage a monitor by using the wrong numbers in your XF86Config-4 file...<br /><br />I'm home all day today, if you'd like to give me a call. <br /><br />Dan</div><br /><br />Umm, you might want to PM Stu with your phone number as this is viewable to the whole internet.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>imnes</b> on <b>August 19, 2003, 09:55:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah you might wanna pull your number off, I think our entire forum collection is crawled by google so if you don't remove it pretty quick it will get caught forever in google's cache feature :(</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>danc</b> on <b>August 19, 2003, 09:57:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Steve and imnes, yup, thanks for reminding me not to be stupid... &nbsp;I've edited my message above.<br /><br />Thanks. &nbsp; :oops: <br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b></b> on <b>August 19, 2003, 08:17:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">When I burn the Nividia driver on to CD do I need to do it just like a distro .iso?<br /><br />Stu</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b></b> on <b>August 19, 2003, 08:37:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is my first experience with command line so forgive me if these are crazy questions.<br /><br />I boot Mandrake 9.1 it comes up command line.<br />I login as root and type<br />sh NVIDIA-Linux-x86-1.0-4496-pkg2.run<br />and get : No such file or directory<br /><br />Then I type: <br /><i>mount NVIDIA-Linux-x86-1.0-4496-pkg2.run /dev/hdc /mnt/cdrom</i><br /><br />after this I get instructions on usage: <br /><br />I am in the dark here any help would be great<br /><br />Stu</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>dpeach</b> on <b>August 19, 2003, 09:04:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have not read NVidia's site, but I would suspect that you need to start your line with:<br />./ <br /><br />Therefore, your command to start the shell script would be (from the directory that the script is in):<br /><br />./ sh NIVIDIA-Linux-x86-1.0-4496-pkg2.run <br /><br />That forces it to run the script by that name from the current directory. Very nice trick to know as you may have to do this from time to time. I always run scripts with the ./ and that seems to take care of it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b></b> on <b>August 19, 2003, 09:07:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I will give it a try thanks<br /><br />Stu</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>video card</b><br />
+					Post by: <b></b> on <b>August 19, 2003, 09:12:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I get -bash: ./: is a directory<br /><br />I am trying to run this from a cd. Sorry, if this was information you needed.<br /><br />&nbsp;:? Stu</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>crowe</b> on <b>August 20, 2003, 01:44:58 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not sure if I get what it is you're trying to do here..<br /><br />But one way to execute the nvidia installer script, is to do the following:<br /><br /><div class="codeheader">Code:</div><div class="code">chmod u+x NIVIDIA-Linux-x86-1.0-4496-pkg2.run</div><br /><br />The above step sets the executable bit on the file. Afterwards, do a:<br /><br /><div class="codeheader">Code:</div><div class="code">./NIVIDIA-Linux-x86-1.0-4496-pkg2.run</div><br /><br />with no spaces in between the dot and the slash and the filename.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvidia Installer</b><br />
+					Post by: <b></b> on <b>August 20, 2003, 06:05:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I recently patched my Mandrake 9.1 kernel for Win4Lin. I downloaded the latest nvidia installer to my /tmp directory according to the installation instructions and after rebooting to run level 3, that is without starting X windows I logged in as root and cd /tmp. Then I ran this command:<br />&quot;sh NVIDIA-Linux-x86-1.0-4363.run&quot;<br />which is the name of the version of the installer I downloaded. I then followed the on screen instructions and it worked fine for me.<br /><br />Here is an excerpt from the readme.txt installation file.<br />&quot;After you have downloaded NVIDIA-Linux-x86-1.0-4363.run,<br />begin installation by exiting X, cd'ing into the directory containing<br />the downloaded file, and run:<br /><br />sh NVIDIA-Linux-x86-1.0-4363.run &nbsp; &nbsp;<br /><br />The .run file is a self-extracting archive. &nbsp;When the .run file is<br />executed, it extracts the contents of the archive, and runs the contained<br />`nvidia-installer` utility, which will walk you through installation of<br />the NVIDIA driver.&quot;<br /><br />Hope this helps</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>steve</b> on <b>August 20, 2003, 08:18:25 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If the &quot;sh NVIDIA.....&quot; doesn't work then try &quot;sh ./NVIDIA....&quot;<br /><br /><br />The &quot;./&quot; tells sh to look in the current directory for the file to act on. <br /><br />One thing to remember with Linux. It is very path strict. Unlike DOS it won't run/reference a file in your current directory unless the directory is in the path environment variable or you reference the file using &quot;./&quot; which refers to the current dirctory.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Viewsonic Monitor</b><br />
+					Post by: <b>jdennis</b> on <b>August 20, 2003, 12:28:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey phr0gman, <br />I am sure that it isn't your monitor because I am using the exact same one. It works perfect with RH 8.0. But I am using a Voodoo5 graphics card that works wonderfully with Linux. Too bad they had to go out of business. <br />Later <br />jdennis</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Monitor question</b><br />
+					Post by: <b>danc</b> on <b>August 20, 2003, 03:42:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just spent an hour or so on the phone with Stu, and we couldn't get his video working...<br /><br />Loaded the Nvidia driver, and it completed normally. &nbsp;Edited XF86Config-4 to change driver to &quot;nvidia&quot;. &nbsp;Verified /etc/inittab was defaulted for runlevel 5. &nbsp;On reboot, still comes up to CLI only. &nbsp;Using &quot;startx&quot; results in errors from X saying &quot;no screens found&quot;. &nbsp;Went through XF86Config-4 again carefully and found no problems. &nbsp;He was using a USB mouse which I thought might cause problems, so we changed him over to a PS2 style mouse, and edited XF86Config-4 appropriately. &nbsp;Still getting the &quot;no screens&quot; error...<br /><br />Tried &quot;lsmod&quot; and noticed that the nvidia module wasn't loading. &nbsp;Did a &quot;insmod nvidia&quot; and it appeared to load normally. &nbsp;Still the same results when trying to start X however. &nbsp;There is an &quot;alias /dev/nvidia* nvidia&quot; line in his /etc/modules.conf.<br /><br />I'm stumped and don't know what else to suggest to Stu. &nbsp;Told him that we could most probably get him going at the LAN Party on Saturday, and he'll bring that machine. &nbsp;So we'll have something to do there...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>My XF86Config-4 file</b><br />
+					Post by: <b>steve</b> on <b>August 20, 2003, 08:47:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's my XF86Config-4 file. And yes I'm running a USB mouse.<br /><br /><div class="codeheader">Code:</div><div class="code"># File generated by XFdrake.<br /><br /># **********************************************************************<br /># Refer to the XF86Config man page for details about the format of<br /># this file.<br /># **********************************************************************<br /><br />Section &quot;Files&quot;<br />&nbsp; &nbsp; # Multiple FontPath entries are allowed &#40;they are concatenated together&#41;<br />&nbsp; &nbsp; # By default, Mandrake 6.0 and later now use a font server independent of<br />&nbsp; &nbsp; # the X server to render fonts.<br />&nbsp; &nbsp; FontPath &quot;unix/&#58;-1&quot;<br />EndSection<br /><br />Section &quot;ServerFlags&quot;<br />&nbsp; &nbsp; #DontZap # disable &lt;Crtl&gt;&lt;Alt&gt;&lt;BS&gt; &#40;server abort&#41;<br />&nbsp; &nbsp; #DontZoom # disable &lt;Crtl&gt;&lt;Alt&gt;&lt;KP_+&gt;/&lt;KP_-&gt; &#40;resolution switching&#41;<br />&nbsp; &nbsp; AllowMouseOpenFail # allows the server to start up even if the mouse doesn't work<br />EndSection<br /><br />Section &quot;Module&quot;<br />&nbsp; &nbsp; Load &quot;dbe&quot; # Double-Buffering Extension<br />&nbsp; &nbsp; Load &quot;v4l&quot; # Video for Linux<br />&nbsp; &nbsp; Load &quot;extmod&quot;<br />&nbsp; &nbsp; Load &quot;type1&quot;<br />&nbsp; &nbsp; Load &quot;freetype&quot;<br />&nbsp; &nbsp; Load &quot;glx&quot; # 3D layer<br />EndSection<br /><br />Section &quot;InputDevice&quot;<br />&nbsp; &nbsp; Identifier &quot;Keyboard1&quot;<br />&nbsp; &nbsp; Driver &quot;Keyboard&quot;<br />&nbsp; &nbsp; Option &quot;XkbModel&quot; &quot;pc105&quot;<br />&nbsp; &nbsp; Option &quot;XkbLayout&quot; &quot;us&quot;<br />&nbsp; &nbsp; Option &quot;XkbCompat&quot; &quot;&quot;<br />&nbsp; &nbsp; Option &quot;XkbOptions&quot; &quot;&quot;<br />EndSection<br /><br />Section &quot;InputDevice&quot;<br />&nbsp; &nbsp; Identifier &quot;Mouse1&quot;<br />&nbsp; &nbsp; Driver &quot;mouse&quot;<br />&nbsp; &nbsp; Option &quot;Protocol&quot; &quot;IMPS/2&quot;<br />&nbsp; &nbsp; Option &quot;Device&quot; &quot;/dev/usbmouse&quot;<br />&nbsp; &nbsp; Option &quot;ZAxisMapping&quot; &quot;4 5&quot;<br />EndSection<br /><br />Section &quot;Monitor&quot;<br />&nbsp; &nbsp; Identifier &quot;monitor1&quot;<br />&nbsp; &nbsp; VendorName &quot;Plug'n Play&quot;<br />&nbsp; &nbsp; ModelName &quot;Royal Information Company TRL/RIC DH-1764M/DH-1764&quot;<br />&nbsp; &nbsp; HorizSync 29.0-70.0<br />&nbsp; &nbsp; VertRefresh 47.0-120.0<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; # Sony Vaio C1&#40;X,XS,VE,VN&#41;?<br />&nbsp; &nbsp; # 1024x480 @ 85.6 Hz, 48 kHz hsync<br />&nbsp; &nbsp; ModeLine &quot;1024x480&quot; &nbsp; &nbsp;65.00 1024 1032 1176 1344 &nbsp; 480 &nbsp;488 &nbsp;494 &nbsp;563 -hsync -vsync<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; # TV fullscreen mode or DVD fullscreen output.<br />&nbsp; &nbsp; # 768x576 @ 79 Hz, 50 kHz hsync<br />&nbsp; &nbsp; ModeLine &quot;768x576&quot; &nbsp; &nbsp; 50.00 &nbsp;768 &nbsp;832 &nbsp;846 1000 &nbsp; 576 &nbsp;590 &nbsp;595 &nbsp;630<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; # 768x576 @ 100 Hz, 61.6 kHz hsync<br />&nbsp; &nbsp; ModeLine &quot;768x576&quot; &nbsp; &nbsp; 63.07 &nbsp;768 &nbsp;800 &nbsp;960 1024 &nbsp; 576 &nbsp;578 &nbsp;590 &nbsp;616<br />EndSection<br /><br />Section &quot;Device&quot;<br />&nbsp; &nbsp; Identifier &quot;device1&quot;<br />&nbsp; &nbsp; VendorName &quot;nVidia Corporation&quot;<br />&nbsp; &nbsp; BoardName &quot;NVIDIA GeForce2 DDR &#40;generic&#41;&quot;<br />&nbsp; &nbsp; Driver &quot;nvidia&quot;<br />&nbsp; &nbsp; Option &quot;DPMS&quot;<br />EndSection<br /><br />Section &quot;Screen&quot;<br />&nbsp; &nbsp; Identifier &quot;screen1&quot;<br />&nbsp; &nbsp; Device &quot;device1&quot;<br />&nbsp; &nbsp; Monitor &quot;monitor1&quot;<br />&nbsp; &nbsp; DefaultColorDepth 24<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; Subsection &quot;Display&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; Depth 8<br />&nbsp; &nbsp; &nbsp; &nbsp; Modes &quot;1024x768&quot; &quot;800x600&quot; &quot;640x480&quot;<br />&nbsp; &nbsp; EndSubsection<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; Subsection &quot;Display&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; Depth 15<br />&nbsp; &nbsp; &nbsp; &nbsp; Modes &quot;1024x768&quot; &quot;800x600&quot; &quot;640x480&quot;<br />&nbsp; &nbsp; EndSubsection<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; Subsection &quot;Display&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; Depth 16<br />&nbsp; &nbsp; &nbsp; &nbsp; Modes &quot;1024x768&quot; &quot;800x600&quot; &quot;640x480&quot;<br />&nbsp; &nbsp; EndSubsection<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; Subsection &quot;Display&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; Depth 24<br />&nbsp; &nbsp; &nbsp; &nbsp; Modes &quot;1024x768&quot; &quot;800x600&quot; &quot;640x480&quot;<br />&nbsp; &nbsp; EndSubsection<br />EndSection<br /><br />Section &quot;ServerLayout&quot;<br />&nbsp; &nbsp; Identifier &quot;layout1&quot;<br />&nbsp; &nbsp; InputDevice &quot;Keyboard1&quot; &quot;CoreKeyboard&quot;<br />&nbsp; &nbsp; InputDevice &quot;Mouse1&quot; &quot;CorePointer&quot;<br />&nbsp; &nbsp; Screen &quot;screen1&quot;<br />EndSection</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>My Modules.conf</b><br />
+					Post by: <b>steve</b> on <b>August 20, 2003, 08:49:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's my modules.conf file. Hope this helps....<br /><div class="codeheader">Code:</div><div class="code">probeall scsi_hostadapter ide-scsi<br />probeall usb-interface usb-ohci ehci-hcd<br />alias char-major-195 nvidia<br />alias usb0 usbdnet<br />above snd-ens1371 snd-pcm-oss<br />alias eth1 nvnet<br />alias sound-slot-1 nvaudio<br />alias sound-slot-0 i810_audio</div><br /><br />Steve</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

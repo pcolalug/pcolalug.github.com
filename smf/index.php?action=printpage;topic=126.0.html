@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Web interface to our Library</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Library => Topic started by: rburt3 on August 21, 2002, 07:28:05 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>rburt3</b> on <b>August 21, 2002, 07:28:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've talked it &nbsp;over with David and Steve and I propose to create a mod for phpBB that will allow us to interact with our &quot;library&quot; via these forums. &nbsp;So far the specs are as follows:<br /><br />phpBBLibrary_Mod would be a mod to phpBB, implemented as a new forum type,Library, and some associated additions to the admin console and user<br />priveleges.<br /><br />1. use amazon api to tie isbn to image, title, description, link to amazon<br />2. users allowed to use library can check out materials that are available,<br />get on a waiting list if they are not, and see what they have and when its<br />due back. Can optionally receive reminders when something is due. Users with overdue materials cannot check out additional materials.<br />3. Admins can configure who uses the library, how long things are kept, how<br />and how often reminders are sent to users about returning/overdue materials.<br />4. Librarian (Library moderator) will confirm that each trasaction (check in<br />and out) actually took place before committing to the library.<br />5. Librarian can see at a glance what is due back and when and by who. Can optionally recieve periodic reminders when due dates are close.<br />6. Catalog can be broken into categories to ease browsing/searching. &nbsp;Books may, however, appear in multiple catagories.<br /><br />This thread is for you to post comments, sugguestions, and feature requests, as well as chime in if you want to lend a hand. &nbsp;I tentatively plan to have this thread up for a week or so, after which time we'll have a feature freeze and start designing and coding the monster.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>dpeach</b> on <b>August 21, 2002, 11:26:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">1. use amazon api to tie isbn to image, title, description, link to amazon </div><br />Can we make this Books-A-Million's site? I don't know if they have the code availabe to tie into them like Amazon does, but they are one of our &quot;sponsors.&quot;<br /><br />Just a thought.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>rburt3</b> on <b>August 22, 2002, 08:41:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'll have to check and see if they have something similar, but I don't believe that they do. &nbsp;BAM is still a storefront kind of thing, where Amazon has the motivation and need to build such a thing.<br /><br />Here (http://associates.amazon.com/exec/panama/associates/ntg/browse/-/1067662/ref=gw_hp_ls_1_3/) is a bit about what Amazon's Web Services API does, if anyone is interested.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Last Chance!</b><br />
+					Post by: <b>rburt3</b> on <b>August 29, 2002, 06:22:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Last &nbsp;chance for input on the phpBB Library project! &nbsp;I plan to close this off tonight and start development this weekend, so now's the time to post your sugguestions.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>rburt3</b> on <b>August 29, 2002, 05:21:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alrighty folks. &nbsp;The features are o-fficially frozen. &nbsp;I'll get together a more formal spec over the holidays and post it here.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Website</b><br />
+					Post by: <b>rburt3</b> on <b>September 03, 2002, 10:15:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You can now go here (http://home.mchsi.com/~rburt3) to view the progress of this project. &nbsp;There isn't much there yet, and the promised spec is still not up, as my &quot;vacation&quot; turned out to be a working one. &nbsp;As always, help is apprectated. &nbsp;If you want something to do in your spare time :wink:, pm me.<br /><br />P.S. I hope no one minds the use of the logo.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Back on track</b><br />
+					Post by: <b>rburt3</b> on <b>September 16, 2002, 06:56:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all, I'm sorry that I've been a bit scarce, lately. &nbsp;Real Life(tm) had gotten the better of me the last couple of weeks. &nbsp;Things have calmed down, and I am fresh from a weekend off playing the (Linux native) Unreal Tournament 2003 Demo. &nbsp;I plan to update the library status page tonight (see previous post). &nbsp;Again, anyone who whould like to contribute, feel free. &nbsp;I can see about setting up a CVS and test server this weekend.<br /><br />Update: Cable modem's on the fritz again. &nbsp;I will try and update the site again tonight.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>February 05, 2003, 11:29:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've gotten my server working and phpbb2 installed and functional. &nbsp;I'll be starting work on this project this weekend and I'll try to incorporate all the ideas mentioned above. &nbsp;If anyone else has comments to share, feel free to post them.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>February 24, 2003, 12:41:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Update:<br /><br />Okay folks, there's basically no documentation on coding for PHPBB. &nbsp;It involves digging through source and samples and just figuring stuff out. &nbsp;So this isn't gonna be so simple, but the api looks very straightforward so hopefully it's not too much of a nightmare.<br /><br />The one thing I don't like is adding modifications to phpbb sites requires the site admin manually editing PHP scripts to incorporate the new features. &nbsp;That's an awful way for you to have to do it but I guess it works.<br /><br />I got most of the planning for the app done and hopefully can start actually coding this week (if I don't get swamped with <i>other</i> work.) <br /><br />I'll keep you updated on here.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>steve</b> on <b>February 24, 2003, 01:26:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not to throw a wrench into this but do you think it would be easier to code this outside of PHPbb and just put a link to it from the main web page and inside the forum? Rather than hacking PHPbb it could be easier to do the library as a stand alone interface with a SQL backend.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>February 24, 2003, 01:54:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That would be so much easier. &nbsp;The only thing is people would basically have to register for that in addition to the phpbb forums. &nbsp;Not too big a deal but kind of annoying. <br /><br />Might end up going that route but give me some time to play around with the phpbb2 side of things and see if I can work it out.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>rugmonster</b> on <b>February 24, 2003, 05:39:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was digging in the old posts. Why not just use the same table in the phpBB db for users as you do the one for the library system?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>February 25, 2003, 01:48:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I can do that but I probably need to go through phpbb's database abstraction layer. &nbsp;It looks easy enough, just because I don't know if the version of sql I use and whatever the pcolalug server uses is the same. &nbsp;I was using PostGreSQL but I think slackware came with MySQL3 so that's probably what I'll be using. &nbsp;<br /><br />Another problem with coding straight from their database is if you ever update the forum software and they've changed the database layout (which they warn that they do from time to time) then it will break all of my code.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 04, 2003, 02:55:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What ver of PHP does this server run? &nbsp;3 or 4? &nbsp;Also what database do we use, postgres, mysql?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>steve</b> on <b>March 04, 2003, 03:23:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">We use MySQL 3.23.52, PHP 4.2.3, Apache 1.3.26<br /><br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 04, 2003, 11:53:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've got some initial scripts done and I need to test them out on the server, I need an account with ftp and shell access. &nbsp;I don't have to be under the same user that the phpbb2 is under, I'm writing this thing completely seperate so I don't need access to it's files or database. &nbsp;<br /><br />If someone can setup an accound and email or PM the login info to me I'll get the pages up and test asap. &nbsp;So far I've got most of the database done, and scripts for login, logout, registering users, and changing forgotten passwords.<br /><br />Hopefully I will have this completely done in a week or so. &nbsp;I'll keep you posted.<br /><br />Nick<br />imnes@go.com</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 06, 2003, 04:03:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The library is coming along. &nbsp;I'm keeping it completely seperate from the PHPBB2 code for several reasons but most of all it just makes life easier.<br /><br />Working on it on my own server right now it won't get posted here until it's done. &nbsp;If anyone's curious here's an update on what's happening.<br /><br />I estimate it's about half way complete, maybe a little less. &nbsp;The login system is fully functional, you can create accounts, fix lost passwords, update profiles (not complete yet), add books and reviews.<br /><br />It's almost completely plain text at the moment except for the logo. &nbsp;Might make all the buttons graphical but that won't come until everything else is finished. <br /><br />You can have a look if you want: http://www.homeweb.org/~imnes/library/<br /><br />If the search/browse books was functional you could find this page - it's a detailed view of a book in the library: http://www.homeweb.org/~imnes/library/bookview.php?isbn=0596000081<br /><br />Nick<br />imnes@go.com</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 11, 2003, 10:27:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I didn't think about it but I should have written the library applet in escapade just as a learning experience. &nbsp;Oh well, maybe I'll port it once it's complete. &nbsp;Need a few more hours to finish it up but I'm extremely busy right now - I'm hoping to have it all done and online by our march meeting though. &nbsp;I'll need you guys to thoroughly test it out when it's ready. &nbsp;I'll let you know.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>dpeach</b> on <b>March 12, 2003, 03:12:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I went to your site and had a look at it today. It looks great. I think it will be a great addition to the group and have people use the books more often.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 12, 2003, 03:16:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It's done, unless I find any problems with it. &nbsp;I'm gonna have some friends test it out today and then I'll upload it to the site once I get an account setup.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>rugmonster</b> on <b>March 12, 2003, 07:21:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah...it seems to work for me. I registered and browsed. I wish I could add some books for you. :P<br /><br />Great job!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 13, 2003, 01:05:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay for those of you who viewed the library before (and remember what it looked like), I've added capability to change themes / templates on it. &nbsp;I've got a blue look going right now, have a look let me know what you think, and let me know if your browser doesn't render it correctly.<br /><br />http://www.homeweb.org/~imnes/library/<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 13, 2003, 08:18:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay folks the library is copied to the pcolalug server but isn't completely installed yet, once it's setup and I have the basic settings straightened out I'll let you guys know so you can start adding your books to it. &nbsp;<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 13, 2003, 08:28:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't know how straightforward the library is to use. &nbsp;I can include a tutorial / more instruction if you think it's necessary. &nbsp;Those of you who will be adding books to the library, please login to my local copy of it and play around, see if you can figure everything out. &nbsp;Try adding some books, see if it makes sense. &nbsp;Did you understand how to create new categories? &nbsp;<br /><br />Give it a run and let me know your thoughts / experiences / problems here.<br /><br />You can access it at www.homeweb.org/~imnes/library/<br /><br />Good luck,<br />Nick<br /><br />BTW: I am using a new theme for the site which is a little dark. &nbsp;If you guys are having trouble reading it and want me to switch back to the old plain look let me know as well.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 13, 2003, 11:36:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay this is a linux group, so in that tradition here's the source. &nbsp;Feel free to install it on your server, modify it, make it better. &nbsp;I don't know XML/SOAP but it would be nice to automate the book entry process with that (keep in mind though that some of the books aren't cataloged by amazon so don't rely 100% on that if you try).<br /><br />Keep in mind that I only spent a few hours a week in my spare time working on this so it's not the cleanest / greatest code. &nbsp;Also this is only the second website project I've worked on (and the first one to use PHP + SQL). &nbsp;But it should be easy enough to follow. &nbsp;There's a docs directory included which will help you get started.<br /><br />This was written in PHP4 on apache with MySQL as the database.<br /><br />Enjoy<br /><br />http://www.homeweb.org/~imnes/library/src/<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 14, 2003, 12:02:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Oh - on another note. &nbsp;I registered the project with Source Forge. &nbsp;Hopefully the site will be activated next week sometime. &nbsp;Maybe some people will pickup the project and add the functionality that I didn't have the time / knowledge to do. &nbsp;Honestly in it's current state I think it's a lot better than the other projects I've seen available. &nbsp;(Okay I didn't look that hard but what I found was pretty bad).<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>dpeach</b> on <b>March 14, 2003, 09:43:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think it looks great Nick. I have not played with it enough to see if there is something I would like to see added. But I very much dislike the dark theme. Can you make this &quot;themeable&quot;? Or would someone else like to jump in and work on that. <br /><br />I guess I am just a vanilla kind of person, I like things very plain.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 14, 2003, 10:52:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually it is themeable. I changed the default back to plain-vanilla and users can select the dark-blue if they want. &nbsp;Basically create your account, login, click on &quot;My Profile&quot;, and you can select between the installed themes there. &nbsp;(Only 2 right now, original, and blue).<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 14, 2003, 11:59:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If anyone wants the source code / screenshots it is now available at<br />http://pluglib.sourceforge.net<br /><br />And our local version just went online at<br />http://www.pcolalug.org/library/<br /><br />If you have any problems or suggestions please post them here.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 15, 2003, 02:19:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was going through a textbook on developing internet applications. &nbsp;One of the first exercises is to build an app that given an ISBN will query multiple sites for detailed information about the book as well as current pricing, whether it's in stock or not, and present the information in a table. &nbsp;Here's what I came up with. &nbsp;It was actually easier than I thought it would be, and it wouldn't be terribly difficult to add parts of this to the library so that it can file new books itself without the user having to input all the data. &nbsp;Let me know if someone wants to tackle hacking this feature into it, otherwise I'll work on it when I get a chance. &nbsp;A little demo and the source code is at:<br /><br />http://www.homeweb.org/~imnes/basics/books/<br /><br />Nick<br /><br />UPDATE: I already added this, the msg about it is on the next page of this thread.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 15, 2003, 02:51:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I went ahead and added the capability to the library. &nbsp;Now when you input an ISBN number of a new book, it attempts to pull in all the information it needs (except for the Category since that's specific to our library) from the Books-A-Million server. &nbsp;If the book isn't cataloged by them or doesn't have an ISBN you will still have to enter all the information manually.<br /><br />It will pull in the info from books a million and give you an opportunity to change anything you like before adding the book. &nbsp;Otherwise it still operates the same as before. &nbsp;Give it a try, let me know if you encounter difficulties. &nbsp;<br /><br />Ultimately this should be changed over to the XML API that Amazon.com provides. &nbsp;Since this relies on the way information is presented on the BAM pages, if they change the wording much this feature would break. &nbsp;I may tackle the amazon stuff later when I know something about XML. &nbsp;If you are an XML guru feel free to take on this project yourself.<br /><br />BTW: Those of you who would like to &nbsp;test drive it without worrying about screwing up the lug's version, you can play around on my local dev copy at<br />http://www.homeweb.org/~imnes/library/<br />Feel free to make an account, add new categories and books. &nbsp;Fill it up with whatever you want I can clear the database out easily if it gets messed up (on MY copy not the LUG's copy!!!) &nbsp;Just a hint - I have debugging features turned ON on my server so you may see error messages and warnings even though the site works fine, please ignore them :)<br /><br /><br /><br />Also - Steve I've made some changes to the software directly on your server and I'm not sure how that copy differ's from mine now. &nbsp;Please tar.gz a copy of the entire /library directory and put it somewhere I can download it so that I'll have my versions in sync again! &nbsp;Basicall from a console, if the library is in ./library you would do something like<br /><br />tar -cf library-20030315.tar ./library/<br /><br />and then<br /><br />gzip library-20030315.tar<br /><br />And give me the resulting library-20030315.tar.gz<br /><br />Thanks!<br /><br /><br />As far as what's next to work on - the search and browse pages should be enhanced. &nbsp;The search feature should be smarter and able to search for multiple terms in any order. &nbsp;The browse & search pages should be broken down and made to display only 20 results per page, with Prev / Next page buttons. &nbsp;This isn't gonna be needed for a while, at least not until we have more than say 50 books in this thing.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 16, 2003, 12:21:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey Newt, <br /><br />While I was on the site tonight making some corrections in the code I went ahead and attatched the stylesheet to the standard theme. &nbsp;You may need to tweak it a little more to your liking but it seems to work fine.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 16, 2003, 12:55:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay people as you're using the library keep an eye out for this oddity. &nbsp;Quote marks &quot; and apostraphes ' showing up with a backslash in front of them \&quot; or \'. &nbsp;This is a side-effect of PHP + MySQL. &nbsp;I have to use a function called addslashes when inserting information into the database, but I forgot to use the corresponding stripslashes function when displaying that data on a web page. &nbsp;I didn't catch this when I was testing but saw it once some other members posted books. &nbsp;I've made the changes on a few pages but let me know the URL of the pages that still need to be fixed as you notice them, just post the URL to here please.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b></b> on <b>March 16, 2003, 11:51:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The stylesheet looks good to me!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 20, 2003, 02:33:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I noticed no new users have been added to the library, you guys aren't waiting on me for something are you?<br /><br />rburt I'll PM you the admin login info so you can create your own account and grant yourself admin rights since I assume you'll be handling accounts for the rest of the users.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>steve</b> on <b>March 20, 2003, 04:37:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Who ended up with the sign-up sheet last meeting? They should be adding the acounts.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web interface to our Library</b><br />
+					Post by: <b>imnes</b> on <b>March 20, 2003, 06:58:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think rburt ended up with the signup sheet.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

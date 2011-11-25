@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - /usr/local/bin versus /usr/bin</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on October 07, 2004, 09:24:58 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>/usr/local/bin versus /usr/bin</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 07, 2004, 09:24:58 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I feel semi-confident in my file system conventions for most flavors of unix/linux, but this one confuses me.<br /><br />What, pray tell, is the difference between what you put in /usr/local, /usr/local/bin, and /usr/bin? &nbsp;Better yet, what about just putting things in /usr?<br /><br />Here's my confusion: &nbsp;I still haven't gotten Baldur's Gate II installed (see my thread for the reason in the &quot;Games&quot; section if you want some crazy hack ideas) but on this new system I'll be installing several games. &nbsp;When I installed firefox I just put it in /usr/firefox. &nbsp;When I installed gaim I put it in /usr/bin. &nbsp;When I went to first try installing Baldur's Gate II it wanted me to put it in /usr/local/bin. &nbsp;Why? &nbsp;Why not /usr or /usr/bin? &nbsp;I mean, bin I'm assuming is more for the executables, but why not /usr?<br /><br /><br />I know it won't really affect file system use since I partition /usr itself rather than /usr/local or any crazy micromanagement like that...well, I go a LITTLE nuts with micromanagement, but not to THAT extent. &nbsp;But still, I'm wondering why the difference.<br /><br /><br />If it matters, I'm using Slackware. &nbsp;I would imagine that it would be the most &quot;generic&quot; in terms of file system setup though, unlike something like Fedora.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>/usr/local/bin versus /usr/bin</b><br />
+					Post by: <b>rburt3</b> on <b>October 07, 2004, 11:56:44 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This (http://www.pathname.com/fhs/) may answer some of your questions. <br /><br />One thing to keep in mind is that Linux, like its inspiration, Unix, is designed from the ground up as a multi-user OS. This would imply that there's an administrator over-seeing one or more boxen that have one or more users. In most of our cases, we're both the admin and the user. Anyway, the file heirarchy is set up to facilitate permissions and restrictions on who can do what to the machine. In the case of /usr/, this is where &quot;userland&quot; stuff should go. Programs and data that all users should have access to go somewhere here. I think that as time went by, the heirarchy got so granular that /usr/bin was for user-space programs that facilitated other programs, while /usr/local/bin was the place for applications (which could in turn use the software in /usr/bin). May be wrong, and certainly not a clear explination, but my memory ain't what it used to be.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>/usr/local/bin versus /usr/bin</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 07, 2004, 12:13:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My first impression is this: &nbsp; :shock: <br /><br />That's a LOT of pages. &nbsp;It's nice they're going into detail, but [edit]DARN[/edit].<br /><br />Well, that's too many pages to print out here at work, guess I'm going to just need to read a little at a time. &nbsp;Thanks for the link, though, this helps out immensely.<br /><br />[moderated 2:34PM CST 12/21/2004 by Rugmonster due to profanity in body]</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>/usr/local/bin versus /usr/bin</b><br />
+					Post by: <b>danc</b> on <b>October 07, 2004, 02:46:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My understanding is this:<br /><br />/usr/local is where stuff goes that is installed by the distro during initial installation. &nbsp;Also stuff that is installed later by whatever package manager you're using (RPM, TGZ, etc).<br /><br />/usr/local/bin is where stuff goes that doesn't fit the above description. &nbsp;Good examples include game installers like ET or UT2004, which are not packaged into RPM or TGZ packages. &nbsp;Also stuff that you compile yourself will usually want to go here.<br /><br />On a related tangent, the /usr/sbin directory is normally for &quot;system&quot; related programs/utilities, many of which can normally be run only as root.<br /><br />That's how my systems seem to be organized, YMMV.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>What you want...</b><br />
+					Post by: <b>Nomad</b> on <b>November 22, 2004, 04:39:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">/usr/bin<br /><br />Installed stuff goes there...<br /><br />/usr/local/bin<br /><br />non-default system stuff goes there... webin.. apps and what not.<br /><br />/usr/local/src<br /><br />the source files for the stuff in /usr/local/bin<br /><br />/usr/gameservers...<br /><br />good idea to put games there.. &nbsp;:idea:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>/usr/local/bin versus /usr/bin</b><br />
+					Post by: <b>rugmonster</b> on <b>November 23, 2004, 02:17:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">As I took it from the Filesystem Heirarchy...<br /><br />/bin is for the essential programs for all users and admins to use. These are the programs required to basically have a functioning system in single user mode with only / mounted. It should only contain things to get your system up and /usr mounted.<br /><br />/usr/bin is for all of the rest of the programs installed by your distribution. Upon initial setup, and packages installed after initial setup, the actual binaries should go in here. Think of a grouping of like architecture systems sharing /usr. You could mount a single /usr and then mount a local filesystem on each one of those systems as /usr/local.<br /><br />Enter /usr/local/bin. This is where locally installed binaries are installed. Say there isn't a binary package for your distribution for a program, so you roll your own from source. Generally, you will find the --prefix default to /usr/local, and all libs, manpages and binaries are placed in their respective directories. <br /><br />Hope this helps.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>/usr/local/bin versus /usr/bin</b><br />
+					Post by: <b>imnes</b> on <b>November 23, 2004, 08:24:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I never realized what sbin was until playing with Solaris, any statically linked binaries that don't depend on any other parts of the system (libs) go there. &nbsp;<br /><br />Any system-wide software that I personally install I put under /opt. &nbsp;But I've gotten into the habbit of leaving the system alone and installing my apps within my home directory. &nbsp;(/home/nick/Applications). &nbsp;Since I'm the only user on the box, makes sense for me. &nbsp;I would like to seperate my /home and / partitions so that my home directory survives re-installs. &nbsp;Haven't done it yet, I'm trying to figure out the size I will need for each partition. &nbsp;I'm thinking 10gb for / (maybe overkill I don't know) and the rest for /home. &nbsp;Off topic, but any suggestions for this?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>/usr/local/bin versus /usr/bin</b><br />
+					Post by: <b>rugmonster</b> on <b>November 23, 2004, 10:52:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">root can be quite small as long as you have seperate /var and /usr partitions. I usually go with 200MB for root, 3 to 5GB for /var (bigger if it's a server), /usr and /home split equally of the remaining space. If you use /opt, then you would want to use it or install something like OO.o that goes there.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

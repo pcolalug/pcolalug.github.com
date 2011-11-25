@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Nvidia and kernel 2.6.16</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: danc on March 26, 2006, 03:45:38 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvidia and kernel 2.6.16</b><br />
+					Post by: <b>danc</b> on <b>March 26, 2006, 03:45:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Decided to update a couple of machines to the new 2.6.16 kernel today.&nbsp; As you may know, whenever you do this on a system using Nvidia&#039;s driver, you must also re-compile the Nvidia driver after you get the new kernel running.&nbsp; Well...., there is a glitch somewhere (maybe &quot;incompatibility&quot; is a better word) with the driver and the 2.6.16 kernel.&nbsp; Not exactly sure where the problem lies, but the normal way of using the &quot;.run&quot; driver installer from Nvidia will fail.&nbsp; There is a patch to the driver available (below) which fixes things nicely, and am posting the link here for anyone who may be trying this and having problems like I did.&nbsp; Once patched, it compiles and installs perfectly.<br /><br />Here&#039;s the link:<br />http://www.nvnews.net/vbulletin/showthread.php?t=62021<br /><br />Get updated!&nbsp; &nbsp;;)<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Nvidia and kernel 2.6.16</b><br />
+					Post by: <b>danc</b> on <b>April 08, 2006, 11:34:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m happy to report that as of the 2.6.16.2 kernel, and the 8756 version of the Nvidia driver, the above problem is no more...&nbsp; &nbsp;:)<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Nvidia and kernel 2.6.16</b><br />
+					Post by: <b>Brent</b> on <b>April 09, 2006, 12:20:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I installed using the patch, and I&#039;m getting round abouts 10fps in glxgears right now, where i usually get around 3400.<br /><br />I think it&#039;s something to do with my xorg.conf, but I haven&#039;t been hard pressed to fix it, since my linux partition hasn&#039;t done anything more graphically intensive than a screen saver in a *while*.&nbsp; Maybe when slackware gets XGL, or whatever they&#039;re calling it these days&nbsp; &nbsp;::).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Nvidia and kernel 2.6.16</b><br />
+					Post by: <b>danc</b> on <b>April 09, 2006, 11:50:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2826.msg14079.html#msg14079">Quote from: Brent on April 09, 2006, 12:20:37 am</a></div><div class="quote">I installed using the patch, and I&#039;m getting round abouts 10fps in glxgears right now, where i usually get around 3400.<br /><br />I think it&#039;s something to do with my xorg.conf, but I haven&#039;t been hard pressed to fix it, since my linux partition hasn&#039;t done anything more graphically intensive than a screen saver in a *while*.&nbsp; Maybe when slackware gets XGL, or whatever they&#039;re calling it these days&nbsp; &nbsp;::).<br /></div><br /><br />Sounds like you have the &quot;nv&quot; driver specified in xorg.conf, instead of the &quot;nvidia&quot; driver...<br /><br />Do you see the Nvidia splash screen when you start X ?<br /><br />Dan<br /><br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

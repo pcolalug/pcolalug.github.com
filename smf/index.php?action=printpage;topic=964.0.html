@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Has anyone setup a serial connection?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Club discussions => Topic started by: bhoff on August 25, 2003, 02:04:50 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Has anyone setup a serial connection?</b><br />
+					Post by: <b>bhoff</b> on <b>August 25, 2003, 02:04:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Has anyone setup a serial connection to there Linux box using either an old pc 286 or 386 or an old laptop.<br />If so what was involved and what troubles did you have.<br />I am thinking of setting up an old laptop to monitor my cluster and I am looking at a linux serial terminal.<br />Any thoughts?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Has anyone setup a serial connection?</b><br />
+					Post by: <b>rugmonster</b> on <b>August 25, 2003, 05:28:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I haven't done it with a <i>linux</i> box, but I believe getty is the tool to get the job done. <br /><br />Some short browsing of tldp.org produced the Text Terminal HOW-TO (http://www.tldp.org/HOWTO/Text-Terminal-HOWTO.html). I glanced over it and I believe this may be what you are looking for. <br /><br />I might just look over it myself...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Has anyone setup a serial connection?</b><br />
+					Post by: <b>hitechwizard</b> on <b>August 25, 2003, 09:19:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">agetty and a null serial cable is what I used to connect my Wyse terminal to my Redhat box. Worked like a champ. Check w/crowe, as he now has the terminal to see what the pinout should be. Something like 2-3, 3-2, 7-7 &nbsp;and 20-20 (for 25pin) should be all you need (You can surf the net to get the full pinout).<br /><br />Jesse</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Has anyone setup a serial connection?</b><br />
+					Post by: <b>imnes</b> on <b>August 25, 2003, 10:22:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have done it, connect my laptop to my router because it has no monitor / kb on it. &nbsp;Works fine, just had to uncomment a line in my inittab, and setup the right parameters on the laptop. &nbsp;Used a standard null modem cable sold at radio shack.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Has anyone setup a serial connection?</b><br />
+					Post by: <b>crowe</b> on <b>August 26, 2003, 03:21:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I currently have a wyse terminal hooked up to one of my machines... &nbsp;Like it's already been said, you'll need a null modem cable -- I don't recall just how I made mine offhand; your best bet for that would be to either google (http://www.google.com/search?hl=en&amp;ie=UTF-8&amp;oe=UTF-8&amp;q=null-modem+cable&amp;btnG=Google+Search) for a wiring schematic, or to go purchase a prefabricated one.<br /><br />You might also need to install agetty or the like to make it work -- If I recall correctly, Redhat only comes with mingetty, which won't work over a serial line.<br /><br /><br />Hope this helps!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OK Guys</b><br />
+					Post by: <b>bhoff</b> on <b>August 26, 2003, 03:31:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am going to give it a shot.<br />I have my dual head null modem cable has both serial and parallel connections. Also have downloaded agetty and installed.<br />Will check over the article tonight RUG!<br />Thanks will let you know how it goes.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Has anyone setup a serial connection?</b><br />
+					Post by: <b>imnes</b> on <b>August 26, 2003, 03:46:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm not sure, but I think that's probably got dual serial connections not serial and parallel, at least I've never seen it that way.<br /><br />Would be nice though, isn't parallel faster than serial?</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

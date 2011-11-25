@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Tips and Tricks for ROOT!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on April 05, 2003, 09:33:24 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Tips and Tricks for ROOT!</b><br />
+					Post by: <b>bhoff</b> on <b>April 05, 2003, 09:33:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok here you go.<br />You have logged on as a user either on your box or a remote server.<br />You need to su to root in order to do some work.<br />( We do log in with a user account don't we?)<br />Well you have su to root and now you need to go back to your account.<br />What you going to do type exit....Why you know you will be back in 5 minutes. Try this type suspend at the prompt this will keep your history and everything else in statis and you are back at your account. Just type fg to resume.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Tips and Tricks for ROOT!</b><br />
+					Post by: <b>dpeach</b> on <b>April 05, 2003, 09:47:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What does fg mean? (Maybe knowing this will help me to remember it next time I need it).<br /><br />Do you have to retype your password when fg(ing) back into root? If not, then you would only want to use this feature on your home system that no one else can touch. If you do have to retype the password, then I don't understand what this will do for me.<br /><br />David<br />the curious</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Tips and Tricks for ROOT!</b><br />
+					Post by: <b>danc</b> on <b>April 05, 2003, 09:59:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's something interesting... &nbsp;This works when you &quot;su&quot; to become root. &nbsp;However, when I tried it with &quot;su -&quot; (to get to the root directory and have root's path set), bash tells me &quot;cannot suspend a login shell&quot;... &nbsp;Any ideas why?<br /><br />David, I thing fg means &quot;foreground&quot;, but that's just a guess.<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Tips and Tricks for ROOT!</b><br />
+					Post by: <b>rugmonster</b> on <b>April 05, 2003, 11:21:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">For the opposite situation, where you need to execute one or two commands as root, rather than using su, you can use sudo. This does the same thing as suing to root, but without dropping into a complete shell as root. Very handy, especially when you set it so your uid doesn't require a password to sudo. <br /><br />Example:<div class="codeheader">Code:</div><div class="code">$ sudo mount /dev/cdrom</div><br /><br />You have to have sudo installed on your system and you have to add your user or group to /etc/sudoers with visudo, but you can either have the option to ask for a password or not. Check out the manpage for visudo and sudoers on how to set these up or ask me and I can help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>some clarity</b><br />
+					Post by: <b>bhoff</b> on <b>April 06, 2003, 05:15:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">David you do not have to retype the root password.<br />Lets say you are the system admin for a server in san diego and you are here. you could have the root account of the server in the background and then just fg foreground it to work on the server handier than sudo when you have a lot of work and would be handy to have your shell history around. You of course would not want to leave your console attended or without locking it out due to having root open.<br />Dan I not sure about that will check into it.<br />I have been using this to admin the 6 servers I have up now and has been great. keep each one suspended and just call up the job fg 1-6.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Tips and Tricks for ROOT!</b><br />
+					Post by: <b>altomo</b> on <b>April 08, 2003, 11:43:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">why not just su back to the user acct while su'd to root?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Tips and Tricks for ROOT!</b><br />
+					Post by: <b>imnes</b> on <b>April 08, 2003, 12:55:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You know you don't actually have to be root to mount / unmount your drives? &nbsp;It's the first thing I adjust when I install linux because I hate having to su just to mount the cd / floppy. &nbsp;Just add &quot;user&quot; as an option for your devices in /etc/fstab.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>altomo-----</b><br />
+					Post by: <b>bhoff</b> on <b>April 08, 2003, 04:42:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">A lot less typing at the end of a year.<br />fg vs. su user &nbsp; hmmm......<br />maybe it was just me.<br />I am sure everyone has a little tweak they like.<br />This is mine.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

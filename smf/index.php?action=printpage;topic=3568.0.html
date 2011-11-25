@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Linux to linux desktop control</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: Ed on September 07, 2009, 07:32:07 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linux to linux desktop control</b><br />
+					Post by: <b>Ed</b> on <b>September 07, 2009, 07:32:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have been looking for a good way to access and control a linux box from a linux box. My mother got her first computer at 79. It is a linux box I built running PCLinuxOS. She had never used a computer before but at 81 she is surfing the net on linux and really enjoying it. Her hands don&#039;t always work as she would like them to so I occasionally have to help her. The ability to remotely control her desktop saves me time an travel to and from her house and she gets instant help.<br /><br />I have tried several things. TightVNC, VNC and Krdc. We don&#039;t have static ip addresses and I know I can register with one of those dynamic dns web sites but I chose hamachi to get a static ip address. Hamachi is totally free on linux. She has a dsl modem and I have a cable modem. Her connection is the dsl lite so it is somewhat slow. I found that Krdc is really slow updating her desktop on mine. TightVNC and VNC both are faster and work well except I could not find a way to set the screen resolution on my desktop and I had to scroll around to see all of her desktop.<br /><br />I searched the net and found a much better solution. It is the free edition of NX by Nomachine. The core libraries are GPL&#039;ed as FreeNX. The NX Free Edition comes with deb, rpm and source. I downloaded the rpm&#039;s. There are three components. The client, node, and server. To share your desktop you need all three installed. To log on and control a desktop you only need the client. You need to read the documation to get it configured for controlling a desktop other wise it just logs you into you own session on the computer. The desktop control terminology they use is called shadowing. You need to configure the /usr/NX/etc/server.cfg and the /usr/NX/etc/node.cfg files to get it setup. The reason I like this better than TightVNC and VNC is I can set a custom screen resolution on my desktop so I can view the other desktop in full without scrolling around. NX uses SSH to tunnel the connection between client and server also.<br /><br />If I read it right the server is only supported on unix but you can control a linux box from a windows client as well but why? Anyway check out their site for the documentation and see the other stuff they offer.<br /><br />http://www.nomachine.com/download-package.php?Prod_Id=1083 (http://www.nomachine.com/download-package.php?Prod_Id=1083)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Linux to linux desktop control</b><br />
+					Post by: <b>bhoff</b> on <b>September 08, 2009, 04:35:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That is great work Ed, and nice to see that there is a easy way to do that especially on older connections.<br /><br />Just to throw it out there you can run an X session via ssh also.....Not sure what the overhead cost would be.<br /><br />How much have you been using it and what is your opinion and what are the pros and cons?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Linux to linux desktop control</b><br />
+					Post by: <b>dpeach</b> on <b>September 09, 2009, 09:55:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have been dealing with this some myself. I use hamachi and ssh to us CLI, but that does not always get me everything I need. While I have done the VNC solutions, I have not found anything that really works well for me. I will be checking this out.<br /><br />Thanks for sharing.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Linux to linux desktop control</b><br />
+					Post by: <b>maxolasersquad</b> on <b>September 09, 2009, 09:56:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3568.msg17077.html#msg17077">Quote from: bhoff on September 08, 2009, 04:35:47 pm</a></div><div class="quote">That is great work Ed, and nice to see that there is a easy way to do that especially on older connections.<br /><br />Just to throw it out there you can run an X session via ssh also.....Not sure what the overhead cost would be.<br /><br />How much have you been using it and what is your opinion and what are the pros and cons?<br /></div>X over ssh has a lot of overhead and isn&#039;t very well suited for use over the Internet.&nbsp; For LANs with works great, but over the Internet with a pipe of only a few megs it is unusable.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

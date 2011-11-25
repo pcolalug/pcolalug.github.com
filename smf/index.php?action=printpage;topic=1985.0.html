@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Java Games</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: imnes on October 31, 2004, 12:04:51 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>imnes</b> on <b>October 31, 2004, 12:04:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sun is pushing Java as a gaming platform. &nbsp;And it might just be feasible. &nbsp;Check out this project, port of Quake 2 to Java. &nbsp;<br /><br />http://www.bytonic.de/html/jake2.html<br /><br />Under the latest version of Java, it approaches native speeds, with a framerate in Java of 241fps versus the native C codes 245fps. &nbsp;<br /><br />http://www.bytonic.de/html/benchmarks.html<br /><br />Neat stuff, if Java does become a popular platform for games, we won't have to worry about ports and emulators for games in the future. &nbsp;That would be nice.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 01, 2004, 09:18:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">WOW! &nbsp;I'm shocked, really. &nbsp;I mean really, really shocked. &nbsp;I've NEVER thought of Java as something involving speed in any way, shape, or form.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>rugmonster</b> on <b>November 01, 2004, 10:06:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I wonder how hard this is to pull off. I've never worked with Java, but how hard is it to optimize the code?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>imnes</b> on <b>November 01, 2004, 10:09:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't know, I grabbed the latest version of the code though and ran it on my machine. &nbsp;It is fast. &nbsp;Even multi player stuff is working.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 01, 2004, 11:58:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Java can be optimized but it's main drawbacks are two-fold. &nbsp;One, no manual garbage collection override. &nbsp;You CANNOT tell it to remove something early which could save cycles later. &nbsp;Instead it has to determine on its own what's left, what's needed, and so forth. &nbsp;The lack of a manual override call is...odd. &nbsp;At least to me, anyway, but I guess it works for Sun.<br /><br />Two is something they can't fix which is that it's interpreted, not compiled. &nbsp;Compiled code tends to run very fast (the closer to machine code the faster it gets) but has the issue of being only able to run on THAT kind of hardware. &nbsp;Interpreted of course only needs an interpreter, the JavaVM or JRE in this case, but that's slow. &nbsp;Basically it's converting that code to simpler instructions which are fed to the VM which turns it into assembly or machine code, whichever exactly I can't remember off the top of my head right now. &nbsp;Anyway, it basically takes twice as much effort.<br /><br /><br />Still, I'd LOVE to see Doom 3's engine ported, that'd be AWESOME. &nbsp;I mean flat-out AWESOME. &nbsp;Quake II I'm pretty impressed with, guess I'm going to have to dig out my disc and get to testing this thing out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>rburt3</b> on <b>November 01, 2004, 12:21:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">You CANNOT tell it to remove something early which could save cycles later.</div><br />Actually, this can be accomplished with a couple of RT libraries (many of which are OSS) available for Java(TM).<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Two is something they can't fix which is that it's interpreted, not compiled. &nbsp;Compiled code tends to run very fast (the closer to machine code the faster it gets) but has the issue of being only able to run on THAT kind of hardware. &nbsp;Interpreted of course only needs an interpreter, the JavaVM or JRE in this case, but that's slow. &nbsp;Basically it's converting that code to simpler instructions which are fed to the VM which turns it into assembly or machine code, whichever exactly I can't remember off the top of my head right now. &nbsp;Anyway, it basically takes twice as much effort.</div><br />While you are esentially correct here, the JIT caches the compiled classes, so the transformation from bytecode to native is one-time. You compile Java(TM) code into an intermediate form before you run the program (the JVM doesn't do this for you). This means that Java(TM) is not strictly and &quot;interpreted&quot; laguage like Lisp. Also, this has been overcome completely with GJC from the GNU project (ok, so gnu classpath isn't 100% compatable, but you get the idea).<br /><br />Don't mean to pick here, its just that Java(TM) gets a bad rap sometimes for the wrong reasons.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>imnes</b> on <b>November 01, 2004, 05:08:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">no manual garbage collection override</div><br /><br />Something I was reading over the other day suggested that C/C++ suffer from some of the same performance penalties in their memory management. &nbsp;(I'm not a C coder so I don't know if this is actually true).<br /><br /><div class="quoteheader">Quote</div><div class="quote">That opens another whole can of worms: memory allocators. Do you know how malloc works? The nature of malloc is that it has a long linked list of available blocks of memory called the free chain. When you call malloc, it walks the linked list looking for a block of memory that is big enough for your request. Then it cuts that block into two blocks -- one the size you asked for, the other with the extra bytes, and gives you the block you asked for, and puts the leftover block (if any) back into the linked list. When you call free, it adds the block you freed onto the free chain. Eventually, the free chain gets chopped up into little pieces and you ask for a big piece and there are no big pieces available the size you want. So malloc calls a timeout and starts rummaging around the free chain, sorting things out, and merging adjacent small free blocks into larger blocks. This takes 3 1/2 days. The end result of all this mess is that the performance characteristic of malloc is that it's never very fast (it always walks the free chain), and sometimes, unpredictably, it's shockingly slow while it cleans up. (This is, incidentally, the same performance characteristic of garbage collected systems, surprise surprise, so all the claims people make about how garbage collection imposes a performance penalty are not entirely true, since typical malloc implementations had the same kind of performance penalty, albeit milder.)<br /></div><br /><br />http://www.joelonsoftware.com/articles/fog0000000319.html<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>rburt3</b> on <b>November 01, 2004, 08:41:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: imnes</div><div class="quote">Something I was reading over the other day suggested that C/C++ suffer from some of the same performance penalties in their memory management. &nbsp;(I'm not a C coder so I don't know if this is actually true).</div><br />Yeah, that's because <i>you</i> are the memory manager... ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java Games</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 02, 2004, 08:18:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">You CANNOT tell it to remove something early which could save cycles later.</div><br />Actually, this can be accomplished with a couple of RT libraries (many of which are OSS) available for Java(TM).<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Two is something they can't fix which is that it's interpreted, not compiled. &nbsp;Compiled code tends to run very fast (the closer to machine code the faster it gets) but has the issue of being only able to run on THAT kind of hardware. &nbsp;Interpreted of course only needs an interpreter, the JavaVM or JRE in this case, but that's slow. &nbsp;Basically it's converting that code to simpler instructions which are fed to the VM which turns it into assembly or machine code, whichever exactly I can't remember off the top of my head right now. &nbsp;Anyway, it basically takes twice as much effort.</div><br />While you are esentially correct here, the JIT caches the compiled classes, so the transformation from bytecode to native is one-time. You compile Java(TM) code into an intermediate form before you run the program (the JVM doesn't do this for you). This means that Java(TM) is not strictly and &quot;interpreted&quot; laguage like Lisp. Also, this has been overcome completely with GJC from the GNU project (ok, so gnu classpath isn't 100% compatable, but you get the idea).<br /><br />Don't mean to pick here, its just that Java(TM) gets a bad rap sometimes for the wrong reasons.</div><br /><br />Oh no, you learn something new everyday, I didn't know there was a method now, sort of anyway, to do manual garbage collection. &nbsp;That could help out quite a bit IMO if used correctly.<br /><br /><br />I'm not a big Java coder so I know there's a few things I'll miss but I thank you for pointing them out. &nbsp;C/C++ was my language when I did more hardcore coding...man, now that I think about it I can't remember the last time I did some serious programming. &nbsp;&lt;shrugs&gt; Eh, maybe sometime I'll get back into Ruby, now THAT'S an awesome language.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

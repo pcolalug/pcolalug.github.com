@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - SSH and our friend X Another story.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on February 24, 2003, 06:19:38 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SSH and our friend X Another story.</b><br />
+					Post by: <b>bhoff</b> on <b>February 24, 2003, 06:19:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">By: Brett Hoff<br /><br />I have gathered here a collection of scripts and notes on using SSH and X together as a sort of thin client.<br /><br />Note: before starting the following project you should have X-forwarding turned on in the /etc/ssh/sshd_config file.<br />X11Forwarding yes<br />If you had to add this line then you will need to restart sshd<br />service sshd restart<br /><br />Working from your workstation you need to bring up your server located elsewhere. You would like to bring up X try the following.<br /><br />startX /usr/X11R6/bin/xterm<br /><br />This will give you a plain jane x desktop with nothing running with no window control at all.<br />Connect to your server using openssh<br />ssh -C -x -l username server_name<br /><br />The C option sets up data compression in the secure data stream.<br />The X option enables the forwarding of X request.<br /><br />Once you find yourself at the command prompt you can start a desktop session by typing the following.<br /><br />startkde or wmaker or which ever one you prefer etc.......<br />You should now be running a full graphical desktop from your server!<br /><br />This is very handy and if you would like to have one screen for your workstation and one for your server just open another virtual consoles and start a second X session like this.<br /><br />startx /usr/X11R6/bin/xterm --:1<br /><br />The --:1 brings up a second graphical desktop<br /><br />That should do you. Hopes it workes as good for you as it has worked for me.<br /><br /><br />SSH password schemes<br /><br />Instead of passwords you can use keys to log onto machines.<br />first you must use ssh-keygen to generate your keys.<br />Note: if you enter a passphrase when ask it will ask you for that passphrase each and everytime you try to connect to that machine.<br />If you do want that headache just leave it blank.<br />Two keys will be generated your private key will be stored in ~/.ssh/identity . The public key will be stored in ~/.ssh/indentity.pub<br />The public key must be placed into the ~/.ssh/authorized_keys of the machine you are connecting to in order to work.<br />This allows for connection via RSA auth vs. passwords.<br /><br /><br />SSH Tunneling<br /><br />ssh -2 -N -F -L 5023:localhost:23 user@foo.example.com<br /><br />This sets a secure tunnel for telnet<br />the -2 forces ssh to use the version 2 protocol<br />the -N indicates no command<br />the -F forces ssh to run in the background<br />the -L indicates a local tunnel<br />user@fooexample.com the remote ssh server<br /><br />This works by creating a listen port on the local machine on a specfic port it then forwards any connection recieved to the specified port via ssh.<br />In the example above port 5023 is being forwarded to port 23 which is telnet you now have a ssh secured telnet session.<br /><br />Bypassing a Draconian firewall using the above.<br />perhaps you want to access your streaming music from work but they are only allowing port 80 and 22 for web traffic.<br />well then try this. <br />ssh -2 -N -F -L 8888:music.example.com:8000 user@unfirewalled.myserver<br />your streaming client can now be pointed to localhost port 8888 which will be forwarded over to music.example.com port 8000<br />evading the firewall.<br /><br />~brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Remote X and ssh</b><br />
+					Post by: <b>erc</b> on <b>February 27, 2003, 07:57:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I use this feature all the time to run red-carpet on headless servers:<br /><br />localhost% startx<br />localhost% ssh erc@remote<br />remote% red-carpet<br /><br />Assuming you've got X11 forwarding set to &quot;Yes&quot; on remote, it works like a charm.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

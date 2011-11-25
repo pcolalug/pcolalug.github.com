@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Router / server requirements</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: danc on February 04, 2003, 07:53:26 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router / server requirements</b><br />
+					Post by: <b>danc</b> on <b>February 04, 2003, 07:53:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br /><br />&nbsp; &nbsp;I'm thinking about setting up a box to be a router/gateway/firewall between a cable modem and a 4-machine home LAN. &nbsp;I would also like to have this machine run as a dedicated Wolfenstein (RtCW) server. &nbsp;My question is this: &nbsp;How much &quot;load&quot; does the router/gateway/firewall function place on the computer? &nbsp;Would it be able to also handle running the game server? &nbsp;Any suggested minimum hardware for this? &nbsp;Thanks for any tips you can provide.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router / server requirements</b><br />
+					Post by: <b>rugmonster</b> on <b>February 04, 2003, 08:38:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heh...I used to run my firewall on a 486DX4/100. The firewall portion of Linux is very very easy on your resources, so your major concern is whether or not your system is fast enough the dedicated server and how many hosts it can handle. Honestly, with anything around 550 Mhz, you can probably run a nice server able to support as many people as your upstream bandwidth can handle. I say 550 because that is the system I have and it runs the client pretty well and the server is less resource intensive since it doesn't have to handle any rendering of graphics or sound. <br /><br />You'll have to let us know your server's IP so we can all jump on when you get it up. &nbsp;:wink:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router / server requirements</b><br />
+					Post by: <b>dpeach</b> on <b>February 04, 2003, 10:19:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">For router and firewall you don't hardly need any processing power. The only time they are doing anything is that 1/2 second that you send a packet through it.<br /><br />Just find out what you need as a server for RtCW and that should be plenty for the other work you are asking the computer to do.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router / server requirements</b><br />
+					Post by: <b>rburt3</b> on <b>February 05, 2003, 09:18:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Playing devil's advocate(TM) I wouldn't combine both functions on one box. The hardware requirements for the gateway are trivial. If you've got a 486 or better with 16 megs of RAM two nics and a floppy drive, that's all you reall need (see this site (http://www.zelow.no/floppyfw/) for an example). I ran RtCW server on an old PIII 600 w/256 meg of ram and it was fine, but I imagine you can get away with less. You want the game server, though, to have nothing else to do but that so you don't take the hit from the packet filtering. I know, its not a big hit to the processor, but it does add up and you will complain if you are lag-fragged.<br /><br />I would set the game server up &quot;outside&quot; the firewall (nat only or on a different nic) and protect the internal network from it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router / server requirements</b><br />
+					Post by: <b>danc</b> on <b>February 09, 2003, 11:15:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hello all,<br />&nbsp; &nbsp;Well, my hopes for getting a router working are fading fast. &nbsp;I've done everything that my limited knowledge will allow me, and am close, but not there yet. &nbsp;Looking for some help if you can.<br /><br />&nbsp; &nbsp;Here's what I've got: &nbsp;the machine is built, with 2 NIC's, and boots up to runlevel 3 just fine (RH8). &nbsp;Both NIC's are recognized (as eth0 and eth1). &nbsp;The eth0 card is connected to my cable modem, and gets a dynamic IP from it. &nbsp;The eth1 card has a static IP of 192.168.254.100. &nbsp;I can access the internet just fine from this machine (via eth0). &nbsp;Other machines on the home LAN can ping eth1, but cannot get out anywhere on the internet. &nbsp;So I am concluding that it's a problem with my iptables setup, but just can't seem to find anything that works. &nbsp;In other words, there doesn't seem to be any communication between eth1 and eth0. &nbsp;How do you tell the eth1 card to &quot;talk&quot; to the eth0 card??? &nbsp;I thought the iptables would do that, but is there some other config file to make this happen? &nbsp;I am going to paste some of my config files below...:<br /><br />Here is the script I run to produce the rules in iptables:<br /><div class="codeheader">Code:</div><div class="code">### Default policies for packets that don't meet other rules<br />iptables -P INPUT DROP<br />iptables -P OUTPUT DROP<br />iptables -P FORWARD DROP<br /><br />### INPUT chain rules<br /><br />## Rules for incoming packets from local LAN<br />iptables -A INPUT -p ALL -i eth1 -s 192.168.254.0/24 -j ACCEPT<br />iptables -A INPUT -p ALL -i lo -s 127.0.0.1 -j ACCEPT<br />iptables -A INPUT -p ALL -i lo -s 192.168.254.100 -j ACCEPT<br />iptables -A INPUT -p ALL -i eth1 -d 192.168.254.255 -j ACCEPT<br /><br />## Rules for incoming packets from the Internet<br /><br /># Packets from established connections &#40;that we initiated&#41;<br />iptables -A INPUT -p ALL -i eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT<br /># &#40;will have to add more here to allow FTP and game servers to work&#41;<br /><br />### FORWARD chain rules<br /><br />iptables -A FORWARD -i eth1 -j ACCEPT<br />iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT<br /><br />### OUTPUT chain rules<br /># Only output packets with local addresses &#40;to prevent spoofing&#41;<br />iptables -A OUTPUT -p ALL -s 192.168.254.100 -j ACCEPT<br />iptables -A OUTPUT -p ALL -s 127.0.0.1 -j ACCEPT<br />iptables -A OUTPUT -p ALL -o eth0 -j ACCEPT<br /><br />### POSTROUTING chain rules &#40;NAT&#41;<br />iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE<br /></div><br /><br />This is my /etc/resolv.conf<br /><div class="codeheader">Code:</div><div class="code">; generated by /sbin/dhclient-script<br />search pn.at.cox.net<br />nameserver 68.1.18.25<br />nameserver 68.1.18.30<br />nameserver 68.11.16.30<br /></div><br /><br />This is the output from a &quot;iptables -L&quot; command:<br /><div class="codeheader">Code:</div><div class="code">Chain INPUT &#40;policy DROP&#41;<br />target &nbsp; &nbsp; prot opt source &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; destination &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;192.168.254.0/24 &nbsp; &nbsp; anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;linuxrouter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;192.168.254.100 &nbsp; &nbsp; &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 192.168.254.255 &nbsp; &nbsp;<br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; state RELATED,ESTABLISHED <br /><br />Chain FORWARD &#40;policy DROP&#41;<br />target &nbsp; &nbsp; prot opt source &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; destination &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; state RELATED,ESTABLISHED <br /><br />Chain OUTPUT &#40;policy DROP&#41;<br />target &nbsp; &nbsp; prot opt source &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; destination &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;192.168.254.100 &nbsp; &nbsp; &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;linuxrouter &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />ACCEPT &nbsp; &nbsp; all &nbsp;-- &nbsp;anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; anywhere &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br /></div><br /><br />This is the output from a &quot;route&quot; command:<br /><div class="codeheader">Code:</div><div class="code">Kernel IP routing table<br />Destination &nbsp; &nbsp; Gateway &nbsp; &nbsp; &nbsp; &nbsp; Genmask &nbsp; &nbsp; &nbsp; &nbsp; Flags Metric Ref &nbsp; &nbsp;Use Iface<br />68.14.177.0 &nbsp; &nbsp; * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 255.255.255.128 U &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp;0 eth0<br />192.168.254.0 &nbsp; * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 255.255.255.0 &nbsp; U &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp;0 eth1<br />127.0.0.0 &nbsp; &nbsp; &nbsp; * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 255.0.0.0 &nbsp; &nbsp; &nbsp; U &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp;0 lo<br />default &nbsp; &nbsp; &nbsp; &nbsp; ip68-14-177-1.p 0.0.0.0 &nbsp; &nbsp; &nbsp; &nbsp; UG &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp;0 eth0<br /></div><br /><br />This is my /etc/sysconfig/network-scripts/ifcfg-eth0<br /><div class="codeheader">Code:</div><div class="code">DEVICE=eth0<br />BOOTPROTO=dhcp<br />ONBOOT=yes<br /></div><br /><br />And this is /etc/sysconfig/network-scripts/ifcfg-eth1<br /><div class="codeheader">Code:</div><div class="code">DEVICE=eth1<br />BOOTPROTO=static<br />BROADCAST=192.168.254.255<br />IPADDR=192.168.254.100<br />NETMASK=255.255.255.0<br />NETWORK=192.168.254.0<br />ONBOOT=yes<br /></div><br /><br />&nbsp; &nbsp;Can anyone spot any problems with these files / output results? &nbsp;Again, it seems to me that I have to tell the eth1 card (local LAN) what it's gateway is to get to the internet (eth0), but not sure how to do it. &nbsp;I'd sure appreciate some assistance if you know how to fix this. &nbsp;Thanks!<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router / server requirements</b><br />
+					Post by: <b>rugmonster</b> on <b>February 09, 2003, 11:27:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You need to setup your NAT. Here is what you need to add to your script<br /><br /><div class="codeheader">Code:</div><div class="code">iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE<br />echo 1 &gt; /proc/sys/net/ipv4/ip_forward</div><br /><br />I would suggest checking out the HOWTO for NAT here (http://www.netfilter.org/documentation/HOWTO//NAT-HOWTO.html)...and the section on Masquerading is here (http://www.netfilter.org/documentation/HOWTO//NAT-HOWTO-4.html#ss4.1). You can also find all the netfilter crap you want to know here (http://www.netfilter.org).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>another thing</b><br />
+					Post by: <b>rugmonster</b> on <b>February 09, 2003, 11:38:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Make sure you have the iptable_nat module loaded. You can run <b>lsmod</b> and see if you have something along the lines of the following listed...<br /><br /><div class="codeheader">Code:</div><div class="code">iptable_nat &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;15224 &nbsp; 0 &nbsp;&#40;unused&#41;<br />ip_conntrack &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 18400 &nbsp; 1 &nbsp;&#91;iptable_nat&#93;<br />ip_tables &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;11672 &nbsp; 3 &nbsp;&#91;iptable_nat&#93;</div><br /><br />If you don't see iptables_nat, then you need to run the following, which will load the other two modules listed above:<br /><br /><div class="codeheader">Code:</div><div class="code"># modprobe iptables_nat</div><br /><br />Good luck and let me know if you have any more problems. My first project with linux several years back was setting up a firewall, so this is the stuff I really enjoy.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router / server requirements</b><br />
+					Post by: <b>danc</b> on <b>February 09, 2003, 05:37:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the suggestions, Rugmonster. &nbsp;Going to take a day or two off with this, and then try again. &nbsp;Appreciate it!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router / server requirements</b><br />
+					Post by: <b>danc</b> on <b>February 14, 2003, 02:11:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Update... &nbsp;I've gotten my router machine setup to work, and am pretty pleased. &nbsp;Thanks to all for the tips and help!!! &nbsp;Now to get the RTCW server working (on the same machine)... &nbsp;This is cool stuff. &nbsp; :D <br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

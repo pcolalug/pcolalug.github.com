@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - WRT54G lock up with large transfers?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: rugmonster on September 05, 2005, 12:25:53 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>WRT54G lock up with large transfers?</b><br />
+					Post by: <b>rugmonster</b> on <b>September 05, 2005, 12:25:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You may have seen me ask about the WRT54G locking up from time to time and then I modded mine to include a fan. Well, this didn't fix my problem completely. The problem started up again recently with a newer version of the Sveasoft firmware, so I looked for another solution. Apparently the ethernet controller runs at 216Mhz and the processor runs at 200Mhz by default. Timing issues can result when doing large transfers through the router, which is what I was seeing. The answer was to overclock the processor to 216Mhz. Thankfully, this is very easy to do. If you telnet or SSH in, or if your firmware has a place on the management web page to execute commands, enter the following:<br /><div class="codeheader">Code:</div><div class="code">nvram set clkfreq=216<br />nvram commit<br />reboot</div><br />Once you reboot, you can execute the following to verify the overclock:<br /><div class="codeheader">Code:</div><div class="code">cat /proc/cpuinfo</div><br />You should get something like this:<br /><div class="codeheader">Code:</div><div class="code">system type &#58; Broadcom BCM947XX<br />processor &#58; 0<br />cpu model &#58; BCM3302 V0.7<br />BogoMIPS &#58; 215.44<br />wait instruction &#58; no<br />microsecond timers &#58; yes<br />tlb_entries &#58; 32<br />extra interrupt vector &#58; no<br />hardware watchpoint &#58; no<br />VCED exceptions &#58; not available<br />VCEI exceptions &#58; not available<br />unaligned_instructions &#58; 9471<br />dcache hits &#58; 683675711<br />dcache misses &#58; 625475720<br />icache hits &#58; 270038681<br />icache misses &#58; 67108876<br />instructions &#58; 0</div><br />So, if you have problems with repeated lock ups on large transfers, this is definitely worth a shot. As a warning, DO NOT USE ANY OTHER FREQUENCIES UNLESS YOU HAVE RESEARCHED THE PROPER ONES. You can make your router a brick as the processor must be at certain frequencies. As a testiment to how well this works, I've been downloading at about 250KB/s since last night without any lock ups.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>WRT54G lock up with large transfers?</b><br />
+					Post by: <b>danc</b> on <b>September 05, 2005, 12:44:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Very cool info, thanks Rug. &nbsp;I checked mine, and it is indeed running at 200Mhz, although I haven't seen any file transfer / lockup issues. &nbsp;I think I won't bother changing it unless I see problems... &nbsp; :lol: <br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - PHP require() and absolute paths</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by:  on April 23, 2003, 10:42:11 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b></b> on <b>April 23, 2003, 10:42:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is there anyway to use absolute paths with require, include, require_once?<br /><br />I like to put all my class files in one folder and then use global.php include to instantiate everything, but PHP is changing the paths to all my files depending on the dir structure. Any ideas on a work around.<br /><br />Sample Files<br />/includes/myclass.php<br />/global.php<br />/news/index.php<br />/events/index.php<br />/admin/global.php<br />/admin/news/index.php<br />/admin/events/index.php<br /><br />I want all the PHP files to require('global.php') and then inside the global.php I want to require('/includes/myclass.php').<br /><br />Jamie</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b>rburt3</b> on <b>April 23, 2003, 11:40:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You can use a php directive like:<div class="codeheader">Code:</div><div class="code">php_value include_path &quot;.&#58;/include/dir&quot;</div> in an .htaccess file to override the include_path in your php.ini. Then you would just have to <div class="codeheader">Code:</div><div class="code">require_once&#40;&quot;global.php&quot;&#41;</div> in your regular pages, while global can include everything else:<div class="codeheader">Code:</div><div class="code">require_once&#40;&quot;myclass.php&quot;&#41;</div> Since your include path is set up, there is no need for sub-directories.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b></b> on <b>April 23, 2003, 12:38:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi rburt3,<br /><br />Will this handle absolute paths?<br /><div class="codeheader">Code:</div><div class="code">php_value include_path &quot;.&#58;/include/dir&quot;</div><br /><br />Could I do something like this:<br /><div class="codeheader">Code:</div><div class="code">php_value include_path &quot;/include/dir&quot;</div><br /><br />Thanks, Jamie</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b></b> on <b>April 23, 2003, 04:10:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This some big-time cheese for working around the no-relative paths in the require() functions. What do you think? I still have to manually change the path to the my global.php file, but with this the global.php file can include all the classes it needs.<br /><br /><div class="codeheader">Code:</div><div class="code"><br /><span style="color: #000000"><span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #FF8000">//Calculate&nbsp;relative&nbsp;path&nbsp;from&nbsp;current&nbsp;file<br /></span><span style="color: #0000BB">$intDirLevel&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">&amp;</span><span style="color: #FF8000">#40;explode&amp;#40;"/",$_SERVER[&#039;PHP_SELF&#039;&amp;#93;&amp;#41;&amp;#41;-2;&nbsp;//1&nbsp;for&nbsp;root&nbsp;and&nbsp;1&nbsp;for&nbsp;page&nbsp;name<br /></span><span style="color: #007700">for&nbsp;&amp;</span><span style="color: #FF8000">#40;$i=1;$i&lt;=$intDirLevel;$i++&amp;#41;&nbsp;&amp;#123;<br /></span><span style="color: #0000BB"><span style="white-space: pre;">	</span></span><span style="color: #0000BB">$strRootRelative</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"../"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB"><span style="white-space: pre;">	</span>if&nbsp;&amp;</span><span style="color: #FF8000">#40;$i&lt;$intDirLevel&amp;#41;&nbsp;&amp;#123;$strAdminRelative.="../";&amp;#125;<br /></span><span style="color: #007700">&amp;</span><span style="color: #FF8000">#125;<br /></span><span style="color: #0000BB">define</span><span style="color: #007700">&amp;</span><span style="color: #FF8000">#40;"gstrIncludesDir",$strRootRelative."includes/"&amp;#41;;<br /></span><span style="color: #0000BB">?&gt;</span></span><br /></div><br /><br />Output for gstrIncludesDir<br /><div class="codeheader">Code:</div><div class="code">../../includes/</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b>rburt3</b> on <b>April 23, 2003, 08:03:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code">php_value include_path &quot;.&#58;/include/dir&quot;</div> would have php serch the current directory (whatever that would happen to be at the time) and the /include/dir directory. This last one is an absolute path from the root of your drive?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b></b> on <b>April 23, 2003, 08:47:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So &quot;:&quot; is used to signify the site root?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b>imnes</b> on <b>April 23, 2003, 09:19:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It's my understanding that you cannot use absolute paths. &nbsp;As long as you code your app with that in mind it is easy enough to work around. &nbsp;My only problems came with trying to include a file from an included file. &nbsp;That's tricky without absolute paths but generally you can work around it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b></b> on <b>April 23, 2003, 09:55:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think the short answer to your question is yes, you can use this technique to set an absolute path. Feel free to skip the pedantic explanation below.<br /><br />rburt's example (php_value include_path &quot;.:/include/dir&quot;) instructs PHP to look for included or required files in two places. The &quot;.&quot; means the current directory (of the page with the &quot;include&quot; or &quot;require&quot; function). The &quot;:&quot; is the separator between the paths (use &quot;;&quot; if you're on Windows). The &quot;/include/dir&quot; is an absolute path.<br /><br />HTH</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP require() and absolute paths</b><br />
+					Post by: <b></b> on <b>April 24, 2003, 07:31:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ah everything comes together at last! I see what you meant in the first post now rburt3. ;)<br /><br />My .htaccess file:<br /><div class="codeheader">Code:</div><div class="code"><br />&lt;IfModule mod_php4.c&gt;<br />&nbsp; php_value include_path &quot;.&#58;/home/jwcms/www/includes&quot;<br />&lt;/IfModule&gt;<br /></div><br /><br />Reference:<br />http://www.php.net/manual/en/configuration.changes.php<br /><br />Jamie</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

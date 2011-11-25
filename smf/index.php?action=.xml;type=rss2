@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<rss version="2.0" xml:lang="en-US">
+	<channel>
+		<title>Pensacola Linux User's Group</title>
+		<link>http://www.pcolalug.org/smf/index.php</link>
+		<description><![CDATA[Live information from Pensacola Linux User's Group]]></description>
+		<item>
+			<title><![CDATA[Chinese propaganda]]></title>
+			<link>http://www.pcolalug.org/smf/index.php?topic=3793.msg17850#msg17850</link>
+			<description>
+<![CDATA[Was asked to eyeball a Chinese video clip recently.<br /><br /><span style="text-decoration: underline;"><a href="http://www.youtube.com/watch?v=L_Wu1HlZbBk&amp;feature=youtu.be&amp;t=36s" target="_blank">http://www.youtube.com/watch?v=L_Wu1HlZbBk&amp;feature=youtu.be&amp;t=36s</a></span><br /><br />I think it was designed for in-house propaganda but I noted a fun oddity.&nbsp; At 1:24, 2:03, 2:22, and 9:31 minutes:seconds into the clip there are brief glimpses of the GLMatrix screensaver which is part of some Linux distributions, notably Ubuntu derivatives.<br /><br />Not sure if the Chinese are big Linux users or if they just think the screensaver is cool.<br /><br />sandspur<br />living and dying in runle...]]>
+			</description>
+			<category><![CDATA[Other Software]]></category>
+			<comments>http://www.pcolalug.org/smf/index.php?action=post;topic=3793.0</comments>
+			<pubDate>Fri, 02 Sep 2011 19:19:08 GMT</pubDate>
+			<guid>http://www.pcolalug.org/smf/index.php?topic=3793.msg17850#msg17850</guid>
+		</item>
+		<item>
+			<title><![CDATA[Entropy]]></title>
+			<link>http://www.pcolalug.org/smf/index.php?topic=3792.msg17849#msg17849</link>
+			<description>
+<![CDATA[Picked this up at the BBC site.&nbsp; Comedian Nick Helm won a British award fro best joke of the year:<br /><br />&quot;I needed a password eight characters long so I picked Snow White and the Seven Dwarves.&quot;<br /><br />sandspur<br />living and dying in runlevel three]]>
+			</description>
+			<category><![CDATA[Computer General]]></category>
+			<comments>http://www.pcolalug.org/smf/index.php?action=post;topic=3792.0</comments>
+			<pubDate>Thu, 25 Aug 2011 10:05:38 GMT</pubDate>
+			<guid>http://www.pcolalug.org/smf/index.php?topic=3792.msg17849#msg17849</guid>
+		</item>
+		<item>
+			<title><![CDATA[Now Hiring for Pensacola NAS - Linux Admins, Windows Admins and Oracle DBA]]></title>
+			<link>http://www.pcolalug.org/smf/index.php?topic=3791.msg17848#msg17848</link>
+			<description>
+<![CDATA[We are currently looking for experienced Linux admins, Windows admins and Oracle DBAs. &nbsp;If any of you guys are looking for work, or can recommend anyone, please let me know! &nbsp;This would include nights (11pm to 7am) and/or weekend shifts. &nbsp;Active security clearance and any relevant certifications are preferred!<br /><br />nick.smith at gmail. com<br /><br />]]>
+			</description>
+			<category><![CDATA[IT Jobs]]></category>
+			<comments>http://www.pcolalug.org/smf/index.php?action=post;topic=3791.0</comments>
+			<pubDate>Wed, 27 Jul 2011 15:24:34 GMT</pubDate>
+			<guid>http://www.pcolalug.org/smf/index.php?topic=3791.msg17848#msg17848</guid>
+		</item>
+		<item>
+			<title><![CDATA[Alienate everyone]]></title>
+			<link>http://www.pcolalug.org/smf/index.php?topic=3790.msg17847#msg17847</link>
+			<description>
+<![CDATA[Stumbled across this Linux t-shirt browsing.&nbsp; Don&#39;t think I am brave enough to wear this t-shirt anywhere...<br /><br /><span style="text-decoration: underline;"><a href="http://www.cafepress.com/+linux_dark_tshirt,48675303?cmp=dac--ta--us--000--00000&amp;utm_source=Tellapart&amp;utm_campaign=retargeting&amp;pid=6673149&amp;utm_medium=display" target="_blank">http://www.cafepress.com/+linux_dark_tshirt,48675303?cmp=dac--ta--us--000--00000&amp;utm_source=Tellapart&amp;utm_campaign=retargeting&amp;pid=6673149&amp;utm_medium=display</a></span><br /><br />sandspur<br />living and dying in runlevel three]]>
+			</description>
+			<category><![CDATA[Other Misc]]></category>
+			<comments>http://www.pcolalug.org/smf/index.php?action=post;topic=3790.0</comments>
+			<pubDate>Sun, 15 May 2011 12:36:07 GMT</pubDate>
+			<guid>http://www.pcolalug.org/smf/index.php?topic=3790.msg17847#msg17847</guid>
+		</item>
+		<item>
+			<title><![CDATA[Gnome 3]]></title>
+			<link>http://www.pcolalug.org/smf/index.php?topic=3789.msg17846#msg17846</link>
+			<description>
+<![CDATA[Expecting to see the Gnome 3 desktop when Fedora 15 is released at the end of this month.&nbsp; Will give it a try then.<br /><br />I&#39;ve downloaded Ubuntu 11.04 twice but each time the CHECKSUM failed.&nbsp; Screenshots look pretty cool.<br /><br />sandspur<br />living and dying in runlevel three]]>
+			</description>
+			<category><![CDATA[Debian Based Distrtibutions]]></category>
+			<comments>http://www.pcolalug.org/smf/index.php?action=post;topic=3789.0</comments>
+			<pubDate>Wed, 04 May 2011 18:41:23 GMT</pubDate>
+			<guid>http://www.pcolalug.org/smf/index.php?topic=3789.msg17846#msg17846</guid>
+		</item>
+	</channel>
+</rss>

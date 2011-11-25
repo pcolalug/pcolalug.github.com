@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Good info on SSH</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: danc on December 06, 2005, 08:38:08 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Good info on SSH</b><br />
+					Post by: <b>danc</b> on <b>December 06, 2005, 08:38:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The link below has some excellent tips for using SSH.&nbsp; Especially noteworthy are how to use SSH without having to enter a password, and improving security with SSH (deny root access).&nbsp; Good reading!<br /><br />http://www.linux.com/article.pl?sid=05/12/02/2045226<br /><br />Dan<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Good info on SSH</b><br />
+					Post by: <b>Brent</b> on <b>December 06, 2005, 09:48:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">lloyd was telling me something about getting ssh to work with putty keyless.<br /><br />Not sure if if your security is improved that much, even with keyless though.&nbsp; Pretty much any admin sleazy enough to log a users keystrokes would more than likely just pull the file off the datastick if he really wanted.&nbsp; You could add security by having to su through multiple users, but that still wouldn&#039;t stop an intruder from some sort of priv escilation via buffer overflow if you don&#039;t update that often.&nbsp; (Honestly, someone needs to write a script for slack that auto updates any software with a security vunerablility)&nbsp; Basically, unless nothing nasty came down the pipe since my last upgrade, I consider a machine compromised when someone gets a user account.<br /><br /><br />http://www.slackware.com/security/list.php?l=slackware-security&amp;y=2005</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Good info on SSH</b><br />
+					Post by: <b>danc</b> on <b>December 06, 2005, 10:38:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2724.msg13582.html#msg13582">Quote from: Brent on December 06, 2005, 09:48:49 am</a></div><div class="quote"><br />Not sure if if your security is improved that much, even with keyless though.  Pretty much any admin sleazy enough to log a users keystrokes would more than likely just pull the file off the datastick if he really wanted.<br /></div><br />Well, maybe.  Not much you can do about an admin like that.  In all other cases, though, keyless is MUCH more secure.<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=2724.msg13582.html#msg13582">Quote from: Brent on December 06, 2005, 09:48:49 am</a></div><div class="quote">You could add security by having to su through multiple users, but that still wouldn&#039;t stop an intruder from some sort of priv escilation via buffer overflow if you don&#039;t update that often.</div><br />True, although that statement has nothing to do with SSH...  That&#039;s why you *DO* update often.<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=2724.msg13582.html#msg13582">Quote from: Brent on December 06, 2005, 09:48:49 am</a></div><div class="quote">(Honestly, someone needs to write a script for slack that auto updates any software with a security vunerablility)</div><br />What are you waiting for?  You do realize, however, that such a task is virtually impossible, right?  How would the script know what software had a recently discovered hole?  Again, that&#039;s why you do updates (manually), with the slackware-security mailing list (that you quoted) as notification.<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=2724.msg13582.html#msg13582">Quote from: Brent on December 06, 2005, 09:48:49 am</a></div><div class="quote">Basically, unless nothing nasty came down the pipe since my last upgrade, I consider a machine compromised when someone gets a user account.</div><br />Huh?  Please explain your reasoning on that...<br /><br /><br /><br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Good info on SSH</b><br />
+					Post by: <b>Brent</b> on <b>December 06, 2005, 01:52:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I guess the best solution would be to use one of the package management systems, and set the release to 10.2 instead of current.&nbsp; The slackware security updates get back-ported into the stable 10.2 10.1 10 etc folders, so updating would simply be installing security fixes.<br /><br />I&#039;m still trying to figure out how to generate a putty friendly key... :???:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Good info on SSH</b><br />
+					Post by: <b>lloydr</b> on <b>December 06, 2005, 04:06:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2724.msg13584.html#msg13584">Quote from: Brent on December 06, 2005, 01:52:45 pm</a></div><div class="quote">I&#039;m still trying to figure out how to generate a putty friendly key... :???:<br /></div>this is easy to find on google<br /><br />one of the first hits was:<br />http://www.unixwiz.net/techtips/putty-openssh.html<br /><br />I don&#039;t remember if putty is friendly with openssh generated private keys, would have to look back but I don&#039;t believe it is, so just generate one with putty..... I just keep a private key generated with openssh on removable storage aswell as a putty generated key, then just put the public keys of the pair into your .ssh/authorized_keys2<br /><br />and done.....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Good info on SSH</b><br />
+					Post by: <b>bhoff</b> on <b>December 06, 2005, 04:48:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I recently set up my private keys on a thumb drie that must be plugged in to use passwordless ssh .<br />If Interested I can post a blow by blow for you all here let me know.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Good info on SSH</b><br />
+					Post by: <b>danc</b> on <b>December 06, 2005, 09:21:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2724.msg13584.html#msg13584">Quote from: Brent on December 06, 2005, 01:52:45 pm</a></div><div class="quote">I guess the best solution would be to use one of the package management systems, and set the release to 10.2 instead of current.&nbsp; The slackware security updates get back-ported into the stable 10.2 10.1 10 etc folders, so updating would simply be installing security fixes.</div><br />I don&#039;t (and won&#039;t) use one of those &quot;systems&quot;, such as swaret or slapt-get.&nbsp; I do it the manual (easy) way.<br /><br />Here&#039;s the deal.&nbsp; Subscribe to the Slackware security mailing list here:<br />http://www.slackware.com/lists/<br /><br />You will now get an email every time there is a security flaw discovered, and the email will contain a link to follow to get the updated package.&nbsp; Download and install with &quot;upgradepkg &lt;pkgname&gt;&quot;, and you&#039;re done.&nbsp; What could be easier?<br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=2724.msg13584.html#msg13584">Quote from: Brent on December 06, 2005, 01:52:45 pm</a></div><div class="quote">I&#039;m still trying to figure out how to generate a putty friendly key... :???:<br /></div><br /><br />Dunno about that.<br /><br />Dan<br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

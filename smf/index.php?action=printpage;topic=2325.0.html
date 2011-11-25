@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - new nvidia drivers FINALLY</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: lloydr on March 11, 2005, 06:35:47 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new nvidia drivers FINALLY</b><br />
+					Post by: <b>lloydr</b> on <b>March 11, 2005, 06:35:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nvidia apparently has finally released a new driver for GNU/Linux on IA32.<br /><br />Version: 1.0-7167<br />Operating System: Linux IA32<br />Release Date: March 11, 2005<br /><br />http://www.nvidia.com/object/linux_display_ia32_1.0-7167.html<br /><br />This suppose to fix the issues with the more recent releases of 2.6 kernel, 2.6.10, 2.6.11, 2.6.11.x<br /><br />also suppose to add in better support for the Geforce 6 series and such.<br /><br />I'm planning to test them in a few as my 6696 drivers are patched like you wouldn't believe, so they are a bit of a pain to work with and still have bugs with my 2.6.11.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new nvidia drivers FINALLY</b><br />
+					Post by: <b>ctrlz</b> on <b>March 12, 2005, 03:26:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">thanks for the update! can't wait to try these out asap.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new nvidia drivers FINALLY</b><br />
+					Post by: <b>imnes</b> on <b>March 12, 2005, 09:34:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My nvidia 6600 is pushes 7,133 FPS in default glxgears window under the 6629 drivers (which seems kind of slow for the card). &nbsp;However upgrading to the new 7167 driver release slows performance down to 5,832 FPS. &nbsp;So maybe stay away from this upgrade if you own a 6600 card :)<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new nvidia drivers FINALLY</b><br />
+					Post by: <b>lloydr</b> on <b>March 12, 2005, 09:55:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">if your using the agpgart out of the kernel, the performance decrease was noticed quickly and patches were made that seems to fix it.<br /><br />http://www.nvnews.net/vbulletin/showthread.php?t=47405<br />NVIDIA_kernel-1.0-7167-1233959.diff.txt<br />This patch fixes 2D/3D performance problems when using the Linux AGP driver, AGPGART; the built-in NVIDIA AGP driver, NvAGP, is not affected by this problem.<br /><br /><br /><br />however, 7167 drivers did not fix my xorg crashing problem.<br /><br />I completely updated my system: Slackware 10.1 -current, Xorg-6.8.2+evdev, 2.6.11.2 kernel, Nvidia-1.0-7167 drivers, Gnome-Slackbuild Gnome 2.10<br /><br />still X crashes when switching between virtual consoles, if I switch with ctrl+alt+F1 then ctrl+alt+F7 and repeat, the 2nd time I hit :0 display at ctrl+alt+F7, X completely locks up and leaves me at a black screen and forces a reboot.<br /><br />I still have yet to find anyone else who has ran into this problem..... arg lol</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - scripting question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: jaymz_720 on February 04, 2005, 06:05:44 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>scripting question</b><br />
+					Post by: <b>jaymz_720</b> on <b>February 04, 2005, 06:05:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have been reading about scripting and the bash shell in general. As I understand it, SuSE doesn't use &quot;$&quot; as user it uses &quot;&gt;&quot; while root remains &quot;#&quot;. Does that mean while writing a script the &quot;$&quot;s have to be replaced with the &quot;&gt;&quot;s for all of the script?<br /><br />For example:<br /><br />&nbsp;<div class="codeheader">Code:</div><div class="code">#!/bin/bash <br />&nbsp;rm ~/backup.tar.gz &nbsp;&#40; removes old backup if there is one &#41; <br />&nbsp;BACKUP_DIRS=$HOME <br />&nbsp;tar -cvzf backup.tar.gz $BACKUP_DIRS <br />&nbsp;#end script<br /></div><br /><br />This is part of a simple script for backing up I found. In line 3 should it read 'BACKUP_DIRS=&gt;HOME'? Or does the '$' mean somthing else here?<br /><br />jaymz</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>scripting question</b><br />
+					Post by: <b>imnes</b> on <b>February 04, 2005, 06:29:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">No. &nbsp;The prompt characters and the letters used in that script are comletely unrelated.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: scripting question</b><br />
+					Post by: <b>dpeach</b> on <b>February 04, 2005, 06:51:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: jaymz_720</div><div class="quote"><div class="codeheader">Code:</div><div class="code">#!/bin/bash <br />&nbsp;rm ~/backup.tar.gz &nbsp;&#40; removes old backup if there is one &#41; <br />&nbsp;BACKUP_DIRS=$HOME <br />&nbsp;tar -cvzf backup.tar.gz $BACKUP_DIRS <br />&nbsp;#end script<br /></div></div><br />Probably going to embarass myself, but here goes.<br /><br />The first # is not really by itself. It is hooked with the ! to make what I believe is called a &quot;shabang.&quot; The shabang tells the script to start and coupled with your /bin/bash, it that it is a bash script.<br /><br />The $ on line 3 is a string variable (as well as line 4) which is defined somewhere in some file which borders on religious faith since I only trust that it is actually there and have not seen it myself.<br /><br />The final # may or may not be necessary. I do not know. In my thinking that comments out the line that says &quot;end script&quot; and is not read. But I don't know that for sure. It may be a required part of a shell script.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>scripting question</b><br />
+					Post by: <b>rugmonster</b> on <b>February 04, 2005, 07:42:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">In most shell scripts and a number of other types of files, # is used for comments. #! is a little special thing that says look here for the program to run this file.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

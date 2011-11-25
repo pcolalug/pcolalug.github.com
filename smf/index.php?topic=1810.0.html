@@ -1,0 +1,1042 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Need help using GnuPG" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>Need help using GnuPG</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="http://www.pcolalug.org/smf/index.php?topic=1810.0;prev_next=prev" />
+	<link rel="next" href="http://www.pcolalug.org/smf/index.php?topic=1810.0;prev_next=next" />
+	<link rel="index" href="index.php%3Fboard=22.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 06:46:31 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="1810" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg8889"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#5" class="nav">Software</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=22.0.html" class="nav">Other Software</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=1810.0.html" class="nav">Need help using GnuPG</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.0;prev_next=prev#new">&laquo; previous</a> <a href="http://www.pcolalug.org/smf/index.php?topic=1810.0;prev_next=next#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> [<b>1</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="http://www.pcolalug.org/smf/index.php?action=printpage;topic=1810.0" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/normal_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: Need help using GnuPG &nbsp;(Read 2109 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=1810.0" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8889#msg8889"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8889">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8889#msg8889">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b> on:</b> August 04, 2004, 08:26:33 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Okay, I give up, I need help with GPG. &nbsp;It's already installed on my Slackware-current box and I can't seem to use it properly. &nbsp;I've been able to generate one set of pub/priv keys for myself but I can't seem to use them properly. &nbsp;I've read over their how-to which, IMO, doesn't go deeply enough into what it should look like, how it acts, and what to do if it doesn't go as planned.<br /><br />Here's what I'd like to do:<br /><br />Encrypt a file<br />Decrypt a file<br />Verify a file with a supplied sig (keep getting an error about not finding the pub key)<br />Sign files<br />Export out my public key<br />Find out how to back up my private key in case this box is toasted<br /><br /><br />Anyway, I figure those are pretty straightforward but I can't seem to use them. &nbsp;&lt;shrugs&gt; Go figure. &nbsp;I thought this might help keep my skills sharp and be good practice for a future in network security.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8889">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8892"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=11.html" title="View the profile of sandspur">sandspur</a></b>
+							<div class="smalltext">
+								Experienced<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 189<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=3%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=11.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.gulfbreeze.net/sandspur/" title="http://www.gulfbreeze.net/sandspur/" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8892#msg8892"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8892">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8892#msg8892">GNU Privacy Guard</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #1 on:</b> August 04, 2004, 12:02:00 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Hi FOXX---<br /><br />For openers check &nbsp;<a href="http://www.gnupg.org/" target="_blank">http://www.gnupg.org/</a> for some very useful giudes and HOWTOs. &nbsp;My PGP public key available on request.<br /><br />Chuck<br /><a href="http://www.pcola.com/sandspur/" target="_blank">http://www.pcola.com/sandspur/</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8892">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8894"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=23.html" title="View the profile of rburt3">rburt3</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1297<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="http://www.pcolalug.org/smf/avatars/General 401-500/446.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=23.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="../index.html" title="http://www.pcolalug.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8894#msg8894"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8894">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8894#msg8894">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #2 on:</b> August 04, 2004, 08:15:37 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Please, oh please don't take this the wrong way, but <div class="codeheader">Code:</div><div class="code">man gpg</div>. Yes, this will seem at first to be a blow off answer, but I was able to find most of the answers to your questions there.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8894">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;One prog to read the lines, one prog to find them,<br />One prog to count the lines and to the console bind them&quot;<br />- some AC on /.</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8895"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=11.html" title="View the profile of sandspur">sandspur</a></b>
+							<div class="smalltext">
+								Experienced<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 189<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=3%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=11.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.gulfbreeze.net/sandspur/" title="http://www.gulfbreeze.net/sandspur/" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8895#msg8895"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8895">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8895#msg8895">Backups</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #3 on:</b> August 05, 2004, 06:41:03 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Hi FOXX---<br /><br />This discussion is about your last question --- how to back up your secret key. &nbsp;After you have installed GPG and generated a key pair they reside in your home/foxx/.gnupg directory, pubring.gpg &nbsp;and secring.gpg. &nbsp;You can copy them to a floppy or other media.<br /><br />This may be too much detail, but here is an example:<br /><br /><div class="codeheader">Code:</div><div class="code">cd .gnupg<br />cp pubring.gpg /mnt/floppy<br />cp secring.gpg /mnt/floppy</div><br /><br />Let us assume the worst --- everything gets fried and you decide on a new installation. &nbsp;After the installation install GNU Privacy Guard again and generate a new key pair. &nbsp;You want to delete the new public and secret keys.<br /><br /><div class="codeheader">Code:</div><div class="code">cd .gnupg<br />rm pubring.gpg<br />rm secring.gpg</div><br /><br />Now you can copy your old public and secret key rings to the .gnupg directory from the floppy:<br /><br /><div class="codeheader">Code:</div><div class="code">cd /mnt/floppy<br />cp pubring.gpg /home/foxx/.gnupg<br />cp secring.gpg /home/foxx/.gnupg</div><br /><br />This will save you a lot of grief from exchanging new keys with you encryption buddies.<br /><br />Chuck<br /><br /><a href="http://www.pcola.com/sandspur/" target="_blank">http://www.pcola.com/sandspur/</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8895">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8897"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=11.html" title="View the profile of sandspur">sandspur</a></b>
+							<div class="smalltext">
+								Experienced<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 189<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=3%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=11.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.gulfbreeze.net/sandspur/" title="http://www.gulfbreeze.net/sandspur/" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8897#msg8897"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8897">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8897#msg8897">Exporting your public key</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #4 on:</b> August 05, 2004, 09:17:36 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Hi FOXX---<br /><br />Been playing with GPG. &nbsp;No wonder you are having trouble. &nbsp;Here is how I managed to get my public key in a fille I can send to others. &nbsp;I had to jump through a few hoops but it works.<br /><br />I did everything while in my /home/sandspur/.gnupg directory.<br /><br />I'm going to create an empty file we will use later. &nbsp;<br /><br /><div class="codeheader">Code:</div><div class="code">touch chuckkey.asc</div><br /><br />Eventually we will have an ASCII version of my public --- you can view it later with vi.<br /><br />In a terminal and in my .gnupg directory I typed:<br /><br /><div class="codeheader">Code:</div><div class="code">gpg -armor --export chucksteele@bellsouth.net chuckkey.asc</div><br /><br />An ASCII GPG key appeared in the terminal, to my surprise.<br /><br />How to get it in a form you can send to others? &nbsp;I highlighted the GPG key and then clicked Edit &gt; Copy.<br /><br />I opened another terminal and typed <div class="codeheader">Code:</div><div class="code">vi chuckkey.asc</div><br /><br />I entered the insert mode in that file and clicked Edit &gt; Paste.<br /><br />The key was then visible. &nbsp;Exit and save vi. &nbsp;chuckkey.asc is the file I will send to other people. &nbsp;They will import the file to their public key rings.<br /><br />Hope this helps you.<br /><br />Chuck</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8897">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8898"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=11.html" title="View the profile of sandspur">sandspur</a></b>
+							<div class="smalltext">
+								Experienced<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 189<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=3%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=11.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.gulfbreeze.net/sandspur/" title="http://www.gulfbreeze.net/sandspur/" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8898#msg8898"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8898">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8898#msg8898">Importing public keys</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #5 on:</b> August 05, 2004, 10:24:33 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Hi FOXX---<br /><br />I think this will get easier as we go along.<br /><br />At this point I have the Gnu Privacy Guard installed and have my public key ready to send to other people.<br /><br />If I type:<br /><br /><div class="codeheader">Code:</div><div class="code">gpg --list-keys</div><br /><br />I'll see just my own key listed. &nbsp;It looks like this:<br /><br />pub 1024D/BA2FD50A 2004-08-05 Chuck Steele (sandspur) &lt;<a href="mailto:chucksteele@bellsouth.net">chucksteele@bellsouth.net</a>&gt;<br /><br />Let us say that Silicone FOXX exported his public key to a file foxx.asc and sent it to me as an e-mail attachment and I save in into my /home/sandspur/.gnupg directory.<br /><br />In a terminal and in my .gnupg directory I'll type:<br /><br /><div class="codeheader">Code:</div><div class="code">gpg --import foxx.asc</div><br /><br />Let us list the keys again;<br /><br /><div class="codeheader">Code:</div><div class="code">gpg --list-keys</div><br /><br />Now I should see my key and Silicone Foxx's key listed.<br /><br />Chuck</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8898">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8915"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8915#msg8915"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8915">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8915#msg8915">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #6 on:</b> August 06, 2004, 10:46:03 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: rburt3</div><div class="quote">Please, oh please don't take this the wrong way, but <div class="codeheader">Code:</div><div class="code">man gpg</div>. Yes, this will seem at first to be a blow off answer, but I was able to find most of the answers to your questions there.</div><br /><br />I suppose I'll start with one of the more technical problems I'm having. &nbsp;For encryption, the form of it is encrypting a file, right, rather than plain text. &nbsp;While that's another matter I'll deal with later right now I'd just be happy to encrypt a file with my public key and then decrypt it with my private key, a real simple operation that I seem unable to accomplish with this program (I'm probably just making it harder than it should be).<br /><br />I cannot seem to encrypt the file because it wants a &quot;recipient.&quot; Well what if I just wanted to encrypt them for general purpose, not just for a specific person? &nbsp;Or what if this person isn't in the system (for someone else on the 'net)? &nbsp;Then how do I encrypt then because the way I was reading the man page it wanted a specific recipient for the encryption.<br /><br /><br />I tried signing but I guess I must be doing it wrong or something because I gave it a shot and nothing came of it.<br /><br /><br />When I tried to compare the .sig file with one of the GnuPG program front-ends I downloaded from them it gave me errors about not finding the public key. &nbsp;I told it to compare sigs using the .sig file and then told it both the .sig and the file to compare and both gave me the same error.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8915">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8916"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8916#msg8916"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8916">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8916#msg8916">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #7 on:</b> August 06, 2004, 10:49:19 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Okay, for the verification I'm getting the feeling that GPG does not come with the public keyset for GPG files (which, to me, is really odd though I see their reasoning). &nbsp;I guess I'll have to go digging for their key and work on importing it to check the signature.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8916">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8922"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=23.html" title="View the profile of rburt3">rburt3</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1297<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="http://www.pcolalug.org/smf/avatars/General 401-500/446.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=23.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="../index.html" title="http://www.pcolalug.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8922#msg8922"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8922">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8922#msg8922">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #8 on:</b> August 07, 2004, 08:19:23 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Ok, I was able to simply encrypt a file with the following:<div class="codeheader">Code:</div><div class="code">gpg -e calendar.html</div><br /><br />Of course, you'd want to pick a file on your own machine. When it asked me for a user ID (the key to use) I gave it the username part of the email address of my key (rburt3). This resulted in the file calendar.html.gpg. To decrypt, I used: <div class="codeheader">Code:</div><div class="code">gpg --decrypt calendar.html.gpg</div><br /><br />It prompted me for my passphrase and then spit out the plaintext. If you want to save the plaintext, you would have to do something like <div class="codeheader">Code:</div><div class="code">gpg --decrypt myfile.gpg &gt; myunencryptedfile.txt</div><br /><br />Of course, the decrypt worked since I encrypted with my own key. If you are encrypting with someone else&#039;s public key, you won&#039;t be able to decrypt unless they have foolishly given you their private key as well.<br /><br />So, if I had your public key (you can find mine at <a href="http://home.mchsi.com/~rburt3/rburt3.asc" target="_blank">http://home.mchsi.com/~rburt3/rburt3.asc</a>) and wanted to send you supersecretstuff.txt, I would do something like <div class="codeheader">Code:</div><div class="code">gpg -r SiliconFOXX -e supersecretstuff.txt</div><br /><br />I got all this from reading the man pages (shame on me, but I usually use kgpg and the Konqueror file manager for all of this stuff... <img src="Smileys/default/wink.gif" alt="Wink" border="0" />) .</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8922">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;One prog to read the lines, one prog to find them,<br />One prog to count the lines and to the console bind them&quot;<br />- some AC on /.</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8923"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=23.html" title="View the profile of rburt3">rburt3</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1297<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="http://www.pcolalug.org/smf/avatars/General 401-500/446.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=23.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="../index.html" title="http://www.pcolalug.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8923#msg8923"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8923">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8923#msg8923">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #9 on:</b> August 07, 2004, 08:30:16 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Okay, for the verification I'm getting the feeling that GPG does not come with the public keyset for GPG files (which, to me, is really odd though I see their reasoning). &nbsp;I guess I'll have to go digging for their key and work on importing it to check the signature.</div><br />Nope. This would be a HUGE amount of data and quite impossible to distribute in a practical manner. There are public keystores, though. Give <a href="http://wwwkeys.us.pgp.net" target="_blank">http://wwwkeys.us.pgp.net</a> a try. For others looking for your key, you can always export your public key to the free keyserv with the command <div class="codeheader">Code:</div><div class="code">gpg --send-keys rburt3 --keyserver hkp&#58;//wwwkeys.us.php.net</div><br /><br />Of course, you'd replace <i>rburt3</i> with your own id and <i>hkp://wwwkeys.us.php.net</i> with the keystore url of your choice.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8923">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;One prog to read the lines, one prog to find them,<br />One prog to count the lines and to the console bind them&quot;<br />- some AC on /.</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8924"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8924#msg8924"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8924">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8924#msg8924">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #10 on:</b> August 07, 2004, 08:31:39 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Thank you, that has started making more sense. &nbsp;I'm going to try that out right now.<br /><br /><br />Oh, and no shame for using graphical stuff, encryption is supposed to be easy to use...you know, that way you use it. &nbsp;<img src="Smileys/default/wink.gif" alt="Wink" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8924">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8980"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8980#msg8980"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8980">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8980#msg8980">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #11 on:</b> August 13, 2004, 11:08:36 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Do you guys post your key out on a key server? If so, what server do you use? <br /><br />I found Gentoo has an excellent howto on GnuPG <a href="http://www.gentoo.org/doc/en/gnupg-user.xml" target="_blank">here</a>.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8980">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg8993"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=23.html" title="View the profile of rburt3">rburt3</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1297<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="http://www.pcolalug.org/smf/avatars/General 401-500/446.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=23.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="../index.html" title="http://www.pcolalug.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8993#msg8993"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_8993">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg8993#msg8993">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #12 on:</b> August 15, 2004, 08:28:33 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">You should be able to look me up (use rburt3, maybe) on <a href="http://wwwkeys.us.pgp.net" target="_blank">http://wwwkeys.us.pgp.net</a>, but it may take a while.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8993">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;One prog to read the lines, one prog to find them,<br />One prog to count the lines and to the console bind them&quot;<br />- some AC on /.</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg9149"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1810.msg9149.html#msg9149"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_9149">
+										<a href="index.php%3Ftopic=1810.msg9149.html#msg9149">Need help using GnuPG</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #13 on:</b> September 02, 2004, 05:44:20 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Just out of curiousity, what's the difference between the public key and the sub key? &nbsp;I mean, what I learned in security class anyway was that there was a public and private key and in GPG I seem to have a public, sub, and private key.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_9149">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> [<b>1</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="http://www.pcolalug.org/smf/index.php?action=printpage;topic=1810.0" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 1810;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="1810" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=1810.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 2109 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="http://www.pcolalug.org/smf/index.php?topic=1810.0;prev_next=prev#new">&laquo; previous</a> <a href="http://www.pcolalug.org/smf/index.php?topic=1810.0;prev_next=next#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0" selected="selected"> => Other Software</option>
+			<option value="?board=32.0"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.424 seconds with 17 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

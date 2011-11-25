@@ -1,0 +1,1086 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Where to apply evdev patches for X?" />
+	<meta name="robots" content="noindex" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>Where to apply evdev patches for X?</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="index.php%3Ftopic=2146.0%3Bprev_next=prev.html" />
+	<link rel="next" href="index.php%3Ftopic=2146.0%3Bprev_next=next.html" />
+	<link rel="index" href="index.php%3Fboard=38.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 07:01:34 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="2146" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg10887"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#6" class="nav">Misc</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=38.0.html" class="nav">Newbie Corner</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=2146.0.html" class="nav">Where to apply evdev patches for X?</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="index.php%3Ftopic=2146.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=2146.0%3Bprev_next=next.html#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> <a class="navPages" href="index.php%3Ftopic=2146.0.html">1</a> [<b>2</b>] <a class="navPages" href="index.php%3Ftopic=2146.30.html">3</a> 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=2146.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: Where to apply evdev patches for X? &nbsp;(Read 4966 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=2146.15" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10887.html#msg10887"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10887">
+										<a href="index.php%3Ftopic=2146.msg10887.html#msg10887">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #15 on:</b> December 29, 2004, 09:54:28 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Could be the KVM isn't passing the signals correctly...</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10887">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10888"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10888.html#msg10888"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10888">
+										<a href="index.php%3Ftopic=2146.msg10888.html#msg10888">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #16 on:</b> December 29, 2004, 10:06:52 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Update: &nbsp;well, I've modified my configs and such and installed those packages. &nbsp;X comes up just fine but for whatever reason I'm still having very odd behavior with my mouse when using the 2.6.x kernels. &nbsp;I'm going to see if I can plug in my mouse directly with USB to solve the problem but part of me is hoping it doesn't. &nbsp;This is because I'm currently controlling two machines with a KVM and the KVM needs a PS/2 adapter for USB hardware. &nbsp;If the PS/2 adapter input is what's causing the issue then I'll have a problem controlling both machines with my one set of input.<br /><br />EDIT: &nbsp;While I haven't unplugged it to try out my theory, apparently I'm probably correct. &nbsp;gpm seems to have an issue with X when there's a KVM involved, quite possibly.<br /><br /><a href="http://www.rdfoerster.com/LUGIE/linux_tips.htm" target="_blank">http://www.rdfoerster.com/LUGIE/linux_tips.htm</a></div><br /><br />FURTHER EDIT: &nbsp;disabling gpm seems to make it a &quot;bit&quot; better but it might as well not have done anything. &nbsp;Changing the evet to watch in xorg.conf doesn't help either. &nbsp;Alright, I'm going to try out the hardplugging it in with USB instead of going through the KVM.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10888">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10889"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10889.html#msg10889"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10889">
+										<a href="index.php%3Ftopic=2146.msg10889.html#msg10889">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #17 on:</b> December 29, 2004, 10:37:14 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Try plugging it in with the ps/2 adapter as well. Try some problem isolation. You could also use Synergy (as seen in this <a href="index.php%3Fboard=0.html" target="_blank">thread</a>) to share input devices between the systems if you find a problem with your KVM.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10889">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10891"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a></b>
+							<div class="smalltext">
+								Global Moderator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1860<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=5%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=9.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.mythoughtspot.com" title="My Thought Spot" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10891.html#msg10891"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10891">
+										<a href="index.php%3Ftopic=2146.msg10891.html#msg10891">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #18 on:</b> December 29, 2004, 11:02:05 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I have trouble with my KVM not liking the mouse. <img src="Smileys/default/sad.gif" alt="Sad" border="0" /> &nbsp;I have to use 2 mouses when using my KVM switch. Stinks, but at least I can use the same keyboard and monitor.<br /><br />The only problem with Synergy is the need to have 2 monitors, which I do not have. <img src="Smileys/default/cry.gif" alt="cry" border="0" /> <br /><br />Maybe the KVM is your problem and that is not that big of an issue. Though it is nice to have one mouse for both machines, if you are like me, you spend the vast majority of your time on the main machine and the other one is just occasional use. So having another mouse tucked away for working on that machine is not a huge issue.<br /><br />Hope you get it. I am curious as to what the outcome will be.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10891">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">David<br /><a href="http://www.dpeach.com" target="_blank">www.dpeach.com</a><br /><a href="http://www.mythoughtspot.com" target="_blank">www.mythoughtspot.com</a><br /><a href="http://www.missionarytalks.com" target="_blank">www.missionarytalks.com</a><br />--...&nbsp; ...--<br />(see, I can code)</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10895"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10895.html#msg10895"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10895">
+										<a href="index.php%3Ftopic=2146.msg10895.html#msg10895">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #19 on:</b> December 29, 2004, 01:05:58 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Well, news from my side is semi-expected, semi-not. &nbsp;Apparently it doesn't just not like the KVM switch, it doesn't even like the PS/2 adapter. &nbsp;Yeah, weird, eh? &nbsp;Well, it's happened before on another machine I've got so I guess it's not just a fluke. &nbsp;Well, whatever, right?<br /><br />I was going to have to move around the machines anyway so it's not really a BIG problem but like dpeach mentioned it IS an annoyance. &nbsp;I'm just wondering why it worked perfectly on the 2.4.x kernel but not on the 2.6.x (apparently they changed the input type but to break KVM compatibilty sounds like an issue to be fixed).<br /><br />However, using evdev I STILL can't get all the buttons working. &nbsp;I've told it to have twelve buttons, 800 resolution, all that good stuff and even did the Xmodmap but still no dice. &nbsp;I'm not really frustrated, more just curious as to why it seems to refuse to use the buttons on the mouse.<br /><br /><br /><br />Possibly part of the issue when I do the cat /proc/bus/input/devices the mouse doesn't show up as USB even though it's plugged in that way, it shows up as a &quot;Generic PS/2 Mouse&quot; and its phys address is still the isa0060 type one, not a USB type. &nbsp;I'm convinced that somewhere in those clues lies the answer.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10895">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10896"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10896.html#msg10896"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10896">
+										<a href="index.php%3Ftopic=2146.msg10896.html#msg10896">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #20 on:</b> December 29, 2004, 01:17:25 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Check your BIOS to see if it is doing legacy input devices or something to that affect. You could still use your KVM, but more in the sense of it just being &nbsp;a video switch. Some KVMs will do okay without the keyboard and mouse hooked while others won't. In this setup, you would just move your mouse over to the other system and manually switch your KVM.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10896">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10901"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a></b>
+							<div class="smalltext">
+								Administrator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 769<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=9%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=118.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://slackwolf.com" title="http://slackwolf.com" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10901.html#msg10901"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10901">
+										<a href="index.php%3Ftopic=2146.msg10901.html#msg10901">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #21 on:</b> December 29, 2004, 03:18:45 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">most of the highend usb mice that are made to run usb, run much better with usb over ps/2. my mx500 is like day and night between usb and ps/2, usb being extremely smooth and ps/2 acting a little odd with the sensitivity most of the time...but majority of the mx series saturates usb1.1, so ps/2 is kind of a bottleneck i would presume</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10901">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://www.megapathdsl.net/~vrandall/sea/slack.gif" alt="" border="0" /><img src="http://www.megapathdsl.net/~vrandall/sea/obsd.gif" alt="" border="0" /><br />&quot;Sending script kiddies to /dev/null since 1995&quot; --OpenBSD<br />OpenBSD is a great OS, but Theo de Raadt is an arse...</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10902"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10902.html#msg10902"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10902">
+										<a href="index.php%3Ftopic=2146.msg10902.html#msg10902">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #22 on:</b> December 29, 2004, 03:47:37 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">For the moment the &quot;separate mice, same kb/monitor&quot; is the suggestion I'm going to use. &nbsp;I'll check out the BIOS here just after I install &quot;The Longest Journey&quot; on the Windows side (I'll play with it in Wine later, I'd just like to play the game for now). &nbsp;Can't believe it was only $10, one of the greatest games in recent history.<br /><br />Anyway, thanks for all the help, I figured I might not be alone on the patches confusion and I'm sorry to have filled up so much space with my trial and error of my mouse in the 2.6.x. &nbsp; I suppose on the positive side if anyone else has an issue like this in the future we'll know what it is for certain.<br /><br /><br />lloydr, I was thinking the same way you are about the USB but that's where it gets interesting. &nbsp;In the manual for the mouse it says to only use the USB connection with a Mac, that if you're on a PC to use the adapter and is quite specific about it. &nbsp;I always wondered why but wasn't going to question it if there was not a problem. &nbsp;Oh well, just goes to show that even the manufacturer may not know their product so well.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10902">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10905"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a></b>
+							<div class="smalltext">
+								Administrator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 769<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=9%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=118.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://slackwolf.com" title="http://slackwolf.com" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10905.html#msg10905"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10905">
+										<a href="index.php%3Ftopic=2146.msg10905.html#msg10905">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #23 on:</b> December 29, 2004, 04:00:02 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">dunno if the mx500 says that in the manual aswell, i think they put that in there as sometimes with windows people have said that their usb kb/mouse doesn't kick in until after it gets to the login screen so you could be SOL if you were needing to go into safe mode, think it was really a matter of how your bios supported it, usb mouse and ps/2 keyboard not having that problem as much you just don't get a mouse before it boots lol, dunno<br /><br />everybody i've talked to that have an mx500/510/700/900/1000 mouse use usb without any problems except a few have the problem of not being able to use the mouse until windows boots<br /><br />i think the reason they say use usb for mac is i doubt mac has this problem, and with windows on PC it's a safer bet for them to just say use ps/2 than have people wonder why they don't get a mouse till after it boots(i think the drivers from logitech fix the problem to a certain extent though, not sure)<br /><br />atleast this is what i've heard of why they say ps/2 for PC, but I stick to usb and haven't used windows in over a year so i can't confirm anything</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10905">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://www.megapathdsl.net/~vrandall/sea/slack.gif" alt="" border="0" /><img src="http://www.megapathdsl.net/~vrandall/sea/obsd.gif" alt="" border="0" /><br />&quot;Sending script kiddies to /dev/null since 1995&quot; --OpenBSD<br />OpenBSD is a great OS, but Theo de Raadt is an arse...</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10916"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10916.html#msg10916"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10916">
+										<a href="index.php%3Ftopic=2146.msg10916.html#msg10916">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #24 on:</b> December 30, 2004, 12:45:27 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Yeah, when I plug it in via USB for the firs time I log in the mouse isn't functional but thereafter, at least on WindowsXP without the Logitech drivers, it works fine. &nbsp;Why no Logitech drivers? &nbsp;Because it runs a program in the background and I really don't like having additional memory sucked down...not to mention the fact that the only thing that doesn't work without the drivers is the tilt wheel, it scrolls just fine.<br /><br /><br />Anyway, I checked my BIOS. &nbsp;It's a Phoenix Award BIOS in case anyone's familiar with that and under input devices it just lists &quot;USB Keyboard Support&quot; and &quot;USB Mouse Support&quot; and the only options are &quot;on&quot; or &quot;off.&quot; Picked through the whole BIOS, nothing about legacy.<br /><br />I'm going to rebuild my 2.6.10 kernel so I can check for anything like &quot;legacy mouse setup&quot; or something akin to that. &nbsp;Sorry I'm not too active, I'm REALLY sick right now (always seem to get sick on my time off). &nbsp;I feel a little better today than I did yesterday thanks to a ton of Echinacia (or however it's spelled) tea and a decent amount of anti-histamine drugs but that's like saying that it feels better to be shot in the shoulder than shot in your back...either way you're still shot.<br /><br />I'll update when I'm up for it.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10916">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10921"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a></b>
+							<div class="smalltext">
+								Administrator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 769<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=9%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=118.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://slackwolf.com" title="http://slackwolf.com" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10921.html#msg10921"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10921">
+										<a href="index.php%3Ftopic=2146.msg10921.html#msg10921">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #25 on:</b> December 30, 2004, 07:21:17 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">My mx1000 arrived today and started working on it.<br /><br />I'm running usb, shows up just fine <br />&nbsp;Option &nbsp; &nbsp; &nbsp; &nbsp;&quot;Dev Name&quot; &quot;Logitech USB Receiver&quot;<br />&nbsp;Option &nbsp; &nbsp; &nbsp; &nbsp;&quot;Dev Phys&quot; &quot;usb-0000:00:1d.2-2/input0&quot;<br /><br />works fine, was a little odd to get used to at first coming from my mx500.<br /><br />so far every button works, i have xorg.conf setup for a 12 button config and everything but tilt wheel works(but tilt wheel is dedicated as button 11 and 12, just doesn't horizontally scroll), i'm thinking about just binding tilt wheel left and right to the left and right arrow keys so i will have horizontal scrolling lol</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10921">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://www.megapathdsl.net/~vrandall/sea/slack.gif" alt="" border="0" /><img src="http://www.megapathdsl.net/~vrandall/sea/obsd.gif" alt="" border="0" /><br />&quot;Sending script kiddies to /dev/null since 1995&quot; --OpenBSD<br />OpenBSD is a great OS, but Theo de Raadt is an arse...</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10956"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10956.html#msg10956"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10956">
+										<a href="index.php%3Ftopic=2146.msg10956.html#msg10956">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #26 on:</b> January 03, 2005, 10:13:29 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">ehci_hcd 0000:00:02.2: USB 2.0 initialized, EHCI 1.00, driver 26 Oct 2004<br />hub 1-0:1.0: USB hub found<br />hub 1-0:1.0: 8 ports detected<br />USB Universal Host Controller Interface driver v2.2<br />usbcore: registered new driver usblp<br />drivers/usb/class/usblp.c: v0.13: USB Printer Device Class driver<br />Initializing USB Mass Storage driver...<br />usbcore: registered new driver usb-storage<br />USB Mass Storage support registered.<br />usbcore: registered new driver usbhid<br />drivers/usb/input/hid-core.c: v2.0:USB HID core driver<br />mice: PS/2 mouse device common for all mice<br />input: AT Translated Set 2 keyboard on isa0060/serio0<br />input: PS/2 Generic Mouse on isa0060/serio1<br /><br /><br />That's in my bootup sequence. &nbsp;I'm wondering if somehow I left out some USB option but I severely doubt it.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10956">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10957"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10957.html#msg10957"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10957">
+										<a href="index.php%3Ftopic=2146.msg10957.html#msg10957">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #27 on:</b> January 03, 2005, 10:42:16 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Okay, now I'm POSITIVE that it's something I've left out of the kernel. &nbsp;When I boot the 2.4.26 kernel I double-checked the dmesg and the /proc/input/usb/devices and sure enough the Logitech USB receiver shows up, no problem. &nbsp;Nothing like that shows up in the 2.6.10. &nbsp;This means that I've left SOME USB option out of the 2.6.10 kernel but I've no idea what it could be as I looked through all of them and none of them seem to shout out &quot;Logitech&quot; or &quot;usbmouse&quot; (the driver in the 2.4.26 was &quot;usbmouse&quot;).<br /><br /><br />This is it, I know it is, I just don't know which module I need in my kernel now. &nbsp;However, I'm POSITIVE this is where the problem lies.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10957">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10958"></a><a name="new"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10958.html#msg10958"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10958">
+										<a href="index.php%3Ftopic=2146.msg10958.html#msg10958">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #28 on:</b> January 03, 2005, 10:59:46 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">VERY fascinating. &nbsp;Running &quot;lspci -v&quot; reveals that this board has two OHCI USB controllers and one EHCI. &nbsp;This could be something I missed.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10958">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10959"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1486<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=65%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=45.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=2146.msg10959.html#msg10959"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10959">
+										<a href="index.php%3Ftopic=2146.msg10959.html#msg10959">Where to apply evdev patches for X?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #29 on:</b> January 03, 2005, 11:31:28 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">This is it, I know it is, I just don't know which module I need in my kernel now. &nbsp;However, I'm POSITIVE this is where the problem lies.</div><br /><br />..... And you're really really really POSITIVE that you enabled (under &quot;USB support&quot;):<br /><br />* USB Human Interface Device (full HID) support<br />&nbsp; &nbsp; &nbsp;* HID input layer support<br /><br />There are two options there, the second being &quot;under&quot; the first. &nbsp;You're POSITIVE you enabled BOTH (did I say BOTH) of them?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10959">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://members.cox.net/danc3/icons/divineSW.gif" alt="" border="0" /></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> <a class="navPages" href="index.php%3Ftopic=2146.0.html">1</a> [<b>2</b>] <a class="navPages" href="index.php%3Ftopic=2146.30.html">3</a> 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=2146.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 2146;
+	smf_start = 15;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="2146" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=2146.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 4966 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="index.php%3Ftopic=2146.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=2146.0%3Bprev_next=next.html#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0"> => Other Software</option>
+			<option value="?board=32.0"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0" selected="selected"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.418 seconds with 17 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

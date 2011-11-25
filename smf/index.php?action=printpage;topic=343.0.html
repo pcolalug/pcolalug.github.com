@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Mozilla acting weird</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: danc on December 30, 2002, 11:04:20 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>danc</b> on <b>December 30, 2002, 11:04:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi,<br /><br />&nbsp; &nbsp;My Mozilla browser (under MDK9) has started to act weird... &nbsp;It will not allow me to log into my SWAT (Samba) config - errors out with a 401-Authorization required page. &nbsp;Also when I try to log in to these forums here on pcolalug, it does nothing after I put in my name and password, and click &quot;login&quot;. &nbsp;I am using Galeon at the moment, and it works fine on both the things mentioned above... &nbsp;How can this be? &nbsp;Mozilla does browse to other internet pages just fine.<br />Any clues?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>rugmonster</b> on <b>December 30, 2002, 11:47:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sounds like the authorization function of mozilla got hosed. Check your settings maybe? If anything, blow it off your system and give phoenix (http://www.mozilla.org/projects/phoenix) a try. &nbsp;Also, if you aren't running the newest version of Mozilla, you might want to try installing that. I think, though, it is most likely a setting having to do with http authorizations. <br /><br />/me is a Phoenix pimp.<br />Have you tried Phoenix yet? What about Debian? I'll get you set up good... :twisted:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>dpeach</b> on <b>December 30, 2002, 12:37:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I love Phoenix. Danc, if you are just using Mozilla for a browser, then I would definately recommend Phoenix. Same thing, just better, smaller, faster.<br /><br />If you need the mail/newsreader client, IRC client, HTML editor, etc., ad nauseum, then try reinstalling Mozilla. It does sound like a config file got monkeyed with. Unless it never worked, then that is another issue.<br /><br />One of the greatest things I love about Phoenix is that you don't have to install the browser, but unpack it and you are ready to go.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>imnes</b> on <b>December 30, 2002, 12:59:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You can try deleting your internet cache, deleting cookies, and stuff like that. &nbsp;I think in the preferences / settings somewhere. &nbsp;That might fix 'er up.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>rugmonster</b> on <b>December 30, 2002, 03:39:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just thought about something else. Could you have possibly saved those values in the password manager? Check that as well. But I agree with dpeach, if you only use Mozilla as your browser (and not mail/news/irc client, html editor), you should really think about moving to Phoenix because it really is faster. If you decide to move over to phoenix, we can tell you the places to set phoenix as your default browser (I had to do some digging because it isn't just one place). If you want to be cheap, you can just make a symlink like /usr/bin/mozilla pointing to phoenix and /usr/bin/mozilla-bin to phoenix-bin. <br /><br />The world will use Phoenix...yes...yes they will!!!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>danc</b> on <b>December 30, 2002, 04:35:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br /><br />Thanks for all the replies and suggestions. &nbsp;I tried clearing cache, cookies, settings, with no luck. &nbsp;So, I deleted Mozilla (by removing with rpmdrake), and that also removed Galeon. &nbsp;Anyway, I am writing this from Phoenix as you all suggested, and so far I like it. &nbsp;And yes, Rugmonster, I would appreciate you telling me <b>where</b> and <b>how</b> to make it my default browser. &nbsp;Another annoying outcome from this is that when I boot up, I get an error message that some mozilla.png file (icon maybe?) can't be found... &nbsp;What can I edit to stop the system from looking for that file at startup.<br /><br />On a related note (sort of), I have learned a lot in the last week or so about Linux. &nbsp;One of the most confusing things to me still is the startup process, and what scripts are run, and how environment variables get set, etc...etc.. &nbsp;etc... &nbsp;Can someone give a brief overview of that, or point me towards a good source to read? &nbsp;Thanks again for the help and recommendations!<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>danc</b> on <b>December 30, 2002, 04:39:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">P.S. to my last post...... &nbsp;I extracted the Phoenix archive to my /usr/lib directory &nbsp;(there's now a /phoenix directory under /usr/lib ...... &nbsp;was that the right place to put it....? &nbsp;does it matter? &nbsp;I created an icon on my toolbar to launch it, and it works, but is there a &quot;real&quot; phoenix icon which I can make show up? &nbsp;Thanks again.<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>imnes</b> on <b>December 30, 2002, 06:51:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've never had to set environment variables, but it depends on what shell you're using. &nbsp;If you're in bash, (you probably are), then edit something like ~/.bash_profile or maybe even ~/.bashrc in your user directory.<br /><br />The startup scripts in RedHat (and other derived distros like Mandrake) are really best dealt with through the configuration utilities. &nbsp;If you just want to enable / disable different apps from running, use chkconfig. &nbsp;It can be used to list which runlevels an app starts in, and to enable/disable them. &nbsp;<br /><br />Runlevels are just used to classify what mode your system is operating in. &nbsp;Kinda like windows has normal mode, safe mode, command prompt only, etc. &nbsp;To see what the different runlevels for your system are, you'll need to look in the file /etc/inittab, your system is probably the same as mine, in which case:<br /><div class="codeheader">Code:</div><div class="code"><br />&nbsp; &nbsp;0 - halt &#40;Your system is in runlevel 0 when it is shut down&#41;<br />&nbsp; &nbsp;1 - Single user mode<br />&nbsp; &nbsp;2 - Multiuser, without NFS &#40;The same as 3, if you do not have networking&#41;<br />&nbsp; &nbsp;3 - Full multiuser mode<br />&nbsp; &nbsp;4 - unused<br />&nbsp; &nbsp;5 - X11<br />&nbsp; &nbsp;6 - reboot &#40;Your system goes to runlevel 6 when you are rebooting it&#41;.<br /></div><br /><br />Here's an example of GPM:<br /><br />GPM is the program that gives you a mouse in text-only mode. &nbsp;To see which runlevels it's operating in, you would type:<br />/sbin/chkconfig --list gpm<br /><br />When I type that, I get:<br /><div class="codeheader">Code:</div><div class="code"><br />gpm &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0&#58;off &nbsp; 1&#58;off &nbsp; 2&#58;on &nbsp; &nbsp;3&#58;on &nbsp; &nbsp;4&#58;on &nbsp; &nbsp;5&#58;on &nbsp; &nbsp;6&#58;off<br /></div><br /><br /><br />What this tells you, is that GPM will be started when your computer enters run levels 2, 3, 4, and 5. &nbsp;<br /><br />To modify which runlevels it starts in, (for example, I want to make it start in 6 also), you would run:<br /><div class="codeheader">Code:</div><div class="code"><br />/sbin/chkconfig --level 6 gpm on<br /></div><br /><br />To turn it back off for runlevel 6, do:<br /><div class="codeheader">Code:</div><div class="code"><br />/sbin/chkconfig --level 6 gpm off<br /></div><br /><br />And also, there are lots of useful scripts in the directory /etc/rc.d/init.d, my system has:<br /><div class="codeheader">Code:</div><div class="code"><br />alsasound &nbsp;firstboot &nbsp;isdn &nbsp; &nbsp; &nbsp; netfs &nbsp; &nbsp;pcmcia &nbsp; &nbsp; &nbsp;saslauthd &nbsp;syslog<br />anacron &nbsp; &nbsp;functions &nbsp;kdcrotate &nbsp;network &nbsp;portmap &nbsp; &nbsp; sendmail &nbsp; winbind<br />apmd &nbsp; &nbsp; &nbsp; gpm &nbsp; &nbsp; &nbsp; &nbsp;keytable &nbsp; nfs &nbsp; &nbsp; &nbsp;postfix &nbsp; &nbsp; single &nbsp; &nbsp; xfs<br />atd &nbsp; &nbsp; &nbsp; &nbsp;halt &nbsp; &nbsp; &nbsp; killall &nbsp; &nbsp;nfslock &nbsp;random &nbsp; &nbsp; &nbsp;snmpd &nbsp; &nbsp; &nbsp;xinetd<br />autofs &nbsp; &nbsp; iptables &nbsp; kudzu &nbsp; &nbsp; &nbsp;nscd &nbsp; &nbsp; rawdevices &nbsp;snmptrapd &nbsp;ypbind<br />crond &nbsp; &nbsp; &nbsp;irda &nbsp; &nbsp; &nbsp; lpd &nbsp; &nbsp; &nbsp; &nbsp;ntpd &nbsp; &nbsp; rhnsd &nbsp; &nbsp; &nbsp; sshd<br /></div><br /><br /><br />If you run these scripts without any arguments, they will tell you how to use them. &nbsp;These are the actual scripts that are called while your system is booting up / shutting down, etc. &nbsp;Take the gpm script for example, if I want to see what arguments the gpm script accepts, I just type:<br /><div class="codeheader">Code:</div><div class="code"><br />etc/rc.d/init.d/gpm<br /></div><br /><br />And it tells me:<br /><div class="codeheader">Code:</div><div class="code"><br />Usage&#58; /etc/rc.d/init.d/gpm &#123;start|stop|restart|condrestart|status&#125;<br /></div><br /><br />So, if I want to see the current status of the program, I can type<br /><div class="codeheader">Code:</div><div class="code"><br />/etc/rc.d/init.d/gpm status<br /></div><br /><br />Which on my system tells me:<br /><div class="codeheader">Code:</div><div class="code"><br />gpm &#40;pid 832&#41; is running...<br /></div><br /><br />Which means the program gpm is running under program ID (pid) 832. &nbsp;If I want to close the GPM application, I would issue:<br /><div class="codeheader">Code:</div><div class="code"><br />/etc/rc.d/init.d/gpm stop<br /></div><br /><br />Since I'm a standard user and not root (you need to be root to do most stuff in those scripts), I get an error message:<br /><div class="codeheader">Code:</div><div class="code"><br />/etc/rc.d/init.d/gpm&#58; line 180&#58; /var/run/gpm.pid&#58; Permission denied<br />/etc/rc.d/init.d/gpm&#58; line 196&#58; kill&#58; &#40;832&#41; - Operation not permitted<br />/etc/rc.d/init.d/gpm&#58; line 201&#58; kill&#58; &#40;832&#41; - Operation not permitted<br />rm&#58; cannot remove `/var/run/gpm.pid'&#58; Permission denied &nbsp; &nbsp;&#91;FAILED&#93;<br /></div><br /><br />But if I were root the program would terminate. &nbsp;Typing<br /><div class="codeheader">Code:</div><div class="code"><br />/etc/rc.d/init.d/gpm start<br /></div><br />would of course restart the program.<br /><br />The restart command is sort-of a shortcut, it calls STOP and START for you.<br /><br />Anyway, you can look through them and play around if you want. &nbsp;The only one I ever use is the network script if my router reboots and I need to get a new IP address or something, I'll do it now so you can see what it looks like. &nbsp;This command takes down my ethernet connection, unloads the module, then reloads the module and contacts the DHCP server for a new IP address.<br /><div class="codeheader">Code:</div><div class="code"><br />&#91;root@localhost imnes&#93;# /etc/rc.d/init.d/network<br />Usage&#58; /etc/rc.d/init.d/network &#123;start|stop|restart|reload|status&#125;<br />&#91;root@localhost imnes&#93;# /etc/rc.d/init.d/network reload<br />Shutting down interface eth0&#58; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91; &nbsp;OK &nbsp;&#93;<br />Shutting down loopback interface&#58; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91; &nbsp;OK &nbsp;&#93;<br />Setting network parameters&#58; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91; &nbsp;OK &nbsp;&#93;<br />Bringing up loopback interface&#58; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91; &nbsp;OK &nbsp;&#93;<br />Bringing up interface eth0&#58; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#91; &nbsp;OK &nbsp;&#93;<br />&#91;root@localhost imnes&#93;#<br /></div><br /><br />That should be enough to get you started. &nbsp;If you have more questions, post 'em.<br /><br />Nick<br /><br />[/code]</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>imnes</b> on <b>December 30, 2002, 06:53:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Another note, if you don't feel like screwing with the startup scripts and just want to add something to the boot process, you can add it to the file /etc/rc.d/rc.local. &nbsp;Any commands you put in that file are executed at the end of the bootup process, right before you get to login.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>rugmonster</b> on <b>December 30, 2002, 07:03:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Working backwards &nbsp;:wink: <br /><br /><div class="quoteheader">Quote from: danc</div><div class="quote">P.S. to my last post...... I extracted the Phoenix archive to my /usr/lib directory (there's now a /phoenix directory under /usr/lib ...... was that the right place to put it....? does it matter?</div><br /><br />I personally do things a little weird with my system. Technically, executables should be placed under a bin directory. /bin is used for the programs that are necessary for bare minimum use (ls, cp, rm, etc.). In the old days of Unix, the extra programs, not necessary for minimum operation, went into /usr/bin. If you notice, most of the directories under root are also under /usr. It was and to some extent still is common practice to have your root be its own partition and then you mount usr, var, etc. This is so if one of those partitions gets damaged, you only have to worry about rebuilding one part of a system rather than the whole thing. Anyway, /usr/bin is now where the majority of your packages are installed. It is recommended that any other programs that are installed be installed under /usr/local with /usr/local/bin being where you put your executables. <br /><br />What I do weird is I take all my packages that I install from source and put them in their own directory under /usr/local/pkgs/&lt;pkg name&gt;. I then symlink the appropriate files to their respective directories under /usr/local. For phoenix, I unpacked it under /usr/local/pkgs and then made a symlink of /usr/local/pkgs/phoenix/phoenix to /usr/local/bin/phoenix. I found that if I made this symlink, the phoenix binary would then go on its own to open up the other files it needs. It works out quite nicely and I can update phoenix by writing over one directory. Same with my source packages as well.<br /><br /><div class="quoteheader">Quote from: danc</div><div class="quote">I created an icon on my toolbar to launch it, and it works, but is there a &quot;real&quot; phoenix icon which I can make show up?</div><br /><br />I haven't found one, but you could always make one. I personally use the Debian symbol...only cause I like Phoenix so much &nbsp;:D <br /><br /><div class="quoteheader">Quote from: danc</div><div class="quote">And yes, Rugmonster, I would appreciate you telling me where and how to make it my default browser.</div><br /><br />Are you using Gnome or KDE? It makes a difference. I say default browser in that when I use Nautilus to open an html file, it opens it with Phoenix. If I try to open a hyperlink from evolution, I have to already have Phoenix open for it to work. I'll keep digging to see how I can make it work otherwise. Still, let me know which desktop environment you are using and I'll tell you what I can.<br /><br /><div class="quoteheader">Quote from: danc</div><div class="quote">Another annoying outcome from this is that when I boot up, I get an error message that some mozilla.png file (icon maybe?) can't be found... What can I edit to stop the system from looking for that file at startup.</div><br /><br />Hmm...maybe you can look in the Menudrake utility (Mandrake-&gt;Configuration-&gt;Other-&gt;Menudrake) and root around and try to find any references to Mozilla and remove them. I will warn you, I never got Menudrake to update any of my menus, but I usually don't have luck with those tools. It must have worked for someone else at some time, so give it a try. <br /><br /><div class="quoteheader">Quote from: danc</div><div class="quote">One of the most confusing things to me still is the startup process, and what scripts are run, and how environment variables get</div><br /><br />Okay...in most Linux distros, it uses the SysVInit (as in sys 5) style of scripts. You typically have /etc/rc.d and a directory either /etc/rc.d/init.d or /etc/init.d. The init.d directory has all of your scripts which have the options of start, stop, reload (optional) and status (optional) that either start, stop, reload or give you status on your various system and server daemons. You then will probably notice under /etc/rc.d a number of directories rc(number).d. These all correspond with the different runlevels and then under there are more scripts that have very similar names to those scripts under init.d. A runlevel is the mode at which the system is run at. Here is a list of some of the run levels (there can be more...):<br /><ul style="margin-top: 0; margin-bottom: 0;"><li>0: halt the computer</li><li>1: single-user mode</li><li>2: multi-user mode without networking</li><li>3: multi-user mode with networking</li><li>4: reserved for customization, otherwise does the same as 3</li><li>5: same as 4, it is usually used for GUI login (like X's xdm or KDE's kdm)</li><li>6: reboot the computer</li>[/list:u]<br />Now within the rc(#).d directories have symlinks to the scripts in init.d. The numbers on those symlinks refer to the order of execution for that run level. They are all excuted one at a time, but the numbers dictate in which order they are executed. This is important if say you are going into runlevel 3 and are mounting your foreign Samba shares and need your networking up to do so. Obviously, you need your networking established to mount those directories. Also, you will notice a K or S and these typically refer to Kill or Start, but if you are under runlevel 0 or 6, S stops the process since the system is going down. <br /><br />I hope that explains what you want to know. Any other questions, please feel free to post.</ul></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>danc</b> on <b>December 30, 2002, 09:54:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wow. &nbsp;Thank you to Rugmonster and imnes for taking the time for those lengthy explanations. &nbsp;Most of it made sense to me, and I will take some time to digest things some more (after printing out and studying!). &nbsp;In regards to the default browser issue, I am using Gnome (with Mandrake 9.0). &nbsp;Thanks a lot, again, for your help! &nbsp;I think I'm starting to like this stuff.... &nbsp; :mrgreen: <br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mozilla acting weird</b><br />
+					Post by: <b>crowe</b> on <b>December 30, 2002, 10:58:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Most of what can be said already has been said, so no point in me repeating what other people have said. :D<br /><br />This (http://www.netspace.net.au/~gok/power2bash/power2bash/power2bash.html) could also be something worth looking at for a bit more of an in-depth look into how bootscripts and all work. &nbsp;(Plus a lot more.) <br /><br />As for phoenix icons, the only ones I could dig up were for that other OS (Here (http://iconpacks.mozdev.org/phoenix/), but I don't imagine they'll be too useful.) &nbsp;You're welcome to use mine (http://members.east.cox.net/~cfrowe/blue64X64_8.xpm), however. &nbsp;8)<br /><br />Hope this helps.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

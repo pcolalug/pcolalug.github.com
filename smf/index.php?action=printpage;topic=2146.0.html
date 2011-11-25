@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Where to apply evdev patches for X?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on December 28, 2004, 12:52:59 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 28, 2004, 12:52:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I've got these patch files for adding evdev support to X. &nbsp;I've examind them to try to determine where they need to go and as far as I can tell I do not possess any directory structure anything like what they apparently need.<br /><br />I've also attempted to locate some instructions on installing these patches (core, keyboard, mouse evdev support patches) and the only thing I've pulled up is &quot;you'll have to apply these patches.&quot;<br /><br /><br /><br />I'm beginning to suspect that they need to be applied to the source files and then you're to compile your own X.org. &nbsp;Is this what I really need to do? &nbsp;I only ask since I wanted to make sure I wouldn't have to do something drastic since I'm currently really liking having X.org in a package that can be easily upgraded.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 28, 2004, 01:26:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">yea I'm thinking that the patches are to be applied to the source code and you recompile X. This kinda stinks as I do also like having them in packages for easy upgrades.<br /><br />Maybe there is evdev patches packages around for slackware and other distros? I read something about debian's being patched already.<br /><br />If you get any answers or find any links, post them here as I could definetely use them and I'm sure theres a few others that are aswell other than SiliconFOXX and me</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 28, 2004, 05:28:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">hey, check these out:<br />http://forums.gentoo.org/viewtopic.php?t=198534<br /><br />talks about how to get a microsoft tilt wheel mouse working, which also applies the same for the tilt whel in the mx1000, talks about evdev no doubt<br /><br />this is for gentoo, but things shouldn't be too different for other distros, just we don't get ebuilds lol</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 28, 2004, 09:06:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You guys are going to have to rebuild your X.org from source after patching the source. Those patches are probably going to be specific to a certain version of X.org, so pay attention to that. The best thing to do would be to look around the web for not a binary form of the patch, but a binary package for your distribution that already has the patches applied.<br /><br />See, Gentoo makes things easier in this instance!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 28, 2004, 01:55:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So far from my reading you guys are right and my suspicions are confirmed: &nbsp;you've got to patch the source and rebuild. &nbsp;Really blows IMO because that means upgrading later requires remembering where all the binary files were put (oh yeah, like I'm REALLY going to remember all the possible places those files could be).<br /><br />From LinuxPackages.net I upgraded to the latest version, 6.8.1 (I think that six is the first number, might be two and if so please forgive me) but it doesn't seem to have evdev installed already. &nbsp;I hate to say it but if it's not at LinuxPackages.net I'm in doubt it'd be elsewhere.<br /><br /><br />I'm just wondering if this would be a solution to getting my mouse working properly with the 2.6.x kernels. &nbsp;For whatever reason when I boot the 2.6.x kernels (any of them as far as my testing concludes) without touching a thing in the xorg.conf my mouse acts really strange. &nbsp;Like, moving it up and down moves it very quickly left and right, moving it up acts like pushing the right mouse button, it's blinding quick...like it's not recognizing the mouse type correctly. &nbsp;I was hoping that getting it working with evdev would not only fix that but at the same time allow me to use all the buttons.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 28, 2004, 03:37:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">the only leads I've gotten were that a few guys in the #Slackware irc channel have built xorg with evdev support recently, going to see when they get on(they are regulars) if they built slackpacks, if not I guess I'll just build Xorg on my own with the patches and just make them into a slackpack for easy upgrading later</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 28, 2004, 03:58:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is it too difficult to make it into a Slackware package? &nbsp;From the look of it it's not but I wouldn't want to make a package that's not going to work on everyone's system.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 28, 2004, 05:03:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">it's not that difficult to make a slack pack, as far as getting it to work on other people's machines i'm not sure about. If i compile it, then it'll be built on 2.6.10 kernel and should be atleast compatible with i686 2.6.x kernel machines</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 28, 2004, 08:23:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: lloydr</div><div class="quote">it's not that difficult to make a slack pack, as far as getting it to work on other people's machines i'm not sure about. If i compile it, then it'll be built on 2.6.10 kernel and should be atleast compatible with i686 2.6.x kernel machines</div><br /><br />Heh, well, I'd be willing to be your test subject. &nbsp;;) You could GMail it to me.<br /><br /><br /><br />This does remind me...it seems that X is sort of configured to use KDE, Gnome, Fluxbox, and all the other window managers resident on the system. &nbsp;If I removed the X.org package and compiled from source, how would I get it to use all those window managers again? &nbsp;I'm guessing that would be a difficult and/or complicated task but the regular Slackware packages seem to do it automatically.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 28, 2004, 09:10:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">do you mean what is in the /etc/X11/xinit/ directory as far as the scripts for starting the different environments?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 28, 2004, 11:20:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've picked up the slackware -current source for x11 and Patrick's build script that builds all the components of x11-6.8.1 in slackpack form so you can easily just upgradepkg.<br /><br />planning to compile them for generic i686 over the i486 the stock packages are for, now just gotta find the section of the script where I need to apply the patches lol<br /><br />this will allow me to easily make slack packs of xorg patched with evdev when needed, and have the benefits of being able to use pkgtool to keep up with everything.<br /><br />working on the script tonight, hope to start compiling late tonight or tomorrow<br /><br />ftp://slackware.mirrors.tds.net/pub/linux/slackware/slackware-current/source/x/x11/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 29, 2004, 01:44:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just got ahold of DrSand in the slackware channel and he sent me to where he has his slackpacks stored that are compiled for evdev support<br />ftp://termserver.niesc.org/pub/sandman1/Xorg/<br /><br />page takes a second to load sometimes, but I'm downloading them now<br /><br />he mentioned that he also has the mx1000 mouse, he has the tilt wheel working<br /><br />edit:<br />I am currently running on DrSand's slackware packages as I'm typing this, compiled for i686, patched for evdev, all looks good<br /><div class="codeheader">Code:</div><div class="code"><br /># strings /usr/X11R6/bin/X | grep evdev<br />evdevStart<br />evdevNewDriver<br />evdevGetFDForDriver<br />evdev<br />%s&#58; cannot register with evdev brain<br />%s&#58; cannot start evdev brain<br />/tmp/.X11-unix/evdev%d<br />evdev brain<br />evdevMouseReadInput<br />evdevMouseSigioReadInput<br />evdevMouseProc<br />evdevMousePreInit<br />lnx_evdev.c<br />evdev_alive<br />evdev_drivers<br />evdevReadInput<br />evdev_buf<br />evdevSigioReadInput<br />evdevGetControlFD<br />evdev_device<br />evdevReleaseControlFD<br />evdevControl<br />evdevStart<br />evdevNewDriver<br />evdevGetFDForDriver<br /></div><br /><br />editing my xorg.conf right now to see how this goes</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 29, 2004, 02:44:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">wow, holy crap<br /><br />with my mx500, running DrSand's version of Xorg x11-6.8.1, following the 10button configuration that linux-gamers.net gives, and placing the .Xmodmap in my home.... every button works perfectly:<br />left click, right click, middle click, scroll wheel up, scroll wheel down, scroll button up, scroll button down, forward thumb button, back thumb button, and the application switcher is detected as a button and i see it as an independent button in xev that i can bind to any command(probaly alt+tab) which is the application switcher in linux.<br /><br />wow, this is awesome, before I had evdev running everything worked except application switcher couldn't be detected as an individual button and also the scroll button up acted also like the back thumb button in firefox.<br />&nbsp;:D &nbsp;:D &nbsp;:D &nbsp;:D &nbsp;:D &nbsp;:D &nbsp;:twisted: <br /><br />Now i can't wait to get my MX1000 on thursday/friday</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 29, 2004, 08:40:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wow, that's great! &nbsp;I'm going over to download the package now to test it out myself.<br /><br />Perhaps I should hang out in the Slackware channel more often, hmmm...I'm not used to using IRC since most of the time I jump into a room either everyone's talking at once or nobody's talking at all.<br /><br />I was meaning those xinit scripts, yeah. &nbsp;However, I also have in my /etc/X11 some directories like &quot;fvvm2,&quot; &quot;fvvm95,&quot; &quot;twm,&quot; and &quot;xdm.&quot; To be perfectly honest I don't know what they do but I would imagine they'd be important to starting up various window managers.<br /><br /><br /><br />Thanks for the support, I'll write back as soon as I've got it working.<br /><br /><br />About the MX1000 you won't be disappointed. &nbsp;I was expecting a serious mouse from it and it delivered. &nbsp;Only possible problem is that when you pick it up and place it down there's a slight delay but for me I usually turn the sensitivity up to the point where I don't pick up the mouse for hours on end so it doesn't affect me.<br /><br />But when they say there's no delay they mean it. &nbsp;Thing was worth every penny.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 29, 2004, 09:43:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Update: &nbsp;well, I've modified my configs and such and installed those packages. &nbsp;X comes up just fine but for whatever reason I'm still having very odd behavior with my mouse when using the 2.6.x kernels. &nbsp;I'm going to see if I can plug in my mouse directly with USB to solve the problem but part of me is hoping it doesn't. &nbsp;This is because I'm currently controlling two machines with a KVM and the KVM needs a PS/2 adapter for USB hardware. &nbsp;If the PS/2 adapter input is what's causing the issue then I'll have a problem controlling both machines with my one set of input.<br /><br />EDIT: &nbsp;While I haven't unplugged it to try out my theory, apparently I'm probably correct. &nbsp;gpm seems to have an issue with X when there's a KVM involved, quite possibly.<br /><br />http://www.rdfoerster.com/LUGIE/linux_tips.htm</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 29, 2004, 09:54:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Could be the KVM isn't passing the signals correctly...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 29, 2004, 10:06:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Update: &nbsp;well, I've modified my configs and such and installed those packages. &nbsp;X comes up just fine but for whatever reason I'm still having very odd behavior with my mouse when using the 2.6.x kernels. &nbsp;I'm going to see if I can plug in my mouse directly with USB to solve the problem but part of me is hoping it doesn't. &nbsp;This is because I'm currently controlling two machines with a KVM and the KVM needs a PS/2 adapter for USB hardware. &nbsp;If the PS/2 adapter input is what's causing the issue then I'll have a problem controlling both machines with my one set of input.<br /><br />EDIT: &nbsp;While I haven't unplugged it to try out my theory, apparently I'm probably correct. &nbsp;gpm seems to have an issue with X when there's a KVM involved, quite possibly.<br /><br />http://www.rdfoerster.com/LUGIE/linux_tips.htm</div><br /><br />FURTHER EDIT: &nbsp;disabling gpm seems to make it a &quot;bit&quot; better but it might as well not have done anything. &nbsp;Changing the evet to watch in xorg.conf doesn't help either. &nbsp;Alright, I'm going to try out the hardplugging it in with USB instead of going through the KVM.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 29, 2004, 10:37:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Try plugging it in with the ps/2 adapter as well. Try some problem isolation. You could also use Synergy (as seen in this thread (http://www.pcolalug.org/phpBB2/viewtopic.php?t=1498)) to share input devices between the systems if you find a problem with your KVM.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>dpeach</b> on <b>December 29, 2004, 11:02:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have trouble with my KVM not liking the mouse. :( &nbsp;I have to use 2 mouses when using my KVM switch. Stinks, but at least I can use the same keyboard and monitor.<br /><br />The only problem with Synergy is the need to have 2 monitors, which I do not have. :cry: <br /><br />Maybe the KVM is your problem and that is not that big of an issue. Though it is nice to have one mouse for both machines, if you are like me, you spend the vast majority of your time on the main machine and the other one is just occasional use. So having another mouse tucked away for working on that machine is not a huge issue.<br /><br />Hope you get it. I am curious as to what the outcome will be.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 29, 2004, 01:05:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, news from my side is semi-expected, semi-not. &nbsp;Apparently it doesn't just not like the KVM switch, it doesn't even like the PS/2 adapter. &nbsp;Yeah, weird, eh? &nbsp;Well, it's happened before on another machine I've got so I guess it's not just a fluke. &nbsp;Well, whatever, right?<br /><br />I was going to have to move around the machines anyway so it's not really a BIG problem but like dpeach mentioned it IS an annoyance. &nbsp;I'm just wondering why it worked perfectly on the 2.4.x kernel but not on the 2.6.x (apparently they changed the input type but to break KVM compatibilty sounds like an issue to be fixed).<br /><br />However, using evdev I STILL can't get all the buttons working. &nbsp;I've told it to have twelve buttons, 800 resolution, all that good stuff and even did the Xmodmap but still no dice. &nbsp;I'm not really frustrated, more just curious as to why it seems to refuse to use the buttons on the mouse.<br /><br /><br /><br />Possibly part of the issue when I do the cat /proc/bus/input/devices the mouse doesn't show up as USB even though it's plugged in that way, it shows up as a &quot;Generic PS/2 Mouse&quot; and its phys address is still the isa0060 type one, not a USB type. &nbsp;I'm convinced that somewhere in those clues lies the answer.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 29, 2004, 01:17:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Check your BIOS to see if it is doing legacy input devices or something to that affect. You could still use your KVM, but more in the sense of it just being &nbsp;a video switch. Some KVMs will do okay without the keyboard and mouse hooked while others won't. In this setup, you would just move your mouse over to the other system and manually switch your KVM.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 29, 2004, 03:18:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">most of the highend usb mice that are made to run usb, run much better with usb over ps/2. my mx500 is like day and night between usb and ps/2, usb being extremely smooth and ps/2 acting a little odd with the sensitivity most of the time...but majority of the mx series saturates usb1.1, so ps/2 is kind of a bottleneck i would presume</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 29, 2004, 03:47:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">For the moment the &quot;separate mice, same kb/monitor&quot; is the suggestion I'm going to use. &nbsp;I'll check out the BIOS here just after I install &quot;The Longest Journey&quot; on the Windows side (I'll play with it in Wine later, I'd just like to play the game for now). &nbsp;Can't believe it was only $10, one of the greatest games in recent history.<br /><br />Anyway, thanks for all the help, I figured I might not be alone on the patches confusion and I'm sorry to have filled up so much space with my trial and error of my mouse in the 2.6.x. &nbsp; I suppose on the positive side if anyone else has an issue like this in the future we'll know what it is for certain.<br /><br /><br />lloydr, I was thinking the same way you are about the USB but that's where it gets interesting. &nbsp;In the manual for the mouse it says to only use the USB connection with a Mac, that if you're on a PC to use the adapter and is quite specific about it. &nbsp;I always wondered why but wasn't going to question it if there was not a problem. &nbsp;Oh well, just goes to show that even the manufacturer may not know their product so well.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 29, 2004, 04:00:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">dunno if the mx500 says that in the manual aswell, i think they put that in there as sometimes with windows people have said that their usb kb/mouse doesn't kick in until after it gets to the login screen so you could be SOL if you were needing to go into safe mode, think it was really a matter of how your bios supported it, usb mouse and ps/2 keyboard not having that problem as much you just don't get a mouse before it boots lol, dunno<br /><br />everybody i've talked to that have an mx500/510/700/900/1000 mouse use usb without any problems except a few have the problem of not being able to use the mouse until windows boots<br /><br />i think the reason they say use usb for mac is i doubt mac has this problem, and with windows on PC it's a safer bet for them to just say use ps/2 than have people wonder why they don't get a mouse till after it boots(i think the drivers from logitech fix the problem to a certain extent though, not sure)<br /><br />atleast this is what i've heard of why they say ps/2 for PC, but I stick to usb and haven't used windows in over a year so i can't confirm anything</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 30, 2004, 12:45:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah, when I plug it in via USB for the firs time I log in the mouse isn't functional but thereafter, at least on WindowsXP without the Logitech drivers, it works fine. &nbsp;Why no Logitech drivers? &nbsp;Because it runs a program in the background and I really don't like having additional memory sucked down...not to mention the fact that the only thing that doesn't work without the drivers is the tilt wheel, it scrolls just fine.<br /><br /><br />Anyway, I checked my BIOS. &nbsp;It's a Phoenix Award BIOS in case anyone's familiar with that and under input devices it just lists &quot;USB Keyboard Support&quot; and &quot;USB Mouse Support&quot; and the only options are &quot;on&quot; or &quot;off.&quot; Picked through the whole BIOS, nothing about legacy.<br /><br />I'm going to rebuild my 2.6.10 kernel so I can check for anything like &quot;legacy mouse setup&quot; or something akin to that. &nbsp;Sorry I'm not too active, I'm REALLY sick right now (always seem to get sick on my time off). &nbsp;I feel a little better today than I did yesterday thanks to a ton of Echinacia (or however it's spelled) tea and a decent amount of anti-histamine drugs but that's like saying that it feels better to be shot in the shoulder than shot in your back...either way you're still shot.<br /><br />I'll update when I'm up for it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>December 30, 2004, 07:21:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My mx1000 arrived today and started working on it.<br /><br />I'm running usb, shows up just fine <br />&nbsp;Option &nbsp; &nbsp; &nbsp; &nbsp;&quot;Dev Name&quot; &quot;Logitech USB Receiver&quot;<br />&nbsp;Option &nbsp; &nbsp; &nbsp; &nbsp;&quot;Dev Phys&quot; &quot;usb-0000:00:1d.2-2/input0&quot;<br /><br />works fine, was a little odd to get used to at first coming from my mx500.<br /><br />so far every button works, i have xorg.conf setup for a 12 button config and everything but tilt wheel works(but tilt wheel is dedicated as button 11 and 12, just doesn't horizontally scroll), i'm thinking about just binding tilt wheel left and right to the left and right arrow keys so i will have horizontal scrolling lol</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>January 03, 2005, 10:13:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ehci_hcd 0000:00:02.2: USB 2.0 initialized, EHCI 1.00, driver 26 Oct 2004<br />hub 1-0:1.0: USB hub found<br />hub 1-0:1.0: 8 ports detected<br />USB Universal Host Controller Interface driver v2.2<br />usbcore: registered new driver usblp<br />drivers/usb/class/usblp.c: v0.13: USB Printer Device Class driver<br />Initializing USB Mass Storage driver...<br />usbcore: registered new driver usb-storage<br />USB Mass Storage support registered.<br />usbcore: registered new driver usbhid<br />drivers/usb/input/hid-core.c: v2.0:USB HID core driver<br />mice: PS/2 mouse device common for all mice<br />input: AT Translated Set 2 keyboard on isa0060/serio0<br />input: PS/2 Generic Mouse on isa0060/serio1<br /><br /><br />That's in my bootup sequence. &nbsp;I'm wondering if somehow I left out some USB option but I severely doubt it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>January 03, 2005, 10:42:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, now I'm POSITIVE that it's something I've left out of the kernel. &nbsp;When I boot the 2.4.26 kernel I double-checked the dmesg and the /proc/input/usb/devices and sure enough the Logitech USB receiver shows up, no problem. &nbsp;Nothing like that shows up in the 2.6.10. &nbsp;This means that I've left SOME USB option out of the 2.6.10 kernel but I've no idea what it could be as I looked through all of them and none of them seem to shout out &quot;Logitech&quot; or &quot;usbmouse&quot; (the driver in the 2.4.26 was &quot;usbmouse&quot;).<br /><br /><br />This is it, I know it is, I just don't know which module I need in my kernel now. &nbsp;However, I'm POSITIVE this is where the problem lies.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>January 03, 2005, 10:59:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">VERY fascinating. &nbsp;Running &quot;lspci -v&quot; reveals that this board has two OHCI USB controllers and one EHCI. &nbsp;This could be something I missed.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>danc</b> on <b>January 03, 2005, 11:31:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">This is it, I know it is, I just don't know which module I need in my kernel now. &nbsp;However, I'm POSITIVE this is where the problem lies.</div><br /><br />..... And you're really really really POSITIVE that you enabled (under &quot;USB support&quot;):<br /><br />* USB Human Interface Device (full HID) support<br />&nbsp; &nbsp; &nbsp;* HID input layer support<br /><br />There are two options there, the second being &quot;under&quot; the first. &nbsp;You're POSITIVE you enabled BOTH (did I say BOTH) of them?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>January 04, 2005, 12:04:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yep, I did both, and I've got it working like a charm. &nbsp;Know what it was? &nbsp;Something very, VERY easy to miss.<br /><br />nVidia boards do NOT use UHCI, that's an Intel and VIA thing. &nbsp;nVidia boards use OHCI and the nForce3-250 uses two OHCI interfaces and one EHCI interface for USB. &nbsp;As I had no idea previously during my kernel config about how the USB interfaces are derived I just accepted what had already been there and figured if I ran into an issue I'd solve it.<br /><br />Well how about that, guess I solved it. &nbsp;:lol:<br /><br /><br />The answer came from &quot;lspci -v&quot; which will tell you, under stable settings like the 2.4.26 kernel in Slackware, what interfaces everything is using. &nbsp;Absolute gem of a tool.<br /><br />Anyway yeah, everything works now. &nbsp;The tilt wheel will probably take some hard-coding to &quot;right&quot; and &quot;left&quot; but otherwise it scrolls, it tracks smoothly, the back and forward buttons work fine...I'm impressed. &nbsp;It actually tracks better here in Linux-land than it does over in WindowsXP land. &nbsp;Very cool.<br /><br />EDIT: &nbsp;after further investigation there needs to be some clarification. &nbsp;The back and forward buttons seem to work in some programs, not in others (KwikShow works, Firefox doesn't) so it's going to take some hard-coding...but all the buttons are <i>recognized</i> so far to my testing which of course is the important thing. &nbsp;More on hardcoding their responses when I get back home.<br /><br /><br />What saved me a bit of time was a user emes in ##linux on freenode who said he had a working MX1000 and had left the Generic PS/2 support in the kernel. &nbsp;That was the final thing I was going to try so it saved me some hassle. &nbsp;Whew, NOW I can FINALLY stick with a kernel build.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>January 04, 2005, 09:00:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">hm, thats weird that your forward/back buttons don't work in firefox, those buttons worked perfect in all my browsers with both my mx500 and now the mx1000</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>January 05, 2005, 11:50:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Did some MORE testing late last night, didn't have time to post.<br /><br />Sometimes on some webpages the forward and back DOES work in the webbrowser, but not in the Konqueror when browsing around my directories.<br /><br />So, little oddities here and there but I think hardcoding them will fix all that. &nbsp;Needless to say it works very nicely overall and I like how it &quot;feels&quot; much better in Linux than in Windows.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>lloydr</b> on <b>January 05, 2005, 02:41:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I like how my mx1000 handles in linux too, but had to turn down acceleration from my original settings that I had for my mx500 because i was overshooting everything by a pretty good bit, I'm still overshooting things on occasions but I'm getting more adjusted to it. I haven't used it in windows because my primary machine is single boot slackware so I dunno how well it tracks with windows vs. linux.<br /><br />gaming with this mouse is awesome and I don't notice any laser lag when i pick the mouse up off the pad a few inches and put it back down (to center up on the pad), kicks right in as soon as it gets about 1/2&quot; from touching the pad again(if i put it down really quick, like basically dropping it back on the pad, it kicks right in as soon as it hits)<br /><br />also i can use it fine with the mouse lifted upto about around 1/2&quot; so picking the mouse up slightly doesn't cause it to just suddenly stop tracking...it is slightly heavier than my mx500 but not noticeable and with the way the mouse is shaped it fits a little better than the mx500 which fit my hand like a glove<br /><br />battery charge is just fine, I ran it steadily without a quick charge since friday(got it thursday and used it, then topped it off when i went to bed, went from 2/3 charge to full in about 15minutes)<br /><br />I put it on the charger last night with 2/3 charge as I've been using it quite a bit over the weekend with gaming many hours straight running on caffeine &nbsp;:lol: &nbsp;:lol: &nbsp;:lol: <br /><br />it was finished charging in about 30-45minutes<br /><br />with being that sort of battery life I basically just have to throw it on the charger probaly once a week before i go to bed and i won't have to worry about getting below about 1/2 charge or so &nbsp; :D <br /><br />being back in school and not gaming AS much, it'll probaly last well over 2 weeks on a full charge but how hard is it to throw on the charger before going to bed once a week or so</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where to apply evdev patches for X?</b><br />
+					Post by: <b>rugmonster</b> on <b>March 25, 2005, 12:39:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, in an attempt to get my MX1000 working properly in SuSE 9.2, I have patched the X.org 6.8.1 SRPM with the evdev patches and rebuilding them now. If it works, I'll put them out there for folks to download. More to come soon.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

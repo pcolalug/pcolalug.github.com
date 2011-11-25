@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Bandwidth Meter....</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: Nomad on July 09, 2005, 07:33:33 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bandwidth Meter....</b><br />
+					Post by: <b>Nomad</b> on <b>July 09, 2005, 07:33:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I know there has to be a script or other non-gui program that will allow me to see the current ammount of bandwith being used across my network and which IP is using it..<br /><br />*Total Download / Upload (ex: 875 Kb/s 134 Kb/s)<br />*Break-Down VIA IP <br />ex:<br />(192.168.1.15 35Kb/s 1Kb/s)<br />(192.168.1.23 5Kb/s 15Kb/s)<br />ETC.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br />*Non-Gui Based.<br /><br />Anyone heard of somthing that will do that? like netwatch only dumber if you will.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bandwidth Meter....</b><br />
+					Post by: <b>rugmonster</b> on <b>July 09, 2005, 09:04:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you enable SNMP, you could use MRTG (http://people.ee.ethz.ch/~oetiker/webtools/mrtg/). That will give you graphs, via webpage as to the recent network or other utilization, such as CPU, memory, swap, mail load. It all depends on what MIBs you have loaded. Anyhow, it's a wonderfully simple and effective tool for monitoring a server or router.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bandwidth Meter....</b><br />
+					Post by: <b>microserf</b> on <b>July 15, 2005, 02:13:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">MRTG rocks.<br /><br />We were able to configure to post stats to a webpage, so we could see the traffic flow through those ports.<br /><br />Neat stuff.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

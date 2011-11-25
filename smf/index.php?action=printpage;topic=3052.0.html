@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - ntp setup question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Computer General => Topic started by: bhoff on November 03, 2006, 08:11:24 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ntp setup question</b><br />
+					Post by: <b>bhoff</b> on <b>November 03, 2006, 08:11:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys here is the jest.<br />1. Openbsd box running openntp listening on inside ip 10.0.0.1 it is keeping good time and date.<br />2. slack 10.2 box running ntpd but can not get the proper time to set according to openbsd box.<br />added following script to slackware /etc/rc.d/rc/local<br /># start the NTP daemon:<br />if [ -x /usr/sbin/ntpd ]; then<br />&nbsp; echo &quot;Starting NTP daemon&quot;<br />&nbsp; &nbsp;/usr/sbin/ntpd<br />fi<br />then run --# /etc/rc.d/rc.inet2 restart<br />this is what I get.<br />Starting Internet super-server daemon:&nbsp; /usr/sbin/inetd<br />Starting OpenSSH SSH daemon:&nbsp; /usr/sbin/sshd<br />no ntp start.<br />also my date time is all messed up on this machine would like it to poll the <br />Openbsd box for date time.<br /><br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>green_dragon37</b> on <b>November 03, 2006, 08:55:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Looking at your post there, it seems to me that if you wanted to start a service you put in rc.local, you&#039;d run that script, not rc.inet2.<br /><br />:X<br />Ian</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>danc</b> on <b>November 03, 2006, 10:35:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yup.&nbsp; The rc.local script is called from rc.M, which is normally only run at boot-up time.&nbsp; The rc.inet2 script doesn&#039;t have anything to do with rc.local.<br /><br />You could just run rc.local manually, or reboot, and the ntp stuff should start and work.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>bhoff</b> on <b>November 03, 2006, 10:47:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">According to website for slackware you put that script in /etc/rc.d/rc.local and when you run /etc/rc.d/inet2 restart that calls rc.d/rc.local could be wrong ...reboot did not work.<br />will try running rc.d/rc.local<br />&nbsp; ok here is what I did removed script from /rc.d/rc.local and put it at end of /rc.d/rc.inet2<br />then run /etc/rc.d/rc.inet2 restart<br />got the following<br />Starting Internet super-server daemon:&nbsp; /usr/sbin/inetd<br />Starting OpenSSH SSH daemon:&nbsp; /usr/sbin/sshd<br />Starting NTP daemon: /usr/sbin/ntpd<br />seems good till I run date command<br />Sat Nov&nbsp; 4 04:55:43 UTC 2006<br />at 10:30 friday evening<br />also this is what I get if I manually update with nptdate <br />root@home:/etc/ntp# ntpdate 10.0.0.1<br />Looking for host 10.0.0.1 and service ntp<br />host found : firewall.open-sourceenterprises.lan<br />&nbsp;4 Nov 04:59:56 ntpdate[3400]: adjust time server 10.0.0.1 offset -0.460495 sec<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>danc</b> on <b>November 03, 2006, 11:20:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3052.msg14998.html#msg14998">Quote from: bhoff on November 03, 2006, 10:47:03 pm</a></div><div class="quote">According to website for slackware you put that script in /etc/rc.d/rc.local and when you run /etc/rc.d/inet2 restart that calls rc.d/rc.local could be wrong ...reboot did not work.</div><br /><br />Not sure where you&#039;re seeing that... rc.inet2 has nothing to do with rc.local.&nbsp; Just take a look at it, and you can see for yourself.&nbsp; If you&#039;ll look at rc.M, you&#039;ll see where it calls rc.local.<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=3052.msg14998.html#msg14998">Quote from: bhoff on November 03, 2006, 10:47:03 pm</a></div><div class="quote">will try running rc.d/rc.local<br />&nbsp; ok here is what I did removed script from /rc.d/rc.local and put it at end of /rc.d/rc.inet2<br />then run /etc/rc.d/rc.inet2 restart<br />got the following<br />Starting Internet super-server daemon:&nbsp; /usr/sbin/inetd<br />Starting OpenSSH SSH daemon:&nbsp; /usr/sbin/sshd<br />Starting NTP daemon: /usr/sbin/ntpd</div><br /><br />Looks to me like your rc.local is not set executable.<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=3052.msg14998.html#msg14998">Quote from: bhoff on November 03, 2006, 10:47:03 pm</a></div><div class="quote">seems good till I run date command<br />Sat Nov&nbsp; 4 04:55:43 UTC 2006<br />at 10:30 friday evening<br />also this is what I get if I manually update with nptdate <br />root@home:/etc/ntp# ntpdate 10.0.0.1<br />Looking for host 10.0.0.1 and service ntp<br />host found : firewall.open-sourceenterprises.lan<br />&nbsp;4 Nov 04:59:56 ntpdate[3400]: adjust time server 10.0.0.1 offset -0.460495 sec</div><br /><br />It&#039;s clear that one of the machines is set to have it&#039;s hardware clock run at UTC/GMT, and the other isn&#039;t.&nbsp; You&#039;ll have to fix that.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>bhoff</b> on <b>November 03, 2006, 11:30:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">yes the slack box is running utc . How do I change that?<br />I have removed ntpd from slack box and installed openntpd instead just to keep things the same.<br />I was able to set the date with the date command but would be nice if I get this working automatically.<br />Thanks for all your help <br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>green_dragon37</b> on <b>November 04, 2006, 12:09:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">One thing you might want to do, is to start ntpd with the -g flag.&nbsp; That will have the effect of making it set the time no matter what, when ntpd first starts.&nbsp; If you leave that option out, and the hardware clock is out more than 1000s from the ntp server, it&#039;ll just bomb ntpd and not change anything.<br /><br />Now, to change the timezone on your Slackware machine, pop on up to root, and run timeconfig.&nbsp; (It&#039;s /usr/sbin/timeconfig, btw.)<br /><br />Ian</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>bhoff</b> on <b>November 04, 2006, 09:26:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">K thanks to all the guys that helped me on this.<br />This is what I have now..........<br />Removed openntp went back with ntp from slackware packages.<br />put following script in /etc/rc.d/rc.inet2 on slack box<br /># Start Ntpd daemon<br />&nbsp; if [ -x /usr/sbin/ntpd ]; then<br />&nbsp; echo &quot;Syncing time with local NTP server&quot;<br />&nbsp; echo &quot;Starting Ntpd daemon: /usr/sbin/ntpd&quot;<br />&nbsp; &nbsp; &nbsp;/usr/sbin/ntpdate 10.0.0.1 ; /usr/sbin/ntpd<br />fi<br />&nbsp;<br />This may not be the best way or the easiest but after countless hours on this taking a little from each of your<br />comments and tons of material on line. This works best for me.<br />Later I will probally add some code if local not availble to fall back to us.pool.ntp.org<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>danc</b> on <b>November 04, 2006, 09:59:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Glad you got it working...<br /><br />One question that I always think of when this subject is discussed is:&nbsp; What is the need to run ntp/ntpd, anyway?&nbsp; At least for nearly all home users, what does it matter if the system clock is a few seconds different from the &quot;real&quot; time?&nbsp; It seems to me that running yet another daemon for time checking is just a waste of resources, and a potential security hole.&nbsp; Any *good* reasons for running this?<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ntp setup question</b><br />
+					Post by: <b>bhoff</b> on <b>November 04, 2006, 10:10:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">When dealing with security you want all your system clocks to be synced the to the same source.<br />For various reasons. Aslo in this case my slackbox was off by more than a day!<br />Also your system bios clock can get skewed by several things including power surges, a weak cmos battery and the likes.<br />So I thought it prudent to have all set to the firewall which is also a ntp server local only and the server it updates from is secure<br />and all my remote machines also sync to this one ntp server. Remember I have a business need precise time on logs.<br />But you are right on most home machines local system time is fine.<br />Atlast there is a chance of an ntp exploit but that is what I do and the only box affected would be the firewall since all other machines pull from it.<br />And I keep a close eye on the exploit list sites atleast 3 times a day.<br /><br />Hope that helps with out being do cryptic. &gt;:D</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

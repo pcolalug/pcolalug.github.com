@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - How to setup PCL print filters on Solaris 10</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: mall0ry on August 03, 2008, 05:24:14 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to setup PCL print filters on Solaris 10</b><br />
+					Post by: <b>mall0ry</b> on <b>August 03, 2008, 05:24:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Where I work at, we send plain text files to network printers and use PCL code to control the formating. We are able control the line spacing, number of lines per page, font size and other things. This should work in Linux with minor changes. Comments and corrections are welcome.<br /><br />******************************************************************************************<br />Create a print filter definition.<br /><br />Example:<br />less /etc/lp/fd/filter_name<br /><br />Input types: any<br />Output types: filter_name<br />Printer types: any<br />Printers: any<br />Filter type: slow<br />Command: /opt/local/bin//filter_name<br /><br /><br />Create the print filter.<br /><br />Example:<br />less /opt/local/bin//filter_name<br /><br />#!/bin/bash<br />#Used for batch printing using 66 lines<br />#per page and 132 print positions<br />echo &quot;ESCE&quot;&nbsp; &nbsp; &nbsp; &nbsp;#reset printer<br />echo &quot;ESC&amp;l1O&quot;&nbsp; &nbsp; #landscape<br />echo &quot;ESC&amp;l1S&quot;&nbsp; &nbsp; #duplex long edge binding<br />echo &quot;ESC&amp;l0E&quot;&nbsp; &nbsp; #set top margin at 0<br />echo &quot;ESC&amp;l12D&quot;&nbsp; &nbsp;#set lines per inch at 12<br />echo &quot;ESC&amp;l4.9C&quot;&nbsp; #set line space 4.9<br />echo &quot;ESC(s13H&quot;&nbsp; &nbsp;#set pitch 13 cpi<br />cat -<br />echo &quot;ESCE&quot;&nbsp; &nbsp; &nbsp; #reset printer<br /><br />To create an binary ESC character&nbsp; ^[ using vi:&nbsp; press control v control [<br /><br /><br />Then you&#039;ll need to register the filter (PCL) with the lp subsystem with the following command:<br /><br />/usr/sbin/lpfilter -f filter_name -F /path/to/filter/filter_name<br /><br /><br />Define the printer:<br /><br />/usr/sbin/lpadmin -p printer_name -o protocol=bsd,dest=printer_ip_address -v /dev/null -m netstandard -T unknown -I filter_name \<br />-D &quot;printer_description&quot;<br /><br />-v - Associate a device with printer. device is the path name of a file that is writable by lp.<br />-m - Select model interface program, provided with the LP print service, for the printer.<br />-T - Identify the printer as being of one or more printer-types.<br />-I - Allow printer to handle print requests with the content types listed in a content-type-list. (upper case &#039;eye&#039;)<br /><br />Then to create a queue for the printer (which can interpret PCL) enter:<br /><br />/usr/sbin/enable printer_name<br />/usr/sbin/accept printer_name<br /><br />To check that the printer was created enter the following command:<br /><br />/usr/bin/lpstat -p printer_name -l<br /><br /><br />Printer definitions are in&nbsp; &nbsp; &nbsp; &nbsp; /etc/lp/printers<br />Printer PCL entry are in&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/etc/lp/fd<br />Printer PCL scripts are in&nbsp; &nbsp; &nbsp; &nbsp;/opt/local/bin<br /><br />A couple of PCL links;<br /><br />http://www.sxlist.com/techref/language/pcls.htm<br /><br />http://lprng.com/PrintingCookbook/index.html<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

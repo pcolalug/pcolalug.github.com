@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - RH9 + LAN Only worked once.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by:  on June 14, 2004, 02:08:15 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 + LAN Only worked once.</b><br />
+					Post by: <b></b> on <b>June 14, 2004, 02:08:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK Im really trying here.<br /><br />I had RH9 a few months ago. and got rid of it for the same reason i have millions of times. Err it wont run all the things i need it to properly.<br /><br />FIXED THAT HAHA! (i love you wine)<br /><br />But now I've run into a snag. My roomate has a computer now, and we've been running them both on a lan that looks ungefahr like this<br /><br />CABLE MODEM(WAN) --- (ROUTER) -| Comp1 <br />                                                        | Comp2<br /><br />When i first put RH9 on i setup the network the gateway the whole shebang..it worked fine for about 2 reboots. then just stopped on me. I re-did the settings reset the router tried again. And NOTHING. maybe im a retard and im missing something. Maybe my 'fubar special setup' of my lan is whats doing it but it works fine for XP. Dont make me buy another d**n net card.<br /><br />Advice/Comments/Answers<br /><br />-Nexus One</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ideas</b><br />
+					Post by: <b>bhoff</b> on <b>June 14, 2004, 03:46:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">first from prompt try ifconfig and see if eth0 comes up and looks correct.<br />Second from the prompt service network restart That should shut everything down and restart on the network side.<br /><br />Check your cable make sure it is good..Check with known good cable.<br />Also on boot up does eth0 come up.<br />You also could try dmesg|grep eth0 from the prompt to see if this gives you any ideas.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 + LAN Only worked once.</b><br />
+					Post by: <b>altomo</b> on <b>June 14, 2004, 11:58:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes it will sound odd but what router are you using? I have seen a very rare case where this same sort of thing happend on an old model of linksys routers. (1 or 2 ports i think)<br /><br /><br />Most likely not it but worth a shot.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 + LAN Only worked once.</b><br />
+					Post by: <b></b> on <b>June 16, 2004, 11:16:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The Network godz are being kind to me once again i have it all working now... dont ask me how. Had it back for about 6 hours now we'll see how it goes.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

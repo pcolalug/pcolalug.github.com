@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Project</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: bhoff on February 15, 2005, 06:07:45 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Project</b><br />
+					Post by: <b>bhoff</b> on <b>February 15, 2005, 06:07:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am in the process of securing my cluster well it is actually two fold.<br />I &nbsp;have set up a central logserver with a cd burner.<br />It compresses weekly and time stamps the log when enough are compressed it burns a cd. <br />I have added the following to my /etc/syslogd.conf file<br />&quot;*&quot; &nbsp; &nbsp; &nbsp;@logserver (or could be IP)<br /><br />then killed the syslogd daemon on the logserver and restarted with /usr/sbin/syslogd -rm 0 which enables remote logging and m 0 removes the annoying time stamp.<br />question is I have all these nice log files what I need is a way to view them and perhaps a serch function.<br />Any suggestions?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Project</b><br />
+					Post by: <b>Brent</b> on <b>February 15, 2005, 06:45:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You could check out some of the measures undertaken by the honeynet project http://project.honeynet.org/. &nbsp;<br /><br />I've heard of them even setting aside a log server with <i>one way</i> hardware communication. &nbsp;Talk out ruining an intruders day.<br /><br />As for a log viewer, I've seen something out there to view logs, I can't remember what distrobution it was on. &nbsp;I'm thinking you might be able to find a highlighting plugin for the gnome or kde text editors.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Project</b><br />
+					Post by: <b>lloydr</b> on <b>February 15, 2005, 07:37:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">log viewing on the openbsd boxes I use tcpdump majority of the time, but I have used ethereal aswell for log view which makes it nice for sorting by src/dst/port/etc.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Project</b><br />
+					Post by: <b>rugmonster</b> on <b>February 15, 2005, 08:20:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Check out LogCheck (http://www.astro.uiuc.edu/~r-dass/logcheck/). I've used something like this before on Debian. I also found this site (http://logcheck.org) and believe this may be the logcheck I used when I ran Debian. Basically, it audited my log files and emailed me suspicious log entries when scheduled. I need to do something like this again, actually...</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - basic need-to-know instructions please</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: Perquisitor on August 17, 2006, 10:28:39 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>basic need-to-know instructions please</b><br />
+					Post by: <b>Perquisitor</b> on <b>August 17, 2006, 10:28:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m now running Debian Etch on my system.&nbsp; I have a Netgear MR814v2 router connected to a cable modem.&nbsp; I have successfully connected to the internet on my system, but now, after praising Linux over Microsoft my wife wants Linux on her system.&nbsp; Her computer is using Windows XP and has a Buffalo 125 PCI card.&nbsp; She has been able to connect wirelessly using Windows, but when I installed Debian Etch on her system it will not recognize and/or configure her wireless.&nbsp; The setup installation goes through the DHCP configuration but fails.&nbsp; I have tried to set it up manually, but am not sure if I am doing anything correctly, or if there are specific packages that I need to install before it will work.&nbsp; <br />Any advice?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: basic need-to-know instructions please</b><br />
+					Post by: <b>Brent</b> on <b>August 17, 2006, 04:11:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">linux?&nbsp; wife?<br /><br />Unless your wife is just as good with computers as you are (rarely the case) I&#039;d go with ubuntu.<br /><br />When introducing linux to someone who&#039;s never seen it before, it&#039;s very important to get them started out on something thats very user friendly, and plesant to use.&nbsp; IMHO this is ubuntu&#039;s forte.&nbsp; It also has outstanding support for wireless built into the default kernel, and gnome itself.&nbsp; While debian might be making strides in this area, i doubt it&#039;s to the level of polish that ubuntu has reached.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: basic need-to-know instructions please</b><br />
+					Post by: <b>Perquisitor</b> on <b>August 17, 2006, 04:32:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ahhh,&nbsp; thank you for your input.&nbsp; You are the second person that has suggested Ubuntu for her.&nbsp; &nbsp;I give her credit for being a good sport...... when we first had only one computer, she was willing to work with a dual boot system..... I had Mandriva at that time.<br /><br />I&#039;ve since moved on to SuSe 10, and now Debian.&nbsp; I really like what I see in Debian and think I will stick with it.&nbsp; &nbsp; Ubuntu for her &#039;ey?&nbsp; Think I will give it a go.<br /><br />Thanks for the advice.<br /><br />One more quick question if I might.......&nbsp; &nbsp; could this be the problem?<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$ /sbin/lspci<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;bash: /sbin/lspci: No such file or directory<br /><br />This is from my computer, not hers.&nbsp; &nbsp; &nbsp; and if it is the problem...... how would I go about fixing it?<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: basic need-to-know instructions please</b><br />
+					Post by: <b>Perquisitor</b> on <b>August 17, 2006, 07:01:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">then again........ if I use the correct inquiry,&nbsp; then I get this:<br /><br />$ /bin/lspci<br />00:00.0 Host bridge: ALi Corporation M1689 K8 Northbridge [Super K8 Single Chip]00:01.0 PCI bridge: ALi Corporation AGP8X Controller<br />00:02.0 PCI bridge: ALi Corporation M5249 HTT to PCI Bridge<br />00:03.0 ISA bridge: ALi Corporation M1563 HyperTransport South Bridge (rev 70)<br />00:03.1 Bridge: ALi Corporation M7101 Power Management Controller [PMU]<br />00:04.0 Multimedia audio controller: ALi Corporation M5455 PCI AC-Link Controller Audio Device (rev 20)<br />00:0d.0 Ethernet controller: ALi Corporation M5263 Ethernet Controller (rev 40)<br />00:0e.0 IDE interface: ALi Corporation M5229 IDE (rev c7)<br />00:0e.1 Mass storage controller: ALi Corporation ULi 5289 SATA (rev 10)<br />00:0f.0 USB Controller: ALi Corporation USB 1.1 Controller (rev 03)<br />00:0f.1 USB Controller: ALi Corporation USB 1.1 Controller (rev 03)<br />00:0f.2 USB Controller: ALi Corporation USB 1.1 Controller (rev 03)<br />00:0f.3 USB Controller: ALi Corporation USB 2.0 Controller (rev 01)<br />00:18.0 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] HyperTransport Technology Configuration<br />00:18.1 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Address Map<br />00:18.2 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] DRAM Controller<br />00:18.3 Host bridge: Advanced Micro Devices [AMD] K8 [Athlon64/Opteron] Miscellaneous Control<br />01:00.0 VGA compatible controller: nVidia Corporation NV34 [GeForce FX 5200] (rev a1)<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: basic need-to-know instructions please</b><br />
+					Post by: <b>rugmonster</b> on <b>August 17, 2006, 09:59:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Perquisitor, what exactly are we supposed to be looking for there? I don&#039;t see any wireless ethernet controller there. I see the ALi, which I assume is the onboard NIC, but no others. <br /><br />As for getting your wife going with Linux, go for it! I&#039;m running Debian on my desktop and Ubuntu on my laptop and my wife uses them both. The only time she ever wants to use Windows is when she writes papers for school. She likes Word&#039;s grammar and spelling check better than OpenOffice.org and Abiword. My wife is not a computer whiz by any means and if she needs something fixed or installed or instructions on how to do something, she asks me. Most of the time, once I show her the program she needs to use, she can figure it out from there. The only thing I&#039;ve had a hard time explaining to her is that when she unmounts her MP3 player, she needs to wait to make sure it really is done copying her files and is really unmounted before unplugging it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: basic need-to-know instructions please</b><br />
+					Post by: <b>Perquisitor</b> on <b>August 17, 2006, 11:10:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">well........someone in LinuxQuestions.org forum asked me to run that inquiry so they could see if Debian had recognized and configured my ethernet connection.&nbsp; That was the result of my inquiry.&nbsp; They also said to run /bin/lsmod.&nbsp; &nbsp;That person also said that it appeared that Debian is not recognizing my ethernet.<br /><br />I don&#039;t know.<br /><br />I tried downloading Ubuntu this evening and burning the image to disc, but although the program said that the disc was burned successfully, upon trying to install Ubuntu on her system, it gave me a boot disc error after only 4% loaded.<br /><br />I&#039;m not having good luck any which way I go about this.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: basic need-to-know instructions please</b><br />
+					Post by: <b>imnes</b> on <b>August 18, 2006, 10:07:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">SUSE (Not OpenSUSE) typically has better support for commercial wifi drivers, if you have the latest suse you might try installing it?<br /><br />Nick<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: basic need-to-know instructions please</b><br />
+					Post by: <b>rugmonster</b> on <b>August 18, 2006, 10:31:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ubuntu does a great job with them as well, but Debian more than likely won&#039;t be carrying much in the way of the commercial firmwares. It goes against their ideals of a free and open source operating system. You can get non-free packages through Debian repositories, but you have to specifically add them. Part of the reason I use Ubuntu on the laptop is because it did pick up my Prism54 card and had the firmware included so everything just worked. <br /><br />Chances are, you just burned a bad disc, had bad media, or the drive trying to read the disc didn&#039;t like it. Make sure you do an md5sum on the iso. There will be an md5sum file in the same directory where you downloaded the iso. If that checks out okay, then try burning it again. </div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

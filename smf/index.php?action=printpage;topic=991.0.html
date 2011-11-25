@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - POP software for Linux</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by:  on September 07, 2003, 11:52:15 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b></b> on <b>September 07, 2003, 11:52:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heyas,<br /><br />Can anyone here recommend a POP3 program that I can use for Linux. It's in conjunction with Qmail if that matters. Preferrably one you have experience with so you can help me. So far I've tried the one that came with Qmail and then Vpopmail and I just can't seem to get them working.<br /><br />I've got email being delivered successfully to my domain and being handled by Qmail. Right now I have it running in Maildir format because I was trying to use Qmail-pop3. It just kept starting and stopping and it was late and I have up.<br /><br />Any advice?<br /><br /><br />cheers,<br /><br /><br />Tim</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>September 07, 2003, 02:33:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I wouldn't use Maildir format. I don't think many POP3 daemons like maildir. You probably want to use IMAP in that instance. (I could be and probably am wrong on this)<br /><br />I have used the UW package which includes a POP3d and IMAPd. They are plug and play for the most part. Read the config options and be sure to enable it in your inetd.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b></b> on <b>September 07, 2003, 07:18:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">UW?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>September 07, 2003, 07:38:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">University of Washington IMAPD (http://www.washington.edu/imap/) <br /><br />And I just remembered that you have to patch the daemon to work with maildirs. As far as I know, maildirs are sort of out of style.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b></b> on <b>September 08, 2003, 04:01:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heh, well the only reason I was using Maildirs is because I couldn't get Qmail to deliver to my Mailbox directories.. I'll check it out.. thanks..</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>September 08, 2003, 04:35:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Another MTA you might want to try is either Postfix or Exim. Both are fairly simple (comparitively speaking to sendmail) and are well supported and documented. I have experience with exim first hand, and I know it just works.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b></b> on <b>September 08, 2003, 08:07:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I may check those out thanks. Postfix, I had read, was designed to be a drop in replacement for Sendmail and I don't really want to deal with that. Qmail's sort of working, but definitely not good enough..<br /><br /><br /><br />cheers,<br /><br /><br /><br />Tim</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>September 08, 2003, 09:29:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What are you wanting your MTA to do?<br /><br />Postfix is a replacement, but a much simplier and from what I understand a more secure replacement. Same thing with Exim.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b>dpeach</b> on <b>September 08, 2003, 09:41:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I used Postfix for 2 years and had it set up in my first attempt. It was not at all difficult (of course I could have been terribly unsecure, but ignorance is bliss). It is supposed to be feature rich like sendmail, without all the headaches of setup. I think there are a few things that sendmail has the upperhand on, but not sure.<br /><br />I edited a config file that told me exactly what to put in which lines. I then started using it. I never had a problem, therefore, I don't know much about it. That was almost 3 years ago that I set it up. Since I never had to go in and tweak it, I am probably useless in offering any troubleshooting tips. But if you hit a snag let us know, I might be able to help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b>imnes</b> on <b>September 09, 2003, 09:57:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I installed something on my FreeBSD server, I think it's called QPopper if I remember correctly. &nbsp;Might check that out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>POP software for Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>September 09, 2003, 11:17:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Qpopper works too</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

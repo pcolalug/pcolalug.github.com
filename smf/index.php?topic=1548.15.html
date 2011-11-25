@@ -1,0 +1,1022 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Strange mounting issue" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>Strange mounting issue</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="index.php%3Ftopic=1548.0%3Bprev_next=prev.html" />
+	<link rel="next" href="index.php%3Ftopic=1548.0%3Bprev_next=next.html" />
+	<link rel="index" href="index.php%3Fboard=38.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 03:44:18 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="1548" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg7442"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#6" class="nav">Misc</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=38.0.html" class="nav">Newbie Corner</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=1548.0.html" class="nav">Strange mounting issue</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="index.php%3Ftopic=1548.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=1548.0%3Bprev_next=next.html#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> <a class="navPages" href="index.php%3Ftopic=1548.0.html">1</a> [<b>2</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=1548.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: Strange mounting issue &nbsp;(Read 3948 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=1548.15" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg7442.html#msg7442"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7442">
+										<a href="index.php%3Ftopic=1548.msg7442.html#msg7442">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #15 on:</b> April 16, 2004, 09:21:39 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">foxx@sam:~$ mount /dev/cdrom<br />mount: wrong fs type, bad option, bad superblock on /dev/cdrom,<br />&nbsp; &nbsp; &nbsp; &nbsp;or too many mounted file systems<br /><br />Just FYI, the above is what I get when trying to mount an audio CD.<br /><br />I've tried a few programs (KsCD, Kaboodle, XMMS, Gxine) and none of them seem to work. &nbsp;How exactly am I supposed to play the audio CD?<br /><br />I think I'm making this too hard.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7442">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7446"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a></b>
+							<div class="smalltext">
+								Administrator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 769<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=9%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=118.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://slackwolf.com" title="http://slackwolf.com" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg7446.html#msg7446"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7446">
+										<a href="index.php%3Ftopic=1548.msg7446.html#msg7446">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #16 on:</b> April 16, 2004, 09:39:05 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: danc</div><div class="quote">No, you can't mount audio CD's. &nbsp;Just put it in there, and then open your CD Player from the menu (or XMMS or whatever). &nbsp;Should work fine, audio CD's do not have to be mounted.</div><br />oh lol oops<br /><br />i havent listened to music cds lately on my system since just use my cd player next to me and forgot that you dont mount em lol<br /><br />out of curiousity i loaded xine 0.9.23(xinelib with xine-ui rather than gxine) and clicked cd tab and it went to playin music cds no problem<br /><br />forgot where in xmms you click to play cds haha</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7446">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://www.megapathdsl.net/~vrandall/sea/slack.gif" alt="" border="0" /><img src="http://www.megapathdsl.net/~vrandall/sea/obsd.gif" alt="" border="0" /><br />&quot;Sending script kiddies to /dev/null since 1995&quot; --OpenBSD<br />OpenBSD is a great OS, but Theo de Raadt is an arse...</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7448"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg7448.html#msg7448"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7448">
+										<a href="index.php%3Ftopic=1548.msg7448.html#msg7448">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #17 on:</b> April 16, 2004, 09:48:52 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">&quot;CD-ROM read or access error (or no audio disc in drive).<br />Please make sure you have access permissions to:<br />/dev/cdrom&quot;<br /><br />I also get a window with this whenever I start up KsCD. &nbsp;Creepiness.<br /><br />I'm going to be seriously PO'd if it works in Gnome but not KDE.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7448">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg9511"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>jj</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg9511.html#msg9511"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_9511">
+										<a href="index.php%3Ftopic=1548.msg9511.html#msg9511">CDROM Issues</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #18 on:</b> October 11, 2004, 10:32:51 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Good info in prev posts. i have similar prob using SuSE 9.1 Pro (KDE). &nbsp;Device shows up as /dev/cdrecorder/ i click or type in file search window and get error, not valid device or not eccessable. I know it works, i just used it to install new software using YaST. &nbsp;what if i just want to browse the contents in xterm??</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_9511">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg9515"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg9515.html#msg9515"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_9515">
+										<a href="index.php%3Ftopic=1548.msg9515.html#msg9515">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #19 on:</b> October 11, 2004, 10:45:35 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Well, you would have to mount it. Are you sure /dev/cdrecorder is the actual device? That sounds like it may be a symlink to something else. Try this command:<br /><div class="codeheader">Code:</div><div class="code">ls -l /dev/cdrecorder</div><br />See if that shows you something like<br /><div class="codeheader">Code:</div><div class="code">lrwxrwxrwx 1 root root &lt;date time&gt; /dev/cdrecorder -&gt; /dev/hdc</div><br />Whatever the -&gt; is pointing to is the actual device. If that isn't correct, then your problem may lie there. You may also want to check your fstab and see what devices are listed there.<br /><div class="codeheader">Code:</div><div class="code">less /etc/fstab</div><br />Look in there for any references to /dev/hdc or hdd or even possibly /dev/cdroms/cdrom0. I'm not quite sure how SuSE handles drives, but it can't be too wacky.<br /><br />If the device is right, check your mount options. It could be that you have something like supermount handling it for you, in which case you would just browse to the mount point which may be /mnt/cdrom or something to that affect. Typically, to mount a cd, you run this as root:<br /><div class="codeheader">Code:</div><div class="code">mount -t iso9660 /dev/&lt;device file&gt; /mnt/&lt;some dir&gt;</div><br />Once it is mounted, you can look at the contents of the disc.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_9515">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg9518"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>jj</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg9518.html#msg9518"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_9518">
+										<a href="index.php%3Ftopic=1548.msg9518.html#msg9518">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #20 on:</b> October 11, 2004, 12:47:38 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Thanks for the prompt response. &nbsp;So, is it true that i have to change the device to a directory in order to use directory attributes??<br /><br />contents of the fstab:<br /><br />/dev/hdb3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reiserfs &nbsp; acl,user_xattr &nbsp; &nbsp; &nbsp; &nbsp;1 1<br />/dev/hdb2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;swap &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swap &nbsp; &nbsp; &nbsp; pri=42 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 0<br />devpts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /dev/pts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; devpts &nbsp; &nbsp; mode=0620,gid=5 &nbsp; &nbsp; &nbsp; 0 0<br />proc &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /proc &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;proc &nbsp; &nbsp; &nbsp; defaults &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 0<br />usbfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/proc/bus/usb &nbsp; &nbsp; &nbsp; &nbsp;usbfs &nbsp; &nbsp; &nbsp;noauto &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 0<br />sysfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/sys &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sysfs &nbsp; &nbsp; &nbsp;noauto &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 0<br />/dev/cdrecorder &nbsp; &nbsp; &nbsp;/media/cdrecorder &nbsp; &nbsp;subfs &nbsp; &nbsp; &nbsp;fs=cdfss,ro,procuid,nosuid,<br />nodev,exec,iocharset=utf8 0 0</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_9518">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg9520"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg9520.html#msg9520"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_9520">
+										<a href="index.php%3Ftopic=1548.msg9520.html#msg9520">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #21 on:</b> October 11, 2004, 01:32:25 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">It looks like SuSE uses Submount for automounting it's removable media. You can find all of the documentation for Submount at the <a href="http://submount.sourceforge.net" target="_blank">SourceForge site</a>. You may just have to throw a cd in the drive and browse /media/cdrecorder for it to mount the disc and go. That is my guess anyway.<br /><br />Device files should be files, not directories. File and directory attributes are the same with the exception of marking a directory as a such. You use the same attributes to each.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_9520">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10217"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>Nomad</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg10217.html#msg10217"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10217">
+										<a href="index.php%3Ftopic=1548.msg10217.html#msg10217">Ok .. maybe...</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #22 on:</b> November 22, 2004, 04:43:09 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I know i'm new to the fourms and all but am i the only person who doesn't have to mount anything... <img src="Smileys/default/evil.gif" alt="evil" border="0" /> you know what i mean, and has it pre-mounted on boot?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10217">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10222"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=23.html" title="View the profile of rburt3">rburt3</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1297<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="http://www.pcolalug.org/smf/avatars/General 401-500/446.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=23.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="../index.html" title="http://www.pcolalug.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg10222.html#msg10222"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10222">
+										<a href="index.php%3Ftopic=1548.msg10222.html#msg10222">Re: Ok .. maybe...</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #23 on:</b> November 22, 2004, 06:11:21 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: Nomad</div><div class="quote">I know i'm new to the fourms and all but am i the only person who doesn't have to mount anything... <img src="Smileys/default/evil.gif" alt="evil" border="0" /> you know what i mean, and has it pre-mounted on boot?</div><br />Yes.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10222">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;One prog to read the lines, one prog to find them,<br />One prog to count the lines and to the console bind them&quot;<br />- some AC on /.</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10241"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>Nomad</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg10241.html#msg10241"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10241">
+										<a href="index.php%3Ftopic=1548.msg10241.html#msg10241">....</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #24 on:</b> November 22, 2004, 01:35:29 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Well hey, if anyone wants help &quot;MOUNTING&quot; there drives to start with i would be glad to assiast.... ...<br /><br /><br />Now this cdrom issue, <br /><br />you have an intresting config in your fstab, it's more advanced then<br />just a normal mount/umount kinda thing... <br /><br />Few question... how offten do you use your cdrom?<br />and do you want auto mount on load?<br />or just working all the time?<br />or we could just write in a .sh to load it.<br /><br />ie<br />place in cdrom<br />run sh, and she'll auto mount..</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10241">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10265"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg10265.html#msg10265"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10265">
+										<a href="index.php%3Ftopic=1548.msg10265.html#msg10265">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #25 on:</b> November 23, 2004, 02:03:13 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">That's what submount is for. It handles the mounting automagically. You place the cd, floppy or flash drive in the system and when you try to access that mount point, it attempts to mount the filesystem. The same should be able to be done with any other type of filesystem to include network based ones like nfs or smbfs. The same goes for systems which utilize supermount instead of submount. I know supermount even has kernel ties to make it work.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10265">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10285"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>SiliconFOXX</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg10285.html#msg10285"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10285">
+										<a href="index.php%3Ftopic=1548.msg10285.html#msg10285">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #26 on:</b> November 23, 2004, 12:51:27 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I've always been interested in supermounting/submounting/automounting but part of me feels that would be a little weird in Linux. &nbsp;When is it a disadvantage to have that?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10285">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10289"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1486<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=65%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=45.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg10289.html#msg10289"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10289">
+										<a href="index.php%3Ftopic=1548.msg10289.html#msg10289">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #27 on:</b> November 23, 2004, 01:45:09 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Depends on what you want, and who you ask. &nbsp;If you ask me, personally, I don't want any of those on my system. &nbsp;Others will say differently. &nbsp;YMMV.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10289">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://members.cox.net/danc3/icons/divineSW.gif" alt="" border="0" /></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg10293"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1548.msg10293.html#msg10293"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_10293">
+										<a href="index.php%3Ftopic=1548.msg10293.html#msg10293">Strange mounting issue</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #28 on:</b> November 23, 2004, 02:38:39 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I like supermount, but haven't had much a reason not to like it. There have been times, but I can't remember the specifics, that I would turn it off from time to time, but you can always turn it off with a simple edit of the fstab.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10293">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> <a class="navPages" href="index.php%3Ftopic=1548.0.html">1</a> [<b>2</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=1548.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 1548;
+	smf_start = 15;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="1548" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=1548.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 3948 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="index.php%3Ftopic=1548.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=1548.0%3Bprev_next=next.html#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0"> => Other Software</option>
+			<option value="?board=32.0"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0" selected="selected"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.399 seconds with 16 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

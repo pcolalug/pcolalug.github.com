@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - sql</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: Brent on September 24, 2005, 09:54:12 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sql</b><br />
+					Post by: <b>Brent</b> on <b>September 24, 2005, 09:54:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br /><br />I'm taking a database class at UWF. &nbsp;It's oracle on top of the &quot;c shell&quot; (default login shell).<br /><br />My problem is, given oracle's lack of all the nifty shell features i've come to expect, it's killing my productivity. &nbsp;I simply can't be productive at the command line anymore without tab completion, history, and the like. &nbsp;Each homework assignment is taking me like 3 hours to complete because the default c shell is such a pain to work with (I tried starting sqlplus from bash, but it reverts and uses csh for some reason).<br /><br />Anyway, I was looking for some way, any way, to speed up my sql work. &nbsp;I think if i had decent tab completion, and a command history, it would seriously speed up my work.<br /><br />Right now I'm looking at installing my own &quot;personal oracle&quot; on my lappy, and putting HenPlus (http://henplus.sourceforge.net/) on there to give me the functionality I need.<br /><br />If yall have any other solutions, let me know.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: sql</b><br />
+					Post by: <b>danc</b> on <b>September 24, 2005, 10:46:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">My problem is, given oracle's lack of all the nifty shell features i've come to expect, it's killing my productivity. &nbsp;I simply can't be productive at the command line anymore without tab completion, history, and the like. &nbsp;Each homework assignment is taking me like 3 hours to complete because the default c shell is such a pain to work with (I tried starting sqlplus from bash, but it reverts and uses csh for some reason).</div><br /><br />I've never used that shell, but you're saying it doesn't have tab completion or history? &nbsp;How long is it taking your classmates to do their homework?<br /><br /><div class="quoteheader">Quote from: Brent</div><div class="quote">Anyway, I was looking for some way, any way, to speed up my sql work. &nbsp;I think if i had decent tab completion, and a command history, it would seriously speed up my work.</div><br /><br />I'd suggest talking with your classmates, and see if they have found any ways to work faster. &nbsp;Maybe there is a way to get tab completion and history working, and they could tell you (or maybe the unix lab staff could).<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sql</b><br />
+					Post by: <b>danc</b> on <b>September 24, 2005, 10:59:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did just a little bit of digging for you, and it certainly seems like the history functions are supported in that shell, and maybe filename completion. &nbsp;Might want to take a look at these two pages:<br /><br />http://wks.uts.ohio-state.edu/unix_course/intro-61.html#HEADING61-0<br /><br />http://www.faqs.org/faqs/unix-faq/shell/shell-differences/<br /><br />Good luck.<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sql</b><br />
+					Post by: <b>hitechwizard</b> on <b>September 25, 2005, 07:59:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm assuming you're working in the Unix lab on the outdated Solaris boxes. If I remember right, you can use sh vs. bash, and it will give you all the nifty features that you're used to. Hopefully you have Bagui, that way you might learn something. :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sql</b><br />
+					Post by: <b>imnes</b> on <b>September 25, 2005, 08:57:55 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">csh should have tab completion it's just not on by default, I think you have to do &quot;set filec 1&quot; in your .cshrc or whatever file it is, and then it uses the ESC key not TAB to do completion. &nbsp;(Although I don't know that just turning on completion in cshell will actually give it to you inside of oracle's sqlplus also).<br /><br />In Oracle's command line you don't have full history, but you can recall the last statement and edit it and run it again. &nbsp;But I'd suggest keeping a text editor open, do all your SQL in that and copy-paste to the command window as needed. &nbsp;That's probably the best approach.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sql</b><br />
+					Post by: <b>Brent</b> on <b>September 25, 2005, 10:59:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heh, I enabled tab completion in csh, didn't help in sqlplus.<br /><br />my next question is, should i load oracle or mysql &nbsp;on the lappy?<br /><br />mysql is downright *compact* compared to oracle 9. &nbsp;Just the install disks are like 1.5g. &nbsp;Given that this lappy has a 6gb hd, rule of thumb is it could take up to twice that to install it. &nbsp;I'm not sure I want to suck down that much space.<br /><br />On the other hand, running oracle would give me the most compatibility, I've had load scripts not run under mysql that were designed for oracle.<br /><br />Whadaya think?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sql</b><br />
+					Post by: <b>rugmonster</b> on <b>September 25, 2005, 12:54:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">All of the SQL servers are different. They are similar, but definitely different. I would just work on the server at school and work around it. Even if you install the same version, the setup may be different and what might work on your install may not work on the school server. Besides, last time I checked, only the beta release of MySQL supported stored procedures and triggers, which is probably a big part of Oracle's bread and butter.<br /><br />I will also second imnes' suggestion and keep a text editor open. That will make it easier to script it all out as you go. Not exactly the same, but with Cisco devices, when you create an access control list, you have to apply them in the exact order you want the rules to be evaluated. You can't insert statements, they are just appended. That means I will do my entire access list in a text editor and copy and paste it, test it, should it not work, blow it out of there, edit, copy and paste, test again. Once I have that working access list, I save that file I was working on, should I ever need it.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Got a question??????</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: trigger on March 04, 2003, 03:30:33 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Got a question??????</b><br />
+					Post by: <b>trigger</b> on <b>March 04, 2003, 03:30:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Glad that this section came up! Alright first question, I am running Mandrake 9.0 and running Apache server. For starters, I have never run a server before. I also am on a router Linksys 4 port. I have the 80 port fowarded to 192.168.1.103 which is the server. Now I can see the server on both my ip and the internal ip but only in my intranet, not outside my network. What am I doing wrong? If you need more info just let me know.<br /><br />Thanks,<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Got a question??????</b><br />
+					Post by: <b>rugmonster</b> on <b>March 04, 2003, 03:37:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Trigger, I hate to tell you this, but your ISP may be blocking access to port 80. After the huge outbreak of Code Red and Nimda, a lot of cable providers decided to do a broad block of 80 and several other ports typically used for servers. With this said, call you tech support and ask them if they block any ports or check out their website. Cable definitely has its downfalls because most DSL providers don't do this...of course it doesn't hurt them so much since each customer has his own bandwidth, not shared like cable.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Got a question??????</b><br />
+					Post by: <b>danc</b> on <b>March 04, 2003, 03:46:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">To throw another wrench in the works, some (most?) cable providers /specifically/ forbid home users to operate a server (it's in the user agreement you signed). &nbsp;I'm assuming the reason for this is bandwidth, and I know for sure that Cox Cable here in Pensacola does this. &nbsp;Now, whether you can get away with it is another issue... &nbsp; :wink:<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Got a question??????</b><br />
+					Post by: <b>rugmonster</b> on <b>March 04, 2003, 03:51:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, the explanation I got from Cox (website) was that they forbid servers because you are paying for a residential service and most users don't know how to run a secure server and can wind up being more of a threat to their network. Yes, it can be a bandwidth hog, but the problem is more that you are paying for a &quot;residential service&quot; and they want to have a reason to charge for &quot;business service&quot;. Honestly they are very unlikely to pay you any attention should you run a server. Another thing, nothing is stopping you from running your server on an alternate port such as 81; however, it may end up being a problem for users who are trying to access you from behind a restrictive (read properly setup) firewall.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Got a question??????</b><br />
+					Post by: <b>trigger</b> on <b>March 04, 2003, 04:40:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright I am game, how do I change what someone is looking for. I thought that it automatically looks for port 80 how do I change so that someone looks for say port 81. I am not sure I understand what you are saying. The blocking of port 80 makes sense. But, when someone types in my ip won't they still be looking for port 80 over the internet. Again I am new to this running a server. I have done alot of reading and am keeping up with what you are saying. Thanks for all the help!<br /><br />Thanks,<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Got a question??????</b><br />
+					Post by: <b>rugmonster</b> on <b>March 04, 2003, 05:47:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">First in your apache config, you will tell it to bind to port 81. Then when you tell someone your site, you give them the url http://&lt;ip or host.domain&gt;:81. By adding the :&lt;port #&gt; it tells the client to send the request to another port.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Got a question??????</b><br />
+					Post by: <b>trigger</b> on <b>March 05, 2003, 08:12:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Awesome it works! Thanks for all your help.<br /><br />Thanks,<br /><br />Trigger</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

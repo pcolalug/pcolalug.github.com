@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Sound Problems in Debian Unstable</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: imnes on December 04, 2004, 01:47:06 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sound Problems in Debian Unstable</b><br />
+					Post by: <b>imnes</b> on <b>December 04, 2004, 01:47:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">For the error:<br /><br />alsamixer: function snd_ctl_open failed for default: No such file or directory<br /><br />when trying to run alsamixer, on debian unstable with 2.6 kernel. &nbsp;Other symptoms - sound drivers are loaded okay but no sound plays back, no mixers can access the cards / or can see any cards.<br /><br /><br />Okay my fix is this: &nbsp;<br /><br />First edit /etc/group and /etc/group- and add your user accounts and root account to the audio group.<br /><br />Then stop alsa with /etc/init.d/alsa stop<br /><br />Now run /usr/share/alsa-base/snddevices<br /><br />Now restart alsa: /etc/init.d/alsa start<br /><br />Now you can use alsamixer (maybe any other mixer) to unmute your channels and adjust the volume. &nbsp;<br /><br /><br />This needs to be implemented in a startup script to be redone every boot up, pretty easy: edit /etc/init.d/alsa &nbsp; In the start() section, right after the printf &quot;Starting ALSA...&quot; add a line <br /><br />/usr/share/alsa-base/snddevices<br /><br />Reboot and test. &nbsp;Make sure sound is unmuted in alsamixer if you have that (there should not be MM over any of the channels), or use your KDE or Gnome mixer, they should work now.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

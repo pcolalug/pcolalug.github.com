@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - LTSP and ICEWM</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Desktops => Topic started by: alettieri on April 26, 2006, 03:37:00 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>LTSP and ICEWM</b><br />
+					Post by: <b>alettieri</b> on <b>April 26, 2006, 03:37:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I need someone to guide me through this. I have an LTSP server using Gnome. What do I need to do in order to have the Thin Client machines load the ICEWM window manager and keep Gnome as the default on the Server.<br /><br />I am aware that I can set the session on each client, however I created a login screen that eliminates them from choosing their session. <br /><br />Is there a command or configuration file which the client reads notifiying them of the default window manager to use? <br /><br />I am also aware of the .dmrc file located in each clients home directory. However I don&#039;t want to have to keep changing every new users .dmrc file... <br /><br />I hope this is clear enough for anyone to help me out.<br /><br />I&#039;m using Fedora Core 4 as the Server. <br /><br />Tony</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: LTSP and ICEWM</b><br />
+					Post by: <b>geekforGod</b> on <b>April 27, 2006, 11:21:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am using slackware 10.2 and in /etc/X11/xinit there is a file called xinitrc. The last line starts the window manager for me. In my case it says startkde. I don&#039;t know how configurable it is, but it may be the best place to start looking. </div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

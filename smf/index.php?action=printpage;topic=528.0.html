@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Need help getting Skey working properly.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: bhoff on March 07, 2003, 11:25:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help getting Skey working properly.</b><br />
+					Post by: <b>bhoff</b> on <b>March 07, 2003, 11:25:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What is it?<br />A super secure way of interacting with your computers over the internet with one time use passwords that expire as soon as they are used. There by not allowing anything sniffef to be used against you.<br /><br />My Problem:<br />have got skey running run keyinit from my user not root since root can not log in anyway.<br />got my 6 word passphrase.<br />created a skey.access file added the following line.<br />deny user brett<br />this should only allow skey passwords on outside connections for user brett.<br />ssh into this machine from machine 2 ssh -l brett 10.*.*.*<br /><br />comes asking for skey type out my 6 word password not echoed mine you.<br />then it ask again finally after about three attempts it goes to regular passsword which I enter and gain access (which should not happen due to the rules in skey.access)<br /><br />Any thoughts<br />~brett~</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

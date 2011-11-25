@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - authenticating ubuntu to AD</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: bhoff on August 13, 2009, 01:19:11 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>authenticating ubuntu to AD</b><br />
+					Post by: <b>bhoff</b> on <b>August 13, 2009, 01:19:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I thought I would just let everybody know this works great. I have several customers using Ubuntu for various things. And they have nice server 2008 domain controllers and after a quick google search I found out how to connect the Linux boxes to the domain. Now they show up in the AD interface and I can apply policy to them. Really cool if you are in a domain environment.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: authenticating ubuntu to AD</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 26, 2010, 08:09:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Brett,<br /><br />Is this what you found to enable authenticating Ubuntu to AD?&nbsp; If not, can you post a link?&nbsp; Thanks!<br /><br />http://www.likewise.com/ (http://www.likewise.com/)<br />http://blogs.computerworld.com/15429/running_ubuntu_on_an_active_directory_network (http://blogs.computerworld.com/15429/running_ubuntu_on_an_active_directory_network)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: authenticating ubuntu to AD</b><br />
+					Post by: <b>bhoff</b> on <b>January 31, 2010, 03:26:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">http://anothersysadmin.wordpress.com/2008/04/06/howto-active-directory-authentication-in-ubuntu-804/ (http://anothersysadmin.wordpress.com/2008/04/06/howto-active-directory-authentication-in-ubuntu-804/)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: authenticating ubuntu to AD</b><br />
+					Post by: <b>Yossarian</b> on <b>January 31, 2010, 05:06:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I wish I&#039;d noticed this earlier!&nbsp; UWF was having a lot of trouble with Active Directory on the Fedora boxes in the new building recently.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: authenticating ubuntu to AD</b><br />
+					Post by: <b>djoed_pcola</b> on <b>February 01, 2010, 09:24:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks Brett!.&nbsp; This is the missing piece of information I needed to do a Linux demo at work.&nbsp; I know the first question will be &quot;How do I logon to the network.&quot;&nbsp; Most of our end user applications run on Citrix Servers, so we are paying for Windows licenses for each computer that is essentially being used as a dumb terminal.&nbsp; I doubt we&#039;ll make a big push to Linux on the desktop.&nbsp; However, I just want to demo a proof of concept.&nbsp; Of course, this is subject to when I can fit the demo in while trying to keep up with my real job.<br /><br />Thanks again!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: authenticating ubuntu to AD</b><br />
+					Post by: <b>bhoff</b> on <b>February 02, 2010, 11:34:04 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually I have to go do it again so I will make detailed notes and share with you all.<br />The computer now shows up in the AD and anyone with the proper account can logon to it just like any other machine in the domain.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: authenticating ubuntu to AD</b><br />
+					Post by: <b>djoed_pcola</b> on <b>February 02, 2010, 07:06:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks.&nbsp; ;D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: authenticating ubuntu to AD</b><br />
+					Post by: <b>bhoff</b> on <b>February 06, 2010, 03:50:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">All right here you go works every time.<br />https://help.ubuntu.com/9.10/serverguide/C/likewise-open.html (https://help.ubuntu.com/9.10/serverguide/C/likewise-open.html)<br /><br />Notes<br />&nbsp;<br />After successfully joining an Ubuntu machine to an Active Directory domain you can authenticate using <b>any valid AD user</b>. <br />To login you will need to enter the <b>user name as &#039;domain\username&#039;</b>. For example to ssh to a server joined to the domain enter:<br /><br />ssh &#039;example\steve&#039;@hostname<br /><br />[Note] &nbsp;&nbsp;&nbsp;<br /><br />If configuring a Desktop the user name will need to be prefixed with domain\ in the graphical logon as well.<br /><br /><b>To make likewise-open use a default domain, you can add the following statement to /etc/samba/lwiauthd.conf:<br /><br />winbind use default domain = yes</b><br /><br />Then restart the likewise-open daemons:<br /><br />sudo /etc/init.d/likewise-open restart<br /><br /><br />The above is a must to make it easy for the average user.<br /><br />Please see the troubleshooting section before using.<br />You must make sure the domain Controller is the first entry in the /etc/resolv.conf file.&nbsp; &nbsp;***Note your AD should always be your primary DNS or you will get very long long in delays ***<br />Also need to edit /etc/nsswitch.conf<br /><br />Hope that helps this link above is as simple as it gets. Let me know if you have any troubles.<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

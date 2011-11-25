@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Castle Wolfenstein install problem.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: L.Rentz on December 27, 2003, 06:19:20 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Castle Wolfenstein install problem.</b><br />
+					Post by: <b>L.Rentz</b> on <b>December 27, 2003, 06:19:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am trying to install a copy of the above that I got at the last meeting. &nbsp;I keep getting an error when i try to run the game. &nbsp;<br />code:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />linux&#58;/usr/local/games/wolfenstein # ./wolfded<br />Wolf 1.4-MP linux-i386 Nov &nbsp;5 2002<br />----- FS_Startup -----<br />Current search path&#58;<br />/root/.wolf/main<br />/usr/local/games/wolfenstein/main/mp_pakmaps6.pk3 &#40;81 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pakmaps5.pk3 &#40;35 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pakmaps4.pk3 &#40;52 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pakmaps3.pk3 &#40;83 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pakmaps2.pk3 &#40;47 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pakmaps1.pk3 &#40;34 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pakmaps0.pk3 &#40;21 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pak5.pk3 &#40;77 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pak4.pk3 &#40;5 files&#41;<br />/usr/local/games/wolfenstein/main/mp_pak3.pk3 &#40;76 files&#41;<br />/usr/local/games/wolfenstein/main/mp_bin.pk3 &#40;4 files&#41;<br />/usr/local/games/wolfenstein/main<br /><br />----------------------<br />515 files in pk3 files<br />Sys_Error&#58; Couldn't load default.cfg - I am missing essential files - verify your installation?</div><br /><br />Any ideas. &nbsp;Thanks for the help.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Castle Wolfenstein install problem.</b><br />
+					Post by: <b>dpeach</b> on <b>December 27, 2003, 07:26:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Apparently you have the Game of the Year Edition (GOTY). You need to do this:<div class="codeheader">Code:</div><div class="code"><br />You need to download the wolf-linux-*-GOTY.x86.run setup file &#40;replace '*' by the latest version&#41;. This file is much smaller than the full release &#40;approx 10Mb&#41;.<br /><br />You need to copy over the .pk3 files from the Wolfenstein GOTY CDs to /usr/local/games/wolfenstein/main directory. Most files are on CD 2, but you need to copy from CD 1 also &#40;Setup/Data/Main directory&#41;. See the list below for details. You don't need Wine or a win32 installation, the files are stored as-is on the CDs.<br /><br />mp_pak0.pk3 &nbsp; &nbsp; 62641cffd9a8ad0f62cc1cca867d51f8<br />mp_pak1.pk3 &nbsp; &nbsp; 22b972974f499a237c96a2200b0d019e<br />mp_pak2.pk3 &nbsp; &nbsp; 30f29ffa81748a957e0441af8c14cb56<br />pak0.pk3 &nbsp; &nbsp; &nbsp; &nbsp;ce92b11df889cb0a045762bb5fd7cde5<br />sp_pak1.pk3 &nbsp; &nbsp; a0d3fe956f85f40c8efd6babe0d09832<br />sp_pak2.pk3 &nbsp; &nbsp; 330b272d5261fe19fcf3c3fbc943c7f3<br /><br />mp_pak3.pk3 &nbsp; &nbsp; fdc00dfd72b888e92a4387e1933826e4<br />mp_pak4.pk3 &nbsp; &nbsp; c5f76bbde262eba577a00bebe9cd4f8f<br />mp_pakmaps0.pk3 f2d361a0082ed9bc1e26d2327b4f22db<br />mp_pakmaps1.pk3 d1856aa9bc62f719a400428b9ec27ebb<br />mp_pakmaps2.pk3 a0ee8714c6f7ee72680293778c22d6ee<br />mp_pakmaps3.pk3 01bb7c4fb3b11273d75ae658fb4de0cc<br />mp_pakmaps4.pk3 a39525809f7a0780f5546063dad1e5d1<br />mp_pakmaps5.pk3 bb24fb011b0f4b84335c66a869d1ab1c<br />mp_pakmaps6.pk3 397e0b48673a1a8e0ec25eb0f3ccae9d<br />sp_pak3.pk3 &nbsp; &nbsp; cf25d6731ed29c80303febbb177aa585<br />sp_pak4.pk3 &nbsp; &nbsp; 4223cc6588594ec0ceee186f0e73a6e9<br /><br />ENTERING THE CD-KEY&#58;<br /><br />The first time you run the multiplayer game, you will need to go to 'Options', and click on 'Enter CD Key' button. Enter the CD key &#40;it's on your CD Jewel case&#41;.<br />NOTE&#58; you don't need to give a CD key if you are installing a dedicated server.</div><br /><br />I found that at this website (http://zerowing.idsoftware.com/linux/wolf/INSTALL). If you do not have the GOTY edition, then that page will tell you how to install the other. GOTY is better in that you don't have to have a Windows install of RTCW to install into Linux. Beyond that, I do not know the differences.<br /><br />Hope that helps.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Castle Wolfenstein install problem.</b><br />
+					Post by: <b>L.Rentz</b> on <b>December 27, 2003, 08:06:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks David, but I dont know what version it was. &nbsp;I take it that the game is the same that was being played at the last lug meeting. &nbsp;So I may not be able to play it as I do not own a copy of the game. &nbsp;Oh well.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Castle Wolfenstein install problem.</b><br />
+					Post by: <b>danc</b> on <b>December 27, 2003, 09:01:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Lee,<br /><br />Assuming what you are trying to install is the stuff from my CD at the meeting, you do need additional files, as David said above. &nbsp;Those are just the Linux binaries, and they require the &quot;map paks&quot; from a retail CD version. &nbsp;These map paks are generic for both Win and Linux, but you do need to own the game.<br /><br />What we were playing at the last meeting was Enemy Territory, which is a (free) offshoot of the original Return to Castle Wolfenstein. &nbsp;That was also on the CD I had there, and is freely available on the internet (homepage is: &nbsp;http://www.splashdamage.com ). &nbsp;Many (if not most) of the old RTCW players are playing ET now, and I like it better. &nbsp;So....., you could always install that.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Castle Wolfenstein install problem.</b><br />
+					Post by: <b>dpeach</b> on <b>December 27, 2003, 10:15:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Oh, yes, definately get Enemy Territory loaded. You will like that a whole lot better. I am trying to play RTCW right now. I just do not find it as fun as ET. It certainly is not as challenging as playing ET against real people.<br /><br />RTCW = Return to Castle Wolfenstein<br />RTCW: ET = Return to Castle Wolfenstein: Enemy Territory (ET for short)<br /><br />We were playing RTCW: ET at the LAN fest the other night. ET is free as in speech and Coke (I don't drink beer).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Free as in beer, not speech</b><br />
+					Post by: <b></b> on <b>December 28, 2003, 09:02:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Id gives the ET binary away for free, but not the source. &nbsp;If you are looking for an online multiplayer game that is GPL'd I recommend &quot;bzflag&quot;. &nbsp;It's pretty fun you drive around in a tank and blow up other people in tanks.<br /><br />It's all open source (GPL). &nbsp;Check it out at:<br /><br />www.bzflag.org<br /><br />Most popular distro's include a precompiled binary of bzflag.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

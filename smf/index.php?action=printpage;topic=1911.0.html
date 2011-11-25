@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Firewall / Server Setup</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on October 11, 2004, 09:23:28 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 11, 2004, 09:23:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, I realize this is probably something to set up at the next meeting (third saturday of the month just can't seem to get here fast enough sometimes, heh) that I'd need hands-on help with, but I figured I'd set it up now (the question) so you've got some idea of what I'm looking for.<br /><br /><br />With the new gaming machine I realize I don't have a whole lot of use for my old &quot;weird-***&quot; Linux rig as a regular use box. &nbsp;It's not much, just that 1.0Ghz, a strange CD-ROM that occassionally reads right, and a 40GB hard drive with 128MB of RAM but when you're looking for minimalistic Linux that's a gold mine. &nbsp;And, not being a regular use machine any longer, that's what I'm looking for.<br /><br /><br />I know my router has a built-in firewall but I know those are just baseline as far as security is concerned due to being rather limited in terms of configuration and being &quot;stateful.&quot; I also know that while it wouldn't be often I might occassionally want to set up a dedicated server for some games that lowly hardware like that might be able to run concurrently. &nbsp;So of course what does this mean? &nbsp;That I'm looking to turn the box into a full-time firewall and occassional dedicated game server (or maybe an FTP or HTTP server once I get a static IP someday).<br /><br />So! &nbsp;Other than installing another NIC and running the home lan through that to get to the router and out to the 'net, what do I need to do? &nbsp;I'm guessing after moving irreplaceable files off for backup I'd need to reinstall a linux distro customized for doing just those things, but is it any more complicated than that?<br /><br /><br /><br />Oh, I do realize I've got a snag with my network. &nbsp;My XBox in the living room is connected via wifi and thus I have a wireless-B capable router from Linksys. &nbsp;The firewall might have its purpose beaten if wireless access is gotten &quot;higher&quot; than it, so would it just be better to have my network set up like so:<br /><br />Cable Modem -&gt; Firewall Box -&gt; Router + Wireless access -&gt; LAN<br /><br /><br /><br />Or should I set up that box as a router and see if there's some way I can tell my Linksys to be a gateway...though to be honest that didn't work out too well last time I tried it, thing just didn't want to grab an existing wireless signal and act as a switch, real weird (might've been the building as well). &nbsp;Any advice on this would be welcome and I figured it was a real-world application of security and Linux. &nbsp; :D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>danc</b> on <b>October 11, 2004, 10:06:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Your Linksys router is most likely secure enough. &nbsp;You really don't need another firewall box if you're using that router.<br /><br />If you'd like to make the old box into a router AND a firewall (very simply), I'd highly suggest Smoothwall.<br /><br />Check it out here: &nbsp;http://www.smoothwall.org<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>lloydr</b> on <b>October 11, 2004, 10:06:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">heres what i'd do(that is...if you really want to get a *nix router in there):<br /><br />find a old 486dx2/66mhz box with 32mb ram, or even better is like a pentium 100mhz or 150mhz with 64mb ram to give you some headroom....about a 400-600mb harddrive, a pair of network cards.....install smoothwall, ipcop, m0n0wall, or one of the many other prepackaged dedicated router/firewall setups(can also use a full blown linux or bsd install.....openbsd is highly recommended but isn't as simple as just smoothwall or something)<br /><br />take the router/wireless AP, turn off dhcp server, give the router a lan side ip that is different than the dedicated router box and not in the dhcp pool (192.168.1.2 maybe if you chose 192.168.1.x), plug the lan port of the router/AP into the lan behind the smoothwall and your set<br /><br />on the hub/switch(or if the router's lan is like a 4port switch or whatever and your using it) on the lan side, just have that 1ghz box running as a server off there...that way you will have firewalling and routing by the linux box and it will be dedicated, the 1ghz box will be behind it and running seperate from the firewall/router, and the wireless router/AP you have will be still providing wireless access to the lan, but all routing is done by the linux box<br /><br />------------------------------ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />cable modem -&gt; wan nic |(dedicated firewall box)| lan nic -&gt; [linksys router lan switch](provides wifi access bridged to the lan)<br />-&gt; 1ghz server connected to lan port of the linksys router(or if you have a seperate switch)<br />-&gt; other systems connected wired and wirelessly<br /><br />in this setup you don't use the wan port on the linksys router/AP at all<br /><br />the other way of doing it is just using a seperate switch which is how i would go about it</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 11, 2004, 11:16:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, that's very helpful. &nbsp;I like that second solution though it's a shame I don't have a static IP for serverdom right now...I'm just hoping there's some insane way for me to run a Doom 3 or HL2 dedicated server on that 1.0GHz box. &nbsp;Also if there's some way to set up FTP and HTTP servers on it (which, while I've familiar with the concepts and have written some very simple FTP and HTTP server programs, I'm not intimately familiar with how to set Linux up for it).<br /><br />So, whereabouts do you think I'd find such an old system for a firewall/router that's still functional? &nbsp;Most processors have a life expectancy of about ten years and those Pentium 1's are getting up there in age...not to mention the rest of the hardware. &nbsp;Something in my shudders to think of the condition the hard drive would be in. &nbsp;:shock:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>lloydr</b> on <b>October 11, 2004, 11:25:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i've got plenty of old hardware like that running great and in full use today....my main linux router is running a western digital caviar 425mb harddrive, works fine and hasn't missed a beat in my pentium-S 150mhz 64mb ram machine :twisted: <br />as far as finding hardware of that kind of age, you can ask around and see if anyone has junk hardware they want to get rid of, go dumpster diving heh, get lucky and come across a place just giving it away or they think it's damaged, or you can spend like &lt;$20-40 and can buy hardware off someone(or maybe the waterfront mission or thrift stores, but it might be kinda expensive for old hardware....)<br />but theres many ways to nab old hardware....probaly ebay as well lol<br /><br /><br />um as far as &quot;needing&quot; that static ip, you can setup dynamic dns which is what many people do to have a static address (such as say: s-FOXX.homelinux.org) or anything like that, but it updates the ip address it points to everytime your ip changes....most of the prepackaged linux distro come with a dynamic dns client that will send the ip address to whoever you have doing dynamic dns for you, there plenty of free dynamic dns services....it's not as good as having a static ip in some ways but in most ways it will do just fine &nbsp;:wink:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 11, 2004, 11:33:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, that's very handy, I think I'll have to bother you about that some more in another thread. &nbsp;A friend of mine is paying for &quot;do-it-yourself-DNS&quot; but if you can have a &quot;free&quot; dynamic IP service that acts &quot;like&quot; a static for all practical purposes, that sounds like fun.<br /><br /><br />I'm going to have to hit up some friends for ancient hardware. &nbsp;Don't know what they've got but if you really need less than 1GB I would imagine that a ancient laptop would be PERFECT for a firewall. &nbsp;Just disable (heh heh, &quot;cut out&quot;) the switch that tells it to go into standby mode when you put the screen down and you can just push it off into a corner and let it do it's thing. &nbsp;Hmm, now I'm curious about where I could grab an old laptop...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>lloydr</b> on <b>October 12, 2004, 12:02:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">you don't need less than 1gb, just it's a good use for old harddrives such as less than 1gb, you can use a 250gb harddrive for it if you really wanted to, but why bother when a 400mb would have the same effect(well...the older drive will most surely be slowed atleast on the cache side of things and probaly on rpm rating...and probaly louder as well than a newer, but ah well...)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>rugmonster</b> on <b>October 12, 2004, 08:10:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">My suggestion, keep your linksys as your router. <br /><br />1. Lower Electricity - This is not only good for your monthly bill, it's good for the environment.<br /><br />2. Fewer Vulnerabilities - A full linux install is going to take more work to keep up to date. A single firmware or hundreds of packages.<br /><br />3. Core is Same - The linksys firmwares are for the most part customized embedded linux. Look at the Sveasoft firmwares if you're really worried about a stateful packet filter.<br /><br />4. Services on Firewall = Bad - It is generally bad practice to run any service on your firewall and it should be pretty obvious why. <br /><br />5. Old Hardware - As much as people like to talk up using old hardware, it sucked hardcore when I lost the hard drive in my old router because then I had two systems and one IP. I didn't want to pay for another, so I had to turn one off. Old hardware is a liability. <br /><br />Your laptop idea would be better than a full sized desktop if you did go that direction. Typically, the lid close is either an APM or ACPI function. Just don't compile that into your kernel and it won't shut off. Also, any distro you choose will allow you to do a firewall with it. There are the specialized ones that may provide you with nice configuration tools, but iptables is in the kernel and the userland program is usually included with most distros.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 12, 2004, 11:21:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Those are interesting points, Rugmonster, I hadn't thought about those. &nbsp;I AM a bit of an eco-freak, but I suppose we try to limit our electricity usage as much as possible anyway...but that's not really much considering I tend to use my machines quite a bit for at least redundant tasks (burning CDs at 1x for audio clarity for instance).<br /><br />That's an excellent tip about the laptop lid closure in the kernel. &nbsp;If I get my hands on one I'll be sure to look into that.<br /><br /><br /><br />With the DynDNS would I be able to use my Linksys or would I be forced into having a separate router/firewall like this idea? &nbsp;I must confess that the possibility of having a semi-static IP for the purposes of image hosting, shoutcasting, web page hosting, and game server hosting is VERY lucrative, assuming I could get it to work properly (which, given me, is unlikely for the first try but much more likely with the second...it would suck hard to not be able to use XBox Live for awhile).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>danc</b> on <b>October 12, 2004, 01:57:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't know about the DynDNS stuff, but another consideration is what your ISP will allow. &nbsp;I know for sure that Cox Cable (and probably Mediacom too) specifically does NOT allow you to run servers on a home cable account. &nbsp;You can spend more on a business cable account, or use DSL, as I believe these don't have those restrictions. &nbsp;Something that needs to be thought about, at any rate...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>lloydr</b> on <b>October 12, 2004, 02:13:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">You can spend more on a business cable account, or use DSL, as I believe these don't have those restrictions. <br /></div><br /><br />bellsouth residential dsl is semi restrictive as well but they really don't go looking for servers, but if your caught running it then it's bad news<br /><br />most other soho or business dsl connections aren't restrictive but you pay more than you would for a residential cable/dsl connection either way, probaly be near the price of commercial cable</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>rugmonster</b> on <b>October 12, 2004, 03:19:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">With the DynDNS would I be able to use my Linksys or would I be forced into having a separate router/firewall like this idea?</div><br /><br />Nope. There are clients for sites such as dyndns.org (http://www.dyndns.org) that have excellent clients that you can run on a system that can either use their website or your linksys router to determine your external IP. I use ddclient on my linux box to find out my ip from my linksys. I use dyndns.org to host rugmonster.org. I'm not sure what the cost is for the custom dns these days, but it's fairly cheap. They also have the dynamic dns for free if you don't really care what your domain is.<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">I must confess that the possibility of having a semi-static IP for the purposes of image hosting, shoutcasting, web page hosting, and game server hosting is VERY lucrative, assuming I could get it to work properly</div><br /><br />While it does sound cool, Dan is right about the policy of no servers. With this said, enforcement is rare and would usually be a firm suggestion else you lose your account sort of thing. I've run servers with Cox for a long time and RoadRunner before that. One thing I have found is most ISPs block commonly used ports like 80 and 25 due to the number of worms that take advantage of services running on this port. I would say the risk of being caught running something on an unblocked port is low to none as long as you aren't being a huge bandwidth hog.<br /><br /><span style="font-size: 9px; line-height: 1.3em;">10.13.04 - RB: Fixed bad [url]</span></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>lloydr</b> on <b>October 12, 2004, 03:48:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote"><br />2. Fewer Vulnerabilities - A full linux install is going to take more work to keep up to date. A single firmware or hundreds of packages.<br /><br />4. Services on Firewall = Bad - It is generally bad practice to run any service on your firewall and it should be pretty obvious why. <br /></div><br /><br />these 2 are pretty much taken care of with most router distros, most just have a single update pack every so often for the kernel and such....smoothwall keeps pretty up to date on everything....and with most of the router distros, they are extremely stripped down to &lt;300mb to where the firewall box really is pretty much bare except for the core system, snort, netfilter iptables, etc<br /><br />also theres m0n0wall thats freebsd running from either a live disc or you can install the cf/hd image on like 64mb of cf or harddrive space.... going with cf has an advantage over using an old harddrive but will cost you if you don't have a cf card laying around with the ide-&gt;CF connector<br /><br />or can just use openbsd as it's base install from ftp off a boot floppy/cdrom is pretty bare and secure by default and comes with pf which definetely is nicer than netfilter iptables....wish there would be a port of pf to linux soon like there was for freebsd and such, but that's definetely pushing it lol</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>southbound</b> on <b>November 02, 2004, 12:03:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Check out http://www.clarkconnect.com. &nbsp;It's a nice firewall/router imo. &nbsp;It's easy to install and to get working. &nbsp;I'm not a linux guy at all but have installed it on a few computers and I have it up and running now and it's doing a great job. &nbsp;I've installed several RPM's on it for things like a MySQL server.<br /><br />I have used and still do use http://www.dynu.com/basic.asp and it works great. &nbsp;They have a linux client that will keep your IP up to date and you can use port forwarding to send port 80 to something that your ISP will allow if you want to host a site.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>steve</b> on <b>November 02, 2004, 07:26:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If I hadn't lost my power supply and bought a Linksys WRT54G for my VOIP, I'd still be using IPCop (http://www.ipcop.org/index.php). It's one of the best I've found and runs on just about anything. In fact, they just released a version for the Alpha processor.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 02, 2004, 08:21:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thank you for all the suggestions. &nbsp;Heh, now if only I could get some ancient box...you'd be surprised at how little hardware I find that's old. &nbsp;Still, for now I'm going to go with the suggestion of keeping the router as it is due to power consumption and simplicity and whenever I run across an older box try this out. &nbsp;Well, either that or hack up my GameCube, one or the other.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>my 2cent...</b><br />
+					Post by: <b>Nomad</b> on <b>November 22, 2004, 04:25:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">in your firewall your best friend will always be....<br /><br />after all your rules...<br /><br />$IPTABLES -A INPUT -i $EXTIF -j DROP<br /><br />where $EXTIF is your external interface.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>part 2 of 2</b><br />
+					Post by: <b>Nomad</b> on <b>November 22, 2004, 04:33:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just another note after reading, who says you have to use port 80?<br /><br />www.mystuff.org:4756<br /><br />not a real website but i think you'll get the idea...<br /><br />&nbsp;:D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall / Server Setup</b><br />
+					Post by: <b>rugmonster</b> on <b>November 22, 2004, 07:12:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The only problem with using a nonstandard port is for people who are behind firewalls I setup. I block all outgoing traffic destined for ports other than 80, 443 and 20/21. If I have a proxy, then individual systems use that and don't make any direct connections out unless it is absolutely necessary, to which I do explicit rules. Generally, ISPs don't block 443, so that is your best bet for getting around the port 80 block.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - FreeBSD 4.9</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: imnes on November 04, 2003, 10:31:33 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FreeBSD 4.9</b><br />
+					Post by: <b>imnes</b> on <b>November 04, 2003, 10:31:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok so far all my hardware works in FreeBSD 4.9 with no special attention required. &nbsp;This includes:<br /><br />DVD+CDRW (burning works through the BSD burncd appl and also cdrecord)<br />WiFi (Lucent Orinoco/Hermes)<br />USB <br />Sound Card - i810 Intel<br />nVidia GeForce 4 420 Go Video Card (commercial nvidia drivers)<br />pcmcia - Works (I have a 120mb SanDisk that I use on it)<br />Keyboard - Actually works great! &nbsp;Toshiba keyboards have a problem under Linux + X doesn't seem to have a problem here...<br />Onboard Lan - Intel EtherExpress Pro 100 - Works fine<br />APM works I can suspend and resume fine.<br /><br />Some pleasant surprises? &nbsp;Some things I didn't expect to work (or at lesat work well) have worked great. &nbsp;Including Gnome 2.4 (I have major stability issues under recent linux distros that just aren't a problem here). <br /><br />Java SDK. &nbsp;I didn't think would work at all. &nbsp;I finally got the official 1.3 SDK installed and working. &nbsp;I haven't tried 1.4 yet but this is good enough for my school projects. <br /><br />Sun StarOffice 7.0 - This actually installed perfectly and works great. &nbsp;A lot faster than the previous version. &nbsp;I think OpenOffice is better looking with it's gtk2-ness and pretty fonts, but this does work fine. &nbsp;Even Adabas support. &nbsp;FYI: This product is completely free if you are a student / faculty at a University... &nbsp;The link you need is: &nbsp; http://www.sun.com/products-n-solutions/edu/solutions/staroffice.html<br /><br />Games work as expected, Unreal 2k3, Quake 3. &nbsp;They play great.<br /><br />Some things are just working better under BSD than Linux. &nbsp;One thing is the USB mouse. &nbsp;I have a touchpad on the laptop, and use an external USB mouse. &nbsp;Under Linux if I go into X without the mouse plugged in, and then try to plug it in, it won't work, I have to restart X. &nbsp;Under BSD whenever I add another mouse to the system, they all route back to the same device, so X doesn't notice anything going on, I can plug, unplug all day and things work.<br /><br />Another important area is sound. &nbsp;I'm sure some of you have perfectly working sound drivers in Linux, but you are still plauged by the kernel only handling one sound source at a time. &nbsp;So you run ESD or ArtsD and hope everything is happy. &nbsp;BSD mixes multiple sound sources at the same time, so I can run ESD, ArtsD, Quake 3, and XMMS concurrently and they all work. &nbsp;I wish the linux sound system would work similarly...<br /><br />If you guys have questions, want me to try something out in BSD let me know...<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FreeBSD 4.9</b><br />
+					Post by: <b>ctrlz</b> on <b>November 06, 2003, 10:06:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">hey imnes,<br /><br />i'm glad to hear that you're liking freebsd. i have yet to try 4.9 yet mainly because i've been sucked into slackware just recently. i DLed the freebsd iso last nite, so i think i'll give it a whirl on my 366 laptop soon.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FreeBSD 4.9</b><br />
+					Post by: <b>imnes</b> on <b>November 06, 2003, 10:11:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey, I've been using Slackware mostly for the last few years but it's recently been giving me trouble, so I'm trying out different things. &nbsp;FreeBSD does a lot of things really well, so far I like it. &nbsp;I'm also going to get the latest SuSE and try it out, but in the past I've never stuck with SuSE on my own machine...<br /><br />BTW: Do you run Dropline Gnome on Slackware? &nbsp;It's my favorite desktop for it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FreeBSD 4.9</b><br />
+					Post by: <b>ctrlz</b> on <b>November 06, 2003, 11:04:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">i use dropline on my main box, but i use fluxbox on my 366 laptop. dropline is simply amazing, it's one of the main reasons i am so hooked on slackware. that, and the fact that slackware is the most &quot;UNIX-like&quot; of the linux distros. i'm much more comfortable with it, since i come from a freebsd background.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FreeBSD 4.9</b><br />
+					Post by: <b>imnes</b> on <b>November 06, 2003, 11:55:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's a good point, that's probably why I feel at home in FreeBSD as well...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FreeBSD 4.9</b><br />
+					Post by: <b>imnes</b> on <b>November 06, 2003, 12:00:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Besides the slick package / ports system, I've really learned to love the FreeBSD handbook. &nbsp;There it is, a complete users guide to your Unix-Like O/S, explains it all, from kernel compiling, to configuring a sound card. &nbsp;Kind of nice... &nbsp;I think slackware does this too, not sure about the others. &nbsp;I know most will give you some sort of user guides / install guides when you buy the retail boxes...<br /><br />It is nice having everything documented in one place though.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

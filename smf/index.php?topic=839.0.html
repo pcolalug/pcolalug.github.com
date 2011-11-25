@@ -1,0 +1,1125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="MDK 9.1 for imnes, attempt #2" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>MDK 9.1 for imnes, attempt #2</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="http://www.pcolalug.org/smf/index.php?topic=839.0;prev_next=prev" />
+	<link rel="next" href="http://www.pcolalug.org/smf/index.php?topic=839.0;prev_next=next" />
+	<link rel="index" href="index.php%3Fboard=44.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 05:14:43 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="839" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg3729"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#3" class="nav">Distributions</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=44.0.html" class="nav">RPM Based Distributions</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=839.0.html" class="nav">MDK 9.1 for imnes, attempt #2</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="http://www.pcolalug.org/smf/index.php?topic=839.0;prev_next=prev#new">&laquo; previous</a> <a href="http://www.pcolalug.org/smf/index.php?topic=839.0;prev_next=next#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> [<b>1</b>] <a class="navPages" href="index.php%3Ftopic=839.15.html">2</a> 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="http://www.pcolalug.org/smf/index.php?action=printpage;topic=839.0" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/hot_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: MDK 9.1 for imnes, attempt #2 &nbsp;(Read 2981 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=839.0" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3729#msg3729"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3729">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3729#msg3729">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b> on:</b> July 04, 2003, 12:05:46 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Okay, it&#039;s pretty clear that MDK didn&#039;t like my laptop (at least not with the hardware I&#039;m using on it right now). &nbsp;But I really wanna give MDK and KDE a fair chance, so I have RedHat + Gnome going on the laptop. &nbsp;And it&#039;s running flawlessly.<br /><br />Now, I&#039;ve just installed MDK 9.1 with KDE onto my main computer. &nbsp;And I guess I should have realized things wouldn&#039;t work out too well since KDE seems to generally not like me for some reason. &nbsp;I was greeted by this nice effect when I clicked the clock and clicked on &quot;Adjust Time &amp; Date&quot;. &nbsp;Hard to look at, is it supposed to look like that?!? &nbsp;<a href="http://www.homeweb.org/~imnes/screenshots/mandrake91/broken-clock.png" target="_blank">http://www.homeweb.org/~imnes/screenshots/mandrake91/broken-clock.png</a><br /><br />Well, I adjusted the time and hit &quot;Apply&quot;. &nbsp;And my monitor promptly shut off. &nbsp;So I turned it back on. &nbsp;Time is adjusted now but that thing is still broken looking and whenever I click on Apply in there my monitor loses sync and goes out. &nbsp;Very very odd!<br /><br />That&#039;s all I have to share for the moment, when I get a chance to thoroughly test it out I&#039;ll let you know. &nbsp;I&#039;ve gotten WineX 3.1 and plan to install all my windows games on here (since I now have to windows machine at all) and see if I can stick with it <img src="Smileys/default/smiley.gif" alt="Smiley" border="0" /> &nbsp;All depends on how playable &quot;Red Faction&quot;, &quot;GTA Vice City&quot; and others are. &nbsp;I think they&#039;ll be okay.<br /><br />But I plan to run RH+Gnome on the laptop and MDK+KDE on my computer to get a feel for which one I like better in their current states. &nbsp;(I guess I&#039;ll have to ignore the broken clock thing for now <img src="Smileys/default/smiley.gif" alt="Smiley" border="0" /> &nbsp;)<br /><br />Nick<br /><br />Nick</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3729">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3730"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3730#msg3730"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3730">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3730#msg3730">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #1 on:</b> July 04, 2003, 12:07:08 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Oh another quick note: That screenshot above will be online until tonight, I've gotten a new DSL router and if it works I'm gonna be installing it later, so if you can't get to my server you know why...<br /><br />Nick</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3730">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3736"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a></b>
+							<div class="smalltext">
+								Global Moderator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1860<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=5%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=9.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.mythoughtspot.com" title="My Thought Spot" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3736#msg3736"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3736">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3736#msg3736">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #2 on:</b> July 04, 2003, 06:31:05 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I guess I don't see what looks broken about the clock? Other than the time on your taskbar is different than the time on the app. (I assume that you had already started adjusting the time?)<br /><br />I tried, as steve suggested, using the second CD as my boot. It got part way up and told me to switch to the first CD. I got the same response out of it. (Depending on the mode of attack, I get different problems). I guess the 2nd CD method was phased out of 9.1.<br /><br />If I just use the regular install, not expert, it comes up to the point where we are supposed to go into the graphical part to set my keyboard, mouse and all that. It says that it tried to enter 2nd stage install and died. &quot;I can't recover from this!&quot; is what it tells me. I certainly can't either. I don't know how to use a magnet to manipulate all the files on the harddrive myself. So I have to depend on Mandrake to do it for me.<br /><br />So I try an expert install. I actually get to do all my partitioning and choose my applications. When it starts to install the apps is when it crashes out. It just stops. Sometimes the progress indicator will move 1/2&quot; sometimes not even 1/16&quot;. I give up and boot into Windows at that point.<br /><br />I guess I will have to try another distro. But I am really not interested in that. I am finally learning how to make Mandrake do what I want (with your help!).<br /><br />Sigh!</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3736">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">David<br /><a href="http://www.dpeach.com" target="_blank">www.dpeach.com</a><br /><a href="http://www.mythoughtspot.com" target="_blank">www.mythoughtspot.com</a><br /><a href="http://www.missionarytalks.com" target="_blank">www.missionarytalks.com</a><br />--...&nbsp; ...--<br />(see, I can code)</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3739"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3739#msg3739"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3739">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3739#msg3739">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #3 on:</b> July 04, 2003, 07:49:54 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: dpeach</div><div class="quote">I guess I will have to try another distro.</div><br /><br />Might I interest you in <a href="http://www.slackware.org" target="_blank">Slackware</a> or <a href="http://www.debian.org" target="_blank">Debian</a>? I would be more than happy to answer any questions you might have about either one. For a desktop system, I would recommend Slackware with <a href="http://www.dropline.net/gnome/" target="_blank">Dropline Gnome</a>. If you sweet talk Randall, I bet you could get him to help you out with <a href="http://www.gentoo.org" target="_blank">Gentoo</a> and getting KDE installed with <a href="http://www.kde-look.org/content/show.php?content=5561" target="_blank">Karamba</a> or <a href="http://www.kde-look.org/content/show.php?content=5810" target="_blank">SuperKaramba</a> for a very nice desktop. It is clean and rivals Dropline in my mind.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3739">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3743"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3743#msg3743"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3743">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3743#msg3743">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #4 on:</b> July 04, 2003, 09:55:58 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Okay, The 'broken' thing my clock was doing? &nbsp;Someone informed me that was an intended effect, supposed to mimic the shadow that would be cast if the clock were a sundial? &nbsp;I didn't get it when I looked at it but I guess that' could be it. &nbsp;It was just really hard for me to look at. &nbsp;(Referring to the analog picture of the clock with two circles of ticks, etc). &nbsp;<br /><br />I don't know why the clock in the control panel and on the task bar don't match, I can't get them to match, so I can't get my system to show me the correct time. &nbsp;I'll logout of X / reboot when I get back home and see if it fixes itself.<br /><br />I gotta say though, Winex is nice. &nbsp;The CVS build seems to work just fine, but I might get a subscription and support the project, it's only $5 a month.<br /><br />After using RedHat 9 for a while today, I gotta say Slackware + Dropline is a nicer combination (to me). &nbsp;So I might be going back to that (as usual), at least on my laptop. &nbsp;I need to download Debian and give it a try still, and maybe Gentoo. &nbsp;<i>maybe</i>.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3743">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3747"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3747#msg3747"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3747">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3747#msg3747">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #5 on:</b> July 05, 2003, 02:35:35 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Well, I still don&#039;t like the way the clock thing works, and I still haven&#039;t set the time proerly (it&#039;s 3am but the clock says 10am). &nbsp;Anyway, I was sitting here at the desktop when it hit me, KDE finally has some really nice looking fonts <img src="Smileys/default/smiley.gif" alt="Smiley" border="0" /> &nbsp;Dropline did it for gnome, really cleaned up the look, but KDE in slackware still has the crappiest fonts I&#039;ve ever seen, so I guess this is a mandrake specific feature. &nbsp;<br /><br /><a href="http://www.homeweb.org/~imnes/screenshots/mandrake91/kde-desktop-001.png" target="_blank">http://www.homeweb.org/~imnes/screenshots/mandrake91/kde-desktop-001.png</a><br /><br />The galaxy theme is nice to, clean and simple. &nbsp;I could really get used to this. &nbsp;I guess the battle now for me is between MDK with KDE and RH with Dropline. &nbsp;<img src="Smileys/default/wink.gif" alt="Wink" border="0" /><br /><br />Nick</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3747">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3750"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1486<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=65%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=45.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3750#msg3750"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3750">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3750#msg3750">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #6 on:</b> July 05, 2003, 08:34:41 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: imnes</div><div class="quote">The galaxy theme is nice to, clean and simple. &nbsp;I could really get used to this. &nbsp;I guess the battle now for me is between MDK with KDE and RH with Dropline. &nbsp;<img src="Smileys/default/wink.gif" alt="Wink" border="0" /></div><br />Don't forget the MDK/Gnome combination is a possibility... &nbsp;That's what I'm using and really like it. &nbsp;Somehow I've never liked the way KDE &quot;feels&quot;, and prefer the Gnome apps like Nautilus.<br />Dan</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3750">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://members.cox.net/danc3/icons/divineSW.gif" alt="" border="0" /></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3758"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>Madwilli</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3758#msg3758"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3758">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3758#msg3758">My two cents -</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #7 on:</b> July 05, 2003, 02:52:56 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Just a couple of random comments:<br /><br />* KDE&#039;s nice fonts should have &quot;come&quot; with the newer releases of KDE assuming<br />you installed the nicer fonts into your distro. (There are *alot* of different fonts for X to grab and play with if you don&#039;t like the fonts on your screen at any given moment.)<br /><br />* The most probable reason your monitor shut off is because you adjusted your time forward more than the timeout for your screensaver/power management is set to (ie: 10 minutes). So as soon as the new time was set and the screensaver checked the idle time, it sees hours. This may not be it, but it&#039;s easy to test (try changing the time in smaller increments, shutting off your screen saver, etc).<br /><br />* I am a WineX subscriber, and it&#039;s treated me well. &nbsp;I was highly addicted to CounterStrike for a while (ie most of college), and when Valve introducted the multiplayer copyprotection patches, &nbsp;WineX became my gateway back to my addiction. &nbsp;I have noticed that with some games, however, I have better luck with the CVS Wine rather than WineX. Usually I try both on most programs to test the results. &nbsp;Either, it&#039;s definitely worth the $5/month.<br /><br />* I second Rugmonster in offering Debian support, which, of course, you can use kde, gnome, xfce (, or none of the above) with. I&#039;ve recently switched off of a custom CTWM setup in lieu of oroborus + gnome2 in debian with an aqua-style theme. So far it&#039;s been pretty pleasant and almost as practical as my last setup. <br />( <a href="http://dronf.org/screen-gnome.png" target="_blank">http://dronf.org/screen-gnome.png</a> )</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3758">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3760"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3760#msg3760"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3760">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3760#msg3760">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #8 on:</b> July 05, 2003, 08:29:26 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I played around with a few different distros. I've got slackware + dropline back on right now (I can't seem to find anything else I like as well). &nbsp;I'm still planning to try out gentoo / debian probably on my laptop. &nbsp;I'll keep ya posted on that.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3760">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3782"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b></b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3782#msg3782"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3782">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3782#msg3782">Mandrake 9.1 and laptop</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #9 on:</b> July 07, 2003, 07:32:01 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">In defense of Mandrake 9.1 I have it running on a Gateway Solo 9100 laptop. I had to manually configure the onboard sound but everything else seems to be working fine. In fact the laptop is connected to my file and printer sever and I play mp3's off the server through my stero system. Works great with noatun shuffling the tunes.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3782">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3783"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>steve</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3783#msg3783"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3783">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3783#msg3783">Re: Mandrake 9.1 and laptop</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #10 on:</b> July 07, 2003, 08:37:23 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: Ed</div><div class="quote">In defense of Mandrake 9.1 I have it running on a Gateway Solo 9100 laptop. I had to manually configure the onboard sound but everything else seems to be working fine. In fact the laptop is connected to my file and printer sever and I play mp3's off the server through my stero system. Works great with noatun shuffling the tunes.</div><br /><br />I too am running Mandrake 9.1 on my homebuilt Athlon XP 1700+ with a 60GB IDE drive, Soundblaster Live, Network, Sharp Zaurus PDA, and Nvidia Dual monitor system. I did a fresh install of it and everything worked flawlessly out of the box. Oh, I did have to make one small change to get the PDA software to work, but it's documented.<br /><br />Steve</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3783">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3784"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3784#msg3784"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3784">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3784#msg3784">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #11 on:</b> July 07, 2003, 01:06:56 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote</div><div class="quote">in defense of...</div><br /><br />MDK + KDE seems to be the most popular choice for most people here that's why I made the attempt to get it going for me, I just can't seem to get it working properly, or when I do it doesn't work the way I want it to. &nbsp;I do tend to like *BSD over most linux distros though which is probably why I always gravitate towards Slackware for my linux distro.<br /><br />After several attempts I could not get my clock to work properly! &nbsp;I could get it an hour behind or an hour ahead but it wouldn't take the right time, and my time in the &quot;Adjust Time &amp; Date&quot; dialog and on the clock on the taskbar wouldn't seem to sync up, so I think I probably screwed up somewhere setting the timezone or something. &nbsp;I had MDK working on the laptop and the clock worked fine there <img src="Smileys/default/smiley.gif" alt="Smiley" border="0" /> &nbsp;Unfortunately other pieces of hardware + software weren't working for me. &nbsp;I don't have time to play with it any more right now so I put back on what I know how to use, I might make another attempt at it when the next version comes out. &nbsp;<br /><br />I didn't give Gnome a try on it, I was always under the impression that if you want to use Gnome us RedHat, if you want to use KDE use Mandrake. &nbsp;It used to be that RedHat's KDE distro sucked and MDK's Gnome distro sucked, are they putting in the efforts now to make them both work well?<br /><br />A new release of <a href="http://www.dropline.net/gnome[Dropline Gnome (Gnome 2.2.4)[/url" target="_blank"> was released yesterday, I've just gotten it installed. &nbsp;It brings some of the packages up to date, Mozilla 1.4 among them, introduces bug fixes, etc. &nbsp;Seems to work great. &nbsp;Only drawback is if you have something older than a 686 (Pentium Pro, AMD Athalon) then you can't run it, they dropped support for 386-586's in the last release.<br /><br />Nick</a></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3784">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg3785"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>steve</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3785#msg3785"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_3785">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg3785#msg3785">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #12 on:</b> July 07, 2003, 06:14:22 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: imnes</div><div class="quote"><div class="quoteheader">Quote</div><div class="quote">in defense of...</div><br />After several attempts I could not get my clock to work properly! &nbsp;I could get it an hour behind or an hour ahead but it wouldn't take the right time, and my time in the &quot;Adjust Time &amp; Date&quot; dialog and on the clock on the taskbar wouldn't seem to sync up, so I think I probably screwed up somewhere setting the timezone or something. &nbsp;I had MDK working on the laptop and the clock worked fine there <img src="Smileys/default/smiley.gif" alt="Smiley" border="0" /> &nbsp;Unfortunately other pieces of hardware + software weren't working for me. &nbsp;I don't have time to play with it any more right now so I put back on what I know how to use, I might make another attempt at it when the next version comes out. &nbsp;</div><br /><br />My guess is that you had Linux configure where it thought the hardware clock was set to GMT, it's default, and the system clock set to CST. I've done that before and had similar results. Not sure how I fixed it, though.<br /><br /><div class="quoteheader">Quote from: imnes</div><div class="quote">I didn't give Gnome a try on it, I was always under the impression that if you want to use Gnome us RedHat, if you want to use KDE use Mandrake. &nbsp;It used to be that RedHat's KDE distro sucked and MDK's Gnome distro sucked, are they putting in the efforts now to make them both work well?<br /></div><br /><br />I haven't run KDE on Mandrake in about 3 &nbsp;years. I switched to Gnome on Mandrake a long time ago when I discovered a memory leak when running KDE on an Nvidia card. I never looked back. I really like Gnome on Mandrake. <br /><br />I've tried Gnome on Redhat but prefer the way Mandrake presents it.<br /><br />Steve</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3785">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg4449"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a></b>
+							<div class="smalltext">
+								Global Moderator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1860<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=5%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=9.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.mythoughtspot.com" title="My Thought Spot" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg4449#msg4449"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_4449">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg4449#msg4449">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #13 on:</b> August 26, 2003, 10:29:06 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I got it! After 4 months of trying to get Mdk to load on this notebook, I finally got it last night.<br /><br />I looked around and found a similar problem on the Mandrake user board. I gave it a go, and that did it.<br /><br />At the initial boot up I hit F1 then passed linux ide=nodma as the boot paramater. That took off and everything went without a problem from there. Now I can play Linux on my notebook. What FUN!<br /><br />(BTW, I tried Gentoo and it is so completely against my policy of not running a distro that all but requires you to have a broadband connection. So that went out the window before I even got it completely set up).</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_4449">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">David<br /><a href="http://www.dpeach.com" target="_blank">www.dpeach.com</a><br /><a href="http://www.mythoughtspot.com" target="_blank">www.mythoughtspot.com</a><br /><a href="http://www.missionarytalks.com" target="_blank">www.missionarytalks.com</a><br />--...&nbsp; ...--<br />(see, I can code)</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg4455"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=23.html" title="View the profile of rburt3">rburt3</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1297<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="http://www.pcolalug.org/smf/avatars/General 401-500/446.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=23.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="../index.html" title="http://www.pcolalug.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://www.pcolalug.org/smf/index.php?topic=839.msg4455#msg4455"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_4455">
+										<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg4455#msg4455">MDK 9.1 for imnes, attempt #2</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #14 on:</b> August 26, 2003, 06:29:48 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: dpeach</div><div class="quote">(BTW, I tried Gentoo and it is so completely against my policy of not running a distro that all but requires you to have a broadband connection. So that went out the window before I even got it completely set up).</div><br />Did you try the final 3 cd distro of 1.4? From what I've read, you don't need an internet connection if you use that *and* there are pre-compiled binaries of the larger packages *and* there's a new utility called kernerconfig or some such that configures your selected kernel sources to work like the LiveCD kernel (hardware auto-detect, sane defaults for stuff, decent optimization). If you are worried about updates and don't have access to the ineternet, then why are you worried about updates?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_4455">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;One prog to read the lines, one prog to find them,<br />One prog to count the lines and to the console bind them&quot;<br />- some AC on /.</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> [<b>1</b>] <a class="navPages" href="index.php%3Ftopic=839.15.html">2</a> 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="http://www.pcolalug.org/smf/index.php?action=printpage;topic=839.0" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 839;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="839" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=839.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 2981 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="http://www.pcolalug.org/smf/index.php?topic=839.0;prev_next=prev#new">&laquo; previous</a> <a href="http://www.pcolalug.org/smf/index.php?topic=839.0;prev_next=next#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0" selected="selected"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0"> => Other Software</option>
+			<option value="?board=32.0"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.47 seconds with 17 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

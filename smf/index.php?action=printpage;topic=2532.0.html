@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Java 6 and GTK</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: imnes on July 25, 2005, 08:21:44 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java 6 and GTK</b><br />
+					Post by: <b>imnes</b> on <b>July 25, 2005, 08:21:44 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The GTK Look and Feel for Java was introduced back in (I think) Java 1.4. &nbsp;But it's always looked bad compared to native GTK apps. &nbsp;Sun is finally using native GTK widgets for Java apps running with GTK. &nbsp;<br /><br />Here's a simple java Swing app.<br /><br />(http://www.cse.ohio-state.edu/~eckenror/Java/Tabs.png)<br /><br />It's using the ClearLooks theme from Fedora Core 4 pretty well. &nbsp;Fonts are anti-aliased, this look pretty good.<br /><br />Lots of work still, a lot of the components have rendering issues or haven't been mapped to native GTK components yet. &nbsp;Hopefully they have time to get more done before they release. &nbsp;So far, Windows and Mac are the only places where you can really have a Swing app match native system apps really well.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Java 6 and GTK</b><br />
+					Post by: <b>rburt3</b> on <b>August 07, 2005, 08:29:38 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Swing using &quot;native&quot; widgets? I thought this was the perview of SWT and a Bad Thing(TM) according to Java purists. Not that I'm complaining, mind you. Swing has improved by leaps and bounds with regard to responsiveness over the last couple of years. I just wish it was easier to thread your events.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Java 6 and GTK</b><br />
+					Post by: <b>imnes</b> on <b>November 18, 2005, 09:44:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Supposedly GTK (and MS Windows) native widget rendering is in the current 1.6 Java builds.  I tested the latest out with various themes that are included with Dropline Gnome and it worked fine.  <br /><br />JTable has been enhanced, tables now have sortable columns.  <br /><br />Layout managers now look at the platform that the app is running on for visual hints about things like spacing between components, this helps the app integrate better on your platform.<br /><br />(I tested the QT-GTK -- or is it GTK-QT -- engine, and it currently does not work,  I&#039;ve started looking into this but not sure if it&#039;s possible to use because of the way QT themes work.)<br /><br />New drag-and-drop system to work like users would expect.<br /><br />Double-Buffering of the GUI so window manager updates are faster and smooth.  (No more &#039;gray rectangle&#039; when something moves over a java app and it&#039;s waiting to redraw).<br /><br />Printing enhancements.<br /><br />Can put any components you like in tabs of a Tabbed Pane.<br /><br />Java2D updates so that java apps now offer the same text rendering capabilities as the supported platforms.  (Including antialiasing for Windows and GTK).<br /><br />System Tray API for integrating icons, menus, notifications into the system tray / task panel / notification area of the supported platforms.<br /><br />Enhancements to Web Start deployment so that apps can install over the web and integrate into your Start Menu (or Gnome Menu), desktop shortcuts, etc.<br /><br />Simplified JRE installer for end-users.<br /><br />https://mustang.dev.java.net/<br /><br />Nick<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Java 6 and GTK</b><br />
+					Post by: <b>Brent</b> on <b>November 18, 2005, 10:57:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is really cool.&nbsp; I&#039;m glad java is making progress in this area.<br /><br />Couple of questions...<br />A.) How much of the underlying code for the App has to change for this to work?&nbsp; I&#039;m guessing at worst it be just the front end class.<br />(For those of you who don&#039;t know, at uwf most of our java programming is broken up into FE/BE classes)<br /><br />B.)&nbsp; How fast is the UI?&nbsp; Since were talking about native interfaces here, java apps could recieve a *huge* benifit from this.<br />Java is actually a fairly fast language (when coded right), the swing UI, on the other hand is pretty much universally looked upon as slower than mud by the java community.&nbsp; (But nessesary in some applications)<br /><br />As for purists, I would argue that until sun gets off it&#039;s butt and improves the swing UI, and coders get off their butts and actually code their apps to USE the new improvements, native widgets are a good way to go for &#039;standalone&#039; java applications.&nbsp; <br /><br />I wonder if this could be used in an applet?&nbsp; LOL now that would be cool!&nbsp; Course you&#039;d have to use OS fingerprinting, and the UI might require alot more work, but it would be awesome to load up a busness web page, and be staring at a gtk java applet.<br /><br />I&#039;m having trouble finding a tech job.&nbsp; I think I&#039;m gona read up on on doxygen over the holidays, and try to start contributing documentation to some java projects out there.&nbsp; I figure at this stage, I wouldn&#039;t be able to contribute any useful code as a programmer, and besides, being able to read good java code should help me write good java code.&nbsp; I&#039;m still looking for possible projects to get in to, so if yall have any suggestions, don&#039;t be shy.<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Java 6 and GTK</b><br />
+					Post by: <b>imnes</b> on <b>November 18, 2005, 11:11:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">A.) How much of the underlying code for the App has to change for this to work? </div> <br /><br />Basically none.&nbsp; Most of the changes are happening within the implementation of Swing without changing the API.&nbsp; One thing that does require additional work is table sorting.&nbsp; By default, the behavior is like previous Swing releases (probably to maintain compatibility).&nbsp; Table sorting is disabled.&nbsp; To enable sorting you have to implement a method that basically tells swing how to sort the objects in your table.&nbsp; If you&#039;ve used java you&#039;re probably familiar with this using Collections type sortable classes.<br /><br /><div class="quoteheader">Quote</div><div class="quote">B.)&nbsp; How fast is the UI?</div>&nbsp; <br /><br />This is pretty subjective.&nbsp; The reason most swing apps (made on Java 1.3 or later) seem slow is because the programmers writinig those apps didn&#039;t use threads correctly.&nbsp; Java Swing does everything in a single thread (I think QT, GTK, Windows, and Mac all do this too).&nbsp; So if you have a method / function that gets run when the user clicks a button on your GUI, the GUI will appear to freeze while that function is run.&nbsp; This is fine for small instantaneous tasks.&nbsp; For longer tasks the programmer should run that code in a seperate thread so that Swing can continue to update / draw the GUI while it&#039;s happening.&nbsp; That&#039;s the reason swing usually feels slow (if I understand it correctly).&nbsp; <br /><br />I haven&#039;t dug through the code too deeply so I don&#039;t know how the drawing is actually implemented, if windows is drawing to the java app directly, or if the java app is telling windows to render a button off-screen and then java draws it to the app - I&#039;m really not sure.<br /><br />As far as applets, all changes that are happening in swing should also be available in from applets.<br /><br />On another front, Sun has finally made some really nice advancements in NetBeans, and one of the deriviative products Sun Java Studio Creator.&nbsp; And both are now being made available for free.&nbsp; With the new GUI editor in NetBeans, Swing development is approaching the ease of Visual Basic.&nbsp; And similarly with Studio Creator you can drag+drop web applications easily.&nbsp; It&#039;s pretty impressive stuff but both products (version 5 of NetBeans, and 2 of Java Studio Creator) are still in Beta, so I wouldn&#039;t do any production projects in them yet, but they are certainly good for testing.&nbsp; Just make sure to hit the Save button often :)<br /><br />Nick<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Java 6 and GTK</b><br />
+					Post by: <b>geekforGod</b> on <b>November 18, 2005, 02:36:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That would be great if they can make Java GUI editing as easy as Visual BASIC. If they do that and allow for native widgets or even just make Swing more responsive, I would gladly jump on the Java ship. I&#039;ve used Python and Qt for those reasons in the past, but deployment can be slightly more annoying that way. Even though I prefer Python to Java, these improvements would certainly make me consider it much more often. Sounds good to me.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Java 6 and GTK</b><br />
+					Post by: <b>Brent</b> on <b>November 20, 2005, 03:25:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">http://developers.sun.com/prodtech/javatools/jscreator/reference/quicktour/2/flash/index.html<br /><br />Lil overview of the jscreator (picture Vis studio for java).&nbsp; Nice stuff.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Java 6 and GTK</b><br />
+					Post by: <b>imnes</b> on <b>November 20, 2005, 07:36:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you have flash, here&#039;s a demo of the GUI builder in NetBeans 5<br /><br />http://www.netbeans.org/files/documents/4/475/matisse.html<br /><br />Nick<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

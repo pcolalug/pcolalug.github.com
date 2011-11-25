@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Open Office + Roaming Profiles</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: bhoff on July 08, 2004, 07:35:16 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Open Office + Roaming Profiles</b><br />
+					Post by: <b>bhoff</b> on <b>July 08, 2004, 07:35:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You know I was thinking about it<br />I was thinking about a question Steve had ask me sometime ago about the reason more corparations don't use Open Office is due to the lack of Roamin profiles. Well my answer now is Yes they don't support it, But you can make it do it any way.<br />Normally on large networks or atleast I do. I have one server hosting all the home directories...Yep you got it no home stuff on the workstations they are all default installs. I log on from any machine and all of my settings follow me. THis just occured to me because I was working on several diffrent nodes on my cluster and even thou they dont have home /dir they each had my history and screen settings, How hard to have Open Office store to your home /dir and then no matter where you go your work follows....What does everybody think?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Open Office + Roaming Profiles</b><br />
+					Post by: <b>scottstancil</b> on <b>July 08, 2004, 09:03:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is not any different than LTSP or many other centralized computing resource schemes that have been around for many, many years.<br /><br />The problem is that it requires significant bandwidth, computing resources, and people resources to make this work consistently and reliably. &nbsp;Centralized computing is not the holy grail that it may seem.<br /><br />In the first age of computing from the 60's to the 70's, mainframes ruled the day and many techies enjoyed their status as stewards of the computing kingdom. &nbsp;They required non-technical personnel to submit requests for job runs. &nbsp;It was very expensive.<br /><br />From the 70's to the mid-to-late 80's computing moved to the desktop and users rejoiced at the ability to run their own reports; however, it still took fairly technically inclined individuals to use it effectively.<br /><br />From the late 80's-forward, little networked islands developed where end users could run their applications locally on their systems and department computing was formed. &nbsp;<br /><br />Now, it seems like bright, technically gifted individuals are trying to force the end users to relinquish control on the data that they may take for granted. &nbsp;Centralized computing puts the power in the techies hands, while decentralized computing puts it in end user hands.<br /><br />Office, either, is the crux of this complex issue. &nbsp;Do I license MS Office with Word, Excel, Powerpoint, Access, and Outlook -- applications that my staff is likely to be highly effective using and administrating? &nbsp;Or do I go with Open Office -- totally retrain my technical, managerial, or administrative staff for rollout? &nbsp;Do I go with the known or unknown? &nbsp;I have to say that it will have very little to do with roaming profiles for many corporations. &nbsp;Not all corporations are the poster children for totally integrated computing. &nbsp;Many are simply islands of technology.<br /><br />I cut this a bit short for brevity's sake, but my point is this idea has been around for a long time. <br /><br />Thank you for reading.<br /><br />Scott</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Open Office + Roaming Profiles</b><br />
+					Post by: <b>steve</b> on <b>July 08, 2004, 09:07:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Our company does use roaming profiles and central home directories located on a server. I tried rolling out OpenOffice a while back and I don't remember which file it was but it would not work in this situation. The problem comes in with multiple people logging into the same computer. Roaming profiles is the cruxt of the problem but even server located home directories didn't fix the problem.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Open Office + Roaming Profiles</b><br />
+					Post by: <b>imnes</b> on <b>July 09, 2004, 05:35:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">When you first run openoffice as a user and do a workstation install (I think) it loads a couple megs of files to your home directory and the rest of the install resides on the machine. &nbsp;Seems like if your home directory was on a fileserver, then your personal files and changes to openoffice would follow you to different machines?<br /><br />Sun deploys StarOffice on Linux across very large corporate networks with central user management and profile storage. &nbsp;Might be worth looking into how they handle it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Open Office + Roaming Profiles</b><br />
+					Post by: <b>scottstancil</b> on <b>July 09, 2004, 07:12:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">So is this a philosophical question about why corporations are not flocking to Open Office or is it a technical question on how to support &quot;roaming profiles&quot; in general?<br /><br />Scott</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Open Office + Roaming Profiles</b><br />
+					Post by: <b>scottstancil</b> on <b>July 09, 2004, 11:18:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Interesting article for non-US Linux desktop software adoption. &nbsp;Now, how do Linux enthusiasts break what seems like a Linux barrier for much of the Gulf Coast?<br /><br />http://www.it-director.com/article.php?articleid=12046</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

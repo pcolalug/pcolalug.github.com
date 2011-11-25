@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Wireless not receiving DHCP info but getting IP.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: L.Rentz on November 20, 2003, 06:21:52 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless not receiving DHCP info but getting IP.</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 20, 2003, 06:21:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I figured out the problem, but I dont know what is causing it. &nbsp;I &nbsp;can add a route to my AP and I can access the net fine. &nbsp;What I can't figure out is why my router is not setting up the default gateway and all automatically via wireless. &nbsp;When I connect via cat5 my router (dhcp server) automatically assigns all the correct values and everything works fine. &nbsp;Any Ideas??<br /><br />Thanks,<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless not receiving DHCP info but getting IP.</b><br />
+					Post by: <b>imnes</b> on <b>November 20, 2003, 10:10:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok if you have to setup a route to your AP then your AP is probably acting as a router. &nbsp;I assume you have another router between you and your DSL / Cablemodem? &nbsp;I would configure the AP to only pass data through, not to act as a router or serve DHCP info. &nbsp;<br /><br />That's the way I have my network, that way weather I'm on wireless or wired, I'm using the same router, and the same DHCP server and everything.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless not receiving DHCP info but getting IP.</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 20, 2003, 03:24:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the reply. &nbsp;My situation is a little different. &nbsp;I have a cable modem &nbsp;that assigns 2 internet addressable Ip's. &nbsp;One that goes directly to one computer so it has a &quot;internet&quot; addressable ip. &nbsp;Then I have one Ip that goes to a router so it gets an &quot;internet&quot; addressable ip. Then I use it to assign &quot;internal&quot; ip's to the kids computer, my laptop and pda so they can all access the net. <br /><br />The wierd thing is that &nbsp;when I connect via cat5 with my laptop, directly to the &quot;wireless router&quot; &nbsp;It gets all the necessary dhcp info assigned properly. &nbsp;When I go wireless I get a assigned ip and I can ping the router but I do not get the DNS and gateway ip's assigned. &nbsp;I can do a route command and add them but I want it to work automatically like it should. &nbsp;Any ideas.<br /><br />Thanks again,<br /><br />Lee</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

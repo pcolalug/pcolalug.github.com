@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Access to mount denied?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: mfreeman73 on September 08, 2008, 02:36:17 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Access to mount denied?</b><br />
+					Post by: <b>mfreeman73</b> on <b>September 08, 2008, 02:36:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have an ubuntu server in my house to share files and I have samba setup on the server with security set to &quot;share.&quot; I can access the share folder fine in windows, but I&#039;d like to access it from my linux desktop (using Ubuntu 8.04).<br /><br />I did this command to mount:<br />sudo mount -t smbfs //192.168.1.101/share /mnt/share<br /><br />When I browse to the /mnt/share folder I can see my files, although their icons have an &quot;X&quot; on them. When I go to open one of them I get the error message: &quot;Access to /mnt/share/file was denied.&quot;<br /><br />Any reason for this? My shares don&#039;t have passwords on them and I don&#039;t have the security level on samba set to user security, but rather share. Anyone have any ideas?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Access to mount denied?</b><br />
+					Post by: <b>mfreeman73</b> on <b>September 11, 2008, 03:49:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I figured it out. Had to add &quot;nounix&quot; to the options. Not sure why and I only found one website that had that solution, but it worked.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Access to mount denied?</b><br />
+					Post by: <b>bhoff</b> on <b>September 13, 2008, 03:57:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am glad you found the answer! I have actually just installed ubuntu to a new HP desktop for a client and I got to say I am impressed with it.<br />For a simple user friendly distro this is it. I have added the DVD to my bag of tricks now for other clients that I would have pushed Centos or Slackware.<br />And I may have to steal your answer for him.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - LF/CR Fix it script</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by:  on July 15, 2004, 01:06:34 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>LF/CR Fix it script</b><br />
+					Post by: <b></b> on <b>July 15, 2004, 01:06:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Situation 1<br />A lot of code you download and checkout<br /><br />Situation 2<br />You wrote a script in windows and uploaded it to a *nix server<br /><br />You always get the ctrl-M and it is always anoying. &nbsp;They have a few things to fix this like dos2unix and all but I love my sciprts, and this one tends to do the job. Not to mention some systems don't even have dos2unix installed by default (debain for example). Works on windows and *nix.. So you can run this before you upload your script. Hope it helps those headaches go away for you scripters. <br /><br /><i>editor</i> undos<br /><pre><br />#!/usr/bin/perl -w<br />use strict;<br /><br />if ((! defined $ARGV[0])||($ARGV[0] eq &quot;.&quot;)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; print &quot;undos [file]: remove dos line breaks from a script&quot;;<br />&nbsp; &nbsp; &nbsp; &nbsp; exit;<br />}<br />if (!-f $ARGV[0]) {<br />&nbsp; &nbsp; &nbsp; &nbsp; print &quot;$ARGV[0] is not a file!&quot;;<br />&nbsp; &nbsp; &nbsp; &nbsp; exit;<br />}<br /><br />open (MODIFY, &quot;+&lt;$ARGV[0]&quot;) or die &quot;Opening: $@\n&quot;;<br />&nbsp; &nbsp; &nbsp; &nbsp; my @file = &lt;MODIFY&gt;;<br />&nbsp; &nbsp; &nbsp; &nbsp; map { s/\r//g; } (@file);<br />&nbsp; &nbsp; &nbsp; &nbsp; seek (MODIFY, 0, 0) or die &quot;Seeking: $@\n&quot;;<br />&nbsp; &nbsp; &nbsp; &nbsp; print MODIFY @file or die &quot;Printing: $@\n&quot;;<br />&nbsp; &nbsp; &nbsp; &nbsp; truncate (MODIFY, tell(MODIFY)) or die &quot;Truncating: $@\n&quot;;<br />close (MODIFY) or die &quot;Closing: $@\n&quot;;<br /></pre></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

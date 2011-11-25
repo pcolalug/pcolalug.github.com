@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - linblock - like peerguardian...but better</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: rugmonster on December 16, 2005, 08:04:36 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>linblock - like peerguardian...but better</b><br />
+					Post by: <b>rugmonster</b> on <b>December 16, 2005, 08:04:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just found linblock (http://www.dessent.net/linblock/). Linblock works like peerguardian in that it downloads a list of IP addresses that are known to be not-so-friendly to p2p networks and blocks them. The way linblock is different from peerguardian is that linblock actually blocks those addresses with iptables, making it much more efficient. It lends itself well to automatic updates via cronjob and you can also specify different list URLs for the chance you want to use another list. <br /><br />The idea that comes to mind is having something that checks your system logs for obvious ssh bot attacks and port scans and adds their IP to a file formatted in the peerguardian style.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>rugmonster</b> on <b>January 10, 2006, 09:36:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Weeeeellll...the idea is good, but when used for it&#039;s intended use, it sucks. You wind up with about 100,000 entries in an iptables input chain. That&#039;s bad in practice because every single network packet that comes into your system has to be evaluated against every single one of those entries to get to the default permit statement.<br /><br />For instance, tonight, I was streaming a video from my desktop which had all of those ips blocked to the modded Xbox. I had lag over a 100mb/s connection. Lag in video. My wireless computer in the back bedroom gets 2mb/s at best and doesn&#039;t lag on videos. <br /><br />I&#039;m still going to use it&#039;s option to load an ip list from a local file to block ssh bots, though...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>rugmonster</b> on <b>January 13, 2006, 11:55:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">As mention above, here is a script to look at your auth.log and generate a peerguardian/linblock compliant block list.<br /><br /><div class="codeheader">Code:</div><div class="code">#!/usr/bin/perl<br />use Net::DNS;<br /><br />$authlog = &quot;/var/log/auth.log&quot;;<br />$sshers = &quot;sshers&quot;;<br />$pattern = &#039;.* localhost sshd\[[0-9]+\]: Invalid user .* from&#039;;<br />$failed_attempts = 3;<br /><br /><br />open(AUTH, $authlog) or die &quot;Cannot open auth.log: $!&quot;;<br />open(SSHERS_WRITE, &quot;+&gt;&gt;$sshers&quot;) or die &quot;Cannot open sshers for writing purposes: $!&quot;;<br />open(SSHERS_READ, &quot;&lt;$sshers&quot;) or die &quot;Cannot open sshers for reading purposes: $!&quot;;<br /><br />$i = 0;<br />while (&lt;SSHERS_READ&gt;) {<br /><span style="white-space: pre;">	</span>chomp;<br /><span style="white-space: pre;">	</span>$sshers[$i] = $_;<br /><span style="white-space: pre;">	</span>$i++;<br />}<br /><br />while (&lt;AUTH&gt;) {<br /><span style="white-space: pre;">	</span>$i++;<br /><span style="white-space: pre;">	</span>$known=0;<br /><span style="white-space: pre;">	</span>chomp;<br /><span style="white-space: pre;">	</span>if (/($pattern)/) {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>@fields = split / +/, $_;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$ipaddy = $fields[9];<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>foreach $key (@sshers) {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>if ($key =~ /$ipaddy/) {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$known = 1;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>}<span style="white-space: pre;">	</span><br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>}<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>if ($known != 1) {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>if ($newips{$ipaddy}) {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$newips{$ipaddy}++;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>} else {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$newips{$ipaddy} = 1;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>}<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>if ($newips{$ipaddy} == $failed_attempts) {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$res = Net::DNS::Resolver-&gt;new;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$query = $res-&gt;search($ipaddy);<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>if ($query) {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>foreach $rr ($query-&gt;answer) {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>next unless $rr-&gt;type eq &#039;PTR&#039;;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$dnsaddr = $rr-&gt;ptrdname;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>}<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>} else {<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$dnsaddr = &quot;no rDNS info available&quot;;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>}<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>printf SSHERS_WRITE &quot;Script Kiddie at %s:%s-%s\n&quot;, $dnsaddr, $ipaddy, $ipaddy;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$sshers[$i] = $ipaddy;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>$i++<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>}<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>}<br /><span style="white-space: pre;">	</span>}<br />}<br /><br />close(AUTH);<br />close(SSHERS);</div><br />$failed_attempts - you set the threshold on the number of failed attempts before you block the IP. <br />$authlog - can be set for any file you want to check. <br />$sshers - is where you want the output file to be written. <br />$pattern - what you&#039;re looking for.&nbsp; <b>*Default will match a pattern such as the following</b><br /><div class="codeheader">Code:</div><div class="code">Jan 11 07:17:47 localhost sshd[5197]: Invalid user skylyn from xxx.xxx.xxx.xxx</div><br />So, you can run the script (save as blockgen.pl and chmod +x it), run as root and then point linblock.pl at it.<br /><br />Example:<br /><div class="codeheader">Code:</div><div class="code"># ./blockgen.pl<br /># linblock.pl -i sshers -c sshers<br /></div><br />For linblock.pl options, execute with the --help flag. Enjoy!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>rugmonster</b> on <b>January 14, 2006, 11:55:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just changed the script a bit. I realized when I went to add a cronjob for it, that I should make my script call linblock directly as soon as it&#039;s done. I also added in tons of comments. <br /><br />If you guys have any suggestions for brevity, please let me know. I&#039;m very much a novice with Perl (i.e. know enough to break stuff).<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>rugmonster</b> on <b>February 19, 2006, 01:36:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just got done with a modification of linblock.pl and blockgen.pl.&nbsp; I added the ability to specify a protocol and port in linblock.pl.&nbsp; I made block files for APNIC, RIPE, AfriNIC and LACNIC and now use those to stop most of the dictionary attacks. <br /><br />APNIC&#039;s Major IP Blocks<br /><div class="codeheader">Code:</div><div class="code">APNIC:58.0.0.0-61.255.255.255<br />APNIC:121.0.0.0-126.255.255.255<br />APNIC:202.0.0.0-203.255.255.255<br />APNIC:210.0.0.0-211.255.255.255<br />APNIC:218.0.0.0-222.255.255.255<br /></div><br />RIPE&#039;s Major IP Blocks<br /><div class="codeheader">Code:</div><div class="code">RIPE:62.0.0.0-62.255.255.255<br />RIPE:80.0.0.0-91.255.255.255<br />RIPE:193.0.0.0-195.255.255.255<br />RIPE:212.0.0.0-213.255.255.255<br />RIPE:217.0.0.0-217.255.255.255<br /></div><br />LACNIC&#039;s Major IP Blocks<br /><div class="codeheader">Code:</div><div class="code">LACNIC:189.0.0.0-190.255.255.255<br />LACNIC:200.0.0.0-201.255.255.255<br /></div><br />AfriNIC&#039;s Major IP Block<br /><div class="codeheader">Code:</div><div class="code">AfriNIC:41.0.0.0-41.255.255.255<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>Brent</b> on <b>February 20, 2006, 03:47:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So, is it yet possible and practical to use linblock as intended?&nbsp; Can you customize it to block ip adresses *just* on certian ports?&nbsp; It seems to me the problem as you&#039;ve described it, as it has to crosscheck every ip address connecting for any service against the entire list.&nbsp; Sounds like it would be much more practical to say &quot;If someone trys to connect on port (for example) 6881, and he is on a blacklist, deny access&quot;.&nbsp; I&#039;m still wondering if this would be an effective replacement for the safepeer azureus plugin.&nbsp; This would allow people on slower computers to use lighterwieght bt clients, and still restrict access to &#039;undesirables&#039;.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>rugmonster</b> on <b>February 21, 2006, 06:03:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The site that distributes linblock says that the following should help with the over slowness that comes from loading such a large ACL into iptables. <br /><br /><div class="codeheader">Code:</div><div class="code">iptables -R INPUT 1 -m state --state NEW,RELATED -j antip2p</div><br />Rather than look at every single connection, only look at the new and related ones. This requires the ip_conntrack module to be loaded. Along with my modification (the addition of the -o [tcp|udp|both] and -d [destination-port] options), you should be able to get the desired results.<br /><br />I&#039;ll take a look at the script and add an option to use those states and post it back here.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>rugmonster</b> on <b>August 28, 2006, 09:35:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just made an update to blockgen that no longer requires linblock for use on OpenBSD with pf.<br /><br />It assumes you have a table in pf called &quot;sshers&quot;. You can get it HERE (http://rugmonster.org/code/blockgen-pf.pl).<br /><br />I have a cronjob setup to run it every minute and it updates the file /var/blockgen/sshers and also updates the sshers table. Here&#039;s what my pf.conf looks like:<br /><br /><div class="codeheader">Code:</div><div class="code">#&nbsp; &nbsp; &nbsp; &nbsp;$OpenBSD: pf.conf,v 1.31 2006/01/30 12:20:31 camield Exp $<br />#<br /># See pf.conf(5) and /usr/share/pf for syntax and examples.<br /># Remember to set net.inet.ip.forwarding=1 and/or net.inet6.ip6.forwarding=1<br /># in /etc/sysctl.conf if packets are to be forwarded between interfaces.<br /><br />table &lt;sshers&gt; persist file &quot;/var/blockgen/sshers&quot;<br /><br />block in quick on xl0 proto tcp from &lt;sshers&gt; to any port ssh<br />pass in all<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>Brent</b> on <b>August 28, 2006, 11:35:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">A while ago, I moved my ssh port from 22 to another common port.<br /><br />Either my secure log isn&#039;t logging like it used to, or I&#039;ve had exactly *zero* folks sniffing around since I made the move.&nbsp; I don&#039;t see the point in going through all that trouble when you could eliminate 99.999% of the random script kiddie problem with a simple port change.&nbsp; Of course, if you&#039;re a busness, you might still have the problem of a targeted attack, but that&#039;s not much of a threat to your average home user.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: linblock - like peerguardian...but better</b><br />
+					Post by: <b>rugmonster</b> on <b>August 29, 2006, 04:59:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;ve heard other people say the same thing, but it will only be a matter of time before the bots get smarter and gain the capabilities included in nmap to do a service version check along with a port scan. Then it won&#039;t matter what port you have services running on.<br /><br />Edit:<br />Oh yeah, another thing I just thought of; to really stop the bots trying brute force logins, turn off password authentication and use certificates and use the AllowUsers to specify the users you wish to be able to log in. I just get tired of my logs filling up with all of the failed attempts. By using my script, I just block them and they aren&#039;t clogging up my logs, which I do check.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

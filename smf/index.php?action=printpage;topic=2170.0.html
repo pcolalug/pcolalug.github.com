@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Sidewinder vs. *BSD</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: rugmonster on January 07, 2005, 05:15:42 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sidewinder vs. *BSD</b><br />
+					Post by: <b>rugmonster</b> on <b>January 07, 2005, 05:15:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I need to do some training with the guys at work before I make my move to Montgomery. We run Secure Computing's Sidewinder firewall which is based on BSDi with a few modifications. I have a Dell Poweredge 2650 that Sidewinder won't run on due to the video not being supported by the build of X and I would like to do more command line geared training with them. SSH is also very tricky to setup as the authentication for the Sidewinder is handled in non-standard ways.<br /><br />The environment isn't too different from most Linux setups (the two are definitely closer than Solaris is to Linux), but if I can find one of the BSDs that would be closer, I would like to since I won't have much more time with these guys and training may be quick and dirty. So, of all of the free flavors of BSD, what would you run. If you have experience with BSDi or, better yet, Sidewinder, I would appreciate your opinion.<br /><br />Goals for training:<ul style="margin-top: 0; margin-bottom: 0;"><li>Understanding and Navigating the Filesystem</li><li>Shell Basics</li><li>vi and the Various Text Tools</li><li>/dev and Hardware Association</li><li>/etc and Common Configuration Files</li><li>Common Daemons</li><li>DNS/BIND</li><li>Sendmail</li><li>Finding and Reading Log Files</li><li>Network Troubleshooting Tools</li>[/list:u]<br />This list may grow, but I want to give them a basic understanding of Unix type operating systems. I don't think they should be trained in just the Sidewinder way to do things because their next job could be doing some sort of Unix admin at another base, so I want to give them core concepts that will be OS independent. Basically, I them to take enough away to be able to find the answers they need later down the road.<br /><br />Back to my original question, what would you run? I was thinking NetBSD, since I know FreeBSD is pretty distant from what Sidewinder is like, but OpenBSD may be an option. My main requirement is that I can get a fully running system up without having to touch the internet too much as this system is not approved to run on a government network. Any packages I install will have to be carried over via CD or USB thumbdrive. I would also appreciate ideas for basic concepts to teach as well.</ul></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sidewinder vs. *BSD</b><br />
+					Post by: <b>rburt3</b> on <b>January 07, 2005, 07:27:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">From your list, it seems any of the BSD's will do, or am I missing something about the things you want to teach them? However, from how you've described Sidewinder to me in the past, I doubt you'll find something like it (paranoid doesn't even begin to describe it). Though, could you simulate something like it with a chroot jail or some such?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sidewinder vs. *BSD</b><br />
+					Post by: <b>kilar</b> on <b>January 08, 2005, 07:48:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">There is very little significant difference between FreeBSD, OpenBSD and NetBSD. OpenBSD has been ported to more architectures somehow, but the differences between OpenBSD,NetBSD and FreeBSD is not like the difference between Solaris and *BSD. Since I have used FreeBSD more than OpenBSD or NetBSD, I would have to recommend FreeBSD.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sidewinder vs. *BSD</b><br />
+					Post by: <b>rugmonster</b> on <b>January 08, 2005, 10:02:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">However, from how you've described Sidewinder to me in the past, I doubt you'll find something like it</div><br /><br />Actually, from what the user sees, the differences are subtle. It definitely feels like a professional Unix in that things don't always make sense where they are located. To me, Linux's filesystem layout makes the most sense of all the flavors of Unix-like operating systems. <br /><br />I have been debating these differences. While there are some differences, I don't think they are major ones. In all truth, there a just a couple of directories that are used by the Sidewinder that you won't see on Linux, but it isn't that extreme. I think the most noticable difference is the fact that your default shell is tcsh. That's okay, I can put tcsh on a Linux or BSD box, no problem. Vi, tcpdump, etc are going to be very similar if not the same in their behavior. <br /><br />What I'm getting to is that I'm beginning to think that I'm going to have to figure out the best platform for supporting multiple users running virtual servers. Linux has this capability with the very robust user-mode linux. FreeBSD gives us jail, which is apparently different from chroot. So at this point, I'm somewhat torn. From what I understand, UML requires a kernel of it's own, where jail does not, but I don't think jail will necessarily give me a full /dev filesystem. With UML, I can simulate hardware that I might not otherwise have and it all be residing inside a single file. So at this point, I'm leaning more toward User Mode Linux or FreeBSD. I'll have to play with the two and see what works the best.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

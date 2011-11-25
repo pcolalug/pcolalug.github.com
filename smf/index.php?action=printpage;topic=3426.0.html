@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Hamachi Presentation</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: dpeach on November 20, 2008, 08:07:40 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hamachi Presentation</b><br />
+					Post by: <b>dpeach</b> on <b>November 20, 2008, 08:07:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I talked about Hamachi at the November 2008 meeting. Hamachi is a zero config VPN solution that works through firewalls without having to open any ports.<br /><br />Here are the notes from the meeting:<br /><br /><b>Networking with Hamachi</b><br /><br />Hamachi = Log Me In: www.logmein.com<br /><br />If you go to the download steps, it asks for name, etc. You do not need to give it any information. Just click through. https://secure.logmein.com/products/hamachi/list.asp<br />(Or grab directly from here: http://files.hamachi.cc/linux/)<br /><br />Quick steps at Hamachi Wiki: http://logmeinwiki.com/wiki/Hamachi:Install_on_Linux<br />1.&nbsp; Download the hamachi Linux package <br />2.&nbsp; Extract the package to a temp directory <br />3.&nbsp; Change to that directory in terminal <br />4.&nbsp; Run &#039;make install&#039; and then &#039;tuncfg&#039; from under the root account <br />5.&nbsp; Run &#039;hamachi-init&#039; to generate crypto identity (any account). <br />6.&nbsp; Run &#039;hamachi start&#039; to launch Hamachi daemon. <br />7.&nbsp; Run &#039;hamachi login&#039; to put the daemon online and to create an account. <br />8.&nbsp; Run &#039;hamachi join &lt;network&gt;&#039; to join the network. <br />9.&nbsp; Run &#039;hamachi go-online &lt;network&gt;&#039; to go online in the network. <br />10.Run &#039;hamachi list&#039; to list network members and their status. <br /><br />Ubuntu<br />http://www.supware.net/HamachiUbuntuHowto/<br />May need tun-source and build-essentials<br /><br />usage: hamachi [-c &lt;cfg_path&gt;] [command]<br /><br />-c&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;overrides default configuration directory (~/.hamachi) command specifies an action. Can be one of the following -<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; start [debug]<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; stop<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; set-nick &lt;nickname&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; login<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; logout<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; list<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; get-nicks<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; create &lt;network&gt; [&lt;password&gt;]<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; delete &lt;network&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; evict&nbsp; &lt;network&gt; &lt;5.x.x.x&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; join&nbsp; &nbsp;&lt;network&gt; [&lt;password&gt;]<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; leave&nbsp; &lt;network&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; go-online &lt;network&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; go-offline &lt;network&gt;<br /><br />If no command is specified, hamachi displays its status including version, pid, online status and the nickname<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hamachi Presentation</b><br />
+					Post by: <b>Skreyola</b> on <b>November 26, 2008, 12:38:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That&#039;s cool. I&#039;m sorry I wasn&#039;t able to attend this meeting.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hamachi Presentation</b><br />
+					Post by: <b>daryy</b> on <b>February 17, 2009, 12:04:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I make sure I attend this meeting O0Get the AC parts like AC Compressor, AC Condenser, AC Evaporator and more parts ... Lexus AC Compressor (http://www.discountacparts.com/Lexus/A-C_Compressor.html) | Mercedes AC Compressor | Mitsubishi AC Compressor ...<br />We offers FREE SHIPPING &amp; One-Year Lower Price Guaranteed on Eagle Vision Parts (http://www.carpartswarehouse.com/carmodels/CP5/Eagle/Vision.html).Eagle Medallion Automotive Parts, Buy high quality after market auto body parts at wholesale price. Including Head Lamps, Tail Lights, Mirrors, Bumpers<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

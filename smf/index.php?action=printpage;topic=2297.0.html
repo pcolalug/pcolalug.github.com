@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Flash card reader</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: sandspur on February 28, 2005, 02:20:38 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Flash card reader</b><br />
+					Post by: <b>sandspur</b> on <b>February 28, 2005, 02:20:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Penguinistas---Running SuSE 9.2 and have a USB flash card reader plugged into the box. &nbsp;I'm pretty sure the reader is /dev/sda.<br /><br />With SuSE devices like a CDROM or floppy are in a directory /media. &nbsp;I've made a directory /media/flash.<br /><br />I'm not sure what line I need to add to /etc/fstab.<br /><br />Any observations or help getting access to the flash card greatly appreciated.<br /><br />Thanks,<br /><br />Chuck<br />http://www.pcola.com/sandspur/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Flash card reader</b><br />
+					Post by: <b>lloydr</b> on <b>February 28, 2005, 02:53:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">with Suse, are you using Gnome? I don't know what version of gnome that Suse would have, but versions 2.8 and above have something called HAL which allows you to easily access USB harddrives, thumbdrives, card readers, etc. &nbsp;It mounts into the /media directory as you mentioned, also dynamically edits your fstab which is one part I don't like but makes it easier for most people. <br /><br />If you have something called HAL loaded and your running gnome 2.8 or above, you should be able to find the card reader in the computer section of nautilus (kinda like My Computer for Windows).<br /><br />If your running an older version of gnome than 2.8, running KDE, or running some other desktop environment then I might have to google around to find you an exact answer. But most likely checking out the UDEV system will lead you on the right path if nobody else can get back to you quickly on a good tutorial.<br /><br />Hope this helps, sorry can't give you the best info but hopefully this gets you started.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Flash card reader</b><br />
+					Post by: <b>danc</b> on <b>February 28, 2005, 03:11:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: sandspur</div><div class="quote">Hi Penguinistas---Running SuSE 9.2 and have a USB flash card reader plugged into the box. &nbsp;I'm pretty sure the reader is /dev/sda.<br /><br />With SuSE devices like a CDROM or floppy are in a directory /media. &nbsp;I've made a directory /media/flash.<br /><br />I'm not sure what line I need to add to /etc/fstab.</div><br /><br />I'd try:<br /><br />/dev/sda1 &nbsp; &nbsp; /media/flash &nbsp; &nbsp;vfat &nbsp; &nbsp;umask=0 &nbsp; &nbsp;0 0<br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

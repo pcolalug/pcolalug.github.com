@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Help setting up RedHat/Win 2000 server</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by:  on April 30, 2003, 11:53:30 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Help setting up RedHat/Win 2000 server</b><br />
+					Post by: <b></b> on <b>April 30, 2003, 11:53:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi,<br /><br />I just purchased a shiny new server that I will use as a file server and for developing web apps. I want to be able to dual boot between a Windows 2000 and Red Hat setup depending on the type of development I'm doing. <br /><br />Could I get some suggestions on partitioning and setup and maybe once my Win2K comes in help in actually setting it up?<br /><br />Network:<br />4-port Linksys Wireless Router<br /><br />Server:<br />Intel Celeron 1.7G<br />512 RAM<br />80GB HD<br />Motherboard IBM D845GEBV2 (on board everything)<br /><br />RedHat Config:<br />RH 7.2<br />Apache 1.x<br />MySQL<br />PHP<br /><br />Windows Config:<br />Windows 2000 Server<br />SQL Server 2000 Dev<br />IIS<br /><br /><br />Thanks,<br />Jamie</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Help setting up RedHat/Win 2000 server</b><br />
+					Post by: <b>imnes</b> on <b>April 30, 2003, 12:07:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well technically (is that spelled right?) you don't have to dual boot. &nbsp;You could run apache+mysql+php on windows, and you could run an ASP server in linux (chilisoft I think). &nbsp;Or even better, you could run linux and have it start up a vmware copy of win2k once it boots. &nbsp;:)<br /><br />But if you must dual boot...<br /><br />You have 80g. &nbsp;You could have gotten by with 6g or less probably. &nbsp;So you could just split the drive in half give each OS 40g. &nbsp;But to give yourself some convenience in the future, I would say give linux 10g, windows 10g, then have a 3rd partition of type FAT32 where your /home (and other handy locations) from linux go, and your windows web directories go. &nbsp;That way if you have something screw up, you could reload linux, windows, or both, and have your web data intact. &nbsp;Just a thought.<br /><br />If it were my system, given your massive ram, HD, and quick CPU. &nbsp;I would actually probably just partition all 80gb out to linux. &nbsp;Do a base system install that does nothing but have your base software on it (and Xwindows). &nbsp;Then actually run another Linux server, and your Win2k server from vmware. &nbsp;That way you could restart / switch servers (or have both running at once) without having to reboot your machine at all. &nbsp;And as long as vmware runs happily you could reload your vmware'd servers and really never have to actually touch the main software of the machine :) &nbsp;<br /><br />Of course I'm not sure how much vmware costs and if you'd want to buy more software. &nbsp;Sorry, but I like doing geeky stuff like that. &nbsp;<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

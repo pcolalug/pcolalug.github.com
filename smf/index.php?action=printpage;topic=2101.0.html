@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Changing contact e-mail in GPG</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: SiliconFOXX on December 09, 2004, 01:17:24 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing contact e-mail in GPG</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 09, 2004, 01:17:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Since I've resigned myself to using GPG instead of mucking around with PGPi or anything (a lot of research about El Gamal/DSA, 3DES, and similar things in comparison to RSA and the like made me feel much more comfortable) I've decided to start more seriously using it, preferably from the command line though I've enabled KGPG for ease of use with some things.<br /><br /><br />So I've got this keypair, I've encrypted and decrypted things to myself and signed things. &nbsp;Good stuff, the posts here earlier helped out immensely with understanding just how all that works and I'm fine with that. &nbsp;Now here's my problem: &nbsp;how do I change the e-mail? &nbsp;I'm used to having to think that tomorrow my e-mail provider could shut down my account for no good reason (happened before and I was a paying customer and very low use!) so the idea of having ONE e-mail address tied to something as important as a regular use keypair kind of bothers me.<br /><br />Is there a way to change the e-mail? &nbsp;Update it? &nbsp;What are your thoughts on this? &nbsp;Should I just make a new keypair every time I change e-mails? &nbsp;Wouldn't that mean I'd have a ton of keys for myself lying around in case somebody accidentally uses an old one?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Editing keys</b><br />
+					Post by: <b>sandspur</b> on <b>December 09, 2004, 06:58:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi FOXX---I'm not a GPG user but I was rooting around in man gpg and there seems to be a way to edit your userid:<br /><br />Hope this is not completely wrong.<br /><br />gpg --edit-key foxx &lt;name&gt;<br /><br />Then there is a command &quot;adduid&quot; where you could can add or modify your id. &nbsp;I've never actually done this so I hope it doesn't waste your time.<br /><br />Chuck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing contact e-mail in GPG</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 10, 2004, 09:37:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heh, I promise you that staying on the quest to better understand GPG (and thus keep some security skills sharp for whenever I get to an area with a job for them) is NOT a waste of time.<br /><br />I'll check it out. &nbsp;The main edit menu doesn't have anything that sounds like &quot;change e-mail&quot; so I'll try this out...kinda like exporting a key you have to enable ASCII armor or else it's not readable. &nbsp;What's the point of exporting a key you can't read, unless I'm mistaking what's exported?</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Command Line &quot;cheat sheet&quot;</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: danc on December 10, 2005, 08:23:45 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command Line &quot;cheat sheet&quot;</b><br />
+					Post by: <b>danc</b> on <b>December 10, 2005, 08:23:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here&#039;s a link to a pretty decent summary of important command line functions...&nbsp; Bookmark and use it!<br /><br />http://freeengineer.org/learnUNIXin10minutes.html<br /><br />Dan<br /><br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Command Line &quot;cheat sheet&quot;</b><br />
+					Post by: <b>dpeach</b> on <b>December 11, 2005, 12:09:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That looks wonderfully handy.<br /><br />Does this mean I get no more help in the IRC channel?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Command Line &quot;cheat sheet&quot;</b><br />
+					Post by: <b>danc</b> on <b>December 12, 2005, 08:33:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here&#039;s another link with some really good info (and it contains yet another good link):<br /><br />http://www.unixguide.net/linux/linuxshortcuts.shtml<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Command Line &quot;cheat sheet&quot;</b><br />
+					Post by: <b>rugmonster</b> on <b>December 12, 2005, 12:09:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">First thing I noticed in that second &quot;cheat sheet&quot; is the switching between vty&#039;s. Unless you are in X, you don&#039;t have to use ctrl with alt + Fnum. If you are in X and you want to break out into the console, then you use ctrl+alt+Fnum.<br /><br />Also, arrowing through the command history is only applicable with certain shells such as BASH and ZSH. CSH, KSH and good ol&#039; Bourne Shell don&#039;t support command history or tab file name completion.<br /><br />Shift+PgUp/PgDn doesn&#039;t always work depending on your terminal. This is especially true with a framebuffer console and when using GNU Screen. This also doesn&#039;t work on a lot of dumb terminals and traditional UNIX machines (Sun hardware for example).<br /><br />Ctrl+Alt+Del may have no effect on your system. It is all in how the system is setup to interpret the combination. My debian system doesn&#039;t do a dang thing when you give it a Ctrl+Alt+Del...and that&#039;s how I like it. I like having to type sudo /sbin/shutdown -h now...and yes include the whole path because I don&#039;t use the sbin dirs in my PATH.<br /><br />And who the heck uses pico and rsh these days?! No mention of VI or VIM?!<br /><br />I guess you can&#039;t cover all of the caveats.<br /><br />One more glaring error, not every configuration file uses # for comments. Also, a comment means that it is ignored by the program so you can type whatever you want there without causing any problems.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Command Line &quot;cheat sheet&quot;</b><br />
+					Post by: <b>danc</b> on <b>December 12, 2005, 01:09:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">True, there are a few things in there that could be stated more clearly.&nbsp; I think the intended audience of the article was the less experienced (newbie) Linux user.&nbsp; Assuming that, there aren&#039;t many users who *don&#039;t* have X running, and there aren&#039;t many using a shell other than BASH.<br /><br />To argue just a bit...&nbsp; &nbsp;:o&nbsp; &nbsp;The article didn&#039;t say that *every* config file uses the &quot;#&quot; character for comments.&nbsp; It said that &quot;in a config file...&nbsp; the # is a comment&quot;&nbsp; ...which is entirely true.&nbsp; &nbsp;:)<br /><br />FWIW, I use pico frequently (as well as vi/vim/elvis).&nbsp; &nbsp;8)<br /><br />Dan<br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

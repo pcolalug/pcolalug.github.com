@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - abiword</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: LinkZero on October 18, 2005, 11:14:07 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>abiword</b><br />
+					Post by: <b>LinkZero</b> on <b>October 18, 2005, 11:14:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i&#039;m running slackware 10.2, and abiword just crashes as soon as it starts.&nbsp; i tried installing different packages from linuxpackages, but every package did the same thing, so i went to abisource.com, found the most recent version of it (2.4.1), and compiled it from source.&nbsp; but it still crashes.&nbsp; i&#039;m also having the same problem with totem and xine, except in xine, it just quits without an error message.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: abiword</b><br />
+					Post by: <b>lloydr</b> on <b>October 18, 2005, 11:18:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">open a terminal and run the commands for the programs, in abiword, if you have no luck seeing what sort of error, try changing the verbose level<br /><div class="codeheader">Code:</div><div class="code">abiword -v<br /><br />-v, --verbose=LEVEL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Set verbosity level (0, 1, 2)<br /></div><br />and the same goes for the other apps. when it crashes out, you&#039;ll probaly find missing libs or something. whatever is the cause, you&#039;ll find out from the console output.<br /><br /><br />ummm come to think of it, doesn&#039;t abiword rely on certain gnome libs and so on? do you happen to have gnome loaded at all? freerock gnome? I&#039;m running slackware-current and FRG-current and abiword works great.<br /><br />edit: yea, abiword relies on certain gnome libs<br /><div class="codeheader">Code:</div><div class="code">ldd /usr/bin/abiword | grep gnome<br />&nbsp; &nbsp; &nbsp; &nbsp; libgnomeui-2.so.0 =&gt; /usr/lib/libgnomeui-2.so.0 (0xb7776000)<br />&nbsp; &nbsp; &nbsp; &nbsp; libgnome-keyring.so.0 =&gt; /usr/lib/libgnome-keyring.so.0 (0xb770c000)<br />&nbsp; &nbsp; &nbsp; &nbsp; libgnomecanvas-2.so.0 =&gt; /usr/lib/libgnomecanvas-2.so.0 (0xb76e2000)<br />&nbsp; &nbsp; &nbsp; &nbsp; libgnome-2.so.0 =&gt; /usr/lib/libgnome-2.so.0 (0xb76ce000)<br />&nbsp; &nbsp; &nbsp; &nbsp; libgnomevfs-2.so.0 =&gt; /usr/lib/libgnomevfs-2.so.0 (0xb764d000)<br />&nbsp; &nbsp; &nbsp; &nbsp; libgnomeprintui-2-2.so.0 =&gt; /usr/lib/libgnomeprintui-2-2.so.0 (0xb7164000)<br />&nbsp; &nbsp; &nbsp; &nbsp; libgnomeprint-2-2.so.0 =&gt; /usr/lib/libgnomeprint-2-2.so.0 (0xb70fe000)<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: abiword</b><br />
+					Post by: <b>LinkZero</b> on <b>October 18, 2005, 11:27:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i wanted to delete this before someone replied but oh well.&nbsp; i figured out what was wrong.&nbsp; for some reason, the version i downloaded created a whole bunch of sub-folders under the main one, and each individual folder had to be compiled separately.&nbsp; annoying, but it works now.&nbsp; although i will try your advice on totem and xine.&nbsp; oh yeah, i&#039;m running freerock gnome.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: abiword</b><br />
+					Post by: <b>LinkZero</b> on <b>October 18, 2005, 11:40:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i seem to have all the libs for totem, but none came up for xine.&nbsp; i opened totem through the console, and this is what i got:<br /><br />** (totem:1881): WARNING **: Failed to open cd device scd0<br /><br /><br />** (totem:1881): WARNING **: Failed to open cd device scd0<br /><br /><br />(totem:1881): Gtk-WARNING **: Theme directory scalable/emblems of theme Flat-Blue has no size field<br /><br /><br />** ERROR **: file bacon-video-widget-xine.c: line 1385 (bacon_video_widget_new): assertion failed: (bvw-&gt;priv-&gt;vo_driver != NULL)<br />aborting...<br /><br />(gnome_segv:1884): Gtk-WARNING **: Theme directory scalable/emblems of theme Flat-Blue has no size field<br /><br /><br />mplayer&#039;s the only video program working right now.&nbsp; i have a ui for it, but it won&#039;t load any videos.&nbsp; it says: &quot;Error opening/initializing the selected video_out (-vo) device.&quot;&nbsp; and it does that for any video i try to load.&nbsp; not as an important issue, but if anybody&#039;s got any ideas, i&#039;m all ears.&nbsp; i can still run videos on mplayer through the console.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

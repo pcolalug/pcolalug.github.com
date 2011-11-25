@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - A couple more scripts</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: danc on November 05, 2004, 04:52:08 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>A couple more scripts</b><br />
+					Post by: <b>danc</b> on <b>November 05, 2004, 04:52:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here are a couple of more scripts that I've made/modified, that I find useful. &nbsp;Feel free to give 'em a try, and make improvements. &nbsp;:lol:<br /><br />This first one converts filenames to all-lower-case characters, which I prefer (for most things):<br /><div class="codeheader">Code:</div><div class="code"><br />#!/bin/bash<br />&nbsp;<br /># Converts filenames to all lowercase letters, by Dan Clough, 13Jan04<br /># Modified from an idea seen in forums on MandrakeUsers.org<br /># This version needs to be in the same directory as files to change...<br />&nbsp;<br />&nbsp; &nbsp;echo &quot;Convert all filenames within this folder to lowercase? &#91;yes|no&#93;&quot;;<br />&nbsp; &nbsp;read yn;<br />&nbsp; &nbsp;if test &quot;$yn&quot; = yes; then<br />&nbsp; &nbsp; &nbsp; for file in *;<br />&nbsp; &nbsp; &nbsp; do<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mv -v -i $file $&#40;echo $file | tr '&#91;A-Z&#93;' '&#91;a-z&#93;'&#41;;<br />&nbsp; &nbsp; &nbsp; done;<br />&nbsp; &nbsp;fi<br /></div><br /><br />The following one converts MP3 files to WAV files, so they can be burned onto an audio CD which will work in car/home CD players:<br /><div class="codeheader">Code:</div><div class="code"><br />#!/bin/bash<br />#<br /># This script converts all the MP3 files in a directory to WAV,<br /># for burning onto an audio CD. &nbsp;Dan Clough, 7/12/03<br />#<br />for mp3file in *.mp3<br />&nbsp; &nbsp; &nbsp; &nbsp; do<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; wavfile=$mp3file<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; wavfile=$&#40;echo $mp3file | sed s/.mp3/.wav/&#41;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo &quot;Converting $mp3file to $wavfile&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo &quot;&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mpg123 -w &quot;$wavfile&quot; &quot;$mp3file&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; done<br /></div><br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

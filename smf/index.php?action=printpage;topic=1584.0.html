@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Samba Question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: L.Rentz on May 04, 2004, 02:32:16 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Samba Question</b><br />
+					Post by: <b>L.Rentz</b> on <b>May 04, 2004, 02:32:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a small network at home that I have never really integrated my dual boot laptop into (while booted into linux). &nbsp;I usually just run my linux laptop stand alone. &nbsp; <br /><br />Well now I have acquired an old 400mhz box that I am running strictly linux on and I want to integrate it into my network. &nbsp;I installed samba client and I could see my network and copy files fine and dandy. &nbsp;However after I shared a directory on my linux box, I could not see it from my windows boxes. &nbsp;So I figured that I would need to install samba server as well. &nbsp;<br /><br />After installing samba server and selecting the network and configuring samba (with yast, I am running Suse 9). &nbsp; Later, when I rebooted my windows box I got an error that the workgroup can not be the same as a computer name. &nbsp;Well I had my workgroup named &quot;RGRP&quot; and my linux box is named RGRP.LOCAL &nbsp;and when I configured samba server I slected RGRP as the workgroup. &nbsp;So I renamed my linux box to somthing else, &quot;linux.local&quot;. However I am still not able to see my windows clients or vise versa. &nbsp;<br /><br />I did all of this on an hour lunch break so I have really not researched it yet or really tinkered with it to see If I had something not set right. &nbsp;Just wondering if someone has an idea before I hit the net/books.<br /><br />Thanks,<br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>facts</b><br />
+					Post by: <b>bhoff</b> on <b>May 05, 2004, 07:38:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So if I am reading this correctly you have the workgroup on the windows box same as the workgroup listing in the /etc/samba/smb.conf file?<br />Also you have renamed your linux box to linux.localdomain.<br /><br />what flavor of windows?<br />did you add the users to the linux box?<br />&lt;smbpasswd -a username&gt;<br />can you post your samba conf file?<br /><br />when you install the samba server there is all sorts of things for security you have to set up. piece of cake.....</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

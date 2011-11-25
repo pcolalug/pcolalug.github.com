@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - How do I compile a kernel in Debian?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on December 24, 2004, 03:13:19 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 24, 2004, 03:13:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I give up, how do I compile the kernel in Debian? &nbsp;I get the feeling I'm just totally not understanding something.<br /><br />I cannot make xconfig because I get:<br /><br />foxx@anubis:~/Downloads/src/linux-2.6.7$ make xconfig<br />*<br />* Unable to find the QT installation. Please make sure that the<br />* QT development package is correctly installed and the QTDIR<br />* environment variable is set to the correct location.<br />*<br />make[1]: *** [scripts/kconfig/.tmp_qtcheck] Error 1<br />make: *** [xconfig] Error 2<br /><br /><br />Now I've been trying to get the QT runtime libraries installed with the package system but apparently to no avail. &nbsp;Also, when I tried to get libqt it told me it wanted to remove 223 packages, all of those pertaining to kde pretty much.<br /><br /><br />Now I'll admit that I don't exactly understand QT or what it's for, but that doesn't seem like a good thing if it's going to remove quite a few packages central to KDE.<br /><br />Please help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>lloydr</b> on <b>December 24, 2004, 03:15:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">then use<br /><div class="codeheader">Code:</div><div class="code">make menuconfig</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 24, 2004, 03:21:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Somehow I feel this will come up again, though. &nbsp;Surely the sole purpose of the QT libraries isn't only for xconfig, right? &nbsp;I mean, they've got to be used for something else that I might run into?<br /><br /><br />For the moment I suppose I'll have to, though.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 24, 2004, 03:22:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heh, funny you should suggest that, I get this:<br /><br />foxx@anubis:~/Downloads/src/linux-2.6.7$ make menuconfig<br />&nbsp; SHIPPED scripts/kconfig/zconf.tab.h<br />&nbsp; HOSTCC &nbsp;scripts/kconfig/conf.o<br />&nbsp; HOSTCC &nbsp;scripts/kconfig/mconf.o<br />&nbsp; SHIPPED scripts/kconfig/zconf.tab.c<br />&nbsp; SHIPPED scripts/kconfig/lex.zconf.c<br />&nbsp; HOSTCC &nbsp;-fPIC scripts/kconfig/zconf.tab.o<br />&nbsp; HOSTLLD -shared scripts/kconfig/libkconfig.so<br />&nbsp; HOSTLD &nbsp;scripts/kconfig/mconf<br />/usr/bin/ld: cannot find -lncurses<br />collect2: ld returned 1 exit status<br /><br />&gt;&gt; Unable to find the Ncurses libraries.<br />&gt;&gt;<br />&gt;&gt; You must install ncurses-devel in order<br />&gt;&gt; to use 'make menuconfig'<br /><br /><br />Suppose I need yet more packages. &nbsp;I know the idea with the package system is to have a &quot;base system&quot; like BSD does and if you need more to just be able to go out and get it but I must confess, this is extremely frustrating to find I don't have what I would imagine are &quot;important&quot; back-end packages.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>danc</b> on <b>December 24, 2004, 03:44:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><br />&gt;&gt; You must install ncurses-devel in order<br />&gt;&gt; to use 'make menuconfig'<br /></div><br />So install ncurses-devel .... &nbsp;Isn't it as simple as typing &quot;apt-get install ncurses-devel&quot; in Debian ?<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Suppose I need yet more packages. &nbsp;I know the idea with the package system is to have a &quot;base system&quot; like BSD does and if you need more to just be able to go out and get it but I must confess, this is extremely frustrating to find I don't have what I would imagine are &quot;important&quot; back-end packages.</div><br />It's no different than with any other distro. &nbsp;You need most/all of the &quot;devel&quot; packages to compile stuff, usually.<br /><br />FWIW, the time you spent posting about this could have been used to solve the problem, with some time left over to watch TV... &nbsp; :shock:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>L.Rentz</b> on <b>December 24, 2004, 07:46:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yep, I had to install the developement packages last night as well before I did my SuSE kernel compile. &nbsp;I had the same errors. <br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 24, 2004, 09:23:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><br />&gt;&gt; You must install ncurses-devel in order<br />&gt;&gt; to use 'make menuconfig'<br /></div><br />So install ncurses-devel .... &nbsp;Isn't it as simple as typing &quot;apt-get install ncurses-devel&quot; in Debian ?</div><br /><br />Yes...assuming you know you need a package entitled &quot;ncurses-devel.&quot; I'm not quite familiar with the package names just yet and searching for packages turns out to be a bit more trial and error.<br /><br /><div class="quoteheader">Quote</div><div class="quote">FWIW, the time you spent posting about this could have been used to solve the problem, with some time left over to watch TV... &nbsp; :shock:</div><br /><br />The time taken to post a question was roughly 45~50 seconds. &nbsp;I've spent several hours trying to fix this problem. &nbsp;I figured the less than a minute that it took to ask a question after googling quite a bit for an answer was time well spent. &nbsp;&lt;shrugs&gt;<br /><br />After all, attempting to expand my knowledge of a different distribution of Linux is much more rewarding than &quot;watching TV.&quot; &nbsp; &nbsp;:o</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 24, 2004, 09:28:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: L.Rentz</div><div class="quote">Yep, I had to install the developement packages last night as well before I did my SuSE kernel compile. &nbsp;I had the same errors. <br /><br />Lee</div><br /><br />Yes, the &quot;dev&quot;-tagged packages seem to be the thing I needed. &nbsp;I was expecting &quot;dev&quot; packages to mean &quot;unstable&quot; as in packages that were in development, not packages FOR development (for instance, gcc isn't a &quot;dev&quot; package, it's just gcc). &nbsp;Very useful tidbit.<br /><br /><br />Unless I missed something in the Debian install it didn't have an option to automatically go out and get many common dev packages. &nbsp;Would've been nice as I've been totally clueless this whole time (Slackware, Mandrake, and RedHat all seemed to do it almost automatically). &nbsp;That's not a &quot;bad&quot; thing, just &quot;different.&quot; Oh well, the more you know, right?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 24, 2004, 10:36:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Debian has their packages structured like this....<br /><br />Stable - The current main distribution. These are stable as stable come and are only updated beyond the release for security purposes. These packages are somewhat dated, but great for servers.<br /><br />Testing - These are packages that are newer than those in Stable, but can be somewhat dated. These are what are being considered for the next release and are considered stable enough to be tested by the large group of Debian users who are comfortable using this set of packages for their desktops.<br /><br />SID (Unstable) - Still in development... this is about as bleeding edge as Debian will get. These are the builds of the latest releases the package maintainers throw out there to the masses to test. Once they are found to be mostly stable, they go into Testing. SID can be quite hairy though.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>geekforGod</b> on <b>December 24, 2004, 11:01:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah, the dev or devel means it is a package for development. It is to seperate it from the normal package that most users need. For instance, most people want trolltech's QT library so that KDE can run or whatever other QT apps you have can use it. But the normal QT library doesn't include all the things you would need if you are using QT to develop an application. So those who want to use it for development install the extra stuff they need(the devel package) and everyone else doesn't have to worry about extras they won't use installed on their system.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>danc</b> on <b>December 24, 2004, 11:17:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><div class="quoteheader">Quote from: danc</div><div class="quote"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote"><br />&gt;&gt; You must install ncurses-devel in order<br />&gt;&gt; to use 'make menuconfig'<br /></div><br />So install ncurses-devel .... &nbsp;Isn't it as simple as typing &quot;apt-get install ncurses-devel&quot; in Debian ?</div><br /><br />Yes...assuming you know you need a package entitled &quot;ncurses-devel.&quot; I'm not quite familiar with the package names just yet and searching for packages turns out to be a bit more trial and error.</div><br />Are you not reading the error messages, or what? &nbsp;You even quoted it above!!! &nbsp;Look! &nbsp;It says &quot;You must install ncurses-devel&quot;. &nbsp;Is that not enough of a hint as to what the package name is??? &nbsp;Hmmm....<br /><br />Looking at error messages and acting accordingly is the key to solving these kinds of problems. &nbsp;You'd have much fewer problems if you'd just think more about what you're doing...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>Brent</b> on <b>December 24, 2004, 11:42:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not to grouse, but this is one reason why most binary based distros will never appeal to me. &nbsp;<br /><br />Why distrobutions continue to structure their librarys this way elludes me. &nbsp;Being able to compile just about anything from source is a MUST for me (though I don't have the time to compile everything). &nbsp;One thing I love about slackware is it has a small set of core libs which you can use to compile just about anything. &nbsp;<br /><br />When I look at the list of .rpm or .deb -dev packages it's overwhelming. &nbsp;Most bin distros don't even include the core libs by default. &nbsp;Of course you can install them individually yourself, but there's a bloody dev extension for just about every binary package out there. &nbsp;<br /><br />Of course, I'm sure for those of you who use bin distros you've learned the in's and out's of your particular flavor of linux. &nbsp;I try to learn a new distrobution until it annoys me...which usually doesn't take too long since I have my mothers patience.<br /><br />P.S. &nbsp;Merry christmas everyone! &nbsp;I gtg ...it's 11:48 santa's on his way :^p</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>imnes</b> on <b>December 24, 2004, 11:54:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What was the reason for needing to compile your own kernel? &nbsp; Was this talked about in another discussion thread?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>L.Rentz</b> on <b>December 25, 2004, 05:08:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">(Slackware, Mandrake, and RedHat all seemed to do it almost automatically). That's not a &quot;bad&quot; thing, just &quot;different.&quot;</div><br /><br />It took me a total of 2 minutes to have both qt and ncurses developement packages installed and up and running compiling my SuSE kernel after I read the error messages it gave me after running make menuconfig or make xconfig. <br /><br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 26, 2004, 04:39:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">Are you not reading the error messages, or what? &nbsp;You even quoted it above!!! &nbsp;Look! &nbsp;It says &quot;You must install ncurses-devel&quot;. &nbsp;Is that not enough of a hint as to what the package name is??? &nbsp;Hmmm....<br /><br />Looking at error messages and acting accordingly is the key to solving these kinds of problems. &nbsp;You'd have much fewer problems if you'd just think more about what you're doing...</div><br /><br />You know, I just had an epiphany. &nbsp;You're right, I don't read error messages, I just blindly go about my business selecting default settings and letting software do whatever it wants without any sort of thought. &nbsp;I didn't spend several hours searching the package area of Debian's site, I didn't read several bits of documentation from Google, and I most certainly did not attempt to fix it on my own first. &nbsp;You're absolutely right. &nbsp; :roll: <br /><br />Or, perhaps, I looked for &quot;ncurses-devel&quot; and didn't find it and, also as stated earlier and you seem so keen to note, thought that &quot;dev&quot; was not the same as &quot;needing FOR development&quot; but rather &quot;in need OF development.&quot;<br /><br /><br />Thank you for your assistance, I'm having no issues now.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 26, 2004, 04:42:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: imnes</div><div class="quote">What was the reason for needing to compile your own kernel? &nbsp; Was this talked about in another discussion thread?<br /><br />Nick</div><br /><br />No, it hasn't been discussed in another thread. &nbsp;I've just been having a bit of strangeness with a bit of my hardware and decided to make my own kernel as a part of testing out whether it had the right support built into it and also as a good exercise in building in something else. &nbsp;<br /><br />If I still couldn't get some of it working I had a few other things to try as well but thought being able to rebuild your kernel is naturally something good to know. &nbsp;;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>danc</b> on <b>December 26, 2004, 05:01:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">You know, I just had an epiphany. &nbsp;You're right, I don't read error messages, I just blindly go about my business selecting default settings and letting software do whatever it wants without any sort of thought.</div><br />That's certainly the way it appears sometimes. &nbsp;Again, where the error message said &quot;You must install ncurses-devel&quot;, you didn't think that might be the package name that you needed to install?<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">I didn't spend several hours searching the package area of Debian's site, I didn't read several bits of documentation from Google, and I most certainly did not attempt to fix it on my own first. &nbsp;You're absolutely right. &nbsp; :roll: </div><br />It's a good thing you didn't type into a terminal: &nbsp;&quot;apt-get install ncurses-devel&quot;, huh? &nbsp;That would have taken much longer... &nbsp;:roll:<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Or, perhaps, I looked for &quot;ncurses-devel&quot; and didn't find it and, </div><br />When I type into Google: &nbsp;&quot;debian ncurses-devel&quot;, I get 8380 hits, most of which lead me to a place I can download that package. &nbsp;&lt;shrug&gt;</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How do I compile a kernel in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 26, 2004, 08:45:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">http://packages.debian.org/cgi-bin/search_packages.pl?keywords=ncurses-devel&amp;searchon=names&amp;subword=1&amp;version=stable&amp;release=all<br /><br />Debian's package site, exactly what was recommended. &nbsp;If Debian's site, the master list I would assume, has difficulty displaying it and I was not intimately aware at the time that &quot;dev&quot; did not mean that it was &quot;in&quot; development, what more would you expect? &nbsp;I went to the source.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

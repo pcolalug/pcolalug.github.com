@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Script to check your LAN</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: danc on March 17, 2005, 08:34:12 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Script to check your LAN</b><br />
+					Post by: <b>danc</b> on <b>March 17, 2005, 08:34:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is a script I did for checking which of the machines on my LAN were online at the moment. &nbsp;It's quite basic and yet does the job it's intended to do. &nbsp;BASH is cool. &nbsp; :) <br /><br />In case you wondered, the &quot;\e[32m&quot; type stuff are escape codes to colorize the returned text (green for online, red for offline). &nbsp;You should be able to easily make some modifications to this for use on your own network, if you'd like.<br /><br /><div class="codeheader">Code:</div><div class="code"><br />#!/bin/bash<br /><br /># Script to check online status of machines on the LAN.<br /># Original version 3/16/05<br /><br />Dan=192.168.254.104<br />Laptop=192.168.254.50<br />Teena=192.168.254.105<br />Michelle=192.168.254.103<br />Printserver=192.168.254.222<br /><br />for name in Dan Laptop Teena Michelle Printserver<br />do<br />&nbsp; &nbsp; &nbsp;eval ip=\$$name<br />&nbsp; &nbsp; &nbsp;if ping -c 1 -w 1 $ip &gt;/dev/null<br />&nbsp; &nbsp; &nbsp;then<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo -e &quot;\e&#91;32m$name &#40;$ip&#41; is online \e&#91;0m&quot;<br />&nbsp; &nbsp; &nbsp;else<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;echo -e &quot;\e&#91;31m$name &#40;$ip&#41; is offline \e&#91;0m&quot;<br />&nbsp; &nbsp; &nbsp;fi<br />done<br /></div><br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

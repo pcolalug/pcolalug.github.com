@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - RTCW server problems</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: danc on December 21, 2002, 10:04:20 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>danc</b> on <b>December 21, 2002, 10:04:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br />&nbsp; &nbsp;OK, here's my situation: &nbsp;I've got the RTCW game installed on the Linux &nbsp;(RH8) machine. &nbsp;I have that box and 3 Windows machines on a LAN with static IP's (192.168.x.x). &nbsp;All are connected to a NAT router, which is connected to a cable modem. &nbsp;I can do a simple ping between all machines with no problem. &nbsp;I have no software firewalls running on any machines.<br />&nbsp; &nbsp;I have a batch file (executable) which I double click on with Nautilus, and it asks me what to do with it - I choose &quot;run in terminal&quot;. &nbsp;The contents of that batch file are: &nbsp;&quot;wolfded +set dedicated 2 +set net_IP 192.168.254.101 +set net_port 27960 +set vm_game 0 +exec server.cfg&quot;. &nbsp;This starts the RTCW server in the terminal window, and I don't see anything abnormal as it scrolls by (looks like it does in a windows version).<br />&nbsp; &nbsp;Now, I start the game from a windows machine, and under the &quot;local&quot; servers list, I see nothing. &nbsp;Forgot to mention, the Linux box is dual boot with Win98, and I can run the RTCW server perfectly in Windows from that machine. &nbsp;Well, I tried adding a &quot;new favorite&quot; to the &quot;favorites&quot; server list (using the 192.168.x.x address of the Linux machine), and that game listing does now show up in the &quot;favorites&quot; list. &nbsp;I can choose &quot;Server Info&quot; button, and I see all the details of my game, so I now know that the server/client machines are talking. &nbsp;However, when I try to join that game, I get the message &quot;CLIENT_UNKNOWN_TO_AUTH&quot; and that's it. &nbsp;I also can produce that result by dropping down the RTCW console from the client machine and using &quot;/connect 192.168.x.x&quot;.<br />&nbsp; &nbsp;So...... to summarize my thinking at this point - I know the machines are physically connected properly. &nbsp;I'm virtually certain that there aren't any firewall issues. &nbsp;I know the client RTCW game can get the &quot;server info&quot; from my Linux server. &nbsp;I just don't know why the client game can't connect to the server, and why the local server host doesn't show up in the client game browser.<br />&nbsp; &nbsp;Again, I'm real new to Linux, and this install is very &quot;stock&quot;. &nbsp;I haven't tweaked/edited anything yet. &nbsp;I do know how to edit things if I need to. &nbsp;Some random wonderings include &quot;hosts&quot;, &quot;/etc/passwd&quot;... &nbsp;It seems that the Linux box doesn't know that the client is allowed to access it, and I don't know what to try next. &nbsp;Any help would be most appreciated. &nbsp;Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>dpeach</b> on <b>December 21, 2002, 10:14:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Are you running the same version of the game in both places (server/client)?<br /><br />The other day we were putting together the game and server. I had a download that I got from &quot;who knows where&quot; that was the RTCW MP 1.1. Everyone else was running RTCW MP Test2. I was the only one that could not see or connect to the server. Check your versions and see if that is the answer.<br /><br />By the time we discovered this might be the issue, I had already installed another distro of Linux and was having hardware driver issues, therefore never got to see if the Test2 version would have fixed my problem.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>rburt3</b> on <b>December 21, 2002, 12:40:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Isn't the default security level in RH8 high? I still think you want to check hat menu-&gt;system settings-&gt;security level. See if &quot;use default firewall rules&quot; is checked, and if so, check custom. Finally, enter your server port in the text box at the bottom and click ok. this should reset the packet filter.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>danc</b> on <b>December 21, 2002, 03:05:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">Are you running the same version of the game in both places (server/client)?<br /><br />The other day we were putting together the game and server. I had a download that I got from &quot;who knows where&quot; that was the RTCW MP 1.1. Everyone else was running RTCW MP Test2. I was the only one that could not see or connect to the server. Check your versions and see if that is the answer.<br /><br />By the time we discovered this might be the issue, I had already installed another distro of Linux and was having hardware driver issues, therefore never got to see if the Test2 version would have fixed my problem.<br /><br />David</div><br /><br />David,<br />Yes, I've checked the versions, and both the client and server are running the latest full version (1.41). &nbsp;Still at a loss, and still trying. &nbsp;Thanks.<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>danc</b> on <b>December 21, 2002, 03:09:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">Isn't the default security level in RH8 high? I still think you want to check hat menu->system settings->security level. See if &quot;use default firewall rules&quot; is checked, and if so, check custom. Finally, enter your server port in the text box at the bottom and click ok. this should reset the packet filter.</div><br /><br />Yes, it does default to high. &nbsp;I've tried it with &quot;custom&quot;, and entered the server port (27960) at the bottom. &nbsp;Also tried it with the security level set to &quot;no firewall&quot;. &nbsp;Same results with everything. &nbsp;Don't think it's a firewall situation, as the client can retrieve &quot;server info&quot; but just can't connect to play (get the &quot;CLIENT_UNKNOWN_TO_AUTH&quot; error message. &nbsp;Kind of out of ideas at the moment... &nbsp;Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>rugmonster</b> on <b>December 21, 2002, 05:00:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">...CLIENT_UNKNOWN_TO_AUTH...</div><br /><br />Ah ha! That was helpful. I googled for that and got the following from http://zerowing.idsoftware.com/linux/q3a/index.html#auth. Here is what that site said...<br /><div class="quoteheader">Quote</div><div class="quote">If the server you are playing on and the auth server don't see you as the same IP (for instance you are trying to play on a public internet server that's on your LAN, and your internet access is using NAT), then it won't work.<br /><br />It used to work in 1.31, and it doesn't in 1.32. PunkBuster requires<br />reliable auth of the players. What you can do:<br /><br />- run a server with sv_strictauth 0 and you'll be able to join your<br />server. This will be the same behaviour as 1.31<br /><br />- connect to a server on the internet before you connect to your local<br />server (this will trigger your IP into the cache of the auth server for<br />15mn and let you in to your local server).<br /><br />- setup two NATs, one for your client one for your server and make sure<br />your server and Id's auth see the same IP. (this one ain't for network<br />setup newbies)</div><br /><br />Hope this helps you out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>danc</b> on <b>December 21, 2002, 05:22:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That sure sounds promising... &nbsp;Will be trying that later this evening, and post my results. &nbsp;Thank you very much!!!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>danc</b> on <b>December 22, 2002, 02:02:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well........ &nbsp;none of the above worked... &nbsp;I tried the &quot;strict_auth 0&quot; and connecting to an internet server for awhile first, and neither helped. &nbsp;Think I'm going to start over and try it with RTCS v1.31. &nbsp;Sure is mysterious (and frustrating). &nbsp;Anyway, thanks for the suggestions and maybe I'll get it figured out eventually.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>danc</b> on <b>December 27, 2002, 07:23:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi,<br />An update for any that may care... &nbsp;I finally got the RTCS server running and was able to play on it from a Windows machine on the LAN. &nbsp;Turned out it was a NAT router situation, where I had to forward multiple ports through the router to enable the &quot;master&quot; verification server to see my server and client from the internet. &nbsp;Anyway.......... &nbsp;thinking I had solved the problem(s), I proceeded to start tweaking the game configs (server and punkbuster settings). &nbsp;Guess what..... now it didn't work any more (back to the &quot;CLIENT_UNKNOWN_TO_AUTH&quot; error message. &nbsp;So I decided to just start over with a fresh install of RTCW. &nbsp;Well..... &nbsp;now I have a new problem. &nbsp;The game is confused as to it's &quot;home&quot; directory (the &quot;fs_homepath&quot; variable for those of you that may speak RTCW). &nbsp;It looks for files in, and writes out it's configs, to a directory called /root/.wolf/ which I didn't create. &nbsp;It should be looking at /usr/local/games/wolfenstein but insists on the /root/.wolf/ directory even with a fresh install after a deletion of all prior install directories. &nbsp;Being a Linux newbie, I'm not sure why this is happening, but seems to be a permissions/ownership situation... (?). &nbsp;When I try to set the &quot;fs_homepath&quot; variable in the game to /usr/local/games/wolfenstein, I get an error message saying &quot;fs_homepath is write protected&quot;. &nbsp;Does anyone have any idea why this is happening, and how to correct it? &nbsp;I'm using Redhat 8.0 and RTCW 1.41 if that makes any difference. &nbsp;Thanks a bunch for any help you can offer, as I'm at my wit's end here.... &nbsp; :cry:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>rugmonster</b> on <b>December 27, 2002, 01:39:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">When I try to set the &quot;fs_homepath&quot; variable in the game to /usr/local/games/wolfenstein, I get an error message saying &quot;fs_homepath is write protected&quot;. Does anyone have any idea why this is happening, and how to correct it?</div><br /><br />Yep...what user is starting up the server? If you want to run the server as a non-priveleged user (which is recommended), you can use the following:<br /><br /><div class="codeheader">Code:</div><div class="code">chown -R &#91;user&#93;.&#91;group&#93; /usr/local/games/wolfenstein</div><br /><br />chown changes the owner of the directory/file, -R makes it recursive meaning it goes over each subdirectory and file under ../games/wolfenstein/ and then [user].[group] is the respective user and group you want to own the directories. <br /><br />If you want to check the ownership of the files you can do an ls -l [directory]. Here is a sample of what you will get:<br /><br /><div class="codeheader">Code:</div><div class="code">daniel.givens@nb-321cs-864 ~ $ ls -l lfs<br />total 281<br />drwxrwxr-x &nbsp; &nbsp;2 daniel.givens Domain Admins &nbsp; &nbsp; 4096 Dec 22 22&#58;01 4.0-srcs/<br />drwxr-xr-x &nbsp; 18 daniel.givens Domain Admins &nbsp; &nbsp; 1024 Dec 22 21&#58;38 root/<br />-rw------- &nbsp; &nbsp;1 daniel.givens Domain Admins &nbsp; 276768 Dec 21 12&#58;21 syslinux-2.00.tar.bz2</div><br /><br />daniel.givens above is the user that owns the file/directory and &quot;Domain Admins&quot; is the group that owns it. This all applies to the first field that is made up of dashes and letters, which are your actual file permissions. If you would like some more information about what those mean, let me know and I can go into depth on that as well. Who knows, you may know all this, but it is easier to go way too into depth than to assume the user knows everything already.<br /><br />Hope this helps!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>danc</b> on <b>December 27, 2002, 11:03:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Rugmonster, thanks for your reply. &nbsp;I was running the server while logged in as root, and the game was installed while root also. &nbsp;I do understand about your examples regarding &quot;chown&quot; and the r-w-x flags on files/dir's. &nbsp;<br />I also tried running the server while logged in as a user, and now the game writes configs out to /home/danc/.wolf/ &nbsp; So it seems that whoever is logged in becomes the &quot;owner&quot; of the server and it writes to that user's home directory. &nbsp;The weird part is that it didn't used to do this. &nbsp;I don't know what I did to make it do it. &nbsp;Again, the basic problem is that the game doesn't use the proper path to look for files and write out things. &nbsp;Thanks for the help and I'm still after it...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b></b> on <b>May 01, 2003, 09:31:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So.......How did this all resolve? &nbsp;Were you able to get it up and running? &nbsp;If so, what was the solution? &nbsp;I am going to be running my Wolf server from Mandrake, and need all the info you can spill my way Dan.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW server problems</b><br />
+					Post by: <b>danc</b> on <b>May 02, 2003, 08:22:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well...... &nbsp;I did eventually get things working, and &quot;think&quot; I understand why it wouldn't work before. &nbsp;The problem is when you run both the server and a client behind a NAT router - the router translates (masquerades) the outgoing IP's as the same address (your public/WAN address). &nbsp;This results in the master authentication server(s) on the internet invalidating the client's address and you get the &quot;CLIENT_UNKNOWN_TO_AUTH&quot; error message. &nbsp;This happens even if you disable Punkbuster.<br /><br />The only way I was able to get it working was to run the server outside the router, with a second IP address. &nbsp;This way the auth servers see the client having a different address than the server, and are happy.<br /><br />As for the other point in this thread about the home directory of the server, I now know that it is correct for the game to create some files in the user's /home/username/.wolf directory. &nbsp;The server should always be run as a user, not as root. &nbsp;These include your &quot;wolfconfigmp.cfg&quot; and the punkbuster files. &nbsp;The &quot;server.cfg&quot; and other game configs stay in /usr/local/games/wolfenstein/main<br /><br />Hope this helps, and I can provide more info as needed...<br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

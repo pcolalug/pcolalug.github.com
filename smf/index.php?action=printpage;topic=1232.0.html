@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Using a USB thumbdrive in Linux</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on December 26, 2003, 09:22:32 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using a USB thumbdrive in Linux</b><br />
+					Post by: <b>bhoff</b> on <b>December 26, 2003, 09:22:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How-to get a Lexar Usb-Drive working.<br />By: Brett Hoff<br /><br />First I have not did this on my own!<br />I have brought all the information together and tried it for effect, But that is all.<br />As they say &quot;If I have seen further than other men It is because I was standing on the shoulders of Great Men!&quot;<br /><br />I recieved for Christmas a brand new Lexar 128 meg Usb-Drive and found out right away that it was not supported to in Linux.<br />But that did not sway me. Being Linux is so flexible I simply did a google for Lexar usb in Linux and immediately was flooded with several pages of information.<br /><br />Thankfully There are already modules built for Usb support as early as Kernel 2-4-7 and probaly earlier. I am using the 2-4-18 kernel with Redhat 7.2 and the following had me going quickly.<br /><br />First I did a nice tail /var/log/message to see if my default kernel saw the Usb device and saw that there where several usb messages. At this point I knew that I had usb suuport and did not need to load any modules. If there had not been any listings in /var/log/message then I would have to load the following modules.<br />usb-storage and usb-uhci<br />they then list my Usb-Drive under /dev/sda1 showing as a scsi device.<br /><br />All that is needed is to mount the Usb-Drive.<br />First create your mount point<br />mkdir /mnt/usbkey&nbsp;&nbsp;&nbsp;#that is what I called mine anyhow...What ever you like.<br /><br />Second mount the Usb-Drive<br />mount -t vfat /dev/sda1 /mnt/usbkey<br />now you should have your Usb-Drive mounted under /mnt/usbkey<br /><br />Note: you may note that you have to use the -t vfat option to mount it.<br />I tried all the other options and that is the only one that worked.<br />Someone may try to convert to the ext2 or ext3 format...<br /><br />To make things easier you may go ahead and set up the fstab file for the Usb-Drive. I set mine up so anyone could drop files to the drive.<br /><br />vi /etc/fstab<br />Goto the first blank line at the end of your present listing and<br />i to insert then<br />/dev/sda1&nbsp;&nbsp;&nbsp;/mnt/usbkey&nbsp;&nbsp;&nbsp;vfat noauto,users,umask=000,gid=600 0 0<br />then the esc key and :wq to save.<br />There you go you are all setup to use your Usb-Drive .<br />It does not automatically mount you will have to type <br />mount /mnt/usbkey to do this.<br /><br />Hope this Helps <br />Brett Hoff</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using a USB thumbdrive in Linux</b><br />
+					Post by: <b>dpeach</b> on <b>December 26, 2003, 11:26:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ignorant little me. I got a Lexar 128MB drive for my birthday. I just plugged it in and expected it to work. It did! I was happy.<br /><br />Running Mandrake 9.2. It built it's own mnt point. I think it was /mnt/removeable.<br /><br />Actually, come to think of it, I may have had to go into the Mandrake Control Center and search for mount points. But then after doing that it was available at /mnt/removeable.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using a USB thumbdrive in Linux</b><br />
+					Post by: <b>L.Rentz</b> on <b>December 27, 2003, 10:15:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have the lexar Jumpdrive 2.0 pro. &nbsp;On suse 9.0, I just plugged it in and walla, it put a icon on the desktop and mounted it automatically and I was ready to roll. &nbsp;:D <br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>What do you know!</b><br />
+					Post by: <b>bhoff</b> on <b>December 27, 2003, 12:25:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I will have to add a line stating this is for kernel 2-4-20 and lower.<br />2.5 kernels and higher had very good usb support. But prior to that it was so so. I am using Redhat 7.2 with 2-4-18 kernel.<br /><br />But atlast I was on a roll with USB that I decided to get my ephoto cl18 camera to work also and after a code session last night I manage to get control of my camera too. Also works with most major usb camera's.<br /><br />Anyone interested in these how-to's ?</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

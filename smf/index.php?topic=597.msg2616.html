@@ -1,0 +1,1114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="How to start a daemon on startup?" />
+	<meta name="robots" content="noindex" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>How to start a daemon on startup?</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="index.php%3Ftopic=597.0%3Bprev_next=prev.html" />
+	<link rel="next" href="index.php%3Ftopic=597.0%3Bprev_next=next.html" />
+	<link rel="index" href="index.php%3Fboard=38.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 07:06:35 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="597" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg2602"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#6" class="nav">Misc</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=38.0.html" class="nav">Newbie Corner</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=597.0.html" class="nav">How to start a daemon on startup?</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="index.php%3Ftopic=597.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=597.0%3Bprev_next=next.html#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> <a class="navPages" href="index.php%3Ftopic=597.0.html">1</a> [<b>2</b>] <a class="navPages" href="index.php%3Ftopic=597.30.html">3</a> 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=597.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: How to start a daemon on startup? &nbsp;(Read 5175 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=597.15" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1486<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=65%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=45.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2602.html#msg2602"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2602">
+										<a href="index.php%3Ftopic=597.msg2602.html#msg2602">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #15 on:</b> April 07, 2003, 08:04:09 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Well, let's see...... this thread is about 3 days old now.... &nbsp; <img src="Smileys/default/cheesy.gif" alt="cheesy" border="0" /> &nbsp; Maybe sometimes GUI's are our friends...<br />Dan</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2602">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://members.cox.net/danc3/icons/divineSW.gif" alt="" border="0" /></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2603"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a></b>
+							<div class="smalltext">
+								Global Moderator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1860<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=5%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=9.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.mythoughtspot.com" title="My Thought Spot" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2603.html#msg2603"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2603">
+										<a href="index.php%3Ftopic=597.msg2603.html#msg2603">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #16 on:</b> April 07, 2003, 08:17:06 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Steve thanks for the suggestion. How easy is that to install on the Zaurus? From what I understand, I need Perl to install Webmin. That is yet another package to download and install. Though it is only 1 Mb and Webmin (tarred) is only 6.1 MB, I did not want to have to add all the bloat if one line in a config file can be added.<br /><br />Perl is useful outside of this project, but I will probably dump Webmin after this use.<br /><br />At the moment I need to put off the project for the day. I will get back to it in the morning, after I wake up from the Indianapolis to Pensacola drive today.<br /><br />Thanks</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2603">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">David<br /><a href="http://www.dpeach.com" target="_blank">www.dpeach.com</a><br /><a href="http://www.mythoughtspot.com" target="_blank">www.mythoughtspot.com</a><br /><a href="http://www.missionarytalks.com" target="_blank">www.missionarytalks.com</a><br />--...&nbsp; ...--<br />(see, I can code)</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2604"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a></b>
+							<div class="smalltext">
+								Global Moderator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1860<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=5%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=9.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.mythoughtspot.com" title="My Thought Spot" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2604.html#msg2604"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2604">
+										<a href="index.php%3Ftopic=597.msg2604.html#msg2604">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #17 on:</b> April 07, 2003, 08:22:47 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">GUIs fail and can make things take longer than they need to take.</div><br />Well, Ruggy, you and I were up to what, 2:00 this morning working on this? So maybe the long winded GUI may not be a bad idea.<br /><br />&nbsp;<img src="Smileys/default/cheesy.gif" alt="cheesy" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2604">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">David<br /><a href="http://www.dpeach.com" target="_blank">www.dpeach.com</a><br /><a href="http://www.mythoughtspot.com" target="_blank">www.mythoughtspot.com</a><br /><a href="http://www.missionarytalks.com" target="_blank">www.missionarytalks.com</a><br />--...&nbsp; ...--<br />(see, I can code)</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2605"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>steve</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2605.html#msg2605"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2605">
+										<a href="index.php%3Ftopic=597.msg2605.html#msg2605">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #18 on:</b> April 07, 2003, 09:13:22 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: dpeach</div><div class="quote">Steve thanks for the suggestion. How easy is that to install on the Zaurus? From what I understand, I need Perl to install Webmin. That is yet another package to download and install. Though it is only 1 Mb and Webmin (tarred) is only 6.1 MB, I did not want to have to add all the bloat if one line in a config file can be added.<br /><br />Perl is useful outside of this project, but I will probably dump Webmin after this use.<br /><br />At the moment I need to put off the project for the day. I will get back to it in the morning, after I wake up from the Indianapolis to Pensacola drive today.<br /><br />Thanks</div><br /><br />Aaaahhh, that's what I get for losing track of the thread. I forgot this was about the Zaurus. Webmin would be used on a dekstop. Unfortunately, on the Zaurus, you will have to go into a shell to do it. I'm not sure about how to exactly set it up on the Zaurus as I don't have a PHD yet in programming and Linux. &nbsp;<img src="Smileys/default/cheesy.gif" alt="Cheesy" border="0" /> <br /><br />You might head over to the Zaurus Zone and post the question there. They would probably know the easiest way to do this.<br /><br />Steve</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2605">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2607"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2607.html#msg2607"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2607">
+										<a href="index.php%3Ftopic=597.msg2607.html#msg2607">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #19 on:</b> April 07, 2003, 12:48:50 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">What if you just add the line <br /><br />httpd<br /><br />or maybe just<br /><br />http<br /><br />to your /etc/rc.d/init.d file? &nbsp;Otherwise open up /etc/inittab and look for the line<br /><br />id:4:initdefault <br /><br />(or something like that). That tells you what runlevel your system starts in. Mine starts in 4 (I think the zaurus is the same, or it might use 3?) &nbsp;But then open up /etc/rc.d/rc.4 (or rc.3) and ad the line to start your httpd server.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2607">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2608"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1486<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=65%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=45.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2608.html#msg2608"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2608">
+										<a href="index.php%3Ftopic=597.msg2608.html#msg2608">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #20 on:</b> April 07, 2003, 02:54:09 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: dpeach</div><div class="quote">I will get back to it in the morning, after I wake up from the Indianapolis to Pensacola drive today.</div><br /><br />David, got those Mdk9.1 CD's ready for ya when you run out of things to do... &nbsp;Just let me know when you'd like to get 'em...<br />Dan</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2608">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://members.cox.net/danc3/icons/divineSW.gif" alt="" border="0" /></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2616"></a><a name="new"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>altomo</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2616.html#msg2616"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2616">
+										<a href="index.php%3Ftopic=597.msg2616.html#msg2616">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #21 on:</b> April 07, 2003, 07:46:38 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Here is my apache start up file<br />---start file-------------<br />[altomo@780 altomo]$ more /etc/rc.d/init.d/httpd<br />#!/bin/sh<br />#<br /># Startup script for the Red Hat Secure Web Server<br />#<br /># chkconfig: 345 85 15<br /># description: Secure version of Apache World Wide Web server. &nbsp;It is \<br /># &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;used to serve HTML files and CGI over SSL.<br /># processname: httpd<br /># pidfile: /var/run/httpsd.pid<br /># config: /etc/httpd/conf/access.conf<br /># config: /etc/httpd/conf/httpd_app.conf<br /># config: /etc/httpd/conf/srm.conf<br /><br /><br /># Source function library.<br />. /etc/rc.d/init.d/functions<br />RETVAL=0<br /><br />httpdargs() {<br />&nbsp; &nbsp; &nbsp; &nbsp; args=&quot; -f /etc/httpd/conf/httpd_app.conf&quot;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; # if there is a key, start up in secure mode, otherwise<br />&nbsp; &nbsp; &nbsp; &nbsp; # start up in normal apache mode.<br />&nbsp; &nbsp; &nbsp; &nbsp; SSLDomains=`/usr/lib/opcenter/virtualhosting/GetSSLDomains -q 2>/dev/null`<br />&nbsp; &nbsp; &nbsp; &nbsp; if [ -n &quot;$SSLDomains&quot; ]; then<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; args=&quot;${args} -DSSL $SSLDomains&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; fi<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; #moduledir=/usr/lib/apache<br />&nbsp; &nbsp; &nbsp; &nbsp; moddef=/etc/appliance/apachemodules<br />&nbsp; &nbsp; &nbsp; &nbsp; module_list=`ls $moddef/*module`<br />&nbsp; &nbsp; &nbsp; &nbsp; for module in $module_list<br />&nbsp; &nbsp; &nbsp; &nbsp; do<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; module_name=`echo $module | cut -f 5 &nbsp;-d '/'`<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; args=&quot;${args} -D $module_name&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; done<br />&nbsp; &nbsp; &nbsp; &nbsp; #if [ $? -eq 0 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;if [ -e &quot;${moduledir}/libphp4.so&quot; ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; args=&quot;${args} -D vwh_php4_module&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;else<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; echo &quot;Could not find ${moduledir}/libphp4.so&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; return 1<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;fi<br />&nbsp; &nbsp; &nbsp; &nbsp; #fi<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; #if [ $? -eq 0 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;if [ -e &quot;${moduledir}/libperl.so&quot; ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; args=&quot;${args} -D vwh_perl_module&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;else<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; echo &quot;Could not find ${moduledir}/libperl.so&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; return 1<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;fi<br />&nbsp; &nbsp; &nbsp; &nbsp; #fi<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; echo ${args}<br />&nbsp; &nbsp; &nbsp; &nbsp; return 0<br />}<br /><br />start(){<br />&nbsp; &nbsp; echo -n &quot;Starting httpd: &quot;<br /><br />&nbsp; &nbsp; # Set maximum open files for apache. &nbsp;Default is normally 1K, we<br />&nbsp; &nbsp; # want at least 4K<br />&nbsp; &nbsp; ulimit -n 4096<br /><br />&nbsp; &nbsp; myarg=`httpdargs`<br />&nbsp; &nbsp; if [ $? -eq 1 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; #then myarg contains the error msg<br />&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;$myarg&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; exit 1<br />&nbsp; &nbsp; fi<br />&nbsp; &nbsp; echo &quot;$myarg&quot; | grep &quot;DSSL&quot; > /dev/null 2>&1<br />&nbsp; &nbsp; if [ $? -eq 0 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; /usr/sbin/httpd `echo ${myarg}`<br />&nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; daemon httpd `echo ${myarg}`<br />&nbsp; &nbsp; fi<br />&nbsp; &nbsp; RETVAL=$?<br />&nbsp; &nbsp; if [ $RETVAL -eq 0 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp;success &quot;httpd startup&quot;<br />&nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp;failure &quot;httpd startup&quot;<br />&nbsp; &nbsp; fi<br />&nbsp; &nbsp; echo<br />&nbsp; &nbsp; [ $RETVAL = 0 ] && touch /var/lock/subsys/httpd<br />&nbsp; &nbsp; return $RETVAL<br />}<br /><br />stop() {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo -n &quot;Shutting down http: &quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; killproc httpd<br />&nbsp; &nbsp; &nbsp; &nbsp; RETVAL=$?<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; &nbsp; [ $RETVAL = 0 ] && rm -f /var/lock/subsys/httpd /var/run/httpd.pid<br />}<br /><br /><br /><br /># See how we were called.<br />case &quot;$1&quot; in<br />&nbsp; start)<br />&nbsp; &nbsp; &nbsp; &nbsp; start<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; stop)<br />&nbsp; &nbsp; &nbsp; &nbsp; stop<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; status)<br />&nbsp; &nbsp; &nbsp; &nbsp; status httpd<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; restart)<br />&nbsp; &nbsp; &nbsp; &nbsp; stop<br />&nbsp; &nbsp; &nbsp; &nbsp; start<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; reload)<br />&nbsp; &nbsp; &nbsp; &nbsp; echo -n &quot;Reloading httpd: &quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; killproc httpd -HUP<br />&nbsp; &nbsp; &nbsp; &nbsp; RETVAL=$?<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; reload-grc)<br />&nbsp; &nbsp; &nbsp; &nbsp; echo -n &quot;Reloading httpd gracefully: &quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; killproc httpd -USR1<br />&nbsp; &nbsp; &nbsp; &nbsp; RETVAL=$?<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; *)<br />&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;Usage: $0 {start|stop|restart|reload|reload-grc|status}&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; exit 1<br />esac<br /><br />exit $RETVAL<br />---end file----------<br /><br /><br />You might find your httpd file a little different but that should give you an idea. /etc/rc.d/init.d/httpd<br /><br />When you got this:<br />bash: chkconfig: command not found<br />It means chkconfig was prob not in your path or not installed. I have chkconfig at /sbin/chkconfig</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2616">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2617"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>steve</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2617.html#msg2617"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2617">
+										<a href="index.php%3Ftopic=597.msg2617.html#msg2617">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #22 on:</b> April 08, 2003, 07:19:15 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Have you tried <a href="http://www.prometheanheat.com/zaurus/" target="_blank">This?</a><br /><br />Steve</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2617">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2618"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a></b>
+							<div class="smalltext">
+								Global Moderator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1860<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=5%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=9.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.mythoughtspot.com" title="My Thought Spot" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2618.html#msg2618"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2618">
+										<a href="index.php%3Ftopic=597.msg2618.html#msg2618">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #23 on:</b> April 08, 2003, 08:47:30 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">OK, let me try and catch up.<br /><br />Steve, Yes, I have been to prometheanheat.com. That is where I got the apachectl and actlsetup. Though Apache was working fine before, I did install apachectl and it still works fine. Zauruszone did not have my answer and <a href="http://www.zaurus.com/dev/board" target="_blank">www.zaurus.com/dev/board</a> has been off and on all weekend. I was able to post my question when it was up once and I have gotten an answer that I will try and let you know the results.<br /><br />Imnes, rc.5 is what the Z runs at. Already tried that.<br /><br />Altomo, forgive me for not completely understanding all of that. But I think you are showing me how to check and make sure Apache will start. Apache works great, I am just trying to figure out how to get it to start at bootup.<br /><br />I did not mean for this to be so difficult. I thought this would be a good discussion to go into here because it would be a simple answer for newbies to know how to accomplish this. I have a lead from the Zaurus forum that I will try and let you know how it goes.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2618">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">David<br /><a href="http://www.dpeach.com" target="_blank">www.dpeach.com</a><br /><a href="http://www.mythoughtspot.com" target="_blank">www.mythoughtspot.com</a><br /><a href="http://www.missionarytalks.com" target="_blank">www.missionarytalks.com</a><br />--...&nbsp; ...--<br />(see, I can code)</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2620"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>altomo</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2620.html#msg2620"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2620">
+										<a href="index.php%3Ftopic=597.msg2620.html#msg2620">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #24 on:</b> April 08, 2003, 11:49:45 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: dpeach</div><div class="quote"><br /><br />Altomo, forgive me for not completely understanding all of that. But I think you are showing me how to check and make sure Apache will start. Apache works great, I am just trying to figure out how to get it to start at bootup.<br />quote]<br /><br />That is the startup script for apache. btw this page would have saved you some time:<br /><br /><a href="http://httpd.apache.org/docs/invoking.html" target="_blank">http://httpd.apache.org/docs/invoking.html</a><br /><br />or check out this page<br /><br /><a href="http://www.ozetechnology.com/howtos/apache_start.shtml" target="_blank">http://www.ozetechnology.com/howtos/apache_start.shtml</a></div></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2620">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2622"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2622.html#msg2622"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2622">
+										<a href="index.php%3Ftopic=597.msg2622.html#msg2622">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #25 on:</b> April 08, 2003, 12:04:21 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">After working with David on this one night, I wonder if the Zaurus doesn't do something funky during startup. We put the apachectl start as last line of the inet script in the start section and it still didn't start up. Has anyone thought to look in the /var/logs? Wouldn't any errors be recorded in /var/log/messages? I know those init scripts are supposed to be run as root, but what if it isn't on the Zaurus or it is something weird like that? I don't think this is the methods we have tried to get this thing to startup. I think this is a funkiness of the Zaurus.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2622">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2624"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a></b>
+							<div class="smalltext">
+								Global Moderator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1860<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=5%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=9.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.mythoughtspot.com" title="My Thought Spot" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2624.html#msg2624"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2624">
+										<a href="index.php%3Ftopic=597.msg2624.html#msg2624">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #26 on:</b> April 08, 2003, 01:43:21 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Success!<br /><br />After asking on the <a href="http://www.zaurus.com/dev/board" target="_blank">www.zaurus.com/dev/board</a> my question, I have come up with the following answer.<br /><br /><div class="quoteheader">Quote from: My new best friend, hausman</div><div class="quote">Create a text file called S49local in /etc/rc.d/rc5.d<br /><br />inside it, put<br /><br />/home/www/bin/httpd start<br /><br />make S49local executable, and restart.</div><br />I have no idea what is special about the S49local name, but it did the trick.<br /><br />Rugmonster, I only have two logs in /var/log directory: dmesg, wtemp. dmesg does not have anything that looks like what I am going after and wtmp is empty.<br /><br /><a href="http://www.zaurus.com/dev/board/index.php?s=212843285c1fb2c609b3df3e22f0ebfd&act=ST&f=3&t=2197&st=0&#entry12685" target="_blank">Here is the thread</a> at the other board.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2624">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">David<br /><a href="http://www.dpeach.com" target="_blank">www.dpeach.com</a><br /><a href="http://www.mythoughtspot.com" target="_blank">www.mythoughtspot.com</a><br /><a href="http://www.missionarytalks.com" target="_blank">www.missionarytalks.com</a><br />--...&nbsp; ...--<br />(see, I can code)</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2625"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b>altomo</b>
+							<div class="smalltext">
+								Guest<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2625.html#msg2625"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2625">
+										<a href="index.php%3Ftopic=597.msg2625.html#msg2625">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #27 on:</b> April 08, 2003, 01:59:15 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">S means start<br /><br />49 this is the number in which this process will start. ie. will start before any higher numbers and after any lower numbers.<br /><br />local means nothing really<br /><br />I would suggest reading about startup and shutdown scripts. &nbsp;This is what I was getting to in my early posts, but I guess I wasnt clear or assumed to much.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2625">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2626"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=44.html" title="View the profile of rugmonster">rugmonster</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1534<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=11%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=44.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://rugmonster.org" title="" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2626.html#msg2626"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2626">
+										<a href="index.php%3Ftopic=597.msg2626.html#msg2626">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #28 on:</b> April 08, 2003, 02:10:50 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Well, that approach isn't exactly proper because the right way to do it is to make your httpd initialization script in /etc/rc.d/init.d and then make a symbolic link to the rcX.d as SXXhttpd. The X in rcX.d being the corresponding runlevel and X in SXXhttpd being the order number of which you want it to start. Anywho, glad you got it working. I was trying to avoid that by having you put it in another script, but whatever &nbsp;<img src="Smileys/default/wink.gif" alt="wink" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2626">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">--<br />Daniel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg2627"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a></b>
+							<div class="smalltext">
+								Global Moderator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><img src="Themes/babylon/images/stargmod.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1860<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=5%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=9.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.mythoughtspot.com" title="My Thought Spot" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=597.msg2627.html#msg2627"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_2627">
+										<a href="index.php%3Ftopic=597.msg2627.html#msg2627">How to start a daemon on startup?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #29 on:</b> April 08, 2003, 03:53:58 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Let me try to do it the &quot;proper&quot; way later. At the moment it works and I am happy.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2627">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">David<br /><a href="http://www.dpeach.com" target="_blank">www.dpeach.com</a><br /><a href="http://www.mythoughtspot.com" target="_blank">www.mythoughtspot.com</a><br /><a href="http://www.missionarytalks.com" target="_blank">www.missionarytalks.com</a><br />--...&nbsp; ...--<br />(see, I can code)</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> <a class="navPages" href="index.php%3Ftopic=597.0.html">1</a> [<b>2</b>] <a class="navPages" href="index.php%3Ftopic=597.30.html">3</a> 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=597.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 597;
+	smf_start = 15;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="597" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=597.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 5175 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="index.php%3Ftopic=597.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=597.0%3Bprev_next=next.html#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0"> => Other Software</option>
+			<option value="?board=32.0"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0" selected="selected"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.44 seconds with 17 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Slacked again...</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Nomad on May 04, 2005, 05:47:17 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slacked again...</b><br />
+					Post by: <b>Nomad</b> on <b>May 04, 2005, 05:47:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">going from ....<br /><br />2.4.22- 2.6.10<br /><br />Getting Segment faults in differnt areas of the make bzImage...<br /><br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/tcp_output.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/tcp_timer.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/tcp_ipv4.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/tcp_minisocks.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/datagram.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/raw.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/udp.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/arp.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/icmp.o<br />&nbsp; CC &nbsp; &nbsp; &nbsp;net/ipv4/devinet.o<br />include/asm/uaccess.h: In function `skb_add_data':<br />include/asm/uaccess.h:105: internal error: Segmentation fault<br />Please submit a full bug report,<br />with preprocessed source if appropriate.<br />See &lt;URL:http://gcc.gnu.org/bugs.html&gt; for instructions.<br />make[2]: *** [net/ipv4/devinet.o] Error 1<br />make[1]: *** [net/ipv4] Error 2<br />make: *** [net] Error 2<br /><br /><br />at a loss... I know it isn't hardware because i rebuilt the 2.4.22 with highmem and everything worked fine.<br /><br />&nbsp;:shock:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slacked again...</b><br />
+					Post by: <b>rugmonster</b> on <b>May 04, 2005, 06:32:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">GCC segfaulted on you. You may want to see if there is a newer version available in package form.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slacked again...</b><br />
+					Post by: <b>imnes</b> on <b>May 04, 2005, 09:11:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Slackware includes a pre-built 2.6 kernel you may want to try. &nbsp;It's on the second CD under /testing/ I think, or available at:<br /><br />ftp://ftp.slackware.com/pub/slackware/slackware-10.1/testing/packages/linux-2.6.10/<br /><br />Does it always fail in the same spot? &nbsp;If all else fails try a newer / older kernel version.<br /><br />Good luck,<br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slacked again...</b><br />
+					Post by: <b>Brent</b> on <b>May 05, 2005, 11:49:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sounds like your working with an older version of slackware. &nbsp;Try upgrading to 10.1 and compiling 2.6 again. &nbsp;(Last time I used .22 was back in ...what 8.1?)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

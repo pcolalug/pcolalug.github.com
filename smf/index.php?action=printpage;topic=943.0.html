@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Boot loader goes bye bye</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by:  on August 18, 2003, 07:43:03 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b></b> on <b>August 18, 2003, 07:43:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, I have a problem, and hopefully someone here has some experience with this sort of thing.<br /><br /><br />I run a dual-boot system. I have an 80 GB partition with Winblows on it, and a 40GB partition with RH Linux 8 on it. I generally only use Winblows because I'm a 3D artist, and my 3D programs only run on Winblows at current. I use Linux for everything else.<br /><br />However, I had a problem with the registry of Winblows a few days ago, and had to reinstall. Normally this would be a smooth operation, and it was. However, it seems that the monopolistic tendecies of Microsft have led them to overwrite the boot loader so that only winblows can be booted.<br /><br />Now, I am dying here without Linux, and I have never configured a boot loader before. If anyone could help guide me through the process of installing GRUB or LILO, and configuring it, I would greatly appreciate their help</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b>danc</b> on <b>August 18, 2003, 08:01:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">devilmech,<br /><br />First of all, welcome to the LUG - I think you'll find these forums helpful, and interesting.<br /><br />What's happened to you is common, and luckily it's easy to fix. &nbsp;For me, I can help you with Grub, and I know others here can with Lilo. &nbsp;So, which were you using before the re-install of windows?<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Thanks for the welcome</b><br />
+					Post by: <b></b> on <b>August 18, 2003, 10:30:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was using GRUB before. I don't really know the difference between the two loaders, so I don't really know which one I should install now. I think with LILO being older, it would be more evolved, but I could be wrong.<br /><br />btw, GRand Unified Boot Loader sounds like something developed by the Freemasons</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Thanks for the welcome</b><br />
+					Post by: <b>danc</b> on <b>August 18, 2003, 10:49:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: devilmech</div><div class="quote">I was using GRUB before. I don't really know the difference between the two loaders, so I don't really know which one I should install now.</div><br />OK, well first thing is to get Linux booted. &nbsp;Do you have a boot floppy for the RH8 install (rescue floppy)? &nbsp;Do you have the RH8 install CD's?<br /><br />Some other things we need to know... &nbsp;assuming you only have the one hard disk in the machine (/dev/hda), will have to find out the boot partition once you get things booted (it's probably /dev/hda2).<br /><br />Let me know if you have the above boot disks, and we'll go from there.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b></b> on <b>August 18, 2003, 03:37:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have the DVD edition of RH 8, which is currently I P'cola at my friends place. I'll go pick it up tonight, and we can get crackin</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b>rugmonster</b> on <b>August 19, 2003, 11:28:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You know, this could be as simple as setting the linux partition as the boot partition....<br /><br />And yes, that can be done with fdisk from windows.<br /><br />Mind you will have to add the winders partition to the grub config.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>What I use</b><br />
+					Post by: <b>bhoff</b> on <b>August 19, 2003, 01:22:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you have cd one from your distro you can start like you are going to reinstall but instaed when ask do and update.<br />This will even let you choose which boot loader you would like and reinstall it. IT only takes about 10 minutes and has worked for me for Grub and Lilo.<br />Then again there is more than one way to skin a cat!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b></b> on <b>August 19, 2003, 10:08:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks to all for the helpage. I was able to boot into Linux from the DVD, and from there proceeded to reinstall GRUB and set things back the way I had them.<br /><br />Was a nice slap in the face to me, and another blow to my trust in Microsuck, which was rather nonexistent to begin with.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b>rugmonster</b> on <b>August 20, 2003, 05:21:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You have to look at it from the standpoint of Microsoft making it easier on the user by installing a standard bootloader and MBR. How many average Joe Six-Packs do you know dual boot? For them to add this question to the installation process would only confuse people. I don't see it so much as monopolistic practice as I do simpler installation. It's just one of those behaviors you have to be aware of and ready to work around if you plan on dual booting with Windows.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b>rburt3</b> on <b>August 26, 2003, 06:44:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ruggy: Ever the diplomat... ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b>rugmonster</b> on <b>August 26, 2003, 07:11:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Now that I go back and look at that post, I wonder if it really was me that wrote that. &nbsp;That was way too clear and intellectual to have come from my fingers. If, indeed, I did post that, don't expect much more like it.<br /><br />Sorry for the mix up.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot loader goes bye bye</b><br />
+					Post by: <b></b> on <b>August 29, 2003, 08:09:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">Now that I go back and look at that post, I wonder if it really was me that wrote that. &nbsp;That was way too clear and intellectual to have come from my fingers. If, indeed, I did post that, don't expect much more like it.<br /><br />Sorry for the mix up.</div><br /><br /><br />Heh, any argument in favor of M$ can't really be considered intelligent, but I'll give you that one</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

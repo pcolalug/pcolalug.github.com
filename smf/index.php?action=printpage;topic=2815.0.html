@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Looking for scripts</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: bhoff on March 13, 2006, 06:01:07 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Looking for scripts</b><br />
+					Post by: <b>bhoff</b> on <b>March 13, 2006, 06:01:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am looking for two scripts.<br />First is to startx depending on which kernel I load at boot time.<br />I thought you could pass the startx command to kernel at bootup but no such luck.<br />Any thoughts.<br />Second script on bootup my laptop takes a lot of time to try and get a dhcp even thou there is no cable plugged in.<br />I have seen a script that will not start eth0 unless cable is plugged in.<br />I am in a explore mode so if anybody has any suggestions Please let me know.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Looking for scripts</b><br />
+					Post by: <b>mall0ry</b> on <b>March 14, 2006, 11:25:19 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This might work for your second issue.<br /><br />ifplugd&nbsp; &nbsp;http://freshmeat.net/projects/ifplugd/?branch_id=33331&amp;release_id=197999<br /><br />Homepage&nbsp; &nbsp; http://0pointer.de/lennart/projects/ifplugd/<br /><br />An article about ifplugd&nbsp; &nbsp; http://tips.linux.com/tips/05/05/16/208210.shtml?tid=100</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Looking for scripts</b><br />
+					Post by: <b>rugmonster</b> on <b>March 14, 2006, 12:03:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Brett, I believe you are wanting to look at your run levels. One of the major inconsistencies between Linux distros is how they handle runlevels, but typically, runlevel 3 is multi-user (full networking) console only and runlevel 5 is multi-user with X. I found this link (http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/ref-guide/s1-grub-runlevels.html) from Redhat on how to specify the runlevel you want to start to when using LILO or GRUB.<br /><br />If you want to start different X configs based on the kernel, then look into the uname command.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Looking for scripts</b><br />
+					Post by: <b>bhoff</b> on <b>March 14, 2006, 09:17:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yea I finally dusted off what Dan had taught us and used the rc.local file and added the following.<br /><br />require=&quot;2.4.20-20.7&quot;<br />if [ $require = `uname -r` ];<br />then <br />`startx`<br />fi<br />&nbsp;<br />This sort of did what I was trying to do.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

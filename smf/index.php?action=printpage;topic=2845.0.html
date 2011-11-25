@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Comparison of XFS, JFS, ReiserFS and EXT3</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: rugmonster on April 22, 2006, 10:27:18 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Comparison of XFS, JFS, ReiserFS and EXT3</b><br />
+					Post by: <b>rugmonster</b> on <b>April 22, 2006, 10:27:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I found a recent benchmark (http://www.debian-administration.org/articles/388) of the top four Linux filesystems, XFS, JFS, ReiserFS and EXT3, at Debian-Administrator.org. Their conclusion is that XFS is the best overall filesystem for a home or small-business file server.<br /><br />&nbsp; &nbsp; * It uses the maximum capacity of your server hard disk(s)<br />&nbsp; &nbsp; * It is the quickest FS to create, mount and unmount<br />&nbsp; &nbsp; * It is the quickest FS for operations on large files (&gt;500Mb)<br />&nbsp; &nbsp; * This FS gets a good second place for operations on a large number of small to moderate-size files and directories<br />&nbsp; &nbsp; * It constitutes a good CPU vs time compromise for large directory listing or file search<br />&nbsp; &nbsp; * It is not the least CPU demanding FS but its use of system ressources is quite acceptable for older generation hardware<br /><br />What is your experience with these or other filesystems? I personally use EXT3 for my root, boot and main storage partitions (mostly media files). I then use Reiser3 for usr, var, tmp, opt and home since it has always been touted as been best for small files. This article suggests otherwise, though.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Comparison of XFS, JFS, ReiserFS and EXT3</b><br />
+					Post by: <b>danc</b> on <b>April 22, 2006, 01:21:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2845.msg14121.html#msg14121">Quote from: rugmonster on April 22, 2006, 10:27:18 am</a></div><div class="quote">What is your experience with these or other filesystems? I personally use EXT3 for my root, boot and main storage partitions (mostly media files). I then use Reiser3 for usr, var, tmp, opt and home since it has always been touted as been best for small files. This article suggests otherwise, though.</div><br /><br />I have only used Reiser and ext3 myself.&nbsp; I had always heard that Reiser was better for smaller files too, but in my real-world usage (nothing scientific, just the way it &quot;feels&quot;), I did not find that to be true.&nbsp; Often things seemed a little more sluggish on Reiser filesystems, and now I just use ext3 on everything.&nbsp; Tried and true, low risk.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Comparison of XFS, JFS, ReiserFS and EXT3</b><br />
+					Post by: <b>Brent</b> on <b>April 23, 2006, 02:44:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I use XFS.&nbsp; I have alot of movies and mp3&#039;s floating around, and XFS *does* handle them faster than other file systems.<br />Overall, XFS and rieser feel pretty equal.&nbsp; XFS mounts faster, and handles bigger files better, but otherwise there is little difference.<br /><br />Those of you who use multiple partitions, or obscess about your pc booting in 20 seconds (like me&nbsp; ::)) might find it useful.<br /><br />As for EXT3, It feels painfully slow to me, but it is easy to recover data.&nbsp; If I was hosting a server with priceless data, I&#039;d go EXT3 all the way...BUT, if you&#039;re relying soley on your file system to recover data and excluding golden rules like daily backups, raid, etc...your data must not be that important.&nbsp; <br /><br />For a home desktop, imho your better off going with a faster alternative.&nbsp; <br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Comparison of XFS, JFS, ReiserFS and EXT3</b><br />
+					Post by: <b>green_dragon37</b> on <b>April 23, 2006, 03:21:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;ve got a single XFS partition, the rest is ReiserFS.&nbsp; The XFS houses my qemu images (files weighing in at gigs and gigs apiece,) and runs really well.&nbsp; The ReiserFS works really well on the /usr/portage stuff, but NWN actually has/had issues with ReiserFS, you had to mount the partitions with a special option to make the game load faster than 2-3 minutes!<br /><br />As for ext3, it is tried and true, I use ext2 for /boot, never gets mounted anyways.&nbsp; I have the same opinion on using a filesystem solely on the idea that you can recover data easier.&nbsp; If it&#039;s important, back it up!<br /><br />Ian</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Comparison of XFS, JFS, ReiserFS and EXT3</b><br />
+					Post by: <b>danc</b> on <b>April 23, 2006, 03:40:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2845.msg14123.html#msg14123">Quote from: Brent on April 23, 2006, 02:44:13 pm</a></div><div class="quote">As for EXT3, It feels painfully slow to me, but it is easy to recover data.&nbsp; If I was hosting a server with priceless data, I&#039;d go EXT3 all the way...BUT, if you&#039;re relying soley on your file system to recover data and excluding golden rules like daily backups, raid, etc...your data must not be that important.</div><br /><br />Who said anything about choosing a filesystem based on recovery ability, or not doing backups?<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=2845.msg14123.html#msg14123">Quote from: Brent on April 23, 2006, 02:44:13 pm</a></div><div class="quote">For a home desktop, imho your better off going with a faster alternative.</div><br /><br />Really?&nbsp; Perhaps you haven&#039;t read enough on the subject.&nbsp; One of the other studies referenced in the article that Ruggy mentioned, is here:<br /><br />http://linuxgazette.net/122/TWDT.html#piszcz<br /><br />If you take a minute to look at that, it&#039;s pretty difficult to see any reason to use anything *except* EXT3.&nbsp; Many of the comparisons are not even close, especially when compared to XFS.<br /><br />Dan<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Comparison of XFS, JFS, ReiserFS and EXT3</b><br />
+					Post by: <b>Brent</b> on <b>April 23, 2006, 10:09:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, I&#039;ve seen those benchmarks.&nbsp; The author did *so* many tests on *so* many factors, any benchmark wide conclusions aren&#039;t very reliable in my opinion.<br /><br />Fact:&nbsp; EXT3 isn&#039;t known for speed.&nbsp; It&#039;s known for backwards compatibility and the ease of data recovery.<br /><br />Don&#039;t believe me?&nbsp; Go ask some of the groups on usenet.&nbsp; EXT3 has a universal reputation of being slower than EXT2, XFS, JFS, and even rieser, however, many of the folks that are professional linux admins prefer it, simply because it&#039;s easier to recover.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Comparison of XFS, JFS, ReiserFS and EXT3</b><br />
+					Post by: <b>danc</b> on <b>April 24, 2006, 06:28:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2845.msg14126.html#msg14126">Quote from: Brent on April 23, 2006, 10:09:23 pm</a></div><div class="quote">Yes, I&#039;ve seen those benchmarks.&nbsp; The author did *so* many tests on *so* many factors, any benchmark wide conclusions aren&#039;t very reliable in my opinion.</div><br />So, if there are *too many* scientific tests which show your opinion to be wrong, they suddenly become &quot;not very reliable&quot;?&nbsp; Is that what you&#039;re saying?<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=2845.msg14126.html#msg14126">Quote from: Brent on April 23, 2006, 10:09:23 pm</a></div><div class="quote">Fact:&nbsp; EXT3 isn&#039;t known for speed.&nbsp; It&#039;s known for backwards compatibility and the ease of data recovery.</div><br />Fact?&nbsp; Known by whom?&nbsp; <br /><br />I mean, go and look at some of the file copy/move benchmarks in that study.&nbsp; EXT3 wins by a landslide.&nbsp; Is there some other definition of &quot;speed&quot; that I&#039;m not aware of?<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=2845.msg14126.html#msg14126">Quote from: Brent on April 23, 2006, 10:09:23 pm</a></div><div class="quote">Don&#039;t believe me?&nbsp; Go ask some of the groups on usenet.&nbsp; EXT3 has a universal reputation of being slower than EXT2, XFS, JFS, and even rieser, however, many of the folks that are professional linux admins prefer it, simply because it&#039;s easier to recover.</div><br />I spend a couple of hours *every day* reading Usenet.&nbsp; It&#039;s a cesspool, and most information there should be taken with a grain of salt.&nbsp; The &quot;reputation&quot; of something there is virtually meaningless, especially when compared with scientific / logical testing procedures which show the opposite thing.<br /><br />Perhaps the professional Linux admins prefer it for more reasons than just it&#039;s recoverability?&nbsp; <br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Comparison of XFS, JFS, ReiserFS and EXT3</b><br />
+					Post by: <b>lloydr</b> on <b>April 24, 2006, 08:40:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;ve seen other benchmarks that support EXT3 spanking reiser than the one dan posted lol they all are rather amusing. <br /><br />I simply prefer EXT3 due to the fact that it&#039;s tried and true and a rather responsive FS compared to my tests with reiser and xfs ;)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

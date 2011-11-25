@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Allowing user access to win partition</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: Brent on July 20, 2004, 11:01:13 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Allowing user access to win partition</b><br />
+					Post by: <b>Brent</b> on <b>July 20, 2004, 11:01:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br /><br />As you all know, I run slackware. &nbsp;I'm trying to setup access to /dev/hda1 using /etc/fstab.<br /><br />As root I modified fstab to look like this regarding my ntfs and fat32 win partitions.<br /><br />/dev/hda1 &nbsp; &nbsp; &nbsp; &nbsp;/mnt/windows &nbsp; &nbsp; ntfs &nbsp; &nbsp; &nbsp; &nbsp;ro,umask=000 &nbsp; &nbsp; 1 &nbsp; 0<br />/dev/hda3 &nbsp; &nbsp; &nbsp; /mnt/middleman &nbsp; vfat &nbsp; &nbsp; &nbsp; &nbsp;rw,umask=777 &nbsp; &nbsp; 1 &nbsp; 0<br /><br />dev/hda3 is a fat partition that acts like a middleman btw linux and windows. &nbsp;My ntfs partition is my windows partition. &nbsp;I use it for my mp3 storage because it's ro.<br /><br />Yet, I get permission denied trying to access either of these mount points under user mortal.<br /><br />Help?<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Allowing user access to win partition</b><br />
+					Post by: <b>danc</b> on <b>July 20, 2004, 11:27:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote"><br />/dev/hda1 &nbsp; &nbsp; &nbsp; &nbsp;/mnt/windows &nbsp; &nbsp; ntfs &nbsp; &nbsp; &nbsp; &nbsp;ro,umask=000 &nbsp; &nbsp; 1 &nbsp; 0<br />/dev/hda3 &nbsp; &nbsp; &nbsp; /mnt/middleman &nbsp; vfat &nbsp; &nbsp; &nbsp; &nbsp;rw,umask=777 &nbsp; &nbsp; 1 &nbsp; 0<br /><br />Yet, I get permission denied trying to access either of these mount points under user mortal.</div><br /><br />Try these:<br /><br />/dev/hda1 &nbsp; &nbsp; &nbsp;/mnt/windows &nbsp; &nbsp; &nbsp;ntfs &nbsp; &nbsp;ro,user,umask=0 &nbsp; &nbsp;1 &nbsp;0<br />/dev/hda3 &nbsp; &nbsp; /mnt/middleman &nbsp; vfat &nbsp; &nbsp;rw,user,umask=0 &nbsp; &nbsp;1 &nbsp;0<br /><br />&nbsp;:D <br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Allowing user access to win partition</b><br />
+					Post by: <b>Brent</b> on <b>July 20, 2004, 10:44:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Doh!<br /><br />forgot user in the argument.<br /><br />My precious mp3s, accessible!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

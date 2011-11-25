@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Back to Debian</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: rugmonster on August 31, 2005, 06:59:17 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Back to Debian</b><br />
+					Post by: <b>rugmonster</b> on <b>August 31, 2005, 06:59:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I believe when I first came to know the LUG, I was using Debian as a console only router on a AMD K6-200. I just threw that old box in the dumpster, yet a piece of that old system came back to life for me. If you've read my recent posts regarding x86_64 support in Linux, you know that I've struggled with it and kept coming back to SuSE 9.3. In my need for new software, I attempted upgrading to SuSE 10.0 Beta2 and then Beta3. Out of utter frustration and longing for the most wonderful package management tool ever, I decided to try Debian again.<br /><br />I downloaded the NetInstall disc because it's small, downloads and burns quickly. I was surprised to see that the installer was the exact same one Ubuntu uses. It did the same great hardware auto-detection, network setup and apt source setup. Holy crap it was ncurses-text-based-user-interface heaven. About an hour later, I had X running Debian Stable...whatever that is called these days.<br /><br />Well, stable is stale. Don't let anyone tell you otherwise. I think they're on Gnome 2.6 and OpenOffice.org 1.1.3. I'm sure things are stable, but good lord that was old. With a simple change of stable to sid in my /etc/apt/sources.list and an apt-get update &amp;&amp; apt-get dist-upgrade, I had a whole new, up to date system. I am running 2.6.12, Gnome 2.8 (which I can't tell is any different from 2.10), Firefox 1.0.6, Gaim 1.50, OO.o pre-2.0 and a whole slew of up to date software. <br /><br />Funny thing is, even though sid is the unstable distribution, standing for Still In Development, the system is great. The system <i>feels</i> more responsive and I've been able to cut out all of the KDE stuff I don't use. Memory utilization is lower than it was in SuSE. It all makes for a great desktop experience. I love it.<br /><br />So next time you're getting adventurous and want to try a new distro, give Debian a go. It isn't anything like it was just a year or two ago.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Back to Debian</b><br />
+					Post by: <b>danc</b> on <b>August 31, 2005, 09:12:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rugmonster</div><div class="quote">So next time you're getting adventurous and want to try a new distro, give Debian a go. It isn't anything like it was just a year or two ago.</div><br /><br />You convinced me to give it a look. &nbsp;Been a long time since I tried Debian, but I've downloaded the netinst ISO, and will give it a test run in the next few days.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Back to Debian</b><br />
+					Post by: <b>rugmonster</b> on <b>September 01, 2005, 05:21:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just wanted to make a small correction. Gnome 2.10 is installed. The help said 2.8, but when I checked the properties for the panel, it said 2.10.2 and Nautilus says 2.10.1. <br /><br />Good luck, Dan! One thing I will note, I did have to install alsa, but once that was in, I had sound and everything. Also, here is a complete listing of my apt sources.<br /><br /><div class="codeheader">Code:</div><div class="code"><br /># /etc/apt/sources.list<br />#<br /># Main Debian repositories for SID<br />deb ftp&#58;//ftp.us.debian.org/debian/ unstable main contrib non-free<br />deb-src http&#58;//ftp.us.debian.org/debian/ unstable main contrib non-free<br />deb ftp&#58;//ftp2.de.debian.org/debian/ unstable main contrib non-free<br />deb-src http&#58;//ftp2.de.debian.org/debian/ unstable main contrib non-free<br /><br /># Extra Repository for mplayer and w32codecs<br />deb ftp&#58;//ftp.nerim.net/debian-marillat/ sid main<br /><br /># Experimental Debian repositories for OpenOffice.org2<br />deb http&#58;//ftp.us.debian.org/debian/ ../project/experimental main<br />deb-src http&#58;//ftp.us.debian.org/debian ../project/experimental main<br /></div><br />Since OO.o2 is in the experimental repository, you have to tell apt to look there.<br /><div class="codeheader">Code:</div><div class="code"><br /># apt-get -t experimental install openoffice.org2<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Back to Debian</b><br />
+					Post by: <b>imnes</b> on <b>September 01, 2005, 02:21:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">After using debian on / off for a while and hanging out in some debian IRC channels, I think their use of the word Stable isn't what everyone else uses. &nbsp;Most people hear stable and think &quot;Software that doesn't crash&quot;, I think Debian's use of Stable might mean &quot;Programming / Library API's don't change&quot;, and that's why debian 'stable' was on gtk 1.4 and gnome 1 for so long, because moving to gtk2 and gnome 2.x meant an API change. &nbsp;Making debian 'stable' as in it doesn't change dramatically and break precompiled software every few months.<br /><br />Maybe I'm completely wrong though :)<br /><br />I don't know what the current status of Debian is, but I know Ubuntu is going through a lot of changes, moving everything to be compiled on GCC 4 compilers, getting rid of some of the extraneous directories (I think stuff from /usr/X11, and /usr/X11R6, and others are now just being integrated into /usr). &nbsp;I don't think they would have forked from debian so maybe this is changes incoming from debian testing.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

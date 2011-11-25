@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Swaret no worky?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on October 27, 2004, 07:51:29 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Swaret no worky?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 27, 2004, 07:51:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I figured this was pretty newb-ish so I'd ask here. &nbsp;I've made my swaret.conf and put VERSION=10.0 and left the rest of the file alone since it seems to automagickally go to www.linuxpackages.net and so forth. &nbsp;Well, for whatever reason, I'll do something like:<br /><br />&quot;swaret --install k3b&quot;<br /><br />...and it will find absolutely nothing matching k3b. &nbsp;However, I pull up Firefox and head over to Linuxpackages.net, search for k3b for Slack v10.0 and it pulls it easily. &nbsp;What's up?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Swaret no worky?</b><br />
+					Post by: <b>dpeach</b> on <b>October 27, 2004, 08:30:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't have my Slack box up right now, but I think what you need to do is something like: swaret --update. I am not sure if that is the right command, but it is something like that. That will update the list of available packages. Then you can install.<br /><br />You may have already done that step, but I thought I would mention it.<br /><br />Frankly, I got tired of swaret never having the package I was looking for, so I have gotten to where I compile everything from source on my own. I absolutely hate that since swaret is one of the compelling reasons to run Slack. I just got tired of stuff not being there, so I don't even look anymore.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Swaret no worky?</b><br />
+					Post by: <b>rburt3</b> on <b>October 27, 2004, 11:54:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">Frankly, I got tired of swaret never having the package I was looking for, so I have gotten to where I compile everything from source on my own.</div><br />And you stopped using Gentoo why, exactly... ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Swaret no worky?</b><br />
+					Post by: <b>dpeach</b> on <b>October 27, 2004, 12:15:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">And you stopped using Gentoo why, exactly... ;)</div><br />You didn't have any good arguments in the last heated discussion we had here, so you are just trying to start a fight on your own. 8) <br /><br />This whole source thing is part of the reason I may be leaving Slack as well (the main reason hovers around a sound card that worked flawlessly in Mandrake and Gentoo but not in Slack).<br /><br />Let us know how your fight with swaret goes. You may provide some insight to my own problems.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Swaret no worky?</b><br />
+					Post by: <b>lloydr</b> on <b>October 27, 2004, 01:27:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">sure you have your repositories set?<br /><br />this is what i use for my repos:<br />REPOS_ROOT=LinuxPackagesmirror%http://www1.linuxpackages.net/packages/Slackware-10.0</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Swaret no worky?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 29, 2004, 07:05:40 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, I've tried yours as well as the one included there (ftp rather than http) and still no dice. &nbsp;I've also tried out the swaret --update after each modification and still no dice.<br /><br />Oh, I DID make a modification to your line. &nbsp;Instead of -10.0 at the end I used -$VERSION. &nbsp;I figured it would allow me to update the version easier because I'd be bound to forget I hard-coded it someday.<br /><br />My test is &quot;swaret --install mplayer&quot; and &quot;swaret --install Mplayer.&quot; I know this package exists at LinuxPackages.net so I figured it was a decent test. &nbsp;Any thoughts?<br /><br />EDIT: &nbsp;I just noticed that when I ran the update after using the repository you listed it failed on checking the respository files. &nbsp;However, I removed the &quot;1&quot; that you had after &quot;www&quot; and it apparently worked through that section of the update.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

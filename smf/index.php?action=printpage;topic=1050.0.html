@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - freebsd ports, stay updated!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: ctrlz on October 01, 2003, 05:43:03 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>freebsd ports, stay updated!</b><br />
+					Post by: <b>ctrlz</b> on <b>October 01, 2003, 05:43:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">for anyone that's using freebsd, and is not aware of portupgrade, you must be aware of it NOW.<br /><br />make sure you have updated your ports tree before doing this, or else...it won't be applicable! read about cvsup (http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/cvsup.html)<br /><br />now that you have your ports tree updated we'll need to install portupgrade:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />bash-2.05b$ whereis portupgrade<br />/usr/ports/sysutils/portupgrade<br /></div><br /><br />found it! okie, let's install:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />bash-2.05b$ cd /usr/ports/sysutils/portupgrade<br />bash-2.05b$ su<br />root# make install clean<br /></div><br /><br />la la la...wait, ok done!<br /><br />now...here's the fun part &nbsp;:) let's go ahead and see what ports need updating:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />bash-2.05b$ pkg_version -L =<br />gstreamer-plugins <br /></div><br /><br />ok, obviously i'm a port fanatic, and update my ports like crazy. but if you had a fresh install, you'd see A LOT of packages.<br /><br />now, su to root and go ahead and update that one package:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />root# portupgrade -r gstreamer-plugins<br /></div><br /><br />la la la...more waiting. the -r option will 'recursively' find all the dependant pkg's. how easy it is!! <br /><br />well, that's about it...i think. if i left anything out, let me know...OH YEAH!<br /><br /><div class="codeheader">Code:</div><div class="code"><br />bash-2.05b$ man portupgrade<br /></div><br /><br />&nbsp;:wink:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>freebsd ports, stay updated!</b><br />
+					Post by: <b>imnes</b> on <b>October 01, 2003, 07:37:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Has gnome2.4 gone into the ports yet or you still have to buiild yourself?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>freebsd ports, stay updated!</b><br />
+					Post by: <b>ctrlz</b> on <b>October 01, 2003, 10:33:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">no port available yet &nbsp;:cry:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>freebsd ports, stay updated!</b><br />
+					Post by: <b>ctrlz</b> on <b>October 02, 2003, 06:17:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">my bad, it IS ported :)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

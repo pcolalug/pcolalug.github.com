@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - 2.6.13 and nvidia</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Brent on September 19, 2005, 09:33:57 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>Brent</b> on <b>September 19, 2005, 09:33:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi folks,<br /><br />Those of you on irc know i've recently compiled 2.6.13. &nbsp;Now, the kernel install went flawlessly. &nbsp;However, when I try to compile/install the nvidia module, it says the kernel src location is wrong. &nbsp;I've included the important snips to keep things short. &nbsp;Check below for details.<br /><br /><div class="codeheader">Code:</div><div class="code"><br /><br />bash-3.00$ sh NVIDIA-Linux-x86-1.0-7676-pkg1.run --kernel-source-path=/usr/src/linux-2.6.13 <br /><br />ERROR&#58; Unable to load the kernel module 'nvidia.ko'.<br /><br />Kernel module load error&#58; insmod&#58; error inserting './usr/src/nv/nvidia.ko'&#58; &nbsp;-1 No such device<br /><br />NVRM&#58; The NVIDIA probe routine was not called for 1 device&#40;s&#41;.<br /><br />bash-3.00$ ls -lah /usr/src/ | grep linux<br />lrwxrwxrwx &nbsp; 1 root root &nbsp; 21 2005-09-18 21&#58;04 linux -&gt; /usr/src/linux-2.6.13<br />drwxr-xr-x &nbsp;15 root root &nbsp;584 2005-06-05 20&#58;17 linux-2.4.31<br />drwxr-xr-x &nbsp;19 root root 1.3K 2005-09-18 21&#58;17 linux-2.6.13<br />-rw-r--r-- &nbsp; 1 root root &nbsp;37M 2005-09-16 12&#58;29 linux-2.6.13.tar.bz2<br /><br /></div><br /><br />The full log should be posted shortly<br />http://www.students.uwf.edu/wbh1/nvidialog.txt<br /><br />[edit] apparently the ftp doesn't like log files to be displayed renamed to txt</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>imnes</b> on <b>September 19, 2005, 10:02:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Was the kernel source (2.6.13) you pointed to the same source that was used to build the kernel that you were running when you ran that nvidia installer? &nbsp;If not, then it won't be able to load that module until you reboot to the 2.6.13 kernel.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>Brent</b> on <b>September 19, 2005, 10:14:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes I rebooted, and unamed to make sure I was in 2.6.13</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>rugmonster</b> on <b>September 19, 2005, 04:43:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Are you sure Nvidia's drivers support 2.6.13. Keep in mind that 2.6.13 is only a couple of weeks old. Perhaps it is saying incorrect path because the files you are providing are different than what the installer is looking for. Not the most accurate error message, but very possible. I know ATI doesn't have support for 2.6.13 out yet, and even though everyone hates them, Nvidia may be a little behind the bleeding edge. It's not like running 2.6.12 is going to kill you while waiting for Nvidia support.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>Brent</b> on <b>September 19, 2005, 04:51:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ask Lloyd, &nbsp;Unless he's messing with me, nvidia compiles and runs fine on 2.6.13</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>lloydr</b> on <b>September 19, 2005, 05:04:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rugmonster</div><div class="quote">Are you sure Nvidia's drivers support 2.6.13. Keep in mind that 2.6.13 is only a couple of weeks old. Perhaps it is saying incorrect path because the files you are providing are different than what the installer is looking for. Not the most accurate error message, but very possible. I know ATI doesn't have support for 2.6.13 out yet, and even though everyone hates them, Nvidia may be a little behind the bleeding edge. It's not like running 2.6.12 is going to kill you while waiting for Nvidia support.</div><br /><br />I've not had a bit of trouble out of 2.6.13 kernel with Nvidia<br /><div class="codeheader">Code:</div><div class="code"><br />bash-3.00$ uname -a<br />Linux sea 2.6.13 #1 SMP Fri Sep 2 01&#58;26&#58;35 CDT 2005 i686 unknown unknown GNU/Linux<br /></div><br /><br /><div class="codeheader">Code:</div><div class="code"><br />bash-3.00$ cat /proc/driver/nvidia/version<br />NVRM version&#58; NVIDIA Linux x86 NVIDIA Kernel Module &nbsp;1.0-7676 &nbsp;Fri Jul 29 12&#58;58&#58;54 PDT 2005<br /></div><br /><br />Not a bit of trouble &nbsp;:D <br />been gaming in ET and so on quite often, no issues. Everything just works</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>Brent</b> on <b>September 20, 2005, 09:41:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well,<br /><br />I actually did manage to get it &quot;working&quot; thanks to a guy on alt.os.slackware, with the same problem. &nbsp;Turns out the nvidia framebuffer driver (NOT RIVA) was conflicting with the *76 video driver. &nbsp;I had everything set, rebooted, and lo and behold I had video. &nbsp;<br /><br />However, I could obviously tell something was up with my video. &nbsp;So I did xorgconfig with my *known good* values for my lcd, I pop back into X, and I get &quot;out of sync&quot; errors. &nbsp;Well now, I know what your thinking, &quot;those were the wrong sync values&quot;, negative. &nbsp;<br /><br />Those were the exact specs for that lcd pulled from the website many moons ago, and they worked flawlessly till now. &nbsp;What we have here, gentilemen, is a borked driver. &nbsp;I'll simply have to wait till nvidia releases another driver.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>lloydr</b> on <b>September 20, 2005, 04:32:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">What we have here, gentilemen, is a borked driver. &nbsp;I'll simply have to wait till nvidia releases another driver.</div><br /><br />I've been asking around amongst friends running slackware, gentoo, etc using 2.6.13, 2.6.13.1, and 2.6.13.2 kernels with the latest nvidia 1.0-7676 drivers.... haven't came across anyone having trouble to tell you the truth.<br /><br />seems I'm not the only one who has yet to see a hiccup from 2.6.13.x kernel with nvidia. some use lcds, some use crt, some use dual head combinations of each or both.... <br /><br />our displays seem to stay in sync just fine.<br />although I'm not sure any of us use a framebuffer (I assume you mean the one inside the 2.6.x kernel). I believe a few of the gentoo guys love their framebuffer (can't confirm but IIRC). I personally don't care for the framebuffer.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.13 and nvidia</b><br />
+					Post by: <b>Brent</b> on <b>September 20, 2005, 08:12:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I went into xorgconf and set my sync to the closest option to my specs, and it works now. &nbsp;I highly doubt any 3d game will run in sync though, as I needed my custom specs to see anything except &quot;out of range&quot; before.<br /><br />Oh well, I have transparency, I have full screen miss september. &nbsp;I don't have time for games. &nbsp;So it works out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: 2.6.13 and nvidia</b><br />
+					Post by: <b>danc</b> on <b>October 18, 2005, 06:42:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just a quick update to this thread...&nbsp; I am now running Slackware on all my machines, and recently did a new kernel (2.6.13.4) on my main desktop machine.&nbsp; Installed the Nvidia driver with no issues, and it works fine.&nbsp; &nbsp;8)<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: 2.6.13 and nvidia</b><br />
+					Post by: <b>lloydr</b> on <b>October 18, 2005, 03:22:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I upgraded from 2.6.13 to 2.6.13.3 before .4 was around, still no issues with nvidia&nbsp; &nbsp;:P<br /><br />might upgrade to 2.6.13.4 if I get bored, otherwise I think I&#039;m just gonna wait till 2.6.14 as these 2.6.x.y upgrades every few days are getting old lol</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: 2.6.13 and nvidia</b><br />
+					Post by: <b>Brent</b> on <b>October 18, 2005, 08:04:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys,<br /><br />I thought I posted an update to this when I figured it out.&nbsp; Oh well.<br /><br />Anyway, I figured out that the nvidia framebuffer module was borking the standard nvidia module.<br /><br />When I compiled the kernel without it, the nvidia module worked perfectly.&nbsp; I just use vesa.<br /><br />However I did go back to 2.6.12.3 for my ivtv driver.&nbsp; I&#039;ll upgrade when it&#039;s better supported.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: 2.6.13 and nvidia</b><br />
+					Post by: <b>danc</b> on <b>October 18, 2005, 08:32:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2604.msg13305.html#msg13305">Quote from: Brent on October 18, 2005, 08:04:02 pm</a></div><div class="quote">Anyway, I figured out that the nvidia framebuffer module was borking the standard nvidia module.<br />When I compiled the kernel without it, the nvidia module worked perfectly.&nbsp; I just use vesa.</div><br />Hmmm, I dunno.&nbsp; I&#039;m using the framebuffer and things work fine.<br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=2604.msg13305.html#msg13305">Quote from: Brent on October 18, 2005, 08:04:02 pm</a></div><div class="quote">However I did go back to 2.6.12.3 for my ivtv driver.&nbsp; I&#039;ll upgrade when it&#039;s better supported.</div><br />I guess I&#039;m not following you too well...&nbsp; It&#039;s supported in 12.3, but not in 13.4 ?&nbsp; That doesn&#039;t make much sense to me...<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: 2.6.13 and nvidia</b><br />
+					Post by: <b>Brent</b> on <b>October 18, 2005, 11:33:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It makes perfectly good sense when you consider that it&#039;s supported by a third party driver, which (imo) hasn&#039;t upgraded to the current kernel api.&nbsp; Much like my modem.&nbsp; Best of luck getting that thing to work with a recent kernel.&nbsp; All boils down to developers not keeping up with current kernel changes.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: 2.6.13 and nvidia</b><br />
+					Post by: <b>danc</b> on <b>October 19, 2005, 06:58:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2604.msg13311.html#msg13311">Quote from: Brent on October 18, 2005, 11:33:46 pm</a></div><div class="quote">It makes perfectly good sense when you consider that it&#039;s supported by a third party driver, which (imo) hasn&#039;t upgraded to the current kernel api.</div><br />Well, it seems to me that the third party driver would work fine with a kernel which was *newer* than the one it was originally done for.<br /><br />You didn&#039;t address the fact that my system works fine with the framebuffer and Nvidia, either...&nbsp; &nbsp;;)<br /><br />Dan<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

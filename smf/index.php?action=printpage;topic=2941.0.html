@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Samba Help</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: bigtoss03 on July 25, 2006, 03:51:57 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Samba Help</b><br />
+					Post by: <b>bigtoss03</b> on <b>July 25, 2006, 03:51:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am having a problem with Samba and Windows XP. The network that I have setup has only 2 computers. I started Samba and here are the things that I am seeing:<br /><br />1. The server, FC5, doesn&#039;t see any of the computers in the workgroup. It does see the name of the workgroup. When I click on the workgroup icon it displays the error message &quot;folder contents could not be displayed. Sorry could not display contents of Windows network: network name.&quot;<br />2. Computer A sees all the computers in the workgroup including the server. It allows me to login to the server and shows me the printers, shared files, etc, that are available.<br />3. Computer B doesn&#039;t see any of the computers in the workgroup nor does it allow access to the workgroup displaying the error message &quot;access denied to workgroup. Please see administrator for access.&quot;<br /><br />I have checked that both computers A and B are part of the workgroup. Last week I was able to actually see both computers on the server, neither computer could see the server but computer B could see computer A and vice versa.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Network Services Setup</b><br />
+					Post by: <b>bhoff</b> on <b>July 25, 2006, 04:22:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">can you send me your samba.conf file<br />I can look it over for you.<br />sounds like you do not have your accounts setup properly.<br />also could you post the steps you went thru to set up!<br />thanks Brett <br />This should be a fairly easy problem.just need more info</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>rugmonster</b> on <b>July 25, 2006, 04:51:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Are you running this as a domain or a workgroup?<br /><br />If this is a domain, are you sure you&#039;ve set up accounts for all of the systems. Can you log in with the domain account on all systems? Is the Windows firewall or Linux firewall enabled on any of these systems? Is your Samba server setup to be a WINS server? Are the Windows clients setup to use the WINS server? </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>bigtoss03</b> on <b>July 26, 2006, 08:25:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the quick response. In regards to the samba.conf file bhoff I didn&#039;t set one up as yet because I&#039;m still not too familiar with it to do such. I am open for pointers/tips on doing such.<br /><br />My server is setup as a domain but can only log in from computer A because it is only one that sees it rugmonster.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>rugmonster</b> on <b>July 26, 2006, 09:05:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Have you joined all of the computers to the domain?<br /><br />If you are running samba, you have a config file, typically at /etc/samba/smb.conf. Post the contents of that file in this thread.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>bhoff</b> on <b>July 26, 2006, 02:56:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a basic tutorial I wrote I will try to repost it to the articles section tonight<br />you have a little work to do before you have sucess<br />the step by step provides some needed assistance!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>bigtoss03</b> on <b>July 26, 2006, 03:02:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2941.msg14483.html#msg14483">Quote from: rugmonster on July 26, 2006, 09:05:14 am</a></div><div class="quote">Have you joined all of the computers to the domain?<br /><br />If you are running samba, you have a config file, typically at /etc/samba/smb.conf. Post the contents of that file in this thread.<br /></div><br />Just did gedit to that file and it was blank. Also bhoff I will definitely read the tutorial tonight after you post it and get back to you with any questions. Appreciate the help folks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>bhoff</b> on <b>July 26, 2006, 03:30:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually found the link where we went over this before check out this link for some good info.<br />http://www.pcolalug.org/smf/index.php?topic=602.0<br />You will probally still have some questions, But I do believe that if you read thru this thread with pen and pad in hand you will come away with<br />a much broader knowledge of Samba in general.<br /><br />Also keep a note that there is a search function in the forums that allows for fast review of information.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>rugmonster</b> on <b>July 26, 2006, 07:41:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you really want to understand Samba and get it working right, read the official samba howto (http://us3.samba.org/samba/docs/man/Samba-HOWTO-Collection/). Every time I have to set up Samba, I will end up referring to this document and I have ever since I first began using it. Take your time, read slowly and it will eventually make sense. Also, what distribution are you using? It could be (very unlikely) that the samba config is being stored elsewhere. What exactly led you to believe you had it setup as a domain controller?<br /><br />From the way it sounds, you don&#039;t really what you have setup right now, but that&#039;s okay. You need to scrap what you have done now and start over from scratch. Follow the howto and ask us questions. There is usually someone around in the IRC channel (#pcolalug on Freenode) that can help you out more immediately.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>bigtoss03</b> on <b>July 30, 2006, 04:47:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2941.msg14489.html#msg14489">Quote from: bhoff on July 26, 2006, 03:30:08 pm</a></div><div class="quote">Actually found the link where we went over this before check out this link for some good info.<br />http://www.pcolalug.org/smf/index.php?topic=602.0<br />You will probally still have some questions, But I do believe that if you read thru this thread with pen and pad in hand you will come away with<br />a much broader knowledge of Samba in general.<br /><br />Also keep a note that there is a search function in the forums that allows for fast review of information.<br /></div><br />Thanks for the information. I went ahead and printed it out so I can try it tomorrow when I have access. I will drop everyone a line afterwards as to my progress.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>dpeach</b> on <b>August 10, 2006, 10:03:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How did this end up bigtoss?<br /><br />Inquiring minds want to know.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Samba Help</b><br />
+					Post by: <b>bigtoss03</b> on <b>August 21, 2006, 07:34:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Unfortunately didn&#039;t get to use it. There were other matters that members needed me to work on. Sorry.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

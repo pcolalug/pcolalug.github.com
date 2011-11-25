@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Laptop runs hot when using Mandrake Move</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: phed on July 06, 2005, 01:50:33 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Laptop runs hot when using Mandrake Move</b><br />
+					Post by: <b>phed</b> on <b>July 06, 2005, 01:50:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I hope this is the right forum for this...<br /><br />When running Mandrake Move on my laptop, I've noticed that it runs much warmer than usual and that the cooling fan runs continuously. &nbsp;I never noticed this problem when I had SuSe actually installed on this laptop. &nbsp;I'm afraid to run it much longer than 30-40 minutes at a time because of the heat.<br /><br />Is there a program any of you could recommend for monitoring temperature and/or the fan?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Laptop runs hot when using Mandrake Move</b><br />
+					Post by: <b>rugmonster</b> on <b>July 06, 2005, 05:10:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I can tell you now why this is happening. SuSE more than likely had the ACPI (Advance Control and Power Interface) working properly for your laptop, where Mandrake Move does not. ACPI handles all of the power related issues in modern systems, CPU Frequency Scaling to be one of them. CPU Frequency Scaling is where the system adjust the speed of your processor faster or slower depending on the current load of your system, meaning you use less power when there is less load and only more when you need it. If CPU Frequency Scaling isn't working or set to automatically adjust, your system will run hotter because it will be running at full speed all of the time.<br /><br />So, how you go about setting that up, I don't remember, but that should at least give you a direction to look.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Laptop runs hot when using Mandrake Move</b><br />
+					Post by: <b>danc</b> on <b>July 06, 2005, 05:20:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would agree that ACPI is most likely the problem. &nbsp;There may be boot options that you can pass to the kernel - watch the bootup screen for the opportunity to enter extra options (something like &quot;acpi=on&quot;).<br /><br />Just as an FYI.... &nbsp;I do like Mandrake, but have found Mandrake Move to be, quite frankly, a piece of junk. &nbsp;If you want to run a Live-CD, I'd recommend you go with Knoppix.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Laptop runs hot when using Mandrake Move</b><br />
+					Post by: <b>phed</b> on <b>July 07, 2005, 11:57:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks Danc<br /><br />I ordered the Knoppix live CD per your reccomendation.<br /><br />In Mandrake Move there was an option in the setup to have ACPI load on boot. &nbsp;I had selected this but it did not seem to make any difference. &nbsp;I hope to have my dedicated Linux box soon so I will no longer have to try and get my Linux fix using my laptop.<br /><br />I appreciate all the good advice and help that the PCOLALUG members so graciously provide.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

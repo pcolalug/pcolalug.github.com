@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - yet more evidence of my NRWBIEness</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: Perquisitor on September 12, 2006, 10:26:59 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>Perquisitor</b> on <b>September 12, 2006, 10:26:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">hello again.&nbsp; yet a new question/problem.&nbsp; &nbsp;I&#039;m still running ETCH, and actually enjoying it for the most part.&nbsp; I&#039;m using KDE as the desktop (but really like the clean look of GNOME and may start using it....but that&#039;s another matter)&nbsp; I&#039;m also trying to learn this command line interface stuff, but am having a bit of difficulty getting started.&nbsp; There are two issues that I am wanting to resolve immediately, and then I will feel more relaxed about sitting back and giving some serious time towards learning CLI.&nbsp; I want to get my printer to work with ETCH, and I want to be able to use my ipod shuffle with Amerok.<br />My printer is, unfortunately, a Canon Pixma i4000.&nbsp; When I first installed ETCH the printer was recognized and seemingly configured correctly as I was able to print a test page, and successfully printed a couple of documents.&nbsp; Since then however something happened....perhaps nothing more than turning off the printer and then turning it on again when wanting to print something....... anyway.... it doesn&#039;t work anymore, and although I have read and tried several tutorial instructions....have not yet been able to fix the problem.<br />The ipod issue is my second project.&nbsp; Amerok seems to recognize that I have plugged the ipod to the computer, but does not recognize its configuration and instructs me to configure the device so that it can be mounted.&nbsp; I read a TUX magazine article about using ipod in Amerok and it advises to edit the /etc/fstab file using a text editor.&nbsp; I have tried doing so, but am always advised with an error message that I do not have permission to edit that file.....even when I log into a root terminal.<br /><br />And if I may over extend my question without severe reprimend,&nbsp; I would like to know how you folks save data such as email, contact lists, documents and such when changing distrobutions.&nbsp; &nbsp;I would like to try Sarge again (now that I know a little bit more) but don&#039;t want to lose my recent emails and documents as I did when I switched from SuSe to Debian.<br /><br />And if I didn&#039;t have to work every saturday of every weekend,&nbsp; I would like to come to one of the meetings....but alas.......it is not now possible.<br /><br />perquisitor</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>Brent</b> on <b>September 12, 2006, 05:13:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">&quot;And if I may over extend my question without severe reprimend,&nbsp; I would like to know how you folks save data such as email, contact lists, documents and such when changing distrobutions.&nbsp; &nbsp;I would like to try Sarge again (now that I know a little bit more) but don&#039;t want to lose my recent emails and documents as I did when I switched from SuSe to Debian.&quot;<br /><br />Well I can answer that one for you.&nbsp; The simple answer is to have your /home folder on another partition.&nbsp; Check out mine.<br />/dev/hda2&nbsp; &nbsp; &nbsp; xfs&nbsp; &nbsp; 4.5G&nbsp; 2.5G&nbsp; 2.0G&nbsp; 57% /<br />/dev/hda3&nbsp; &nbsp; &nbsp; xfs&nbsp; &nbsp; &nbsp;87G&nbsp; &nbsp;70G&nbsp; &nbsp;17G&nbsp; 81% /home<br />/dev/hda1&nbsp; &nbsp; &nbsp;vfat&nbsp; &nbsp; &nbsp;25G&nbsp; &nbsp;13G&nbsp; &nbsp;12G&nbsp; 52% /windows<br /><br />My / partition is just 5 gigs, which is plenty unless you play UT or something.&nbsp; My /home partition takes up the majority of my hard drive, and for good reason!&nbsp; All of my music, my videos, my documents and source code, everything that is not OS related goes here.&nbsp; Note, many times, it helps to delete the .directories before installing a new OS, but you can make exceptions for settings you really want to keep, such as .xchat or .gaim, etc. <br /><br />Note, see my windows partition?&nbsp; If I&#039;m gona install windows, I usually do it first, as lilo installs better over the windows boot record, than vice versa.&nbsp; This leads to my windows partition usually being hda1 since it&#039;s installed first.&nbsp; However, looking back on it, I wish it had been hda3, since that would have let me delete that parition, and expand my home partition if i needed the space.<br /><br />I just got a new 300g partition today.&nbsp; I plan to lay out my hard drive something like this:<br />/dev/hda1 / 5G<br />/dev/hda2 /home 270G (hopefully encrypted)<br />with 20 gigs left of used space, just incase I get the urge to install win2k and play a game or two over christmass break.<br /><br />Edit:&nbsp; I recommend you have a swap partition unless you have 512mb of ram or more.&nbsp; With less than 256mb, I&#039;d go for 2:1 swap to ram ratio.&nbsp; With more, I&#039;d go 1:1.&nbsp; Also, there is a varible called swappiness that you can set to tell your computer when you want to swap, from 0 (no swap) to 100 (swap ALOT).&nbsp; On systems that absolutely need swap, I set this to 10.&nbsp; Basically, you&#039;ll want to swap only when you absolutely need to swap, unless were talking about a server...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>Perquisitor</b> on <b>September 12, 2006, 05:57:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">thanks for your help with that..... I think I&#039;m going to try installing Deb Sarge now.&nbsp; And I really like the partition for home advice.&nbsp; I never thought of that.&nbsp; There&#039;s a lot I haven&#039;t thought of yet.<br /><br />back in awhile<br /><br />Good luck with your new drive.&nbsp; encrypted......hmm,&nbsp; guess I&#039;ll have to learn that too.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>Perquisitor</b> on <b>September 13, 2006, 12:10:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">well.......that didn&#039;t work out as nicely as I had hoped.&nbsp; &nbsp;I tried installing Sarge, but it just would not recognize my on-board ethernet.&nbsp; I have an Asus K8U-X MB with the Realtek 8201 CL 10/100 ethernet.&nbsp; So I never could get past the installation part.&nbsp; Then I tried installing Ubuntu, and it worked ok at first, but then started freezing up when opening applications.&nbsp; &nbsp;So I used another system to download and install the AMD64 version of ETCH.<br />And here I am again......back where I started (almost)&nbsp; <br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>Brent</b> on <b>September 13, 2006, 10:07:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m using ubuntu here, and I have to say it&#039;s quite stable both at home, and at the office.&nbsp; I&#039;ve never had a problem with it myself.&nbsp; However I have had problems with debian unstable.&nbsp; If you&#039;re still having problems, I&#039;ve also had good experiences with fedora core 4, at both work and school.&nbsp; If you have a 64 bit system, and keep experiencing instability, try installing the 32 bit version of the distro.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>Perquisitor</b> on <b>September 13, 2006, 01:58:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">actually I&#039;ve had the best results with Debian testing, ETCH.&nbsp; It recognizes my ethernet, network, and system.&nbsp; Because I have an AMD64 processor I thought I&#039;d try the 64bit version of ETCH this time.&nbsp; Sarge never can recognize my onboard ethernet.&nbsp; I&#039;ve thought of buying and installing an ethernet card just to be able to have Sarge working, since it is a &quot;stable&quot; version.<br /><br />There are two main issues I want to resolve and then I&#039;ll feel better about the whole thing.&nbsp; First is recognizing and configuring my printer, which is, unfortunately,&nbsp; a Canon pixma i4000.&nbsp; &nbsp;I&#039;m going to continue to try to figure out ndiswrapper to see if I can get it going that way.&nbsp; Everybody I hear from in these forums say that ndiswrapper is great.&nbsp; I just have to get better at command line.<br /><br />The other issue is getting my ipod to work in Amarok.&nbsp; <br /><br />After I get those issues resolved I&#039;ll feel better about my system, and be able to spend more time learning about command line, kernel configuring, etc. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>Perquisitor</b> on <b>September 13, 2006, 02:04:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Please disregard the above post.&nbsp; I had a brain fart and confused my previous network card problem with my printer problem.&nbsp; I don&#039;t really intend to use ndiswrapper to fix my printer driver issue.<br /><br />sheeeze.&nbsp; &nbsp;I&#039;ve been working on this too long.&nbsp; &nbsp;:D<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>dpeach</b> on <b>September 13, 2006, 09:47:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don&#039;t know anything about ETCH, but I can highly recommend Ubuntu. If you are pleased with a Debian based distro and would like to stay in that line of thinking, then Ubuntu can&#039;t be beat. It is very newbie friendly, but you can do anything with it that a straight Debian istall can do. Well, maybe not be as frustrated. There is also a great Ubuntu community.<br /><br />I tried Ubuntu and really liked it other than it is Gnome based. I prefer KDE but Kubuntu never struck me as being as polished as the original. In my almost 10 years of Linux installing, Ubuntu had to have been one of the most pleasant experiences. All my hardware worked without any extra configuration.<br /><br />I have not tried to get my iPod working in Linux. I had used the wife&#039;s Windows machine in the past. Now that she has a Mac, I will probably move my music collection over to that and synch with her box still. I see you have figured out how to modify that file as SuperUser (that sounds so much cooler than root).<br /><br />As for the printer, this driver set called gimp-print or the new name of Gutenprint should take care of you. They wrote in support for your printer about 1-1/2 years ago. They said it was basic then, but would be improved upon. I assume it has been. (It only took me 2 shots at Google to come up with this within a minute).<br />http://sourceforge.net/projects/gimp-print/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: yet more evidence of my NRWBIEness</b><br />
+					Post by: <b>Perquisitor</b> on <b>September 14, 2006, 06:38:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just wanted to give a huge thanks to ya dpeach, as I was able to get my printer configured and working.&nbsp; Next I will be attempting to get it networked with my wife&#039;s computer so that we both can use it.&nbsp; She is using Xandros and we are networked wirelessly.<br /><br />As far as the ipod goes.&nbsp; I&#039;ve been able to mount it properly, or so it seems.&nbsp; Amarok recognizes it, and will show a correct playlist for it, but when I try to play something from it to confirm that it&#039;s set-up it freezes up Amarok such that I have to force terminate Amarok.&nbsp; &nbsp;So....... I guess I could just use the ipod on the windows side of my system.&nbsp; I was just hoping to be able to use it in Linux because my partition to Windows is very small.&nbsp; Perhaps my wife will inherit my ipod, ( her Xandros distro with Amarok handles the ipod with no problem ) and I will get an MP3 player that is more Linux friendly.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

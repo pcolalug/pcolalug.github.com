@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - LTSP</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: dpeach on December 19, 2002, 06:41:47 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>LTSP</b><br />
+					Post by: <b>dpeach</b> on <b>December 19, 2002, 06:41:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am submitting this for Brett Hoff since he currently does not have access to the board.<br /><br />____________________<br /><br />Have an old 486 lying around wondering what to do with it? Well, have I got an idea for you! How about setting up a thin client using LTSP. Yes you can do it! It is very easy. I put it together in one evening and had very little problems.<br /><br /><b><i>First a little information for you.</i></b><br /><b>It is not a stand alone Distro like some think.</b><br />It works with your existing Linux distro. It is a collection of modules that turn your machine into a server so that you can connect up to 50 workstations to it, all with the applications and tools available on the server.<br /><br /><b>You can make a server out of almost anything.</b><br />Using anything over P120 with 40 MB of RAM and a 1 gig hard drive along with a handy NIC card. Also, you will need your favorite distro of Linux; Suse, Red Hat, Mandrake, Debian, which ever.<br /><br /><b>You can make a client out of anything.</b><br />Starting with even old 386's. You will need at minimum a floppy for the boot (see notes at end for alternatives), 8 MB of RAM, no hard drive. You can even remove the fan from your power supply for a more silent operation. There is no heat buildup.<br /><br /><b><i>To start you will need the following</i></b><br />1.) A server meeting the minimum requirements above. <br /><br />2.) A computer to use for your first thin client that meets the requirements above.<br /><br />3.) A boot disk appropriate for your NIC.<br />&nbsp; &nbsp; You can attain these in one of two ways.<br />a. Use the tool from etherboot.sourceforge.net (http://etherboot.sourceforge.net) to build a boot disk.<br />&nbsp; &nbsp; Simply Untar the distribution, changing to an SRC and typing make.<br />b. The way I did mine was to visit www.rom-o-matic.net and use their online tool to make my boot disk then download to my computer.<br /><br />4.) Go ahead before you get started and visit the LTSP site www.ltsp.org and download the following files in what ever format you wish. They have Tarred and Gzipped packages for everything along with RPM's for RedHat, Mandrake and Suse. And DEB's for Debian fans. If you choose to work with the Tarred bundles simply extract them and run the install.sh script in each package. Here are the files you will need to get up and running: ltsp_core, ltsp_kernel, ltsp_x_core and ltsp_x_fonts<br /><br /><b><i>Now for the fun here we go.</i></b><br />&nbsp;&nbsp;&nbsp;<br />We will talk about the client first. After popping in the boot disk for your appropriate NIC, it will pause for a few seconds giving you the option for either a local or network boot. (You are using a windows machine :) ) Network is the default. That is all for the client. Now you have to give it something to connect to.<br /><br />On your server we need to set up a few additional utilities. First DHCP server then TFTP server and then NFS server. These should all be on your Linux distro disk. (note) TFTP will create the entry but my default disables it so go to /etc/xinetd.d/tftp. It has the following line:<br />&nbsp; &nbsp;disable=no<br />Then restart the TFTP server.<br />&nbsp;&nbsp;&nbsp;<br />Ok we have ltsp installed from step 4, we have installed the DHCP,TFTP and NFS servers from our Linux distro disk. Now there is a peculiar order which is also listed in Linux Journal Nov 02 for which things must be done. They worked fine for me with no problems. For the LTSP setup we have to have a DHCPD running which means we need to manually configure our dhcpd.conf file located at /etc/dhcpd.conf. Below you will find a listing for my project.<br /><br /><br />&nbsp;&nbsp;&nbsp;subnet 192.0.0.0 netmask 255.255.255.0 {<br />&nbsp;&nbsp;&nbsp;option domain-name &quot;yourdomain.com&quot;;<br />&nbsp;&nbsp;&nbsp;option root-path &quot;192.0.0.0:/opt/ltsp.i386&quot;;<br />&nbsp;&nbsp;&nbsp;range dynamic-bootp 192.0.0.1 192.0.0.100;<br />&nbsp;&nbsp;&nbsp;default-lease-time 21600;<br />&nbsp;&nbsp;&nbsp;max-lease-time 43200;<br />&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;host Developer1 {<br />&nbsp;&nbsp;&nbsp;filename &quot;/lts/vmlinuz-2.4.18-ltsp-1&quot;;<br />&nbsp;&nbsp;&nbsp;hardware ethernet 00:50:fx:5B:XX:56;<br />&nbsp;&nbsp;&nbsp;fixed-address 192.0.0.2;<br />&nbsp;&nbsp;&nbsp;option host-name &quot;Developer1&quot;;<br />&nbsp;&nbsp;&nbsp;}<br /><br />Of course your IP's and root-path will be different from mine. You can get your hardware ethernet from the NIC card in the client machine. This conf file is pretty self explanatory. If you have problems give me a shout. Now start dhcpd service. All you have to do now is run the initialization script provided.<br />&nbsp;&nbsp;&nbsp; cd /opt/ltsp/templates<br />&nbsp;&nbsp;&nbsp;./ltsp_initialize<br /><br />Next it will let you know it is about to update several files. Listing them for your review. After this you should restart the NFS daemon and the DHCP daemon.<br />&nbsp;&nbsp;&nbsp;service nfs restart<br />&nbsp;&nbsp;&nbsp;service dhcpd restart<br /><br />All the software for the LTSP is held in the /opt/ltsp dir. This is where we need to do a little editing. First open /opt/ltsp/i386/etc/lts.conf. Look for the following line.<br />&nbsp;&nbsp;&nbsp;server = 192.0.0.0 &nbsp;<br />Make sure it reflects the IP of your server. (NOTE) This is the file that you will edit when the defaults do not work for you. Take a minute to look this file over carefully. It is well documented and the trouble shooting docs at www.ltsp.org are great. (NOTE) As you add more thin clients you will need to give them an entry in the /etc/dhcpd.conf file then always restart the service after making any changes to the file.<br />&nbsp;&nbsp;&nbsp;service dhcpd restart<br />&nbsp;&nbsp;&nbsp;<br />Now here we go. Put your boot disk into the client machine and after a few seconds you should see your kernel image being downloaded via the TFTP daemon which should scroll by the load to an automatic Xconfiguration. (NOTE) If X is giving you problems then you can start in a text only mode by setting the lts.conf file from above to run level 3 for the client.<br />&nbsp;&nbsp;&nbsp;<br /><b><i>Notes and ideas</i></b><br />Think about this, since everyone is running from one server when you need to do updates you are able to update everyone. Backup, no problem, do it once for all users. I have talked to people that are running 32 clients on 1 P233 with no degradation at all. This is a nice way to use those old computers.<br />&nbsp;&nbsp;&nbsp;<br />Ok, ok I mentioned it early on for those of you who are still here. If you are using 3Com NIC's like I am, I was able to get a double height boot eprom for it and burn the entire boot img to the eprom. No more floppy.<br />&nbsp;&nbsp;&nbsp;<br />Till next time when I will be writing about Beowulf clusters and how to set up in one evening using RedHat 5.2.<br /><br />&nbsp;&nbsp;&nbsp;Brett Hoff<br />&nbsp;&nbsp;&nbsp;bhofff@yahoo.com<br />&nbsp;&nbsp;&nbsp;(850) 494-2268</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>LTSP</b><br />
+					Post by: <b>rburt3</b> on <b>December 20, 2002, 08:22:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks, Brett (you too, David :))! Great article. I can't wait to give it a spin on an old 166.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>LTSP Success (sort of)</b><br />
+					Post by: <b></b> on <b>January 30, 2003, 06:17:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just finished setting up ltsp on a Pentium II 350mhz and I must say it does work, although it's not as easy as they would make it out to be.<br />One important thing they left out of the documentation is the fact that you need to edit the config file for xfs because one of the default settings is to not accept incoming tcp connections. The initialization scripts provided missed that one, and if it isn't fixed, your X-server won't start.<br />It also seems to have problems with the Revolution IV video card, although the video card works fine under a standard distro. I'll keep everyone posted on my progress, since this is one of the best ideas I've seen in a long time...<br /><br />Lester</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>LSTP success</b><br />
+					Post by: <b></b> on <b>January 30, 2003, 10:09:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I finally got the Revolution IV card to work by copying an X86Config file<br />that I knew worked for this particular card and copied it to the ltsp root/etc<br />directory. Worked like a charm...<br /><br />It takes a little work, but the end result is well worth it.<br /><br />Lester</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

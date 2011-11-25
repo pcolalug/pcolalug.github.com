@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Root...Where art thou?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: dpeach on June 04, 2003, 10:56:22 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>dpeach</b> on <b>June 04, 2003, 10:56:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, I did something stupid and now I can't get into root.<br /><br />I did something that I thought I knew what I was doing but did not do enough research. I was trying to change my root shell to bash instead of sh. This is on my Zaurus. I went to the /etc/passwd file and changed the line that said my shell for root was /bin/sh. I changed it to read /bin/bash.<br /><br />After that I get:<br />su: cannot run /bin/bash &nbsp;:No such file or directory<br /><br />Now I cannot log into root to change that file. How can I edit that file to get root privileges back? <br /><br />I know one way to do it, but I am trying to avoid that right now. It involves a hard reset to wipe the Z clean and start reinstalling all apps and config files and data.<br /><br />Appreciate your help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>crowe</b> on <b>June 04, 2003, 11:04:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">There should be a way of bringing it up into single-user mode, assuming the Zaurus functions more or less like a normal Linux system.<br /><br />Just if you can/how you would go about doing that is beyond me though, &nbsp;unless you can somehow pass boot-time arguements to the kernel on the Zaurus.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>dpeach</b> on <b>June 04, 2003, 11:11:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If I remember correctly, there is a way to go into single user mode. Let me troll around in the other forum and see if I can find it.<br /><br />Not finding it right off. What run level is normal to be single user mode?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>crowe</b> on <b>June 04, 2003, 11:14:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Runlevel 1 should be single-user mode, I believe.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>danc</b> on <b>June 04, 2003, 12:15:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sort of a wild guess here, but could you run (at the user prompt):<br /><br /><div class="codeheader">Code:</div><div class="code">/bin/sh su</div><br />or maybe<br /><div class="codeheader">Code:</div><div class="code">/bin/sh -s su</div><br />or maybe<br /><div class="codeheader">Code:</div><div class="code">/bin/sh exec su</div><br />or maybe<br /><div class="codeheader">Code:</div><div class="code">/bin/sh &lt;filename</div> &nbsp; &nbsp; &nbsp;(where filename is a text file containing simply &quot;su&quot; without quotes)<br /><br />Let us know if you get it figured out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 04, 2003, 12:28:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">I changed it to read /bin/bash.</div><br /><br />Smooth...<br /><br />Okay, you can try sudo. Sudo may or may not be installed on your system. With sudo you can execute a command without actually starting up a new shell.<br /><br />ex. sudo vi /etc/passwd<br /><br />If you don't have sudo, you can try su -c &lt;command&gt;<br /><br />ex. su -c &quot;vi /etc/passwd&quot; (not sure on whether you use quotes or not)<br /><br />The -c option executes &lt;command&gt;. I don't know if it tries to open a new shell with either of those options or checks for the shell at all. <br /><br />You also have the option of specifying a shell with the --shell=&lt;shell&gt; option.<br /><br />ex. su --shell=/bin/sh<br /><br />Let us know what happens. By the way, this is all from the su manpage (man 1 su)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>dpeach</b> on <b>June 04, 2003, 02:32:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code">/bin/sh su</div><br />su: Can't open su<br /><br /><div class="codeheader">Code:</div><div class="code">/bin/sh -s su</div><br />I get a $ prompt, but it is still the user and not root. I gather that this is just the sh shell and not bash?<br /><br /><div class="codeheader">Code:</div><div class="code">/bin/sh exec su</div><br />exec: Can't open exec<br /><br /><div class="codeheader">Code:</div><div class="code">/bin/sh &lt;filename</div> <br />It asks for my password, but I get the same error<br /><br /><div class="codeheader">Code:</div><div class="code">sudo vi /etc/passwd </div><br />Sudo, is not installed.<br /><br /><div class="codeheader">Code:</div><div class="code">su -c &quot;vi /etc/passwd&quot;</div><br />with and without the quotes I get:<br />su: user /etc/passwd does not exist<br /><br /><div class="codeheader">Code:</div><div class="code">su --shell=/bin/sh </div><br />Actually without one of the -'s. I get the password prompt and still not able to get to root. With both -'s it says invalid option.<br /><br /><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">By the way, this is all from the su manpage (man 1 su)</div><br />No man pages on the Z.<br /><br />Thanks for your help guys. I think I am getting to the point of starting over. I have taken the backup file apart and changed the line on that config file. Put it all back together, now it won't restore properly. I am actually getting a different set of problems. I believe that if I get in as root somehow, I will be able to fix all of this.<br /><br />At least I didn't do something so lame as forget my root password. :lol: &nbsp;I just have to learn the power of root and stay out of places I don't belong. But I guess this is how some of us learn. Fortunately this is not a server that I am locked out of. I have all my PDA data backed up and can get it restored if I have to start over.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>imnes</b> on <b>June 04, 2003, 04:15:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I dunno how custom the zaurus is / what sort of boot loader it uses. &nbsp;But for my system I can get a lilo prompt and type 'linux single' and boot into single user mode that way.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>imnes</b> on <b>June 04, 2003, 04:20:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay I guess even that wouldn't help. &nbsp;Came across this website.<br /><br /><div class="quoteheader">Quote</div><div class="quote">...<br />The two most irritating examples that I have been summoned to fix are: <br /><br />1) Someone inadvertently misspells root's shell in the /etc/passwd file<br />2) Someone moves, replaces, or renames ld.so. <br /><br />The first of these problems disables root access. Unless someone is logged in as root at the time this mistake is made, root can no longer ftp, telnet, rlogin, or run rsh commands -- even on the console and even in single user mode. The only workaround is to boot the system off a CD or off the net, mount the root partition, and fix the mistake. Until you do, other users can use the system, but root will not be able to get on or make changes. <br />...</div><br /><br />http://www.itworld.com/nl/unix_sys_adm/09262001/<br /><br />Good Luck,<br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 04, 2003, 04:51:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Grrr...<br /><br />okay, is there a way for you to mount the filesystem from another system? Didn't you say you had this puppy hooked up wirelessly? Do you have samba running on there so that maybe you could edit /etc/passwd from another machine? You would have to setup a share for /etc, but you might be able to do that without root access if swat is installed. I know it is a stretch.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>dpeach</b> on <b>June 04, 2003, 11:43:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am &quot;this close&quot; to getting it going. I found a sudo package that I should be able to load. This might do it for me. I will report back with what I find out.<br /><br />Isn't this fun? It is making us all think. (Well, not me really. I just ask the questions and do what you say). <br /><br />Rugmonster, not hooked up wirelessly. At least not at the moment. My AP is about 800 miles out of my 802.11b range right now. I have not gotten the antenna to quite work that far away.<br /><br />Yes, samba is supposedly going on this machine, but SWAT is not in there. I don't know if there is a version of SWAT for the Z. Actually, it shouldn't be that hard to get it going.<br /><br />I will keep you posted.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>dpeach</b> on <b>June 05, 2003, 09:55:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Finally got it.<br /><br />Sudo was the answer. I found a package and installed it. But I still could not edit the file. There was a /tmp lockfile on it. But I did not know that at first. Before when there was a lockfile, it gave me the name of the file. With sudo, it was just telling me that the file was busy, but no lockfile name. So I went into /tmp and deleted all elvXXXX files (elv are vi lockfiles). <br /><br />After doing that I could:<br />sudo vi /etc/passwd<br /><br />It works now. Thanks for your input.<br /><br />David<br />Happy Zaurus Owner once again!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 05, 2003, 10:10:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm surprised you don't have to have root priveleges to install software. Crazy. My suggestion is to give another user root priveleges and leave him alone...just in case.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Root...Where art thou?</b><br />
+					Post by: <b>dpeach</b> on <b>June 05, 2003, 05:54:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That is what he compiled sudo to do. The man that made the package gave him all root privileges. You have to go in and set it if you would like to limit it.<br /><br />The reason he did this was that in the old Zaurus ROM, you ran as root and never as a user. People were used to that, so he made the sudo package to give you the power without having to su to root.<br /><br />Not safe, but a little better than the old version that had no safeguards.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

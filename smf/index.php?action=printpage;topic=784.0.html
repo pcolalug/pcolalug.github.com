@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Debian</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: danc on June 16, 2003, 09:48:32 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>danc</b> on <b>June 16, 2003, 09:48:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br />&nbsp; &nbsp;With some recent talk about Debian, got me to thinking about trying it out myself... &nbsp;Went looking, and seems that there are /SEVEN/ ISO's to get (for version 3.0r1). &nbsp;Do I need all of them for a decent install with the most common apps, or what? &nbsp;What is on all those CD's past the third one or so...?<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>imnes</b> on <b>June 16, 2003, 10:21:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think if you have a fast connection you should just grab the boot discs and do your install over via FTP, 'cause you most likely don't need all that software :)<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>rugmonster</b> on <b>June 17, 2003, 12:04:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Debian boasts one of the largest single collection of packages available for a distro. Yes, RPMs are quite numerous, but Debian has the largest central collection. Those CDs are to get every stinkin' last one of them (available at release time). My suggestion is to avoid those completely. There are boot disks and even a network only ISO to install you system. I have always used the network only ISO since it is only 40 or 60 megs and I am only downloading what I am installing. This puts less load on the mirrors and costs them less in the long run. Also, the packages you install from the CD no doubtly be updated the first time you run apt-get upgrade.<br /><br />I would love to help anyone who is interested in learning about Debian. I think it is going to go back on my other two systems (possibly three now that I have an AUI to RJ-45 transceiver and console cable for the sparc) and maybe Gentoo onto the main workstation. I love Debian for its package management, but Gentoo is great as well and bleeding edge. The only downfall of it is the stinkin' compile time.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>danc</b> on <b>June 17, 2003, 02:42:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the info! &nbsp;Will be looking into the FTP and/or Network install method.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>imnes</b> on <b>June 17, 2003, 04:17:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Rug: <br /><br />I might have to ask you some questions on debian I have been wanting to give it another try recently. &nbsp;I haven't used it in several years. &nbsp;When I do get around to checking it out I get discouraged by the outdated 'stable' packages like XFree 3, Gnome 1.4, Kernel 2.2. &nbsp;Does it actually give the option of used updated software?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>Madwilli</b> on <b>June 17, 2003, 04:47:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">danc:<br />If you're looking at the net install, I'd check out the netinst-bf2.4 isos. &nbsp;They start you out<br />with a 2.4 kernel and the installer isn't bad. I can point out some sources for it too if you need 'em.<br /><br /><br />Imnes: In response to the question aimed at Ruggy -<br />Debian offers you several different archives: stable, testing, and unstable<br />With oldness decreasing in that order. &nbsp;The debian folks are very conservative with what<br />they call 'stable'. &nbsp;If you really want a rock solid, no worries, machine stable + the security source<br />is what you want. &nbsp;If you want a desktop setup, look no further than unstable. &nbsp;Also for the<br />bleeding edge packages or conflicted license packages (wine-cvs, mplayer, lame, etc), check out<br />www.apt-get.org, and google. &nbsp;The branch you are on is determined in the /etc/apt/sources.list<br />file. &nbsp;If you'd like more info I'm sure Ruggy, or myself can pass some more on!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>rugmonster</b> on <b>June 17, 2003, 08:02:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">what will said</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>danc</b> on <b>August 10, 2003, 09:19:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I (finally) got a Debian machine running here. &nbsp;Tried to to a net install of the &quot;testing&quot; branch (Sarge), but could not get it done. &nbsp;The installer choked about 2/3 through it, with some meaningless &quot;debootstrap&quot; error that meant nothing to me. &nbsp;So..., I did a net install of the &quot;stable&quot; branch (Woody) and it worked. &nbsp;Had to do some manual tweaking to get X to work, but got it. &nbsp;Still have to work on the sound, too, but everything else seems to work.<br /><br />I knew the Woody branch would be out-dated, and it sure is. &nbsp;XFree 4.1.0, Mozilla 1.0, but I did choose to use the 2.4 kernel - I think it's 2.4.18. &nbsp;The installer was quite interesting too... &nbsp;I'd say this is actually more challenging to install than Slackware.<br /><br />My question for you Debian dudes is: &nbsp;will the famous &quot;apt-get&quot; method get me the latest versions of things? &nbsp;In other words can you upgrade a Woody install to Sarge (or even Sid)? &nbsp;Still doing homework on how to do this, but is the basic command for that &quot;apt-get upgrade&quot; or &quot;apt-get update&quot;?<br /><br />I'll keep ya posted on my progress with Deb...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>rugmonster</b> on <b>August 10, 2003, 09:36:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, Debian is (in)famous for being extremely stable. Stable usually doesn't mean bleeding edge. What you can do is change which version of the distribution you are getting. A lot of people like to run either testing or unstable. Things may break if you go up, but then again, unstable is the level of what most other distros are running at...so it is up to you.<br /><br />You also have the option of looking around the net for other apt sources that have newer packages compiled for Woody and Sarge. You would just add those sources to your /etc/apt/sources.list.<br /><br />Now, to change to a newer version of the base distro, you need to go into your sources.list. It should look something like this:<br /><br /><div class="codeheader">Code:</div><div class="code">deb http&#58;//ftp.us.debian.org/debian stable main non-free contrib<br />deb http&#58;//non-us.debian.org/debian stable main non-free contrib</div><br />See where it says &quot;stable&quot;? Change that to either testing or unstable. Also, should you find other repositories for apt-get, you can add them here. Some sources, such as the deb-src and security site may need to be commented out if you go up to unstable (or that is what I just found yesterday).<br /><br />Now that you apt has a new place to look, you need to update the database of available packages.<br /><br /><div class="codeheader">Code:</div><div class="code">apt-get update</div><br />Update the database and...<br /><br /><div class="codeheader">Code:</div><div class="code">apt-get dist-upgrade</div><br />Updates your packages for the new distribution.<br /><br /><div class="codeheader">Code:</div><div class="code">apt-get upgrade</div><br />Updates most of your packages. This is what you will use to keep your system up to date. Some packages aren't touched by this, so you may want to run apt-get dist-upgrade from time to time to upgrade those packages.<br /><br /><div class="codeheader">Code:</div><div class="code">apt-cache search &lt;keyword&gt;</div><br />This is one command I use constantly. If you want to install a package and know the name of the program, you can find the correct package name with this. There are a lot of packages out there, so to wade through them all by hand can be a pain. Find the package name here and then install it with...<br /><br /><div class="codeheader">Code:</div><div class="code">apt-get install &lt;package&gt; &lt;package&gt; &lt;package&gt;</div><br />The beauty of apt and debian. You can specify multiple packages here and every single dependency is taken care of for you. I can't express how much I love apt. Yesterday when I was setting up a debian server, I rediscovered that love. You will get spoiled. You'll understand why I hate rpm's so much soon.<br /><br />There is also the program aptitude which is supposed to be pretty nice. It is X based, but since I don't run X on my debian box, I can't say much about it. Let me know if you have any other questions. Hope this helps.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>danc</b> on <b>August 10, 2003, 10:11:55 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wow, great reply. &nbsp;I've printed it out for my &quot;cheat-sheet binder&quot;. &nbsp;Thanks Rug.<br /><br />Soon as I can get my weekend chore-list done (man I hate yardwork), gonna see if I can upgrade this Woody to Sarge.<br /><br />I do appreciate the great help!<br />Regards,<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>danc</b> on <b>August 10, 2003, 03:10:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Update: &nbsp;Decided to stay with the Woody branch for a while. &nbsp;It does seem stable and works just fine. &nbsp;In fact I kind of like Gnome 1.4, and it's certainly much faster than newer Gnome's. &nbsp;Installing the Nvidia driver was a little challenging - had to get the kernel source and headers to compile the module, and got it working.<br /><br />This apt-get process does seem like a thing of beauty. &nbsp;Used it to get the kernel source and headers - very sweet.<br /><br />OK, here's a question: &nbsp;When I first installed it, it booted up to a CLI. &nbsp;Now it's going right into XWindows (Gnome), and I don't know why. &nbsp;The /etc/inittab default runlevel is 2, and the comments in there say 2-5 are multiuser, 1 is single, 6 is reboot. &nbsp;I've looked at the scripts in the /etc/rc.d/rcX.d directories, and they seem exactly the same for 2-5. &nbsp;What is starting XWindows, and how do I stop it? &nbsp;I want it to boot to a CLI only.<br /><br />Thanks again for the help, and looking forward to playing with this some more.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>danc</b> on <b>August 10, 2003, 04:48:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Another update: &nbsp;Got the runlevel thing figured out, with some IM help from Ruggy and some IRC talk. &nbsp;In case anybody cares, what I learned is this:<br /><br />Debian uses runlevel 1 for single-user. &nbsp;Levels 2-5 are all multiuser, and appear to be exactly the same to me. &nbsp;Level 6 is for reboot. &nbsp;It defaults to runlevel 2, so I removed the S99gdm and S99xdm scripts from the /etc/rc2.d directory, and it now boots to the CLI. &nbsp;If I want to use Xwindows, I just use &quot;startx&quot;. &nbsp;This is somewhat different than what I'm used to (Mandrake). &nbsp;Anyway, nice learning experience and there ya have it.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>microserf</b> on <b>June 25, 2004, 01:57:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">My Cisco TAC buddy said that all the &quot;hard core Unix&quot; peeps in Cisco use Debian, and took him under their wing to show him the ropes. This is what he runs now, recommended it over all other distros.. So, Debian, here I come! :)<br /><br />This is the site he recommended for getting started:<br /><br />http://www.aboutdebian.com/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debian</b><br />
+					Post by: <b>rugmonster</b> on <b>June 25, 2004, 04:51:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">As a former Debian user, I can say that most Debian users are somewhat elitists. They think Debian is far superior to the other distributions, which just isn't true. As a server, I like it alright, but for everything else, I like Gentoo a lot more. In fact, I like Gentoo the best of all of the distros right now, althought I would like to try SuSE. Best of luck with Debian. I will say you are going to want to run Testing or Unstable or else the packages are going to way out of date.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

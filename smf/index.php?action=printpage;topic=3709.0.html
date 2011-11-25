@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - My New Modem</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: OlRedHair on August 18, 2010, 08:08:06 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>My New Modem</b><br />
+					Post by: <b>OlRedHair</b> on <b>August 18, 2010, 08:08:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just purchased a USB760 Modem from Verizon. It says on the Verizon website that it is compatable with Linux. But I can&#039;t get it to install. Can anyone give me some help?<br /><br />Thank you so much!<br />__________________<br />Nora </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: My New Modem</b><br />
+					Post by: <b>danc</b> on <b>August 19, 2010, 06:39:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Need more information.&nbsp; Is it a DSL modem?&nbsp; Cable?&nbsp; Old-fashioned dial-up?&nbsp; What is happenening when you try to install it?&nbsp; (Cable/DSL modems shouldn&#039;t really need any &quot;installation&quot;...).&nbsp; Are there any error messages?&nbsp; What Linux distribution are you using?&nbsp; Did you have a previous (similar) modem that did work?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: My New Modem</b><br />
+					Post by: <b>OlRedHair</b> on <b>August 19, 2010, 05:51:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3709.msg17615.html#msg17615">Quote from: danc on August 19, 2010, 06:39:17 am</a></div><div class="quote">Need more information.&nbsp; Is it a DSL modem?&nbsp; Cable?&nbsp; Old-fashioned dial-up?&nbsp; What is happenening when you try to install it?&nbsp; (Cable/DSL modems shouldn&#039;t really need any &quot;installation&quot;...).&nbsp; Are there any error messages?&nbsp; What Linux distribution are you using?&nbsp; Did you have a previous (similar) modem that did work?<br /></div><br />It&#039;s a little USB device which looks like a flash drive.&nbsp; Verizon calls it &quot;Mobile Broadband.&quot;&nbsp; It works fine on my Vista laptop.<br /><br />I have a Dell Mini9 with Ubuntu.&nbsp; It came with 8.04, but I have been updating every week, so should have the latest Ubuntu version.<br /><br />The Novatel USB760 is &quot;plug and play&quot; using Vista.&nbsp; Installs with a wizard.&nbsp; But on my Ubuntu netbook, when I go to Network Connections, Mobile Broadband tab, the computer is not recognizing the device.<br /><br />I am a computer novice, and this is about all I can tell you.&nbsp; I called both Verizon and Dell.&nbsp; Neither knew anything about Ubuntu.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: My New Modem</b><br />
+					Post by: <b>OlRedHair</b> on <b>August 20, 2010, 03:35:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is what another forum told me.&nbsp; But as a computer novice, I don&#039;t understand any of these commands.&nbsp; And wouldn&#039;t know how to begin.&nbsp; Is there anyone here in Pensacola who might be able to simplify this process for me and guide me through it?&nbsp; I did activate the device on my Vista laptop, so I know it does work.&nbsp; But I ant to use it on my Netbook, which runs Ubuntu.<br /><br />I found this in other forums (2008 data) hope it helps: <br />by GODhack - 8/19/10 6:57 AM In reply to: My New Modem for Mobile Broadband by nbwilcox <br />sudo gedit /etc/udev/rules.d/70-persistent-cd.rules<br />find the line that contains &quot;Novatel_Mass_Storage&quot; and append the following to it:<br />RUN+=&quot;/usr/bin/eject %k&quot;<br /><br />save and close<br /><br />sudo gedit /usr/share/hal/fdi/information/10freedesktop/10-modem.fdi<br />Add this in there:<br /><br />&lt;!-- Verizon USB760--&gt;<br />&lt;match key=&quot;@info.parent:usb.vendor_id&quot; int=&quot;0x1410&quot;&gt;<br />&lt;match key=&quot;@info.parent:usb.product_id&quot; int=&quot;0x6000&quot;&gt;<br />&lt;match key=&quot;@info.parent:usb.interface.number&quot; int=&quot;0&quot;&gt;<br />&lt;append key=&quot;info.capabilities&quot; type=&quot;strlist&quot;&gt;modem&lt;/append&gt;<br />&lt;append key=&quot;modem.command_sets&quot; type=&quot;strlist&quot;&gt;IS-707-A&lt;/append&gt;<br />&lt;/match&gt;<br />&lt;/match&gt;<br />&lt;/match&gt;<br /><br />save and close<br /><br />Now plug in your card and make sure it didn&#039;t mount anything (Places -&gt; Computer USB Drive shouldn&#039;t be mounted)<br />Now left click the network applet and select &#039;Auto mobile broadband (CDMA) connection&#039;<br />It connect. If it doesn&#039;t make sure to go into VZAccessManager on a Windows machine and activate your USB760. VerizonWireless that works with Linux but it is on the enterprise section of www.vzam.net so call up or email VZW and ask to have it moved to the consumer downloads. They say the USB760 supports Linux on their site so be sure they provide the resources!<br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

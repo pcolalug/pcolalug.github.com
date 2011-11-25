@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - SAMBA set-up quick and easy.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on April 07, 2003, 05:59:20 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>bhoff</b> on <b>April 07, 2003, 05:59:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">SAMBA<br /><br />&nbsp;&nbsp;&nbsp;Ok I have been putting it off for a while, But I had to much time on my hands this weekend and got tired of flipping back and fourth between my Linux Mandrake 8.2 and my Windows 98 boxes...oops did I say win98...(sorry about that but yea I still have a couple running for a project I am on.) Anyhow I decided to see how hard it was to install and setup samba so they could communicate and save me a lot of trouble.<br />&nbsp;&nbsp;&nbsp;I have been putting it off because I heard it was very difficult to get up and running. Could have not been further from the truth.<br />I installed samba using the mandrake software manager and then did some research found out that there is this great tool called SWAT and let me tell you it took me 1 page of reading and about twenty minutes to get both of my win98 boxes setup and talking to the Linux box I can log in and browse my shares and read/write to them from my Win98 boxes. Another 8 minutes setting up my printer which is on my Linux box and I was good to go, And this tool SWAT comes on the mandrake disk. At least ver. 8.0 &amp; 8.2.<br />It runs in your browser. It lets you setup everything from all your Global's to shares and printers with constant monitoring of who is connecting and where.You can start and stop the daemons right there on the screen! <br />&nbsp;&nbsp;&nbsp;There are two things you will have to do in order for this to work thou.<br />1.) First edit the /etc/services files. <br />Add the following line to your /etc/services file. <br />swat 901/tcp <br />2.) Secondly add the following line to your /etc/inetd.conf file <br />swat stream tcp nowait,400 root /usr/sbin/swat swat <br /><br />&nbsp;&nbsp;&nbsp;These are needed in order for SWAT to work. After this just open your browser and type http://localhost:901/ or search your menu for Configuration/networking/samba configuration. That should do it a little digging in the included help and you should be on your way.<br /><br />Here is a little help with those of you still using Win95 &amp; Win98 Due to the way windows deals with passwords across networks it is best if you have the same accounts for each of your windows boxes and on the Linux box.<br />After setting this up go to your command console on the Linux box and type smbpasswd -a &lt;username&gt; this adds the user to the samba account (note: must have the account on the Linux box also!) it will ask you for the password.<br />You should be able to login to you shares on the Linux box no problem.<br /><br />Any questions can be posted here for everyone's benefit.<br />~Brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>dpeach</b> on <b>April 12, 2003, 11:35:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How do I pass a password to SAMBA? From Windows 98 I can see the share, but I cannot log into it. I have set the smbpassword - david, and password.<br /><br />Now from Windows it is asking for a password. I give it the password, but it comes back invalid. I tried every password that the SAMBA machine has ever had typed into it. Still nothing. I think it is because Windows is passing who-knows-what username, and is simply asking for a password. It is not giving me an opportunity to type a username. Do I have to set up multiple users in Windows for it to work?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>imnes</b> on <b>April 12, 2003, 11:40:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had a similar problem a few years ago, and I'm not really remembering the exact fix. &nbsp;I think I had to change one option in my smb.conf file (or something like that)..<br /><br />It was set for security = user and I had to change it to security = share.<br /><br />Good Luck,<br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>dpeach</b> on <b>April 12, 2003, 11:47:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That is what I have narrowed it down to, but I don't quite understand it. I do not log onto Win98 with username and password. I think if I did, then I could use security=user.<br /><br />I will hammer away at it.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hope this helps</b><br />
+					Post by: <b>bhoff</b> on <b>April 13, 2003, 11:28:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">First I am assumming that you have an account for the user on both machines. Then you want to set the Security Global to share.<br />and of course you added the user using smbpasswd as listed right?<br />This is the fix for win95&amp;98 it allows you to log in since you had to log into your windows machine.<br />~brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>dpeach</b> on <b>April 13, 2003, 03:10:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Got it!<br /><br />I did not have the user set up on the Win98 box. I thought I had that set, but that must have been one of the other times I had Windows loaded over the last year (I am working on my 3rd version of Windows on that machine in 6 months).<br /><br />It works well. Now, what am I going to do with it?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>June 11, 2003, 06:56:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, not the newest topic, but one I need a lil help with..... &nbsp;I can't get win98 to connect at all...... &nbsp;I tried following Brett's article, but no luck. &nbsp;I really don't know anything about networking, so it decides it wants to show now.... &nbsp; I'm trying to use Samba and all that good stuff. &nbsp;I looked in the docs for Samba and it said I needed IPchains..... &nbsp;installed..... &nbsp;Still nothing. &nbsp;I'm just lost with no hope. &nbsp;Oh well....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>danc</b> on <b>June 11, 2003, 10:52:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Do you have anything more specific that we could answer...? &nbsp;ipchains has nothing to do with Samba, although it could prevent it from working. &nbsp;ipchains produces a set of firewall rules which might prevent other machines from &quot;seeing&quot; the Samba server. &nbsp;(also, ipchains is sort of outdated, and has been replaced by iptables).<br /><br />Try going to http://www.samba.org and see if there's anything there to help. &nbsp;I have some other good links to Samba info at home which I can give you later when I get home. &nbsp;You may also want to install something called samba-swat which is a configuration helper. &nbsp;I can tell you that the main config file for this is called smb.conf and is located in /etc/samba if I recall correctly. &nbsp;Have another go at things and ask some more specific questions here if you can...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>rugmonster</b> on <b>June 11, 2003, 11:07:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Windows 98 by default uses encrypted passwords. You might be running into a problem there, since you have to tell Samba to use encrypted passwords. I would suggest going to http://www.samba.org and reading through their howto's. They are very good and should get you up and running. Of course, we will help you out as much as possible, but we need some more details. Remember to check you log files (/var/log/) and post any specific errors you are getting.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>danc</b> on <b>June 11, 2003, 03:04:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's another excellent link on Samba setup:<br /><br />http://samba.netfirms.com/<br /><br />Check things out some more and come back with more specific questions, and I'm sure we'll get you going.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>June 11, 2003, 03:35:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ya know... &nbsp;I meant iptables..... &nbsp; I honestly don't know if ipchains is installed.... &nbsp;The encrypted pw may be my problem...... &nbsp;hmmm...... &nbsp;I'll try again later....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I can give you a hand</b><br />
+					Post by: <b>bhoff</b> on <b>June 11, 2003, 07:26:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey give me a call thursday after 5:00pm and I will try to help you.<br />be in front of your computers and have some paper and pen ready.<br />~brett~<br />(850) 494-2268<br /><br />Should be able to get you pretty fast........</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SAMBA set-up quick and easy.</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>June 12, 2003, 12:03:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Phone's off... &nbsp;trying to switch providers and they took too long.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

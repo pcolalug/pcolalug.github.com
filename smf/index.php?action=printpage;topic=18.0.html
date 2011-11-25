@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Partition Problems</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: dpeach on June 09, 2002, 08:49:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Partition Problems</b><br />
+					Post by: <b>dpeach</b> on <b>June 09, 2002, 08:49:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I split my hda4 (Windows) partition yesterday (thanks Steve and Brett). I then went into Linux (Mandrake 8.2) and formatted the new partition as an ext3 partition.<br /><br />So now my new partition is hda5 which is what my Linux root was. Now my / (ext2) partition is hda6 and swap is hda7. When I went through the Mandrake Control Center and told it to do all this partition moving around, it told me that everything was moved and that hda5 would now be seen as hda6 and that hda6 would be hda7.<br /><br />After doing all that, it told me to reboot the system for all the partition information to be updated. It will not reboot into Linux (Windows boots fine).<br /><br />I have a boot disk to be able to get control of this again, I just don't know what to do with it.<br /><br />Here are the last several lines that I get before it hangs:<br /><br />Creating root device<br />Mounting root filesystem with flags noatime<br />VFS: Can't find ext2 filesystem on dev ide0(3,5).<br />mount: error 22 mounting ext2 flags noatime<br />well, retrying without the option flags<br />VFS: Cant find ext2 filesystme on dev ide0(3,5).<br />mount: error 22 mounting ext2<br />well, retrying read-only without any flag<br />VFS: Can't find ext2 filesystem on dev ide0(3,5).<br />mount: error 22 mounting ext2<br />pivotroot: pivot_root(/sysroot,/sysroot/initrd) failed:2<br />Remounting devfs at correct place if necessary<br />Freeing unused kernel memory: 260k freed<br />Kernel panic: No init fount. Try passing init= option to kernel.<br /><br />That is where it hangs. Any tips?<br /><br />Thanks for your help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mandrake rescue</b><br />
+					Post by: <b>steve</b> on <b>June 10, 2002, 05:25:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Did you try booting up on the Mandrake CD and typeing rescue at the boot prompt? This will give you the option of fixing your boot partition.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Partition Problems</b><br />
+					Post by: <b>dpeach</b> on <b>June 20, 2002, 09:30:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, I have been there. But the only way I found to be able to get lilo to point to the right partitions is to edit lilo.conf directly. The way I am doing that is mounting the drive in the rescue mode by mounting to /mnt/[root partition]. <br /><br />I am now having trouble running lilo so that it re-reads the lilo.conf file. Instead of asking my question in two places I have already posted a question along these veins in the Kernel section. (http://pcolalug.com/phpBB2/viewforum.php?f=21)<br /><br />Thanks for your help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Partition Problems</b><br />
+					Post by: <b>imnes</b> on <b>October 05, 2002, 02:10:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Once you edit lilo.conf you should just type &quot;lilo&quot; at the propmpt (as root) and it will recreate the boot loader for you.<br /><br />Could you post a copy of /etc/lilo.conf here, and also your partition tables (go into fdisk, type 'p' to get a list of the partitions, copy them down then type 'q' to exit the fdisk utility).<br /><br />What is the program output when you run lilo? &nbsp;It should be something like<br /><div class="codeheader">Code:</div><div class="code"><br />&#91;root@imnes 5.8.0&#93;# lilo<br />Added windows-nt<br />Added qnx<br />Added linux<br />Added linux-nonfb<br />Added linux-enterpris *<br />Added failsafe<br />Added floppy<br />&#91;root@imnes 5.8.0&#93;#<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Partition Problems</b><br />
+					Post by: <b>dpeach</b> on <b>October 05, 2002, 07:59:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The problem is better described and solved here. (http://pcolalug.com/phpBB2/viewtopic.php?t=33). The problem with simply running lilo is that I had mounted my partition from a boot disk, therefore my root partition was at /mnt/root. So all of the links to other directories were in the wrong place. When running lilo, it would hang every time it could not find the directory it was looking for.<br /><br />Problem solved. Now I need to create some more interesting ones like this.<br /><br />David</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

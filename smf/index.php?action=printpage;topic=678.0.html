@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - What is a runlevel?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: dpeach on May 05, 2003, 10:26:51 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>What is a runlevel?</b><br />
+					Post by: <b>dpeach</b> on <b>May 05, 2003, 10:26:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Are runlevels similar to booting to &quot;safe mode&quot; in Windows?<br /><br />How do I find out which runlevel I am currently in? I know that my Mandrake system with X runs at runlevel 5. My Zaurus runs at runlevel 5 and 3 for the GUI, depending on whether you need a particular tool running. (But I cannot remember what it is). <br /><br />Could you set up runlevels to be able to boot the machine with only a certain set of programs/apps available? How many different runlevels are avialable? I have only heard of 1-6.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>What is a runlevel?</b><br />
+					Post by: <b>rburt3</b> on <b>May 06, 2003, 07:44:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes and no. Runlevels define a set of functions and services. When you boot, say into runlevel 2, that's typically &quot;single user&quot; mode, which means just enough stuff is running to call it a computer. Runlevel 3 brings in the networking services and typically any servers are started up. Not sure about runlevel 4. Runlevel 5 typically includes windowing services (X and the like). Runlevel 6 is reboot while runlevel 0 is shutdown.<br /><br />You can think of runlevels as &quot;stages&quot; in the boot process. Only with the Unicies, you have more fine grain control over what services get started when.<br /><br />A tip. You can change run levels from the command line with the <div class="codeheader">Code:</div><div class="code">telinit</div> command. See your fine man pages for details.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>What is a runlevel?</b><br />
+					Post by: <b>rugmonster</b> on <b>May 06, 2003, 05:31:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually, rburt3, runlevels are a little more distro dependent. Not all distros use the same scheme for their services...but otherwise, yes, you are correct. &nbsp;:P</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I have heard</b><br />
+					Post by: <b>bhoff</b> on <b>May 06, 2003, 08:23:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have been told recently by one of our Cali members that there are actually 10 run levels but usaully only 1-5 are used.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>What is a runlevel?</b><br />
+					Post by: <b>imnes</b> on <b>May 07, 2003, 08:20:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you look at the file /etc/inittab it will describe the runlevels used on your system, for mine this is (I'm just including part of it):<br /><br /><div class="codeheader">Code:</div><div class="code"><br /># These are the default runlevels in Slackware&#58;<br /># &nbsp; 0 = halt<br /># &nbsp; 1 = single user mode<br /># &nbsp; 2 = unused &#40;but configured the same as runlevel 3&#41;<br /># &nbsp; 3 = multiuser mode &#40;default Slackware runlevel&#41;<br /># &nbsp; 4 = X11 with KDM/GDM/XDM &#40;session managers&#41;<br /># &nbsp; 5 = unused &#40;but configured the same as runlevel 3&#41;<br /># &nbsp; 6 = reboot<br /><br /># Default runlevel. &#40;Do not set to 0 or 6&#41;<br />id&#58;3&#58;initdefault&#58;<br /></div><br /><br />So if I were to edit that file, and change that last line to id:4:initdefault: my computer would boot straight into X Windows.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

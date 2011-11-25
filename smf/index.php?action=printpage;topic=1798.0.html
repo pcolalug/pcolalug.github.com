@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Gentoo 2004.2 Installation</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: scottstancil on July 27, 2004, 01:07:04 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>scottstancil</b> on <b>July 27, 2004, 01:07:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">2004.2 has been released if you haven't seen it on slashdot. &nbsp;I am trying it out on my play box and had problems with the Via-Rhine until I booted with 'smb noapic' and boom, it worked.<br /><br />Once started, (old hands will probably know this) I started sshd, logged in from my Mac, and started 'screen'. &nbsp;I could then detach from my session, head to the coffee shop, ssh in again, and reattach to my session.<br /><br />I just love the screen command. &nbsp;bootstrap.sh just finished...on with the show.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>danc</b> on <b>July 30, 2004, 02:03:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">...After some (colorful) discussion in the IRC channel, I have decided I must try this Gentoo stuff again. &nbsp;If for no other reason, to provide a (valid) comparison between it and Slackware... &nbsp; :lol: <br /><br />Doing the &quot;emerge sync&quot; step now, in my Stage 1 install... &nbsp;Stay tuned.<br /><br />Dan<br /><br />P.S. - We've been having some lively and enjoyable conversations in our IRC channel lately! &nbsp;Come join us in the &quot;#pcolalug&quot; channel on the Freenode network!!! &nbsp;Perhaps you too can be convinced to try Gentoo (or Slack). &nbsp; :shock:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>danc</b> on <b>July 31, 2004, 04:32:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've got a running Gentoo system, using a 2.6.7 kernel. &nbsp;The stage 1 install wasn't too bad really, partly due to the EXCELLENT docs on the Gentoo website.<br /><br />All I've got on it so far is X (xorg) and Gnome (2.6). &nbsp;Sound works, and got the Nvidia drivers to work. &nbsp;I plan to add more stuff as I have time, and need to learn some more about Portage, but so far I am pretty pleased. &nbsp;Some things are in locations that are different than I'm used to, but not a big problem.<br /><br />I will say that it is probably the fastest and most responsive system that I've ever seen. &nbsp;Truly amazing how much faster. &nbsp;Even faster than Slackware, which kind of pains me to say... &nbsp; :lol: <br /><br />Not quite ready to say I'll be switching over to it &quot;permanently&quot;, but if things keep up this way.... &nbsp;you never know. &nbsp;OK, off to do some more emerging!<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>scottstancil</b> on <b>July 31, 2004, 06:35:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did an emerge of OpenOffice and I really didn't think it would be much faster, but I started the Gentoo experience with the intentions of NOT using a single package. &nbsp;Compile everything.<br /><br />OpenOffice absolutely blazes. &nbsp;It opens faster than Office XP on Windows XP or Office X on Mac OS X.<br /><br />Scott</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>L.Rentz</b> on <b>August 01, 2004, 07:36:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just what I needed to hear, &quot;fast&quot;. &nbsp;It is amazing when you hear that word in the tech industry how you want to dive in.<br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>danc</b> on <b>August 01, 2004, 03:16:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hehe, remember that it's fast AFTER it's installed/compiled... &nbsp;The installation process is by no means fast.<br /><br />A little &quot;Lesson Learned&quot; from me... &nbsp;Last night I started compiling OpenOffice before bed, knowing it would take a long time. &nbsp;Earlier in the day I had installed Sun Java (JRE) for the browser plugins. &nbsp;This morning when I woke up and looked at it, it had failed with the error message (paraphrased): &nbsp;&quot;OpenOffice will not work with Sun Java installed, you need to install Blackdown Java and then try OpenOffice again&quot;.<br /><br />So, I installed Blackdown, and re-started OpenOffice. &nbsp;That was 6 hours ago, and I could have used the time better for other things. &nbsp;Apparently you should use Blackdown if you plan to use OpenOffice, which is pretty surprising when you consider the close association between OO and Sun...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>scottstancil</b> on <b>August 01, 2004, 09:42:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Did you emerge Java?<br /><br />Scott</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>danc</b> on <b>August 02, 2004, 07:32:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">As I recall, &quot;emerge java&quot; didn't work. &nbsp;Originally did &quot;emerge sun-jdk&quot; and later did &quot;emerge blackdown-jdk&quot; (I think, going from memory here, at work).<br /><br />I did the OpenOffice emerge last night, and it completed fine as of this morning. &nbsp; :D &nbsp; Started &quot;emerge enemy-territory&quot; before I left for work... :lol: <br /><br />Also, for those who may be doing this process (and myself for future reference), I wasn't happy at all with the way fonts looked in browsers and so on. &nbsp;I found a HOW-TO that worked wonderfully, on the (very nice) Gentoo forums:<br />http://forums.gentoo.org/viewtopic.php?t=187389&amp;highlight=font+antialias<br /><br />I'm now enjoying the sweet look of anti-aliased fonts, and am getting more and more happy with Gentoo...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rburt3</b> on <b>August 02, 2004, 09:55:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Adding &quot;java&quot; to your USE flags would also do the trick. Also, for faster Java(TM) compiles, add &quot;jikes&quot; as well.<br /><br />As an aside, I have run both Blackdown and Sun JRE/SDK's side-by-side without issue on my Linux boxen. Its a bit redundant, I know, since Blackdown is kind of like a reference implementation for Sun's Linux JRE/SDK.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>scottstancil</b> on <b>August 02, 2004, 10:04:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">It is generally recommended to turn Java off during the initial installation process, at least until you are sure you want/need it. &nbsp;Also, emerge --pretend is your friend.<br /><br />Scott</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rburt3</b> on <b>August 02, 2004, 03:33:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Another good tip in the same vain as -p or --pretend is -a. This tells portage to calculate dependencies for what you want to do, then asks you if you want to perform the emerge. Its a little faster, since portage only has to calculate dependencies once. So, to see what you would get when you want to udate your system, just do a <div class="codeheader">Code:</div><div class="code">emerge -Ua world</div> If everything looks good, all you have to do is answer 'y' when it asks.<br /><br />For a more thourough update, use <div class="codeheader">Code:</div><div class="code">emerge -Ua --deep world</div> The --deep flag tells portage to also examine the dependencies of the packages it would update. <br /><br />Finally, if you change USE flags, compile options, timezone, or just want to be without a computer for several hours, try <div class="codeheader">Code:</div><div class="code">emerge --emptytree --deep world</div>(the --deep may not be needed here, I can't remember). This tells portage to re-emerge every package in the world file as if it had never been there. It basically re-compiles all the software on your system (gcc, glib, the works). This has come in handy once when I screwed up glibc. I basically booted from the install cd, chrooted into my system, unpacked the stage 1 tarball back onto my system, sync'd my portage tree, then ran the above command. Fresh clean system in 24 hours :roll:.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rburt3</b> on <b>August 02, 2004, 03:35:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: scottstancil</div><div class="quote">It is generally recommended to turn Java off during the initial installation process</div><br />Very true. My use flags are limited to <div class="codeheader">Code:</div><div class="code">USE=&quot;ntpl&quot;</div> until I've completed stage3 and can boot into the system without a cd.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>scottstancil</b> on <b>August 02, 2004, 03:44:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Would the ntpl only matter for a 2.4 kernel installation?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rburt3</b> on <b>August 03, 2004, 10:26:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: scottstancil</div><div class="quote">Would the ntpl only matter for a 2.4 kernel installation?</div><br />Don't think so. My Gentoo installs aren't quite &quot;by-the-book&quot;, though. Basically, I start the smp kernel from the liveCD so as to get a 2.6 kernel (this may be moot in 2004.2, I haven't checked). Then when I'm chrooted and emerge system, I ax the kernel headers (they were 2.4) and rebuild my toolchain so as to get native thread support in stuff like gcc and glibc.<br /><br />Now, I didn't just come up with all of that. I found a mini how-to on the gentoo forums that said doing it this way gave you a slight edge in performance. I'm a sucker for that sort of thing... ;)<br /><br />Oh, and sorry for the type-o. Its NPTL (Native Posix Thread Library). I do know that is significantly faster than pthreads.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rugmonster</b> on <b>August 08, 2004, 08:08:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just found out the minimal image has problems with some systems and mine is one of them. I'm downloading the full livecd, but just a heads up.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rburt3</b> on <b>August 08, 2004, 09:19:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">What sort of systems?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rugmonster</b> on <b>August 08, 2004, 11:19:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Don't know the specifics. I think it may be my dvd-rom, but there was a post in the italian section of the gentoo forums that made mention of it. I can't read the italian to see what the specifics are.<br /><br />http://forums.gentoo.org/viewtopic.php?t=202516</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rugmonster</b> on <b>August 10, 2004, 08:47:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just in case anyone wants to use nptl, here is the howto. Yeah, I was about to configure my kernel and realized I wanted this and 2.6 headers.... mke2fs /dev/hda1 &amp;&amp; mke2fs -j /dev/hda3 *sigh*<br /><br />and the stage1 install is going to <b><i>suck</i></b> on the k6-2 500.<br /><br />http://forums.gentoo.org/viewtopic.php?t=169054</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rburt3</b> on <b>August 11, 2004, 08:47:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I dunno if this was addressed in 2004.2, but I had to use a different bootstrap.sh (bootstrap-2.6.sh, or something like that) that worked with the new kernel headers.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rugmonster</b> on <b>August 11, 2004, 07:41:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I found this (http://forums.gentoo.org/viewtopic.php?t=206526) as being the only one that used bootstrap-2.6.sh. That is another howto for using the 2.6 headers, nptl and gcc 3.4.1. I'm going with that one now because I couldn't get the bootstrap to finish on the regular bootstrap.sh due to misc stop errors.<br /><br />One more thing that I'll get back to you guys on, I'm planning on implementing udev only on this system. Here (http://www.gentoo.org/doc/en/udev-guide.xml) is the howto on installing it. There is a fine overview of udev and how it works here (http://webpages.charter.net/decibelshelp/LinuxHelp_UDEVPrimer.html).<br /><br />...and I still wait for the bootstrap to complete. GCC sure does take forever...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rburt3</b> on <b>August 12, 2004, 08:39:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah, I had the same problems until I force-removed the old 2.4 headers. When I built Heather's laptop, I went with udev from the start and had absolutely no problems whatsoever. I really didn't have to give it any thought, as the stuff just works. Same goes for x.org. The config file and utils are so similar to XFree86, that it really doesn't matter. I never had xfree on that machine, so I can't speak to performance differences, but x.org is snappy and performs at least as well as I'd imagine xfree would.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gentoo 2004.2 Installation</b><br />
+					Post by: <b>rugmonster</b> on <b>August 12, 2004, 05:30:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">...and further problems with the bootstrap. I had to do a symlink of /usr/bin/echo to /usr/bin/no since perl isn't installed. The compile would crap out during glibc-2.3.4.20040808 (documented in this (http://bugs.gentoo.org/show_bug.cgi?id=60132) bug). *sigh* This system will get done...someday.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

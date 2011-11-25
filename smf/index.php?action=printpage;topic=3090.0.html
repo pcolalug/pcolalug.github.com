@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - SLES9 and LVM2</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: mall0ry on December 20, 2006, 09:12:41 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SLES9 and LVM2</b><br />
+					Post by: <b>mall0ry</b> on <b>December 20, 2006, 09:12:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi,<br /><br />I forgot to ask this last Saturday at the meeting. We are using SuSE Linux Enterprize Server 9 on an IBM z800 mainframe and last week had a problem adding to an LVM volume. In the past, using the LVM module in Yast, we would add to an LVM volume, have Yast format the new space, and the files would still be there. I am sure we did this but, neither the systems programmer nor I can swear to it. What is happeing now is the whole volume is being formatted and the files are gone. I am going to read the LVM How-To so I can check and do everything from the CLI. I think if I put an Ext3 filesystem on the new space prior to adding it to the LVM volume that it would solve the problem.<br /><br />Have a Merry Christmas and a Happy New Year.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SLES9 and LVM2</b><br />
+					Post by: <b>rugmonster</b> on <b>December 20, 2006, 11:11:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3090.msg15150.html#msg15150">Quote from: mall0ry on December 20, 2006, 09:12:41 am</a></div><div class="quote">I think if I put an Ext3 filesystem on the new space prior to adding it to the LVM volume that it would solve the problem.<br /></div><br />That isn&#039;t the way it works. You add the new physical volume to the appropriate logical volume. Then you expand the filesystem to use the new space. Going with Ext3 would be a good choice as you can reduce the size of the filesystem at a later date, where you can&#039;t with XFS or ReiserFS. I&#039;m not sure if you can expand an Ext3 volume while it is mounted (saw an earlier kernel patch to do it), but with XFS, it must be mounted to expand it. It&#039;s a nice feature, but not entirely necessary.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SLES9 and LVM2</b><br />
+					Post by: <b>mall0ry</b> on <b>December 22, 2006, 01:08:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for setting me straight.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SLES9 and LVM2</b><br />
+					Post by: <b>rugmonster</b> on <b>December 22, 2006, 01:43:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Correction, you can reduce ReiserFS.<br /><br />Also, remember to create a partition on the disk like you normally would and then add it to the volume group<br /><br /><div class="codeheader">Code:</div><div class="code"># vgextend my_volume_group /dev/hdc1<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;^^^^^^^^^ new physical volume<br /></div><br />Source: LVM HOWTO (http://tldp.org/HOWTO/LVM-HOWTO/)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SLES9 and LVM2</b><br />
+					Post by: <b>mall0ry</b> on <b>January 17, 2007, 08:14:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for all the help. We found out that Yast was doing everything execpt for the resizing which we did at the command line. The next time I plan on doing everything that way (I need the practice).</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

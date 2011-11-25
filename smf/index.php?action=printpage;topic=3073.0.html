@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - DNS Help</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: dpeach on November 30, 2006, 12:32:06 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DNS Help</b><br />
+					Post by: <b>dpeach</b> on <b>November 30, 2006, 12:32:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a friend that changed web hosts over a month ago. DNS is still not consistently pointing to the new host. Is there anything he can do to propagate the new host through DNS to clear out the old host?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: DNS Help</b><br />
+					Post by: <b>rugmonster</b> on <b>November 30, 2006, 04:10:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">In short, no.<br /><br />DNS works on a cache basis. If his Total Time to Live (TTL) was set very high, then various DNS server could still have the host to IP resolution still in cache. I also found an article (http://ask.slashdot.org/article.pl?sid=05/04/18/198259) on Slashdot about ISPs ignoring the TTL altogether.<br /><br />One thing he could check is to make sure that all of the DNS servers he has listed as authoritative for his domain have the correct information, by doing some nslookups directly to them.<br /><br />For example, I&#039;ll use my domain, rugmonster.org.<br /><br />First, I find out which nameservers are responsible for my domain. By the way, the syntax for nslookup described here is the same between Linux and Windows.<br /><br /><div class="codeheader">Code:</div><div class="code">$ nslookup -type=NS rugmonster.org<br />Server:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;69.1.30.11<br />Address:&nbsp; &nbsp; &nbsp; &nbsp; 69.1.30.11#53<br /><br />Non-authoritative answer:<br />rugmonster.org&nbsp; nameserver = ns2.mydyndns.org.<br />rugmonster.org&nbsp; nameserver = ns3.mydyndns.org.<br />rugmonster.org&nbsp; nameserver = ns4.mydyndns.org.<br />rugmonster.org&nbsp; nameserver = ns5.mydyndns.org.<br />rugmonster.org&nbsp; nameserver = ns1.mydyndns.org.<br /><br />Authoritative answers can be found from:</div><br />Next, I pick one of those on the list and make sure my A record is correct. You can tell nslookup to use another server by including it&#039;s DNS or IP address after the host you are looking up.<br /><br /><div class="codeheader">Code:</div><div class="code">$ nslookup -type=A rugmonster.org ns1.mydyndns.org<br />Server:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ns1.mydyndns.org<br />Address:&nbsp; &nbsp; &nbsp; &nbsp; 63.208.196.92#53<br /><br />Name:&nbsp; &nbsp;rugmonster.org<br />Address: 24.236.70.83<br /></div><br />I would repeat for each nameserver. If they all match up, then the problem is with the ISP&#039;s the visitors to his site are using. If there is an inconsistency, he needs to get in touch with the folks that are running his DNS servers.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: DNS Help</b><br />
+					Post by: <b>green_dragon37</b> on <b>November 30, 2006, 08:50:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">One tool I tend to rely on when troubleshooting my domains, is www.dnsreport.com.&nbsp; It runs your DNS, and a couple other things, through a thorough check, and gives you the results in a very easy to read format.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: DNS Help</b><br />
+					Post by: <b>dpeach</b> on <b>November 30, 2006, 11:24:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks, I have passed the info along to him. It appears to me that he has a couple of different DNS servers that his domain is pointed to.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: DNS Help</b><br />
+					Post by: <b>shane2peru</b> on <b>December 01, 2006, 10:18:40 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey I am the friend - thanks dpeach for pointing me here.&nbsp; <br /><br />When we checked out the DNSreport.com it didn&#039;t look good.&nbsp; I have my domain registered at godaddy.com&nbsp; There are three accounts hosted under my plan.&nbsp; One I switched the DNS the same time as mine, and they don&#039;t have any problems, or don&#039;t seem to.&nbsp; &nbsp;I just ran that domain on the dnsreport.com and it came up clean.&nbsp; When I run mine www.rices2peru.com it comes up with errors.&nbsp; I just transfered the other one 3 days ago, and it is fully resolved.&nbsp; They are all registered via godaddy.com.&nbsp; They all were on the same web host, and transfered to the new host.&nbsp; The old host was hacked about 3 months ago. Do they have control over my NS?&nbsp; I really don&#039;t have a good understanding of all this.&nbsp; I&#039;m going to setup a new Domain name and get it pointed there too, and switch everything over, but I really hate to be beaten by a hacker.&nbsp; Any ideas or suggestions would really be appreciated.&nbsp; Thanks!<br /><br />Shane</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

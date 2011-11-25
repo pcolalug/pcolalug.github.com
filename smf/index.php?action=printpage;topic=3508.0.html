@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Upgrade from 8.10 to 9.04 ubuntu</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: bhoff on April 29, 2009, 01:13:54 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Upgrade from 8.10 to 9.04 ubuntu</b><br />
+					Post by: <b>bhoff</b> on <b>April 29, 2009, 01:13:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys I have done 3 upgrades now and it worked great and only had one small glitch that I am going to explain.<br /><br />First I did upgrade via the update manager over the internet vs a disk.<br /><br />It took about 45 minutes on cox and 1.6ghz machine...<br />Afterwords my settings and all were good. I did mess up and upgraded my wireless manager to wicd instead of that default one in Ubuntu.<br />Now I could not connect to my AP. would not get dhcp lease.<br />a little digging found the culprit it was the /sbin/dhlient3 script it is protected by apparmor.<br />to fix this do the following from command line<br />sudo mv /etc/apparmor.d/sbin/dhclient3 /etc/apparmour.d/disable/<br /><br />that will take care of your little issue now reboot to make sure the security permissions are set for dhclient.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Upgrade from 8.10 to 9.04 ubuntu</b><br />
+					Post by: <b>dpeach</b> on <b>May 05, 2009, 08:08:44 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did an upgrade through the CD from 8.10 to 9.04. I was already running the new KDE 4.2 on 8.10 of Kubuntu.<br /><br />The night of the last meeting when I did the upgrade my system was not stable. I thought maybe it had to do with just a first reboot quirk. Ended up, I could not keep the system running well and I never found out what was causing the lockups. Through a process of over a week I got my whole /home file into a current backup and did a full re-install from scratch on the 9.04. This time I chose the ext4 file system. It has been rock solid since.<br /><br />Unfortunately, that machine is being used as my wife&#039;s primary machine since hers was stolen last month. I have not had any chance to play with it. I also have not gotten wireless working on it yet. I must get that done before the weekend.<br /><br />I plan to do a fresh install on my desktop later this week which is running 8.04.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Upgrade from 8.10 to 9.04 ubuntu</b><br />
+					Post by: <b>maxolasersquad</b> on <b>May 05, 2009, 10:21:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had KDE 4.2 running on Kubuntu 8.10 and when I upgraded my laptop it became very unstable as well.&nbsp; I ended up backing up /home and reinstalling like you.&nbsp; My two Ubuntu 8.10 desktops went to 9.04 just fine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Upgrade from 8.10 to 9.04 ubuntu</b><br />
+					Post by: <b>Ed</b> on <b>May 05, 2009, 10:46:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Stable rpm based PCLinuxOS.......thats the ticket lads. ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Upgrade from 8.10 to 9.04 ubuntu</b><br />
+					Post by: <b>maxolasersquad</b> on <b>May 05, 2009, 12:31:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3508.msg16829.html#msg16829">Quote from: Ed on May 05, 2009, 10:46:35 am</a></div><div class="quote">Stable rpm based PCLinuxOS.......thats the ticket lads. ;)<br /></div>KDE4.2 is not supported on Ubuntu 8.10, so I really wasn&#039;t surprised when upgrading it borked things.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

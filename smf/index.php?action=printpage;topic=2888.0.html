@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Horde/Imp</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: SaiSoma on May 21, 2006, 04:07:54 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Horde/Imp</b><br />
+					Post by: <b>SaiSoma</b> on <b>May 21, 2006, 04:07:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi everyone.&nbsp; I introduced myself in the Introduction forum and rugmonster asked that I post about the hacked boxes I&#039;ve had to handle over the years.<br /><br />The latest hack was actually only a few weeks ago.&nbsp; I do consulting/admin work for a cable/internet company in south florida (all remote).&nbsp; We currently use horde/imp for webmail for customers (www.horde.org).&nbsp; It&#039;s a great product and has served us well, however, it was the source of a server breech recently.<br /><br />A version of horde experienced some sort of /tmp vulnerability via apache.&nbsp; The perp could only transfer files only to directories writable by apache and could only run programs AS apache, and this guy stuck in code for an irc bot (script kiddie).&nbsp; <br /><br />The REASON we were hacked was a lack of upgrading of horde.&nbsp; We run Redhat Enterprise and everything was updated except horde.&nbsp; It&#039;s a rather long laborius process that takes a few hours and I am only contracte for five hours/week.&nbsp; Without making excuses, I didn&#039;t get to the upgrade until the breech occurred.&nbsp; I was able to verify a clean box after cleaning the irc bot and upgrading horde/imp, etc.&nbsp; I think the fix was released by the horde group in march and I did the upgrade mid or end of April.<br /><br />It was normal scheduled port scanning that caught the bot, which was only active for just over a day or so.&nbsp; No REAL damage done, except to my pride.&nbsp; I haven&#039;t had a box compromised in five years.&nbsp; The previous compromise was a full rootkit on a box that I thought was offline, but was turned back on by a tech would thought it wasn&#039;t supposed to be off.&nbsp; My monitoring has improved since then (arpwatch, etc), so that kind of thing is not as likely (never say impossible).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Horde/Imp</b><br />
+					Post by: <b>rugmonster</b> on <b>May 21, 2006, 07:10:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Very interesting. I get hit with these types of attempts all the time on my home Apache machine. People scanning for horde, phpbb2, plone, etc. They look for whatever the recent major vulnerability may be. It&#039;s a shame that there are people looking for that stuff, unfortunate when an oversight leads to a compromise, but funny when you see their attempts fail. I always got a kick out of seeing people try to brute force ssh and get blocked using my blockgen script (http://rugmonster.org/).<br /><br />Glad you got it all cleaned up and no damage was done.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

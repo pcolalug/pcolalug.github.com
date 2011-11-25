@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Question for you programmers</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: jaymz_720 on February 16, 2006, 03:52:15 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Question for you programmers</b><br />
+					Post by: <b>jaymz_720</b> on <b>February 16, 2006, 03:52:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a question on the size of variables and the numbers themselves. If you were trying to calculate probability and had an equation that looked like this: (1/2)^avagadros number (6.2x10^23), you&#039;d have an insanely small number, but it is possible to calculate it? I tried on windows using visual studio and it doesn&#039;t go all that high before it starts spitting out #inf. As I understand there&#039;s a maximum value that a number can be, can that number be manipulated? I&#039;m not sure that I completely understand where the limits are set for the values, are they set by the OS or the hardware? And will Linux go any higher than a MS based IDE?<br /><br />Thanks,<br /><br />James</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Question for you programmers</b><br />
+					Post by: <b>rugmonster</b> on <b>February 16, 2006, 04:19:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This depends on the compiler and the platform you are using. I found the following information here (http://www.phim.unibe.ch/comp_doc/c_manual/C/CONCEPT/data_types.html) as it applies to C on a common x86 system.<br /><br /><div class="codeheader">Code:</div><div class="code">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Type&nbsp; Bytes&nbsp; Bits&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Range<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; short int&nbsp; &nbsp; 2&nbsp; &nbsp; &nbsp; 16&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -32,768 -&gt; +32,767&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (32kb)<br />&nbsp; &nbsp;unsigned short int&nbsp; &nbsp; 2&nbsp; &nbsp; &nbsp; 16&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 -&gt; +65,535&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (64Kb)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;unsigned int&nbsp; &nbsp; 4&nbsp; &nbsp; &nbsp; 32&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 -&gt; +4,294,967,295&nbsp; &nbsp;( 4Gb)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int&nbsp; &nbsp; 4&nbsp; &nbsp; &nbsp; 32&nbsp; &nbsp;-2,147,483,648 -&gt; +2,147,483,647&nbsp; &nbsp;( 2Gb)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;long int&nbsp; &nbsp; 4&nbsp; &nbsp; &nbsp; 32&nbsp; &nbsp;-2,147,483,648 -&gt; +2,147,483,647&nbsp; &nbsp;( 2Gb)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; signed char&nbsp; &nbsp; 1&nbsp; &nbsp; &nbsp; &nbsp;8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-128 -&gt; +127<br />&nbsp; &nbsp; &nbsp; &nbsp; unsigned char&nbsp; &nbsp; 1&nbsp; &nbsp; &nbsp; &nbsp;8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 -&gt; +255<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; float&nbsp; &nbsp; 4&nbsp; &nbsp; &nbsp; 32<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;double&nbsp; &nbsp; 8&nbsp; &nbsp; &nbsp; 64<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; long double&nbsp; &nbsp;12&nbsp; &nbsp; &nbsp; 96</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Question for you programmers</b><br />
+					Post by: <b>crowe</b> on <b>February 16, 2006, 06:48:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here&#039;s a dinky little program that will tell you the size of variables according to your environment/compiler.<br /><br /><br /><div class="codeheader">Code:</div><div class="code">/********************************************************************<br />sizeof.c -- Program to tell the size of the variable types available<br />to the compiler.<br />*********************************************************************/<br /><br />#include &lt;stdio.h&gt;<br /><br />main()<br />{<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;A char is %d bytes&quot;, sizeof( char));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nAn int is %d bytes&quot;, sizeof( int));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nA short is %d bytes&quot;, sizeof(short));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nA long is %d bytes&quot;, sizeof(long));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nAn unsigned char is %d bytes&quot;, sizeof (unsigned char));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nAn unsigned int is %d bytes&quot;, sizeof (unsigned int));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nAn unsigned short is %d bytes&quot;, sizeof (unsigned short));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nAn unsigned long is %d bytes&quot;, sizeof (unsigned long));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nA float is %d bytes&quot;, sizeof (float));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nA double is %d bytes&quot;, sizeof (double));<br />&nbsp; &nbsp; &nbsp; &nbsp; printf( &quot;\nA long double is %d bytes\n&quot;, sizeof (long double));<br />&nbsp; &nbsp; &nbsp; &nbsp; return 0;<br /><br />}<br /></div><br /><br />In my case, since I&#039;m on an AMD64 system, a few of mine are bigger/different than they are on an x86:<br /><br /><div class="quoteheader">Quote</div><div class="quote">A char is 1 bytes<br />An int is 4 bytes<br />A short is 2 bytes<br />A long is 8 bytes<br />An unsigned char is 1 bytes<br />An unsigned int is 4 bytes<br />An unsigned short is 2 bytes<br />An unsigned long is 8 bytes<br />A float is 4 bytes<br />A double is 8 bytes<br />A long double is 16 bytes<br /></div><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Question for you programmers</b><br />
+					Post by: <b>djoed_pcola</b> on <b>February 16, 2006, 08:30:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Since Pi has been calculated out to millions of decimal places, there has to be a way.&nbsp; I&#039;m guessing that it would involve doing a calculation, storing the result in a large char buffer, shifting some bits, more calculations, append the result to the buffer,&nbsp; repeat until done.&nbsp; Just a guess though, all of my programming experience involved business applications, not scientific.<br /><br />Good luck.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Question for you programmers</b><br />
+					Post by: <b>danc</b> on <b>February 16, 2006, 10:52:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2797.msg13930.html#msg13930">Quote from: djoed_pcola on February 16, 2006, 08:30:46 pm</a></div><div class="quote">Since Pi has been calculated out to millions of decimal places, there has to be a way. <br /></div><br />I&#039;m willing to bet it wasn&#039;t calculated out that far on 32-bit desktop operating system and hardware....&nbsp; &nbsp;&gt;:D<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Question for you programmers</b><br />
+					Post by: <b>Brent</b> on <b>February 17, 2006, 12:00:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Try using a long double, and you *should* get all the precision you need for most applications.<br /><br />If however, you need an insane ammount of precision, i imagine a long double on an amd64 would suit you nicely.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Question for you programmers</b><br />
+					Post by: <b>jaymz_720</b> on <b>February 17, 2006, 12:46:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">&nbsp; &nbsp; &nbsp; &nbsp; I did try long double and it does get a little more accurate, but no where near the end. I&#039;m not sure that my little system can handle that kind of a number. I&#039;d estimate it to be well over 100,000 zeros at least, probably over a million.&nbsp; The last number that I got to was (blah blah blah^-999)^whatever x 10^18. It&#039;s already at nearly 1000 zeros behind the decimal and only dropped 5 off the original exponent. :(<br />&nbsp; &nbsp; &nbsp; I don&#039;t think pi was calculated on a 32b either.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Question for you programmers</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 21, 2006, 09:51:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2797.msg13937.html#msg13937">Quote from: jaymz_720 on February 17, 2006, 12:46:51 pm</a></div><div class="quote">&nbsp; &nbsp; &nbsp; I don&#039;t think pi was calculated on a 32b either.<br /></div><br />It can be calculated on anything from 4bit+. Keyword is &quot;calculated&quot;, not stored in a variable. For your project, don&#039;t rely on the precision of the variables, but examine the method of how you would determine the correct answer. You&#039;ll probably find that all you need are simple integers and allocate space to store the result. As you keep iterating through the process refining the answer to higher precision, you&#039;ll more than likely either dump the result to screen, or store in a char type location. With this method, your precision is only constrained by the amount of memory you have.<br /><br />Jesse</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Question for you programmers</b><br />
+					Post by: <b>stocke2</b> on <b>March 16, 2006, 05:49:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i know you want a floating point number, but there is a c++ class big int that can hold an int of arbitary length, maybe you could use that and work around it being an int usingsome logic,(not impossible).</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

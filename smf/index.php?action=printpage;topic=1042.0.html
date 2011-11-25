@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Freeciv and Wine on slack 9</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: Brent on September 29, 2003, 03:53:28 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Freeciv and Wine on slack 9</b><br />
+					Post by: <b>Brent</b> on <b>September 29, 2003, 03:53:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi everyone,<br /><br />I've been trying to get freeciv working for me and my roommates (big civ II fans). &nbsp;I installed the pkg and when i tried to start the client it said &quot;Xlib cannot open display 0:0. &nbsp;I also tried compiling from source because I thought it was some kind of dependency. &nbsp;However, I think its problobly a permissions problem. &nbsp;I have to run the client as a normal user and for some reason my normal user account can't do squat. &nbsp;It can't even 'startx'. &nbsp;I tried setting up sudo but it wants it run as a user...not a user with root privilages.<br /><br />Also, while I have your attention, could someone mail me a copy of their .wine directory? &nbsp;I'm trying to setup wine so that I can run Logic Works, and I'm going to have to setup my .wine directory by hand...(I don't know why wine doesn't at least set up an example folder for you to modify)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Freeciv and Wine on slack 9</b><br />
+					Post by: <b>imnes</b> on <b>September 29, 2003, 03:57:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Slack 9.0 or 9.1?<br /><br />If you're on 9.1 I can build you a binary of wine and send it to you. &nbsp;If you tell me where to get a demo of that game I'll make sure it works.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Freeciv and Wine on slack 9</b><br />
+					Post by: <b>Brent</b> on <b>September 29, 2003, 05:26:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">actually i just wanted your .wine directory. &nbsp;that way i can take ur config files and edit to suit my purposes.<br /><br />The game is located at www.freeciv.org. &nbsp;It's free.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Freeciv and Wine on slack 9</b><br />
+					Post by: <b>imnes</b> on <b>September 29, 2003, 10:00:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sorry I don't really have a .wine directory. &nbsp;I have about 9 different installs of wine on my system right now, and they have their config files scattered within their own directories. &nbsp;I'll pass along my config file that I use for RedFaction, what else do you need?<br /><br /><div class="codeheader">Code:</div><div class="code"><br />WINE REGISTRY Version 2<br /><br />&#91;Drive C&#93;<br />&quot;Path&quot; = &quot;/opt/redfaction/c_drive/&quot;<br />&quot;Type&quot; = &quot;hd&quot;<br />&quot;Label&quot; = &quot;Dos Drive&quot;<br />&quot;Filesystem&quot; = &quot;win95&quot;<br /><br />&#91;Drive D&#93;<br />&quot;Path&quot; = &quot;$&#123;HOME&#125;&quot;<br />&quot;Type&quot; = &quot;hd&quot;<br />&quot;Label&quot; = &quot;My Home&quot;<br />&quot;Filesystem&quot; = &quot;win95&quot;<br /><br />&#91;Drive E&#93;<br />&quot;Path&quot; = &quot;/tmp&quot;<br />&quot;Type&quot; = &quot;hd&quot;<br />&quot;Label&quot; = &quot;tmp&quot;<br />&quot;Filesystem&quot; = &quot;win95&quot;<br /><br />&#91;Drive G&#93;<br />&quot;Path&quot; = &quot;/&quot;<br />&quot;Type&quot; = &quot;hd&quot;<br />&quot;Label&quot; = &quot;root&quot;<br />&quot;Filesystem&quot; = &quot;win95&quot;<br /><br />&#91;wine&#93;<br />&quot;Windows&quot; = &quot;c&#58;\\windows&quot;<br />&quot;System&quot; = &quot;c&#58;\\windows\\system32\\&quot;<br />&quot;Temp&quot; = &quot;e&#58;\\&quot;<br />&quot;Path&quot; = &quot;c&#58;\\windows\\;c&#58;\\windows\\system32\\&quot;<br />&quot;GraphicsDriver&quot; = &quot;x11drv&quot;<br />&quot;ShellLinker&quot; = &quot;/opt/redfaction/bin/wineshelllink&quot;<br /><br />&#91;DllDefaults&#93;<br />&quot;DefaultLoadOrder&quot; = &quot;native, builtin, so&quot;<br /><br />&#91;DllOverrides&#93;<br />&quot;commdlg&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;comdlg32&quot; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;oleaut32&quot; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;ver&quot; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;version&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;shell&quot; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;shell32&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;shfolder&quot; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;shlwapi&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;lzexpand&quot; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;lz32&quot; &nbsp; &nbsp; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;comctl32&quot; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;commctrl&quot; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;advapi32&quot; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;crtdll&quot; &nbsp; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;mpr&quot; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;winspool.drv&quot; = &quot;builtin, native&quot;<br />&quot;d3d8&quot; &nbsp; &nbsp; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;d3drm&quot; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;ddraw&quot; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;dinput&quot; &nbsp; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;dinput8&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;dmusic&quot; &nbsp; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;dsound&quot; &nbsp; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;opengl32&quot; &nbsp; &nbsp; = &quot;builtin, native&quot;<br />&quot;msvcrt&quot; &nbsp; &nbsp; &nbsp; = &quot;native, builtin&quot;<br />&quot;rpcrt4&quot; &nbsp; &nbsp; &nbsp; = &quot;native, builtin&quot;<br />&quot;msvideo&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;msvfw32&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;mcicda.drv&quot; &nbsp; = &quot;builtin, native&quot;<br />&quot;mciseq.drv&quot; &nbsp; = &quot;builtin, native&quot;<br />&quot;mciwave.drv&quot; &nbsp;= &quot;builtin, native&quot;<br />&quot;mciavi.drv&quot; &nbsp; = &quot;native, builtin&quot;<br />&quot;mcianim.drv&quot; &nbsp;= &quot;native, builtin&quot;<br />&quot;msacm.drv&quot; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;msacm&quot; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;msacm32&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br />&quot;midimap.drv&quot; &nbsp;= &quot;builtin, native&quot;<br />&quot;wininet&quot; &nbsp; &nbsp; &nbsp;= &quot;builtin, native&quot;<br /><br />&#91;Version&#93;<br />&quot;Windows&quot; = &quot;win98&quot;<br /><br />&#91;x11drv&#93;<br />&quot;AllocSystemColors&quot; = &quot;100&quot;<br />&quot;PrivateColorMap&quot; = &quot;N&quot;<br />&quot;PerfectGraphics&quot; = &quot;N&quot;<br />&quot;Managed&quot; = &quot;Y&quot;<br />&quot;UseDGA&quot; = &quot;N&quot;<br />&quot;UseXShm&quot; = &quot;Y&quot;<br />&quot;DXGrab&quot; = &quot;Y&quot;<br />&quot;UseXVidMode&quot; = &quot;Y&quot;<br />&quot;DesktopDoubleBuffered&quot; = &quot;Y&quot;<br />&quot;TextCP&quot; = &quot;0&quot;<br /><br />&#91;d3dgl&#93;<br />&quot;AnisotropicTextureFiltering&quot; = &quot;N&quot;<br />&quot;VertexShaders&quot; = &quot;Y&quot;<br />&quot;ClipSpaceFix&quot; = &quot;Y&quot;<br /><br />&#91;fonts&#93;<br />;Read documentation/fonts before adding aliases<br />&quot;Resolution&quot; = &quot;96&quot;<br />&quot;Default&quot; = &quot;-adobe-times-&quot;<br /><br />&#91;FontPatterns&#93;<br />&quot;Pattern0&quot; = &quot;-adobe-times*&quot;<br />&quot;Pattern1&quot; = &quot;-adobe-helvetica*&quot;<br />&quot;Pattern2&quot; = &quot;-adobe-courier*&quot;<br />&quot;Pattern3&quot; = &quot;-misc-fixed*&quot;<br /><br />&#91;memory&#93;<br /><br />&#91;serialports&#93;<br />&quot;Com1&quot; = &quot;/dev/ttyS0&quot;<br />&quot;Com2&quot; = &quot;/dev/ttyS1&quot;<br />&quot;Com3&quot; = &quot;/dev/ttyS2&quot;<br />&quot;Com4&quot; = &quot;/dev/modem&quot;<br /><br />&#91;parallelports&#93;<br />&quot;Lpt1&quot; = &quot;/dev/lp0&quot;<br /><br />&#91;spooler&#93;<br />&quot;LPT1&#58;&quot; = &quot;|lpr&quot;<br />&quot;LPT2&#58;&quot; = &quot;|gs -sDEVICE=bj200 -sOutputFile=/tmp/fred -q -&quot;<br />&quot;LPT3&#58;&quot; = &quot;/dev/lp3&quot;<br /><br />&#91;ports&#93;<br /><br />&#91;spy&#93;<br />&quot;Exclude&quot; = &quot;WM_SIZE;WM_TIMER;&quot;<br /><br />&#91;registry&#93;<br />&quot;LoadGlobalRegistryFiles&quot; = &quot;n&quot;<br />&quot;LoadHomeRegistryFiles&quot; = &quot;Y&quot;<br />&quot;LoadWindowsRegistryFiles&quot; = &quot;n&quot;<br />&quot;WritetoHomeRegistryFiles&quot; = &quot;Y&quot;<br />&quot;SaveOnlyUpdatedKeys&quot; = &quot;Y&quot;<br /><br />&#91;Tweak.Layout&#93;<br />&quot;WineLook&quot; = &quot;Win98&quot;<br /><br />&#91;Console&#93;<br />&quot;Drivers&quot; = &quot;xterm&quot;<br />&quot;XtermProg&quot; = &quot;konsole&quot;<br /><br />&#91;Clipboard&#93;<br />&quot;ClearAllSelections&quot; = &quot;0&quot;<br />&quot;PersistentSelection&quot; = &quot;1&quot;<br /><br />&#91;afmdirs&#93;<br /><br />&#91;WinMM&#93;<br />&quot;Drivers&quot; = &quot;wineoss.drv&quot;<br />&quot;WaveMapper&quot; = &quot;msacm.drv&quot;<br />&quot;MidiMapper&quot; = &quot;midimap.drv&quot;<br /><br />&#91;wineoss&#93;<br />&quot;UseMMap&quot; = &quot;N&quot;<br />&quot;FullDuplex&quot; = &quot;N&quot;<br /><br /></div></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

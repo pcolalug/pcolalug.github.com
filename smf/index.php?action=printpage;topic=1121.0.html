@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Here's the problem</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: bhoff on November 02, 2003, 02:26:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Here's the problem</b><br />
+					Post by: <b>bhoff</b> on <b>November 02, 2003, 02:26:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">We are building a firewall/dhcp server for our new sponsor.<br />Charles and I have done most of the work.<br />I put the machine together and set up the dhcp side while Charles wrote the firewall script.<br />Here is the scenario.<br />One redhat 7.2 setup ip_forwarding on, installed iptables and tcp_wrappers.<br />Have three nic cards one for the cox in, One for the internet room hub and one for the office.<br />Problem set up subnets for the second and third cards to handle the two hubs. but everytime it starts up it is using dhcp-client to get info from cox it &nbsp;crashes the dhcp server stating that I have to write a declaration for the subnet that it reads from the first nic. Called in jesse and he rewrote the startup script for dhcpserver to make two calls one for dhcpd eth1 and dhcpd eth2 this worked initially we thought but it is not after hooking up both hubs and checking the server I was only getting servered to one hub it was not running both instances. Any thought on this would be helpful.<br />Brett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Here's the problem</b><br />
+					Post by: <b>danc</b> on <b>November 02, 2003, 03:19:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Brett,<br /><br />I don't know the answer to &nbsp;your situation, but have a suggestion: &nbsp;Have you thought about using Smoothwall? &nbsp;It's a firewall distro (about a 30Mb ISO) that I tried once and it is great. &nbsp;Includes DHCP, Snort, Squid, logging, administered remotely with a Webmin-like interface, ssh'able. &nbsp;Uses a &quot;hardened&quot; 2.4.22 kernel. &nbsp;It really is extremely nice, easy to install, and will run on minimal hardware.<br /><br />http://www.smoothwall.org<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Here's the problem</b><br />
+					Post by: <b>steve</b> on <b>November 02, 2003, 09:19:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I echo what danc said. Except, use IPCOP (http://www.ipcop.org) They have a friendlier development staff. IMHO<br /><br />Anyway, I believe both of them can handle 3 NICs and I know they do DHCP. <br /><br />I just can't see re-inventing the wheel when there are already Open Source solutions out there. IPCOP and Smoothwall, both take about 15 minutes to get installed, configured, and up and running. I'm sure you've spent at least 3 times that troubleshooting your current situation.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Here's the problem</b><br />
+					Post by: <b>steve</b> on <b>November 04, 2003, 10:41:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Bhoff,<br /><br />Any progress on this? What did you end up doing?<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Going to use Smoothwall</b><br />
+					Post by: <b>bhoff</b> on <b>November 04, 2003, 12:25:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am at New Visions downloading it now as we speak!<br />I have already downloaded all the manuals.<br />and will read over them tonight. And hopefully have him up tomorrow.<br />Brett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Here's the problem</b><br />
+					Post by: <b>danc</b> on <b>December 09, 2003, 07:13:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So....... did you get NVT running on Smoothwall...., or some other solution?<br /><br />One reason I ask is that I just tonight put together a new router, using Smoothwall 2.0 (Final) which was just released yesterday. &nbsp;I used a Pentium-133, 64Mb ram, 600Mb HD, cheapo video card, and two PCI NIC's. &nbsp;The Smoothwall install is very easy, and it works a dream. &nbsp;The web-admin interface is extremely nice, and now includes traffic graphs for both ethernet interfaces. &nbsp;Just amazing how nice this is...<br /><br />For the full list of features, and to download the (34Mb) ISO, just go to: &nbsp;http://www.smoothwall.org<br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

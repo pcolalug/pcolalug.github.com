@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Moving Server from OpenBSD to Linux</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: rugmonster on October 03, 2006, 09:53:34 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Moving Server from OpenBSD to Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>October 03, 2006, 09:53:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Good morning, all. I&#039;ve got an OpenBSD file/mail server at home that I&#039;m thinking about moving to Linux. Last night, I realized just how slow disk i/o on it was compared to my Linux desktop and the best I can come up with is the OS and the FFS filesystem. With a Athlon XP 2500+ and 512MB of memory, the thing should fly. When compared to my Linux box with the same model drive, I am getting about 1/4th the performance on disk I/O. I never got around to using OpenBSD for what I really wanted it for, so I think it&#039;s time to move back to Linux.<br /><br />In doing the move, I want to make sure I keep all of my mail that is stored in my Cyrus IMAPD and the user information in the SASL database. What would be the best way to back this up so that I can transfer it in once I have the new system install up and running.<br /><br />Finally, what distro do you guys think I should go with? I&#039;ve run a bunch of them over the years and keep coming back to Debian, but I want to get as much bang for my buck as possible. Since it is an Athlon XP system, I would like to get away from i386 binaries, but don&#039;t want to go through the headache of Gentoo, though it&#039;s not completely out of the question. I&#039;m not a huge fan of Fedora or any of the other RPM based distros, but once again, still a possibility. I&#039;m mainly looking for something that will be fast, relatively easy to manage, and not be crippled without having X installed.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Moving Server from OpenBSD to Linux</b><br />
+					Post by: <b>danc</b> on <b>October 03, 2006, 06:11:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3019.msg14829.html#msg14829">Quote from: rugmonster on October 03, 2006, 09:53:34 am</a></div><div class="quote">Finally, what distro do you guys think I should go with? I&#039;ve run a bunch of them over the years and keep coming back to Debian, but I want to get as much bang for my buck as possible. Since it is an Athlon XP system, I would like to get away from i386 binaries, but don&#039;t want to go through the headache of Gentoo, though it&#039;s not completely out of the question. I&#039;m not a huge fan of Fedora or any of the other RPM based distros, but once again, still a possibility. I&#039;m mainly looking for something that will be fast, relatively easy to manage, and not be crippled without having X installed.</div><br /><br />Sounds like the perfect fit for Slackware.<br /><br />Slackware.<br /><br />Slackware.<br /><br />(version 11.0 came out today...)<br /><br />&nbsp;;)<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Moving Server from OpenBSD to Linux</b><br />
+					Post by: <b>dpeach</b> on <b>October 03, 2006, 06:46:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Rug, I have to agree, it sounds like you are describing Slackware. I feel Slackware is very much in the Gentoo line of simplicity but without the headaches. You don&#039;t have to install the kitchen sink just to get stuff to work. And, it works great without X. As far as 64 Bit, I have no knowledge. Some of use are still using sub 2 Ghz machines. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Moving Server from OpenBSD to Linux</b><br />
+					Post by: <b>Brent</b> on <b>October 04, 2006, 08:26:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">My advice?&nbsp; I&#039;d stick with debian if I were you.<br /><br />My reasoning behind this, is you have the most experience with debian.&nbsp; Just about every single binary based distribution is running i386, including slackware, therefore you&#039;re not really gaining anything speed wise by choosing one over the other.&nbsp; Plus, you can do a debian minimal install @ around 128mb of hd space, if that is a concern.<br /><br />However, If you really want to just try something new, go with slackware.&nbsp; It&#039;s still my 2nd favorate distro out there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Moving Server from OpenBSD to Linux</b><br />
+					Post by: <b>danc</b> on <b>October 04, 2006, 09:33:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3019.msg14839.html#msg14839">Quote from: Brent on October 04, 2006, 08:26:36 am</a></div><div class="quote">My advice?&nbsp; I&#039;d stick with debian if I were you.<br /><br />My reasoning behind this, is you have the most experience with debian.&nbsp; Just about every single binary based distribution is running i386, including slackware, therefore you&#039;re not really gaining anything speed wise by choosing one over the other.&nbsp; Plus, you can do a debian minimal install @ around 128mb of hd space, if that is a concern.<br /><br />However, If you really want to just try something new, go with slackware.&nbsp; It&#039;s still my 2nd favorate distro out there.<br /></div><br /><br />Ummmm....&nbsp; Slackware packages are all optimized for 486, and as far as I know nearly all other distros are compiled for 686.&nbsp; Now, Debian (at least the stable branch) may be compiled for 386, but I don&#039;t think ANY other distro is, and certainly Slackware is not.&nbsp; Just want to keep things accurate...&nbsp; &nbsp;;)<br /><br />Besides, I don&#039;t think that factor has much impact on system performance at all (probably not even noticeable).<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Moving Server from OpenBSD to Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>October 04, 2006, 04:55:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually, Ubuntu and most Debian derivatives are still i386. Fedora, SUSE and Mandriva are either i586 or i686 binaries. Slackware and its derivatives are the only ones I know of that are using i486. From what I hear, i486 actually runs slower than i386 optimized binaries.<br /><br />Anyhow, I&#039;ve decided to go with Ubuntu all around. It works well on my laptop, has newer packages and has a consistent release path. The server install of it is very minimal, but still provides the Debian style default config files that require very little tweaking. Additionally, apt is my favorite package manager and I just can&#039;t see myself using something else.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Moving Server from OpenBSD to Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>October 07, 2006, 05:44:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did it! I moved the server to Ubuntu and ended up setting up LVM for the drives. I used the alternate install disc and things went swimmingly. I gained 40GB of space for my file storage that would have otherwise been wasted on my homedir or something from the second hard drive in the system in a logical volume with the 200GB drive I had used for file storage. The system feels snappier. Also, I had very little to custom configure. I still need to get Postfix and Cyrus going, but that isn&#039;t a huge priority. Also, the base system was very small, but software installation was a breeze thanks to apt. One note, not even SSHD is installed with the initial base install. There are no listening services by default.<br /><br />I also went ahead and reloaded my desktop. I&#039;m running Ubuntu 6.06.1 AMD64 and loving it. When I first heard about the way 32bit binaries are handled in a chroot environment, I was a little turned off. Thankfully, Debian and Ubuntu provide utilities to set the environment up for you and a seperate apt environment making the use of 32bit apps mostly pain free. I can say that I am very pleased with the setup and in a couple of hours, have a fully functional system with a 32bit Firefox and plugins as well as Mplayer with w32codecs. I&#039;m very happy with it and look forward to the official release of Ubuntu 6.10 in the next few weeks.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

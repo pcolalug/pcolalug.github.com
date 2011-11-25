@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - starting an app at startx</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Desktops => Topic started by: Brent on March 02, 2006, 04:22:05 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>starting an app at startx</b><br />
+					Post by: <b>Brent</b> on <b>March 02, 2006, 04:22:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok guys, I&#039;ve gotten peeved with fluxbox here lately, so I decided to give xfce a try.&nbsp; I find it to be very polished for such a lightwieght window manager, but one thing I didn&#039;t like was the stupid taskbar and panel.&nbsp; I like my taskbar and menu to be combined on one bar, and for some reason you can&#039;t do that in xfce.&nbsp; So I set the taskbar and panel non-executible, and that got rid of them.<br /><br />However, I want to start a program called fbpanel at startx, but I don&#039;t know how to do this.&nbsp; I guess I added it to the wrong place in xinitrc cause that didn&#039;t work, and now, i&#039;m stumped.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: starting an app at startx</b><br />
+					Post by: <b>Brent</b> on <b>March 02, 2006, 05:19:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I figured it out, just had to add it to the start of .xinitrc and make sure it has a &amp;, because the rest of xinitrc wasn&#039;t getting executed, lol.<br /><br />Also aterm -tr -sh 50 -fg grey +sb make a *nice* lil term&nbsp; ;)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

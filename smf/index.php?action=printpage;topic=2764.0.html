@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Yet another script </title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: danc on January 10, 2006, 09:28:14 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another script </b><br />
+					Post by: <b>danc</b> on <b>January 10, 2006, 09:28:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here&#039;s another script that I thought I&#039;d share with ya, as I find it extremely useful and a big time saver once in a while...<br /><br />Have you ever copied a large directory tree (with lots of files in lots of directories) from a CDROM to your hard disk?&nbsp; Or perhaps from a FAT32 partition (which doesn&#039;t store permissions)?&nbsp; What you end up with is a bunch of files that may not have the permissions you&#039;d like them to have.&nbsp; For example, they may be all &quot;read-only&quot; if they came from a CD, or may all be &quot;executable&quot; and &quot;world-readable&quot; if they came from a Windows partition (even if they should NOT be).&nbsp; Depending on how many directories you have, it could take a LONG time to manually change to each directory and change the file permissions.<br /><br />The script below will correct that, and set all the directories to have permissions of 755.&nbsp; This will allow everyone to enter that directory (dir&#039;s must be &quot;executable&quot; to be able to enter them).&nbsp; Also, the script will change all the files in all the directories to have a permission of 644.&nbsp; This makes them readable and writable by the owner, and readable by all others.&nbsp; You could adjust these numbers in the script if you wanted to, but these are what most files should normally be (except for executable scripts and binaries).<br /><br />For those not fluent in file permission numbers, here is how they would look in a directory listing:<br />755&nbsp; =&nbsp; rwxr-xr-x<br />644&nbsp; =&nbsp; rw-r--r--<br /><br />OK, here&#039;s the actual script, which is pretty simple:<br /><br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />#<br /># Script to fix permissions on a directory/file tree<br /># All directories will be changed to 755, files to 644<br /><br />clear<br />echo<br />echo &quot;About to change permissions on directory tree...&quot;<br />echo &quot;Your current directory is:&quot;<br />pwd<br />echo &quot;All directories below the current one will be changed to 755,&quot;<br />echo &quot;and all files in those directories will be changed to 644.&quot;<br />echo &quot;Be sure you are where you want to be, before continuing!&quot;<br />read -p &quot;Press Return to begin, or Ctrl-C to abort...&quot;<br /><br />find . -type d -print0 | xargs -0 chmod 755<br />find . -type f -print0 | xargs -0 chmod 644<br /><br />echo &quot;All permissions fixed!&quot;<br /><br /># EOF<br /></div><br />You can see that it could be easily expanded to include things like changing ownership with &quot;chown&quot; and so forth.&nbsp; The &quot;print0&quot; and &quot;-0&quot; arguments make sure it doesn&#039;t choke on filenames with spaces in them, and the &quot;xargs&quot; command speeds things up greatly by not having to call &quot;chmod&quot; for each individual file.<br /><br />Feel free to use and modify this as you see fit.&nbsp; One word of caution, as you can see from the warning in the script -- be sure you are in the directory you want to be before unleashing it, as you could seriously mess up things in your home directory otherwise.&nbsp; I would never run this script as root...&nbsp; Hope it can save you some time with manipulating files!<br /><br />Dan<br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

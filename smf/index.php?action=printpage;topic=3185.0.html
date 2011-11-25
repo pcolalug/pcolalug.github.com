@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Ubuntu root and software install</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: linuxnewbie on June 19, 2007, 05:51:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ubuntu root and software install</b><br />
+					Post by: <b>linuxnewbie</b> on <b>June 19, 2007, 05:51:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hello<br />I have Ubuntu 7.1 installed and would like to install a firewall and maybe an anti virus.&nbsp; After reading some tutorials, I tired using the aptitude install firestarter command to install firestarter.&nbsp; The installation failed because I was not logged in as root.&nbsp; Can anyone tell me how to do this?&nbsp; I&#039;m also not too happy about having to go online to install a firewall, so I tired to download a copy on my Windows machine.&nbsp; I found the firestarter website, and when I clicked on the download link a tutorial web page opened up, but the download never started.&nbsp; Can you copy programs to a Linux drive and install them off-line? </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu root and software install</b><br />
+					Post by: <b>rugmonster</b> on <b>June 19, 2007, 09:45:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3185.msg15455.html#msg15455">Quote from: linuxnewbie on June 19, 2007, 05:51:02 pm</a></div><div class="quote">I have Ubuntu 7.1 installed...<br /></div><br />...not to be nit-picky, but that&#039;s 7.04; 7 for 2007 and 04 for April marking when the release was made official...<br /><br /><div class="quoteheader">Quote from: linuxnewbie</div><div class="quote">...and would like to install a firewall and maybe an anti virus.<br /></div><br />Antivirus is not really necessary unless you are wanting to scan files for Windows. There just aren&#039;t very many viruses out there for Linux and you kind of have to work hard to get one.<br /><br /><div class="quoteheader">Quote from: linuxnewbie</div><div class="quote">After reading some tutorials, I tired using the aptitude install firestarter command to install firestarter.&nbsp; The installation failed because I was not logged in as root.&nbsp; Can anyone tell me how to do this?<br /></div><br />First, let me introduce to you the Ubuntu 7.04 Official Documentation (https://help.ubuntu.com/). Next, let me introduce the Ubuntu Community Documentation (https://help.ubuntu.com/community/). Start at the first link and follow on with the second. I&#039;m not telling you to go RTFM at this point, but in the future, look here first.<br /><br />As for executing commands with &quot;root,&quot; or administrative permissions, Ubuntu opts for the sudo approach. The way it works is that the root user is disabled by default and the first user you created has the ability to &quot;sudo&quot; as root. If you are familiar with the runas command in Windows, then you are familiar with sudo, but the syntax is easier. So let&#039;s take your aptitude command. Here&#039;s what it would look like using sudo.<br /><br /><div class="codeheader">Code:</div><div class="code">$ sudo aptitude install firestarter<br />Password:<br /></div><br />You run the command and then you are prompted for a password. You put your password in here and then the command runs as root. If you are in Gnome, you will get a window that pops up asking you for your password and permission to run an application with administrative privileges. Same thing happens there, except it is the Gnome equivalent of sudo, gksudo.<br /><br /><div class="quoteheader">Quote from: linuxnewbie</div><div class="quote">I&#039;m also not too happy about having to go online to install a firewall, so I tired to download a copy on my Windows machine.&nbsp; I found the firestarter website, and when I clicked on the download link a tutorial web page opened up, but the download never started.&nbsp; Can you copy programs to a Linux drive and install them off-line? <br /></div><br />Well, I think you&#039;re being a bit paranoid here and as a security professional, I rarely say that. Like we said before, there are maybe one or two listening services, if any, on a default Ubuntu desktop install. You don&#039;t really <i>need</i> a firewall because a firewall&#039;s purpose is to block open ports to listening services. I&#039;m assuming that if you have more than one machine, you are at least behind a cable/dsl router, in which case, I really think you&#039;re being paranoid. Your box will not get owned in the time it takes you to download and install Firestarter through apt/aptitude/etc.<br /><br />If you feel you absolutely must have a firewall, you already have a firewall included with your system, called iptables. Firestarter is just a frontend for iptables, so if you want, you can go on your Windows machine and look up how to setup iptables (http://netfilter.org/).<br /><br />As for installing applications without using apt/aptitude/etc, Ubuntu, being a Debian derivative uses the .deb package format (http://en.wikipedia.org/wiki/Deb_%28file_format%29). If you obtain a particular package you want to install, you can do so with the dpkg command. Here&#039;s what the install command would look like:<br /><br /><div class="codeheader">Code:</div><div class="code">$ sudo dpkg -i example-pkg-0.1-i386.deb<br /></div><br />By using this method, you may run into what is lovingly referred to as &quot;dependency hell&quot; (http://en.wikipedia.org/wiki/Dependency_hell). Since most applications in Linux depend on shared libraries and other programs, it is more efficient to package up just the application and mark the other dependencies as such and leave it up to the user or the distribution to sort those dependencies out. Apt/aptitude/etc handle dependency checking and fulfillment automatically for you, but they all use dpkg to do the actual install and dpkg has no dependency fulfillment capabilities.<br /><br />There is always the option of installing an application from source, but you shouldn&#039;t need to do that unless a particular app you want isn&#039;t in an Ubuntu or third-party repository. If you find yourself there, you can seek the help of someone more experienced if reading the installation documentation isn&#039;t clear.<br /><br />To help you out, might I suggest you hook the system up to the network and get it online. Once you&#039;re online, get Automatix (http://getautomatix.com/). Follow the installation instructions (http://www.getautomatix.com/wiki/index.php?title=Installation#Installing_Automatix2_with_Apt) and start it up. From there, you will find Firestarter and ClamAV for your firewall and antivirus pleasure, along with many other great apps that don&#039;t come installed by default.<br /><br />I would also like to suggest some reading for you. Ubuntu for Non-Geeks, 2nd Edition (http://www.oreilly.com/catalog/9781593271527/) is a great read. It is available through O&#039;Reilly and I believe that means you qualify for the LUG discount. I think that will help you get a firm footing and serve as a starting point for further exploration.<br /><br />As you can see, I&#039;m not going to tell you to go away and RTFM, but I do encourage everyone I help to doing some research on their own. I&#039;m of the camp that believes if one finds the solution to a problem on their own, they will retain that information more than if someone gives it to them. With that said, we are all here to help where we can and we&#039;ll flex our mighty Google-fu if there is something we don&#039;t know. Best of luck and let us know if something doesn&#039;t make sense here or if something else comes up that stumps you.<br /><br />Cheers!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

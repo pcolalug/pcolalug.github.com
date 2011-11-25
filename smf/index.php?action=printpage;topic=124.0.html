@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - IDE Disk Optimizations</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: crowe on August 20, 2002, 05:45:21 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>crowe</b> on <b>August 20, 2002, 05:45:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, here's my first attempt at writing a Linux-oriented paper. &nbsp;Keep in mind that this also a first draft as well, and was written by me at about 2 am in the morning or so. &nbsp;And since it's a 5-page paper, I thought it &nbsp;was best to make an off-site link to it, instead of trying to post the entire thing here. :shock: But anyways, here's the link for it:<br /><br />http://members.cox.net/cfrowe/html/ide-paper.html</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>dpeach</b> on <b>August 20, 2002, 06:42:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I enjoyed the article. I will have to give this a try when I get an opportunity. I did have a question about <i>using_dma</i><br /><div class="quoteheader">Quote</div><div class="quote"> using_dma: This is another option that not all combinations of hardware will be able to utilize. But definatlely set this one if you can; this will increase the raw disk transfer rate by a rather drastic amount (often somewhere in the 15MB/s+ range). But I'll say it again -- your computer may hang after turning this on.</div><br />You say it may hang. Does that mean that once it does then I can hard reboot and get back into the system? Or am I completely hanged and have to get a new drive? <br /><br />I would suspect that since we are in a testing mode at that point, we have not altered any config file to make it permanent.<br /><br />You say that now you are getting 73.98 MB/sec, and that it is closer to the spec'ed speed. What is the spec transfer rate on that drive?<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Schweet!</b><br />
+					Post by: <b>rburt3</b> on <b>August 20, 2002, 07:03:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nice job! &nbsp;I can't wait to try this out later this week (*AFTER* a good backup, of course)!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>crowe</b> on <b>August 20, 2002, 07:28:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote"> I would suspect that since we are in a testing mode at that point, we have not altered any config file to make it permanent.</div><br /><br />Quite right. hdparm doesn't save it's configuration over restarts, so it would just require a reset after becoming hung, and then you'd know not to use that setting afterwards :D. No permanent damage should be done to the disk though. <br /><br /><br /><div class="quoteheader">Quote</div><div class="quote">You say that now you are getting 73.98 MB/sec, and that it is closer to the spec'ed speed. What is the spec transfer rate on that drive?</div><br /><br />In theory, it's possible to get 100MB/sec from my drive. &nbsp;But that's rather unrealistic I would think, especially if you take into account various things such as system and bus load, disk latency, seek time, RFI, &nbsp;and what have you.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>steve</b> on <b>August 21, 2002, 05:36:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">In the example it should -X69 (Upper case X)<br /><br />Other than that it looks good. However, I still can't get my ATA133 to go above 40MB/sec.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>rburt3</b> on <b>July 15, 2003, 09:09:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Using this to tweak my Gentoo (who'da thunk). I think the passage <br /><br /><div class="quoteheader">Quote from: from the article, crowe</div><div class="quote">But first, I'll try playing with some basic settings. Remember that 16-bit mode that the disk is still running in? Let's change that.<br /><br /><br /># hdparm -c1 /dev/hda</div><br />should read <br /><br /><div class="codeheader">Code:</div><div class="code"># hdparm -c3 /dev/hda</div><br />since you want to set 32-bit sync mode (not async, which -c1 does).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>crowe</b> on <b>July 15, 2003, 10:09:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote"><br /># hdparm -c1 /dev/hda[<br />should read <br /><br /><div class="codeheader">Code:</div><div class="code"># hdparm -c3 /dev/hda</div><br />since you want to set 32-bit sync mode (not async, which -c1 does).</div><br /><br />Well, since the only hardware I had to test my configuration on was my own, I demonstrated what worked for me. &nbsp;And -c3 would hang my controller for some reason, which is why I didn't include it.<br /><br />But if it works for you, more power to you.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>rburt3</b> on <b>July 16, 2003, 08:09:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sorry, I misspoke. In the article, it seems to indicate that the first thing you tried was setting 32-bit sync mode (-c3) with certain results, then you set 32-bit async (-c1) with better results. So, these changes would look like this:<br /><div class="quoteheader">Quote</div><div class="quote"><br />There are quite a few choices that aren't listed here; namely, utilizing things such as ATA/33/66/100 modes, etc. I'll explain how to set these options as well as those I've listed above already.<br /><br /><br />But first, I'll try playing with some basic settings. Remember that 16-bit mode that the disk is still running in? Let's change that.<br /><br /><br /><b># hdparm -c3 /dev/hda</b><br /><br /><br />/dev/hda:<br /><br />setting 32-bit IO_support flag to 3<br /><br />IO_support = 3 (32-bit w/sync)<br /><br /><br />Sounds good. Now I'll try running the benchmark again:<br /><br /><br />#hdparm -t /dev/hda<br /><br /><br />/dev/hda:<br /><br />Timing buffered disk reads: 64 MB in 12.64 seconds = 5.06 MB/sec<br /><br /><br /><br />Not all that glorious of a change, but it's a start. In fact, that's almost double of the first benchmark. But since this is a relatively new machine, I think I'll try setting it to 32-bit async mode.<br /><br /><br /># hdparm -c1 /dev/hda<br /><br />(...)<br /></div><br /><br />See? in the first go, the hdparm output says<br /><div class="codeheader">Code:</div><div class="code"><br />setting 32-bit IO_support flag to 3<br /><br />IO_support = 3 &#40;32-bit w/sync&#41;<br /></div><br /><br />but the command right before that in the current version of the article is for setting 32-bit async.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>crowe</b> on <b>July 16, 2003, 11:04:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ah, that's a typo. &nbsp;I'll fix it.<br /><br />I also misspoke -- Both the async and sync modes work with my machine. &nbsp;I didn't stop and go back to re-read the article before I posted that; &nbsp;I was thinking of the -P option, which was the one that didn't work for me (and thus, didn't get included in the article). &nbsp;Oops! :oops:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>rburt3</b> on <b>July 16, 2003, 03:29:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">-P doesn't work for my ATA66 Maxtor, either. I had to go into the bios to set it. BTW, wow, what a difference between ATA100 and 66! After playing with optimizations and benchmarks for about 2.5 hours last night, I maxed at an average -t output of about 16.98 Mb/s. :roll:. My IBM Desktar ATA 100 gets close to 80!<br /><br />Oh, another handy switch I found (read your man pages, for those following along) is <div class="codeheader">Code:</div><div class="code">hdparm -I /dev/hd*</div>. This queries the drive and shows you what it supports.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>rugmonster</b> on <b>July 16, 2003, 04:56:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm thinking that maybe it is due to my PCI IDE controller, but I'm only able to get 51.20 MB/sec at the most on my ATA100 drive. Oh well, I'll hopefully be purchasing a new motherboard and stuff soon and it will have onboard ide.<br /><br />Also, I found this typo:<br /><br /><div class="quoteheader">Quote from: hdparm paper</div><div class="quote">This time, it took a dive in performance. But now that I've gotten a pretty good idea as to how to set hdparm options, as well as the knowledge of what's inside my computer, I'll try making an optimization string for my specific system:<br /><br /><br /># hdparm -c1 -m0 -d1 -<b>x</b>69 -S240 /dev/hda</div><br /><br />That should be -X69. You have it right further down, but it sort of messed me up at first. Don't worry, it just pops up with the help statement. Nothing tragic.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>crowe</b> on <b>July 16, 2003, 05:16:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote"><br />That should be -X69. You have it right further down, but it sort of messed me up at first. Don't worry, it just pops up with the help statement. Nothing tragic.</div><br /><br />Errrr, Are you sure about that? &nbsp;I can't seem find the typo in question.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>rugmonster</b> on <b>July 16, 2003, 05:33:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I swear I copied that straight from your site. It is right now. Did you change it? I know I'm not smoking crack anymore. I put that habit down long ago.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b></b> on <b>July 16, 2003, 07:38:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">the cached page in my browser said it was lower-case :D <br /><br />/lance<br /><br />I did the same thing with the cut and past, but I only gained 4.2 m/bs</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>rburt3</b> on <b>July 16, 2003, 09:02:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Shoddy ribbon cable perhaps? -X et al can't do anything about that.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>crowe</b> on <b>July 16, 2003, 11:46:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">I swear I copied that straight from your site. It is right now. Did you change it? I know I'm not smoking crack anymore. I put that habit down long ago.</div><br /><br />And I swear I don't remember changing it.. But apparently I must have!<br /><br />My mind must be going in my old age.. :?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>crowe</b> on <b>March 12, 2005, 09:30:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I can't believe I didn't catch this earlier. &nbsp;The link for the article works again -- not that it's of much use anymore, as most distros now seem to include optimizations by default.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Disk Optimizations</b><br />
+					Post by: <b>crowe</b> on <b>September 25, 2005, 09:12:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">v0.6 released. &nbsp;Most notable change is that it's now under the Creative Commons (http://www.creativecommons.org/) license.<br /><br />This will most likely be the last release, unless anyone has any contributions or suggestions to add.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

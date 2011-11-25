@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Linux Firewalls</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Other Misc => Topic started by: bhoff on June 28, 2002, 07:06:51 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linux Firewalls</b><br />
+					Post by: <b>bhoff</b> on <b>June 28, 2002, 07:06:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am presently using a modified Frazierwall 3.5. I have every thing but one port open which is the lastest version of ssh. that forwards to my play around machine. I was wondering what everybody else is using?<br />I know that we played around with firestarter for Michael Virion which I have been meaning to get back with....Sorry Michael. Linux is really nice for firewall applications. I use an old 486 with 16meg ram and no harddrive boot from floppy it has mini httpd server/dhcp server/firewall/dns all in one and if the power ever goes it just boot's right up no problems. and has a nice web interface to manage it.<br />Brett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewalls</b><br />
+					Post by: <b>steve</b> on <b>June 29, 2002, 06:04:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm currently using IPCop (http://www.ipcop.org/cgi-bin/twiki/view/IPCop/WebHome) at home and two of our three firewalls at work are using it. The third firewall is a Cisco Pix Firewall.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linux Firewalls</b><br />
+					Post by: <b>erc</b> on <b>August 01, 2002, 05:10:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmmm...I just installed RedHat 7.2 on a box, turned off almost everything on the box, installed passthrough code (you connect to port XXX on the firewall, you get tunnled through to somewhere else inside the firewall), and tweaked /etc/sysconfig/ipchains. &nbsp;Oh, and I turned on transparent proxy for Squid and added:<br /><br />-A input -s 0/0 -d 192.168.201.0/24 80 -p tcp -j ACCEPT<br />-A input -j REDIRECT 3128 -p tcp -s 0/0 -d 0.0.0.0/0 80<br /><br />to the ipchains file. (Our local network is 192.168.201.XXX)<br /><br />What this does is to accept any connections coming from the local network on port 80 that is directed to the firewall box (actually, it's a little broader, but for the purposes of this post it'll do). &nbsp;If the connection is meant for anyone else, it redirects the connection to port 3128, which just happens to be where Squid is running.<br /><br />This allows me to selectively block outbound connections to things like doubleclick.net, which helps with popup ads ;) &nbsp;It also allows me to do this without having to mess with anyone's browser or other software taht connects out on port 80.<br /><br />I'm working on an Escapade-based front-end to the ipchains and squid stuff, so that I can selectively block inbound or outbound connections, or add hosts to Squid to refuse connections to.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

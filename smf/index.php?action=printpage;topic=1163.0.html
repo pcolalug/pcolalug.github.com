@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Freebsd Networking troubles</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: Brent on November 17, 2003, 12:59:18 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Freebsd Networking troubles</b><br />
+					Post by: <b>Brent</b> on <b>November 17, 2003, 12:59:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys,<br /><br />I did a little research and found that freebsd can be installed via ftp using two floppies (very nifty). &nbsp;However, I'm having some trouble setting up the networking. &nbsp;I use all the values I use for &nbsp;slack but it says something like &quot;timeout cannot reset vx tx&quot; or something like that. &nbsp;<br /><br />I know my NIC card works ( Lite-On Communications Inc LNE100TX (rev 20)). &nbsp;Its supported via the tulip driver in linux. &nbsp;(freebsd may lack this but I doubt it) &nbsp;More likely I think it could be my Bellsouth DSL and this wirespeed modem. &nbsp; Anyone have any ideas?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>sandspur</b> on <b>November 17, 2003, 07:59:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey Brent---<br /><br />I'm not familiar with FreeBSD so I'm of no help there. &nbsp;About the BellSouth DSL service and the WireSpeed modem --- I'm using RH9 and everything works fine.<br /><br />Chuck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Freebsd Networking troubles</b><br />
+					Post by: <b>rugmonster</b> on <b>November 17, 2003, 10:49:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Being that you are using DSL, you probably need a PPPoE dialer for the session to start. You won't get far without that since it does a PPP session (remember dial-up) over Ethernet, hence PPPoE. You probably don't have one included with your installer.<br /><br />That doesn't mean you can't find a home brew installer that has a PPPoE dialer included to do your network install. If I remember correctly, FreeBSD has a mini install CD and it might have one included.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Freebsd Networking</b><br />
+					Post by: <b>Brent</b> on <b>November 17, 2003, 01:33:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It turns out that the problems I've been having with my NIC are due to the FBSD driver. &nbsp;The linux driver works fine.<br /><br />Something about the FBSD driver adding a delay and resetting the I/O.<br /><br />I guess I'll be with slack 9.0 for a little while...which is not a terrible thing</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Backup </title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: bigtoss03 on January 10, 2007, 11:57:29 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Backup </b><br />
+					Post by: <b>bigtoss03</b> on <b>January 10, 2007, 11:57:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am trying to setup my server to do backups automatically using the crontab command? Is this a good idea or does anyone have a better suggestion? The goal is for it to do 3 weekly incremental backups and 1 full backup at the end of the month.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Backup </b><br />
+					Post by: <b>rugmonster</b> on <b>January 10, 2007, 12:31:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I use dar and bzSarab for system backups. dar is the actual backup utility and bzSarab is a script that works with dar to do rotating backups, like you are wanting. Running the backup jobs through a crontab entry is typically how it&#039;s done. If you run into the problem of files being altered during the backup, you will want to look into LVM and filesystem snapshots. If you are not using LVM already, then you would have to at least make room for a new partition that would be setup for LVM. If you are interested, there is a howto out on the web.<br /><br />As a side note, I keep my media storage and home directories backed up to an external drive using rsync. It works very well for me and should I need to restore something, I only have to copy the files back over.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Backup </b><br />
+					Post by: <b>hitechwizard</b> on <b>January 13, 2007, 12:09:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you are in need of automated remote backup, my company (Hitechwholesale.com) provides a service that can make snapshots of your server as often as every hour. Using the web based restore, it makes for a great &quot;undelete&quot; on you network drives. Depending on your space needs it can be very affordable and comforting to know that should something catastrophic happen to the building the server is in, your data is stored safely at the remote location. Another advantage over tapes is you don&#039;t have to remember to change the tape, or worse, find out your tape has gone bad during a restore.<br /><br />Send me a PM if you are interested in this service.<br /><br />Jesse</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

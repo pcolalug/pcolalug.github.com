@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Ruby on Rails</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: rugmonster on January 21, 2005, 02:07:34 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ruby on Rails</b><br />
+					Post by: <b>rugmonster</b> on <b>January 21, 2005, 02:07:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have not been this impressed with a web framework in a long time. Check out this article (http://www.onlamp.com/pub/a/onlamp/2005/01/20/rails.html) from O'Reilly's ONLamp.com. I think I'm going to spend some time learning Ruby this weekend.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ruby on Rails</b><br />
+					Post by: <b>imnes</b> on <b>January 22, 2005, 09:58:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I looked at this a few weeks ago but haven't had a chance to actually try it hands on - but it sounds great. &nbsp;The only problem is Ruby is kind of obscure, dunno if I can talk my hosting provider into installing it :)<br /><br />NIck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ruby on Rails</b><br />
+					Post by: <b>rburt3</b> on <b>January 24, 2005, 12:58:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">imnes, doesn't <i>someone</i> you know have a nice big new (to them) Sun server machine they could give you an account on? ;)<br /><br />Looked at this too a while back. While I really like the O/R mapping stuff (Momma Burt's little boy hates writing SQL in his application code), I wonder how flexible it can be (say your objects don't map 1-1 to any table or set of joined tables?).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ruby on Rails</b><br />
+					Post by: <b>imnes</b> on <b>January 25, 2005, 09:07:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I went through some tutorial stuff last night, got my web server at home setup and working with rails. &nbsp;It's pretty slick. &nbsp;I still think Python is cleaner / easier than Ruby. &nbsp;Ruby has two syntax issues I personally don't like:<br /><br />1. &nbsp;Name prefixes to determine context. &nbsp;So you end up with variable names like @myvar @@myvar <br /><br />2. &nbsp;I don't like underscores, and a lot of the ruby API and add on libraries are full of function_names_with_underscores.<br /><br />But otherwise it's pretty nice :)<br /><br />I was thinking about how to write large web application in Rails as far as laying out the thing. &nbsp;I will be building a site that has a bulletin board, photo album, and file server area. &nbsp;They all should share common login, and have access to the users session, etc. &nbsp;The general concensus in the ruby rails IRC channel was to lay out each piece of the site as a seperate rails application. &nbsp;Bboard is one app, photo album is &nbsp;a seperate app.<br /><br />One of the issues I was thinking about is how can I get those to share common configuration files (like the database config) so it only has to be changed in one place?<br /><br />Also rails configures html layouts within the application, so I can't have a single site-wide template? &nbsp;<br /><br />I'll need to dig in deeper to figure this stuff out. &nbsp;But getting the server setup and a minimal app working with the tutorial took about an hour total. &nbsp;<br /><br />Anybody else playing with this stuff?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ruby on Rails</b><br />
+					Post by: <b>rugmonster</b> on <b>January 25, 2005, 10:36:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am working on learning Ruby now. I haven't played with Rails yet, but will get it going soon. Madwilli (http://www.pcolalug.org/phpBB2/profile.php?mode=viewprofile&amp;u=82) has his site, dataspill.org (http://dataspill.org), running on rails if you want to see an example. His email is listed on that site if you need any help. He's pretty busy, but I'm sure he would be willing to help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ruby on Rails</b><br />
+					Post by: <b>imnes</b> on <b>March 10, 2005, 08:32:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Got dissapointed with the shortcomings of ruby / rails pretty quickly. &nbsp;(Actually the problems are with the rails framework not ruby). &nbsp;Also I just don't really like ruby. &nbsp;Went back to playing with Python. &nbsp;<br /><br />I'm working on some mod_python stuff now and it's pretty easy and flexible. &nbsp;I suggest taking a look at it also.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

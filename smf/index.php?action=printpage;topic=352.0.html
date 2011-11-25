@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - odd memory problem with Gentoo...</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Martext on January 06, 2003, 01:42:29 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>odd memory problem with Gentoo...</b><br />
+					Post by: <b>Martext</b> on <b>January 06, 2003, 01:42:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have 512mb of DDR ram in my box, and I installed Gentoo... and now, even when I'm not running anything, its still using about 445 mb of my 512 mb, though, I can only track down about 120 mb to running programs (and yes, I'm looking at all processes, not just my own.) If someone could point out some way to remedy this, I'd be really greatful.<br /><br />Thanks,<br />Martext</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>odd memory problem with Gentoo...</b><br />
+					Post by: <b>rugmonster</b> on <b>January 06, 2003, 05:44:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just want to make sure of something. Below is an output of the command free on the laptop I'm on right now:<br /><br /><div class="codeheader">Code:</div><div class="code">daniel.givens@nb-321cs-864 ~ $ free<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;total &nbsp; &nbsp; &nbsp; used &nbsp; &nbsp; &nbsp; free &nbsp; &nbsp; shared &nbsp; &nbsp;buffers &nbsp; &nbsp; cached<br />Mem&#58; &nbsp; &nbsp; &nbsp; &nbsp;255428 &nbsp; &nbsp; 249648 &nbsp; &nbsp; &nbsp; 5780 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp;20428 &nbsp; &nbsp; &nbsp;96088<br />-/+ buffers/cache&#58; &nbsp; &nbsp; 133132 &nbsp; &nbsp; 122296<br />Swap&#58; &nbsp; &nbsp; &nbsp; 248968 &nbsp; &nbsp; &nbsp;26124 &nbsp; &nbsp; 222844<br /></div><br /><br />Okay, the -/+ buffers/cache is the line that is important. See where is says used and free, that is more accurate as to what is really being used. If you are seeing that 445 meg being used in that line, then you might be having issues. Another question for you. Reboot the system and before you load up X, run free. Also, check your memory usage over time. You may have a leaky program...<br /><br />Just a few ideas anyway.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>odd memory problem with Gentoo...</b><br />
+					Post by: <b>Martext</b> on <b>January 06, 2003, 09:00:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks rug... free shows something different than top/gnome system utils do... Thats odd. Some programs still run like I have no memory though (IE Doom Legacy)... Thanks though, I'll try and figure out my Doom problems.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

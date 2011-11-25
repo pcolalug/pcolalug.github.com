@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - USB Stick</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: LinkZero on January 01, 2006, 03:39:01 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>USB Stick</b><br />
+					Post by: <b>LinkZero</b> on <b>January 01, 2006, 03:39:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">First problem of the New Year.&nbsp; I have a 1GB USB stick, and it won&#039;t mount anymore.&nbsp; It used to mount without any problem at all.&nbsp; I had this problem on my old laptop, but it somehow fixed itself last time.&nbsp; What could be causing this?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: USB Stick</b><br />
+					Post by: <b>woodyharold</b> on <b>January 01, 2006, 03:57:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">&nbsp;I had a problem with a memory stick a few months ago and I don&#039;t recall what the fix was, but you could check the forum archives and maybe get a tip on which way to go.<br />Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: USB Stick</b><br />
+					Post by: <b>rugmonster</b> on <b>January 01, 2006, 06:46:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is it your automounter that isn&#039;t working?<br /><br />Try mounting it manually if you haven&#039;t already...<br /><div class="codeheader">Code:</div><div class="code"># mount -t vfat /dev/sr0 /mnt/&lt;your mount point&gt;</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: USB Stick</b><br />
+					Post by: <b>LinkZero</b> on <b>January 02, 2006, 11:12:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">My computer has never automounted my USB.&nbsp; I&#039;ve always had to do it manually.&nbsp; Although I just used the basic form: mount /dev/sda1 /mnt/usb.&nbsp; That used to work.&nbsp; I just tried your way, but that didn&#039;t work either.&nbsp; I paid attention to the output while Slackware was booting up, and it says: usb.c: USB device 3 (vend/prod 0x67b/0x2517) is not claimed by any active driver.&nbsp; Not exactly sure what to make of it since I&#039;ve never gotten this message before.&nbsp; The stick still works on my Windows partition without any problems.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: USB Stick</b><br />
+					Post by: <b>rugmonster</b> on <b>January 02, 2006, 01:25:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Try plugging it into another USB port. Also, you may want to upgrade your kernel if nothing else. Possibly see if there are any updates for hotplug</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

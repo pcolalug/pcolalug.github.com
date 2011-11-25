@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Printing Problem</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: bhoff on December 02, 2006, 06:05:48 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Printing Problem</b><br />
+					Post by: <b>bhoff</b> on <b>December 02, 2006, 06:05:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Running slack 10.2 with CUPS<br /><br />Printer HP Deskjey 3940 (USB)<br /><br />getting on the CUPS GUI<br /><b>Description: HP Deskjet 3940 usb<br />Location: slackbox<br />Printer State: idle, accepting jobs.<br />Device URI: usb:/dev/usb/lp0</b><br /><br />my /etc/cups/printers.conf<br /><b>Printer configuration file for CUPS v1.1.23<br /># Written by cupsd on Sat Dec&nbsp; 2 17:55:12 2006<br />&lt;DefaultPrinter Deskjet3940&gt;<br />Info HP Deskjet 3940 usb<br />Location slackbox<br />DeviceURI usb:/dev/usb/lp0<br />State Idle<br />Accepting Yes<br />JobSheets none none<br />QuotaPeriod 0<br />PageLimit 0<br />KLimit 0<br />&lt;/Printer&gt;</b><br /><br />all jobs are automatically aborted if I restart I get this error<br /><br /><b>client-error-not-possible</b><br /><br />Everything I have read states that this printer is fully supported in cups.<br />All of my other usb stuff uses uba when I connect this is the only thing that uses usb<br /><br />here is a clip from /var/log/messages<br /><b>Dec&nbsp; 2 17:18:14 home kernel: drivers/usb/class/usblp.c: usblp0: removed<br />Dec&nbsp; 2 17:18:14 home kernel: usb 1-1: new full speed USB device using uhci_hcd and address 7<br />Dec&nbsp; 2 17:18:14 home kernel: usb 1-1: configuration #1 chosen from 1 choice<br />Dec&nbsp; 2 17:18:14 home kernel: drivers/usb/class/usblp.c: usblp0: USB Bidirectional printer dev 7 if 0 alt 0 proto 2 vid 0x03F0 pid 0x7604<br />Dec&nbsp; 2 17:35:35 home -- MARK --<br />Dec&nbsp; 2 17:54:17 home kernel: usb 1-1: USB disconnect, address 7<br />Dec&nbsp; 2 17:54:17 home kernel: drivers/usb/class/usblp.c: usblp0: removed<br />Dec&nbsp; 2 17:54:18 home kernel: usb 1-1: new full speed USB device using uhci_hcd and address 8<br />Dec&nbsp; 2 17:54:18 home kernel: usb 1-1: configuration #1 chosen from 1 choice<br />Dec&nbsp; 2 17:54:18 home kernel: drivers/usb/class/usblp.c: usblp0: USB Bidirectional printer dev 8 if 0 alt 0 proto 2 vid 0x03F0 pid 0x7604</b><br /><br />Here is a clip from /var/log/cups/error_log<br /><b>I [02/Dec/2006:17:55:19 -0600] Job 29 queued on &#039;Deskjet3940&#039; by &#039;root&#039;.<br />I [02/Dec/2006:17:55:19 -0600] Started filter /usr/lib/cups/filter/pstops (PID 8922) for job 29.<br />I [02/Dec/2006:17:55:19 -0600] Started filter /usr/lib/cups/filter/foomatic-rip (PID 8923) for job 29.<br />I [02/Dec/2006:17:55:19 -0600] Started backend /usr/lib/cups/backend/usb (PID 8924) for job 29.<br />E [02/Dec/2006:17:55:20 -0600] PID 8923 stopped with status 3!<br />I [02/Dec/2006:17:55:20 -0600] Hint: Try setting the LogLevel to &quot;debug&quot; to find out more.<br />I [02/Dec/2006:17:55:21 -0600] Started &quot;/usr/lib/cups/cgi-bin/printers.cgi&quot; (pid=8929)<br />I [02/Dec/2006:18:02:06 -0600] Started &quot;/usr/lib/cups/cgi-bin/printers.cgi&quot; (pid=8950)<br />I [02/Dec/2006:18:02:11 -0600] Started &quot;/usr/lib/cups/cgi-bin/jobs.cgi&quot; (pid=8952)<br />E [02/Dec/2006:18:02:11 -0600] restart_job: job #29 cannot be restarted - no files!</b><br /><br />Hope that helps<br />Thanks<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Printing Problem</b><br />
+					Post by: <b>danc</b> on <b>December 02, 2006, 08:18:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hard to tell what driver you&#039;re using from that... <br /><br />I&#039;d suggest you go here:&nbsp; http://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_3940&nbsp; &nbsp;and grab the PPD file from that page.<br /><br />Then, read this thread of mine:&nbsp; http://www.pcolalug.org/smf/index.php?topic=2573.0&nbsp; &nbsp;for how to install/use the PPD file.&nbsp; Don&#039;t forget that you must restart CUPS after installing the PPD.<br /><br />Let us know if that fixes things...<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Printing Problem</b><br />
+					Post by: <b>bhoff</b> on <b>December 02, 2006, 09:30:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yea that is a great resource Dan. I had already been there and grabbed the ppd I needed.<br />HP-DeskJet_3940-hpijs.ppd<br />This seems not to be my problem but the fact that I do not see my printer when I am selecting the conection type USB.<br />Even thou lsusb is plainly seeing it.<br />root@home:/usr/share/cups/model# lsusb<br />Bus 002 Device 001: ID 0000:0000<br /><b>Bus 001 Device 009: ID 03f0:7604 Hewlett-Packard</b><br />Bus 001 Device 005: ID 1241:1603 Belkin<br />Bus 001 Device 004: ID 0458:0007 KYE Systems Corp. (Mouse Systems)<br />Bus 001 Device 003: ID 05dc:0080 Lexar Media, Inc. Jumpdrive Secure 64MB<br />Bus 001 Device 002: ID 0451:2046 Texas Instruments, Inc. TUSB2046 Hub<br />Bus 001 Device 001: ID 0000:0000<br /><br />This also what I am getting on my gui for cups now to.<br />HP DeskJet 3940 Foomatic/hpijs (recommended)&nbsp; &nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description: Colorprinter<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Location: Slackbox<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Printer State: idle, accepting jobs.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Device URI: usb://3940?serial=CN5CF1J040048H<br /><br />Notice the Device URI I think that is where the hicupps are at.<br /><br />Also this is a USB printer but I am using udev with 2.6 kernel<br /><br />Thansks</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

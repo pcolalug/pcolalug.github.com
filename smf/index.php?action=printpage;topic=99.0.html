@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - OO.org HTML editor</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: dpeach on August 15, 2002, 07:52:38 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OO.org HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>August 15, 2002, 07:52:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Does anyone know if there is a way to set the site root in the OpenOffice.org HTML editor?<br /><br />What I am trying to do is when I have<br />&lt;img src=&quot;/whatever.gif&quot;&gt;<br />I want the HTML editor to look to a specific site root directory to find that whatever.gif file. This way I can edit on one computer and have all the links work (within the site) before I upload to the web server.<br /><br />I believe Newton told me that Dreamweaver can do this. <br /><br />I really like a couple of other editors that I use (Arachnophilia, 1stPage), but would like to be able to try the OO.org editor. If it won't allow a site root, then there is no compelling reason for me to move from what I already use to them.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OO.org HTML editor</b><br />
+					Post by: <b>rburt3</b> on <b>August 16, 2002, 08:47:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Haven't used it myself, and I await with baited breath the day that Macromedia ports its products to Linux/BSD! &nbsp;My wife was looking for a WYSIWYG html editor for Linux too. &nbsp;Amaya and Bluefish didn't do it for here and I can't convince her that Quanta+ &nbsp;is really what she needs. &nbsp;What's the story on the other two editors you mentioned?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OO.org HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>August 16, 2002, 08:32:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Both Arachnophilia and 1stPage are Windows programs. HTML only, no WYSIWYG. But the OO.org HTML editor is WYSIWYG. I guess it works well. I have not actually done any editing with it. Ask your wife to try it and let us know what she thinks about it.<br /><br />Since I have not found a way to specify site root, then a WYSIWYG editor is pointless to me. I cannot see the graphics without putting a path to physical folder on the drive, then change it when I get ready to upload. I know that the standard is to just dump all the graphics into the same folder as the page. That is not organized enough for me. I like to have one graphic that I can use on any page of my site and point to one location. Instead of having that graphic repeated in every folder of the site. Not much in my life is organized, but my hard drives and web pages are.<br /><br />Most WYSIWYG editors output some awful code. Not that mine is the cleanest, but at least I can understand it.<br /><br />I will have to play around with OO.org's HTML editor and let you know what it's output is like.<br /><br />You mentioned Quanta+. I like that program very much. I don't use Linux to do much of my editing though. The other two programs I mentioned will not set site root either. But if I am coding in a text environment, then I don't need to see the graphic in-line like I would want to see in WYSIWYG.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OO.org HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>August 16, 2002, 09:10:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did a basic test with the HTML editor in OO.org. It came out OK. <br /><br />I did not throw anything really complicated at it. It was able to indent my page margins as I told it to. Though it did it differently than I would. It also made my strange font formatting do fine, with the exception I explain below. Hyperlinks were very simple as well as graphic insertion. Both handled as I would have expected. The graphic insertion put in a hard path to the graphic on my hard drive, which will not work when uploaded. But that is an argument for an earlier post.<br /><br />The one thing that it did not handle the way I would want is how it did the font manipulation. The formatting I did was with font type, size and color. Here is the output from their editor:<br />&lt;FONT COLOR=&quot;#000080&quot;&gt;&lt;FONT FACE=&quot;Comic Sans MS, cursive&quot;&gt;&lt;FONT SIZE=5 STYLE=&quot;font-size: 20pt&quot;&gt;Here is some more text&lt;/FONT&gt;&lt;/FONT&gt;&lt;/FONT&gt;<br /><br />Here is the way I would have put that:<br />&lt;FONT COLOR=&quot;#000080&quot; FACE=&quot;Comic Sans MS, cursive&quot; STYLE=&quot;font-size: 20pt&quot;&gt;Here is some more text&lt;/FONT&gt;<br /><br />Cleaner, less effort. But I guess when using a WYSIWYG editor you are eliminating the effort of typing in the code. And, if it bothered you, then cleaning it up afterwards would not be much of a problem.<br /><br />So there is my short review on their product. Have your wife give it a try and see what she thinks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OO.org HTML editor</b><br />
+					Post by: <b></b> on <b>August 17, 2002, 11:41:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">The one thing that it did not handle the way I would want is how it did the font manipulation. The formatting I did was with font type, size and color. Here is the output from their editor: <br />&lt;FONT COLOR=&quot;#000080&quot;&gt;&lt;FONT FACE=&quot;Comic Sans MS, cursive&quot;&gt;&lt;FONT SIZE=5 STYLE=&quot;font-size: 20pt&quot;&gt;Here is some more text&lt;/FONT&gt;&lt;/FONT&gt;&lt;/FONT&gt; <br /><br />Here is the way I would have put that: <br />&lt;FONT COLOR=&quot;#000080&quot; FACE=&quot;Comic Sans MS, cursive&quot; STYLE=&quot;font-size: 20pt&quot;&gt;Here is some more text&lt;/FONT&gt; <br /><br />Cleaner, less effort. But I guess when using a WYSIWYG editor you are eliminating the effort of typing in the code. And, if it bothered you, then cleaning it up afterwards would not be much of a problem.</div><br />Some HTML editors provide &quot;cleanup&quot; tools to combine tags like that. I've not tried OO's HTML editor, so I'm not sure what functionality it has. I'll have to play around with it (in my copious spare time).<br /><br />Also, the FONT tag is somewhat frowned upon these days; the &quot;right&quot; way to specify appearance is to use styles.<br /><br />Newt</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OO.org HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>August 18, 2002, 11:47:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">Also, the FONT tag is somewhat frowned upon these days; the &quot;right&quot; way to specify appearance is to use styles. </div><br /><br />Of course <b>I</b> would use styles. But for testing purposes this is what it gave me. <br /><br />I am having some problems editing a file that has some java script in it. Everything shows up fine in the HTML view, but not on the WYSIWYG view. I know nothing about java, it is just some script that I imported for news headlines onto my personal start page. <br /><br />I think if I built a page from scratch in it, it would be fine. I don't do anything complicated with my pages anyway, I think I wil just stick to plain HTML and let Newton tell me my mistakes and go from there.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OO.org HTML editor</b><br />
+					Post by: <b></b> on <b>August 18, 2002, 06:31:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">Of course I would use styles. </div><br />Of course! :) <br /><br />I played around with OO.org a little bit and it really looks like the HTML editing features are not really meant to be used to do web sites. I know that seems like a strange thing, but everything is so limited and support for basic things (like images relative to the document location rather than the absolute file path) is missing. It really seems like OO.org is supporting HTML only as a common file interchange format.<br /><br />The quest for a halfway decent, free WYSIWYG HTML editor/site management tool continues...<br /><br />Newton</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OO.org HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>August 18, 2002, 06:49:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">It really seems like OO.org is supporting HTML only as a common file interchange format. </div><br /><br />I kinda guessed that. Really the HTML editor is just the OO.org Writer with some HTML tools. Which is like trying to produce HTML pages with MS Word. It might look good, but the coding that makes it work is really junky.<br /><br />David</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

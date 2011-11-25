@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Showing just how much of a Newbie I am</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: Perquisitor on April 07, 2005, 08:06:16 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Showing just how much of a Newbie I am</b><br />
+					Post by: <b>Perquisitor</b> on <b>April 07, 2005, 08:06:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm having a bit of a problem here. &nbsp;I've been running Mandrake 10 successfully for the past few months, but am now faced with a problem that I am not able to solve on my own. &nbsp;In the past few days when I try to boot up Mandrake, (which normally was an automatic process) it now boots up in text, or command mode, and I have not been able to figure out how to get into graphics mode, or to get it to boot up in graphics mode as it used to do.....which unfortunately for this Newbie, has made it impossible for me to use Linux at all.<br /><br />I would greatly appreciate someone teaching me what most likely will be a rediculously easy fix for this problem.<br /><br />Steven</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Showing just how much of a Newbie I am</b><br />
+					Post by: <b>imnes</b> on <b>April 07, 2005, 09:32:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Log-in to the system with your normal username and password, and at the command prompt, type:<br /><br /><div class="codeheader">Code:</div><div class="code">startx</div><br /><br />And let us know what happens.<br /><br />Also, do you notice any Error messages durring startup?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Thanks</b><br />
+					Post by: <b>Perquisitor</b> on <b>April 07, 2005, 10:19:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nick,<br /><br />Thanks for the tip. &nbsp; It allowed me to get into my KDE graphics mode, &nbsp;but when I tried to close down the computer, it went back to text mode. &nbsp;I'd like to learn how to fix it so that it boots up, and works totally in the graphics mode. &nbsp;( showing my Windows background and Linux ignorance )<br /><br />Although the start-up went by the screen rather quickly, I did notice one failed item.... I wasn't able to read it entirely however before the boot-up continued and I lost it from the screen. &nbsp;It was something about imput device, and I thought I saw that it was USB. &nbsp;The only thing I have as a USB input device connected is my cordless keyboard and mouse. &nbsp;It never caused me any problem in the several months previously. &nbsp; <br /><br />This problem of booting up in text mode has only been going on the past few days. &nbsp;<br /><br />Steven</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Showing just how much of a Newbie I am</b><br />
+					Post by: <b>dpeach</b> on <b>April 07, 2005, 01:07:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Steven, Join the club! I am glad to hear I am not the only one having this problem. Mine started a little over a month ago. I am running Mandrake 10.1. For some reason it will not boot directly into X (the windowing environment). In my case it is caused by not loading my graphics card module (nvidia). I have tried all kinds of contortions to get it to load automatically. I have to manually log in, su to root, then modprobe the driver. Then switch back to my normal user and do &quot;startx&quot;.<br /><br />There may be a fix for you though. Go to the Mandrake Control Center. To get there go to the Launcher and choose System | Configuration | Configure your computer. Give it the root password when requested. Then on the screen that comes up go to Boot, then Autologin. Then tell it you want to automatically login and which user. That is one possible fix. If that does not do it, let us know and I can supply you with at least 2 other possibilities. (It depends on what the problem is and what caused this issue, neither of which we know the answers to).<br /><br />Until we get this figured out, to shut down your computer when you get out of X (KDE) just type &quot;halt&quot; (without the quotes) then hit enter and it will halt the machine for you.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Thank you</b><br />
+					Post by: <b>Perquisitor</b> on <b>April 07, 2005, 06:47:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">David,<br /><br />Thanks for the instructions for that possible solution. &nbsp;It worked. <br />I have no idea how it was changed from loging in with graphical mode, &nbsp;but when I went to the system configure, and then boot......... the box for loging in with graphical mode was not checked. &nbsp;<br />I checked the box to start in graphical, shut down the computer, rebooted and it worked perfectly.<br />Thanks again.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Showing just how much of a Newbie I am</b><br />
+					Post by: <b>dpeach</b> on <b>April 07, 2005, 08:41:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Whew! Got one right.<br /><br />Actually, while looking for that solution for you, I found that mine was not set up properly too. But I don't think it will matter since that module is not being loaded right. (I am working on moving away from this install, so I don't really care).<br /><br />Glad to help.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

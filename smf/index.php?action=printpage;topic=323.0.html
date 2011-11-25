@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Telnet / FTP slow to respond</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: imnes on December 20, 2002, 01:48:05 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Telnet / FTP slow to respond</b><br />
+					Post by: <b>imnes</b> on <b>December 20, 2002, 01:48:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, I've just setup my router / server with RedHat 8.0. &nbsp;I've gotten everything working, but ftp and telnet are very slow to respond. &nbsp;After some searching around online, the general thought is that it is related to a dns misconfiguration or reverse dns problems or something. &nbsp;I'm not that knowledgable about networking issues. &nbsp;Anyone care to point me in the right direction? &nbsp;<br /><br />My network is setup with my router as &nbsp;192.168.1.1, and my other machines pull dynamic IP addresses from it (in the range 192.168.1.100-253) via dhcp. &nbsp;One method I saw to <i>fix</i> the problem was to add the ip address and host name to /etc/hosts, that doesn't seem like an option for me since I'm using dynamic addresses though?<br /><br />Help...<br /><br />Nick[/i]</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Telnet / FTP slow to respond</b><br />
+					Post by: <b>dpeach</b> on <b>December 20, 2002, 08:04:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: imnes</div><div class="quote"> One method I saw to <i>fix</i> the problem was to add the ip address and host name to /etc/hosts, that doesn't seem like an option for me since I'm using dynamic addresses though?</div><br />But can't you add hosts 192.168.1 and that pick up all 192.168.1.(0-255). I kinda remember that you can set a whole range by telling it something like that (or it might be 192.168.1.x). That will still allow you to use DHCP without having to cycle through every million possible combinations, only 256 possible.<br /><br />Do you need to run DNS at all? I am running a router/DHCP/mail/ftp/ssh/HTTP server without DNS and everything works fine. I don't know why I would need to run DNS, therefore I did not configure it. Do you have a reason to run DNS?<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Telnet / FTP slow to respond</b><br />
+					Post by: <b>rugmonster</b> on <b>December 20, 2002, 02:38:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It isn't so much a matter of his dns server, it is the telnet and ftp services wanting to do a reverse dns lookup on his ip for logging. I'm sure there is a way for configure the daemons not to do a rDNS lookup, but adding the hosts to the /etc/hosts is the easiest solution. <br /><br />I just happened to be looking for DNS server daemons earlier and ran across &nbsp;this (http://www.thismetalsky.org/projects/dhcp_dns.html). It is a perl script for updating your dns server from info from DHCPD's lease log. I'm sure there are other solutions out there similar to this. The only thing I don't like is in order to use this particular utility, you have to run a BIND alternative called DJBDNS (http://cr.yp.to/djbdns.html). I haven't looked into packages or anything, so in order to install the dns server, you may have to compile from source. It seems to be very well documented, though. You may also be able to find a solution that works with BIND if you look hard enough, though.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

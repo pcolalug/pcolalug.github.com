@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - File system crash recovery</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on February 27, 2004, 10:40:59 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>File system crash recovery</b><br />
+					Post by: <b>bhoff</b> on <b>February 27, 2004, 10:40:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Presentation: File System recovery<br />By: Brett Hoff<br /><br /><br />The most common causes for Linux crashes are faults in the File-system.<br />These can be caused by a host of reasons. Below is a list of the most common ones.<br /><br />1. Power failure or brown-out<br />2. (BRB shutdown) Using the main power button to shut down the machine hence the Big Red Button BRB.<br />3. Corruption of the Superblock that sets the file-system up.<br />4. Error on part of the end user when modifying files.<br /><br />Tools that can help rebuild your file-system.<br /><br />1. Dumpe2fs &nbsp; --Prints the Superblock and file-system information.<br />2. E2fsck &nbsp; &nbsp; &nbsp; &nbsp;--Used to check Linux file-systems and make repairs. Also ext3.<br />3. Fsck &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;--tool used to check one or more Linux file-systems<br />4. Remount &nbsp; &nbsp; &nbsp;--command used to remount the hard drive to read/write vs. read only.<br /><br /><br />Here is the scenario:<br /><br />*** An error occurred during the file system check.<br />*** Dropping you to a shell; the system will reboot<br />*** when you leave the shell.<br />Give root password for maintenance<br />(or type Control-D for normal startup):<br /><br /><br />First things first lets give it that pesky root password.<br /># **************<br /><br />Now we are at a command prompt. Type the following.<br />Dumpe2fs /dev/hda2 (or whatever you used) | grep Superblock<br /><br />You should see a list of the Superblock addresses.<br /><br />Now with this information we will rebuild the file system needed information.<br />Now type in the following.<br />E2fsck -f -b new Superblock number /dev/hda2 (or whatever you used).<br /><br /><br /><br />It is usually a good idea at this point to run Fsck to tidy up the mess.<br />So we type in the following<br />Fsck &nbsp;-A -y<br /><br />The A forces Fsck to step thru the /etc/fstab checking all the file systems.<br />The y forces it to answer yes to all questions (there is pro's and con's here but -y is the preferred way)<br /><br />Before we reboot let's go ahead while we are down and run a badblocks check.<br />Type the following.<br />badblocks /dev/hda2 (or whatever you used)<br /><br /><br />That should fix you up. I have used this at least 15 times in the last month. And it has saved me tons of time. This is by no means an advanced recovery presentation, but should get you 80% of your problems.<br /><br />One side note: When you make the mistake I made and have to get into your hard drive to<br />Make changes you will have to remount into read/write mode.<br />Here is the command.<br /><br />mount /dev/hda2 (or whatever you used) -o remount -o rw<br /><br />Hope that helps you I know it has worked for me.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>File system crash recovery</b><br />
+					Post by: <b>Brent</b> on <b>February 28, 2004, 06:44:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">When I used to use the regular ext2 file system I used to have bad super blocks all the time &nbsp;from power failures and such.<br /><br />Then I discovered the wonders of a 'journaled file system'. &nbsp;I never looked back. &nbsp;the first one I tried was ext3 since it was ext2 compatible. &nbsp;Then I heard imnes comment on the fact that reisers is fault tolerant. &nbsp;So I currently use reisers. &nbsp;I like reisers a lil more than ext3 cause it seems a bit faster..<br /><br />I would seriously recomend linux users switch to a journaled file system. &nbsp;It has saved me a lot of headache.<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Me to.</b><br />
+					Post by: <b>bhoff</b> on <b>February 29, 2004, 09:05:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">But just for fact Journaled filesystems and even riser can fail.<br />And the basic steps can help turn disaster into salvation.<br /><br />And some older kernel's don's support riser and Journaled.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>File system crash recovery</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 10:43:58 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">What, pray tell, makes a journaled file system different from a standard ext2? &nbsp;I know it's built on ext2, but I don't know how.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>File system crash recovery</b><br />
+					Post by: <b>rburt3</b> on <b>October 14, 2004, 12:31:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">In a nutshell, a jounaled fs keeps a record of the oporations performed. Not quite like VCS, but it makes it easier to recover from crashes (the fs can &quot;replay&quot; its journal if something untoward happens).</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

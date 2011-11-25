@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - BSD cluster help</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: ctrlz on January 05, 2004, 11:23:18 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BSD cluster help</b><br />
+					Post by: <b>ctrlz</b> on <b>January 05, 2004, 11:23:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i recently aquired 2 ultimanet 810-i's (http://www.ultimatetechnology.com/products/prod_details.php4?pid=7). i'm running freebsd 5.1-RELEASE on one now, and my goal is to cluster them. i figure that i can get over 1ghz. (566x2). i assume that i will lose a little bit of CPU due to ethernet.<br /><br />i know we have a couple of people here that have setup linux clusters, but any BSD clusters? i've done a little research, but i'm kinda stumped.<br /><br />my main problem is one of hardware and setting it up properly. the boxes have two RJ-45's, one labeled LAN, and the other labeled CAT5. i'm using a crossover cable to connect the primary box from its CAT5 jack to the other box's LAN jack. after successfully booting the primary box, i try to network boot the second one. i must have a misconfigured connection or something because it can't find a gateway or DHCP server. although, if i plug the LAN jack directly in to my router, i can get a gateway. it uses etherboot to try to boot up and sleeps whilst trying to find a kernel image? i'm assuming etherboot uses tftp?<br /><br />i'll let you all know of my progress as time passes.<br /><br />thanks!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BSD cluster help</b><br />
+					Post by: <b>ctrlz</b> on <b>January 06, 2004, 12:55:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok. let me clarify my issue:<br /><br />is there a way to have one box setup with an OS, a 2nd box with just RAM, and to be able to cluster them? i'm totally new to the clustering scene. &nbsp; :? <br /><br />as far as i've read, linux clustering is better in a few ways.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BSD cluster help</b><br />
+					Post by: <b>rugmonster</b> on <b>January 06, 2004, 11:19:25 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Clusters don't work that way. What you are asking to do is basically expanding the motherboard across two systems to make the two act like an SMP system. Although this may be possible with other systems, those systems usually share some sort of backplane and have special hardware to work like this. <br /><br />Most clustering involves load balancing of some sort. This may be by a router forwarding requests to multiple servers running identical servers or by a master system setup with software to parce out bits of work to slave systems. You can run into latency though due to the ethernet since it is so much slower than a system bus. Also, don't expect to get such amazing results. You won't get the full potential of both processors due to the latency issue and the fact that a process can only run on one processor at a time. If a program is written to fork, mean split off a thread so that it can utilize multiple processes, then you will see a benefit. Otherwise, games and most desktop applications won't benefit much from it. If you have something like Apache that spawns multiple processes, then a cluster will benefit you, but for single processes, it won't help much. Same goes for multiprocessors.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BSD cluster help</b><br />
+					Post by: <b>ctrlz</b> on <b>January 06, 2004, 12:10:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">thanks for the insight on clusters rugmonster!<br /><br />so, i guess now my question is: how should i setup these 2 boxes? i am planning on using it as a local web server/database server, and also to do some setiathome processing.<br /><br />if i want to cluster, i'm assuming that i need to install an OS on both boxes, and then go from there?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BSD cluster help</b><br />
+					Post by: <b>ctrlz</b> on <b>January 06, 2004, 12:36:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok...after reading the <b>extremely</b> helpful articles over at gentoo.org, it looks like i'll be building an openmosix cluster running gentoo .<br /><br />i'm debating on whether to boot the slave computer up via PXE and store the necessary files in a /diskless directory on the main server, or just run an OS on both machines and cluster them that way. any thoughts?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>This I can help you on!</b><br />
+					Post by: <b>bhoff</b> on <b>January 06, 2004, 08:31:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you are going to go Openmosix I can probaly answer any questions you may run into. I also have an article in the forums on a basic how-to and and upcoming two part article in Linux Journal on this.<br />So just ask away and I will try to answer.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

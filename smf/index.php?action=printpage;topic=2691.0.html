@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Ubuntu for the Family</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: imnes on November 06, 2005, 10:40:00 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ubuntu for the Family</b><br />
+					Post by: <b>imnes</b> on <b>November 06, 2005, 10:40:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;ve had an ongoing project on the back burner for a few years now to move my mom&#039;s household to Linux.&nbsp; Here&#039;s the basics of what I&#039;m working with.<br /><br />She has one nice computer that doubles as her Office system, and the Family computer.&nbsp; There are several user accounts on that system (one for each family member, one for guests, and one strictly for Business stuff).&nbsp; The computer is running Windows XP.&nbsp; It runs QuickBooks Pro, Outlook, Mapping software, OpenOffice (made the switch from Microsoft Office about a year ago), some paint programs, various kids games.&nbsp; Also some peripherals (an Epson scanner, HP Photo Printer, Digital Video Camera, Digital Still Camera).&nbsp; The system is a P4 with 160gb HD, and a DVD Burner.<br /><br />Another office system is an HP Laptop running WIndows XP, Mapping Softare, and QuickBooks Pro.<br /><br />Another office system is an AMD Athlon XP running Windows XP, OpenOffice, QuickBooks Pro.&nbsp; It has a Lexmark All-In-One printer / scanner / copier / fax machine.<br /><br />The computers are all networked wirelessly, and share a multi-user install of QuickBooks (the data is stored on the first computer mentioned).<br /><br />Main priority with a Windows switch is getting QuickBooks working under Linux.&nbsp; This hasn&#039;t really been possible until a few weeks ago - with the new release of Crossover Office.&nbsp; I&#039;ve been testing it going back several versions, and QuickBooks Online Edition finally seems to work flawlessly on it.&nbsp; Moving to the Online Edition will save her licensing costs (instead of having to buy the multi-user standalone version), and has the added security of maintaining her data on their enterprise servers back them handling the data backups.&nbsp; (And she can access her books from any PC running Internet Explorer).<br /><br />I&#039;ve been petitioning QuickBooks to change their OnlineEdition product, it&#039;s tied to ActiveX making it Windows Online.&nbsp; Hoping they make a cross-browser friendly install that can just work natively from Linux, but for now Crossover is a viable option.<br /><br />(Incase any of you like QuickBooks and are interested, you can download a trial version of Crossover Office, and use the QuickBooks Online Edition free demo to try it&nbsp; all out yourself).<br /><br />On the Windows side I moved her to QuickBooks Online Edition a few months ago and she&#039;s been using it alongside her home edition, just to get her to learn the product and to find any problems with it before actually moving to it full time (after she closes out this years books).<br /><br />Another snag has been getting Linux to look and act pretty similar to Windows XP.&nbsp; With Ubuntu I&#039;ve been able to get pretty close.&nbsp; Configuring PAM (the authentication mechanism used by GDM), and GDM, I can get a login screen listing usernames and pictures, and users can click on their profile to login.&nbsp; I removed the password from certain accounts and those users are able to login without a password.&nbsp; Also Ubuntu is setup to authenticated any programs requiring root privileges through sudo.&nbsp; I setup admin users accounts by adding those users to the &#039;admin&#039; group, and telling sudo to let them access root commands without a password.&nbsp; <br /><br />This lets admin users be able to do things like configure a printer, or network settings, or run the add/remove programs tool without typing in any extra passwords.&nbsp; Also, standard non-admin accounts just get access denied trying to run those tools.&nbsp; This is pretty much the behavior I wanted.<br /><br />Also, Ubuntu ships with the gdmflexiserver.&nbsp; This allows multiple users to login to X and switch between sessions.&nbsp; Basically here&#039;s a typical scenario:<br /><br />I&#039;m working on the computer (my account has a password set).&nbsp; Walk away from the computer, screensaver comes on.&nbsp; Another users walks up to the PC and see&#039;s my screensaver.&nbsp; They get prompted for my password, but instead they can click on the &quot;Swich User&quot; button and go back to the login screen (leaving my session on and running).&nbsp; They can login to their account.&nbsp; This can go on for any number of users logged in concurrently.&nbsp; <br /><br />When I come back and goto the login screen, I click on my name and enter my password, it see&#039;s I&#039;m already logged in and takes my back to my running session.<br /><br />This is pretty close to the way XP handles it, and the users are familiar with.<br /><br />Screenshots and more explanation are available: http://www.cs.uwf.edu/~nsmith/screens/ubuntu-5.10/making-win-user-friendly/<br /><br />I have run into one problem though.&nbsp; When a user switches sessions with the &quot;Switch Users&quot; tool, their session locks before it gets switched (their screensaver runs and requires a password to stop).&nbsp; When they go back to their session they have to enter a password - the dialog box won&#039;t accept a blank password.&nbsp; So users whose accounts don&#039;t have a password are locked out (they can&#039;t proceed without entering a password, and since their password is blank, anything they enter is invalid).<br /><br />I&#039;ve been reading the documentation on gdmflexiserver and I think there&#039;s a command-line option to turn off the locking feature, so that&#039;s something I&#039;m working to change now.<br /><br />At this point my computer is setup with two accounts (shown in the screenshots at the link above).&nbsp; I&#039;m planning to take my system over to mom&#039;s house and put it on her network, and try to get her various devices working with the system.&nbsp; If I can get everything working, I&#039;ll get her applications installed on here and let her give Linux a try, see if it&#039;s going to be something they will use. <br /><br />If all goes well I&#039;ll tranfer all their systems over to Ubuntu (maybe SuSE but so far Ubuntu is working out best) around Christmas time.<br /><br />The other application important to her business is the Mapping software (she has to be able to accurately figure out distances between cities for billing customers).&nbsp; I&#039;m thinking she can get by with one of the online sites like MapQuest though so I may not have to get her old windows trip maker / mapping software running at all.<br /><br />As far as Email goes, I will need a way to import her Outlook emails and contacts into Evolution.&nbsp; There may be an option in Evolution to do this, I haven&#039;t really invested it yet.<br /><br />Another nice little applet I have installed (I think this is from SUSE) is resapplet.&nbsp; It lets users switch their X resolution from the taskbar to any defined resolution in their Xorg setup.&nbsp; The setting sticks too so each users can have their own resolution settings, and it&#039;s remembered when they switch users / log back in.&nbsp; (In the above screenshots I&#039;m running my account in 1600x1200, and the Guest account in 1024x768).<br /><br />The only real problem here I can see is possibly her peripherals not being linux compatible (especially the digital video camera), but with the 160gb hard drive I can have a dual-boot environment setup with XP just for dumping / editing and burning videos from it.<br /><br />One other project for the home network is to get some sort of lan-based storage solution setup.&nbsp; They have personal files, documents, music, pictures, videos and stuff going back 10 years (starting with a Pentium 166 running Windows 95).&nbsp; Each time she gets a new computer / upgrades I&#039;ve been shuffling this data around.&nbsp; The only reason it still exists is because we haven&#039;t had a hard drive failure.&nbsp; I want to get this data off the PCs and onto a central storage device that gets backed-up.&nbsp; Not sure if any commercial products exist for this that are resonably priced.&nbsp; Basically I want a standalone system with dual hard drives in it.&nbsp; It would have a Samba share.&nbsp; Whenever files are written to / modified on it they automatically get virus scanned / scrubbed.&nbsp; And maybe once a week the primary drive is mirrored to the secondary drive, but otherwise the second drive is kept parked and powered down.&nbsp; This wouldn&#039;t be difficult to do with linux so I might just roll my own solution on this.&nbsp; (Would just be storing data / files on this, the OS and applications would stay stored on each machine).<br /><br />Oh, and just for completeness I&#039;m setting up a Kubuntu install to try out the KDE side of things, but being more familiar with Gnome I&#039;m inclined to stick with it since I&#039;ll be supporting any questions / problems that come up.&nbsp; But we&#039;ll see.<br /><br />Well that&#039;s the scenario, if you guys have any tips / ideas / questions on any of this stuff just let me know.<br /><br />Nick<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Make bootable CDs from K3B?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on October 26, 2004, 08:39:07 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Make bootable CDs from K3B?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 26, 2004, 08:39:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I just made three Knoppix coasters since none of them are bootable, apparently. &nbsp;How do you make a CD bootable when burning in K3B? &nbsp;Apparently just burning the ISO isn't enough.<br /><br />EDIT: &nbsp;Oh, I did just have a thought. &nbsp;I just double-clicked on the ISO from within K3B and assumed it was intelligent enough to realize I wanted that disc burned, not a disc with that ISO, but haven't had a chance to check. &nbsp;Is there another way I'm supposed to burn ISO?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Make bootable CDs from K3B?</b><br />
+					Post by: <b>steve</b> on <b>October 26, 2004, 08:44:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Alright, I just made three Knoppix coasters since none of them are bootable, apparently. &nbsp;How do you make a CD bootable when burning in K3B? &nbsp;Apparently just burning the ISO isn't enough.<br /><br />EDIT: &nbsp;Oh, I did just have a thought. &nbsp;I just double-clicked on the ISO from within K3B and assumed it was intelligent enough to realize I wanted that disc burned, not a disc with that ISO, but haven't had a chance to check. &nbsp;Is there another way I'm supposed to burn ISO?</div><br /><br />In K3B, go to Tools (I think that's what it's called, Not on Linux right now) Under there select CD and then Burn from image.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Make bootable CDs from K3B?</b><br />
+					Post by: <b>rburt3</b> on <b>October 26, 2004, 10:19:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Also, if you're using KDE, you can right-click the .iso file, choose <i>Actions</i> from the service menu, then choose <i>Burn with K3B</i>.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Make bootable CDs from K3B?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 26, 2004, 10:58:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Interesting, but if you double-click on teh file from within K3B it only burns the image itself. &nbsp;Very, very interesting.<br /><br /><br />Hmm, if that's the way it works okay, I suppose I would've liked it coded a bit different but I won't complain given how well the program works. &nbsp;Now I've just got to see if I can upgrade cdrecord so I can start doing crazy stuff.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Make bootable CDs from K3B?</b><br />
+					Post by: <b>dpeach</b> on <b>October 26, 2004, 04:57:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Interesting, but if you double-click on teh file from within K3B it only burns the image itself. &nbsp;Very, very interesting.</div><br />I assume that it gives you the ability to burn an ISO as an .iso file for a reason. The only reason for this in my mind is so that if you have several smaller .isos that you want to burn to a single CD or DVD, this makes it possible.<br /><br />Should it be the default action? I don't know, but the way it does it works for me.<br /><br />Try burning a bootable ISO image in XP. If you can do it without an add on program, you have figured out something that has alluded me.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Make bootable CDs from K3B?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 27, 2004, 07:49:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Without an add-in program I can't even boot-up XP! :lol:<br /><br />Just kidding, but in all seriousness I boot over into Linux everytime I want to actually do something worthwhile and not have to worry about add-in programs since Linux comes with so many and many more are freely available.<br /><br />I found something for XP called &quot;ISO Recorder&quot; or something like that. &nbsp;I'll see if I can dig up its name when I get home. &nbsp;Wonderful small program that rips ISOs and records ISOs and copies CDs but for whatever odd reason will NOT copy or rip an audio CD. &nbsp;Weird. &nbsp;Still, it rips those ISOs which is the only reason I've got Slack 10.0 disks now.<br /><br /><br /><br /><br />Oh, I got Knoppix v.6.3 and Knoppix-STD v.0.1 and they're bootable, just neither boot any of my systems. &nbsp;They go to SCSI probe and they both hang. &nbsp;Wonderful. &nbsp; :roll:</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

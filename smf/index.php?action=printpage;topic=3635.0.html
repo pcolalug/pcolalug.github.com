@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - unable to burn CD iso's</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: oddball on February 04, 2010, 05:36:55 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>unable to burn CD iso's</b><br />
+					Post by: <b>oddball</b> on <b>February 04, 2010, 05:36:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am unable to burn CD isos with k3b. I can burn DVD isos fine, and it verifies them ok. But when I burn a CD iso, it says it burns successfully, but when it tries to verify it, it throws an error at the end.<br /><br />I also tried the burnt CDs, but they don&#039;t work. The md5sum differs, so I guess k3b is burning bad CDs, but I don&#039;t think the problem is k3b. I have the same problem when using bashburn and manually running cdrecord. (note: I have the same problem when I use wodim) It doesn&#039;t matter what I use to burn CDs. I always have the same problem. <br /><br />I don&#039;t have Windows, so I can&#039;t try it under that. I wouldn&#039;t think it would be a hardware problem, since I can burn DVD iso&#039;s just fine, just not CD iso&#039;s. <br /><br />Here&#039;s the output from manually running cdrecord:<br />http://pastebin.com/f196207b7 (http://pastebin.com/f196207b7)<br /><br />And here&#039;s the output from dmesg|tail -n 50:<br />http://pastebin.com/f2bfe521b (http://pastebin.com/f2bfe521b)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: unable to burn CD iso's</b><br />
+					Post by: <b>bhoff</b> on <b>February 04, 2010, 07:14:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">can I get a distro name and version and perhaps a uname -a Please</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: unable to burn CD iso's</b><br />
+					Post by: <b>green_dragon37</b> on <b>February 04, 2010, 09:54:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Have you tried burning at a slower speed, as well?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: unable to burn CD iso's</b><br />
+					Post by: <b>oddball</b> on <b>February 05, 2010, 07:06:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">It&#039;s openSUSE 11.1, and uname -a:<br />Linux HAL9000 2.6.31.12-2-pae #1 SMP 2010-01-27 08:20:11 +0100 i686 i686 i386 GNU/Linux<br /><br />Yes, I tried burning at a slower speed.&nbsp; I got the same results.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: unable to burn CD iso's</b><br />
+					Post by: <b>danc</b> on <b>February 05, 2010, 07:37:04 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would suspect that it certainly could be a hardware issue.&nbsp; Lines 72 and 126 in your pastebin may be indicating that, but I&#039;m not sure.<br /><br />Are these CDRW&#039;s you are burning, or CDR&#039;s?<br /><br />Do you have another drive (burner) you could try in that same computer without making any other changes?<br /><br />Did it ever work in the past?<br /><br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: unable to burn CD iso's</b><br />
+					Post by: <b>oddball</b> on <b>February 05, 2010, 07:46:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">These are CDRW&#039;s.<br /><br />Unfortunately, I don&#039;t have another burner I can try.<br /><br />It worked fine 6 or 7 months ago, which was the last time I tried to burn any CD isos.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: unable to burn CD iso's</b><br />
+					Post by: <b>oddball</b> on <b>February 05, 2010, 11:28:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have just discovered that using unetbootin, I also cannot create a liveusb from the same iso.&nbsp; It creates it, but it won&#039;t boot.&nbsp; But I can boot the iso fine in qemu.&nbsp; So I would think it would be a software problem.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: unable to burn CD iso's</b><br />
+					Post by: <b>danc</b> on <b>February 05, 2010, 10:41:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think you definitely need to try burning a CDR.&nbsp; I&#039;ve noticed that CDRW&#039;s can be flaky at times.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: unable to burn CD iso's</b><br />
+					Post by: <b>oddball</b> on <b>February 06, 2010, 08:21:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Good call danc.&nbsp; I tried burning a CDR without verifying it in k3b, and it boots fine.&nbsp; I didn&#039;t even think about trying a CDR.<br /><br />Thanks everyone for all your help.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

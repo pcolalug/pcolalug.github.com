@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Okay, Samba time please help</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: SiliconFOXX on October 22, 2004, 07:26:30 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, Samba time please help</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 22, 2004, 07:26:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I'm trying to get Samba running on my Slack 10.0 box. &nbsp;I just ran swaret --upgrade samba and that made it 3.0.5 and that's about as far as I've gotten. &nbsp;I have a WindowsXP and Linux box both on the network. &nbsp;I don't know if Slack 10.0 uses inted or the newer xinetd (I think that's what it's called) but I'm pretty positive it's inted.<br /><br /><br />The two lines about smbd and nmbd are commented out in /etc/inted.conf but says that if I'm using rc.samba in /etc/rd.d that they should be. &nbsp;Well, I've got that rc.samba file but I can't see samba running when I'm root and I do either a ps -x or a ps -A, nothing resembling smbd or nmbd is up. &nbsp;Also probably because of this the SWAT program doesn't work, going to localhost:901 is refused. &nbsp;Please help me out here in the beginning, I don't want to screw it up...again.<br /><br />Basically I'm wondering if I need to make a &quot;stock&quot; smb.conf anyway and work off of that, if SWAT automatically makes one that I'll modify with it, and how I can tell if smbd and nmbd are up. &nbsp;Then I'll follow the howto some more and let you know how that goes.<br /><br /><br />Oh, the WindowsXP box is Pro, not Home, than the gods.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, Samba time please help</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 24, 2004, 03:03:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, the fun has started. &nbsp;I've got Samba up and running, surprisingly, by editing my inetd.conf and enabling swat, smbd, and nmbd. &nbsp;After a reboot SWAT actually works which I am shocked with given that it has NEVER worked on any other box of mine. &nbsp;Go figure.<br /><br /><br />Anyway, apparently the WindowsXP box can see the shares as it should, now I just need to get it going the other way. &nbsp;Any suggestions on a network shares browser with KDE? &nbsp;I seem to remember something called &quot;Samba 2003&quot; or something but can't remember. &nbsp;Seems odd this kind of thing wouldn't be built-in by now after all these years of using samba.<br /><br />EDIT: &nbsp;nevermind, apparently you can have Konqueror access them by using &quot;smb://.&quot; While that's all well and good I find myself missing the simple and straightforward &quot;View Workgroup Computers&quot; and such. &nbsp;Hmm, maybe there's a front-end I can use to make that a little easier. &nbsp;Guess we'll see.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, Samba time please help</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 24, 2004, 03:11:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, this is interesting. &nbsp;From the Windows box I see two folders on Anubis: &nbsp;&quot;homes&quot; and &quot;foxx.&quot; One would assume that to view the folder &quot;homes&quot; I would click on &quot;homes&quot; right? &nbsp;Wrong. &nbsp;I try to do that and the network isn't accessible. &nbsp;However, strangely, if I go to the folder &quot;foxx&quot; I get to /home on Anubis. &nbsp;Weird, real weird. &nbsp;Since it's even halfway working right now I'm not goign to worry too much but still, real f'ing weird.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, Samba time please help</b><br />
+					Post by: <b>danc</b> on <b>October 24, 2004, 06:28:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Well, the fun has started. &nbsp;I've got Samba up and running, surprisingly, by editing my inetd.conf and enabling swat, smbd, and nmbd. &nbsp;After a reboot SWAT actually works which I am shocked with given that it has NEVER worked on any other box of mine. &nbsp;Go figure.</div><br />Perhaps you never (properly) edited inetd.conf before?<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Anyway, apparently the WindowsXP box can see the shares as it should, now I just need to get it going the other way. &nbsp;Any suggestions on a network shares browser with KDE?</div><br />LinNeighborhood</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hint</b><br />
+					Post by: <b>bhoff</b> on <b>October 26, 2004, 05:20:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I wrote a nice article on setting up samba.<br />Check the Articles section of the forums for the article.<br />I will help as my internet connection allows.<br />Brett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, Samba time please help</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 26, 2004, 07:59:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Well, the fun has started. &nbsp;I've got Samba up and running, surprisingly, by editing my inetd.conf and enabling swat, smbd, and nmbd. &nbsp;After a reboot SWAT actually works which I am shocked with given that it has NEVER worked on any other box of mine. &nbsp;Go figure.</div><br />Perhaps you never (properly) edited inetd.conf before?<br /><br />No, it's just never worked. &nbsp;I don't know why, I don't know how, it's just never worked. &nbsp;Also they don't exactly make it easy on you in the inetd.conf since they say if you're using rc.samba you don't need to mess with that. &nbsp;Well I've got an rc.samba but that *apparently* doesn't work.<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Anyway, apparently the WindowsXP box can see the shares as it should, now I just need to get it going the other way. &nbsp;Any suggestions on a network shares browser with KDE?</div><br />LinNeighborhood</div><br /><br />I grabbed Smb4K but that's being...difficult so I suppose I'll try out grabbing the LinNeighborhood. &nbsp;Thanks for the tip.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hint</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 26, 2004, 08:00:25 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: bhoff</div><div class="quote">I wrote a nice article on setting up samba.<br />Check the Articles section of the forums for the article.<br />I will help as my internet connection allows.<br />Brett</div><br /><br />Thanks for the tip, I'll go read it as soon as I get home.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

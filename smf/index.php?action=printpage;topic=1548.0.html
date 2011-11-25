@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Strange mounting issue</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on April 12, 2004, 11:39:25 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 12, 2004, 11:39:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heya, I'm running Slackware 9 with the 2.6.4 kernel. &nbsp;I'm having a rather strange problem here. &nbsp;Apparently my mount command for the CDROM isn't working right.<br /><br />I've tried mounting a floppy drive and it does just fine, but apparently mounting a CD is a problem. &nbsp;I slap the CD in the drive, type, &quot;mount /dev/cdrom&quot; and it tells me that it's not a valid block device.<br /><br />To my understanding I built ATAPI support into the kernel so I don't think that's it (though it could be, I dunno). &nbsp;Any ideas on what I'm doing wrong? &nbsp;I checked in the fstab and taht's how it's listed.<br /><br />Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>lloydr</b> on <b>April 13, 2004, 12:11:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">try mount /mnt/cdrom</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>rugmonster</b> on <b>April 13, 2004, 04:39:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">/dev/cdrom is usually just a symbolic link to whatever ide or scsi device you are using is. Try /dev/hdc or /dev/hdd. Those are first and second device on the second ide channel.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>danc</b> on <b>April 13, 2004, 06:46:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If the above suggestions do not solve it for you, post your /etc/fstab here...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 13, 2004, 10:51:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, here's the story.<br /><br />I've tried the /mnt/cdrom, no luck. &nbsp;My fstab still lists it and my symbolic link points to /dev/sr0. &nbsp;To add to the fun when I went back and ran kernel 2.4.22 (like I am now) I can mount and unmount the drive perfectly.<br /><br />So I'm assuming this means that SOMEHOW the drive got left out of the kernel...or something. &nbsp;Please tell me there's a way to rebuild the kernel WITHOUT having to go through ALL of the options over again. &nbsp;That was such a pain.<br /><br />And now that I think about it I'll have to go back and find out how I built the kernel before...ugh. &nbsp;Well, at least I've still got that stuff lying around somewhere.<br /><br /><br />I suppose I can fire it back up in 2.6.4 but I think the /dev entries stay the same. &nbsp;I think. &nbsp;I dunno, what do you all think?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>rugmonster</b> on <b>April 14, 2004, 04:58:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">/dev/sr0 is a dead give away. Either that drive is scsi or you are using IDE-SCSI emulation for some reason. Check your bootloader for any append statements to the effect of &quot;hdc=ide-scsi&quot;.<br /><br />In the 2.6 kernel, ide-scsi emulation is no longer necessary, so find out what the real device is and everything should be fine. You will need to update your fstab should you find the device is different now.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>dpeach</b> on <b>April 14, 2004, 08:28:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Please tell me there's a way to rebuild the kernel WITHOUT having to go through ALL of the options over again. &nbsp;That was such a pain.</div><br />To answer the burning question, yes, you can. I offer you hope. I don't know how to do it, but I do know you can use all the configuration you now have and alter it instead of starting all over.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 14, 2004, 12:32:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, it's not SUPPOSED to be a SCSI drive and during the boot sequence it comes up easily as &quot;hdd: &nbsp;ATAPI CDRW&quot; or something to that effect. &nbsp;Anyway, since it's supposed to be an ATAPI CD-ROM what should I change to what?<br /><br />Interesting that it's using the IDE-SCSI emulation still. &nbsp;That must be why it's recognized in the 2.4.22 perfectly fine but not in the 2.6.4. &nbsp;Maybe I DID build the kernel right, I just needed to change how it found the drive afterward.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>rugmonster</b> on <b>April 14, 2004, 02:22:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would suggest taking out the append statement in your bootloader if it is there. Also, try mounting /dev/hdd with a full mount command.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>imnes</b> on <b>April 14, 2004, 03:29:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Edit your /etc/lilo.conf file, remove the lines &quot;append=hdd=ide-scsi&quot; if you have anything like that. &nbsp;Save the file, run &quot;lilo&quot; from the command line, reboot. &nbsp;Edit your cdrom symlink to point to the correct device:<br /><br />rm -f /dev/cdrom<br />ln -s /dev/hdd /dev/cdrom<br /><br />for example. &nbsp;Then you should be able to <br />mount /mnt/cdrom<br />as root.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 16, 2004, 11:54:38 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks a lot! &nbsp;That fixed it up PERFECT. &nbsp;I don't know how it got the drive being scsi but that's alright, it works great now. :D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 16, 2004, 05:00:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, sorry, it seems my ordeal isn't 100% over just yet, though definitely better.<br /><br />First, I can't seem to mount the CDROM as a regular user, only as root. &nbsp;Any way to change this? &nbsp;'Cause I've got to be honest, I don't want to have to su root every time I want to put a disc in the drive if at all possible (I know, I know...have your cake and eat it too).<br /><br />Second thing is a little strange. &nbsp;I can mount the Slackware installation CDs okay (only data CDs immediately handy) but I cannot mount an audio CD (tried mounting <i>Madonna</i>'s &quot;Music&quot; album). &nbsp;Could it be the disc, or will it require a different kind of setup to mount audio CDs than data CDs? &nbsp;I didn't think it would, but I guess I don't know too much about it.<br /><br />I was kinda hoping to be able to listen to CDs in KDE while programming though I think this is only one link in the chain 'cause KDE every once in awhile for no apparent reason comes back and tells me something about overloading an audio processor. &nbsp;Wish I could be more descriptive but I'll elaborate next time it comes up. &nbsp;I don't know if it affects music playback yet 'cause I need the CD working to test that. &nbsp;=P<br /><br /><br />Thanks again for your help, I know it's probably just something simple that I SHOULD know but don't.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>lloydr</b> on <b>April 16, 2004, 06:45:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">quick fix to the root only mounting is open your /etc/fstab and on the lines for your cdrom and floppy on the 4th column it probaly reads something like: noauto,owner,ro &nbsp;or something like that.....simple fix is change the word owner in that column to user so it would read like noauto,user,ro <br /><br />also about the audio cds.....it should mount em just like a normal data cd <br />possibly something in your kernel .config?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 16, 2004, 07:04:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I dunno, but I'll check it out. &nbsp;Thanks for the tip.<br /><br />Maybe linux just doesn't like Madonna. &nbsp;Maybe if I put in my trance demo (DJ F.O.X.X. be me) or some Crystal Method in there it'll like it...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>danc</b> on <b>April 16, 2004, 08:56:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">No, you can't mount audio CD's. &nbsp;Just put it in there, and then open your CD Player from the menu (or XMMS or whatever). &nbsp;Should work fine, audio CD's do not have to be mounted.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 16, 2004, 09:21:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">foxx@sam:~$ mount /dev/cdrom<br />mount: wrong fs type, bad option, bad superblock on /dev/cdrom,<br />&nbsp; &nbsp; &nbsp; &nbsp;or too many mounted file systems<br /><br />Just FYI, the above is what I get when trying to mount an audio CD.<br /><br />I've tried a few programs (KsCD, Kaboodle, XMMS, Gxine) and none of them seem to work. &nbsp;How exactly am I supposed to play the audio CD?<br /><br />I think I'm making this too hard.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>lloydr</b> on <b>April 16, 2004, 09:39:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">No, you can't mount audio CD's. &nbsp;Just put it in there, and then open your CD Player from the menu (or XMMS or whatever). &nbsp;Should work fine, audio CD's do not have to be mounted.</div><br />oh lol oops<br /><br />i havent listened to music cds lately on my system since just use my cd player next to me and forgot that you dont mount em lol<br /><br />out of curiousity i loaded xine 0.9.23(xinelib with xine-ui rather than gxine) and clicked cd tab and it went to playin music cds no problem<br /><br />forgot where in xmms you click to play cds haha</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 16, 2004, 09:48:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">&quot;CD-ROM read or access error (or no audio disc in drive).<br />Please make sure you have access permissions to:<br />/dev/cdrom&quot;<br /><br />I also get a window with this whenever I start up KsCD. &nbsp;Creepiness.<br /><br />I'm going to be seriously PO'd if it works in Gnome but not KDE.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CDROM Issues</b><br />
+					Post by: <b>jj</b> on <b>October 11, 2004, 10:32:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Good info in prev posts. i have similar prob using SuSE 9.1 Pro (KDE). &nbsp;Device shows up as /dev/cdrecorder/ i click or type in file search window and get error, not valid device or not eccessable. I know it works, i just used it to install new software using YaST. &nbsp;what if i just want to browse the contents in xterm??</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>rugmonster</b> on <b>October 11, 2004, 10:45:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, you would have to mount it. Are you sure /dev/cdrecorder is the actual device? That sounds like it may be a symlink to something else. Try this command:<br /><div class="codeheader">Code:</div><div class="code">ls -l /dev/cdrecorder</div><br />See if that shows you something like<br /><div class="codeheader">Code:</div><div class="code">lrwxrwxrwx 1 root root &lt;date time&gt; /dev/cdrecorder -&gt; /dev/hdc</div><br />Whatever the -&gt; is pointing to is the actual device. If that isn't correct, then your problem may lie there. You may also want to check your fstab and see what devices are listed there.<br /><div class="codeheader">Code:</div><div class="code">less /etc/fstab</div><br />Look in there for any references to /dev/hdc or hdd or even possibly /dev/cdroms/cdrom0. I'm not quite sure how SuSE handles drives, but it can't be too wacky.<br /><br />If the device is right, check your mount options. It could be that you have something like supermount handling it for you, in which case you would just browse to the mount point which may be /mnt/cdrom or something to that affect. Typically, to mount a cd, you run this as root:<br /><div class="codeheader">Code:</div><div class="code">mount -t iso9660 /dev/&lt;device file&gt; /mnt/&lt;some dir&gt;</div><br />Once it is mounted, you can look at the contents of the disc.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>jj</b> on <b>October 11, 2004, 12:47:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the prompt response. &nbsp;So, is it true that i have to change the device to a directory in order to use directory attributes??<br /><br />contents of the fstab:<br /><br />/dev/hdb3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reiserfs &nbsp; acl,user_xattr &nbsp; &nbsp; &nbsp; &nbsp;1 1<br />/dev/hdb2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;swap &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swap &nbsp; &nbsp; &nbsp; pri=42 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 0<br />devpts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /dev/pts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; devpts &nbsp; &nbsp; mode=0620,gid=5 &nbsp; &nbsp; &nbsp; 0 0<br />proc &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /proc &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;proc &nbsp; &nbsp; &nbsp; defaults &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 0<br />usbfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/proc/bus/usb &nbsp; &nbsp; &nbsp; &nbsp;usbfs &nbsp; &nbsp; &nbsp;noauto &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 0<br />sysfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/sys &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sysfs &nbsp; &nbsp; &nbsp;noauto &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 0<br />/dev/cdrecorder &nbsp; &nbsp; &nbsp;/media/cdrecorder &nbsp; &nbsp;subfs &nbsp; &nbsp; &nbsp;fs=cdfss,ro,procuid,nosuid,<br />nodev,exec,iocharset=utf8 0 0</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>rugmonster</b> on <b>October 11, 2004, 01:32:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It looks like SuSE uses Submount for automounting it's removable media. You can find all of the documentation for Submount at the SourceForge site (http://submount.sourceforge.net). You may just have to throw a cd in the drive and browse /media/cdrecorder for it to mount the disc and go. That is my guess anyway.<br /><br />Device files should be files, not directories. File and directory attributes are the same with the exception of marking a directory as a such. You use the same attributes to each.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ok .. maybe...</b><br />
+					Post by: <b>Nomad</b> on <b>November 22, 2004, 04:43:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I know i'm new to the fourms and all but am i the only person who doesn't have to mount anything... :twisted: you know what i mean, and has it pre-mounted on boot?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ok .. maybe...</b><br />
+					Post by: <b>rburt3</b> on <b>November 22, 2004, 06:11:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Nomad</div><div class="quote">I know i'm new to the fourms and all but am i the only person who doesn't have to mount anything... :twisted: you know what i mean, and has it pre-mounted on boot?</div><br />Yes.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>....</b><br />
+					Post by: <b>Nomad</b> on <b>November 22, 2004, 01:35:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well hey, if anyone wants help &quot;MOUNTING&quot; there drives to start with i would be glad to assiast.... ...<br /><br /><br />Now this cdrom issue, <br /><br />you have an intresting config in your fstab, it's more advanced then<br />just a normal mount/umount kinda thing... <br /><br />Few question... how offten do you use your cdrom?<br />and do you want auto mount on load?<br />or just working all the time?<br />or we could just write in a .sh to load it.<br /><br />ie<br />place in cdrom<br />run sh, and she'll auto mount..</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>rugmonster</b> on <b>November 23, 2004, 02:03:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's what submount is for. It handles the mounting automagically. You place the cd, floppy or flash drive in the system and when you try to access that mount point, it attempts to mount the filesystem. The same should be able to be done with any other type of filesystem to include network based ones like nfs or smbfs. The same goes for systems which utilize supermount instead of submount. I know supermount even has kernel ties to make it work.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 23, 2004, 12:51:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've always been interested in supermounting/submounting/automounting but part of me feels that would be a little weird in Linux. &nbsp;When is it a disadvantage to have that?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>danc</b> on <b>November 23, 2004, 01:45:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Depends on what you want, and who you ask. &nbsp;If you ask me, personally, I don't want any of those on my system. &nbsp;Others will say differently. &nbsp;YMMV.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Strange mounting issue</b><br />
+					Post by: <b>rugmonster</b> on <b>November 23, 2004, 02:38:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I like supermount, but haven't had much a reason not to like it. There have been times, but I can't remember the specifics, that I would turn it off from time to time, but you can always turn it off with a simple edit of the fstab.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

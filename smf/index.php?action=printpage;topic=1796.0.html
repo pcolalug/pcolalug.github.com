@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - SSH scanning</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: lloydr on July 26, 2004, 04:03:53 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SSH scanning</b><br />
+					Post by: <b>lloydr</b> on <b>July 26, 2004, 04:03:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">seems there has been a good bit of reports lately about people's logs filling up with failed logins into machines running sshd.<br /><br />http://www.dslreports.com/forum/remark,10854834~mode=flat<br />http://www.incidents.org/diary.php?date=2004-07-23<br />http://isc.sans.org/diary.php?date=2004-07-25<br /><br />I'm starting to see the same thing in my logs<br /><br />the main ips filling up my logs the past 3-4 days are:<br />216.86.221.113<br />trying users test and guest<br /><br />66.0.8.242<br />trying users test, guest, and admin<br /><br />156.63.113.108<br />trying users test, guest, admin, user, and root<br /><br />212.4.172.123<br />trying users test and guest<br /><br />but since none of these users exist except root of course, and I block root from accessing anything except physically logging in at the machine, these tries to log in aren't going to get anywhere.<br /><br />Keep your eye out for things like this in your logs if you have sshd open to the outside world and be sure to take a look at the information about this. Also this is why it's also a good idea to be sure to disable root logins through ssh &nbsp;:wink: <br /><br />Those of you with sshd open to the world, might want to start making sure your sshd_config is setup well to prevent any problems and possibly start keeping up with your logs a little more just in case.<br /><br />Also it looks like if you capture anything involving these attacks, be sure to send it over to ISC.<br /><br />c ya</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

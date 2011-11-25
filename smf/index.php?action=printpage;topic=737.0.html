@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Signal Caught</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by:  on June 02, 2003, 06:12:31 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b></b> on <b>June 02, 2003, 06:12:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK, Linux guru's, need some help here. &nbsp;I downloaded the full Linux version of Enemy Territory, and saved it in /home/markc.<br /><br />I used su and my password to get to root permissions. &nbsp;I used chmod 755 filename to get it executable, and verified with ls -la. &nbsp;I ran it with ./filename and it verified file integrity (all good) and then it started to extract it.<br /><br />It then fails with this message &quot;Signal caught. &nbsp;cleaning up&quot; after 3 lines of dots. &nbsp;I then downloaded the file from another another site, and tried again with the same result.<br /><br />I can make directories in the /usr/local/games directory no problem so am pretty sure my permissions are OK. &nbsp;Any idea's??????<br /><br />Narsil</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>rburt3</b> on <b>June 03, 2003, 08:03:58 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Does sound like a corrupted file. Can you try one more time with the one from ftp.inoch.com/games? Also, you shouldn't have to be root *before* the install, as it will ask you for your root password during. Just don't click &quot;Run&quot; or whatever after install, as you will be running the game as root (Bad Idea(TM)). Also, you can <div class="codeheader">Code:</div><div class="code">chmod +x &lt;filename/&gt;</div> to make it executable; <div class="codeheader">Code:</div><div class="code">/sbin/sh &lt;filename/&gt;.sh</div> will also work without having to change file attributes.<br /><br />Silly question: How's your disk space and memory load?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b></b> on <b>June 03, 2003, 12:21:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the reply rburt3.<br /><br />I did try one more time using an FTP site get a 3rd copy of the software. &nbsp;Tried to run this one, got the same error message as above. Memory is 512MB on this machine, with a 60 GB hard drive. &nbsp;Tried everything I could think of, googled all over for FAQ's, etc. &nbsp;No luck, started to get mildly ticked off at the little grey box humming at my feet.<br /><br />Sooooooo......I solved the problem the old fashioned sailor way. &nbsp;Burned CD's of my RTCW server files and other files I wanted to keep, and blew away Linux. &nbsp;Did a complete install creating custom partitions, video/sound drivers, whole 9 yards to make sure Linux was as clean as a whistle.<br /><br />Tried to run the Enemy Territory install file and Lo and behold, it ran perfectly, no errors. &nbsp;I still have no clue what was going on with it before.....no logical reason whatsoever for it that I can come up with (that bugs me big time). &nbsp;But, I needed the practice re-installing Linux anyway!!!! &nbsp;Won't be the last time I am sure................<br /><br />Narsil</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>dpeach</b> on <b>June 03, 2003, 02:43:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Narsil</div><div class="quote">Sooooooo......I solved the problem the old fashioned sailor way. &nbsp;Burned CD's of my RTCW server files and other files I wanted to keep, and blew away Linux. &nbsp;Did a complete install creating custom partitions, video/sound drivers, whole 9 yards to make sure Linux was as clean as a whistle.<br />Narsil</div><br />That doesn't sound like the Sailor way, but the Windows way. If it doesn't work, just reinstall. <br /><br />Glad it is working.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>rburt3</b> on <b>June 03, 2003, 03:31:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Out of curiosity, what distro are you using again?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>rugmonster</b> on <b>June 03, 2003, 04:55:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not Gentoo :P</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b></b> on <b>June 03, 2003, 06:15:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">rburt3, I am using Mandrake 9.1<br /><br />Narsil</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>rburt3</b> on <b>June 03, 2003, 07:34:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wierd. Did you run any updates prior to the install attempts? I know its fixed, but &nbsp;its bugging me too as to why this didn't work.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b></b> on <b>June 04, 2003, 11:29:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nope, updated nothing of any importance. &nbsp;The really strange part is that I ran the RTCW ver 1.4 full install and 1.41 update run files before this and they ran perfectly. &nbsp;I have only been playing around with Linux for about a month now, so it is possible I messed something up before this without even realizing it.....but I don't think I did.......<br /><br />Before I reinstalled Mandrake, I ran Tux Racer install to see what happened. &nbsp;It also installed just fine. &nbsp;I immediatly tried ET again, and got same error. &nbsp;I pretty much tried to figure it out for 2 days staight with no results. &nbsp;Spent a few hours on the phone with Danc trying to work it out as well. &nbsp;That is when I said the heck with this and banished my Linux install to the trash can, and re-installed it.<br /><br />Narsil</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>rburt3</b> on <b>June 05, 2003, 08:25:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Do you remember the size of the /tmp directory where these installs extracted to? If you had just run two previous installs, it may have filled the partition that you were using for /tmp.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>danc</b> on <b>July 23, 2003, 01:05:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Had some problems a few days ago, and remembered this thread... &nbsp;Still can't explain why Narsil's problem happened, but I can reproduce it and have a theory. &nbsp;(You might want to skim back over this thread to refresh).<br /><br />Here's what happened:<br />Got tired of Redhat on my Laptop, so reinstalled Mandrake 9.1 on it. &nbsp;I chose the ReiserFS file system this time, just for fun. &nbsp;The install went smoothly. &nbsp;My plan was to make a RTCW/ET server for use on my home LAN. &nbsp;I went to install ET, and got the *exact* same errors as Narsil mentioned above. &nbsp;It simply would not install, and this was from a known good copy from a CD. &nbsp;Tried installing from CD and from the HD, with same results. &nbsp;Very confused at this point... &nbsp;So I tried to install RTCW, and it worked perfectly. &nbsp;Went to another machine and ET installed just fine on both RedHat and Slackware, from the same CD. &nbsp;Hmmmm......<br /><br />Got to wondering about the ReiserFS filesystem. &nbsp;On all my other machines I'm using ext3. &nbsp;Not positive, but I believe I had recommended Narsil try ReiserFS, and will get confirmation of that... &nbsp;So......., to prove it, I reinstalled Mandrake on the laptop, using ext3 filesystem this time. &nbsp;Guess what? &nbsp;ET installed just fine.<br /><br />I'm guessing that somehow the ET game does not &quot;like&quot; the ReiserFS. &nbsp;Is that possible? &nbsp;Would an application/game know what filesystem was being used, and not work on some of them? &nbsp;Doesn't seem likely to me, but that's what my &quot;experiment&quot; seems to indicate. &nbsp;Anyone ever have something similar happen? &nbsp;Very curious about this, let me know what you think!<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>rburt3</b> on <b>July 23, 2003, 08:06:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Humm, mebbe, but I doubt it. I've run/installed ET on my box w/Reiserfs and have had no problems. I'd start looking at the fstab entry for the Reiser partition and see if any funky params are passed. Could be the version of Reiser as well?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>danc</b> on <b>July 23, 2003, 09:03:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Could be the version of Reiser I suppose... &nbsp;Don't currently have any boxen with it running, so can't check the fstab entry. &nbsp;If I ever install Mandrake again, will check it out. &nbsp;Weird stuff anyhow...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>rugmonster</b> on <b>July 23, 2003, 09:10:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My guess would be possibly the reiserfs utilities that came with that version of mandrake. There could be problems with either that build or that version...I would lean toward the build, that could cause that problem or possibly some program that was a prerequisite of the reiserfsprogs that isn't required for the others. Just a hunch. I doubt it is the file system itself though. That sounds much more userspace than anything.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Signal Caught</b><br />
+					Post by: <b>danc</b> on <b>July 24, 2003, 06:52:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Agreed. &nbsp;But the weird part is that there were no other indications of a problem with the filesystem. &nbsp;As mentioned, the RTCW game installed and ran just fine. &nbsp;I dunno. &nbsp;Anyway, thanks for the inputs.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

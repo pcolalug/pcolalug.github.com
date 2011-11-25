@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Apache config help (will pay)</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => IT Jobs => Topic started by: jj on November 23, 2004, 09:03:32 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Apache config help (will pay)</b><br />
+					Post by: <b>jj</b> on <b>November 23, 2004, 09:03:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi list, i need some assistance with configuring apache2 server on a SuSE 9.1 box. &nbsp;will pay market value hourly to resolve this issue and provide some OJT. &nbsp;I have tried many attempts to fix (thanks to all who answered previous posts) just lack the experience to clear this issue up. i keep getting permission denied error 403. &nbsp; If it can be done remotely via putty my office is located on cervantes street. &nbsp;Server is located across town. &nbsp;<br /><br />jeff@jpmicro.com</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Thanks</b><br />
+					Post by: <b>jj</b> on <b>December 10, 2004, 03:34:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks to Jesse for the help, got it running &nbsp;by adding the following script to the http.conf<br /><br />&lt;Directory /srv/www&gt;<br />&nbsp; &nbsp; Options None<br />&nbsp; &nbsp; AllowOverride None<br />&nbsp; &nbsp; Order allow,deny<br />&nbsp; &nbsp; Allow from all<br />&lt;/Directory&gt;<br /><br />what i lerned from all of this?? That i don't have a clue, where can a brother get some schooling on this stuff.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Apache config help (will pay)</b><br />
+					Post by: <b>hitechwizard</b> on <b>December 10, 2004, 04:08:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Our LUG is sponsored by O'Reilly Book publishers, so I would have to recommend one of several books they have on configuring Apache (http://www.oreilly.com/catalog/apache2/)<br /><br />We may have this book in our library, which you can preview at our meeting/lan party tomorrow evening. :)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

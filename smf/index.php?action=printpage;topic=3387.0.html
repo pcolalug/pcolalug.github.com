@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - booting usb on system that does not support it!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: bhoff on August 28, 2008, 05:18:22 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>booting usb on system that does not support it!</b><br />
+					Post by: <b>bhoff</b> on <b>August 28, 2008, 05:18:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Problem! I have a toshiba laptop and several other computers that the bios does not support either cd-rom boot and/or USb boot.<br />I have just purchased several USB drives from newegg that I have loaded with there own distros and boot loaders that I can not use since my<br />Toshiba laptop does not support USB boot.<br /><br />But there is a solution! for Linux anyway!<br /><br />Solution! if you are using Grub or Lilo as your boot loader you can do what is refered to as chainload.<br />This essentially points to the second boot loader this could be a floppy,Cdrom,DVD,USB or another partition on the harddrive.<br />in my case USB is always seen as the second drive and and sata so it is sda1. I leave it up to you to find what your partition number is!<br />some thoughts dmesg and fdsik -l :)<br /><br />in lilo I have to add another entry like so under the existing entry below read-only<br />lilo.conf is found in /etc/lilo.conf<br />read-only<br />other = /dev/sda1<br />label = USB<br /><br />now exit and don&#039;t forget to run lilo after you are done!!!<br />in my case it errored out due to the fact that the usb drive was not in but simply plug it in and run lilo again to add it to your boot menu.<br /><br />in grub add the following into the /boot/grub/grub.conf file<br />Title USB<br />&nbsp; &nbsp; root (hd1,0)<br />&nbsp; &nbsp; makeactive<br />&nbsp; &nbsp; chainloader +1<br /><br />(hd1,0) is grubs way of saying the second drive in the system first partition on that drive hd1,4 would be the 5 partition as it starts counting at zero.<br />(hd0,7) would be the first drive the eighth partition. Hope that helps in the explanation a bit.<br />you could use this to boot anything that has a partition in this manner from lilo or grub very easily.<br /><br />Hope you guys enjoyed this and thanks for the second set of eyes lloyd ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: booting usb on system that does not support it!</b><br />
+					Post by: <b>djoed_pcola</b> on <b>August 28, 2008, 09:18:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the tip!&nbsp; I have several older computers that the BIOS doesn&#039;t support USB booting.&nbsp; I am looking forward to trying this out.&nbsp; Too late tonight though.<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

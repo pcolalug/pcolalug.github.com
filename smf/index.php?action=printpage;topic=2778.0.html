@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - MPlayer on Solaris 11</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: imnes on January 29, 2006, 01:21:45 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>MPlayer on Solaris 11</b><br />
+					Post by: <b>imnes</b> on <b>January 29, 2006, 01:21:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Compiling MPlayer under Solaris 11 (and Solaris 10) works, but win32 codecs cause it to crash.&nbsp; Here&#039;s a fix (don&#039;t know if this will cause other problems or not, but it&#039;s working so far for me).<br /><br />Edit the source file: ldt_keeper.c<br /><br />Change: <br />#define NUMSYSLDTS 6&nbsp; <br /><br />to: <br />#define NUMSYSLDTS 7<br /><br />Recompile and win32 codecs should now work fine.<br /><br />Nick<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: MPlayer on Solaris 11</b><br />
+					Post by: <b>geekforGod</b> on <b>January 31, 2006, 04:57:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just curious, how would you figure that out? Did you read source code? Did the error message point you in the correct direction? Or did you find it searching google? It just seems so arbitrary that it is funny to me that you found it.&nbsp; ;D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: MPlayer on Solaris 11</b><br />
+					Post by: <b>imnes</b> on <b>January 31, 2006, 11:33:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I tried to use it and it crashed everytime it loaded a windows dll.&nbsp; I was researching the error and found some talk I think on a WINE (Windows Emulator) mailing list that mentioned Solaris now reserves the 6th LDT (I&#039;m not sure what that is though) so I bumped it up to 7 and compiled and it worked fine.<br /><br />I just did a google search and looks like Nexenta did a similar patch but they bumped it all the way up to 10, not sure if that&#039;s better / safer.<br /><br />I was just posting my fix here for future reference incase I need to install it again.<br /><br />Nick<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: MPlayer on Solaris 11</b><br />
+					Post by: <b>geekforGod</b> on <b>February 01, 2006, 03:43:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah, I figured that was why you posted it. Thanks for sharing though.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

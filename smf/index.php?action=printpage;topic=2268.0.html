@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Bandwidth limiter</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: Brent on February 10, 2005, 04:45:23 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bandwidth limiter</b><br />
+					Post by: <b>Brent</b> on <b>February 10, 2005, 04:45:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok folks here's the situation.<br /><br />Me and my roomies are sharing a dsl lite connection (which max's out at around 30 k/s). &nbsp;The problem is, we need something to limit the maximum bandwidth we can individually use, so that we can all use our fair share.<br /><br />I need a solution that's free and runs on windows (maybe linux too?).<br /><br />I don't need anything fancy, just something so we all get our 10k/s.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bandwidth limiter</b><br />
+					Post by: <b>dpeach</b> on <b>February 10, 2005, 06:06:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am thinking there was some discussion about a router that could do that. You may look in one of the VoIP threads that was going a few weeks ago. That sounds neither cheap nor easy. But it could be an indication that it is possible.<br /><br />What would be really cool is if you were able to split it. If only 2 computers were putting demand on the connection, then they would each get 15. Or one would get all 30. Have it so that no one gets less than anyone else, but you could get more if one or two of the others were not on.<br /><br />Just some thoughts.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bandwidth limiter</b><br />
+					Post by: <b>imnes</b> on <b>February 10, 2005, 06:42:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Build you a linux router and go with somethin like http://www.metamorpher.de/fairnat/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bandwidth limiter</b><br />
+					Post by: <b>lloydr</b> on <b>April 09, 2005, 01:13:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">could also setup an openbsd router and use altq/cbq for prioritization so like peach was saying, if all 3 machines were active it would balance out but if only 1-2 machines would be active then it would be split between the 2 or all to the single active.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bandwidth limiter</b><br />
+					Post by: <b>mall0ry</b> on <b>April 11, 2005, 04:51:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Have a look at this article:<br />http://www.linuxjournal.com/article/6825<br /><br />There is more information at this site:<br />http://lartc.org/wondershaper/</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

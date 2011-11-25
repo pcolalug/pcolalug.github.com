@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Uptime bash script</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: Skreyola on October 26, 2008, 06:19:19 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Uptime bash script</b><br />
+					Post by: <b>Skreyola</b> on <b>October 26, 2008, 06:19:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey, everyone!<br />Last night, I got involved (and spent way too much time after bedtime) in a project to modify a tiny little script I made a while back to record the uptime of my Linux box whenever it becomes necessary to shut it down. At first, it just piped the output of date and uptime to a file. Then, I added a line to also record a command-line argument of <i>why</i> it was shut down (kernel update, extended power outage, moving the plug to a different outlet, etc.). But last night, I decided to clean up the output so that it&#039;s more readable in the log file (and so I could try to learn a little more).<br />The resulting log file entries were quite nice and totally satisfactory, but I&#039;m afraid I may earn a title of King of Kludge with the method I used to get it.<br />Can any of you bash gurus tell me places in this where I can make this script smaller and more efficient? I know you can probably do the same thing with one line of Perl, but I&#039;m not ready to jump into that pond, yet. :)<br /><br />Here&#039;s what I have now:<br /><div class="codeheader">Code:</div><div class="code">#! /bin/bash<br />up0=`date`<br />up1=`uptime`<br />up2=`echo $up1 | awk &#039;{print NF}&#039;`<br />up2=$(($up2 - 6))<br />up4=2<br />up5=$up1<br />until [ $up4 -eq $up2 ]; do<br />up5=`echo $up5 | sed &#039;s/ [^ ]* / /&#039;`<br />up4=$(($up4 + 1))<br />done<br />up6=`echo $up5 | sed &#039;s/ [^ ]* / /&#039; | sed &#039;s/ [^ ]* / /&#039; | sed &#039;s/[^ ]* / /&#039;`<br />up3=$up1<br />up4=-1<br />until [ $up4 -eq 6 ]; do<br />up3=`echo $up3 | sed &#039;s/[ ][^ ]*$//&#039;`<br />if [ $up4 -eq 3 ]; then<br />up7=$up3<br />fi<br />up4=$(($up4 + 1))<br />done<br />up3=`echo $up3 | sed s&#039;/[^ ]* / /&#039;`<br />up3=`echo $up3 | sed s&#039;/[^ ]* / /&#039;`<br />up4=2<br />until [ $up4 -eq 0 ]; do<br />up7=`echo $up7 | sed &#039;s/[^ ]* / /&#039;`<br />up4=$(($up4 - 1))<br />done<br />up7=`echo $up7 | sed &#039;s/[^ ]* / /&#039;`<br />echo &quot; Event: Shutting down at&quot; $up0 &gt;&gt; /root/serveruptimes.txt<br />echo &quot;Uptime: &quot; $up3 &quot;with&quot; $up7 &quot;and&quot; $up6 &gt;&gt; /root/serveruptimes.txt<br />echo Reason: $@ &gt;&gt; /root/serveruptimes.txt<br />tail /root/serveruptimes.txt<br />halt<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Uptime bash script</b><br />
+					Post by: <b>bhoff</b> on <b>October 27, 2008, 04:09:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">could you better define the results that you want and how do you want them handled to the /var/log or to a file and so on. <br />This could be a fun project to get my mind off things :)<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Uptime bash script</b><br />
+					Post by: <b>Skreyola</b> on <b>October 27, 2008, 05:13:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3413.msg16447.html#msg16447">Quote from: bhoff on October 27, 2008, 04:09:57 pm</a></div><div class="quote">could you better define the results that you want and how do you want them handled to the /var/log or to a file and so on. <br />This could be a fun project to get my mind off things :)<br /><br /></div>Sorry if I wasn&#039;t clear. I am getting the output I desire, but I figured I was going about it the long way around and hoped someone could tell me a better way to do it.<br /><br />Here&#039;s a typical output:<br /><br /><tt> Event: Shutting down at Mon Oct 27 18:15:30 CDT 2008<br />Uptime: 3:53 with 1 users and load averages 0.00, 0.00, 0.00<br />Reason: Testing shutdown script.</tt><br />which goes into a text file, which is then `tail`ed before executing the halt command.<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

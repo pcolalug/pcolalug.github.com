@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - adding temp swap to system!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: bhoff on August 15, 2008, 07:24:23 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>adding temp swap to system!</b><br />
+					Post by: <b>bhoff</b> on <b>August 15, 2008, 07:24:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Often times we run into issues where we need some extra swap for an application that we are running or when our system resources are quickly getting depleted.<br />Normally you would create another partition and make it swap and run mkswap on it! but if you are in a hurry try the alternate!<br />swap file<br /><br />first run df -h to see where you have room to make it<br />root@desktop1:/home/brett# df -h<br />Filesystem&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Size&nbsp; Used Avail Use% Mounted on<br />/dev/hda4&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 65G&nbsp; 9.7G&nbsp; &nbsp;52G&nbsp; 16% /<br />/dev/hda1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;752M&nbsp; &nbsp;36M&nbsp; 679M&nbsp; &nbsp;5% /boot<br />/dev/hda3&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7.4G&nbsp; 146M&nbsp; 6.9G&nbsp; &nbsp;3% /home<br />/dev/hdb1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 17G&nbsp; &nbsp;12G&nbsp; 4.7G&nbsp; 72% /files<br /><br />I can see here I have some room in the /home dir.<br />so now to create the 512meg swap space.<br />dd if=/dev/zero of=/home/swap bs=1024 count=512 {change this to 1024 to make 1 gig}<br />now run mkswap&nbsp; /home/swap<br />you can use it immediatly with <br />swapon /home/swap<br />to see your swaps now use the <br />swapon -s command<br />root@desktop1:/home# swapon -s<br />Filename&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Size&nbsp; &nbsp; Used&nbsp; &nbsp; Priority<br />/dev/hda2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;partition&nbsp; &nbsp; &nbsp; &nbsp;975736&nbsp; 2584&nbsp; &nbsp; -1<br />/home/swap&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; file&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 504&nbsp; &nbsp; &nbsp;0&nbsp; &nbsp; &nbsp; &nbsp;-2<br />you can see here we have created and added to the system a new 512mb swap space in /home<br />to turn it off and reclaim the space use<br />swapoff /home/swap<br />we can verify with swapon -s<br />root@desktop1:/home# swapon -s<br />Filename&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Size&nbsp; &nbsp; Used&nbsp; &nbsp; Priority<br />/dev/hda2&nbsp; &nbsp;<br />to make this hapen everytime you boot add it to the /etc/fstab like so<br /><br />/home/swap&nbsp; &nbsp; &nbsp; &nbsp; swap&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; swap&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp;0 0<br />then run swapon -a<br />that&#039;s it you have now built a swap file and added it to the system.<br /><br />Hope you enjoyed that :)<br /><br />more little short how to&#039;s to follow</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: adding temp swap to system!</b><br />
+					Post by: <b>DemetriusCrisco</b> on <b>August 15, 2008, 07:51:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div>Very nice, I enjoyed this!</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: adding temp swap to system!</b><br />
+					Post by: <b>Skreyola</b> on <b>August 18, 2008, 08:53:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Cool HOWTO. Thanks.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

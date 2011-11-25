@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Doom3 Sound Not Working?  Try this</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: SiliconFOXX on October 14, 2004, 06:53:19 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom3 Sound Not Working?  Try this</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 06:53:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">artsdsp -m doom3&nbsp;&nbsp;&nbsp;=KDE<br />&nbsp;esddsp doom3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=Gnome<br /><br />Now the second one is what the guy thought MIGHT work, so any Gnome gurus who knows just what these commands are doing please fill me in, but I just tried this in KDE and it works solid. &nbsp;Doesn't fix my framerate issue, but it's one step closer to heaven, right?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Doom3 Sound Not Working?  Try this</b><br />
+					Post by: <b>danc</b> on <b>October 14, 2004, 07:22:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">artsdsp -m doom3&nbsp;&nbsp;&nbsp;=KDE<br />&nbsp;esddsp doom3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=Gnome<br /><br />Now the second one is what the guy thought MIGHT work, so any Gnome gurus who knows just what these commands are doing please fill me in, but I just tried this in KDE and it works solid. &nbsp;Doesn't fix my framerate issue, but it's one step closer to heaven, right?</div><br />Both of those commands are telling the appropriate sound daemon (arts for KDE, and esd for Gnome) to share the soundcard hardware between the Desktop Environment and the game.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom3 Sound Not Working?  Try this</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 08:00:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That would explain it. &nbsp;Doom 3 was complaining about not being able to grab the sound device beforehand.<br /><br /><br /><br /><br />Now if only I could figure out why in the hell my framerate blows. &nbsp;I'm beginning to STRONGLY suspect faulty Linux video drivers that just don't properly work for all their cards with all configs. &nbsp;It seems the higher end but not HIGHEST end (with some exceptions) users are all getting the shaft with performance. &nbsp;I'm not alone, but nobody's talking solutions.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom3 Sound Not Working?  Try this</b><br />
+					Post by: <b>danc</b> on <b>October 14, 2004, 09:51:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Try using some older drivers from the &quot;archive&quot; section on the Nvidia site. &nbsp;I've always been partial to the 4496 driver...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom3 Sound Not Working?  Try this</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 29, 2004, 06:53:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've been checking benches from a few sites and apparently it's no real mystery as to why my framerate is worse in Linux: &nbsp;it's been designed that way.<br /><br /><br />Apparently it boils down to what they used to make the the binaries. &nbsp;For the Windows version they used VC.NET and for the Linux binaries they used gcc. &nbsp;Some of the optimizations used in VC.NET do not exist in gcc so they (id software) claims so they couldn't optimize the code as much for Linux.<br /><br />Why some people experience better frames in Linux than Windows is now something I'd be more interested in. &nbsp;At the moment after two installations on Linux it just mysteriously gets worse and worse and inevitably for whatever reason refuses to come up under a normal user. &nbsp;Why, again, is beyond me. &nbsp;For example, if it happens to anyone else, this is what happens:<br /><br /><br />foxx@anubis:~$ doom3<br />DOOM 1.1.1282 linux-x86 Oct &nbsp;4 2004 08:21:14<br />Hostname: anubis.localdomain.net<br />Alias: anubis<br />IP: 127.0.0.1<br />------ Initializing File System ------<br />Loaded pk4 /usr/local/games/doom3/base/game00.pk4 with checksum 0x7dafc4d4<br />Loaded pk4 /usr/local/games/doom3/base/game01.pk4 with checksum 0x16cf3b8a<br />Loaded pk4 /usr/local/games/doom3/base/pak005.pk4 with checksum 0x8ffc3621<br />Current search path:<br />/home/foxx/.doom3/base<br />/usr/local/games/doom3/base<br />/usr/local/games/doom3/base/pak005.pk4 (63 files)<br />/usr/local/games/doom3/base/game01.pk4 (2 files)<br />/usr/local/games/doom3/base/game00.pk4 (2 files)<br />game DLL: 0x0 in pak: 0x0<br />file system initialized.<br />--------------------------------------<br />Unknown command 'vid_restart'<br />idRenderSystem::Shutdown()<br />Sys_Error: Couldn't load default.cfg<br /><br /><br />It's not really a priority anymore since I don't get the same performance in Linux, but figured it was worthy of note. &nbsp;I go through the installation after copying the files first, tell it &quot;ok&quot; to run the script, and for a time while my framerate is noticeably lower it runs. &nbsp;For whatever reason, on the same boot, seemingly at random, this starts to happen. &nbsp;Running as root gets it running but only at a fraction of the already worse framerate. &nbsp;Again, just plain weird.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom3 Sound Not Working?  Try this</b><br />
+					Post by: <b>danc</b> on <b>October 29, 2004, 08:04:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">I've been checking benches from a few sites and apparently it's no real mystery as to why my framerate is worse in Linux: &nbsp;it's been designed that way.</div><br />My framerate is better in Linux.<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Why some people experience better frames in Linux than Windows is now something I'd be more interested in. &nbsp;At the moment after two installations on Linux it just mysteriously gets worse and worse and inevitably for whatever reason refuses to come up under a normal user. &nbsp;Why, again, is beyond me. &nbsp;For example, if it happens to anyone else, this is what happens:</div><br />I have to think that your problems are related to video driver installation. &nbsp;As I recall, you're using an Nvidia card, and I'm wondering if you've installed it correctly. &nbsp;Also, there is a blurb in the Nvidia driver README file that discusses permissions (regarding things only working as root). &nbsp;It's something like &quot;chmod &nbsp;666 /dev/nvidia*&quot; or similar. &nbsp;I suggest you read that README, and then uninstall/reinstall the driver.<br /><br />Please do these things, and let us know if it helps.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom3 Sound Not Working?  Try this</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 29, 2004, 10:05:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'll check it out and try it again, I've been pouring over the readme for information on TwinView though to try and get it working with my TV (hoping that's what I'm trying to set up, anyway).<br /><br /><br /><br />I'll see if I can find the bench site, it wasn't Aandtech but it was a pretty reputable site. &nbsp;However again, it's not a &quot;golden rule&quot; but explains why myself and quite a few people on some other Linux forums I've been lurking have reported overall 'bad' performance from Doom 3 in Linux.<br /><br /><br /><br />I'm not aware of if you run Windows as well or can test it out, but have you checked the difference in image quality between Linux and Windows? &nbsp;It's a little odd...hard to put your finger on but I swear the image quality is higher in Windows. &nbsp;Again, it was on the same site, I'll see if I can dig it up here.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

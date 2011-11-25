@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - OpenMosix</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on November 12, 2003, 04:47:10 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OpenMosix</b><br />
+					Post by: <b>bhoff</b> on <b>November 12, 2003, 04:47:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">OpenMosix Update Nov,12 2003<br /><br />Well My OpenMosix cluster is running well and I am having a good time with it. Right now I am using it to run crack against my systems passwords. Multiple libraries at the same time. It broke my old 512bit pgp in 27.3 hours not bad at all......<br />Note I say my systems in the above statement.<br /><br />Anyway I have put together some scripts and run some test I wanted to update you all on.<br />First of all is the nice file system sharing that is setup under MFS and DFSA under OpenMosix.<br /><br />First if you have an openmosix cluster going add the following to your fstab file<br /><br /># &nbsp;vi /etc/fstab<br /># i <br />to insert text<br />use the arrow keys to get down to the empty lines and enter the line below.<br />After you have typed it in.<br /><br /># [esc]<br /><br />That means the escape key.<br /><br /># [shft] : wq! [enter]<br /><br />and you are done.<br /><br /><br />cluster&nbsp;&nbsp;&nbsp;/mnt/mfs&nbsp;&nbsp;&nbsp;mfs odfsa=1 0 0<br /><br />next create a directory under /mnt called mfs<br /><br /># mkdir mfs<br /><br />now you must restart openmosix<br /><br /># service openmosix restart<br /><br />Then remount fstab<br /><br /># fstab -a<br /><br />now if you <br /><br /># ls /mnt/mfs<br /><br />you should several folders including one for every node on your cluster. If you dig deeper and go into a node you will see the entire file structure for that node. you can now run commands on each node as if it was one machine.<br /><br />Below are a couple bash scripts that I put together for my cluster. they are in bash so just save them into a directory.<br />You can either run them from the prompt as<br /># ./distribute<br />or<br /># ./each<br />My choice was to create icons for them on my desk top and call them up from there. They do require user input to tell them what to do. Distribute is a small bash script that will copy a file to all the nodes listed in /proc/hpc/nodes and give you a run down of what was copied to where. The Default destination dir (or where the files is going) is /tmp. If someone would like to rewrite my script please feel free I would just ask that you post it back here afterwards. This script will ask you for the file path to copy.<br />The second script each will run a command on each node. echoing back the results to your screen. There is a prompt asking you what command you would like to run.Much faster than having to &nbsp;to a box every time you want to run a command.<br />I also like this much better than the Distributed shell that comes from the add-on's section of the OpenMosix website.<br />------------------------------------------------------------------------------------------------------<br />Script one each<br />------------------------------------------------------------------------------------------------------<br />#!/bin/bash<br /># By: Brett Hoff November 9 2003 to ease running one command across all nodes.<br /># Added input to set command that is run on nodes.<br />&nbsp;&nbsp;&nbsp;echo -n &quot;Enter command you wish to run on nodes: &quot;<br />#This command reads the input and assigns it to $command<br />&nbsp;&nbsp;&nbsp;read -e command<br /><br />function foreach() {<br />for n in `ls /proc/hpc/nodes`<br />do<br />let &quot;TMP=`cat /proc/hpc/nodes/$n/cpus`&quot;<br />if (( $TMP != &quot;-101&quot;));<br />then<br /># put command here that you wish to have performed on the nodes in your cluster.<br />$command<br />echo &quot;execute $command &nbsp;for node $n&quot;<br />fi<br />done;<br />}<br />foreach<br />-----------------------------------------------------------------------------------------------------<br />Script two distribute<br />-----------------------------------------------------------------------------------------------------<br />#!/bin/bash<br />#created by Brett Hoff November 9 2003 for the benefit to speed up the distribution of Folders and Files between nodes of the OpenMosix Cluster.<br /># Added user prompt to set the pathway to the file needing distribution.<br />#----------------------------------------------------------------------------<br />echo -n &quot;Enter path of file to distribute: &quot;<br />read -e path<br />#----------------------------------------------------------------------------<br /><br />function distributefile() {<br />&nbsp;&nbsp;&nbsp;for n in `ls /proc/hpc/nodes`<br />&nbsp;&nbsp;&nbsp;do<br />&nbsp;&nbsp;&nbsp;let &quot;TMP =`cat /proc/hpc/nodes/$n/cpus`&quot;<br />&nbsp;&nbsp;&nbsp;if (( $TMP != &quot;-101&quot; ));<br />&nbsp;&nbsp;&nbsp;then<br /># uncomment the line below to move individual files and not folders.<br />#&nbsp;&nbsp;&nbsp;/bin/cp &nbsp;/tmp/test.dat /mnt/mfs/$n/tmp/test.dat<br />#uncomment out the line below to not distribute folders but rather files above.<br />#&nbsp;&nbsp;&nbsp;/bin/cp -r /tmp/distribution /mnt/mfs/$n/tmp<br />#------------This is the new version with prompt for path option--------------<br />&nbsp;&nbsp;&nbsp;/bin/cp /$path&nbsp;&nbsp;&nbsp;/mnt/mfs/$n/tmp<br />#-----------------------------------------------------------------------------<br />&nbsp;&nbsp;&nbsp;fi<br /># Uncomment the echo below that best describes the operation.<br />echo &quot;file distributed to $n&quot;;<br />#echo &quot;folder distributed to $n&quot;;<br />&nbsp;&nbsp;&nbsp;done;<br />}<br />distributefile<br /><br />-----------------------------------------------------------------------------------------------------------------<br /><br /><br />Also if you did not know it mosctl is the command line tool for the cluster. you can find lot's of useful information in the man pages.<br /><br /># man mosctl<br /># man mosrun<br /># man setpe<br /># man mosmon<br /><br />Well that's all for now folks have fun and let me know what you think.<br /><br />~Brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Article update</b><br />
+					Post by: <b>bhoff</b> on <b>January 11, 2005, 08:42:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Right now I am using a base RedHat 7.2 distro with an updated 2.4.18-openmosix4 kernel.<br />I have finally got around to building a single cd install img. But found a start daemon problem which I solved with the following.<br /># vi /etc/re.d/init.d/openmosix<br /><br />goto right below the start script and add the following<br /><br />start ()<br />{<br />&nbsp; &nbsp; &nbsp;`omdiscd`<br />&nbsp; &nbsp;<br /><br />This will start the autodiscovery daemon on startup.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

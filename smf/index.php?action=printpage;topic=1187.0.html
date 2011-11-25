@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Serial Hook up question?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: bhoff on November 27, 2003, 09:48:07 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Serial Hook up question?</b><br />
+					Post by: <b>bhoff</b> on <b>November 27, 2003, 09:48:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is the scenario<br /><br />Running RedHat 7.2<br />have getty and agetty on system<br />have Handspring Visor with serial cradle and ptelent and vtterm100 software.<br />have added the following to the /etc/inittab file<br />t0:2345:respawn:/sbin/getty -h -L ttyS00 9600 vt100<br />t1:2345:respawn:/sbin/getty -h -L ttyS01 9600 vt100<br /><br />and also tried <br />t0:2345:respawn:/sbin/agetty -h -L ttyS00 9600 vt100<br />t1:2345:respawn:/sbin/agetty -h -L ttyS01 9600 vt100<br /><br />and<br />t0:2345:respawn:/sbin/mgetty -r -s ttyS00 9600 vt100<br />t1:2345:respawn:/sbin/mgetty -r -s ttyS01 9600 vt100<br /><br />I also did a dmesg |grep ttyS00 and ttyS01 and found both assigned.<br /><br />I not getting any handshaking between my palm and my computer.<br />I am getting a respawning to fast disabled for 5 minutes thou in the messages .<br /><br />any ideas<br /><br />I am hoping to use my palm as a serial terminal for my nodes in the cluster and have been unable to get this working properly.<br /><br />Any and all suggestions are welcome.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Serial Hook up question?</b><br />
+					Post by: <b>crowe</b> on <b>November 27, 2003, 08:24:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, here's the relevent line out of my working /etc/inittab, although I'm using a WYSE terminal.<br /><br /><div class="codeheader">Code:</div><div class="code">s1&#58;12345&#58;respawn&#58;/sbin/agetty -L ttyS0 9600 wyse50</div><br /><br />Hope this helps; but without any more information, I can't really say what the problem is.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I finally got it</b><br />
+					Post by: <b>bhoff</b> on <b>November 30, 2003, 01:48:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks to all those who helped me with this project.<br />I can now use my palm to log in and to monitor my linux machines.<br /><br />I added the following to my inittab file<br /><br />T0:12345:/sbin/agetty -L ttyS0 115200 vt100 <br /><br />As you can see I was able to use the fastest speed with the palm.<br /><br />I also added the following line to my /etc/syslog.conf file<br />kern.*;emerg.*;local7.*;openmosix.* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /dev/ttyS0<br /><br />so now I can get all the needed messages during boot-up for trouble shooting.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Same problem round 2!</b><br />
+					Post by: <b>bhoff</b> on <b>December 04, 2003, 05:26:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here we go . I need there to always be a login prompt at the serial line /dev/ttyS0. right now it just respawn from the inittab file. THis will not give me a login when ever I try to hook up to the serial port.<br />any ideas?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Serial Hook up question?</b><br />
+					Post by: <b>imnes</b> on <b>December 04, 2003, 07:03:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think that should give you a login prompt always. &nbsp;Probably it is sending the login screen to the port when no computer is hooked up, and it's waiting for someone to type in a username. &nbsp;Hook the port up and hit enter a few times, see if the login prompt appears.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Case Closed Clomplete!</b><br />
+					Post by: <b>bhoff</b> on <b>December 06, 2003, 10:17:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well I got it working on all the nodes.<br />Had to scrap agetty thou. Installed mgetty instead. <br />New lines in /etc/inittab<br />T0:2345:/respawn:/sbin/mgetty -r -s 9600 ttyS0<br />in /etc/securetty added<br />ttyS0<br />in /etc/syslog.conf added<br />kern.*;local7.*;authpriv.* &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /dev/ttyS0<br />THis now allows me to log in and run commands in linux plus get the messages logged on my palm in ascii or hex.<br />Not bad if I say so myself. I have also added macros to my palm to run the various repair caommands in linux. and the Openmosix commands.<br />I am using Ptelnet in serial mode on a visor from handspring .<br />Project complete thanks to everyone's help.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

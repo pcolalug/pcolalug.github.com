@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Dual Booting Linux and Windows with LILO</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: imnes on March 16, 2003, 08:52:04 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Dual Booting Linux and Windows with LILO</b><br />
+					Post by: <b>imnes</b> on <b>March 16, 2003, 08:52:04 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's a lilo.conf that I was using to dual boot Linux and Windows. &nbsp;I don't remember who had the lilo problem, but maybe this will help you.<br /><br /><div class="codeheader">Code:</div><div class="code"><br /><br /># LILO configuration file<br /><br /># Start LILO global section<br />boot = /dev/hda<br />message = /boot/boot_message.txt<br />prompt<br />timeout = 60<br /><br /># Timeout is seconds =timeout / 10, <br /># so a timeout=60 will wait for 6 seconds.<br /><br /># Override dangerous defaults that rewrite the partition table&#58;<br />change-rules<br />&nbsp; reset<br /><br /># Normal VGA console<br />vga = normal<br /><br /><br /># Linux bootable partition config begins<br />image = /boot/vmlinuz<br />&nbsp; root = /dev/hda1<br />&nbsp; label = Linux<br />&nbsp; read-only<br /># Linux bootable partition config ends<br /><br /><br /># Windows bootable partition config begins<br />other = /dev/hda2<br />label = Windows XP<br />table = /dev/hda<br /># Windows bootable partition config ends<br /><br /></div><br /><br /><br />Should just have to copy that to /etc/lilo.conf, modify it to point to the correct partitions on your machine, and type 'lilo' at the prompt. &nbsp;No guarantees though -- good luck. &nbsp;If you have trouble ask questions here.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Note on LILO!</b><br />
+					Post by: <b>bhoff</b> on <b>March 16, 2003, 12:08:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just remember anytime you make any changes to lilio you need to run /sbin/lilo this resets all the behind scenes stuff. You should also rerun /sbin/lilo if you make any kernel changes.<br />~brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Dual Booting Linux and Windows with LILO</b><br />
+					Post by: <b>rugmonster</b> on <b>March 17, 2003, 10:16:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Since I prefer the Windows bootloader menu, I use a program called bootpart (http://www.winimage.com/bootpart.htm). It makes it very simple to add non-Windows OSes to your Windows bootloader menu. Worth checking out at least.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

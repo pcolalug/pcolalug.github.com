@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Unreal GOTY problem.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: L.Rentz on December 31, 2004, 11:15:11 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal GOTY problem.</b><br />
+					Post by: <b>L.Rentz</b> on <b>December 31, 2004, 11:15:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I bet you all havent heard someone complain about this before. &nbsp;I have Unreal GOTY installed on my SuSE laptop. &nbsp;The problem I am having is that the game plays TOO fast, twice the speed as it should. hahaha. &nbsp;I am using the openGL driver for my Nvidia card. &nbsp; I have googled for the problem but I have not found anything to why it would be running too fast. &nbsp;Does anyone have any ideas what the problem could be?<br /><br />Thanks,<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal GOTY problem.</b><br />
+					Post by: <b>danc</b> on <b>January 01, 2005, 12:58:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Lee,<br /><br />Seems it may be related to the &quot;speedstep&quot; functions of a laptop, where the CPU frequency is changed according to the current load on the system. &nbsp;When you installed the game, there wasn't much load on the system, and now when running the game (CPU heavily loaded), the frequency goes up and makes everything too fast.<br /><br />Not sure what the complete fix is, but might require disabling the &quot;speedstep&quot; functions (maybe in the BIOS?) and reinstalling the game. &nbsp;Sometimes this stuff is called &quot;CPU Scaling&quot; I think...<br /><br />You might find more helpful info in these links, which I have only skimmed over:<br /><br />http://tinyurl.com/5s7w9<br /><br />http://tinyurl.com/5kv8h<br /><br />Good luck!<br /><br />Dan<br /><br />P.S. - I claim the first post in here of 2005 !!! &nbsp; WooooHoooo !</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal GOTY problem.</b><br />
+					Post by: <b>rugmonster</b> on <b>January 01, 2005, 02:21:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The key is in frequency scaling. In your kernel config you can enable or disable cpu frequency scaling under the acpi settings (under power management). You can then control your frequency scaling through the /proc or /sys fs. You should be able to find out more in your kernel documentation.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal GOTY problem.</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 01, 2005, 07:40:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks guys. &nbsp;I will take a look and report back.<br /><br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal GOTY problem.</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 01, 2005, 08:38:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well as usual Dan,<br />You hit the nail on the head. &nbsp; I was able to step my cpu down to half and Unreal plays perfect. &nbsp;I guess what I will have to uninstall and reinstall with my cpu at full speed. &nbsp;Dan you da man. &nbsp;:D &nbsp; I am going to try to search and see if there is a setting in the config files somewhere that tells the game at what cpu speed it was set at in the install. &nbsp;If I could change that it seems that would correct it and I would not need to uninstall and reinstall. &nbsp;It has to be somewhere or there would be no need for the game to even check the cpu speed at install. &nbsp;Well I guess except for seeing if it met the minimum required cpu speed.<br /><br />Thanks again,<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal GOTY problem.</b><br />
+					Post by: <b>danc</b> on <b>January 01, 2005, 09:28:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Cool! &nbsp;Glad you got it working. &nbsp;You may be able to correct what UT thinks your CPU speed is with a console variable. &nbsp;Try opening a console in the game with the &quot;~&quot; key, and type in: &nbsp;CPU_SPEED=2000 &nbsp;(where the number is in Mhz, 2000 meaning 2.0 Ghz), adjust to your machine.<br /><br />Here is an extensive list of console commands:<br />http://unreal.epicgames.com/UTConsole.htm<br /><br />Have fun,<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal GOTY problem.</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 01, 2005, 01:48:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Guys, I dont have to disable anything or enter any console commands in the game. &nbsp;I found it as easy as telling Kpowersave what cpu speed to use prior to going into UT. &nbsp;Usually I am not doing anything cpu intensive so it will drop to 1.2 ghz. &nbsp;When I was going into the game it would jump up to 2.4 ghz and that was where the problem was apparently. &nbsp;Now what I do is set my cpu speed before I go into unreal and it just works. &nbsp;be it 2.4 or 1.2 ghz. &nbsp;As long as it does not switch while I am in the game I am ok. &nbsp;Which it won't because I deselect dynamic mode before I go into the game. &nbsp;Much thanks to you guys for the help diagnosing the problem. &nbsp;I was searching for days to figure out what it was. &nbsp;Never once did I run into the solution Dan spoke of.<br /><br />Lee</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Seeing Linux to Linux on a Network</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: SiliconFOXX on October 14, 2004, 10:20:56 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Seeing Linux to Linux on a Network</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 10:20:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I know how to do it in Windows but not really how in Linux. &nbsp;I've got two Slackware boxes on the network. &nbsp;I want them to be able to see each other and share files if possible. &nbsp;How do I do it?<br /><br /><br />Also, how do I double-check and/or change the domain of a machine in Linux? &nbsp;Since I'm not really on a &quot;domain&quot; per se it might not matter but I imagine I'd want both machines on &quot;localdomain.net&quot; for compatibility's sake.<br /><br /><br />Oh, advice on command-line as well as GUI would be helpful. &nbsp;I'll tackle Samba in another thread if it still gives me issues.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Seeing Linux to Linux on a Network</b><br />
+					Post by: <b>imnes</b> on <b>October 14, 2004, 11:19:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You'll need to setup file shares on the boxes. &nbsp;You can go either samba or nfs. &nbsp;If you don't have any windows machines to worry about, nfs is fine otherwise do samba. <br /><br />Once you have your samba shares setup, it should be easy to browse from the other machines through konqueror or nautilus.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Seeing Linux to Linux on a Network</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 11:30:04 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, I guess there's no getting around Samba as I've got one Windows box on the network. &nbsp;Well, I certainly hope it's a lot easier to get Samba working for Linux to Linux than it is for Linux to Windows.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Seeing Linux to Linux on a Network</b><br />
+					Post by: <b>rugmonster</b> on <b>October 14, 2004, 01:43:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">nfs is the more &quot;unix&quot; style. It's is very easy as long as the kernel is configured to use it. Also, if you get Service for Unix, your Windows box can mount and export nfs shares.<br /><br />You can edit your samba config (usually in /etc/samba/smb.conf depending on your distro). Samba is one of the best documented open source projects out there. Their howto's are absolutely amazing. Go check them out at http://www.samba.org</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

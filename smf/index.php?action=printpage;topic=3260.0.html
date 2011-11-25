@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Hacked and hard!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: bhoff on November 26, 2007, 03:34:06 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hacked and hard!</b><br />
+					Post by: <b>bhoff</b> on <b>November 26, 2007, 03:34:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wow I was finally hit very hard a few weeks back on Sunday between the hours of 2-4 am.<br />First a little detail I am on a Cox home account with no interesting services running and very paranoid security!<br /><br />Anyway everything was fine about 1am when I went to bed after doing some coding. Got up around 9am and tried to check email.<br />To my amazement the box was up but no internet connection. After about three hours of checking things out hardware wise found snort had crashed and primary switch had corrupted arp table. Now I was getting worried. After some more checking snort would not come up or the primary firewall. I went to my log server and had logged over 4gigs of logs in 2 hours. I spent the next three hours rebuilding everything that had been destroyed and started tracking the problem. In the end I had to use my imgs to rebuild 2 firewalls, 1 ECM &quot;Electronic counter measures&quot; 2 tracking routers, 1 honeypot and reset the arp table in my managed switch.<br /><br />What I determined I did not have a listen only cable going to my snort sensor and only had no ip assigned. Apparently some one crafted a packet for a know exploit with this and gained access to the snort box which happens to have an admin. nic on the backside for the network. From there they were able to keep the firewall busy with 531 different IP connections and work the arp table and look like a trusted mac address. At this point my tracking routers noticed something and started logging internally and activated the ECM it managed to take out 112 of the IP&#039;s before it itself was taken out with a massive DDOS attack. After that they managed to take out the logging routers and the secondary firewall! At that point the attack stopped Sunday 4am. I believe that in the attack on the secondary firewall they lost connection and could not get back. So now I have added additional resources 4 firewalls redundant up front and more snort sensors sandboxed and 2 more ecms with lateral paths to the internet via neighbors wifi. With permission and additional logging adn active monitoring. Along with a lot more that I will not mention!! After sorting over the logs here is the kicker about 70% were .mil of the 112 I knocked out 63% were .mil and the est were spread over roadrunner and cox networks! Thing is Cox never either noticed or cared about the massive amounts of traffic going to this IP.<br />The next day I had three contacts from admins for three different Networks 2 were .mil . They accused me of attacking there networks and I spoke to them about the attack and offered the logs via an ftp site for there review and invited them to come to my&nbsp; irc channel to discuss it and believe it or not they did we did not get into details but enough that they believed me!<br />I offered to pass any further listed .mil on any of my firewalls to them and we spoke twice by phone and they have sent me packets for reporting cyber activity. As for the ECM&#039;s they worked better than expected and if I would have had a bigger pipe I think I could have taken them all down....The Marine corp admin was very interested in my ECm also and I have everything fully documented and logged just in case. AS for the next attack I am ready I think :).<br />&nbsp;Questions I have as how did they get details to be this specific of an attack I have a dhcp address although it has not changed it over a year. and details of y setup besides blabbing I never give exact details. Anyway It was a hoot and I enjoyed it immensely!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hacked and hard!</b><br />
+					Post by: <b>hype8912</b> on <b>December 03, 2007, 11:17:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sounds like you got hit by a bot attack. Those are very rare on home networks and usually start weeks ahead of time. You&#039;ll usually see port scanning a couple of weeks prior to the attack as they are sizing up your firewall&#039;s security.<br /><br />I have my firewall setup that if the outsider attempts connection on any port other than the 4 ports that are open more than 10 times it will block that ip address for 1 week from the last attack.<br /><br />It&#039;s weird that they attacked you specifically. DDOS attacks are really hard to filter out and are usually over by the time you detect the problem and begin taking the necessary actions. About three weeks after I setup a smoothwall firewall I got hit pretty hard with a DDOS attack. It started out slow and finally disabled any outgoing access to the internet. I ended up just unplugging the cable modem for a few hours after figuring out that was the problem and when I plugged it back in everything was cool. I&#039;ve found that snort can become overwhelmed very easily but I know you use a BSD firewall that&#039;s very similar to a Cisco pix setup which shouldn&#039;t have crapped out at all.<br /><br />Anyway, it was a learning experience not to mention the thrill of fun you got out of the situation that led to really good story. Better luck next time.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hacked and hard!</b><br />
+					Post by: <b>rugmonster</b> on <b>January 05, 2008, 12:56:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Bhoff, what are you using for your ECM? I&#039;m not familiar with those at all and now have my interest piqued.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hacked and hard!</b><br />
+					Post by: <b>bhoff</b> on <b>January 05, 2008, 07:27:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well you probably will not like it Daniel! it is counter hacking! I have found a very effective way to (without getting into to much detail)<br />to map the attack type and payload and send it back to the offending computer same as IP as the originating in the ip headers.<br />also package a buffer overflow for the particular attack also as a side dish. It has not been perfected yet and has a long way to go but in my lab it has proven almost 80% effective against all the windows boxes in my VR setup and worked pretty good against my attackers.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

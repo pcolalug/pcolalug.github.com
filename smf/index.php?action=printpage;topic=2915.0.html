@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Openssl ain't just for secure transactions</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on June 17, 2006, 04:46:12 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Openssl ain't just for secure transactions</b><br />
+					Post by: <b>bhoff</b> on <b>June 17, 2006, 04:46:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was just flipping thru the lastest issue of Linux Journal<br />found these useful openssl hacks<br /><br />Just a little knowledge.<br />openssl is now <br />US Federal goverment NIST FIPS 140-2 level 1 valadation<br />has TLS support the next generation SSL<br />36 commands<br /><br /><br />to wrap a file in base64 text encoding<br />openssl base64 &lt;filename .bin&gt; filename.txt<br />&nbsp;<br />to unwrap a base64-encoded file<br />openssl base64 -d&nbsp; &lt;filename.txt&gt; filename.bin<br /><br />To encrypt a word<br /><span style="font-family: Verdana;"><span style="font-family: Verdana;">echo &quot;Open-sourceenterprises.com&quot; |openssl base64</span></span><br />T3Blbi1zb3VyY2VlbnRlcnByaXNlcy5jb20gfCBvcGVuc3NsIGJhc2U2NAplY2hv<br />IE9wZW4tc291cmNlZW50ZXJwcmlzZXMuY29tCg==<br /><br />quick encryption<br />toor@laptop:~# openssl enc -aes-128-cbc &lt;filename&gt; filename.aes-128-cbc<br />enter aes-128-cbc encryption password:<br />Verifying - enter aes-128-cbc encryption password:<br /><br />Note you will need to remember the form of encryption that you use thou<br />I put it on the tail of the file for ease<br /><br />To decrypt file use the following<br />toor@laptop:~# openssl enc -d -aes-128-cbc -in filename.aes-128-cbc &gt;filename.bin<br />enter aes-128-cbc decryption password:<br /><br /><br />generating fast passphrases<br /><br />toor@laptop:~# openssl rand 15 -base64<br />757xC69JFsnGmz1lYBjK<br /><br /><br />There is many other things that openssl can do create hash marked passwords for linux passwd file<br />amongst other things<br /><br />Check out the man openssl for details<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Openssl ain't just for secure transactions</b><br />
+					Post by: <b>Brent</b> on <b>June 17, 2006, 10:43:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is one of the coolest posts I&#039;ve seen on pcolalug in a while, wish we had more like these.<br /><br />Thanks Brett!<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

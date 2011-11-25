@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - super simple file server 2</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: bhoff on September 06, 2008, 06:23:41 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>super simple file server 2</b><br />
+					Post by: <b>bhoff</b> on <b>September 06, 2008, 06:23:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">problem need a simple easy to setup secure file server.<br /><br />well I was getting carried away with not so simple details so here goes try 2.<br />setup your favorite *BSD or Linux distro on whatever hardware you got lying around that will allow for network connection and decent size /home dir.<br />for Linux or *BSD we will be using scp to grab files from windows you can use winscp which is a free download and give you the ability to have a very secure fileserver that you can reach from anywhere. I even keep the winscp portable app on a keychein so if I am on a customers site I can grab files or tools.<br /><br />you have to give each user an account on the fileserver that you want to have access to it and also a master account with all the users added to it&#039;s group so that you can access the files.<br /><br />as root from home you have to run some commands on the users home dir.<br />chmod -r 770 /home/user/&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; user&nbsp; being what ever the user name is this sets all files inside that dir to 770 which is read=4 write=2 execute=1<br />so the owner and group have read/write/execute permissions but no one else can view your files.<br /><br />*optional when adding users I would suggest that you use the /bin/false or /sbin/nologin for *BSD to allow scp but nologin to the local machine.<br /><br />so that is the basics to get you going a box with linux or *BSD installed and another linux box to access the fileserver ot winscp from a windows box.<br />it would be very easy to set up a raid 10 or something and have a very durable fileserver for all your warez.<br /><br />**fileserver user is the master account that can access all the accounts that way everybody is not messing with other peoples accounts.<br />this one must be able to go into everybodies account or you could just use the root account it you are really in a hurry.<br /><br />*** why ssh and not ftp.........ftp sends the usernames and passwords in plain text and the ssh protocol does not and hence is very secure and allows for file compression when passing large files to the fileserver. + it is tons easier to setup than ftp ;]<br /><br />Have fun :)<br />and I will follow up with a nice long tutorial with some more in depth security details.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: super simple file server 2</b><br />
+					Post by: <b>danc</b> on <b>September 06, 2008, 06:49:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3393.msg16348.html#msg16348">Quote from: bhoff on September 06, 2008, 06:23:41 pm</a></div><div class="quote">you have to give each user an account on the fileserver that you want to have access to it and also a master account with all the users added to it&#039;s group so that you can access the files.<br /><br />as root from home you have to run some commands on the users home dir.<br />chmod -r 770 /home/user/&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; user&nbsp; being what ever the user name is this sets all files inside that dir to 770 which is read=4 write=2 execute=1<br />so the owner and group have read/write/execute permissions but no one else can view your files.</div><br /><br />I would have to (strongly) disagree with setting the permissions on /home/user to 770.&nbsp; This will allow anyone else in the group (I assume what you are calling the &quot;master account with all the users added&quot;) to have access to the files owned by &quot;user&quot;.&nbsp; Bad idea.<br /><br />There is no need to change any permissions on anyone&#039;s user directory under the /home directory.&nbsp; This is normal default Linux behavior, and will allow only the user who is logged in via SSH to access that directory, and not everyone else.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: super simple file server 2</b><br />
+					Post by: <b>bhoff</b> on <b>September 07, 2008, 08:37:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">hmmmmmmmmm.<br />seems you are right in your thinking Dan!<br />I made an assumption that when you did a adduser in linux it created a group of the same name.<br />This is an OpenBSD thing which btw is what I use for my fileservers.<br />i this case you make each home dir so that the user can read/write and the controller account not root can do it ou add all the groups for the users to the controller account that way he can read/write to the diffrent accounts. we use this where several clients were ftp senstive files up to the server and wanted encryption and better secuirty control.<br />you would actually chgrp user user user_home_dir/ that would make sure that the user and group of that dir would be set for the user then chmod -R 770 which would keep all others out. now with the controller having group access to each user he can go into each dir also and not be root.<br /><br />Thanks for pointing that out Dan. I am checking the facts I have done this sucessfully several times and it works great. <br />I wil check this in Linux and make the changes necessary.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

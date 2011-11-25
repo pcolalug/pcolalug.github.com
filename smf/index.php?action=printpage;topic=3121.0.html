@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - kjournal on ext3</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: Brent on February 08, 2007, 08:12:50 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>kjournal on ext3</b><br />
+					Post by: <b>Brent</b> on <b>February 08, 2007, 08:12:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have this laptop with xubuntu (ext3 fs) installed on it that I use at work for coding and such.<br /><br />The odd thing is, every so often, for no particular reason, kjounald will come out and thrash the daylights out of my hard disk!&nbsp; This raises the temp in the laptop from like 45C to over 60C.&nbsp; That&#039;s hot enough to worry about imho.<br /><br />People have suggested that the disk is going bad, and I needed to run an fsck.ext3 on it, but that shows no oddities, everything is normal.&nbsp; I even told fstab to mount it as ext2 so it wouldn&#039;t journal, but the OS seems to ignore that, since the fs type is autodetected by the kernel, and modules are loaded before hand.<br /><br />I&#039;ve even ran tunext2fs -O ^has_journal or whatever (many people have recommend, but that doesn&#039;t even seem to be the correct syntax).<br /><br />I reckon I&#039;m gona have to do a complete reinstall to fix this.&nbsp; It&#039;s really odd.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

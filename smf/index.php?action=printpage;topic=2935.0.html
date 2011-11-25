@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - HostAP and OpenBSD 3.9 Help</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: rugmonster on July 22, 2006, 05:34:01 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>HostAP and OpenBSD 3.9 Help</b><br />
+					Post by: <b>rugmonster</b> on <b>July 22, 2006, 05:34:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m having a hard time getting my new wireless adapter fully working. I got a Linksys WUSB54G ver4, which is supported by the ural driver in OpenBSD. I want to get this thing setup to run as a hostap, and it works fine as an 802.11b ap. The problem is that it should be able to work as a 802.11g ap. Here&#039;s the ifconfig I&#039;m using to configure it.<br /><br /><div class="codeheader">Code:</div><div class="code"># ifconfig ural0 10.20.60.1 netmask 255.255.255.0 media OFDM54 mode 11g mediaopt hostap chan 10 nwid ruggy</div><br />That should make it work, but this is what I get with the ifconfig ural0 output.<br /><br /><div class="codeheader">Code:</div><div class="code">ural0: flags=8843&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500<br />&nbsp; &nbsp; &nbsp; &nbsp; lladdr 00:0f:66:75:fa:65<br />&nbsp; &nbsp; &nbsp; &nbsp; media: IEEE802.11 OFDM54 mode 11g hostap (autoselect mode 11g hostap)<br />&nbsp; &nbsp; &nbsp; &nbsp; status: active<br />&nbsp; &nbsp; &nbsp; &nbsp; ieee80211: nwid ruggy chan 10 bssid 00:0f:66:75:fa:65 100dBm<br />&nbsp; &nbsp; &nbsp; &nbsp; inet6 fe80::20f:66ff:fe75:fa65%ural0 prefixlen 64 scopeid 0xd<br />&nbsp; &nbsp; &nbsp; &nbsp; inet 10.20.60.1 netmask 0xffffff00 broadcast 10.20.60.255</div><br />The thing that caught my eye was the fact that on the media line, autoselect mode 11g hostap are in parenthesis. Don&#039;t ask me why. If you guys have any idea, please let me know. While I got the adapter as a hell of a deal (&lt; $20.00), I would hate to think I got it and it won&#039;t work for what I had intended it to do.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: HostAP and OpenBSD 3.9 Help</b><br />
+					Post by: <b>bhoff</b> on <b>July 22, 2006, 06:36:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">hey could you post this for me please<br /><br />dmesg | grep ural0<br /><br />thanks<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: HostAP and OpenBSD 3.9 Help</b><br />
+					Post by: <b>bhoff</b> on <b>July 22, 2006, 06:45:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just a note even if you have it set for G if someone is connecting with B it will lower to meet the lower requirements<br />Just thinking out loud...........</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: HostAP and OpenBSD 3.9 Help</b><br />
+					Post by: <b>bhoff</b> on <b>July 22, 2006, 06:47:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Also as a side note has there been any firmware upgrades to this card?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: HostAP and OpenBSD 3.9 Help</b><br />
+					Post by: <b>rugmonster</b> on <b>July 22, 2006, 08:54:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Output of dmesg<br /><br /><div class="codeheader">Code:</div><div class="code">ural0: Cisco-Linksys Wireless-G USB Network Adapter, rev 2.00/0.04, addr 2<br />ural0: MAC/BBP RT2571 (rev 0x03), RF RT2526, address 00:0f:66:75:fa:65</div><br />The client is most definitely a g capable card. No b cards are connecting whatsoever. <br /><br />As for firmware upgrades, isn&#039;t the firmware loaded onto these cards when the drivers loads? The firmware for these USB and PCMCIA cards are not actually stored on the card as far as I know.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: HostAP and OpenBSD 3.9 Help</b><br />
+					Post by: <b>bhoff</b> on <b>July 23, 2006, 09:02:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am studing the info provided but from What I found there is a hardware firmware on the device and you can upgrade it.<br />I did a lot of googling on this and it seems there is a few people having similar problems and this is some of the issuses mentioned.<br />Also the driver is still in the infant stages and not fully developed yet just like the atheros driver :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: HostAP and OpenBSD 3.9 Help</b><br />
+					Post by: <b>rugmonster</b> on <b>July 23, 2006, 11:42:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">No firmware updates available from Linksys (http://tinyurl.com/dz5mx)<br /><br />I did post to the forums run by the person that made the *BSD drivers for the ral2500 chipset. I guess I&#039;ll wait to hear something there. I&#039;ve also done searches, but haven&#039;t found anything that is the same problem as mine. I&#039;ve found other people using different adapters in the same configuration getting 802.11g 54mb, so I don&#039;t know what the heck the problem is. <br /><br />I&#039;m thinking about just separating my network into vlans at my WRT54G and letting my OpenBSD box route between them. My whole thing is to split the wireless off into a seperate subnet and then require it to go through my OpenBSD box encrypted. Benefit being that everything going through the air would be encrypted at a much better level than the encryption my current hardware will support, the encryption would be done on much more powerful processors and I can take the WEP encryption off of my wireless, thus speeding it up. <br /><br />Anyhow, now you know. Once I&#039;m done with whatever route I go, I&#039;ll do a write up.<br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

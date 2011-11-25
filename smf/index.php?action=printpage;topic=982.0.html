@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - ssh question?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: bhoff on September 02, 2003, 04:50:14 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ssh question?</b><br />
+					Post by: <b>bhoff</b> on <b>September 02, 2003, 04:50:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How can I set up my ssh to accept both passwords and authorized_keys.<br />I have my open mosix cluster working fine but decided that I liked ssh over rsh go figure!<br />Any way I got it all setup and running in the cluster but if I putty in from my Windows box It will not let me in because I turned off passwordAuth in the sshd_config file for authorized_keys.<br />Any thoughts?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ssh question?</b><br />
+					Post by: <b>imnes</b> on <b>September 04, 2003, 04:44:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm not sure. &nbsp;I think it will prompt you for a password, and if you've disabled that then it will ask you for a key pair? &nbsp;But if it supported both how would it know which to use? &nbsp;<br /><br />Just reaching here, I've never configured sshd before.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>yes you are right</b><br />
+					Post by: <b>bhoff</b> on <b>September 06, 2003, 09:43:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">normally that is correct but I was looking for a way to set up the sshd config file to first check for keys and if the file was not there prompt for password. Just not sure if you can run the config file like a script and put an and/if statement in there?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>re: ssh config question</b><br />
+					Post by: <b>erc</b> on <b>September 06, 2003, 09:45:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Isn't that the way it works? &nbsp;First check for keys, then if that fails ask for a password? &nbsp;This assumes that you have both turned on in the sshd_config file...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I thought so too!</b><br />
+					Post by: <b>bhoff</b> on <b>September 07, 2003, 03:45:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Apparently to get keys to work you have to turn off password authen.<br />from everything I have read! so I did now only my keyed machines can not log in not my password setup machines.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ok I am crazy!</b><br />
+					Post by: <b>bhoff</b> on <b>September 09, 2003, 04:48:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The problem is fixed!<br />I turned on both keys auth. and password auth and it worked!<br />The marvels of modern science.<br />Any hoo that is over!<br /><br />P.S you could have told me about the misspelled word in my sig. file<br /><br />~Brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ok I am crazy!</b><br />
+					Post by: <b>dpeach</b> on <b>September 09, 2003, 10:13:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: bhoff</div><div class="quote"><br />P.S you could have told me about the misspelled word in my sig. file<br /></div><br />I thought for sure there was some kind of hidden meaning to a &quot;noe&quot; chasing someone. I figured it was some hacking term that I didn't understand, and therefore didn't want to look dumb in front of everyone by asking.<br /><br />Reminds me of a night at a meeting when someone had to ask what a TLA was and have everyone laugh at him. (If you don't know, search the board)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ssh question?</b><br />
+					Post by: <b>altomo</b> on <b>September 18, 2003, 09:54:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">glad to see you got it to work. &nbsp;I have several boxes that support password and keys so I was gonig to throw my help out there.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

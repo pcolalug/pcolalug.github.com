@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - new to linux</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Mchipser on February 04, 2005, 09:32:06 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new to linux</b><br />
+					Post by: <b>Mchipser</b> on <b>February 04, 2005, 09:32:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">hello p-cola<br /><br />im new to linux and i used to live near pensacola i had to move cause the army. anyway i am useing slackware and i cant get my sound to work. in alsamixer i see my sound card and have unmuted everything and still nothing any thought <br /><br />thanks for the help<br /><br />Myke</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new to linux</b><br />
+					Post by: <b>imnes</b> on <b>February 04, 2005, 10:00:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What kind of sound card is it?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new to linux</b><br />
+					Post by: <b>lloydr</b> on <b>February 05, 2005, 10:15:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">a possible fix would be try pushing the PCM in alsamixer up to 88-94% and see if you get any sound then. If that doesn't work then you need to run alsaconf possibly</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new to linux</b><br />
+					Post by: <b>dpeach</b> on <b>February 05, 2005, 11:56:38 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is a thread (http://www.pcolalug.org/phpBB2/viewtopic.php?t=2244) that was recently discussed. You can go through the steps Jaymz did to determine sound card type and we could see if you have the right driver loaded.<br /><br />Go through the steps listed there: <br /><div class="codeheader">Code:</div><div class="code">lspci<br />cat /proc/asound/cards<br />lsmod</div><br />Each one of those is a separate step (and ran as root) and you can post your output to the forum here with each step so we can possibly help.<br /><br />Jamyz' fix was ultimately to turn off &quot;External Amp&quot; inside of KMix. But I assume you are using Gnome as your window manager. I don't know what to look for there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>thanks for the help</b><br />
+					Post by: <b>Mchipser</b> on <b>February 05, 2005, 04:15:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok for <br /><br />&quot;lspci&quot;<br /><br />00:1f.5 &nbsp;Multimedia audio controller: Intel Corp. 82801db (ich4) AC'97 Audio Controller (rev 03)<br /><br />&quot;cat /proc/asound/cards&quot;<br /><br />1 [I82801DBICH4 &nbsp; &nbsp;] : &nbsp; &nbsp; &nbsp; &nbsp;ICH - Intel 82801DB - ICH4<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Intel 82801DB - ICH4 at 0xe0100c00, irq 11<br /><br />&quot;lsmod&quot;<br /><br /><br />Module &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Size &nbsp;Used by &nbsp; &nbsp;Tainted: P &nbsp;<br />keybdev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2052 &nbsp; 0 (unused)<br />mousedev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4212 &nbsp; 0 (unused)<br />hid &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;21220 &nbsp; 0 (unused)<br />usbmouse &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2040 &nbsp; 0 (unused)<br />input &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3200 &nbsp; 0 [keybdev mousedev hid usbmouse]<br />ndiswrapper &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;82604 &nbsp; 0<br />snd-pcm-oss &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;37736 &nbsp; 0<br />snd-mixer-oss &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;12504 &nbsp; 0 [snd-pcm-oss]<br />usb-storage &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;66176 &nbsp; 0 (unused)<br />uhci &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 24444 &nbsp; 0 (unused)<br />ehci-hcd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 17580 &nbsp; 0 (unused)<br />usbcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;59308 &nbsp; 1 [hid usbmouse ndiswrapper usb-storage uhci ehci &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -hcd]<br />hw_random &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2712 &nbsp; 0 (unused)<br />i810_rng &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2528 &nbsp; 0 (unused)<br />snd-intel8x0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 18924 &nbsp; 0<br />gameport &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1420 &nbsp; 0 [snd-intel8x0]<br />snd-mpu401-uart &nbsp; &nbsp; &nbsp; &nbsp; 3200 &nbsp; 0 [snd-intel8x0]<br />snd-rawmidi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;12740 &nbsp; 0 [snd-mpu401-uart]<br />snd-seq-device &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3888 &nbsp; 0 [snd-rawmidi]<br />snd-intel8x0m &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9544 &nbsp; 1<br />snd-pcm &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;56072 &nbsp; 0 [snd-pcm-oss snd-intel8x0 snd-intel8x0m]<br />snd-timer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;13604 &nbsp; 0 [snd-pcm]<br />snd-page-alloc &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6328 &nbsp; 0 [snd-intel8x0 snd-intel8x0m snd-pcm]<br />snd-ac97-codec &nbsp; &nbsp; &nbsp; &nbsp; 49500 &nbsp; 0 [snd-intel8x0 snd-intel8x0m]<br />snd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30852 &nbsp; 1 [snd-pcm-oss snd-mixer-oss snd-intel8x0 snd-mpu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 401-uart snd-rawmidi snd-seq-device snd-intel8x0m snd-pcm snd-timer snd-ac97-cod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ec]<br />soundcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3396 &nbsp; 7 [snd]<br />ohci1394 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 24112 &nbsp; 0 (unused)<br />ieee1394 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 42276 &nbsp; 0 [ohci1394]<br />8139too &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;14376 &nbsp; 1<br />mii &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2272 &nbsp; 0 [8139too]<br />crc32 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2880 &nbsp; 0 [8139too]<br />ds &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6548 &nbsp; 1<br />yenta_socket &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10336 &nbsp; 1<br />pcmcia_core &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;39972 &nbsp; 0 [ds yenta_socket]<br />ntfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 51424 &nbsp; 1 (autoclean)<br />ide-scsi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9328 &nbsp; 0<br />agpgart &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;43940 &nbsp; 0 (unused)<br /><br /><br />thanks for the help<br /><br /><br />o and i am useing fluxbox for my window manager<br /><br />Myke</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>??? alsa says something different</b><br />
+					Post by: <b>Mchipser</b> on <b>February 05, 2005, 08:59:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">how com alsa says i have a rev2 card and &nbsp;the &quot;ispci&quot; command says i have rev &nbsp; is that weierd ?<br /><br />Myk3</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ok im stupid</b><br />
+					Post by: <b>Mchipser</b> on <b>February 05, 2005, 09:03:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i got it fixed<br /><br />the external amp in alsa was muted and i unmuted it and it fixed the problem<br /><br />thanks for the help guys<br /><br />Myk3</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new to linux</b><br />
+					Post by: <b>dpeach</b> on <b>February 05, 2005, 09:48:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Great! Same thing helped two different people in 3 days. That is the way problems should happen. Everyone needs to have the same problem at the same time and we could really pool our resources quickly.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>new to linux</b><br />
+					Post by: <b>jaymz_720</b> on <b>February 06, 2005, 05:12:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">His was actually backwards from my problem, I had to mute the external amp, for whatever reason he had to unmute his. I forget what he said he was using, but it wasn't kmix.<br /><br />jaymz</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

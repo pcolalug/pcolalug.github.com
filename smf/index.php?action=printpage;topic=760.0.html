@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - How-to setup a Scyld Beowulf Cluster</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on June 10, 2003, 07:38:07 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How-to setup a Scyld Beowulf Cluster</b><br />
+					Post by: <b>bhoff</b> on <b>June 10, 2003, 07:38:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Scyld Beowulf Setup&nbsp;&nbsp;&nbsp;<br /><br />Needed: &nbsp;scyld Beowulf cd it has a modified RedHat 6.2 kernel with the tools and utilities to run a Beowulf cluster.<br />&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; ( I have the cd and would be willing to loan out for copying purposes)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Computer for head this is where you will control the behemoth from.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Need the following or better for best results. P166, 16meg ram, 1.2 gig harddrive, 4X cdrom, floppy,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;standard video card, and a nic the following have worked for me ne clones, 3com, tulip chipset.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;install the Scyld software as you would with a regular RedHat install.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Currently my system runs on a p233 w/48meg of ram, 2 gig harddrive and 2 3com 3c905b nic's)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After installing everything and logging in to the system you will be given the Scyld control panel.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose to build a &quot;node boot floppy&quot;. This will give you everything you need to boot a node using <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a floppy drive.<br />&nbsp;&nbsp;&nbsp;<br />NODE Setup:<br /><br />Needed:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;One old computer lying around to be node. Best results come from a pentinum 120 or better with min. 16<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;meg of ram and 500 meg harddrive to set up swap and boot files (NOTE! you can do with out the harddrive<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and just use a floppy to boot the node.) You will also need a recognized nic card.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Put together your system with or without the harddrive (NOTE! harddrive is recommended allows for cluster<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to set up swap space for programs also we do not want any partions on it nice and clean) make sure your <br />&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;head is up and running then crank up your node system<br />&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with your &quot;Node boot floppy&quot; created earlier. You should see a series of messages going across the screen<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;along with the Scyld logo and a arp request going out. At this time you should see your nic id show up on the <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;head drag it to the center column to apply it to the cluster.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At this time you have a fully functional cluster with a head and a node.......(With this version of the Scyld Beowulf<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;software you can only have 50 nodes) Sorry ;(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Currently my nodes are lying out on a table flat sharing one power supply p166 w/16meg of ram and 800 meg hd)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now to set up that harddrive you put in the node....Who wants to use a floppy every time I want to start a node?<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not me so we are going to set up the boot files to the Harddrive.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the head machine goto console and type the following.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cd /usr/lib/beoboot/bin<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# go to the Beowulf tool bin type beofdisk --help to get more information on the functions&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beofdisk -q<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# reads the node partions table<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beofdisk -d<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# creates a default beowulf setup<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beofdisk -w<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# writes the new table information<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beoboot-install -a &lt;device&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# where device is /dev/hda or /dev/sda<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bpctl -S all -s reboot<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# this forces a reboot of all the nodes you should remove the floppies from there drives. It should boot from the <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# harddrives now.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Well this should get you going anyhow. this is the basics to get a cluster running with software we have in house<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and hardware that almost all of us have lying around. There is some nice help files that are loaded on the head<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;machine. Lots more information can be found online.&nbsp;&nbsp;&nbsp;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTES: You can boot a node using the cdrom if you wish, but if you have more than one node you have to<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make more than one burn.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I actually have a Scyld Beowulf system up and running with 2 nodes. If you have any questions or need some help <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lets post here under the article and I will consolidate them in the future to make a better article.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are lot's of ways to set up a cluster this was by far the easiest way I found. If you have any pointers or&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;better ways of doing something feel free to post them here.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~Brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>cluster</b><br />
+					Post by: <b>trigger</b> on <b>June 11, 2003, 08:52:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am not sure of the purpose of a cluster. It sounds neat. But what is the purpose what can you do with it. Just interested. got a lot of old puters lying around.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How-to setup a Scyld Beowulf Cluster</b><br />
+					Post by: <b>rburt3</b> on <b>June 11, 2003, 12:22:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Brett can prolly answer this better, but a cluster is a group of connected, (relatively) cheap computers that share the work of processing certain computations. They were developed as an alternative to cost and maintainence intensive &quot;big iron&quot; supercomputers. Many facilities use them for analysing data and running complex simulations. Many of the world's most powerful computers are actually clusters.<br /><br />Is this relevent to *your* day-to-day computing needs? Prolly not, unless you run mathematical analysis as a hobby (hey, we have a member who does just that very thing).<br /><br />Now, you could use something like openMosix to get all those old PC's working together without the headache of setting up a full Beowulf-class cluster. Check out this (http://www.pcolalug.org/phpBB2/viewtopic.php?t=736) thread for more info. The difference (I think) is that a true Beowulf breaks up a computation into smaller sub-problems and passes each piece of the puzzle to the nodes to chew on and then integrates the results. This requires that software be coded with special libraries to support this. With OpenMosix, it seems to work more like loadbalancing by sending entire threads to run on different processors.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How-to setup a Scyld Beowulf Cluster</b><br />
+					Post by: <b>danc</b> on <b>June 11, 2003, 01:47:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm finding this subject more interesting as I think about it. &nbsp;It would provide a usefullness for the old computer parts laying around. &nbsp;My question is this: &nbsp;Is the total processing power of a cluster roughly equal to the sum of the individual nodes? &nbsp;In other words, does a cluster of 4 PC's with 500Mhz processors have any more power than a single PC with a 2Ghz processor?<br /><br />I think my point here is that with the cheap cost of processors these days, it's hard to bother with 4 Pentium-133's to get less performance than a single $50 AthlonXP. &nbsp;Now if you're using a cluster of 2Ghz machines, that's another story...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How-to setup a Scyld Beowulf Cluster</b><br />
+					Post by: <b>rburt3</b> on <b>June 11, 2003, 04:12:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Again, the power of a <i>cluster</i> is the ability to solve *very* complex problems in a reasonable amount of time. If you savy the lingo, think of NPComplete and NPHard - type problems. The programs that can take advantage of a clustered environ tend toward simulations (think global climate predictions, not IL-2) and large dataset analysis (US Census data).<br /><br />As for performance, well I haven't seen any data, but the numbers for clusters are measured in FLOPS (FLoating-point Operations Per Second). I may have my scales wrong, but mid-range clusters perform in the Mega-FLOPS range while the big boys can do Giga-FLOPS. This is a <b>lot</b> of computational power. However, while I think you get nearly the full attention of the node processors, it would seem that the master node would have its cycles eaten by management tasks. The short answer is yes and no. For certain types of programs, you would get more performance out of a cluster of computers than you would out of a single computer with an equivalent processor, depending on how you connected the nodes. The big gain is that you can cluster enough nodes that there *is no* equivalent processor.<br /><br />Now, running your ET server on a cluster (Beowulf, et al) wouldn't get you anything, because the load just isn't there and the software isn't written to take advantage of it. From what I understand of the OpenMosix route, you may see some advantage, as this is not clustering, per se. If the app is multi-threaded and you have a fast ethernet between your nodes, then it seems possible that you could get decent performance out of a few Pentium II 300's. I still don't see how it could handle the graphics rendering for the client, though.<br /><br />Brett, *please* correct any agregeous errors and out-right false-hoods in these posts.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I am here</b><br />
+					Post by: <b>bhoff</b> on <b>June 11, 2003, 07:39:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You are right on the money about the clusters.<br />Overall unless you are running support for nasa or something most of us will never need a true cluster, But is pretty cool showing off your very own Beowulf cluster &nbsp;:lol: <br />On the other hand if you want something to do with them old machines<br />Openmosix is the way to go. I am presently writing a detailed how-to for the setup. I presently have a 450mhz machine and 2 166mhz machines.<br />If you remember at the lan party I could not play...Well no more of that.<br />I can play now with no problems openmosix passes the overload of processes to my other machines no problem. I was watching it and saw my x rendering be handled by one of the other machines and the some of the actual game process be handled else where....Way cool<br />no lag total bandwith never exceeds 2% max of your available bandwidth.<br />Hope to have something out to you soon.<br />I have all of this setup at my house if anyone wants to check it out just let me know.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How-to setup a Scyld Beowulf Cluster</b><br />
+					Post by: <b>danc</b> on <b>June 11, 2003, 08:27:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Very cool indeed, and thanks for the good explanations (rburt3 and bhoff). &nbsp;Might just get around to trying this with older machines laying around here...<br /><br />Just when I was thinking there wasn't much more I could like about Linux.<br />&nbsp;:D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>So let me see</b><br />
+					Post by: <b>trigger</b> on <b>June 12, 2003, 01:37:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright so if I uderstood you right. The purpose of a cluster is much like that of a dual 1 gz proccessor server. This is so that it can handle more threads at once instead of waiting in line. So instead of a dual 1 gz processor you can for cheaper use a cluster with two 1 gz computer and a head. Let me know if this is correct.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How-to setup a Scyld Beowulf Cluster</b><br />
+					Post by: <b>rburt3</b> on <b>June 12, 2003, 04:46:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not quite. A cluster doesn't break programs up by thread, but rather acts like one big processor. Imagine if you had a program that recursively calculated Fibunacci sequences. With SMP, you would not see a benifit unless you threaded each recursive step. Even then, your threads share resources like memory, scheduler, and OS. With a cluster, the libraries allow the system to treat the poblem like a bunch of little problems dealing with a sub-set of the calculation.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How-to setup a Scyld Beowulf Cluster</b><br />
+					Post by: <b>danc</b> on <b>June 16, 2003, 08:19:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Stumbled across this here at work today. &nbsp;The U.S. Navy is using a 32-machine Beowulf cluster (on Linux) for some weather map processing. &nbsp;Thought you'd find this interesting, Brett... &nbsp;The details are here:<br />http://www.gcn.com/22_12/tech-report/22148-1.html<br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

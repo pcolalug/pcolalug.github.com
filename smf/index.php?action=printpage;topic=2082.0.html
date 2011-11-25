@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Audigy2 Not Working</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: SiliconFOXX on December 03, 2004, 04:41:29 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 04:41:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This just gets better and better. &nbsp;Slackware 10, Audigy2 soundcard, WAS working just fine, now it doesn't. &nbsp;Only thing I've done is run xdm as requested in another thread and suddenly my sound settings are screwed.<br /><br />The mixer looks the same in KDE, just no sound. &nbsp;The console says something about ALSA lib pcm_hw.c:549:(snd_pcm_hw_start) SNDDRV_PCM_IOCTL_START failed: &nbsp;Broken Pipe.<br /><br /><br />Any ideas on how to repair this? &nbsp;Or should I reinstall Slackware again?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 04:48:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, after a quick reboot it seems that the kernel it ONLY recognizing the onboard nVidia sound, makes no mention of the Audigy2. &nbsp;That's wonderful.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Audigy2 Not Working</b><br />
+					Post by: <b>danc</b> on <b>December 03, 2004, 05:30:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">This just gets better and better. &nbsp;Slackware 10, Audigy2 soundcard, WAS working just fine, now it doesn't. &nbsp;Only thing I've done is run xdm as requested in another thread and suddenly my sound settings are screwed.<br /><br />The mixer looks the same in KDE, just no sound. &nbsp;The console says something about ALSA lib pcm_hw.c:549:(snd_pcm_hw_start) SNDDRV_PCM_IOCTL_START failed: &nbsp;Broken Pipe.<br /><br />Any ideas on how to repair this? &nbsp;Or should I reinstall Slackware again?</div><br /><br />Don't really know how to fix that. &nbsp;I'm really amazed at all the problems you have. &nbsp;Perhaps you should not be using Slackware? &nbsp;Maybe you'd have better luck with another distro...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>imnes</b> on <b>December 03, 2004, 07:51:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Please go into your BIOS and disable the onboard audio. &nbsp;Linux will arrange your sound cards in the order they show up (I guess in order of IRQs maybe). &nbsp;But anyway, if your onboard card takes priority then it will get sounds from KDE and other stuff, not the audigy.<br /><br />Also when you went into KDE it might have tried to change the mixer settings. &nbsp;I don't remember the exact channel you have to unmute to get it working, but it's somewhere in alsamixer at the command prompt. <br /><br />I'll try to find the post I mentioned the fix in and add it here.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>imnes</b> on <b>December 03, 2004, 07:54:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Click here to read how to enable sound on the audigy cards. (http://www.pcolalug.org/phpBB2/viewtopic.php?t=1755&amp;highlight=audigy)<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>Brent</b> on <b>December 03, 2004, 08:31:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm of the strong opinion that you need to backup your personal info and reinstall.<br /><br />These problems your having with slackware simply don't exsist in a 'healthy' slackware install. &nbsp;Granted, sometimes... especially with the older versions of slackware, it took a while to set things up. <br /><br />However, I've never had something just 'stop working' in slackware after I got everything installed. &nbsp;The only two things I can think of is a) hardware failure or b) upgrading broke something.<br /><br />I suggest you do a clean reinstall of slack 10. &nbsp;Get everything working with the stock kernel, and software. &nbsp;Then slowly tweak and upgrade your system as you see fit. &nbsp;This'll make it much clearer what is breaking functionality on your system.<br /><br />Being a rabid slack fan, when I heard danc's suggestion of finding another distro I was a little offended at first, but the more I think about all the problems you've been having, the more I think perhaps you should be using something which does more stuff automagically for you. &nbsp;The plus side is it requires very little fuss on your part. &nbsp;The negative is that in exchange for this it'll have eleventy billion processes running in the background sapping precious computing power you could be using for other things (such as getting better fps in doom3 &nbsp;:wink: <br /><br />As you get more comfortable doing things yourself, you can switch to a leaner distro like slack &nbsp;:D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 10:56:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">No no, I got it working, but you're going to laugh at how. &nbsp;The only thing I could think of was that SOMETHING went wrong when running xdm since I had to be root and that might've modified something in a strange fashion. &nbsp;So I booted up the standard 2.4.22 kernel and surprise, the Audigy2 works. &nbsp;So I went back to the 2.6.7 kernel, tried to modprobe the card, nothing happened. &nbsp;I even went into the module directory and tried it, no dice.<br /><br /><br />So, one fresh kernel rebuild later it's working again, just as good if not better. &nbsp;Same kernel config except this time I totally removed support for onboard audio (who uses it anyway when you've got another sound card?). &nbsp;What I found most interesting is that with the &quot;stock&quot; kernel it worked fine even though it detected both cards. &nbsp;Now it's only got the one and it works.<br /><br /><br />Basically the philosophy idea was, &quot;If I'm going to have sound, it's going to be through ONE DEVICE ONLY.&quot; With that, problem's fixed.<br /><br /><br /><br /><br />I DO like Slackware and have had much more luck with it on all sorts of things that I haven't posted about (no problem, no post) whereas I've had issues with other &quot;automagick&quot; distros. &nbsp;The number of issues I've had with Slack (soundcard itself was a Linux thing, not a Slack thing) on this box, Anubis, has numbered two, maybe three if you count the confusion about the graphical login. &nbsp;Given that few number of &quot;issues,&quot; both of which have been fixed, I'd say it's been a stellar distro. &nbsp;With Mandrake, while I still heavily recommend it to all my friends, I didn't get the feel that it was &quot;right&quot; for me. &nbsp;Fedora...just didn't feel like Linux to me, don't know why. &nbsp;Linspire feels the same way, not anything &quot;wrong&quot; but not really &quot;right for me.&quot; &nbsp;Debian I'd like if I could get over the installation, and Gentoo took too much installation.<br /><br /><br />Really, I'm still loving Slackware and I think there's probably just accidental misuse here and there. &nbsp;I've learned more about Linux with my handful of difficulties than I have with anything else. &nbsp;For instance, total research into how exactly you rip CDs and DVDs, copy DVDs, what video creation limitations are in Linux, server setup, Samba setup, and a multitude of other things. &nbsp;I've been generally using Windows only when I want to record some video or play games and for everything else I've been running Slack.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>rugmonster</b> on <b>December 04, 2004, 07:35:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">What's wrong with the Debian installation? It's better than Slackware's, unless Slackware has changed since 9.2. Have you tried the recent Debian installer? Still curses based, but so is Slackware's. Automatic hardware detection, network setup including wireless...very quick and painless as seen in Ubuntu.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>Brent</b> on <b>December 04, 2004, 11:09:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">One word. &nbsp;Packages. &nbsp;Have you seen the slew of packages presented to a new user? &nbsp;<br /><br />Slackware may not have dependency checking (which is fairly easy to do yourself...unless you do something stupid like try installing a gnome or kde ap without having gnome or kde installed), but one thing i love about slack is it's core set of libs.<br /><br />I like having a simple list of good packages in front of me. &nbsp;I like a straightfoward package management tool that does what it does well (how many apt innerfaces did i have to learn just to install debian? &nbsp;alot)<br /><br />One thing that I do like about debain is its well documented config files. &nbsp;Slackware does a good job of documenting things, but debian...debian gives you every foreseeable option known to mankind. &nbsp;But were talkning installation here.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>dpeach</b> on <b>December 04, 2004, 11:59:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">Slackware may not have dependency checking (which is fairly easy to do yourself...unless you do something stupid like try installing a gnome or kde ap without having gnome or kde installed), but one thing i love about slack is it's core set of libs.</div><br />But I don't want to do this myself. And, I don't think installing K3B without having KDE installed should be a &quot;stupid&quot; thing. I realize Slack is not a newbie distro, but it should not be considered &quot;stupid&quot; to install a piece of software that is known to work fine on Slack. If I want to istall that KDE dependent app, then Slack should make sure the dependencies are in place. If their system of packaging is superior, then it should take care of this. My Mandrake and RPMs do.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>imnes</b> on <b>December 04, 2004, 12:26:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've been playing around with making my on distribution off of debian. &nbsp;I've got it working on my main desktop, and successfully installed it (well no installer, just copying an image of the system basically) onto the laptop and it's working there. &nbsp;This is kinda fun :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>rugmonster</b> on <b>December 04, 2004, 12:34:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Apt is considered to be the finest package management system for binary packages in most of the linux world. You can get a fully functional system much like you can with Slack or any other distro with the default program tasksel that will install groups of packages depending on your specified needs. Aptitude seems to be the leading apt front-end, although I always use apt-get because I know what I want installed. No need to browse unless I type in apt-get install &lt;package&gt; and it doesn't find it. <br /><br />I do appreciate the simplicity of Slack's packages, but there is a lot to be desired when you are used to apt or portage. I personally couldn't go back to that much work.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Audigy2 Not Working</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 05, 2004, 04:45:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't know what version of Debian I was using (I remember it was stable, rather than unstable) but the installer was a nightmare. &nbsp;Automatic hardware detection was a no-no, absolutely nothing like that. &nbsp;And apt-getting the packages turned out to be a nightmare because for whatever reason if it failed to retrieve a package I was given a real simple, though useless option: &nbsp;I could skip the package (probably something critical) or I could restart the ENTIRE installation. &nbsp;Why on earth it wouldn't just keep the packages it had and try for the ones it didn't later was beyond me.<br /><br /><br /><br />But again, that was just what happened last time I tried and I don't know why it was like that. &nbsp;If it's changed (automatic detection and so forth) then I might try it again but I'm not really sure how to go about changing distros without wiping the hard drive (though I did just reinstall Slack while keeping my /home partition, that was pretty cool...though I had to manually copy the directory contents for fear of wiping them with creating a new user). &nbsp;If it was easy to just change between distros I'd love to give Debian another shot.<br /><br /><br /><br /><br /><br /><br />But anyway, back to the original bit, so far I'm liking Slackware quite a bit. &nbsp;I haven't tried every Distro known to humankind but Slack's been very good to me. &nbsp;Whenever I've wanted to try something else and it hasn't worked out I always find myself coming back to Slack. &nbsp;For whatever reason it just &quot;works&quot; for me. &nbsp;The package management system I don't know a whole lot about other than I run pkgtool and it keeps track of things and I assume it probably does its job well (though I kinda wish I understood it more, though I probably wouldn't want to tinker too much). &nbsp;If anything I hate making things now since I don't have that easy ability to remove whatever it was, especially if I forgot where all the dependent files are (that can of course get quite compliated).<br /><br />But on this machine I've only had a couple of issues and that's awesome seeing as while I'm not a total newbie there's a lot I don't know. &nbsp;For the most part I just install, make a new kernel to my liking, install Firefox, and it's ready to roll. &nbsp;I've never needed to mess with much in terms of system configuration (other than toying with xorg.conf to get that working and /etc/fstab to enable user mounting of the DVD drive) and while I know that's not hardcore Linux usage, it works fine (usually better than Windows XP for me) and in the end that's probably what's important.<br /><br /><br />But so far I really haven't had many issues with Linux and any REALLY odd ones have been on a REALLY odd box as well, so there's always that to factor in.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

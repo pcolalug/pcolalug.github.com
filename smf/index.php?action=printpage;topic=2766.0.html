@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - A better way?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: Nomad on January 17, 2006, 02:27:16 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>A better way?</b><br />
+					Post by: <b>Nomad</b> on <b>January 17, 2006, 02:27:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok so I&#039;m back to the old habits of vb6<br /><br />There has to be a better way to do this.&nbsp; I&#039;m trying to close &quot;all new applications&quot;.&nbsp; Meaning you boot windows... login .. etc...<br /><br />then only way I&#039;ve found is to record all the pids once I run the program and then enumwnd the list again once I&#039;m &quot;ready&quot; to close all of them.<br /><br />IE there are 15 PID&#039;s after boot<br />now there are 23 PID&#039;s <br /><br />Compare the list and then kill each one that wasn&#039;t in the &quot;startup&quot; list.&nbsp; <br /><br />This just seems crude <br /><br />I was thinking about recording the info to a database because all computers should be running the same pid&#039;s.<br /><br />Any idea&#039;s?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: A better way?</b><br />
+					Post by: <b>danc</b> on <b>January 17, 2006, 10:22:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2766.msg13771.html#msg13771">Quote from: Nomad on January 17, 2006, 02:27:16 pm</a></div><div class="quote">Ok so I&#039;m back to the old habits of vb6<br /><br />There has to be a better way to do this.&nbsp; I&#039;m trying to close &quot;all new applications&quot;.&nbsp; Meaning you boot windows... login .. etc...<br /><br />&lt;snip&gt;<br /><br />Any idea&#039;s?<br /></div><br />VB6?&nbsp; Windows?&nbsp; Huh?<br /><br />Perhaps you&#039;ve confused this forum with someplace else?<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: A better way?</b><br />
+					Post by: <b>imnes</b> on <b>January 18, 2006, 09:45:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2766.msg13771.html#msg13771">Quote from: Nomad on January 17, 2006, 02:27:16 pm</a></div><div class="quote">I was thinking about recording the info to a database because all computers should be running the same pid&#039;s.<br /></div><br />I&#039;ve never done much Windows programming but I don&#039;t think the PIDs will be the same between machines or even between reboots?<br /><br />Just curious, what is the purpose of this program?&nbsp; <br /><br />Nick<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: A better way?</b><br />
+					Post by: <b>Nomad</b> on <b>January 18, 2006, 12:07:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ya LOL as soon as I posted that I realized what I had said...&nbsp; &gt;:D<br /><br />and i just thought like me that coders are coders I do alot of differnt softwares...<br /><br />Perl, VB6, Sharp... ETC<br /><br />Windows XP and VB6 for the above question.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: A better way?</b><br />
+					Post by: <b>Nomad</b> on <b>January 18, 2006, 12:08:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2766.msg13774.html#msg13774">Quote from: imnes on January 18, 2006, 09:45:05 am</a></div><div class="quote"><div class="quoteheader"><a href="index.php%3Ftopic=2766.msg13771.html#msg13771">Quote from: Nomad on January 17, 2006, 02:27:16 pm</a></div><div class="quote">I was thinking about recording the info to a database because all computers should be running the same pid&#039;s.<br /></div><br />I&#039;ve never done much Windows programming but I don&#039;t think the PIDs will be the same between machines or even between reboots?<br /><br />Just curious, what is the purpose of this program?&nbsp; <br /><br />Nick<br /><br /></div><br />For my cafe.. updating the timer admin/server/client full revamp.&nbsp; Just thought it would be nice to drop all of the new programs the user had run with out doing a reboot.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: A better way?</b><br />
+					Post by: <b>stocke2</b> on <b>March 16, 2006, 05:51:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">vb6 != programming &lt;G&gt;</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: A better way?</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>August 21, 2006, 04:10:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2766.msg13771.html#msg13771">Quote from: Nomad on January 17, 2006, 02:27:16 pm</a></div><div class="quote">Ok so I&#039;m back to the old habits of vb6<br /><br />There has to be a better way to do this.&nbsp; I&#039;m trying to close &quot;all new applications&quot;.&nbsp; Meaning you boot windows... login .. etc...<br /><br />then only way I&#039;ve found is to record all the pids once I run the program and then enumwnd the list again once I&#039;m &quot;ready&quot; to close all of them.<br /><br />IE there are 15 PID&#039;s after boot<br />now there are 23 PID&#039;s <br /><br />Compare the list and then kill each one that wasn&#039;t in the &quot;startup&quot; list.&nbsp; <br /><br />This just seems crude <br /><br />I was thinking about recording the info to a database because all computers should be running the same pid&#039;s.<br /><br />Any idea&#039;s?<br /></div><br />Why on earth would you want to do this?</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

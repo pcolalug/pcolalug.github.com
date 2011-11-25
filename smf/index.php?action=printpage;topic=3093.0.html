@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - No Sound in OpenSUSE 10.2...</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: deucalion on December 24, 2006, 05:15:10 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>deucalion</b> on <b>December 24, 2006, 05:15:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I absolutely LOVE this distro, (nearly) everything that was lacking in 10.1 (the difficulties accessing support through Novell and the indecision as to exactly WHAT update scheme they were going to settle on are just a couple of that releases&#039; problems) is gone in this release. It even has a whole new &quot;Start Menu&quot;. The one thing it doesn&#039;t have (on my particular laptop) presently is sound... <br /><br />Now let me say that the ONLY distro I&#039;ve been able to coax sound out of so far has been Ubuntu/Kubuntu 6.06 and I&#039;ve installed Fedora 6, Debian Sarge AND Knoppix 5, ALL from DVDs(!). Any you guys who&#039;ve met me know that I&#039;m NOT a computer expert by any stretch of the imagination, I just HATE MS WIndows and would LOVE to retire it for good. I&#039;ve posed the problem to some of the other boards and have gotten no response so far, I&#039;ve googled it as well with no result. <br /><br />My laptop is a Gateway MX6214, The Northbridge is Intel&#039;s 945GM and the Southbridge is Intel&#039;s 82801GBM. The Windows audio is provided by SigmaTel 9250.<br /><br />My onboard WiFi (GemTek Technology Co. BCM4311E) doesn&#039;t work either, as well the card reader (Texas Instruments PCI-8412, I THINK!) or the modem (Silicon Laboratories Si3080) BUT this is all gravy if I can get the sound up and running. I&#039;m using a Proxim Orinioco Gold WiFi card (Atheros chipset) to connect to the web so that&#039;s no problem...<br /><br />Anyone interested in helping me out can reach me via Skype (LATE at night as mentat.assassin) or by my email (same name as Skype except at gmail.com). It may be a minute before I can get back to this forum...<br /><br />Thank you and have a good (and safe) holiday everyone.<br /><br />- Kell</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>rugmonster</b> on <b>December 24, 2006, 10:37:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">More times than not, sound problems in modern distros are nothing more than having the main or dsp volume turned all the way down. I&#039;ll email this as well.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>December 25, 2006, 01:13:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Suse runs on KDE which means, because you have a sound card and don&#039;t need software mixing, that arts shouldn&#039;t be running.&nbsp; If you&#039;re getting a /dev/dsp error that usually means that arts is owning the handle to /dev/dsp and it&#039;s not allowing other programs to access it...&nbsp; All you have to do is open the KDE Control Panel and turn off Arts. (kcontrol -&gt; Sound &amp; Multimedia -&gt; Sound System -&gt; Uncheck &quot;Enable Sound System.&quot;)<br /><br />(If you&#039;re not getting a /dev/dsp error that means everything is kosher with that usually.)<br /><br />Then check your alsa mixer to make sure you&#039;ve got the sound turned up.&nbsp; Remember, after you disable the Sound System you have to restart all open apps that use sound in order to get sound.<br /><br />You might also want to consider using lspci and lsmod to make sure you have all of your drivers installed too.&nbsp; Sample good output is:<br /><br /><div class="codeheader">Code:</div><div class="code">omnipotententity@oberus% lsmod&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;~<br />Module&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Size&nbsp; Used by<br />{snip}<br />snd_intel8x0&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30620&nbsp; 0<br />snd_ac97_codec&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;83360&nbsp; 1 snd_intel8x0<br />snd_ac97_bus&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2688&nbsp; 1 snd_ac97_codec<br />snd_pcm_oss&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 39200&nbsp; 0<br />snd_mixer_oss&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 15552&nbsp; 1 snd_pcm_oss<br />snd_pcm&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 68996&nbsp; 3 snd_intel8x0,snd_ac97_codec,snd_pcm_oss<br /><br />{snip}<br /><br />snd&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 47524&nbsp; 6 snd_intel8x0,snd_ac97_codec,snd_pcm_oss,snd_mixer_oss,snd_pcm,snd_timer<br />soundcore&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9568&nbsp; 1 snd<br />snd_page_alloc&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9928&nbsp; 2 snd_intel8x0,snd_pcm<br /><br />{snip}<br /><br />omnipotententity@oberus% lspci&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;~<br /><br />{snip}<br /><br />00:04.0 Multimedia audio controller: nVidia Corporation CK804 AC&#039;97 Audio Controller (rev a2)<br /><br />{snip}<br /><br /></div><br /><br />This is, of course, my hardware.&nbsp; But if you don&#039;t see most of these on your lsmod then SUSE probably didn&#039;t auto install all of the drivers.&nbsp; (sadface)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>deucalion</b> on <b>December 26, 2006, 01:29:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is the output I got from &quot;lsmod&quot;...<br /><br /><br />Module&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Size&nbsp; Used by<br />usbhid&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;52192&nbsp; 0<br />joydev&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;13504&nbsp; 0<br />st&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;40860&nbsp; 0<br />sr_mod&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;20132&nbsp; 0<br />af_packet&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 29320&nbsp; 4<br />nls_utf8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6272&nbsp; 0<br />i915&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;23040&nbsp; 2<br />drm&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 71316&nbsp; 3 i915<br />xt_pkttype&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6016&nbsp; 3<br />ipt_LOG&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10624&nbsp; 8<br />xt_limit&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6912&nbsp; 8<br />button&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;10896&nbsp; 0<br />battery&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 14340&nbsp; 0<br />ac&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9476&nbsp; 0<br />ip6t_REJECT&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9344&nbsp; 3<br />xt_tcpudp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7296&nbsp; 3<br />ipt_REJECT&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9472&nbsp; 3<br />xt_state&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6272&nbsp; 12<br />iptable_mangle&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7040&nbsp; 0<br />iptable_nat&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 11524&nbsp; 0<br />ip_nat&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;21804&nbsp; 1 iptable_nat<br />iptable_filter&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7168&nbsp; 1<br />ip6table_mangle&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6528&nbsp; 0<br />ip_conntrack&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;52960&nbsp; 3 xt_state,iptable_nat,ip_nat<br />nfnetlink&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 11032&nbsp; 2 ip_nat,ip_conntrack<br />ip_tables&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 17604&nbsp; 3 iptable_mangle,iptable_nat,iptable_filter<br />ip6table_filter&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7040&nbsp; 1<br />ip6_tables&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;18756&nbsp; 2 ip6table_mangle,ip6table_filter<br />x_tables&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;18180&nbsp; 10 xt_pkttype,ipt_LOG,xt_limit,ip6t_REJECT,xt_tcpudp,ipt_REJECT,xt_state,iptable_nat,ip_tables,ip6_tables<br />ipv6&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 263584&nbsp; 15 ip6t_REJECT<br />apparmor&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;55572&nbsp; 0<br />aamatch_pcre&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;18304&nbsp; 1 apparmor<br />loop&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;20488&nbsp; 0<br />dm_mod&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;60184&nbsp; 0<br />wlan_scan_sta&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 17280&nbsp; 1<br />ath_pci&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 95648&nbsp; 0<br />ath_rate_sample&nbsp; &nbsp; &nbsp; &nbsp; 18304&nbsp; 1 ath_pci<br />wlan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 189532&nbsp; 4 wlan_scan_sta,ath_pci,ath_rate_sample<br />ath_hal&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;195792&nbsp; 3 ath_pci,ath_rate_sample<br />pcmcia&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;40892&nbsp; 0<br />firmware_class&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;14080&nbsp; 1 pcmcia<br />sky2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;44424&nbsp; 0<br />ide_cd&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;42272&nbsp; 0<br />cdrom&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 38432&nbsp; 2 sr_mod,ide_cd<br />ohci1394&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;37040&nbsp; 0<br />yenta_socket&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30348&nbsp; 2<br />ieee1394&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 102584&nbsp; 1 ohci1394<br />rsrc_nonstatic&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;17024&nbsp; 1 yenta_socket<br />pcmcia_core&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 43412&nbsp; 3 pcmcia,yenta_socket,rsrc_nonstatic<br />i2c_i801&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;11660&nbsp; 0<br />i2c_core&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;25216&nbsp; 1 i2c_i801<br />uhci_hcd&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26892&nbsp; 0<br />ehci_hcd&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;34696&nbsp; 0<br />intel_agp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 27804&nbsp; 1<br />usbcore&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;114896&nbsp; 3 usbhid,uhci_hcd,ehci_hcd<br />agpgart&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 35528&nbsp; 3 drm,intel_agp<br />parport_pc&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;42084&nbsp; 0<br />lp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;15652&nbsp; 0<br />parport&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 39752&nbsp; 2 parport_pc,lp<br />ext3&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 141192&nbsp; 2<br />mbcache&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 12804&nbsp; 1 ext3<br />jbd&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 70324&nbsp; 1 ext3<br />sg&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;38044&nbsp; 0<br />edd&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 13892&nbsp; 0<br />fan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8964&nbsp; 0<br />ahci&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;25860&nbsp; 3<br />libata&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 119188&nbsp; 1 ahci<br />piix&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;13700&nbsp; 0 [permanent]<br />thermal&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 18568&nbsp; 0<br />processor&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 34664&nbsp; 1 thermal<br />sd_mod&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;24576&nbsp; 4<br />scsi_mod&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 136712&nbsp; 6 st,sr_mod,sg,ahci,libata,sd_mod<br />ide_disk&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;20480&nbsp; 0<br />ide_core&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 129992&nbsp; 3 ide_cd,piix,ide_disk<br /><br /><br />Sorry for the formatting, I control+C/control+V&#039;d it from Konsole... I see NOTHING indicating that the sound modules are loaded. What now???(!!!!)<br /><br />- Kell<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>rugmonster</b> on <b>December 26, 2006, 10:10:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">It doesn&#039;t look like the module for the sound is loaded.<br /><br />Try loading the module for your audio chipset:<br /><div class="codeheader">Code:</div><div class="code"># modprobe snd_hda_intel</div><br />Also, in case you want to use that onboard wireless, I found on another site (http://www.tometronics.com/sabayonmx6214.htm), you can use NDISWrapper to get it working. The modem is probably a winmodem, so you may need to do some digging at linmodems.org (http://linmodems.org/). I personally have never gotten a winmodem to work in linux, but I&#039;ve never had a need.<br /><br />Let us know if that helps.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>deucalion</b> on <b>December 27, 2006, 02:01:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK, at this point I&#039;m thinking this is either a problem particular to my laptop&#039;s hardware OR with KDE... I&#039;ve loaded GNOME on SUSE 10.2 and switched the card from &quot;snd_hda_intel&quot; to &quot;Sigma Tel&quot; (a choice given to me graphically only in GNOME) and things seem to be working for the moment. <br /><br />I&#039;m going to try and nail down this configuration as apposed to the one loaded with KDE and compare the differences...<br /><br />Happy Holidays everyone...<br /><br />- Kell<tt></tt></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>deucalion</b> on <b>December 27, 2006, 11:15:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">On the next reboot the sound didn&#039;t work... again.<br /><br />I give up, I&#039;ll bring the laptop to the next meeting if I can make it and see if anyone there can help...<br /><br />- Kell</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>deucalion</b> on <b>January 04, 2007, 03:08:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK, for anyone still paying attention to this one... here&#039;s the final word. By default SUSE 10.2 doesn&#039;t add it&#039;s user to the audio group, this has to be done after the install through YaST. After this the sound works... MOST of the time. When I get a boot with no sound I restart the mixer, then the computer and everything is gold again. Really I&#039;m just glad I can get it working at all...<br /><br />- Kell</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>rugmonster</b> on <b>January 04, 2007, 07:38:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Congrats! I&#039;m glad you got it figured out. <br /><br />To me, though, this is just further indication that SUSE as a whole headed down the toilet somewhat. In earlier releases, you would have never seen that sort of problem. That is the first time I&#039;ve heard of such and I started using Linux back in &#039;99. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>January 04, 2007, 10:19:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had to do that with Slack 8.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>Brent</b> on <b>January 04, 2007, 10:23:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The whole group permissions thing is something I haven&#039;t learned, and I need to.<br /><br />For instance, in order to get scripts, and commands to do common stuff like ppp-on/off etc on my parents computer, I&#039;ve resorted to enabling sudo and disabling the password prompt.<br /><br />Very insecure I know, but it&#039;s the only way I&#039;ve found thus far.<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No Sound in OpenSUSE 10.2...</b><br />
+					Post by: <b>rugmonster</b> on <b>January 04, 2007, 11:23:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Group permissions are as simple as adding the user to the group.<br /><br />Example:<br /><br />/etc/group<br />daemon:x:1:<br />audio:x:29:user1,user2,user3<br />admin:x:108:user1,user4<br /><br />You have &lt;groupname&gt;:&lt;comment&gt;:&lt;gid&gt;:&lt;users&gt;,&lt;belonging&gt;,&lt;in&gt;,&lt;the&gt;,&lt;group<br /><br />In Ubuntu, when users are added to the system they are automatically added to the audio group. I suppose it may not be something you want, but for a system geared to desktop use, I would expect it.<br /><br />Here&#039;s a pretty good overview of groups in the linux world.<br /><br />http://www.yolinux.com/TUTORIALS/LinuxTutorialManagingGroups.html<br /><br />File permissions get really cool (and flexible) when you start using ACLs.<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

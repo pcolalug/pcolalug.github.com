@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Using Linux box as gateway</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: dpeach on July 01, 2003, 09:37:24 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using Linux box as gateway</b><br />
+					Post by: <b>dpeach</b> on <b>July 01, 2003, 09:37:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a Linux box (Mandrak 9.1) connected to the Internet via dialup (woot!). I also have a Windows box that is connected to the network and they are happily talking to one another (thanks bhoff). <br /><br />What I am struggling with now is getting the Windows box to see the Linux box as a gateway.<br /><br />I have Linux running DHCP. It has successfully served an address to the Windows box. My eth0 card on the Linux box is: 192.168.0.1. I have set that in Windows as my default gateway. But I am not getting to the Internet. I suspect that is because my gateway should be called something else (whatever the IP of the dialup connection) or that I have to tell Linux to allow other computers to grab stuff through that connection.<br /><br />Any hints? Let me know if you need more information (username/password, whatever).<br /><br />You can always tell when I am actually using Linux, that is when the questions start coming onto the board here. Basically if I am using Linux, I am generating questions.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using Linux box as gateway</b><br />
+					Post by: <b>rugmonster</b> on <b>July 02, 2003, 06:28:58 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Have you setup iptables to do your IP Masquerading? Here is a simple script to do just that. <br /><br /><div class="codeheader">Code:</div><div class="code">#!/bin/sh<br />&nbsp;<br />echo &quot;1&quot; &gt; /proc/sys/net/ipv4/ip_forward<br />echo &quot;1&quot; &gt; /proc/sys/net/ipv4/ip_dynaddr<br />&nbsp;<br />iptables -t nat -A POSTROUTING -o &lt;device name&gt; -j MASQUERADE</div><br /><br />Notice the -o flag of the iptables statement. That is where you need to put the interface name such as eth1 or whatever. I forgot what the default ppp device name is and I'm too lazy right now to look it up. You should also be able to set this up in one of the handy dandy wizards Mandrake provides. Something like Internet Connection Sharing seems appropriate. Also, make sure in your dhcp options, you have it so the default gateway is set for the internal IP of your linux box so the windows box knows to send its Internet traffic to the Linux box. <br /><br />In case you didn't know, the easiest way to find out about that dial up interface, while connected, as root type:<br /><br /><div class="codeheader">Code:</div><div class="code">#ifconfig</div><br /><br />Look for something that isn't eth<i>x</i> or lo. Best of luck and I'll be getting that video card in the mail soon.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Using Linux box as gateway</b><br />
+					Post by: <b>steve</b> on <b>July 02, 2003, 07:17:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">I have a Linux box (Mandrak 9.1) connected to the Internet via dialup (woot!). I also have a Windows box that is connected to the network and they are happily talking to one another (thanks bhoff). <br /><br />Any hints? Let me know if you need more information (username/password, whatever).<br /><br /></div><br /><br />Try going into Mandrake Control Panel and there is an option for sharing an internet connection. It should set everything up for you.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using Linux box as gateway</b><br />
+					Post by: <b>rugmonster</b> on <b>July 02, 2003, 07:27:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: steve</div><div class="quote">Try going into Mandrake Control Panel and there is an option for sharing an internet connection. It should set everything up for you.</div><br /><br />This is off topic, but I guess I run Slackware, Debian, Gentoo, SunOS and OpenBSD for the right reasons. I hate those tools. I know they sometimes make life easier, but I have had them fail more times than not and feel a lot of times I can get things working without them faster and in the end have a better understanding of what I just did.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using Linux box as gateway</b><br />
+					Post by: <b>dpeach</b> on <b>July 02, 2003, 08:19:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Steve, that did it. I had never even seen that. In that area of Mandrake Control Center, I had been using the network configuration. I had not even thought that there might be something else in there that I needed to use.<br /><br />Thanks Ruggy for your help as well. Steve's was just easier. I will go with your's next time if this doesn't work out in the long run.<br /><br />I agree that there are times when the config files and command line are much easier to get the job done. But in this instace, the config tool was great.<br /><br />David</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

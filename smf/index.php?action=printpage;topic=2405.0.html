@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Slack mount and font questions</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: geekforGod on April 28, 2005, 10:37:10 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slack mount and font questions</b><br />
+					Post by: <b>geekforGod</b> on <b>April 28, 2005, 10:37:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I was using Mandrake 10.1 for a while. It is great for a desktop machine. But I could never get PyQT to install correctly and Mandrake only offers it as an RPM for the PowerPack+, which as a broke college student I can't afford. So I finally switched back to Slackware after about 4 years using Mandrake. I had to remember how to edit config files again. The Unofficial Revised Slackware Book Project (http://slackbook.lizella.net/) helped a lot with that. Then I needed to install some new packages and Linux Packages (http://www.linuxpackages.net/) was great for that. I am pretty sure I saw both of those mentioned on the forums at some point. <br /><br />Anyways, after a few hours of work I got most everything I wanted working. My scroll mouse actually scrolls. I can mount and unmount my digital camera. PyQT is installed and working well. I just had a few quick questions. First, my fonts seem different in Slack than they did in Mandrake, not quite as nice looking. It isn't a big difference and maybe I just have a poor font chosen, but it seems like the fonts are uglier. Am I crazy? Secondly, on Mandrake when I plugged in my digital camera it automatically mounted it for me. Now I have to mount it myself. How would I get it to automatically mount? Thanks for any suggestions guys, you are always a great help. <br /><br />Todd</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slack mount and font questions</b><br />
+					Post by: <b>lloydr</b> on <b>April 28, 2005, 01:37:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">as far as auto mounting your digital camera, if you use gnome 2.8.x+ (2.10 for example), it has a system called HAL that gives you the option to automount digital cameras and removeable media, also I think for this function you might look at supermount (if it's still around), as it used to provide the automounting functions for some of the more popular user friendly distros.<br /><br />if you're a gnome fan, I'd recommend checking out freerock gnome, a clean build of gnome 2.10 for slackware. http://gsb.sourceforge.net<br /><br />for the iso:<br />http://sourceforge.net/project/showfiles.php?group_id=130126&amp;package_id=143903</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slack mount and font questions</b><br />
+					Post by: <b>imnes</b> on <b>April 28, 2005, 02:13:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dropline Gnome still gets my vote for slackware. &nbsp;<br /><br />http://www.dropline.net/gnome<br /><br />I assume you're using KDE? &nbsp;You may need to enable anti-aliasing on your fonts in the kde control center. &nbsp;(I think you just run kcontrol to get to it). &nbsp;<br /><br />For auto-mounting devices in slackware without Gnome, good luck. &nbsp;I hacked my way through it once but it took a while, patching and installing a new kernel + deamon tools, and configuring it all to work was a pain. &nbsp;If you go with one of the Gnome installs it should just work properly. &nbsp;(Not though, Gnome does require Kernel 2.6 which is available on the Slackware CD under /testing I think. &nbsp;If you need help installing that let us know.)<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slack mount and font questions</b><br />
+					Post by: <b>Brent</b> on <b>April 28, 2005, 10:38:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ugh how could anyone recommend dropline?<br /><br />Don't get me wrong, I found it to be really nice, but I totally loathe any software package that is as invasive as dropline. &nbsp;Uninstalling dropline left my system deader than dirt because it recursively deleted all kinds of crap which it had no busness touching.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slack mount and font questions</b><br />
+					Post by: <b>danc</b> on <b>April 29, 2005, 05:22:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">Ugh how could anyone recommend dropline?<br /><br />Don't get me wrong, I found it to be really nice, but I totally loathe any software package that is as invasive as dropline. &nbsp;Uninstalling dropline left my system deader than dirt because it recursively deleted all kinds of crap which it had no busness touching.</div><br /><br />I used to use Dropline, and liked it a lot. &nbsp;It does get itself down deep into your system, and uninstalling does create problems. &nbsp;But....., why uninstall your WM, anyway...? &nbsp;Hard to come up with a good reason for doing that, and Dropline works pretty well otherwise. &nbsp;<br /><br />I'm currently using Freerock Gnome on my Slack box, and love it.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slack mount and font questions</b><br />
+					Post by: <b>Brent</b> on <b>April 29, 2005, 09:29:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My objection is on principle mainly. &nbsp;<br /><br />As overlord of my machine, I only want software that 'plays nice' with the rest of the system. &nbsp;I don't <i>want</i> software that needlessly replaces core system files with it's own (I <i>trust</i> slackware's packages). &nbsp;<br /><br />Any software that cannot be cleanly uninstalled, I consider flawed. &nbsp;<br />Any software that completely breaks my system in the process, I consider <i>malware</i>.<br /><br />Dropline is very pretty, and I'm sure the developers had no malicous intent, but I won't use it.<br /><br />Right or Wrong, there's my 2 cents.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slack mount and font questions</b><br />
+					Post by: <b>geekforGod</b> on <b>April 30, 2005, 12:01:38 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks guys. I found the anti-aliasing and the fonts look much nicer now. I prefer KDE to Gnome so for now I'll just live with no automounting. I don't have a job for the summer yet so maybe I'll fool around with it and see if I can get it working later.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

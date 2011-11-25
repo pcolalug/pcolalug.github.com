@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - uninstalling xine</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: LinkZero on January 31, 2005, 05:55:18 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>uninstalling xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 31, 2005, 05:55:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i recently downloaded the totem media player and now have no need for xine. &nbsp;but every time i delete all the xine files, they just come back. &nbsp;i can't find an uninstall thing for it either. &nbsp;xine won't go away!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>uninstalling xine</b><br />
+					Post by: <b>Brent</b> on <b>January 31, 2005, 11:50:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Woah, take it easy.<br /><br />In windows package management is handled by each individual developer. &nbsp;The maker of the software includes their own 'install' and 'uninstall' programs. &nbsp;Thinks are a little different in linux. &nbsp;Each distrobution has a package management system which handles the install, uninstall and upgrade functions of the software.<br /><br />The package manager for your distrobution is called the Synaptic package manager. &nbsp;You should be able to access it under your kde menu. &nbsp;If that doesn't work I believe you can do the following as <b>root</b>.<br /><br /><div class="codeheader">Code:</div><div class="code">apt-get remove package</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>uninstalling xine</b><br />
+					Post by: <b>LinkZero</b> on <b>February 01, 2005, 02:03:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">i uninstalled the package. &nbsp;i'm pretty sure it worked. &nbsp;i don't see xine in the programs folder. &nbsp;there is a xine configuration thing, but i think xine is gone. &nbsp;if anything else comes up i'll let you know.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>uninstalling xine</b><br />
+					Post by: <b>rugmonster</b> on <b>February 01, 2005, 07:23:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">There may be another package for xine-config or something along those lines. You can do a search in Synaptic for xine or at the command line<br /><div class="codeheader">Code:</div><div class="code"># apt-cache search xine</div><br />See if there are any packages regarding xine and config in there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>uninstalling xine</b><br />
+					Post by: <b>rburt3</b> on <b>February 01, 2005, 09:07:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Um, isn't Totem <i>based</i> on xine? Will the distro let you un-install required dependencies?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>uninstalling xine</b><br />
+					Post by: <b>rugmonster</b> on <b>February 01, 2005, 09:17:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not unless you force it. Totem package probably has the portions of xine it needs if it is based off of xine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>uninstalling xine</b><br />
+					Post by: <b>imnes</b> on <b>February 01, 2005, 10:40:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Totem can be built against xine-lib or gstreamer. &nbsp;If it's built against xine-lib do not uninstall xine-lib because that would break totem. &nbsp;(Also if you try to uninstall xine-lib synaptic should uninstall totem also just to keep things in order, it will try to keep you from breaking dependencies).<br /><br />You can find out for sure by going into totem, help menu,and select About. &nbsp;It should tell you if it requires xine-lib or gstreamer, here's mine:<br /><br />(http://www.homeweb.org/~nick/random-pictures/totem-help-about.png)<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>uninstalling xine</b><br />
+					Post by: <b>LinkZero</b> on <b>February 01, 2005, 01:09:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">yeah. &nbsp;apparently totem does require xine-lib, but not xine itself.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Migration Thoughts</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: SiliconFOXX on November 22, 2004, 10:02:48 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 22, 2004, 10:02:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hello, I'm over here at the UFL GERC and one of my managers is thinking about migrating our network from Novell Netware to something else. &nbsp;Much as I'd love to suggest a Linux or Unix solution I'm not sure it would fit the needs here easily (not THAT experienced with making Windows and Linux/Unix on the same network too happy) and he's been thinking about Server 2003.<br /><br /><br />I'm just asking for some thoughts and opinions from you more experienced IT people if you don't mind sharing. &nbsp;The needs of the network are a little more than basic but not overly complex. &nbsp;First it's got to support as many as a hundred machines (maximum) which isn't hard for anything really now. &nbsp;The second need is that every client machine needs to continue running WindowsXP or Windows2000. &nbsp;Why? &nbsp;Because most of the people that use the client machines here are staff and faculty and aren't what I'd call &quot;computer-savvy&quot; and the very thought of using something OTHER than a standard-issue Microsoft product is anathema.<br /><br />We'll need a mail server solution that processes...oh I dunno, about a hundred messages on a regular daily basis, maybe more, maybe less (they haven't let me toy with the specifics yet). &nbsp;MOST importantly it has to be able to be made at least fairly secure (not anything overboard that would totally kill accessibility at the benefit of confidentiality and integrity) because the Air Force has a lot of research tied up here and we wouldn't want that kinda thing getting out in the open too easily.<br /><br />We've already got an industrial grade firewall solution from Sonicwall that apparently works out rather nicely so DoS attacks and such aren't really too much of a concern.<br /><br /><br /><br />My main issue with a Linux-based solution is that even if we changed the servers to Linux and set up Samba to work with Windows2000/XP that access to network drives would still look like the Linux/Unix filesystem with /home and /usr and so forth which due to the user-base (non-computer-savvy) would more than likely cause more confusion that solution. &nbsp;Maintennance I figure wouldn't be too terribly difficult as it's probably a lot easier than maintaining a desktop Linux solution. &nbsp;For Windows Server 2003 it'd be an easy migration but I still don't feel confident in Microsoft's security. &nbsp;It doesn't matter too much to my manager but as I've got a little say in this (they're thinking about letting me set up a little &quot;farm&quot; to test it out and later manage it which is RIGHT up my alley and would look great on a resume :twisted:) I want to be able to recommend the right solution.<br /><br /><br /><br /><br />Again, just thoughts and opinions you've got. &nbsp;If you'd like to know more about our needs, just ask and I'll do what I can to find out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>rburt3</b> on <b>November 22, 2004, 10:16:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">So, the only thing you are looking to replace here is file serving, email, and maybe LDAP/Active Directory? Well, I'd say if you really want to give it a shot, I'd go with the &quot;enterprise&quot; offerings from either SuSE or Red Hat. You'll have an easier time of administering the box(en) due to their graphical nature (which should also make the transition easier for your admin). You get all the stuff you're looking for with easy config tools as well as the service and support that make PHB's sleep at night. That being said, I've heard some good things about Server 2003 as well (though I wouldn't want to be saddled with Exchange...).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Migration Thoughts</b><br />
+					Post by: <b>dpeach</b> on <b>November 22, 2004, 10:52:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">My main issue with a Linux-based solution is that ... [it] would still look like the Linux/Unix filesystem with /home and /usr and so forth ...</div><br />First I want to say that I am neither an IT guy, nor the son of one, but I do have a couple of friends who are. That said, I am sure someone will correct me if I am wrong.<br /><br />I don't really know how this works, but can't you &quot;Map a Network Drive&quot; (folder) and it appear to the Windows box that it is drive X:\? And in there you could have whatever you wanted skipping past the /home/username/documents_or_whatever. They would only see that drive X:\ had all of their files and folders that they have added.<br /><br />I believe that is the way it works. I am not sure what further information they would need to be pulling/storing on the Linux boxen.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 23, 2004, 12:56:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If someone knows more about that &quot;mapping network drive&quot; and how you'd do it so it'd look transparent to the end users with their Windows systems that would be GREAT.<br /><br /><br />But yes, rburt, you hit the nail on the head. &nbsp;I don't suppose you could tell me a bit more about how difficult it would be to integrate a bunch of end users with Win2000/XP on their boxes with a e-mail/filesystem/LDAP server running Linux, would you?<br /><br /><br /><br /><br />Basically I don't want to propose this and we get it and it turns into a total nightmare to setup 'cause I'd probably lose my job. &nbsp; :roll: Or if not my job at least any possibility of doing this again in the future.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 23, 2004, 01:04:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not meaning to &quot;post-whore&quot; or anything, just wanted to update you to the minute.<br /><br /><br />I just talked with my boss about RedHat and SuSE enterprise as alternatives and while he's mainly interested in the least cost solution he seemed pretty intrigued by the mapping network drive capability.<br /><br /><br /><br />See, we've been having a problem with Windows foolish &quot;logical drive&quot; idea. &nbsp;A few weeks ago a coworker and I were trying to transfer files on the network. &nbsp;I put them on the &quot;H:&quot; drive as I see it. &nbsp;She goes to her &quot;H:&quot; drive as she sees it and...nothing's there. &nbsp;In fact, it's a TOTALLY different drive. &nbsp;So I try to put it on another letter drive...same thing happens.<br /><br /><br />Turns out I've got one or two more drives in this machine than she has and it starts naming the logical network drives immediately after. &nbsp;That, coupled with different viewing permissions set up through Netware and you've got a nightmare. &nbsp;We had to resort to using a thumbdrive and sneakernet (heh, somebody catch that for two points?).<br /><br /><br />If we could unify the drive mappings easily that would pretty pretty slick.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>kilar</b> on <b>November 23, 2004, 02:06:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">When I went to college at USC, the college had an extensive UNIX laboratory. Every student in the engineering department had an NFS (Network File Share) that was their &quot;H: drive&quot;. Your best bet is to either get a UNIX guru, or find someone at the GERC who really likes *nix. It can be done for approximately $0.00, but it takes some work--research, reorganize, take servers offline, take workstations offline, convince the users that Linux is not for generation-X hackers, etc.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>rugmonster</b> on <b>November 23, 2004, 02:30:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not to turn this toward a Windows support board, but what you need is a logon script and something to act as a domain controller. Samba will not act as an Active Directory server, and unfortunately, you can't mimic one using LDAP and Kerberos since MS's implementation has some minor differences. If you don't mind using Samba as a PDC such as you would find with an NT Domain Controller, then you could go that route.<br /><br />I will tell you that I have had very little luck setting share permissions and what not on Samba. Noticably more trouble than compared to Windows. To be quite honest, I'm not sold on using Samba in a Windows domain setting.<br /><br />From what I have heard, you can use Samba in an Active Directory, but it cannot act as an AD server, meaning either you would have to use an NT domain running off of Samba, or have a window server 2000 or 2003 system to provide your AD. Like I said before, I'm not sold on using it in a domain environment where share permissions would be a concern.<br /><br />What sort of email do you want to employ? The best you are going to get away with Linux is IMAP and SMTP, unless you go for more expensive products from SuSE and others. It depends on what you are using now and what you plan to use in the future. <br /><br />Finally, I noticed you said something about the Air Force. I do Information Protection for the Air Force. You may be stuck using SuSE or Redhat. I think those are the only two distributions which have been officially approved for use on Air Force systems. <br /><br />I have been working with Windows Server 2003 and Exchange 2003 since April. In all honesty, I'm very impressed with it. The ease of administration is almost to cry for and I have yet to find a security issue that really worried me. Since it sounds like you are afraid of keeping your job, this desire to bring Linux into your network may be a terrible mistake. I think you need to tread very carefully if you do propose this becuase it's a very difficult thing to do and I would say in this case, it would be smarter to run Server 2003 and be done with it. I can say I would not recommend this to someone in a production setting. Try it out with a Linux server acting as your PDC/email/file server and get a couple of clients. Try out the user management and all of your functions and see how long it takes you to stand up. I think you will find a lot more issues making it all work like Windows Server would than if you were actually running Windows Server. I don't even know if I would trust myself to pull this off and be truely happy with the results. <br /><br />As for a logon script, I've got a nice little WSH logon script written in VBScript that does a lot of mapping of network drives based on group membership that I'll send to you if you would like it. It's very simple and probably lacks a lot of error handling, but it was something I had to cobble up at the last minute when I found out we couldn't use KIX32 on our systems. Yay, AF!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 23, 2004, 04:13:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the thoughts on providing a balanced discussion.<br /><br />While a lot of research for the Air Force is done here (the GERC is about one mile outside the west gate of Eglin) they bring their own systems which have all been running WindowsXP. &nbsp;To my knowledge on the base here they're running Windows but I don't work with the 96th group (my neighbor does but he's deployed in the sandbox right now) so I couldn't tell you more.<br /><br />As a branch of the university we're just in charge of our own, if the Air Force wants Suse or Redhat then they have to supply it on their own systems.<br /><br />For mail we don't need anything extensive as Groupwise has been working fine for the most part.<br /><br /><br /><br /><br />They HAVE run Linux before but apparently they either did it wrong or tried to get it on every client's box because they said it turned out to be too difficult for them to get working. &nbsp;However they don't really have any geeks there, mainly engineers (no computer engineers either really) being an engineering center. &nbsp;I love Linux and Unix but I'm no guru so if it's going to be particularly difficult, not just a bit of a challenge, then I'd need some help and I don't think anyone there would be qualified to help me.<br /><br />Oh well. &nbsp;Guess we'd be looking at Windows anyway. &nbsp;Still, we ARE going to be using this in a testbed environment, a server farm they're calling it, in order to test out the solution before full deployment. &nbsp;I might still be able to test out Linux or Unix (I wonder if FreeBSD or something would do okay, I think Slackware would with the right configuring) and compare them, though.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>hitechwizard</b> on <b>November 23, 2004, 04:49:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just converted an entire office from Netware 5 to a Mandrake 10 system. It can be a painless process, depending on what the Netware server is being used for, and what added functionality you are trying to obtain (I mean, if your not going to gain anything, why upgrade? I have another client that still has a Netware 3.12 server, and 8 DOS 6.22 workstations running!). <br /><br />To give some background on the project I just completed, the Netware server was being used for just a file server, and there was a Sybase NLM running for their contact management system that consistently crash every other Monday. Among other problems was with the Netware client software, as they continued to be upgraded, they began dropping support for (or at least we were unable to continue to access) Netware 5 and IPX. Long story short, they now have 2 Mandrake servers, and an OpenBSD Firewall. One of the Mandrake servers acts as the office server that &nbsp;runs as their DHCP, Samba (both smbd &amp; nmbd with WINS support), SQL Server (using MySQL) and intranet web server. I ended up writing a custom contact management system using Apache/MySQL/PHP for them, that has performed consistently and flawlessly since installation. The other Mandrake server acts as their web, email and primary DNS server. In their case, all files on the shared drive are public in nature, so permissions were not an issue. (And yes, permissions are a PAIN when using Samba). The linux server shows up in everybody's Network Neighborhood just like any other Windows server, and since the shares allow anonymous login from the local private network address space, there's no permissions issues.<br /><br />I have heard (not confirmed) that the NDS (Novell's LDAP implementation) is now in the public domain and available in both Linux &amp; Windows flavors. Not knowing what kind of authentication you are needing, this example at least gives you an idea of what's possible.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>kilar</b> on <b>November 23, 2004, 07:42:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The Air Force predominantly runs Windows 2000/2003 servers and Windows 2000/XP workstations, since M$ owns the universe. Red Hat Linux has been used in specialized systems, hence the National Security Agency's contribution toward SELinux. I just wanted to clear that up. Also, Eglin has the 96 ABW, 46 TW, and others, so it is easier to just refer to them collectively as &quot;Eglin AFB&quot;.<br /><br />As for running Linux at the GERC, I know of several universities that do deploy Red Hat, Solaris or BSD servers, including the Univ Florida at Gainesville. Having more computer engineers would not give you an advantage, since most CEs are taught on Windows, with some UNIX (but not enough to be dangerous).<br /><br />With Suse and Novell joined together, Suse Linux + Novell's sysadmin tools might be something to look into. It just takes lots of research by a dedicated techie.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 23, 2004, 08:19:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heh, dedicated or bored, I'm one or the other (I've got nothing to do other than play secretary quite a bit) so I guess I could research some more.<br /><br />Yeah, Eglin's got a lot of security, I'm rather envious. &nbsp;It's the kind of thing that made me almost want to join.<br /><br />The new need is a larger network, at least that's what I'm told. &nbsp;Personally I despise how Netware and Groupwise seem to totally take over a network like a bad cancer rather than being something smoothly integrated and while nobody wants to say it I think that's one of the other reasons. &nbsp;Every time we get a new resident student at the GERC we've got to go through the pain of infecting...err, &quot;installing&quot; it on their system.<br /><br />The needs aren't much but some permission ability is probably a must so Samba would end up being a serious pain I suppose (I'm STILL not a fan of Samba...if I knew more about how to set up a temporary FTP server in Linux I'd say screw Samba and do it all FTP but that's a hacked method).<br /><br /><br />Gainesville runs Linux? &nbsp;I'm going to have to call Bob, chit chat with them about that. &nbsp;If they're running that down in Gainesville it might be very easy to integrate up here as that would mean they've been through the setup down there already and we could easily copy their setup for here (similar needs being the same university).<br /><br />Oh, I was saying engineers are a disadvantage because most aren't even computer engineers, they're all physical engineers (EE, concrete ballistics, and so forth), I'd rather have more computer scientists like myself who are more geared towards the software.<br /><br />I'd write a few scripts but I must confess that if it isn't C++/C I don't know it off the top of my head and it would take a lot of learning, not to mention learning how to get it to execute and so forth and to what end.<br /><br /><br /><br /><br />Thank you for all the discussion regarding this. &nbsp;I know I'm really on the tip of the iceberg for large system deployments but it's something I wish to do in the future (as a part of network/system security) so it's definitely good for me to get exposure to this kind of thing now in terms of my future employment. &nbsp;The biggest network I've ever managed is my own and that's usually less than six machines so thinking about something bigger and in a &quot;real-world&quot; scenario is very stimulating. &nbsp;Your thoughts and opinions are greatly appreciated.<br /><br /><br /><br /><br /><br />Whew, I've got too much whiskey in this drink, I think I'm going to have to sign off for now.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>rugmonster</b> on <b>November 23, 2004, 10:09:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Yeah, Eglin's got a lot of security, I'm rather envious. It's the kind of thing that made me almost want to join. </div><br /><br />As enlisted, you wouldn't see much of the security stuff unless you were in a mobile comm unit like mine. Actually, most of the base comm out there is run by civilian contractors anyway, so the really large scale enterprise stuff is mostly out of our hands. Oh yeah, officers so rarely get to touch equipment, it's sad to think their four or more years of school is going to waste. My flight commander is actually jealous of us technicians...but we're jealous of his paycheck.<br /><br />Besides the encryption devices such as the KG-175 (http://www.gdc4s.com/Products/taclane.html), there isn't anything special that the AF uses that every network shouldn't employ. Security is mostly 10% proactivity and 90% common sense. Watch your logs, use some sense in your boundary security, mind your permissions on network resources, keep up on software updates, keep constant physical control over your network and you should be fine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 24, 2004, 12:11:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'd be an officer (degree and all) but it's disheartening to hear they aren't too different. &nbsp;Guess I'll have to wait until we move to MD for CIA/NSA (dream...but apparently not hard to get into).<br /><br />I love security though, even if it is a lot of common sense. &nbsp;Surprisingly there's a whole lot of people who wouldn't even think about simple things like why you wouldn't want to give write permissions on system files to common users. &nbsp;But for whatever reason I really like system/network security/administration. &nbsp;I dunno, I seem to be pretty good with it and software design, just need more oppurtunities (Eglin AFB area isn't what I'd call a &quot;hotbed&quot; unless you've got 3~5 years experience).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Migration Thoughts</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>January 24, 2005, 11:32:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Mapping a network is simple.... Right click the folder from inside windows, Map Net Work Drive, sleect the letter, and click finish. &nbsp;Make sure reconnect at logon is selected. &nbsp;It will use their username and password for access. &nbsp;The best way I've found(and easiest) is \\BOXNAME\SHARENAME\ for the location.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - VNC Login session question.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Computer General => Topic started by: L.Rentz on January 09, 2006, 01:08:26 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>VNC Login session question.</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 09, 2006, 01:08:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey Guys,<br /><br />If I have a program running at home that I want to check the status of.&nbsp; When I VNC into that box remotely I get a new xwindow session.&nbsp; What would I need to change to see the session the way I left it running at home?<br /><br />Thanks,<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: VNC Login session question.</b><br />
+					Post by: <b>lloydr</b> on <b>January 09, 2006, 01:51:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">your problem is probably similiar to what I discussed in my VNC + SSH presentation. Basically what you want is VNC to be running on display :0 and what is probably happening is vnc starts a new xsession at :1<br /><br />This usually comes down to the vnc server you are using. there are specific servers that are made to run directly on :0 such as x11vnc<br />http://www.karlrunge.com/x11vnc/<br /><br /><div class="codeheader">Code:</div><div class="code">x11vnc -display :0<br /></div>will be the command you run, and away you go.<br /><br />occasionally the included vnc servers with distros have issues with sharing display :0. <br />So far the vnc server included with Freerock Gnome for Slackware has worked great running libvncserver (http://libvncserver.sourceforge.net/)<br /><br />With sharing :0 with your monitor at home, everything you do on your screen at home that you left up will show up on the vnc session and vice-versa. An example would be leaving up say xchat, gaim, and thunderbird while you are at home. When you vnc into your machine to :0 you will see xchat, gaim, and thunderbird still running and on your display exactly how you left it at home. Any changes you make while on vnc will be the same as if you were sitting at your machine.<br /><br />Hopefully this is what you were talking about&nbsp; :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: VNC Login session question.</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 09, 2006, 02:42:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks,&nbsp; Got it running.<br /><br />Lee</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

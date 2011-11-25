@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Floppy disk image</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Computer General => Topic started by:  on August 26, 2003, 09:27:11 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Floppy disk image</b><br />
+					Post by: <b></b> on <b>August 26, 2003, 09:27:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a firewall on a floppy (for a dedicated firewall computer). I downloaded the floppy disk image and after formatting the floppy with:<br />fdformat /dev/fd0u1680<br />I then copied the image to the floppy using<br />dd if=/home/edward/Bering_1.2_img_bering-1680.bin of=/dev/fd0u1680<br />Then I booted it up on a computer to configure it with my settings and saved it. Now my question is how can I copy the customized image from the floppy back to my hard drive so I can save it to a CD. Just mounting it and copying it won't work and I want to have an image to make another disk should I need to. I would appreciate any help, thanks, Ed</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Floppy disk image</b><br />
+					Post by: <b>crowe</b> on <b>August 26, 2003, 10:17:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This should be rather trivial with the <i>cat</i> command.<br /><br />Try doing this, <b>without</b> mounting the disk first:<br /><br /><div class="codeheader">Code:</div><div class="code">cat /dev/fd0u1680 &gt; /home/edward/foo.bar</div><br /><br />This should create a bit-for-bit image of whatever disk is in the drive, with the name foo.bar. <br /><br />Or alternatively, you should be able to do a:<br /><div class="codeheader">Code:</div><div class="code">dd if=/dev/fd0u1680 of=/home/edward/foo.bar</div><br />and end up with the same results.<br /><br />Either way, you should then be able to mount the freshly-made image via the loopback device:<br /><br /><br /><div class="codeheader">Code:</div><div class="code">mount -o ro,loop ~/foo.bar /mnt/misc</div><br /><br />Assuming that the mountpoint /mnt/misc is valid, you should then be able to treat it like you would any other filesystem. &nbsp;Check that all is good with the image, then unmount it and do whatever you like with it. &nbsp;8)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Floppy disk image</b><br />
+					Post by: <b></b> on <b>August 26, 2003, 12:31:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks crowe, I followed your directions using the dd if=/dev/fd0u1680 of=/home/edward/bering_1.2_ppp_img.bin command. I then formatted a disk and copied the new image that was made to that disk and used it to reboot my firewall. It came up and logged me on just right. It sure helps when you know where to find a guru.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

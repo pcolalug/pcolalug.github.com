@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - tightVNC/SSH tunnel problems</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: rburt3 on February 02, 2003, 02:02:35 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tightVNC/SSH tunnel problems</b><br />
+					Post by: <b>rburt3</b> on <b>February 02, 2003, 02:02:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If anyone (and I mean you, erc) have any experience with VNC via ssh tunneling, I'd love to talk to you. I have everything set up, but when I try to actually start a session, I get an &quot;administratively prohibited&quot; denial.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>vnc/ssh</b><br />
+					Post by: <b>erc</b> on <b>February 03, 2003, 04:14:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Did you ever get this resolved? &nbsp;People sometimes forget that if you tunnel stuff through ssh, you can block all other ports on your firewall except port 22 - everything else goes through the encrypted/compressed ssh pipe. &nbsp;Makes security a bit easier to deal with :)<br /><br />I use it all the time. &nbsp;If you copy over your public certs to your target machine, yuo don't even have to type a password to get ssh to do it's magic. &nbsp;I use it all the time when I'm out in Milton - I run UUCP through ssh and never have to type a password, it just works :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tightVNC/SSH tunnel problems</b><br />
+					Post by: <b>rburt3</b> on <b>February 03, 2003, 10:51:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had to give up the main rig to the missus last night, so I will have to test this tonight and let you know how it works. Thanks for your help!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tightVNC/SSH tunnel problems</b><br />
+					Post by: <b>rburt3</b> on <b>February 03, 2003, 09:53:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">No dice. Same error as before.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tightVNC/SSH tunnel problems</b><br />
+					Post by: <b>rburt3</b> on <b>February 03, 2003, 10:37:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did, BTW get to do what I needed to do with the following command:<div class="codeheader">Code:</div><div class="code">ssh -X -C username@remote.host</div>Once you do this, type the command for any of the X-apps on the remote machine at the prompt. You may have to wait a bit, but soon enough said app will pop up on your screen but be running on the remote machine via ssh. Not the most responsive, but works in a pinch.<br /><br />If anyone else is interested, here (http://www.linuxworld.com/2003/0203.barr.html) an ok article on how to set up VNC and use it with ssh. Its by Joe Barr and so is light on the technicalities, but it can get one started...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>VNC via ssh</b><br />
+					Post by: <b>erc</b> on <b>February 04, 2003, 02:13:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I forgot to mention, make sure that &quot;X11Forwarding yes&quot; is set in /etc/ssh/sshd_config.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

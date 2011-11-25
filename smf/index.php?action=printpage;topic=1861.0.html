@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Need Help with Baldur's Gate II</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: SiliconFOXX on September 05, 2004, 06:00:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>September 05, 2004, 06:00:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hello, I just picked up BGII:SoA with the Throne of Bhaal expansion for only $20 (never played, but played NWN and liked it). &nbsp;Well, it runs on my windows box fine but I want to get it up and running on my Slackware box.<br /><br /><br />My slack box is 1.0Ghz, has a SB Live! card, and I still haven't gotten that d**n GeForce 2 working but the 128MB of RAM (or is it 64MB, I can't remember) seem to do alright, though slowly. &nbsp;I think I can get it running in 2D mode so while it won't look great it'll be playable and the wife and I can get in on some multiplayer D&amp;D.<br /><br /><br /><br /><br />However, I never got Wine configured and I don't know if there's any binaries out there for BGII. &nbsp;For some reason even after I installed the Wine package it didn't have a configurator like the manual said so I've been stuck in the mud with it. &nbsp;I'm assuming Wine would be the easiest way to get it running but if it's not I'd appreciate any help that can be offered. &nbsp;Thank you.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>lloydr</b> on <b>September 05, 2004, 06:39:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">maybe this will help a bit also:<br />http://liflg.sourceforge.net/?page=art&amp;artid=19<br /><br />i'm really not familiar with baldur's gate running on linux but a lot of people have had pretty good luck with the loki installers for games running through wine/winex</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>September 08, 2004, 06:16:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, well, I tried it out after I got Wine configured (it seems to run the regedit.exe and everything else fine) but it's not working.<br /><br />Apparently during the install it couldn't create...well, quite a bit of stuff. &nbsp;And even trying to use the bg2.exe program would only bring up the Throne of Bhaal main screen that says, &quot;Install&quot; because apparently it doesn't know it's installed.<br /><br /><br />I tried some hardcore reg hacking but it didn't affect it at all. &nbsp;I'm wondering if perhaps I just need to...I dunno, find some way to temporarily ghost the CDs to the hard drive, mount them to /mnt/cdrom so it fools the loki installer, and try it out that way. &nbsp;I don't know how to do that but I'm pretty certain it's possible. &nbsp;Know anywhere I can go for help, this is a TOTALLY new thing to me.<br /><br /><br /><br />On the positive side, Wine seems to work (though I don't have much to test it on, granted). &nbsp;I mean, I found out what my problem was last time. &nbsp;Apparently I needed to run &quot;makewineprefixes&quot; or something like that so it would create the ./wine directory.<br /><br /><br />Should perhaps I run the installer as root and install it to the /usr/bin directory and mount that somehow in Wine as a different drive or something? &nbsp;I don't know, just trying to think around this. &nbsp;It would REALLY rock if I could get this thing running so that the wife and I could finally play some multiplayer games together on the computers.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>September 09, 2004, 11:12:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Can anyone maybe recommend someone to check with about this issue other than Bioware (I have a feeling they wouldn't be that helpful since they didn't make the installer)? &nbsp;Or perhaps an alternative way to install? &nbsp;I'm thinking if there's a way to ghost the CDs to the hard disk I could just mount them that way and do a size check to make sure they've got all the files...that also removes the probability of my CD-ROM missing a file or two when reading (which I think is what's happening).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>rugmonster</b> on <b>September 09, 2004, 11:47:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">for making an iso see this link<br /><br />http://people.etango.com/~awaite/blog/archives/000653.html<br /><br />basically it's<br /><div class="codeheader">Code:</div><div class="code">dd if=&lt;dev file&gt; of=&lt;output iso&gt;</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>September 09, 2004, 05:54:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's AWESOME, thank you. &nbsp;I'm gonig to try it out now.<br /><br /><br />To get it to see the ISO as teh image I need I can just use the mount command to mount the iso to /mnt/cdrom, right? &nbsp;Or something like that, anyway? &nbsp;That would fool the program into thinking the installation disk is mounted so that I can install cleanly from the hard drive, unless I'm thinking wrong.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>rugmonster</b> on <b>September 09, 2004, 07:14:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Even better HOWTO<br /><br />http://www.linuxdocs.org/HOWTOs/CDServer-HOWTO/procedure.html<br /><br />Once you have the iso on your local disk, you can then mount it on the loop device (hope you included that in your kernel)<br /><br /><div class="codeheader">Code:</div><div class="code">mount -o loop -t iso9660 -r &lt;/path/to/file.iso&gt; &lt;/path/to/mount/point&gt;</div><br /><br />This will mount the file.iso to your specified mount point read-only. Hope this helps</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>September 11, 2004, 12:00:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, this is definitely closer. &nbsp;I've got the ISOs made and attempted to mount them to /mnt/cdrom thinking that would allow it to install from the ISOs. &nbsp;Apparently the installer still isn't happy though because it's claiming there's no device mounted.<br /><br />I'm assuming that this is according to mtab since /dev/cdrom isn't mounted, only the location /mnt/cdrom. &nbsp;Now I'm trying to figure out how to umount the ISO so I can try it again...very close, but not quite close enough.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>September 11, 2004, 12:02:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, attempting to umount /usr/share/BGII/BGII-SoA_CD1.iso gives the message (twice, oddly) that /mnt/cdrom is busy, even though I'm out of it, back at slash. &nbsp;Very interesting....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need Help with Baldur's Gate II</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>September 26, 2004, 11:00:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Anybody have any additional thoughts on this? &nbsp;I suppose I COULD just try to manually write the mtab but that's very &quot;hackish&quot; and I'm not certain as to what effect that will have on the system if I tell it something's mounted and it's really not.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

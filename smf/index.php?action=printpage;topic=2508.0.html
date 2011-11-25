@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - .bin extension</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: LinkZero on July 01, 2005, 05:54:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>.bin extension</b><br />
+					Post by: <b>LinkZero</b> on <b>July 01, 2005, 05:54:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i know y'all are gonna laugh, cuz i really should know this by now. &nbsp;but how do you install a program with a .bin extension? &nbsp;i need realplayer, and it doesn't come in a tarball. &nbsp;tar.gz, tar.bz2, and .tgz are the only extensions i've worked with so far.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>.bin extension</b><br />
+					Post by: <b>lloydr</b> on <b>July 01, 2005, 06:19:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">should just be:<br /><br />./filename.bin<br /><br />that is, if it has execution permissions<br /><br />chmod 755</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>.bin extension</b><br />
+					Post by: <b>LinkZero</b> on <b>July 01, 2005, 08:34:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">thanks man, it worked. &nbsp;but i do have one more problem. &nbsp;realplayer works now, but i used to be able to just type realplay as a command in the console, and realplayer started up, but the command doesn't work any more. &nbsp;i have to go through all the folders to get to realplayer. &nbsp;any ideas?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>.bin extension</b><br />
+					Post by: <b>Brent</b> on <b>July 01, 2005, 09:04:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, here's how to fix it.<br /><br />go root in the console, start up mc, have one window of mc point to /usr/bin and the other point to /yourrealplayerpath.<br /><br />Now, press ctrl x, ctrl s. &nbsp;It will ask you to make a symlink. Hit ok. &nbsp;You should be able to start it directly from there, after you edit your fluxbox menu.<br /><br /><div class="quoteheader">Quote</div><div class="quote">i know y'all are gonna laugh, cuz i really should know this by now.</div><br /><br />I think, all you need are a few good references that you can go to, and learn things, instead of learning stuff piecemeal, one at a time. &nbsp;<br /><br />http://www.google.com/search?q=command+line+linux&amp;sourceid=mozilla-search&amp;start=0&amp;start=0&amp;ie=utf-8&amp;oe=utf-8&amp;client=firefox-a&amp;rls=org.mozilla:en-US:official<br /><br />That should be a good starting point to get you up to speed. &nbsp;From there on out, www.google.com/linux is your all knowing guru. &nbsp;Consult it first.[/url]</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>.bin extension</b><br />
+					Post by: <b>lloydr</b> on <b>July 01, 2005, 09:35:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">Well, here's how to fix it.<br /><br />go root in the console, start up mc, have one window of mc point to /usr/bin and the other point to /yourrealplayerpath.<br /><br />Now, press ctrl x, ctrl s. &nbsp;It will ask you to make a symlink. Hit ok. &nbsp;You should be able to start it directly from there, after you edit your fluxbox menu.<br /></div><br /><br />um.... there are quicker ways to make a symlink without using mc.<br /><br /><div class="codeheader">Code:</div><div class="code"><br />ln &#91;OPTION&#93;... TARGET &#91;LINK_NAME&#93;<br /></div><br /><br />for symbolic link in your particular case you'd do<br /><div class="codeheader">Code:</div><div class="code"><br />ln -s /pathtorealplayer /usr/bin/realplayer<br />or<br />ln -s /pathtorealplayer /usr/bin/realplay<br /></div><br />thought it was realplayer command, but above is for realplay or realplayer, but you get the idea<br /><br />or probaly a little more appropriate,<br /><div class="codeheader">Code:</div><div class="code"><br />ln -s /pathtorealplayer /usr/local/bin/realplayer<br />or<br />ln -s /pathtorealplayer /usr/local/bin/realplay<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>.bin extension</b><br />
+					Post by: <b>LinkZero</b> on <b>July 02, 2005, 08:08:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">thanks lloydr. &nbsp;it worked. &nbsp;i have realplayer on my menu, but i do like to sometimes use the console to play videos, and this will make it a lot simpler.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

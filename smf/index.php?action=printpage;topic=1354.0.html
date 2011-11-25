@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Starting X without a password</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: dpeach on February 04, 2004, 05:23:36 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Starting X without a password</b><br />
+					Post by: <b>dpeach</b> on <b>February 04, 2004, 05:23:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">On my Mandrake machine I can boot the computer into my standard user without requiring a password. There is a password on the user, but it will do the initial boot without asking for it. If I log back out and try to log in, I have to supply the password. When I do XFDrake to make changes to my XF86Config file it asks me if I want to use this feature. Therefore, I assumed that it was something handled by XF86Config. But it is not, which I could have figured out based on the fact that simply restarting X does not allow to bypass the password, only restarting the whole machine.<br /><br />I am trying to do the same on my Gentoo system w/ KDE. I am supposed to be using kdm, though I don't know since I never have to manually start X. Is this something handled by kdm and how would I go about finding this?<br /><br />Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Starting X without a password</b><br />
+					Post by: <b>Madwilli</b> on <b>February 04, 2004, 05:53:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm looking at a redhat 9 derivative here and I see the kdmrc file in<br />/etc/kde/kdm<br /><br />If you look in the file, there are 'AutoLoginEnable' and 'AutoLoginUser' fields.<br />Was this what you meant by logging in automatically?<br /><br />Not sure if this helps - here's hoping.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Starting X without a password</b><br />
+					Post by: <b>dpeach</b> on <b>February 05, 2004, 12:09:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ahh, once again. Right where I expected it:<br />/usr/kde/3.1/share/config/kdm/kdmrc<br /><br />I should have thought to look there first.<br /><br />But all rants aside, that did the trick. Thank you. I was able to find the answer on the Gentoo forums, but only after I knew what to look for. I appreciate the direction.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

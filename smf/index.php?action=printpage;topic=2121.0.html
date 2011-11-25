@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - [Solution] ET Won't Start</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: dpeach on December 18, 2004, 08:43:39 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>[Solution] ET Won't Start</b><br />
+					Post by: <b>dpeach</b> on <b>December 18, 2004, 08:43:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Found a solution for why sometimes your ET (or any game based on the Quake3 engine) will decide to not start. It has to do with the number of maps that you have loaded.<br /><br />Here is the original post found at: http://www.linuxquestions.org/questions/showthread.php?s=&amp;forumid=14&amp;threadid=181375<br /><div class="quoteheader">Quote</div><div class="quote">I had this problem earlier and after much searching found an answer. I think it applies to any game using the quake3 engine under linux, and doesnt seem to affect any windows versions running on windows (and presumably wine).<br /><br />I started the game up and it errored and crashed. So i ran it again from console to see what the **** was up with it and got this error message:<br /><br />_X11TransSocketOpen: socket() failed for local<br />_X11TransSocketOpenCOTSClient: Unable to open socket for local<br />_X11TransOpen: transport open failed for local/Shadow1:0<br />_X11TransSocketOpen: socket() failed for local<br />_X11TransSocketOpenCOTSClient: Unable to open socket for local<br />_X11TransOpen: transport open failed for local/Shadow1:0<br />Received signal 11, exiting...<br /><br />After much searching, i finally came across the answer on a q3a forum.<br /><br />Its to do with the number of maps/pk3 files you have in your etmain/baseq3 dir. If you have more than 300 maps, paks, etc. It will crash. i havent found out why yet, but removing a few maps solved the problem.<br /><br />So i thought id post this up on here since others will no doubt come across it from time to time.</div>Worked for me. I only had 297 maps when it stopped working. I pulled out 5 of them and it works great.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>[Solution] ET Won't Start</b><br />
+					Post by: <b>Brent</b> on <b>December 23, 2004, 09:21:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">that's always been my main beef w et. <br /><br />There are so many maps...I really do wish there was like one big map pack of the most popular maps out there. &nbsp;I can't stand having the game automatically download when it doesn't have a map, because it doesn't just grab the map it needs, it grabs every map that's missing.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

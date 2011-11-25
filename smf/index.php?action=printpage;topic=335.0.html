@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Router Woes</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Computer General => Topic started by: imnes on December 24, 2002, 12:56:11 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router Woes</b><br />
+					Post by: <b>imnes</b> on <b>December 24, 2002, 12:56:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well I've been busy for about the last week fighting my new router. &nbsp;I'm using parts that are leftover from a few system upgrades. &nbsp;I put together an AMD K6-2 333mhz, 256mb PC100 ram, 10gb HD, 24x CD-ROM, RealTek 8139c NIC, Alcatel Speedtouch DSL Modem (USB), and US Robotics 33.6 Courier (for backup dialup if/when ADSL craps out). &nbsp;<br /><br />The system was extremely difficult to get installed, lots of problems which I have been unable to track down. &nbsp;Out of desperation I swapped out ram with some different sticks. &nbsp;I'm not sure if it helped or if it's just coincidince but I finally got something installed. &nbsp;(I've tried probably 5 different distros / versions before finally installed Mandrake 9.0, not my ideal router/server distro but it's the only one which seems happy).<br /><br />I got everything installed, servers running (ftp, telnet, ssh, apache), it's routing and everything seems happy. &nbsp;Sometime in the middle of the night though the system halted with a kernel panic (keyboard LED's flashing). &nbsp;I rebooted and so far it seems happy. &nbsp;These kinds of problems are hard to track down. &nbsp;Logs don't list anything suspicious, no error messages.<br /><br />I've got my previous system put back together on standby ready to be reloaded if this thing starts acting up again. &nbsp;Previous machine was a 166mhz Intel Pentium, 64mb RAM, 1.6gb HD, 2x CDROM, Alcatel DSL Modem, RealTek NIC. &nbsp;<br /><br />I'll keep you guys posted. &nbsp;Until I get this mess straightened out my screenshots and other files linked to on my router from posts will not be working. &nbsp;Sorry about that, I'll get everything going again ASAP.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router Woes</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>March 18, 2003, 08:55:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm having trouble setting up my router..... &nbsp;I have an old IBM Aptiva That I wanna use, but &nbsp;can't get my Linux computer to connect. &nbsp;I'm trying to run a single floppy distro to boot. &nbsp;It's Coyote Linux 1.3, and it finds my 2 NIC's. &nbsp;One is a RealTek8139 PCI and the other is a 3Com 509b ISA card. &nbsp;My router can contact the DHCP server and get all the required info and sees the peripherals, but my main Linux Computer cannot find it. &nbsp;HELP!!!!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router Woes</b><br />
+					Post by: <b>dpeach</b> on <b>March 18, 2003, 09:21:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Are you running DHCP on your main box? I don't know if your distro will call for an address to be served up by default. I believe you have to specify to get address via DHCP in Mandrake.<br /><br />I am sure someone here can tell you how to do this via command line, but find your LAN settings configurator and see if you can ask for an address through there.<br /><br />BTW, the Coyote Linux ran my server for a couple of months. I was very pleased.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Router Woes</b><br />
+					Post by: <b></b> on <b>June 06, 2003, 11:45:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Has anyone ever looked at FreeSCO...?<br /><br />This is a floppy disk based Linux distribution designed to mimic a Cisco router.<br />It requires some planning in advance, but even so, I was able to configure <br />a Pentium 60 with an external modem to route internet access for all my network computers, even those running Winblows, to flawlessly run any internet app as though the internet connection was local to the machine by<br />setting the gateway to the FreeSCO router.<br /><br />It even comes with a default firewall already set up to give basic protection<br />which can be modified to suit your personal taste.<br /><br />By the way, if you put a second network card in the router,<br />you can connect completely different networks such as 10baseT and 10base2.<br /><br />I know it works, I ran this configuration for 6 months before my present situation caused me to scrap my router temporarily but when my situation <br />changes, I will use the same computer as my router once again...<br /><br />Oh, and for those of you who who have cable or DSL, FreeSCO can also be<br />configured to use these access methods BUT you are on your own in this regard as no one has posted clear instructions on how to do this to the FreeSCO website to be included in their HOWTO.<br /><br />However, &nbsp;The Linux cable modem HOWTO gives some insight into the different cable ISP's and how you need to configure your FreeSCO router<br />to connect to them...</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

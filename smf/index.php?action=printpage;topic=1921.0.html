@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Doom 3 Framerate</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: SiliconFOXX on October 14, 2004, 08:22:21 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 08:22:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, just to recap I've got the following:<br /><br />Slackware 10, stock<br />2.4 kernel<br />Turtle Beach Santa Cruz<br />Gainward 5700FX 256MB (6111 drivers)<br />Athlon 64 2800+<br />1GB of Corsair RAM<br /><br /><br />I managed to get Doom 3 installed (after four years of waiting, YES!) and it plays. &nbsp;However, I don't think I'm quite getting the frames I should be. &nbsp;When it first started up in 640x480 at medium, it was flying. &nbsp;I mean flat-out FLYING! &nbsp;I didn't do a framerate check but it was quick. &nbsp;So I decide to crank up the resolution to 1024x768 at medium 'cause the benches I've seen for the 5700FX 128MB w/1GB RAM and Athlon64 are in the 60fps range.<br /><br />Sh!tcanned. &nbsp;Serious, my frames dropped to the 10~20fps range.<br /><br /><br /><br />With that much memory and that much hardware I should be easily achieving the 35~45fps range, every bench I've seen has said so since in the max resolutions they've got more frames than that. &nbsp;Any idea what's going on, or do I just need to compile my own kernel and pray for optimizations to speed?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 08:38:19 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, here's a thought. &nbsp;The Athlon64's performance in part comes from Hyper-Threading, right? &nbsp;As far as I'm reading here the 2.4 kernel doesn't support that, that's only in 2.6. &nbsp;Maybe I WOULD see a performance boost in moving over.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>lloydr</b> on <b>October 14, 2004, 09:54:44 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Hmm, here's a thought. &nbsp;The Athlon64's performance in part comes from Hyper-Threading, right? &nbsp;As far as I'm reading here the 2.4 kernel doesn't support that, that's only in 2.6. &nbsp;Maybe I WOULD see a performance boost in moving over.</div><br /><br />the athlon64 doesn't have hyperthreading<br />the HT in amd's is hyper transport or whatever they created for the 64 line.....kinda stupid for amd to call it HT for short when intel has been using HT as hyperthreading for a bit longer :roll: <br /><br /><br />and thats seriously low framerates for that system<br /><br />mine runs 20-25fps on 1024x768 high quality. 40-45fps on 1024x768 medium quality and thats with a p4c 2.8ghz 800fsb HT(hyperthreaded) and 512mb dual channel ddr400 ram...running for the most part same operating system except i run 2.6.7 kernel(not the one included with slack10....custom configuration and compiled on my machine)....then video card is nvidia geforce 4 Ti4600 128mb agp4x</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 10:05:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, so NOW I'm worried. &nbsp;Like, REALLY worried. &nbsp;Do you think maybe it's that stock, &quot;bare,&quot; generic kernel that's holding me down? &nbsp;I mean, I was expecting it to fly on medium at 1024x768, every bench I've seen promises quite a few frames in windows and even more in Linux.<br /><br />So! &nbsp;Where should I start in seeing what's the matter? &nbsp;Upgrading the kernel and reinstalling the nVidia driver? &nbsp;If I do that, will it break the driver with the 2.4 kernel in the event that the 2.6 doesn't work and I need to go back?<br /><br /><br />My sound is also very &quot;iffy.&quot; I already posted about not getting it out of four speakers, but even with just two it doesn't seem to work all the time. &nbsp;I've booted up Doom 3 a few times and after my second time it just stopped working entirely. &nbsp;No improvement to the framerate.<br /><br /><br />Any help in tracking down what's wrong with the setup would be greatly appreciated...I don't want to go back and install it on Windows just to get the framerate up (though I'm thinking about it just for testing).<br /><br /><br />Oh, thanks for clearing up &quot;HyperTransport&quot; from &quot;HyperThreading.&quot; Someday I'll keep 'em straight. :wink:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 11:17:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You know, here's a thought. &nbsp;When I downloaded the drivers I got the &quot;IA32&quot; ones because I figured I'm running 32-bit slack, might as well get 32-bit drivers. &nbsp;Should I instead get IA64 ones or will they be incompatible?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>imnes</b> on <b>October 14, 2004, 11:30:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">No you need the 32 bit drivers if you're running 32 bit kernel (I think).<br /><br />Are you on the latest commercial nvidia drivers? &nbsp;Sure you switched from nv to nvidia in your xorg.conf? &nbsp;<br /><br />Start a console window and run glxgears, let it run for 10 seconds or so and get some fps readings from the console. &nbsp;Then maximize the window and let it run for a few more fps counts. &nbsp;What kind of numbers are you seeing at the initial small window size and then maximized?<br /><br />Not sure what else it could be - but Doom3 played crappy (on any decent graphics settings) in Windows XP on my Pentium 4 HT 2.6ghz with 512mb corsair ram, creative labs audigy 2, &nbsp;and an NVidia 5600FX 256mb Ultra. &nbsp;It plays better on my older Athlon XP 1700+ with the same video card, I'm not sure what the problem was, I had lots of issues with different games on that system though.<br /><br />I've sold the P4 system and looking at building my next system now. &nbsp;I was considering the g5 imac but the graphics card on it sucks too bad, and other apple gear is too pricey. &nbsp;I don't know if I want to go Athlon XP or 64, might need to stay XP just for compatibility with games. &nbsp;You guys with the 64 systems keep us posted on compatibility and other issues please.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 11:35:19 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah, I'm using the latest drivers for 32-bit and when I get home I'll run the GLXgears exercise, let you know, but I have a strong suspicion that it's the stock kernel. &nbsp;I'll download 2.6.6 today and compile, see if I can get that working enough so that I can see a performance boost.<br /><br />I'm also going to install Doom 3 on Windows XP on this box so that I can see the performance from that side of the box, see if it's any different.<br /><br />Oh yeah, I DO get the nVidia splash screen and all that just fine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 11:43:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Oh yeah, when I installed the module it gave me a warning about the &quot;rivafb&quot; module possibly causing conflict. &nbsp;Since everything booted up I passed it off as nothing, but I'm wondering if perhaps that stock kernel is trying to use the rivafb module anyway which could be causing some conflict slowing down the system. &nbsp;I did a search and apparently I'm not the first person this has happened to and we're better off overall with the 6106 drivers.<br /><br /><br />Which reminds me, if I want to install an older nVidia driver, do I just run the program and it automagickally does everything or do I need to manually remove the old driver files an put in the new ones?<br /><br /><br />And I'm assuming you run glxgears with just &quot;foxx@anubis$glxgears?&quot;</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>rburt3</b> on <b>October 14, 2004, 12:24:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Oh yeah, when I installed the module it gave me a warning about the &quot;rivafb&quot; module possibly causing conflict. &nbsp;Since everything booted up I passed it off as nothing, but I'm wondering if perhaps that stock kernel is trying to use the rivafb module anyway which could be causing some conflict slowing down the system.</div><br />I doubt it. Since you get the splash, you're using the NVidia driver for your display. A problem may arise if you configure the fb device to use the riva driver, but fb shouldn't come into play in this case.<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Which reminds me, if I want to install an older nVidia driver, do I just run the program and it automagickally does everything or do I need to manually remove the old driver files an put in the new ones?</div><br />The installer will handle everything for you.<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">And I'm assuming you run glxgears with just &quot;foxx@anubis$glxgears?&quot;</div><br />Yes</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 12:32:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, I've been poking around, even over at www.linuxquestions.org, and the rest of the 'net and it seems this kind of thing is real common lately but there don't seem to be any answers. &nbsp;I was going to say it was distro. + hardware specific but that doesn't quite seem to be the case, though it certainly seems to happen in Slack a lot. &nbsp;Very odd.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 01:12:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, running glxgears. &nbsp;Apparently after I let it &quot;warm up&quot; for a second it caps out at 6630fps by itself. &nbsp;If I do anything else (like this) it tends to go down just a bit. &nbsp;So I suppose this means my OpenGL is working, though that might be a little low.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>lloydr</b> on <b>October 14, 2004, 01:48:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Yeah, I'm using the latest drivers for 32-bit and when I get home I'll run the GLXgears exercise, let you know, but I have a strong suspicion that it's the stock kernel. &nbsp;I'll download 2.6.6 today and compile, see if I can get that working enough so that I can see a performance boost.<br /></div><br /><br />why 2.6.6? if you go with 2.6.6 be sure to patch it up....i'd recommend 2.6.7 as it seems a lot of people were having problems with java in 2.6.8.1(me and about 30 other people in the slackware irc channel checked out 2.6.8.1 on release date and it wasn't pretty....)<br /><br />i'm personally using 2.6.7 until 2.6.9 comes around, works fine and running the latest nvidia IA32 6111 drivers no problems, in some games like ut2004 i noticed that the 6111 drives had a slight increase in performance over the previous 6106 with my geforce 4 Ti4600 128mb</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 01:57:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I wasn't really aware what the current status of 2.6 development was, 2.6.6 was where I last left it. &nbsp;I downloaded the 2.8.0 kernel anyway. &nbsp;If it's got serious issues for my computing then I'll load up a 2.6.7 but I don't normally use java that much. &nbsp;Perhaps the patch caused the java issue?<br /><br />Anyway, just trying to plod through kernel config.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>danc</b> on <b>October 14, 2004, 02:53:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">As Lloyd said, you should avoid 2.6.8. &nbsp;If you insist...., well, good luck.<br /><br />BTW, there is no such thing as 2.8.0.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>lloydr</b> on <b>October 14, 2004, 03:09:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote"><br />BTW, there is no such thing as 2.8.0.<br /></div><br /><br />yet that is lol just gotta wait for the 2.7 dev tree to go through, then we get 2.8.0-test# in oh a few years lol</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 04:54:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">As Lloyd said, you should avoid 2.6.8. &nbsp;If you insist...., well, good luck.<br /><br />BTW, there is no such thing as 2.8.0.<br /><br />Dan</div><br /><br />Sorry, too many numbers and I get them confused. &nbsp; :cry: <br /><br />Anyway, I just installed and ran Doom 3 in windows and medium at 1024x768 using the latest drivers yielded 30~50fps. &nbsp;Definitely something wrong software-wise as I should be getting even better than that in Linux. &nbsp;Hmm, well, let's hope this kernel rebuild goes okay, my last one cold stopped the system right after LILO with a black screen of nothingness.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 05:27:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: lloydr</div><div class="quote"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Yeah, I'm using the latest drivers for 32-bit and when I get home I'll run the GLXgears exercise, let you know, but I have a strong suspicion that it's the stock kernel. &nbsp;I'll download 2.6.6 today and compile, see if I can get that working enough so that I can see a performance boost.<br /></div><br /><br />why 2.6.6? if you go with 2.6.6 be sure to patch it up....i'd recommend 2.6.7 as it seems a lot of people were having problems with java in 2.6.8.1(me and about 30 other people in the slackware irc channel checked out 2.6.8.1 on release date and it wasn't pretty....)<br /><br />i'm personally using 2.6.7 until 2.6.9 comes around, works fine and running the latest nvidia IA32 6111 drivers no problems, in some games like ut2004 i noticed that the 6111 drives had a slight increase in performance over the previous 6106 with my geforce 4 Ti4600 128mb</div><br /><br />I'm taking your advice since all my linux-2.6.8 builds crash with a blank screen on bootup but it's strange...I downloaded the patch to apply but apparently it's already BEEN applied. &nbsp;Very weird. &nbsp;If I can't get this kernel compiled correctly I think I'm going to scream.<br /><br /><br /><br />EDIT: &nbsp;nevermind, I was being a moron not completely understanding how the patch process works. &nbsp;Nevermind.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Doom 3 Framerate</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 06:30:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I'm now running the 2.6.7 kernel okay...after one crash and a confusing usage of the word &quot;root&quot; everything seems to run okay. &nbsp;My Doom 3 perfomance, however, has not improved. &nbsp;I reinstalled the nVidia 6111 drivers to match the new kernel as well.<br /><br /><br />My sound has again mysteriously disappeared. &nbsp;I don't even know where to begin on that one. &nbsp;I dunno, new kernel, latest drivers...maybe I need to try out the 6106 drivers, maybe something got broken.<br /><br />EDIT: &nbsp;Sound is semi-working, check out my post. &nbsp;Now if only I could get KDE to where it won't leave that &quot;bouncing tux&quot; icon in the view which stays in the game.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

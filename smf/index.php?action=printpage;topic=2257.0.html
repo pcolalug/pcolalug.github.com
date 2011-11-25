@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Installation question?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: jaymz_720 on February 06, 2005, 05:16:18 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installation question?</b><br />
+					Post by: <b>jaymz_720</b> on <b>February 06, 2005, 05:16:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm using 9.2 pro, the free version though. I read through, it seems like an tire trilogy of material on installations in general, and most say to use &quot;configure&quot; or &quot;./configure&quot; ...I get a message that says there is no such command? Is there a reason for this? Or is there a different way to install in suse....other than rpm?<br /><br />thanks,<br /><br />jaymz</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installation question?</b><br />
+					Post by: <b>dpeach</b> on <b>February 06, 2005, 05:37:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The ./configure (or I think just configure), make, make install routine is if you are installing from source. If, you need to install something from source, then that is the way to do it. If you are installing an RPM, then that ain't it.<br /><br />First I would go with Yast (I think that is what the installer is called for Suse). Try installing from there. If it does not have what you need, but you can get your hands on an RPM of the program you want, then download it and proceed 2 different ways. One is to try double clicking on the RPM. It may bring up your installer (and probably ask for your Root password). This is the way I do it. If you need to install from the command line, then someone else will have to help. <br /><br />If, on the other hand, the program you are trying to run does not actually have to be installed or it comes with it's own installer, it should be documented on the site or in the tarball that you downloaded. Some will have something like &quot;programname.sh&quot;. If it has its own installer then you can usually type &quot;sh ./programname.sh&quot; from the directory that contains the program.<br /><br />If it is something that will just run when you unzip the folder, then find the program file and type &quot;./programfilename&quot; and enter. Cross your fingers and hope it starts.<br /><br />These are the ways that I know how to do it.<br /><br />What program are you wanting to install? Maybe we can give some specific instructions.<br /><br />BTW, the &quot;./&quot; means &quot;look in the current directory for the file, not in the path&quot;.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>My thoughts</b><br />
+					Post by: <b>bhoff</b> on <b>February 06, 2005, 07:28:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">First you have to be root in most distros to use the ./configure command.<br />I personelly would use YUM it is a cinch to set up and use just yum install pkg name.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: My thoughts</b><br />
+					Post by: <b>danc</b> on <b>February 06, 2005, 08:59:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: bhoff</div><div class="quote">First you have to be root in most distros to use the ./configure command.</div><br />Ummm..., no you don't. &nbsp;For the usual 3-steps of &quot;./configure&quot;, &quot;make&quot;, and &quot;make install&quot;, the only step that might require root is the &quot;make install&quot;, as it generally writes to somewhere like /usr/bin. &nbsp;The first two steps can be done in your home directory, as a normal user. &nbsp;As far as I know, this is true for ANY distro.<br /><br /><div class="quoteheader">Quote from: bhoff</div><div class="quote">I personelly would use YUM it is a cinch to set up and use just yum install pkg name.</div><br />Isn't that a Redhat/Fedora thing? &nbsp;The person in question here is using Suse... (which uses YAST/YOU).<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installation question?</b><br />
+					Post by: <b>jaymz_720</b> on <b>February 06, 2005, 10:19:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, it is YaST....YaST2 actually. There's no specific program, but the next time I get my hands on one I post that in particular. I figured out the rpm useage, it's relatively simple, SuSE practically walks you though it.<br />My question really leans more toward the manual installation. I could probably find most of what I needed in the rpm search engine, I just wanted to know how to do it. The problem I run into is that it tells me the command for &quot;configure&quot; and &quot;./configure&quot; are not commands. I'm not really running as root though, I use &quot;su root&quot; instead. Is there differnce in this case?<br /><br />I'll &nbsp;find another program and try it, if it gives me the same message then I'll post that as an example. The only problem that I have with YaST is that it says there's a conflict with everything.<br /><br />Jaymz</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installation question?</b><br />
+					Post by: <b>danc</b> on <b>February 06, 2005, 11:06:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: jaymz_720</div><div class="quote">My question really leans more toward the manual installation. I could probably find most of what I needed in the rpm search engine, I just wanted to know how to do it. The problem I run into is that it tells me the command for &quot;configure&quot; and &quot;./configure&quot; are not commands. I'm not really running as root though, I use &quot;su root&quot; instead. Is there differnce in this case?</div><br /><br />With an RPM based distro like Suse, it is generally a good idea to install only RPM's, instead of mixing in manually installed stuff. &nbsp;This is true even for non-newbie people, and more so for newbie people...<br /><br />To compile from source (install manually), the general procedure is to unpack the source code tarball (something named like &quot;program.tar.gz&quot;) into a temporary directory. &nbsp;Then you need to change directory to that source code tree (where you just unpacked it to), and type: &nbsp;&quot;./configure&quot;. &nbsp;After that completes, type &quot;make&quot;. &nbsp;Then do the &quot;su root&quot; thing and type &quot;make install&quot;. &nbsp;That process will work for most packages. &nbsp;Something to always look for is a file called &quot;README&quot; or &quot;INSTALL&quot; in the source code directory that you unpacked.<br /><br />As for your last question, yes it is a BAD idea to log in as root. &nbsp;Always use the &quot;su&quot; command to get root access for a while IF you need it, and then &quot;exit&quot; back to your normal user account when you're done with whatever you're doing as root. &nbsp;This will prevent you from accidently destroying your entire system, which is quite easy to do as root.<br /><br />Again, I would highly recommend that you only install new software in the RPM format, using the graphical tools (YAST) provided by Suse, at least until you get more comfortable and knowledgeable.<br /><br /><div class="quoteheader">Quote from: jaymz_720</div><div class="quote">I'll &nbsp;find another program and try it, if it gives me the same message then I'll post that as an example. The only problem that I have with YaST is that it says there's a conflict with everything.</div><br /><br />This I can't answer, but there are other people around here that are more familiar with Suse than I am, that should be able to. &nbsp;Post the specific issues you have with YAST, and they will jump right in to help you. &nbsp;Good luck!<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installation question?</b><br />
+					Post by: <b>dpeach</b> on <b>February 06, 2005, 11:29:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The reason ./configure returns a &quot;bash: ./configure: No such file or directory&quot; is that there is not a command that is ./configure. You are running a program within that directory that you untarred. So only if there is a configure program within that tarball will it work.<br /><br />You cannot just run &quot;./configure&quot; and have it spew out your options.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>huh</b><br />
+					Post by: <b>bhoff</b> on <b>February 07, 2005, 04:40:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well actually if you are running a properly secure box ./configure should only be acesible to Root. To keep people from installing malious apps.<br />Second YUM is an app that can be installed on any linux distro or Unix or apple. can be found at sourceforge.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: huh</b><br />
+					Post by: <b>danc</b> on <b>February 07, 2005, 05:20:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: bhoff</div><div class="quote">Well actually if you are running a properly secure box ./configure should only be acesible to Root. To keep people from installing malious apps.</div><br /><br />Brett, ./configure doesn't *install* anything. &nbsp;It configures the Makefile according to your hardware. &nbsp;Then the &quot;make&quot; step compiles the application. &nbsp;Then (and only then), the &quot;make install&quot; step *installs* the application.<br /><br />That's why a person needs to be root to *INSTALL* the application, because the default installation locations are usually writeable only by root (although the location can usually be overridden with command line prefixes). &nbsp;However, anyone can *configure* and *compile* the software in their home directory. &nbsp;Grab a tarball for an app and try it yourself, as a normal user...<br /><br /><br /><div class="quoteheader">Quote from: bhoff</div><div class="quote">Second YUM is an app that can be installed on any linux distro or Unix or apple. can be found at sourceforge.</div><br /><br />That may be true, but it does not come installed by default on any distro but RH/Fedora. &nbsp;I doubt that a newbie will be going to Sourceforge to install YUM, when his distro of choice already has a built in software manager customized for the distro already...<br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - I DO NOT BELIEVE THIS</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on December 01, 2004, 03:46:37 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 01, 2004, 03:46:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I simply REFUSE to believe what has just happened. &nbsp;My Slackware box apparently just **** itself for no reason. &nbsp;As far as I can tell, my wife reboot the system and loaded up kernel 2.6.9 where I've been using 2.6.7 due to massive performance hits (for me, anyway, was trying to work it out). &nbsp;Now for whatever reason, my ENTIRE PARTITIONING SCHEME IS GONE. &nbsp;There is a 54GB /, 100% of which is used, and most of my commands (like vi) do NOT work. &nbsp;I cannot start X at all.<br /><br />Needless to say I am NOT pleased. &nbsp;There's a good bit of data in there I did NOT want to lose. &nbsp;I DO NOT believe this is happening.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>lloydr</b> on <b>December 01, 2004, 04:18:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">only time i've ever had that happen(well partly, commands not working, partition gone, etc) was if I on purpose ran <br /><div class="codeheader">Code:</div><div class="code"><br />cd /; rm -Rf *<br /></div><br />as root<br />but i've only done that a few times back when i was dumping redhat in the trashcan and going to slackware and wanted to see RH throw itself out <br /><br /><br />nothing screwy with the kernel? booting back into 2.6.7 or using the slackware install disk kernel(load your drive on boot so it boots with the 2.4.26 kernel off the disc but actually loads your system) doesn't work?<br /><br />partition scheme in fdisk/cfdisk is completely gone?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 01, 2004, 05:46:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm up and operational again but only because I [edit]darn[/edit] near FULLY reinstalled slack. &nbsp;I chose not to reformat the /boot and /usr partitions so I managed to salvage the last kernel and the 5GB of information in my directory.<br /><br />However, before I redid the system I wouldn't know if the mtab or anything else for that matter was unchanged. &nbsp;Wanna know why? &nbsp;Because I couldn't even open up vi because &quot;disk is full.&quot; That's the same **** it threw at me [edit]darn[/edit] near any time I tried to do something other than &quot;df&quot; or &quot;cd.&quot; And then, after I rebooted to make sure my eyes were not deceiving me, I couldn't even get THOSE to work because &quot;disk is full.&quot;<br /><br />That is the most insane BS I've ever seen in my life and I have a feeling it's because of kernel 2.6.9. &nbsp;Well you know what, 2.6.9? &nbsp;You can can SCREW yourself. &nbsp;Not only did I have the SADDEST performance with it, THE worst by far (worked like a 286 in text mode alone) but also it's the one thing that could've happened. &nbsp;And they said it was stable over at Kernel.org. &nbsp;Wonderful.<br /><br />[moderated 2:29PM CST 12/21/2004 by Rugmonster due to profanity in body]</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>lloydr</b> on <b>December 01, 2004, 07:04:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">no problems out of 2.6.9 and it actually seemed to solve a lot of the acpi problems some people were having such as myself.... 2.6.8.1 was kinda interesting with certain parts and still was plagued by the acpi issue that i had in 2.6.7</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>danc</b> on <b>December 01, 2004, 07:36:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">I simply REFUSE to believe what has just happened. &nbsp;My Slackware box apparently just **** itself for no reason. &nbsp;As far as I can tell, my wife reboot the system and loaded up kernel 2.6.9 where I've been using 2.6.7 due to massive performance hits (for me, anyway, was trying to work it out). &nbsp;Now for whatever reason, my ENTIRE PARTITIONING SCHEME IS GONE. &nbsp;There is a 54GB /, 100% of which is used, and most of my commands (like vi) do NOT work. &nbsp;I cannot start X at all.<br /><br />Needless to say I am NOT pleased. &nbsp;There's a good bit of data in there I did NOT want to lose. &nbsp;I DO NOT believe this is happening.</div><br /><br />You certainly do seem to have some strange problems. &nbsp;I doubt it was the 2.6.9 kernel though... &nbsp;Did you ask your wife what else she might have done? &nbsp; :) <br /><br />Glad to hear you're back up and running, in any case.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 01, 2004, 09:50:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">She confirmed what I thought, which was just failed to log in and gave up, went to my WindowsXP box. &nbsp;&lt;shrugs&gt; Eh, whatever gets the bills paid.<br /><br />I don't know why but compiling the 2.6.9 kernel slowed my system to a CRAWL. &nbsp;I mean, by comparisson compiling the NVIDIA driver module takes maybe a second and a half in 2.6.7. &nbsp;In 2.6.9 it took over a half hour...just for getting MOST of the way through compilation. &nbsp;Just made the system chug BAD.<br /><br /><br />Yeah, I do seem to be the one of strange issues. &nbsp;At least this box hasn't given me NEARLY as many as that &quot;other&quot; machine, Sam. &nbsp;I still don't know how to get the nvidia driver installed on that thing but I don't really care anymore. &nbsp;As soon as I get Samba up on it to make some DVD backups on this machine (or figure out how to FTP them...I don't really care as long as the files are transferred) it's going to be remade as a Linux hack-box. &nbsp;Same thing with my WindowsXP box, only for Windows. &nbsp;With those two I should be able to get some practice and hands-on experience with both systems fairly easily. &nbsp;Now if only I could get Knoppix running right.<br /><br /><br />But anyway, that was by far the STRANGEST thing I've EVER seen from Linux. &nbsp;EVER. &nbsp;Like, one moment it's fine, the next moment everything's gone to poop. &nbsp;Very, very strange.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>danc</b> on <b>December 01, 2004, 10:53:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">I don't know why but compiling the 2.6.9 kernel slowed my system to a CRAWL. &nbsp;I mean, by comparisson compiling the NVIDIA driver module takes maybe a second and a half in 2.6.7. &nbsp;In 2.6.9 it took over a half hour...just for getting MOST of the way through compilation. &nbsp;Just made the system chug BAD.</div><br />Well, it's not the 2.6.9 kernel *itself* that caused that. &nbsp;Must be something about the way you compiled/installed it.<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">As soon as I get Samba up on it to make some DVD backups on this machine (or figure out how to FTP them...I don't really care as long as the files are transferred) it's going to be remade as a Linux hack-box.</div><br />Use ssh/scp to transfer the files. &nbsp;If one of them is a Windows box, use the Putty utilities (in Windows) to do the same thing. &nbsp;Much easier than setting up Samba...<br /><br /><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">But anyway, that was by far the STRANGEST thing I've EVER seen from Linux. &nbsp;EVER. &nbsp;Like, one moment it's fine, the next moment everything's gone to poop. &nbsp;Very, very strange.</div><br />Indeed.<br /><br />Hey, got one quick question for ya... &nbsp;Are you logging in and running as ROOT on this machine? &nbsp;Trying to think about how things could have gotten that screwed up, and that nagging thought keeps coming into my mind...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>imnes</b> on <b>December 02, 2004, 07:33:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Keep on eye on your directory sizes. &nbsp;Maybe something in your kernel was screwy and was logging like crazy (would explain the extreme slowness) which could fill up your hard drive with logs. &nbsp;There are tools out there that will calculate the size of each directory and tell you which ones are hogging the most space.<br /><br />If that's the case and you get to rebuild the machine / reformat consider giving /var it's own little 32mb partition. &nbsp;You could do that now by creating a virtual filesystem in a file, and mounting that file as /var. &nbsp;Just a thought.<br /><br />Otherwise I don't know why you would have gotten that wierd behavior. &nbsp;Maybe it's just a bad time for computers. &nbsp;I installed the latest version of Solaris on my system, and after a few hours tweaking and installing stuff the automounter decided to get secure and not allow anything to mount. &nbsp;I put in CDs, they got spit back out. &nbsp;I plug up USB drive - no mounting :( &nbsp; Time to reload and try again ;)<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I DO NOT BELIEVE THIS</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 02, 2004, 10:33:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I always log in as an unprivledged user and my wife can't remember her login (and I could see she was unsuccessful) so I doubt that was it.<br /><br /><br />The strange thing about the kernel was that I loaded the .config for 2.6.7 and checked to make sure all the options were the same, so I don't have the foggiest idea as to why it'd slow down like that.<br /><br /><br />If it was logging that nuts that would make sense for filling up the disk, but not as to why four partitions suddenly became one / partition of 54GB (really strange number, too, given that there's 30GB on each side).<br /><br /><br />I dunno, it's running now. &nbsp;Just overall strangeness.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

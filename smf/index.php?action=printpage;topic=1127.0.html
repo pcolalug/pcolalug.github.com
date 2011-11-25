@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - MySQL newbie question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: geekforGod on November 04, 2003, 01:00:59 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>MySQL newbie question</b><br />
+					Post by: <b>geekforGod</b> on <b>November 04, 2003, 01:00:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey everyone,<br /><br />I am using MySQL and I am just getting started on a project. The project takes the text submitted from a form and saves it to the database. My question is, is VARCHAR the only way to store a text field. If so is 256 really the largest size the text can be? Is there any way around that? I am not sure that anyone would use 256 but just in case I want to be prepared for it. Also, are there any special characters that someone could use in the form that might mess my script up(it is a python script)? Any other tips for a newbie using MySQL? Thanks in advance for any help guys.<br /><br />Todd</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>MySQL newbie question</b><br />
+					Post by: <b>ctrlz</b> on <b>November 04, 2003, 01:33:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">hey todd,<br /><br />if memory serves, i believe varchar can hold a max of 255 chars.<br /><br />if you want to store more than that, you'll need to use a TEXT format instead. note that you cannot index text fields.<br /><br />apostrophe's are screwy in mysql, therefore, you'll need to do a simple regex to replace ' with \' and then, revert back to a standard apostrophe when outputting the data.<br /><br />i know php does this on the fly with magic quotes...very handy.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - How to mount a USB hard drive</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: phed on July 21, 2005, 06:22:32 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to mount a USB hard drive</b><br />
+					Post by: <b>phed</b> on <b>July 21, 2005, 06:22:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Maybe this should have been in he newbie section but.............<br /><br />I installed SuSE 9.1 on my laptop today but I couldn't get it to install on a 12GB partition on my laptop hard drive while my USB hard drive was connected. &nbsp;When the USB drive was connected during installation, SuSE wanted to install itself there instead of on the lapptop HD.<br /><br />Since I had to turn off the USB HD during install, now that I run Linux, my USB HD (sda) does not appear to automount. &nbsp;If I go into YAST, it shows up on the hardware scan though.<br /><br />Running the &quot;mount&quot;command in the terminal gives the following output:<br /><br />pete@linux:~&gt; mount<br />/dev/hda3 on / type reiserfs (rw,acl,user_xattr)<br />proc on /proc type proc (rw)<br />tmpfs on /dev/shm type tmpfs (rw)<br />devpts on /dev/pts type devpts (rw,mode=0620,gid=5)<br />/dev/hda1 on /windows/C type ntfs (ro,noexec,nosuid,nodev,gid=100,umask=0002,nls=utf8)<br />/dev/hdc on /media/cdrecorder type subfs (ro,nosuid,nodev,fs=cdfss,procuid,iocharset=utf8)<br />usbfs on /proc/bus/usb type usbfs (rw)<br />/dev/sda2 on /media/usb-storage-703009F41BCD:0:0:0p2 type subfs (rw,noexec,nosuid,nodev,sync,procuid,iocharset=utf8)<br />/dev/sda3 on /media/usb-storage-703009F41BCD:0:0:0p3 type subfs (rw,noexec,nosuid,nodev,sync,procuid,iocharset=utf8)<br />/dev/sda1 on /media/usb-storage-703009F41BCD:0:0:0p1 type subfs (rw,noexec,nosuid,nodev,sync,procuid,iocharset=utf8)<br /><br />My question is how do I mount the USB drive and get SuSE to go ahead and mount the drive at boot up? &nbsp;I had set up a 25GB Reiser partition on it before I tried to install SuSE but now it looks like there are three partitions on the drive.<br /><br />Sorry to be so clueless and thanks for your help.<br /><br />Blessings,<br /><br />Pete</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>can you post this?</b><br />
+					Post by: <b>bhoff</b> on <b>July 21, 2005, 06:53:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Can you run this command and paste it here please.<br />df -h /dev/sda<br />this should give us a better list of what the partition setup is on the usbhd<br />as to mount create a directory under where your other mounted items are listed like cdrecorder and floppy then mkdir usbhd then type mount -t auto /dev/sda/ mnt/usbhd you should be able to cd to usbhd and have access to it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to mount a USB hard drive</b><br />
+					Post by: <b>phed</b> on <b>July 21, 2005, 07:14:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">pete@linux:~&gt; df -h /dev/sda<br />Filesystem &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Size &nbsp;Used Avail Use% Mounted on<br />/dev/hda3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;12G &nbsp;1.9G &nbsp;9.4G &nbsp;17% /</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>hmmm</b><br />
+					Post by: <b>bhoff</b> on <b>July 21, 2005, 07:44:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">that should have given info for /dev/sda<br />not /dev/hda3 how about just running df -h without the /dev/sda<br />trying to see how the partitons are sizing up on the usbhd<br />Did the mount work?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to mount a USB hard drive</b><br />
+					Post by: <b>phed</b> on <b>July 21, 2005, 07:44:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">as to mount create a directory under where your other mounted items are listed like cdrecorder and floppy then mkdir usbhd</div><br /><br />Tried that (using create folder in Konqueror - not a command line guy yet &nbsp;:oops: ) and got the following error mesage: &nbsp;<b>Creating folders is not supported with Protocol drives</b><br /><br />The three partitions on the uSB disk now show up in Konqueror as USB Hard Disc, USB Hard Disc 1, and USB Hard Disc 2. &nbsp;The tool tip that pops up when placing the cursor over their respective icons says:<br /><br />Type: &nbsp;Unmounted Hard Disc Partition<br />Modified: 2005-07-21<br />Owner: &nbsp;-<br />Permissions: &nbsp;dr-x------<br /><br />If I try to modify the file permissions I get<br />&nbsp;<b>Changing the attributes of files is not supported with protocol drives</b></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>quick question?</b><br />
+					Post by: <b>bhoff</b> on <b>July 21, 2005, 08:07:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">are you logged in as root or as user?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to mount a USB hard drive</b><br />
+					Post by: <b>imnes</b> on <b>July 21, 2005, 08:21:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Unplug then plug-in your USB drive, and using konqueror browse to /media/ folder and look in the usb-storage-* folders, see if you can find where it mounted it. &nbsp;(If it mounted it).<br /><br />At least on Gnome in the older versions of SuSE you didn't get a drive icon on the desktop when mounting something like a USB drive, not sure about that version or KDE though.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to mount a USB hard drive</b><br />
+					Post by: <b>phed</b> on <b>July 21, 2005, 08:27:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ete@linux:~&gt; df -h<br />Filesystem &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Size &nbsp;Used Avail Use% Mounted on<br />/dev/hda3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;12G &nbsp;1.9G &nbsp;9.4G &nbsp;17% /<br />tmpfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 220M &nbsp; 20K &nbsp;220M &nbsp; 1% /dev/shm<br />/dev/hda1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26G &nbsp; 19G &nbsp;6.4G &nbsp;75% /windows/C</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to mount a USB hard drive</b><br />
+					Post by: <b>phed</b> on <b>July 21, 2005, 08:49:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">Unplug then plug-in your USB drive, and using konqueror browse to /media/ folder and look in the usb-storage-* folders, see if you can find where it mounted it. (If it mounted it).</div><br /><br />Weird :? &nbsp; After plugging and unplugging the USB drive it shows up as &nbsp;<span style="text-decoration: underline;">Windows</span> in Konqueror. &nbsp;If I click on that, I see everything in the Windows partition. &nbsp;From there, If I hit the &quot;up&quot; arrow it goes to <span style="text-decoration: underline;">C</span>. &nbsp;Hitting the &quot;up&quot; arrow again yeilds the missing Linux partition with all the files from the 1st failed installation.<br /><br />At least I can access the Linux partition now so I should be able to clean things up.<br /><br />I love Linux; figuring stuff like this out is tremendous fun and is a great way to learn. &nbsp;My wife does not understand how I can sit in front of the computer talking to myself about how aggravating it all is and then turn around and tell her how much fun I'm having. :P<br /><br />Again, my thanks for all the help from the Pcolalug members.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to mount a USB hard drive</b><br />
+					Post by: <b>phed</b> on <b>July 21, 2005, 09:21:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I spoke too soon...<br /><br />I need to change the file permissions for everything in that partition. &nbsp;Reading in <span style="text-decoration: underline;">Linux in a Nutshell</span> I see a command CHMOD that might do the trick.<br /><br />Is it possible to log in as root, go the root directory of the partition and do something like<br /><br /><b>chmod -R 777</b><br /><br />and, with one magic bullet, remove the owner restrictions from all the subdirectories and files on the partiton?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to mount a USB hard drive</b><br />
+					Post by: <b>danc</b> on <b>July 23, 2005, 09:25:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">phed,<br /><br />I'm not clear on whether we've cleared this up for you or not... &nbsp;here's a little more info that might help.<br /><br /><div class="quoteheader">Quote from: phed</div><div class="quote"><br />Is it possible to log in as root, go the root directory of the partition and do something like<br /><b>chmod -R 777</b><br />and, with one magic bullet, remove the owner restrictions from all the subdirectories and files on the partiton?</div><br />That might work, depending on the filesystem in use on that drive (I've lost track of what that is), and the command should be: &nbsp;<b>chmod -R 777 *</b><br /><br />If that doesn't work, you may need to edit your /etc/fstab file, and add this to the line for your /dev/sda* devices:<br /><b>umask=0</b> &nbsp; &nbsp;(that's a &quot;zero&quot; there)<br /><br />It would go right in with the other arguments, like this:<br />(<b>umask=0,</b>rw,noexec,nosuid,nodev,sync,procuid,iocharset=utf8)<br /><br />Let me know if that doesn't work, or isn't clear... &nbsp;<br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

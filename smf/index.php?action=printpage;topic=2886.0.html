@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Tripwire and Snort the start</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on May 21, 2006, 10:39:10 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Tripwire and Snort the start</b><br />
+					Post by: <b>bhoff</b> on <b>May 21, 2006, 10:39:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><b>Tripwire and SNORT the start</b><br /><br />By: Brett Hoff<br /><br />Tripwire is an integrity checker.<br />It can detect RootKits and changed files and Directories.<br /><br />It can be found here.<br />http://www.sourceforge.net/projects/tripwire<br /><br /><b>*--I would highly advise against this!!!!<br />*--You have been warned.</b><br /><br />The compile just does not not work and this has to be the most poorly documented project in the Open Source realm.<br /><br />Instead google for the package for your particular distro.<br /><br />Install as required for your distro.<br />you will then find the files and directories in one of two paths as shown below.<br /><br />Tripwire has two parts.<br /><br />These files can be found in either /etc/tripwire or /usr/local/etc/tripwire<br /><br />1 the Policy file for tripwire<br />&nbsp;tw.pol<br /><br />This is the Policy file that contains the information for the snapshot of your files and directories. It is an encrypted file that you can edit after converting it to a plain txt file with the following command.<br /><br /><b>twadmin --print-polfile&gt;/dir/tripwire/twpol.txt</b><br /><br />After this you will have a file named twpol.txt you can now go thru here and edit to your hearts content. adding and removing files and directories as you see fit for your monitoring needs.<br /><br /><b>*--I would advise reviewing man twpolicy before undertaking this.</b><br /><br />You must update your database after editing your policy<br /><br /><b>tripwire --update-policy twpol.txt<br />tripwire --check</b><br /><br />For help with your policies you can visit one of these sites.<br />http://www.tripwire.com/servlet/OsChoose<br />http://policy.tripwire.com<br /><br />The Config file is where the various settings are for tripwire with stuff like <br />where your policy.cfg is held where your database is at , what type editor you want to use. Again to edit this file you must decrypt it first.<br /><br />tw.cfg<br /><br /><b>twadmin --print-cfgfile&gt;/dir/tripwire/twcfg.txt</b><br /><br /><br />You can now edit these settings to match your system settings.<br />One important one is the <b>DBFILE</b> setting you may want to save your database to a cdrw then set this variable to /mnt/cdrom to keep it from being compromised.<br /><br />After all this you must reencrypt the file like so.<br /><br /><b>twadmin --create-cfgfile --site-keyfile ./site-key twcfg.txt</b><br /><br /><br />Now you can initialize the database with the following command.<br /><br /><b>tripwire --init</b><br /><br /><b>*--This could take a few minutes and will most likely show you some errors.</b><br /><br />All your reports are stored in /usr/lib/tripwire/report/*.twr<br /><br />to print out your reports use the following format.<br /><br /><b>twprint --print-report --twrfile /usr/lib/tripwire/report/*.twr</b><br /><br />To reconcile your changes tripwire reports with your database run the following<br /><br /><b>tripwire --update --twrfile /usr/lib/tripwire/report </b><br /><br />commands to man for more information<br /><br />twprint<br />twpolicy<br />twadmin<br />tripwire<br /><br /><br /><br /><b>SNORT</b><br /><br /><br />SNORT is a true NIDS (Network Intrusion Detection System)<br /><br />It can be found at www.snort.org (http://www.snort.org)<br /><br />It is the granddaddy of the Intrusion detection tools.<br /><br />Snort uses a powerful Signature based rules engine with can easily be modified with <br />anybody that has some basic tcp/ip knowledge.<br />Along with it&#039;s Extensive collection of plug-ins and preprocessor&#039;s. <br />makes this a very configurable system.<br /><br />You can send alerts to <br />Syslogd, Flat files, a database or even your pager or email.<br /><br />To get you on your way you just need only pop over to SNORT&#039;s homepage at<br />www.snort.org <br />Download the lastest stable release and go through the standard steps<br /><br /><b>tar-xzf snort*.tgz</b><br /><br />Before we really get started we need to be sure that we have the full Libpcap libraries and headers.<br />If you tcpdump installed you should be fine. If not jump on over to <br />www.tcpdump.org &nbsp;(http://www.tcpdump.org)to grab the latest.<br /><br />Now for just a plain vanillia install just do a <br /><b>./configure<br />make <br />make install</b><br /><br /><b>*--but hold the horses</b><br /><br />Do you want to send alerts to a database then we will need to pass a few variables to configure.<br />For a full list of options type.<br /><b>./configure --help</b><br /><br />If you want SNORT to be able to adjust your firewall rules be sure to configure with flex response in.<br /><br /><b>./configure --enable-flexresp</b><br /><br />you will also need the libnet packet injection libraries installed.<br />You can find them at www.packetfactory.net/projects/libnet (http://www.packetfactory.net/projects/libnet)<br /><br />For me I wanted to use Mysql database so I<br /><b>./configure --with-mysql<br />make <br />make install</b><br /><br />now it is configured and installed<br /><br />A SNORT directory and some of the needed directories are not installed by default. <br />You will need to make a snort direectory and copy theses directories manually.<br /><b>mkdir /usr/local/etc/snort</b><br /><br /><b>*-- Before getting rid of the build directory we need to do a few things.</b><br />we need to copy etc/ schemas/ and rules from the snort build directory to your snort directory.<br /><b><br />mv etc/ schemas/ rules/ docs/ /usr/local/etc/snort/</b><br />Now feel free to remove the build directory.<br /><br />Now we must do some editing in the snort.conf located in the <br />/usr/local/etc/snort/etc *--or wherever you decided to put your snort directory.<br /><br />if you open your snort.conf a few things we need to look at are.<br /><br /><b>var HOME_NET any&nbsp; *--This specifies IP addresses that are local<br />var EXTERNAL_NET any *--This specifies IP addresses that are considered hostile.</b><br /><br />The next variables deal with any servers you may have.<br />Be sure to uncomment any lines you wish to use and give them the proper value of the server.<br /><br /># List of DNS servers on your network<br />#var DNS_SERVERS $HOME_NET<br /><br /># List of SMTP servers on your network<br />#var SMTP_SERVERS $HOME_NET<br /><br /># List of web servers on your network<br />#var HTTP_SERVERS $HOME_NET<br /><br /># List of sql servers on your network<br />#var SQL_SERVERS $HOME_NET<br /><br /># List of telnet servers on your network<br />#var TELNET_SERVERS $HOME_NET<br /><br /># List of snmp servers on your network<br />#var SNMP_SERVERS $HOME_NET<br /><br />Another important variable is the rules path.<br />This is very important to tell snort where to find your rules.<br /><br /><b>var RULE_PATH /usr/local/etc/snort/rules</b><br /><br />The snort.conf is very well documented through out and you should not have to many issues. Be sure to go through it and make any needed changes. the Default conf should be fine for most people.<br />Further down you can set specific ports and different services to monitor.<br />along with preprocessors to use and at at last what rules to implement.<br /><br />To enable snort to send alerts to a database add lines like these to your snort.conf<br /><b>output database: log, mysql, user=snort password=snortpass dbname=SNORT host=dbserver<br />output database: alert, mysql, user=snort password=snortpass dbname=SNORT<br />host=dbserver</b><br /><br />To use the database function you will have to create the database with name snort and user snort.<br />After you have done this you can use the script in the snort/schemas directory for your database to create all the tables.<br /><b>mysql SNORT -p &lt;/usr/local/etc/snort/schemas/create_mysql</b><br /><br />After you have gotten this far we should probably check our snort.conf file.<br /><b><br />snort -T -c /usr/local/etc/snort/etc/snort.conf</b><br /><br />You will most likely get a few errors <b>*-- don&#039;t panic if I told you how long till I mastered it you would laugh or cry.</b><br /><br />Simply address the errors and run the check script again till it is clean.<br /><br />mostly you will get rules issues where you are not using different ones.<br />It will tell you the which rule set and and line needs to be commented out or adjusted.<br /><br />When it comes back clean run the following<br /><br /><b>snort -Dd -z est -c /usr/local/etc/snort/etc/snort.conf</b><br /><br />Read more with<br />man snort<br /><br />Notes:<br />Sign-up with snort.org to get up to date rules.<br />setup oinkmaster and or acid to make the most from snort.<br />oinkmaster is a nice perl script that handles updating your rules.<br />http://oinkmaster.sourceforge.net/<br /><br />ACID is a nice web based gui for your database.<br />http://acidlab.sourceforge.net/<br /><br /><br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

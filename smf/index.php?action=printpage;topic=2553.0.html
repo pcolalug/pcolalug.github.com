@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - postmap command</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: maxham on August 13, 2005, 01:47:53 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>postmap command</b><br />
+					Post by: <b>maxham</b> on <b>August 13, 2005, 01:47:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I dont know if this subject goes in the newbie corner or not but since I consider myself a newbie this is it.<br /><br />I'm trying to build a relay_recipients table for postfix and I'm having a hard time with the command. With tables already prebuilt all you gotta do is run the &quot;postmap /etc/postfix/[name fo table]&quot; and it works.<br /><br />I try to have postmap create the *.db with the -q switch and I'm stuck on the key value. maybe my base text file is not written right but it is formated like the other base text files that postmap can work with.<br /><br />Any Takers?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>postmap command</b><br />
+					Post by: <b>rugmonster</b> on <b>August 13, 2005, 02:30:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I wouldn't call that a newbie question by any means. Unfortunately, I'm not very familiar with Postfix, so I can't help you out very much there. Just out of curiousity, what is the intended goal of all of this? Sounds like you only want certain mail to be relayed if the recipient is in a predefined whitelist? This isn't a very common thing to do, so I'm curious as to your specific goal. Most setups are that relaying is allowed based on source domain or subnet.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Goal</b><br />
+					Post by: <b>maxham</b> on <b>August 13, 2005, 03:31:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">the goal is to be a front-end relay amavis/clam/spammassassin scanner for exchange. the external domain is not the same as the internal domain so EX has virtual addressing for the clients.<br /><br />the relay server is the same domain as external domain. <br />there is also a second domain name being routed through.<br />the relay server is also the SOA dns server for both domains.<br /><br />http://postfix.state-of-mind.de/patrick.koetter/mailrelay/<br />gave me a procedure to export users from AD and remote copy&gt;&gt;&gt;<br />too much for me.<br /><br />gave me the config answers I needed to relay for the same domain and I need to build the recipients_relay table.<br /><br />if I try to relay by domain name the MX records loopback the SMTP.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>postmap command</b><br />
+					Post by: <b>rugmonster</b> on <b>August 13, 2005, 05:01:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I found this (http://www.postfix.org/STANDARD_CONFIGURATION_README.html#firewall). It talks about the relay_recipient table there. HTH...maybe you've seen it.<br /><br />Also, you may be interested in this perl script (http://flakshack.com/anti-spam/wiki/index.php?page=Automatically+Update+Recipient+Maps+From+Active+Directory) to aid you should you use an AD environment to automatically generate your relay_recipients file directly out of the AD LDAP.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need to build the*.db</b><br />
+					Post by: <b>maxham</b> on <b>August 13, 2005, 06:03:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">so the config option relay_recipients read a table built by postmap<br /><br />relay_recipients = hash:/etc/postfix/relay_recipients<br /><br />whenever i run the &quot;postmap /etc/postix/relay_recipients&quot;<br />I get &quot;warning expected format: key whitespace value&quot; on every line of the text thats in the file relay_recipients<br /><br />So the postmap command is sposed to build the relay_recipients.db<br />with the -q or -d switch but the key value on the switch is where I'm lost.<br /><br />So the post is for help on how the get postmap to build the relay_recipients.db from the text file with a list of the e-mail addresses to be relayed (relay_recipients)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>postmap command</b><br />
+					Post by: <b>rugmonster</b> on <b>August 13, 2005, 07:28:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code"> 1 /etc/postfix/main.cf&#58;<br />&nbsp;2 &nbsp; &nbsp; mynetworks = 127.0.0.0/8 12.34.56.0/24<br />&nbsp;3 &nbsp; &nbsp; relay_domains = example.com<br />&nbsp;4 &nbsp; &nbsp; parent_domain_matches_subdomains = <br />&nbsp;5 &nbsp; &nbsp; &nbsp; &nbsp; debug_peer_list smtpd_access_maps<br />&nbsp;6 &nbsp; &nbsp; smtpd_recipient_restrictions =<br />&nbsp;7 &nbsp; &nbsp; &nbsp; &nbsp; permit_mynetworks reject_unauth_destination<br />&nbsp;8 <br />&nbsp;9 &nbsp; &nbsp; relay_recipient_maps = hash&#58;/etc/postfix/relay_recipients<br />10 &nbsp; &nbsp; transport_maps = hash&#58;/etc/postfix/transport<br />11 <br />12 /etc/postfix/relay_recipients&#58;<br />13 &nbsp; &nbsp; user1@example.com &nbsp; x<br />14 &nbsp; &nbsp; user2@example.com &nbsp; x<br />15 &nbsp; &nbsp; &nbsp;. . .<br />16 <br />17 /etc/postfix/transport&#58;<br />18 &nbsp; &nbsp; example.com &nbsp; smtp&#58;&#91;inside-gateway.example.com&#93;</div><br /><br /><div class="quoteheader">Quote from: postfix.org</div><div class="quote"> Translation:<br /><br />&nbsp; &nbsp; *<br /><br />&nbsp; &nbsp; &nbsp; Lines 1-7: Accept mail from local systems in $mynetworks, and accept mail from outside for &quot;user@example.com&quot; but not for &quot;user@anything.example.com&quot;. The magic is in lines 4-5.<br />&nbsp; &nbsp; *<br /><br />&nbsp; &nbsp; &nbsp; <b>Lines 9, 12-14: Define the list of valid addresses in the &quot;example.com&quot; domain that can receive mail from the Internet. This prevents the mail queue from filling up with undeliverable MAILER-DAEMON messages. If you can't maintain a list of valid recipients then you must specify &quot;relay_recipient_maps =&quot; (that is, an empty value), or you must specify an &quot;@example.com x&quot; wild-card in the relay_recipients table.</b><br />&nbsp; &nbsp; *<br /><br />&nbsp; &nbsp; &nbsp; Lines 10, 17-18: Route mail for &quot;example.com&quot; to the inside gateway machine. The [] forces Postfix to do no MX lookup.<br /><br /><b>Specify dbm instead of hash if your system uses dbm files instead of db files. To find out what lookup tables Postfix supports, use the command &quot;postconf -m&quot;.</b><br /><br />Execute the command &quot;<b>postmap /etc/postfix/relay_recipients</b>&quot; whenever you change the relay_recipients table.<br /><br />Execute the command &quot;postmap /etc/postfix/transport&quot; whenever you change the transport table. </div><br /><br />Where does that say anything about -q or -d flags for postmap? Seems pretty cut and dry there. Also, it sounds like the format you are using in your relay_recipients is incorrect. Try that script I linked in my other post. Have you read anything from those posts outside of this site or tried google? That's where I found that stuff in two minutes.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>You are the bomb</b><br />
+					Post by: <b>maxham</b> on <b>August 14, 2005, 12:50:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">2 errors<br /><br />my transport file was not in the right format, I don't know what was wrong but the script you found did the job<br /><br />and transport_maps in main.cf was spelled incorrectly<br /><br />a little main.cf customization and I'm on my way<br /><br />this project is now over two weeks old for me FC1 didn't like the Net::Server perl module, a and nic held me up and the cd burner I was using to burn the OS's was creating bad media.<br /><br />Thanks a bunch dude!!!!!!!!!!!!!!!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: You are the bomb</b><br />
+					Post by: <b>danc</b> on <b>August 14, 2005, 08:51:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Glad you got it sorted out...<br /><br /><div class="quoteheader">Quote from: maxham</div><div class="quote">this project is now over two weeks old for me FC1 didn't like the Net::Server perl module, a and nic held me up and the cd burner I was using to burn the OS's was creating bad media.</div><br /><br />Assuming that &quot;FC1&quot; means Fedora Core 1, you should probably think about upgrading to something more recent. &nbsp;That release is WAY outdated...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FC1</b><br />
+					Post by: <b>maxham</b> on <b>August 14, 2005, 12:51:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">the Fedora core 3 &amp; 4 cd's I made were burned by a bad cdrw, so for convenience at the time I used FC1. Once I got to a CDRW that worked<br />my production install is FC4. I was looking for Mandrake linux two weeks ago with some basic searching and didn't find it. Is Mandriva the smae distribution?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>postmap command</b><br />
+					Post by: <b>danc</b> on <b>August 14, 2005, 01:32:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, Mandrake was renamed to Mandriva.<br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

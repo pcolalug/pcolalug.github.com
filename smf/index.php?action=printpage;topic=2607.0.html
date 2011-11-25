@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Sun 'Niagara' Based Servers</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: imnes on September 21, 2005, 07:54:51 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sun 'Niagara' Based Servers</b><br />
+					Post by: <b>imnes</b> on <b>September 21, 2005, 07:54:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">New servers are coming out soon based on the new chips from Sun. &nbsp;These are non-smp capable chips (SMP version will be out in about a year). &nbsp;<br /><br />They've taken the idea of multi-core / multi-threaded chips to the next level. &nbsp;Each CPU houses 8 processing cores, each running 4 threads of execution. &nbsp;This gives your system the capability to run 32 threads at once, whereas a typical CPU can run 1, some of the newer Intel / AMD chips can do 2. <br /><br />http://www.theinquirer.net/?article=19423<br /><br />(http://blogs.sun.com/roller/resources/jonathan/niagara_chip_small_pic.jpg)<br /><br />(http://blogs.sun.com/roller/resources/jonathan/niagara_fireball_tm_small.jpg)<br /><br />One of the interesting features pointed out in the article is that when running on Solaris you have the tools to partition the processor however you want. &nbsp;<br /><br /><div class="quoteheader">Quote</div><div class="quote">the same way you can partition a Sun 15K's processors. If you want two cores dedicated to your web server, and four to the JVM, and two others to the database, no problem, you can do it in the same way you could with multiple sockets.</div><br /><br />They also mention &nbsp;&quot;It also has some inherent fault isolation but you can't mirror cores, yet.&quot; &nbsp;Does this mean that part of your CPU could fail, the system sees it and works around it keeping the server running? &nbsp;That's kinda neat.<br /><br />Accoring to http://www.commsdesign.com/news/product_news/showArticle.jhtml?articleID=171000271 system prices start at $30k.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sun 'Niagara' Based Servers</b><br />
+					Post by: <b>Brent</b> on <b>September 21, 2005, 08:32:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just recently compiled .13.<br /><br />It would seem the linux kernel supports the cpu partitioning as well.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sun 'Niagara' Based Servers</b><br />
+					Post by: <b>rugmonster</b> on <b>September 21, 2005, 08:50:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">How freakin' cool is that? Too bad they cost so darn much. If Sun keeps coming out with this sort of technology, they will continue to have a place in the server market. Throw into the mix their latest line of low cost servers, they'll have relevant hardware for all levels of small, medium and enterprise level servers.<br /><br />Can you imagine a cluster of systems running those multicore procs? :shock:</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

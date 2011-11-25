@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Hello to the group</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Introductions => Topic started by: mobilemail on October 08, 2006, 07:17:58 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hello to the group</b><br />
+					Post by: <b>mobilemail</b> on <b>October 08, 2006, 07:17:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Greetings all!&nbsp; I&#039;m here in PCola with y&#039;all. I thought I would google Pensacola Linux Users Group and...there you were!<br /><br />I&#039;m a Linux noob, so I have a lot more to gain from y&#039;all than I have to offer. I have SuSe Linux 10.1 dual-booting with Windows XP on my laptop. After about two months, I&#039;ve figured out how to play my mp3&#039;s, wma&#039;s, DVD&#039;s, make Java work, get my 802.11g card working and get the right text size out of my print-server-connected photo printer!&nbsp; (And I just found new drivers for my ATI video chipset so Google Earth should start working better!)<br /><br />I feel like a friggin&#039; genius!!!!<br /><br />Now if I can get my cell phone to tether successfully under linux...<br /><br />Anyway, I have a schedule conflict that will keep me from making your meeting time, but if the opportunity comes I&#039;d love to meet you. <br /><br />Mark </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hello to the group</b><br />
+					Post by: <b>lloydr</b> on <b>October 08, 2006, 08:13:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3024.msg14858.html#msg14858">Quote from: mobilemail on October 08, 2006, 07:17:58 pm</a></div><div class="quote">Now if I can get my cell phone to tether successfully under linux...<br /></div><br />what phone service and do you mean for web useage?<br /><br />I&#039;ve been successful in getting slackware to tether with my Samsung A920 I have with Sprint, as an EVDO and 1xRTT modem using manual configuration of PPPd :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hello to the group</b><br />
+					Post by: <b>L.Rentz</b> on <b>October 09, 2006, 05:16:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Welcome to the group Mark.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hello to the group</b><br />
+					Post by: <b>mobilemail</b> on <b>October 09, 2006, 06:48:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">lloyd,<br />verizon xv6600&nbsp; 1xrtt&nbsp; (I could do tethered with cable or bluetooth), for data access.<br /><br />And just to keep me from getting all proud of myself, I started my computer tonight and something I did yesterday broke my linux install.&nbsp; Arggghhh!&nbsp; &nbsp;Since I&#039;m command-prompt challenged, I figured out that I could get the graphics going by entering gdm. Then Nautilus wouldn&#039;t start. So I&#039;m using yast to force a reinstall of the nautilus and gnome components.&nbsp; If it doesn&#039;t work y&#039;all will be hearing from me!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hello to the group</b><br />
+					Post by: <b>lloydr</b> on <b>October 09, 2006, 07:21:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3024.msg14862.html#msg14862">Quote from: mobilemail on October 09, 2006, 06:48:18 pm</a></div><div class="quote">lloyd,<br />verizon xv6600&nbsp; 1xrtt&nbsp; (I could do tethered with cable or bluetooth), for data access.<br /></div><br />hmm from what I hear getting it working with bluetooth is easy as long as you have bluetooth pairing working. I don&#039;t have a bluetooth adapter so just used the usb cable<br /><br />here is my post on sprintusers forum that shows what I did to get it working using usb cable:<br /><div class="quoteheader">Quote</div><div class="quote">current kernel version I&#039;m running is 2.6.15.7 due to crappy ati drivers in the case of my laptop. But, built custom kernel for laptop and made sure to include USB ACM modem support (CONFIG_USB_ACM). with this and using the usb data cable that came with my A920, the phone shows up as /dev/ttyACM0 under dmesg.<br /><br />then setup the PPP by creating these 2 files:<br /><br />/etc/ppp/sprint.modem:<br />TIMEOUT 5<br />ABORT &#039;\nBUSY\r&#039;<br />ABORT &#039;\nERROR\r&#039;<br />ABORT &#039;\nNO ANSWER\r&#039;<br />ABORT &#039;\nNO CARRIER\r&#039;<br />ABORT &#039;\nNO DIALTONE\r&#039;<br />ABORT &#039;\nRINGING\r\n\rRINGING\r&#039;<br />&#039;&#039; \rAT<br />TIMEOUT 12<br />OK ATD#777<br />TIMEOUT 22<br />CONNECT &quot;&quot;<br /><br />/etc/ppp/peers/sprint:<br />noauth<br />connect &#039;/usr/sbin/chat -v -f /etc/ppp/sprint.modem&#039;<br />defaultroute<br />usepeerdns<br />/dev/ttyACM0<br />921600<br />local<br />novj<br /><br />Then, I simply ran the command &quot;pppd call sprint&quot; and watched my /var/log/messages for the modem status..... and at first, all was well, until after 2.5 minutes later, it&#039;d error out and disconnect with the message of no response to 4 echo-requests.....<br /><br />soooo, to fix that, I added these 2 lines to my /etc/ppp/peers/sprint:<br />lcp-echo-failure 4<br />lcp-echo-interval 65535<br /><br />and everything works flawlessly now. after fixing the echo-request issue, I stayed connected for around 30minutes before I disconnected the PPP session myself since I was done.<br /></div><br />this works for both 1xRTT and EVDO in the case of my samsung A920. in your case I&#039;m not sure if you will use the same #777 for data call out to use the phone as a modem. and in the case of my phone, I had to disable modem NAI since it&#039;s an EVDO phone, to keep it from showing that I&#039;m using it as a modem and not web useage just from phone (don&#039;t have tether web plan heh)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hello to the group</b><br />
+					Post by: <b>djoed_pcola</b> on <b>October 10, 2006, 07:30:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Welcome to Pensacola and the Pcola LUG.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Hello to the group</b><br />
+					Post by: <b>dpeach</b> on <b>October 12, 2006, 02:26:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Welcome to the group!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

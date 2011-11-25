@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - CD Burning in Linux</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: dpeach on September 30, 2002, 09:18:49 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>dpeach</b> on <b>September 30, 2002, 09:18:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><b>Writing to a CD-R in Linux</b><br /><br />Have you tried some of the CD-RW burning programs in Linux, but they just don't seem to work? There are two main reasons that can keep your burner from working. One is that it is not supported by the kernel. By this, I am not talking about the burner brand, but whether you are trying to use a SCSI or ATAPI-IDE drive to do your burns. The second reason is that you may not have all the information you need to configure your software.<br /><br />Before you go through this, if you have not tried burning a CD in Linux yet, then try one of the GUIs. Everything may work just fine for you. Going through my steps here will give you more of an understanding of how the burning process works.<br /><br />This is not a definitive article on CD burning. I simply want to give you a few tools that will help find your problem and make sure that you can indeed burn a CD. This is not software specific, with the exception of the command line tool, cdrecord, that we will be using for testing. You will need to take the information you learn here and configure your GUI.<br /><br />First you must be running kernel 2.0.36 or later. You also need a basic Pentium system with 32 MB of RAM. I have not personally tested the low end system, but from what I have read, it will handle burning just fine. Of course you will need a CD-R/RW drive.<br /><br />The first trick is to see if your drive is being supported by your kernel. If your drive was already installed when you installed your Linux, it was probably recognized and the kernel support is there. I don't suspect that will be your problem, but let's check.<br /><br />First you need to test this by getting into a terminal and issuing:<br /><i>cdrecord -scanbus</i><br /><br />The output on my machine is:<br /><i>[david@athlon david]$ cdrecord -scanbus<br />Cdrecord 1.11a32 (i586-mandrake-linux-gnu) Copyright (C) 1995-2002 Jörg Schilling<br />Linux sg driver version: 3.1.24<br />Using libscg version 'schily-0.6'<br />scsibus0:<br />&nbsp; &nbsp; &nbsp; &nbsp;0,0,0 &nbsp; &nbsp; 0) *<br />&nbsp; &nbsp; &nbsp; &nbsp;0,1,0 &nbsp; &nbsp; 1) *<br />&nbsp; &nbsp; &nbsp; &nbsp;0,2,0 &nbsp; &nbsp; 2) *<br />&nbsp; &nbsp; &nbsp; &nbsp;0,3,0 &nbsp; &nbsp; 3) 'ATAPI ' 'CD-R/RW 8X4X32 ' '5.DW' Removable CD-ROM<br />&nbsp; &nbsp; &nbsp; &nbsp;0,4,0 &nbsp; &nbsp; 4) *<br />&nbsp; &nbsp; &nbsp; &nbsp;0,5,0 &nbsp; &nbsp; 5) *<br />&nbsp; &nbsp; &nbsp; &nbsp;0,6,0 &nbsp; &nbsp; 6) *<br />&nbsp; &nbsp; &nbsp; &nbsp;0,7,0 &nbsp; &nbsp; 7) *<br />[david@athlon david]$</i><br /><br />This identifies my CD-RW drive at address 0,3,0. This is important for two reasons. First it shows that I have SCSI emulation enabled and that my drive was detected. In my case I did not have to recompile my kernel (whew!). Secondly, I need to know that 0,3,0 address so that I can enter it into my burning program.<br /><br />If the <i>cdrecord -scanbus</i> does not show your CD-R/RW then you will need to recompile your kernel. You will need to refer to other sources on how to recompile, but I will give you the parameters that need to be changed.<br /><br />Most of you will be using an IDE/ATAPI drive. In this case you need to disable IDE/ATAPI support for your CD-ROM. Sounds strange right? Well, Linux requires that CD burning be done through SCSI. ''But I don't have a SCSI card?'' You need to trick Linux into thinking that your drive is SCSI. So with IDE/ATAPI disabled, you need to make sure that SCSI emulation is enabled.<br /><br />Here are all the kernel compile settings that you need for an IDE drive:<br />Enhanced IDE/MFM/RLL set to Y<br />IDE/ATAPI CD-ROM (module ide-cd) set to N<br />SCSI Host Adapter Emulation (module ide-scsi) set to Y (or M (module))<br />Loopback Device (module loop) set to M<br />SCSI Support (module scsi-mod) set to Y (or M)<br />SCSI CD-ROM Support (module sr_mod) set to Y (or M)<br />Enable Vendor-specific set to Y<br />SCSI Generic Support (module sg) set to Y (or M)<br />Low Level Driver set to Y<br />Iso9660 CD-ROM Filesystem (module iso9660) set to Y<br />Microsoft Joliet CD-ROM filesystem (module joliet) set to M (or Y)<br /><br />If you are using a SCSI CD-R/RW, then your drive was probably recognized. For a SCSI drive you will need to make sure that you have the driver for your SCSI card loaded into the kernel. The only changes from the above list is that it does not matter what the first three parameters settings are.<br /><br />After recompiling the kernel, you can try <i>cdrecord -scanbus</i> again. This will give you the information that you need for the actual burning.<br /><br />Many of the GUI CD burning software use the cdrecord program as the burning engine. We will use the command line tool cdrecord to burn a CD. If that works, then you will have all the information you need to use whatever front end you choose. Cdrecord and mkisofs are very standard tools. Any recent distro will probably load them by default. If not, you can load them from your install CD.<br /><br /><b>Creating an Image</b><br />If you wanted to make an image of all the files in /home/username/foo, then you issue:<br /><i>mkisofs -r -o /home/username/foo.iso /home/username/foo</i><br /><br />This will create an iso image file called foo.iso in the folder /home/username. This will be an image of the /home/username/foo directory. Using the -r switch makes all the files publicly readable using Rock Ridge extensions. The Rock Ridge extensions allow you to have long filenames and a decently deep file system. The -o switch lets you specify the output filename. Usage is: <i>-o filename</i>.<br /><br />Now that you have an image, you can either write it directly to the CD, or for peace of mind, you can test it. Mount your image with this command:<br />mount -t iso9660 -o loop /home/username/foo.iso /mnt/your_mount_point<br /><br />Of course you have to create your own mount point. Now you can browse that image to make sure the files really are in there and that it has the proper directory structure. After you have done this a few times and have the confidence that it really will work, you will not need to take this step.<br /><br /><b>Burning the Image</b><br />The image can be burned with:<br /><i>cdrecord -v speed=8 dev=0,3,0 -data /home/username/foo.iso</i><br /><br />This writes out the image at a speed of 8 (set to your CD-R/RW specs). You can set this lower, but should not go any higher than your CD burner. This command writes to device 0,3,0. This is the address that my CD-RW holds according to the output from cdrecord -scanbus. This command further instructs it to write out a data CD from the image /home/username/foo.iso. The -v switch gives you verbose output from the writing process.<br /><br />Sit back and smell the burning of your first CD using Linux. If all worked for you, then you now have the information you need to configure a GUI front end. As mentioned, most of the GUI burners use the cdrecord engine. Anything you learn from the command line, you should be able to implement into your GUI configuration.<br /><br />The purpose of this article is not to give you a full understanding of the programs cdrecord and mkisofs. It is to give you the information that you need to make sure that your CD burner is working properly.<br /><br />By the way, if you do have a burning smell coming from your CD burner, that would indicate that you have more than just a software configuration problem.<br /><br />David<br />www.dpeach.com<br />www.pcolalug.com</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>imnes</b> on <b>October 10, 2002, 01:56:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">mkisofs is a good program, but what if you want an exact copy of a CD? &nbsp;Like copying a bootable linux CD for someone? (Unless I'm wrong, mkisofs doesn't do exact copies of CD's, just dumps files into an iso image, am I correct?) <br /><br />I use a utility called &quot;readcd&quot; (it comes installed on most systems, it's part of the cdrecord package). <br /><br />Easy to use, run it as root:<br />readcd dev=x,x,x f=filename<br /><br />Then follow the directions above for burning it back to cd, such as:<br />cdrecord -v speed=x dev=x,x,x -data filename<br /><br />Good luck.<br /><br />Nick<br />imnes@go.com</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>dpeach</b> on <b>October 10, 2002, 02:38:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You are right. mkisofs does not do an exact copy. The readcd is the program to use. All three are part of the cdrecord program.<br /><br />I would have to do a little digging to find out, but I believe that you have to use cdrecord with a switch to make the CD bootable.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>imnes</b> on <b>October 10, 2002, 02:53:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just copied these bootable redhat cd's using readcd and cdrecord without any extra switches or options. &nbsp; Seems to work fine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>rburt3</b> on <b>October 11, 2002, 08:11:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You don't need a switch because the .raw file is a bit for bit image. &nbsp;If the fs you are copying is bootable, your copy will be bootable. Note that with the -w option, readcd can write to a device on the scsi bus as well.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>March 18, 2003, 08:08:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The real ?? is this..... &nbsp;Can you burn CD's without a SCSI drive, or is there any way to make an ATAPI-IDE CD R/RW appear as a SCSI device??</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>dpeach</b> on <b>March 18, 2003, 08:46:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">When I wrote this it was with ATAPI in mind. That is what I have.<br /><br />Go to a console and type:<br /><i>cdrecord -scanbus </i><br /><br />See what you get. Did it tell you that you have an ATAPI CD burner? If so, then you can follow my instructions.<br /><br />Does Peanut Linux have a good burner built in? By that I mean GUI. I guess if you are reading this, it is because something is not working right for you.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>March 18, 2003, 09:04:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It's not showing up using 'cdrecord -scanbus'..... &nbsp;says cannot open '/dev/pg*'</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>imnes</b> on <b>March 18, 2003, 10:17:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Probably you need the ide-scsi module loaded. &nbsp;It makes your atapi cdrom appear as scsi to the system. &nbsp;Also you'll need to add a line to lilo.conf is you use that - I dont' remember what it is though maybe someone else does?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>crowe</b> on <b>March 18, 2003, 10:32:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">imnes is correct. &nbsp; What you need to do to burn a CD under Linux is to run that drive underneath the SCSI emulation layer.<br /><br />I'll assume that you've already got the relevent things compiled (either into the kernel, or as a module) that the article pointed out eariler. &nbsp;<br /><br />Add this line to your /etc/modules.conf:<br /><br /><div class="codeheader">Code:</div><div class="code">options ide-cd ignore='hdc'</div><br /><br /><br />Of course, substitute 'hdc' for whatever your burner's /dev/hdX entry is.<br /><br />What this does: &nbsp;This tells the kernel not to register your burner as an IDE drive, freeing it up for the SCSI emulation layer to use it.<br /><br />If you use Lilo, here's the appropriate line for actually activating the SCSI emulation.<br /><br />This goes in your /etc/lilo.conf at the tail of your linux entry.<br /><br /><div class="codeheader">Code:</div><div class="code">append=&quot;hdc=ide-scsi'</div><br /><br />Again, substituing hdc for the relevant device name.<br /><br />Of course, make sure you re-read Lilo and all that, and after your next boot, try doing the cdrecord --scanbus again.<br /><br />Hope this helps!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD Burning in Linux</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>March 19, 2003, 01:31:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Crowe!! &nbsp;Muh MAN!!! &nbsp;Thanks... &nbsp;I can try to do it now... &nbsp;yay!!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

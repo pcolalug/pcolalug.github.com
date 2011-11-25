@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Moving /home!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: dpeach on April 24, 2004, 07:49:19 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Moving /home!</b><br />
+					Post by: <b>dpeach</b> on <b>April 24, 2004, 07:49:19 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here are some questions I have about the /home directory/partition.<br /><br />I am getting ready to install a new hard drive as my current one seems to be slowly killing itself. I am wanting to keep my /home partition, which I am reading on how to do now, but that brings up some other questions.<br /><br />1. &nbsp;If I simply move my /home partition to the current drive (or at least my user into the new /home partition) then as long as I &quot;reinstall&quot; the programs that I had before, I should have the same user settings, right?<br /><br />2. &nbsp;What happens if I use a newer version of KDE in my new install of the OS. Will I brake everything? Should I delete the .kde directory out of my /home folder before I boot up KDE just to be safe?<br /><br />3. &nbsp;If I put my new /home directories in a FAT32 partition will it be really bad? I know that there are advantages to the ext2/3/reiser/etc. FS. But that is mainly for the system. I would not be &quot;running&quot; programs from /home, only the config files for my programs. Doing it from a FAT32 partitition would allow me to access all of this information easily from Windows when I am booted into that.<br /><br />4. &nbsp;Somewhat unrelated, but something I have wondered about. If I put my /home partition on my server and point all of my computers to the /home directories on the server, can I log into the same user from any computer on my network? What happens if I am running two different versions of a program? Will that break everything? Can I log into the same user from 5 different computers at the same time and not break anything?<br /><br />I know, it is pretty amazing that I could have a working Gentoo install and not know the answers to these questions.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Moving /home!</b><br />
+					Post by: <b>imnes</b> on <b>April 24, 2004, 08:39:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here come my guesses.....<br /><br />#1: Assuming all your other software is staying the same, and you're just adding a new drive and mounting it as /home, then just copying all your files to the new parition should be fine. &nbsp;<br /><br />#2: KDE seems pretty good about letting you use old settings. &nbsp;As long as you're not changing drastically (like kde 2 to kde 3.2 might not work). &nbsp;I say try loading with your old settings and if you have any problems then you can delete your .kde and .qt directories.<br /><br />#3: &nbsp;I don't see anything wrong with putting your stuff onto fat32. But I've never used a fat32 partition in linux, would it still allow the long filenames, and weird filenames like .desktop? &nbsp;<br /><br />#4: Should work, just make sure to also share /etc on all computers, or just make sure your user-id and group-id numbers are the same. &nbsp;Otherwise it will work fine from one computer but the group and user will be screwed up from the other computer. &nbsp;<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Moving /home!</b><br />
+					Post by: <b>dpeach</b> on <b>April 24, 2004, 09:55:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: imnes</div><div class="quote">#3: &nbsp;I don't see anything wrong with putting your stuff onto fat32. But I've never used a fat32 partition in linux, would it still allow the long filenames, and weird filenames like .desktop? &nbsp;</div><br />I think that the long filenames should not be a problem. As long as Linux can read the filename off of the FAT32 partition, I know that Windows can. I also think it will be able to handle .desktop too. <br /><br />I know that doing this would eliminate me from using symlinks into /home. From what I understand symlinks cannot be done to or from a FAT partition.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Moving /home!</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>June 06, 2004, 09:41:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">To my knowledge, the way that an OS handles the FAT32 and the way it handles UNIX are two different systems (though I've heard that ext2 is supposed to be the basis for ext3 and reiserfs which means that ext2 is still a FAT32 system, but not quite).<br /><br />As far as what we learned in class, FAT32 in terms of Windows pretty much means that having a &quot;.&quot; in front of it should be okay but Windows might treat it weird because it's expecting a three character extension to define the type.<br /><br />In a UNIX system (like what I imagine Linux uses) it has a different type of table and links are actually just pointers to a block on disk. &nbsp;And when you do this it increases the counter for the number of links on the original file's descriptor table (which has all sorts of things such as initial block, final block, number of pointers of indirection, links, et al).<br /><br /><br />Assuming all of that, I wouldn't imagine that links would work in the same way, though they might work a different way. &nbsp;It's very possible I'm wrong (we spent time on it, but only with regards to Windows and UNIX, not LINUX) and if I am please tell me otherwise so I understand a bit more about it. &nbsp;Still, I don't see how the links would work since the idea differs vastly between linking in a UNIX FS and a FAT32 FS.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - dd vs partimage For Disk Imaging</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: dpeach on February 04, 2011, 07:35:33 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>dd vs partimage For Disk Imaging</b><br />
+					Post by: <b>dpeach</b> on <b>February 04, 2011, 07:35:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is my scenario:<br />I want to finally blow away my 3 year old Windows partition that I keep around for 1 or 2 programs. I want to run Windows in a virtual machine for those programs. To do so, I need an image of my Windows install (I think). Since this is Vista, I would rather try making an image of a current working system than to re-install fresh. Admittedly, I don&#039;t use Windows much (once a week for about an hour), but this install of Vista has been rock solid for my needs.<br /><br />I need to make an image of the partition which is 145 GB, but the contents of the drive is only 60 GB. Is there a way to make an image of just the contents without all the extra space so that I don&#039;t have a huge VM? Does it matter? Will the VM grow and shrink just large enough for the contents of the drive?<br /><br />Is dd better for this or is partimage?<br /><br />Am I stupid for even considering attempting this?<br /><br />I can walk away from this Windows partition completely and re-install a fresh copy for a VM since I have all my user data backed up. However, 2 things prevent me from that: the aforementioned fact that this install has no typical Vista problems and the disc that came with the computer is not a straight Windows CD, it is the set-up CD from Gateway with Windows on it. I am not sure if it is possible to install into a VM with one of these types of discs.<br /><br />I am willing to try to install a fresh copy of Windows from this disc just to see if it works, but only if I can get the image I need to make sure I don&#039;t lose where I am right now.<br /><br />The image will be created onto an external hard drive. Then I will image my Linux partition. Blow everything off the notebook. Install a fresh copy of Linux, move my /home folder back and then install the VM.<br /><br />I have wanted to do this for a long time, but keep getting cold feet. Anyone out there willing to try and walk me through this? I am in no huge hurry, but I would like to get it done within the next week if possible.<br /><br />Thanks!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: dd vs partimage For Disk Imaging</b><br />
+					Post by: <b>dpeach</b> on <b>February 04, 2011, 08:45:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">As per sontek&#039;s help in IRC, I am making my images with clonezilla. Then I will resize my Linux partition with gparted and work from there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: dd vs partimage For Disk Imaging</b><br />
+					Post by: <b>dpeach</b> on <b>February 08, 2011, 06:56:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I used clonezilla to create the cloned images, but then had trouble connecting to the external drive. I mainly needed to do this as a backup plan in case re-installing with the disk that came with the computer didn&#039;t work. It seems to have worked well. So I have a fresh install of Windows to run the few items I want. Much cleaner than the 3+ year install that was on there before.<br /><br />After I finished the clone, then I use the Parted Magic liveCD to delete 2 partitions then expand and move my Linux partition to fill the rest of the drive (except my swap area). Parted worked wonderfully. (I also cloned my Linux partition with clonezilla just in case).<br /><br />Everything seems to be running the way I expected.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - OpenBSD binpatch</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: lloydr on June 09, 2005, 08:45:30 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OpenBSD binpatch</b><br />
+					Post by: <b>lloydr</b> on <b>June 09, 2005, 08:45:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm beginning to work on the Binpatch system for OpenBSD where Santana over at openbsd.org.mx left off. He left off a bit into 3.6, 5-7 patches ago due to lack of time. I've began building binpatches for 3.7 mainly as that's the latest release.<br /><br />http://www.openbsd.org.mx/en/projects/binpatch.html<br /><br />Basically they allow you to upgrade your openbsd system to any of the patches posted in the errata (http://openbsd.org/errata.html) without having to recompile the source of the system.<br /><br />I'm doing this to keep from needing a compiler and sources on my router/firewall box, along with now any other machine I have running openbsd like my primary dns server. my binpatch build environment is a base openbsd 3.7 install running inside vmware on my slackware box. <br /><br />I'm basically wondering if anyone is interested in testing this binpatches out or if you find a use for these, I'd be happy to upload them somewhere. I sent a copy of the 001_cvs errata binpatch to Santana to look at. So far my 3.7 binpatches are limited to only the 001 patch so it's not like much has been happening in the obsd errata area, but that's a good thing.<br /><br />So far the patch applied just fine on my future router/firewall box, but it's not like the patch applied to anything in use like kernel updates or such, but I'm sure patches will come soon that do apply.<br /><br />To install a binpatch just unpack it under /, e.g.:<br />cd ${PACKAGEDIR}&quot;<br />tar xzpf binpatch-${REVISION}-${ARCH}-001.tgz &nbsp;-C /&quot;[/url]<br /><br />I'm building them for i386, planning to use the GENERIC kernel config, so the install process would just be:<br />tar xzpf binpatch-3.7-i386-001.tgz -C /<br />tar xzpf binpatch-3.7-i386-002.tgz -C /<br />and so on down the line of patches.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

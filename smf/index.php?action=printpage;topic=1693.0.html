@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Best server distro?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: erc on June 11, 2004, 01:16:28 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>erc</b> on <b>June 11, 2004, 01:16:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am in the (un-)enviable position of having to replace a rather aging and non-supported RedHat 7.2 distro with something else. &nbsp;This is a development server, so (1) it's gotta be Linux, and (2) it's gotta be small, fast, and no X!<br /><br />The server is an AMD K2/300 with 192MB of RAM, a 10GB root partition (contains OS, home directories, email), and other drives for development and backup use. &nbsp;It runs headless, so running X would be a huge waste of server time and resources.<br /><br />Anyone recommend a distro that's (1) painles to install, (2) has a small footprint in terms of disk and memory space, and (3) doesn't have X , or at least is painless to *not* run and include X? &nbsp;I'm not looking for Mandrake or similar, where the distro is designed for the desktop and getting X and it's associated huge suite of libraries and apps to not install is impossible, or almost so. &nbsp;The other requirement is that it be able to be automatically updated over the net without under intervention. &nbsp;This box is designed to sit in the corner and never be touched - it reboots itself once a week or so, early Sunday morning, just because :)<br /><br />I'd go with FreeBSD for the server (it's otherwise perfect for such an application), but since the development server is used for producing Linux apps, it's gotta run Linux. &nbsp;My other development server happily runs FreeBSD in about 150MB of disk space :) &nbsp;(And yes, it's the Escapade development server, thanks for asking!) ;)<br /><br />Thanks in advance :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>danc</b> on <b>June 11, 2004, 07:09:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'd recommend Slackware. &nbsp;It's easy to NOT install X, and you could run the command line tool &quot;swaret&quot; from a cron job to update things automatically. &nbsp;Slack is fast, stable, and &quot;no-frills&quot;. &nbsp;Should be just what you're looking for.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>crowe</b> on <b>June 11, 2004, 08:08:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Another option to consider would be Debian. &nbsp;It's completely possible to create a 'minimalist' installation, and simply use apt to install what you need (and nothing more) afterwards.<br />Apt can also be used to update your system, and I imagine it would be fairly trivial to set it up as a cron job.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 11, 2004, 08:43:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I agree with crowe, Debian can be very minimalist. Since you are coming from &nbsp;Redhat 7.2, it's obvious you aren't looking for bleeding edge releases. Debian stable and testing include packages that are more stable than most other distribution's at the expense of age.<br /><br />I would also recommend Gentoo since it is as minimalistic as you make it. It will take a while to install the system unless you use binary packages, but that just wouldn't be fun. The downside is that system doesn't sound like it's got my kick in it, so Debian would probably be the better way to go.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>imnes</b> on <b>June 12, 2004, 09:06:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'd recommend slackware.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>lloydr</b> on <b>June 12, 2004, 12:35:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'd go with slackware all the way, and just make the decision if you want stable or bleeding edge and use swaret for updating. If you want to go with stable and not so bleeding edge then just set swaret's version to 9.1; if you want the latest of everything with slack then set version to current and update.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>mitchr</b> on <b>June 12, 2004, 02:15:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would go with slackware.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why? Why?</b><br />
+					Post by: <b>bhoff</b> on <b>June 12, 2004, 09:01:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Why not keep using Red-hat 7.2 if this is a development box there is no need to change...Most of the hardcore developers to date still use 5.2 and 7.2 I could send you a list of them. I am just trrying to understand the logic?<br />Thanks in advance</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 12, 2004, 11:05:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I hate to ask this, but why would you guys recommend Slackware?<br /><br />Honestly, I would suggest using whatever distro you feel comfortable with since it is an individual issue. I have never thought of Slackware as being a big server distro, but I'm sure it does fine. I have use Slackware on small servers, but eventually moved to Redhat as the needs of those servers grew as it was easier to admin those. I think Debian would be a better choice due to it's more robust package management and rock solid stability (which I have seen lacking in Slackware comparitively speaking).<br /><br />To me there is no &quot;Best&quot;, rather what fits your needs and wants better than the other options.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>danc</b> on <b>June 13, 2004, 06:09:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmmm.... &nbsp;As far as I've ever heard, Slackware is known as a server distro. &nbsp;I can't compare it's stability to Debian's as I've only ever played with Debian Woody once, briefly, but it is also known for that. &nbsp;Package management is not that big a deal for a server, other than security patches, and these are simple with Slackware. &nbsp;Also, the &quot;stable&quot; branches of Debian are so outdated that it's painful. &nbsp;Not sure why it would be easier to admin a Redhat server, regardless of size...<br /><br />I do agree that there is no &quot;best&quot; and whatever feels the most comfortable is the right choice.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>imnes</b> on <b>June 13, 2004, 08:23:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Slackware and Debian are both powerful. &nbsp;But I think slack is easier to use and get started with. &nbsp;And the package manager doesn't get in your way, it's there if you need it, doesn't get confused if you bypass it. &nbsp;<br /><br />The Slackware community is great, very helpful. &nbsp;The Debian community are usually rude / unhelpful to new users. &nbsp;Don't get me wrong, not all slackware people are helpful and all debian people rude, just the general feeling I get from being in chat rooms and forums.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>lloydr</b> on <b>June 13, 2004, 09:31:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The reason I recommend slackware is because it does offer excellent stability and Pat V. has an great track record of providing a stable server os for 11years coming this july. Another thing is slackware being the most &quot;Unix-like&quot; linux distro around and being based off the published linux standards....once you know it, you know linux.....admin is extremely easy if you know linux. keeping up to date to the latest stable or the latest development is easy and i've had my slackware machines run much better as servers than redhat 6.x-9/RHEL as far as stability and speed goes.<br /><br />as far as the packages go, if you notice in a lot of places, most people don't consider things stable and ready for server use until Patrick Volkerding integrates it into the slackware -current packages. take for example, heard a lot of big linux sites &nbsp;mention 2.6 isn't mature enough for server useage and when you see Pat V. bring it totally into slackware -current(even though slackware has been 2.6 ready for over 9months), then it's matured enough and ready for servers.<br /><br />The way services and all are handled and things are started on boot is easier to keep up with and allows you keep good control over whats started on boot with a simple ls -atl /etc/rc.d/....chmod 755 rc.x to start it on boot, chmod 644 rc.x to disable it on boot....very easy to understand and easy to keep complete control of......<br />Also the command line adminitration usually goes much faster on a server anyways since I don't think I'd care to have X running on a server just to use the gui sys admin tools in distros like redhat &nbsp;:roll: or if you need things to look at and click, there's always webmin.<br /><br />plus it was designed with the twin goals of ease of use and stability as top priorities.....lots of good help for slack and its a distro that i've seen branded as anything from desktop workstation to machine room server, so why wouldn't I recommend it as a server os? also install on even lowend pentium/486 systems is under an hour if u wanna do full install but for a server u want to customize install so may take longer selecting packages but less time installin them(a bit quicker than a stage1 gentoo....hey u might be able to use your server in july if u do gentoo and start right now :lol: &nbsp;:lol: &nbsp;:wink: )</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 13, 2004, 09:41:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Perhaps I am showing my distance from the linux community finally. When you use Debian, it's easy to become a Debian purist due to the other people who use it. It rubs off on you. I guess I still think that apt is far superior to everything but portage.<br /><br />One thing I do like about Slackware is it's standardness. Debian likes to put configuration files in odd places so that they will work with apt and other packages. Also, since erc knows FreeBSD, Slackware is the most BSD-like with it's init scripts, so that may make for an easy transition.<br /><br />Oh yeah, the reason I said we moved to Redhat was because we were running into problems with some of the commercial software we were buying only had binary packages and they were in RPMs and didn't want to fight with them to work in Slackware. Also, at that time, there was no Swaret, so upgrades tended to be messy, especially if you missed a dependency. As much as I hate RPMs, Redhat did provide a better solution than Slackware <span style="text-decoration: underline;">at that time</span>. I'm scared it (redhat) may be bloated now, but a lot of things in linux are getting that way.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>lloydr</b> on <b>June 13, 2004, 10:17:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">yea the good thing that you will see coming from redhat is good support but the problem is some commercial programs are like u said and only come in rpm packages, but generally I've started to see that change somewhat..... and like you said, since erc is familiar with freebsd, slackware probaly will be the best to go with since he's probaly good and familiar with how things are configured and started on boot and so on</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 13, 2004, 10:51:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually, he should be familiar with BSD and Sys-V style inits since the system is a Redhat 7.2 box now.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>erc</b> on <b>June 13, 2004, 05:03:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brett</div><div class="quote">Why not keep using Red-hat 7.2 if this is a development box there is no need to change...Most of the hardcore developers to date still use 5.2 and 7.2 I could send you a list of them. I am just trrying to understand the logic?</div><br /><br />The only reason I'm looking aorund is that the 7.2 release isn't supported in terms of patches ... unless you want to pay $$$. &nbsp;I'm looking for something where I can run a command from cron once a day and update my system with the latest patches, etc.<br /><br /><div class="quoteheader">Quote from: lloydr</div><div class="quote">since erc is familiar with freebsd, slackware probaly will be the best to go with since he's probaly good and familiar with how things are configured and started on boot and so on</div><br /><br />Actually, I'm familiar with both &nbsp;:D <br /><br />Thanks to everyone who has weiged in on this so far. &nbsp;It seems the concensus of opinion is to go with Slackware. &nbsp;For various reasons, I'm going to wipe the root drive and reinstall, so this is a perfect time to do it right. &nbsp;The original system has had bits and pieces installed manually, system files have been changed willy-nilly, etc. - I didn't realize the benefits of RPM immediately.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>steve</b> on <b>June 13, 2004, 08:14:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've stayed out of this topic because I don't normally deal with the Servers. However, I have helped our engineers choose Linux servers for projects they've been working on. Usually when they ask what the best server to run is, I answer by asking what programs they plan on running. I then send them to the programs web sites to see what distros those programs are being developped on. In the case of Apache, Samba, Sendmail and other common server apps, you can find them on most server distros. However, if you're going to be running something new/out of the norm, find out what it's being developped on and that would be the way I'd recommend to go. You're going to get better compatability, stability, and support that way.<br /><br />This also means if the programs are still being developped and tested on RedHat 7.x then stick with it.<br /><br />I've found that most big server programs are normally at least one distro version behind the current version. So, I wouldn't necessarily plan on going with the latest and greatest version.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>dpeach</b> on <b>June 13, 2004, 08:45:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't deal with servers either (much).<br /><br />I am glad that this all fell out this way. erc and I talked about this last week before he posted here. Though I have never run Slack, I recommended it because of the things I have heard you guys say about it. Believe it or not, I also recommended Gentoo.<br /><br />Steve's comments I think should be a deciding factor for many of the discussions we have. If you have a highly specialised application (or one main app) you are looking to run, then find a distro that plays nicely with it. That is the reason I am running Gentoo. Not because I have any great love for the distro, but the distro has a love for my specialty app (MythTV).<br /><br />But my desktop still runs Mandrake. Because it is best suited for my needs, not because it is the best distro for everything.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>slackware</b><br />
+					Post by: <b>Brent</b> on <b>June 13, 2004, 11:28:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I (of course) am recommending slackware as well. &nbsp;Slackware (while not always user friendly) has a history of being simple, secure, stable, and fast. &nbsp;<br /><br />Slack tends to be a very console intensive distro. &nbsp;Alot of people don't like this but it means that you can configure everything in slack from the console (which means I can completely manage my comp from ssh). &nbsp;<br /><br />Now granted, you might also want to consider debian, gentoo, and freebsd. &nbsp;Out of these I think I like freebsd the best since it's the most like slackware &nbsp;:wink: . &nbsp;In my personal experience setting up gentoo is a PITA despite being extreemely well documented. &nbsp;I found debian to be quirky, but most damning, oold.<br /><br />just my $2.02<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>erc</b> on <b>June 14, 2004, 12:16:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">While I understand a number of people mentioning FreeBSD, and if I were free to select a server OS, that would be my first choice for a variety of reasons, since this is a development server for a product that runs primarily on Linux, it has to run Linux :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>rburt3</b> on <b>June 14, 2004, 11:05:25 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: erc</div><div class="quote">...since this is a development server for a product that runs primarily on Linux, it has to run Linux :)</div><br />but... but... but FreeBSD <i>does</i> run Linux... ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>rugmonster</b> on <b>June 14, 2004, 04:09:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">... but FreeBSD does run Linux...</div><br /><br />...and from what I hear, better than linux at times...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>altomo</b> on <b>June 14, 2004, 11:59:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">cough*redhat*cough</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>lloydr</b> on <b>June 15, 2004, 12:02:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote"><div class="quoteheader">Quote from: rburt3</div><div class="quote">... but FreeBSD does run Linux...</div><br /><br />...and from what I hear, better than linux at times...</div><br /><br />from my experiences with linux emulation in openbsd and freebsd, it's not all that good &nbsp;:lol:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>June 21, 2004, 09:12:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">I hate to ask this, but why would you guys recommend Slackware?<br /><br />Honestly, I would suggest using whatever distro you feel comfortable with since it is an individual issue. I have never thought of Slackware as being a big server distro, but I'm sure it does fine. I have use Slackware on small servers, but eventually moved to Redhat as the needs of those servers grew as it was easier to admin those. I think Debian would be a better choice due to it's more robust package management and rock solid stability (which I have seen lacking in Slackware comparitively speaking).<br /><br />To me there is no &quot;Best&quot;, rather what fits your needs and wants better than the other options.</div><br /><br />I'd recommend slackware because for me minus installing an nVidia graphics card (which I think is more the fault of the computer's builder) it has been rock solid for me. &nbsp;Even before I knew about swaret I found no difficulty in using the distribution at all, even without X.<br /><br />After using Fedora I think Slack is a huge improvement in speed. &nbsp;With Fedora it took MINUTES to do things whilst in Slack it's no problem at all. &nbsp;Also I discovered that Slackware wasn't nearly as hard to install (and reinstall) as people made it out to be (to me, anyway). &nbsp;After understanding the basics of the installation I didn't think it was hard at all and could've done it myself.<br /><br />After trying to install Debian for three days and ending up with a half-arsed installation I wouldn't put it on any other machine. &nbsp;Just from my experience that was the worst thing I've tried to use. &nbsp;During the installation process it had to apt-get everything which would normally sound like a fine and dandy idea...until the horrible realization that if it failed on ONE package I would either have to totally skip it (a bad thing for some essential packages) or I could abort the ENTIRE installation. &nbsp;Whatever happened to, &quot;Just try to get it again?&quot;<br /><br />Plus I hate to say it but I think Slack's installer was friendlier which is saying a lot. &nbsp;As a developer I've never had an issue with Slack, it came with all sorts of wonderful development packages (even Ruby with a little coaxing). &nbsp;And while my server duties were minimal it handled them easily.<br /><br /><br /><br /><br />Oh, and I'm a big Slackware fanboy of course. :roll: I'll admit it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>June 21, 2004, 09:13:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just had a thought. &nbsp;What about TurboLinux? &nbsp;I've got an old copy of it here that I've never installed but supposedly that was supposed to be designed for server usage.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>rugmonster</b> on <b>July 13, 2004, 09:39:25 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I know this thread has been domant for a while, but I just found this article (http://www.internetnews.com/stats/article.php/3379801) about the latest Netcraft survey of web servers. Basically, Redhat is first, then Sun, followed by Debian and coming up quickly in last place, Gentoo. Most notable is that Gentoo is the fastest growing server distribution, taking the title once held by Debian. (Maybe because Gentoo does everything Debian does, but better)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>imnes</b> on <b>July 13, 2004, 05:39:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The only negative I've heard about FreeBSD is it supposedly has very poor thread support compared to Linux.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>steve</b> on <b>July 13, 2004, 09:06:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually the best Server would have to be OpenVMS. As this article (http://www.computerweekly.com/articles/article.asp?liArticleID=131808) states uptime for OpenVMS is not counted by hours, days, weeks, or even months. Rather up time is refered to in years. <br /><br />Anyway, read the article, then go get it yourself. (http://www.openvms.org/) Of course, don't forget to check the processor requirements first.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware</b><br />
+					Post by: <b></b> on <b>July 14, 2004, 12:00:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am a slackware junkie, still new to linux (so i think). But I was taught about unix/linux on Slack. &nbsp;I have never even heard of much less used half the tools I hear you people talk about. But I have manage to run an internet cafe for 10 months and only 2 problems the whole time. 1 lighting, kinda tough luck there. 2 a virus from inside the network, on customers laptops. Other than that Slack has done me wonders. &nbsp;Being new (as i feel anyways) I have been able to setup everything from virutal host, sendmail (and anyone who has messed with sendmail knows its hell), kernel configuration (which will lead to a question in a sec), programming, ftp, www, so forth so on. &nbsp;I was my own network administrator and Slack was pertty easy for me to grasp and carry on with. <br /><br />Question though. In Slack I have always had a problem when recompiling a kernel. &nbsp;And the stupid modules don't compile, give me a symbol error, &nbsp;or incorrect version. &nbsp;I have a pertty good success rate at rebuilding slack kernel and not having it. But when I get it I can never get it fixed (at least not very easily).<br /><br /><br />uh... im usually not a big forum post-er... I think I have posted here more than anywhere else. &nbsp;Anyways - Peace</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best server distro?</b><br />
+					Post by: <b>imnes</b> on <b>July 14, 2004, 05:56:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you get a symbol error while compiling it means (usually) that one of the modules you've enabled requires another module (which you didn't enable). &nbsp;If you run into the problem again, post your kernel config file (I think by default it's saved as /usr/src/linux/.config) and the exact error messages and I'm sure we can help you figure out the problem.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

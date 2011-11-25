@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - xine</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: LinkZero on January 24, 2005, 06:15:47 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 24, 2005, 06:15:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i'm using mepis linux and have xine as a video player. &nbsp;the video plays okay, but the sound skips horribly. &nbsp;any suggestions?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>kilar</b> on <b>January 24, 2005, 08:05:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Go into xine's settings and increase the buffer size. That should improve sound and video.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 24, 2005, 09:07:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">thanks for the advice, but it didn't work. &nbsp;any other suggestions?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sound and fury</b><br />
+					Post by: <b>Brent</b> on <b>January 24, 2005, 11:32:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Your using MEPIS, not Ubuntu, but thankfully they both use the synaptic package manager.<br /><br />Imnes, (aka nick) posted this excelent link a while back on using the synaptic package manager.<br /><br />http://www.myjavaserver.com/~mike001/ubuntu/ <br /><br /><br />Fortunately, your MEPIS distrobution already includes many of the things mentioned on this site. &nbsp;However, you may want to try installing or updating the 'codecs' (I wouldn't install the gstreamer if I were you) .<br /><br />Also, keep in mind, many of these codecs were written for windows, the codecs for linux are going to be a bit buggy some times.<br /><br />Perhaps someone knows of something that can convert between codecs to a nice mpg format?<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 25, 2005, 12:02:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">where is the &quot;codec&quot; link on the page? &nbsp;i can't find it. &nbsp;i downloaded a w32codec from somewhere else, but it didn't help. &nbsp;maybe my computer is too slow to run video in linux, i dunno. &nbsp;i'm open to any other suggestions though.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>Brent</b> on <b>January 25, 2005, 01:36:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The part your looking for is here: &nbsp;http://www.myjavaserver.com/~mike001/ubuntu/#codecs<br /><br />If you wait, I can help step you through it later on tonight. &nbsp;Theres another video player out there called mplayer, I'm not sure if Mepis has it or not, but from what I've heard it's your best option for getting trouble free playback on your video files. &nbsp;Like i said, it's kinda complex, so I'll be around to walk you through it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 25, 2005, 05:36:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i see General Notes and How to add extra repositories, but where's the file i need to download? &nbsp;i just see a bunch of code underneath that. &nbsp;if that's it then i'm screwed.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>dpeach</b> on <b>January 25, 2005, 10:43:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Copy this line into a &quot;terminal&quot; window (or console, you know that DOS looking thing).<br /><div class="codeheader">Code:</div><div class="code">sudo apt-get install gstreamer0.8-plugins</div><br />Now hit enter. After that is all done put this in and hit enter:<br /><div class="codeheader">Code:</div><div class="code">sudo apt-get install w32codecs</div><br /><br />That should do it.<br /><br />[I make no guarantees that will work, I am just interpreting the information that is on the page that you were referred to.]</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>terminal window</b><br />
+					Post by: <b>LinkZero</b> on <b>January 25, 2005, 11:18:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">how do i open a terminal window? &nbsp;sorry, i only know the basics. &nbsp;i know how to do very basic stuff on computers. &nbsp;i know nothing of programming or anything of the sorts.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 25, 2005, 11:37:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">never mind. &nbsp;i figured out how to get to the konsole. &nbsp;i installed the codecs, but my player is still skipping like crazy. &nbsp;is there another player out there somewhere maybe?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>Brent</b> on <b>January 26, 2005, 01:13:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Lol this is why I said I'd walk you through it, but you never came online.<br /><br />I'll call you tommarow, we'll hop on yim and I'll get ya fixed up.<br /><br />Yeah there's an alternate video player out there called mplayer which seems to work better with a wide range of codecs. &nbsp;I'll get ya set up, don't worry bout it too much. &nbsp;<br /><br />Just like everything else, linux takes a little patience to learn, but once you learn it's well worth the trouble. &nbsp;ttyl man.<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 26, 2005, 01:31:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">never mind y'all. &nbsp;i downloaded updates and upgrades and found a player called totem. &nbsp;it plays all my videos perfectly. &nbsp;thanks for the advice though.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>dpeach</b> on <b>January 26, 2005, 12:14:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have not played with Totem. Does it have a nice interface? Pretty easy to figure out?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 26, 2005, 02:34:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">yeah it's pretty easy. &nbsp;controls are pretty much just like any other media player. &nbsp;it opens a lot quicker than xine though. &nbsp;and it doesn't skip when playing video files.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>Brent</b> on <b>January 26, 2005, 04:01:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So you updated Mepis and installed totem on your own?<br /><br />&quot;Impressive green one...&quot;<br /><br />Did you use the synaptic package manager?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>LinkZero</b> on <b>January 26, 2005, 05:42:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i just followed the directions on the same page as the w32codecs. &nbsp;i used the konsole to download the upgrades and it downloaded totem on its own. &nbsp;the framerate is a little slow on some vids, but it's a whole lot better than xine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>rburt3</b> on <b>January 26, 2005, 08:45:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">peach giving linux advice and someone new to Linux finding what they need without too much trouble. I'm getting old. Congrats, LinkZero. Nice to hear the &quot;geek toy&quot; is maturing.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>xine</b><br />
+					Post by: <b>dpeach</b> on <b>January 26, 2005, 09:41:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">peach giving linux advice and someone new to Linux finding what they need without too much trouble.</div><br />Miracles still happen!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

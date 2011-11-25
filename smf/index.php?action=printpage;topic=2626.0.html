@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - ssh key question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: bhoff on October 01, 2005, 03:00:13 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ssh key question</b><br />
+					Post by: <b>bhoff</b> on <b>October 01, 2005, 03:00:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey I am setting up my computers where my private key will be on my usb keychain. Here is the problem ....<br />ran ssh-keygen -t rsa on all my machines everything works fine when I cat all my public keys to authorized_keys file. then I changed my /etc/ssh/ssh_config file in my laptop which is where I am working from to have the following identifyfile ./media/LEXAR_MEDIA/id_rsa<br />&nbsp;I then moved my id_rsa file from /brett/.ssh/ to the thumbdrive /media/LEXAR_MEDIA I can not do login in now without typing password.<br />What am I doing wrong?<br /><br />Thanks Brett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ssh key question</b><br />
+					Post by: <b>lloydr</b> on <b>October 01, 2005, 03:36:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">http://www.macosxhints.com/article.php?story=20050218224449785<br /><br />not sure what your doing wrong? did you open another terminal or log in again to make sure all is well?<br /><br />try <div class="codeheader">Code:</div><div class="code">ssh-add thekeyfile</div> perhaps and see what it responds with<br /><br />can also just specify the key when making ssh connection but usually more typing than most people want lol<br /><div class="codeheader">Code:</div><div class="code"><br />ssh -i secret-key-file remote-user@remote.server</div><br /><br />also, did come across this loader script someone created,<br />http://www.seanius.net/linux/keyloader/usb-storage</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well that got me going</b><br />
+					Post by: <b>bhoff</b> on <b>October 01, 2005, 06:59:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">first I had it right <br />second had to set permissions on id_rsa to 600<br />chmod &nbsp;600 /media/LEXAR_MEDIA/id_rsa<br />kept going back so I aliased ssh with chmod 600 <br />third copied /etc/ssh/ssh_config to ~/.ssh/ which is your home directory.<br />then found the line identifyfile /media/LEXAR_MEDIA/id_rsa and uncommented it.<br /><br />now it works everytime<br />no ssh in without key......<br />Thanks</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

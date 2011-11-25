@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Some Redhat Problems...</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: jwjody on October 24, 2003, 06:56:40 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Some Redhat Problems...</b><br />
+					Post by: <b>jwjody</b> on <b>October 24, 2003, 06:56:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys...I mentioned in my introduction thread that I was going to go all Linux on my laptop...well I've done this a little ahead of schedule...I'll spare you the story and just pick your brains for a few things.<br /><br />I installed RedHat 9...<br /><br />I had apt-get and synaptic installed on the new install then I uninstalled them using rpm -e apt-* rpm -e synaptic.<br /><br />I still have the original apt rpm and decided I wanted to put apt back on but now I get this:<br /><br />root@localhost jody]# rpm -Uvh apt-0.5.5cnc6-fr1.i386.rpm<br />Preparing... ########################################### [100%]<br />file /etc/apt/rpmpriorities from install of apt-0.5.5cnc6-fr1 conflicts<br />with file from package atrpms-16-1.rh9.at<br />file /etc/apt/sources.list from install of apt-0.5.5cnc6-fr1 conflicts w<br />ith file from package atrpms-16-1.rh9.at<br />file /etc/apt/vendors.list from install of apt-0.5.5cnc6-fr1 conflicts w<br />ith file from package atrpms-16-1.rh9.at<br />file /usr/lib/apt/methods/bzip2 from install of apt-0.5.5cnc6-fr1 confli<br />cts with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/cdrom from install of apt-0.5.5cnc6-fr1 confli<br />cts with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/copy from install of apt-0.5.5cnc6-fr1 conflic<br />ts with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/file from install of apt-0.5.5cnc6-fr1 conflic<br />ts with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/ftp from install of apt-0.5.5cnc6-fr1 conflict<br />s with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/gpg from install of apt-0.5.5cnc6-fr1 conflict<br />s with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/gzip from install of apt-0.5.5cnc6-fr1 conflic<br />ts with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/http from install of apt-0.5.5cnc6-fr1 conflic<br />ts with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/rsh from install of apt-0.5.5cnc6-fr1 conflict<br />s with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/apt/methods/ssh from install of apt-0.5.5cnc6-fr1 conflict<br />s with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br />file /usr/lib/libapt-pkg-libc6.3-5.so.0.0.0 from install of apt-0.5.5cnc<br />6-fr1 conflicts with file from package libapt-pkg-0.5.5cnc6-35.rh9.at<br /><br />I saw on linuxquestions.org that someone thought this meant that apt was still installed but when I do rpm -e apt-* it says apt package not installed.<br /><br />Does anyone know how to fix this?<br /><br />The second issue is, when I install icon themes using the Theme applet they don't show up on the list to choose the icons. &nbsp;I see them in my .theme folder in my home folder but I can't choose to use them from the theme applet. &nbsp;I had found a fix for this the first time around but now I can't find it again.<br /><br />I'ld really appreciate the help!!<br /><br />Thanks,<br />Jody</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Some Redhat Problems...</b><br />
+					Post by: <b>rburt3</b> on <b>October 24, 2003, 09:28:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You may be able to get around this by &quot;forcing&quot; the rpm to install (I forget what the rpm flag is ATM, but its prolly -f or -F). The errors indicate that apt may indeed be removed from your system, but the libraries that apt and other proggies use are still there (libapt, for example).<br /><br />As for your theme problems, are you using the default Gnome or some other desktop?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Some Redhat Problems...</b><br />
+					Post by: <b>jwjody</b> on <b>October 25, 2003, 10:25:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks,<br /><br />That did the trick.<br /><br />J</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - redhat 9 install problem</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by:  on September 06, 2003, 11:24:45 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b></b> on <b>September 06, 2003, 11:24:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">alright, a few weeks ago i bought red hat 9 linux &nbsp;unleashed, so i could start using linux on a spare machine at home. &nbsp;well, i begin installing red hat 9 (publisher's version) with GRUB in text mode and finish the install, but &nbsp;the problem occurs when the machine restarts. the moniter goes blank and nothing else happens. &nbsp;i've attempted reinstalling, with noprobe and using default drivers for everything and i still encounter the same problem. &nbsp;the specs on the comp are amd2400, 512mb of ddr ram, 80gig WD harddrive and a ledtek gf4. &nbsp;any help would greatly be appreciated...btw i've tried this install on a machine identical to this one listed above and recieved the same problem.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b>trigger</b> on <b>September 07, 2003, 08:58:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey I am not by any means one of the resident gurus here. But it sounds like the video card. That is just shooting from the hip. I have not heard of that type of card before. However here is the link to all the hardware that is supported on Red Hat 9. <br /><br />http://hardware.redhat.com/hcl/?pagename=hcl&amp;view=advsearch#results<br /><br />Just click on advance search then choose the video class. This shows a list of all cards supported. Unfortunately, I did not see yours. If this is so you might want to change cards or go to a Red Hat community forum and search to see if someone else has had this problem. Sorry to say this is the extent of my knowledge. Hope this helps.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b></b> on <b>September 08, 2003, 04:50:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the advice. &nbsp;If the videocard is to blame, is there any to fix the problem...barring buying a new video card?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b>rugmonster</b> on <b>September 08, 2003, 08:31:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's a GeForce 4 I assume and should be supported. I have a GF4 and have no problems with it. It could be that you are having a problem with your bootloader. It could also be that your system is trying to start up using a framebuffer display.<br /><br />At what point on the boot up does the screen go blank? Do you get the boot menu for grub or does it get past that and start the initial boot? If you don't get the grub menu, you might need to boot with a bootdisk, mount your partition where the grub config is and edit it by hand.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b></b> on <b>September 08, 2003, 12:29:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think it shows the Grub loader once and then tries to restart like windows will when you first install it. &nbsp;After that the screen goes blank.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b>rugmonster</b> on <b>September 08, 2003, 04:32:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What I want to know is what point does it fail? Do you get through the POST? Also, what sort of ide setup do you have? Do you have an IDE controller card or are the hard disks connected to an onboard controller? Are you dual booting? Is this on a secondary hard disk? Are you getting any error messages or unusual beep sequences on boot?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b></b> on <b>September 08, 2003, 08:00:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">When I fully install red hat, I'll get more info on the exact stoping point when i reinstall tonight. &nbsp;I make it through POST, the IDE controller is on board, no dual booting here and there is only one hard drive and there are no unusal noises. &nbsp; Thanks so much for the patience Rug.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b></b> on <b>September 08, 2003, 09:18:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, red hat installed...without the screen going blank, but on the GRUB loader screen, the place where it tells you to hit enter to pick which OS you want to boot with, I hit enter and it takes me to a teal screen. &nbsp;This teal screen says &quot;Yes&quot; or &quot;No&quot;, of course I hit &quot;Yes&quot; and it brings up a message about what version of red hat i'm running and when it was released. &nbsp;When I leave that screen I'm brought to a local host login prompt. Is that the screen I need to be at?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b>rugmonster</b> on <b>September 08, 2003, 09:32:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That sounds right.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b>dpeach</b> on <b>September 08, 2003, 09:36:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Login as the user you created during install. Then type &quot;startx&quot; (without the quotes) and hit enter. I am not a RedHad user, but I think that is the way you start your X server there too.<br /><br />That is, of course, if you want to use a GUI. Otherwise, your system should be ready to use from the command line.<br /><br />Now just start goofing around with the examples the book gives on how to use it.<br /><br />If at this point you are still not able to get X going because of a possible video card problem (or otherwise), then let us know and someone that has experience with that (or similar) card can help you out. I agree with Ruggy that it is probably a GeForce 4 card, and therfore should be supported. Dig around with the search tool here for information on nVidia drivers if you are needing more help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>redhat 9 install problem</b><br />
+					Post by: <b></b> on <b>September 10, 2003, 06:36:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the help guys.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

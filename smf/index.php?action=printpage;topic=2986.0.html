@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - A couple of python golf challenges</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: OmnipotentEntity on August 21, 2006, 04:37:43 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>A couple of python golf challenges</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>August 21, 2006, 04:37:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My website has a weekly (actually it&#039;s once every 6 days) python golf tournament.&nbsp; And I thought I&#039;d crosspost them here, for your viewing pleasure.<br /><br />Here&#039;s the first three:<br /><br />#1: build a function that takes an ASCII string and prints out the number of occurances of letters, starting with A and going to Z, counting both upper and lower case, and formatting the output as such:<br /><br />2<br />4<br />7<br />5<br />3<br />76<br />85<br />&lt;etc&gt;<br /><br />Which each line simply being the value of A, B, C, D, etc. followed by a \n.<br /><br />(Use of semicolons and exec to concatenate lines is prohibited, and your code must be self contained (no using urllib to open up a website containing your function and run it.)&nbsp; Import statements count as lines.)<br /><br />Your goal is a one line function comprising of 80 or less characters.&nbsp; The shortest solution I know of is 66 bytes on one line.&nbsp; (I managed to write a 68 character one)<br /><br />Here is some (overly long) sample code:<br /><br /><tt>def count_letters(string):<br />&nbsp;&nbsp;&nbsp;counts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]<br />&nbsp;&nbsp;&nbsp;for letter in string.upper():<br />&nbsp;&nbsp;&nbsp;if letter == &#039;A&#039;: counts[0] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;B&#039;: counts[1] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;C&#039;: counts[2] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;D&#039;: counts[3] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;E&#039;: counts[4] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;F&#039;: counts[5] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;G&#039;: counts[6] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;H&#039;: counts[7] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;I&#039;: counts[8] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;J&#039;: counts[9] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;K&#039;: counts[10] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;L&#039;: counts[11] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;M&#039;: counts[12] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;N&#039;: counts[13] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;O&#039;: counts[14] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;P&#039;: counts[15] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;Q&#039;: counts[16] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;R&#039;: counts[17] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;S&#039;: counts[18] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;T&#039;: counts[19] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;U&#039;: counts[20] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;V&#039;: counts[21] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;W&#039;: counts[22] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;X&#039;: counts[23] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;Y&#039;: counts[24] += 1<br />&nbsp;&nbsp;&nbsp;if letter == &#039;Z&#039;: counts[25] += 1<br />&nbsp;&nbsp;&nbsp;for count in counts:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print count</tt><br /><br /><br />#2: Build a function that takes two lists and returns a list that is the union of the two lists (ie, combine them but omit repeats.).&nbsp; An example is: union([1, 2, 3, 4], [2, 5, &#039;snafu&#039;]) will return: [1, 2, 3, 4, 5, &#039;snafu&#039;].&nbsp; These lists are to be considered sets, so output order does not matter.<br /><br />You may not use the set function.&nbsp; You may not modify either list.&nbsp; You may assume that each (Use of semicolons and exec to concatenate lines is prohibited, and your code must be self contained (no using urllib to open up a website containing your function and run it.)&nbsp; Import statements count as lines.)<br /><br />Sample Code:<br /><br /><tt>def union(a, b):<br />&nbsp; &nbsp; c = a[:]<br />&nbsp; &nbsp; for item in b:<br />&nbsp; &nbsp; &nbsp; &nbsp; found = False<br />&nbsp; &nbsp; &nbsp; &nbsp; for member in c:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if member == item:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; found = True<br />&nbsp; &nbsp; &nbsp; &nbsp; if not found:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c.append(item)<br />&nbsp; &nbsp; return c</tt><br /><br />Your goal is 60 characters on one line, the shortest code I know of for this is 36 characters. (Written by yours truly)<br /><br />#3: <br /><br />Ninja Coder Contest #3<br /><br />This week&#039;s challenge is to write a program that will take in a graph and will return true or false. It will return true if the graph is a tree. It will return false if the graph has a cycle. The graph passed in will actually be a string. The first line of the string will just be a number that is the number of nodes in the graph. Each line after that will contain two numbers separated by a space representing an edge and which nodes it connects. For example, the following is a cube...<br /><br />8<br />1 2<br />1 3<br />1 5<br />2 4<br />2 6<br />3 4<br />3 7<br />4 8<br />5 6<br />5 7<br />6 8<br />7 8<br /><br />Your program, of course, will return false for this.<br /><br />However, your program should return true for a tree, like the following...<br /><br />7<br />1 2<br />1 3<br />2 4<br />2 5<br />3 6<br />3 7<br /><br />Again, here is your sample code...<br /><br /><tt>def isTree(graph):<br /><br />&nbsp;&nbsp;&nbsp;lines = graph.split(&#039;\n&#039;)<br />&nbsp;&nbsp;&nbsp;num_nodes = int(lines[0])<br />&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;connections = [[] for i in range(num_nodes)]<br />&nbsp;&nbsp;&nbsp;for line in lines[1:]:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line = line.split()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a = int(line[0])<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b = int(line[1])<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connections[a - 1].append(b)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connections[b - 1].append(a)<br />&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;return dfs(connections, 1, 0)<br /><br /><br />def dfs(connections, here, prev):<br />&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;if connections[here - 1] == -1:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False<br />&nbsp;&nbsp;&nbsp;else:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edges = connections[here - 1]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for edge in edges:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if edge != prev:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_connections = connections[:]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_connections[here - 1] = -1<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not dfs(new_connections, edge, here):<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return False<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return True</tt><br /><br />&nbsp; &nbsp; * The graph will not be a directed graph.<br />&nbsp; &nbsp; * Nodes will not point at themselves.<br />&nbsp; &nbsp; * The graph will be connected.<br />&nbsp; &nbsp; * There will not be more than one edge pointing to and from the same pair of nodes.<br />&nbsp; &nbsp; * You may not import anything.<br />&nbsp; &nbsp; * You may not use exec.<br />&nbsp; &nbsp; * You may not use semicolons to concatenate lines.<br /><br />Good luck, and happy coding!<br /><br />I don&#039;t have a goal amount for this one yet.&nbsp; As I have yet to attempt it myself.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

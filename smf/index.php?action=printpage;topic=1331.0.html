@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Help, i edited an X windows file and killed it!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by:  on February 01, 2004, 11:13:15 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Help, i edited an X windows file and killed it!</b><br />
+					Post by: <b></b> on <b>February 01, 2004, 11:13:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">so i installed freeBSD on my laptop. it worked fine, got X running (eventually) with gnome, and all is well. except i want the graphical login instead of the text login + 'startx'. so i try adding the 'gdm' line to my /etc/ttys file. and aparently it was wrong. so now when booting regularly it gets to the part of starting x and stops saying the line i edited was wrong.<br />i can boot as 'single user' but it mounts / as read-only, and i need to edit that file to get it back to normal and try again.<br /><br />any suggestions? (just one little # and i'm back to trying to bust it again)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Help, i edited an X windows file and killed it!</b><br />
+					Post by: <b>dpeach</b> on <b>February 01, 2004, 02:15:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This works for Linux. I am sure it will work in BSD, but not certain. From your command prompt type:<br /><div class="codeheader">Code:</div><div class="code">mount -o remount,rw /</div><br />This forces the system to mount your root partition as read/write. Do your changes. Then you need to set it to read only before you shut down.<br /><div class="codeheader">Code:</div><div class="code">mount -o remount,ro /</div><br />Hope this works. Let us know.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Help, i edited an X windows file and killed it!</b><br />
+					Post by: <b></b> on <b>February 01, 2004, 09:39:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">my install of freeBSD and booting in single-user mode does not allow a remount (at least in that way). it was a mostly fresh install, so i will reinstall and hope to not make the same mistake again.<br /><br />....hi ho the day ri oh, installing we shall go...</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - 2.6.0 kernel ET+TS2</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: lloydr on January 05, 2004, 05:23:19 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.0 kernel ET+TS2</b><br />
+					Post by: <b>lloydr</b> on <b>January 05, 2004, 05:23:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok seeing as 2.6.0 has alsa compiled into the kernel itself rather than as another set like the kernels before 2.6.x, anyone figured out how to get ET and TS2 to play nicely using alsa on 2.6?<br /><br />i've got alsa running good, oss emulation is fine for TS2 and ET when they arent running together, but once I use them both ET wants to hang at the sound because ts2 and et want to share /dev/dsp it seems....i've read a lot of people having this trouble with quake3 on the teamspeak forums but they are mainly just using a patch for their alsa drivers and recompile them but they are using 2.4.x kernels rather than 2.6.x<br /><br />anyone figured out a way to get TS2 and ET to fully work with sound, i mean being able to talk and listen on ts2 and be able to listen on ET also<br /><br />....dang lol wish they would hurry up and get alsa support in ts2 rather than oss/oss emulation<br /><br />heres some links i found on the teamspeak forums.....look around and see if u can dig up some extra info<br /><br />http://www.teamspeak.org/forums/showthread.php?s=&amp;threadid=1987<br />http://www.teamspeak.org/forums/showthread.php?s=&amp;threadid=3067<br />http://www.linux-gamers.net/modules/wfsection/article.php?articleid=16<br /><br />btw, my setup i'm doing this on is as follows:<br />slackware9.1 w/ dropline gnome 2.4.2<br />2.6.0 SMP/HT aware kernel with alsa setup for my emu10k1 sb live card<br />P4 2.8 800fsb HT enabled chip w/ canterwood board<br />SB live! 5.1 soundcard<br />TS2 &nbsp;v2.0.32.60<br /><br /><br />the most promising looks like the linux-gamers.net link talking about doing<br />echo &quot;et.x86 0 0 direct&quot;&gt;/proc/asound/card0/pcm1p/oss <br />to specify only playback for et and also seen something in ts2 forum about doing <br />echo &quot;et.x86 0 0 disable&quot;&gt;/proc/asound/card0/pcm1c/oss<br /><br /><br />anyone tested this out, or what? haven't gotten the chance to test anything out yet, but would like to find a fix as quick as possible lol <br /><br />thanks in advance, c ya<br /><br />p.s. &nbsp;America's Army doesn't seem to have this problem, possibly has to do with being based on the unreal engine and along the same lines as unreal?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.0 kernel ET+TS2</b><br />
+					Post by: <b>lloydr</b> on <b>January 05, 2004, 06:04:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">lol i dont even have a /proc/asound/card0/pcm1p <br /><br />only pcm* directories that i do have are <br /><br />pcm0p<br />pcm0c<br />pcm1c<br />pcm2c<br />pcm3p<br /><br />inside /proc/asound/card0</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: 2.6.0 kernel ET+TS2</b><br />
+					Post by: <b>danc</b> on <b>January 05, 2004, 07:12:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: lloydr</div><div class="quote">the most promising looks like the linux-gamers.net link talking about doing<br />echo &quot;et.x86 0 0 direct&quot;&gt;/proc/asound/card0/pcm1p/oss <br />to specify only playback for et and also seen something in ts2 forum about doing <br />echo &quot;et.x86 0 0 disable&quot;&gt;/proc/asound/card0/pcm1c/oss</div><br />I had the EXACT same problem a while back, although it was on a 2.4.x kernel, but I suspect this fix would work just the same on 2.6. &nbsp;What you have above is very close to what I used to fix it. &nbsp;This was on an Ensoniq AudioPCI card, and what I post below fixed it. &nbsp;I'm now using an Audigy card, and it does not need the fix. &nbsp;Anyway, here's what I used, and just put the two lines at the end of your /etc/rc.d/rc.local to run at each boot:<br /><br />echo &quot;et.x86 0 0 direct&quot; &gt; /proc/asound/card0/pcm0p/oss <br />echo &quot;et.x86 0 0 disable&quot; &gt; /proc/asound/card0/pcm0c/oss<br /><br />Good luck,<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.0 kernel ET+TS2</b><br />
+					Post by: <b>lloydr</b> on <b>January 05, 2004, 09:26:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok thanks, ill try it lol for now im just playing ET without ts2 but i really miss ts2 lol hard to find a server with friends when u gotta kill et and get back on icq trying to keep up with all 4-5 of em hehe<br /><br />i gotta few minutes so just added it to my rc.local so will reboot and see how it goes with 2.6.0 lol <br /><br />thanks again, hopefully it works lol</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.0 kernel ET+TS2</b><br />
+					Post by: <b>lloydr</b> on <b>January 08, 2004, 02:08:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just finally actually got time to bother and reboot lol<br /><br />it worked, tested loopback in ts2 while was loading ET and testing to make sure ET had sound...could hear myself in ts2 with loopback test and could hear ET so it's good to go<br /><br />thank you very much danc, appreciate it lol<br />now can use ts2 and ET together and not have to worry about using icq to communicate when finding servers since that was a pain....<br /><br />also, anyone know of a way in windows and linux to alt-tab out or minimize ET without exiting and get back to the desktop or any other apps...in slack I even tried switching workspaces like I used to do with delta force-tfd in winex cvs but that doesnt even work for me<br /><br />my friends running windows 2000 and xp can't alt-tab out of the game, so if you gotta solution for windows, linux, or both then please share it with me hehe plzzzzzzz &nbsp;:roll:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.0 kernel ET+TS2</b><br />
+					Post by: <b>imnes</b> on <b>September 15, 2004, 11:22:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The game tries to disable alt-tabbing out of it. &nbsp;But you can press alt-enter (on linux and windows) to shrink the game into a window, then you can alt-tab between other windows. &nbsp;You can alt-enter to get back to fullscreen also. &nbsp;It takes a while to switch from full-screen to window mode, basically it reloads the level each time you switch.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

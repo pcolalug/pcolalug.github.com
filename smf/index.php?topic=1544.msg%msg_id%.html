@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="compiling 2.6.5 on slack" />
+	<meta name="robots" content="noindex" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>compiling 2.6.5 on slack</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="index.php%3Ftopic=1544.0%3Bprev_next=prev.html" />
+	<link rel="next" href="index.php%3Ftopic=1544.0%3Bprev_next=next.html" />
+	<link rel="index" href="index.php%3Fboard=32.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 06:55:05 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="1544" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg7336"></a><a name="new"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#5" class="nav">Software</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=32.0.html" class="nav">Programming/Development</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=1544.0.html" class="nav">compiling 2.6.5 on slack</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="index.php%3Ftopic=1544.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=1544.0%3Bprev_next=next.html#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> [<b>1</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=1544.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/normal_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: compiling 2.6.5 on slack &nbsp;(Read 1482 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=1544.0" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=83.html" title="View the profile of Brent">Brent</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 464<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=37%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								kaboom?<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=83.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1544.msg7336.html#msg7336"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7336">
+										<a href="index.php%3Ftopic=1544.msg7336.html#msg7336">compiling 2.6.5 on slack</a>
+									</div>
+									<div class="smalltext">&#171; <b> on:</b> April 09, 2004, 03:34:28 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">guys i seem to have the biggest problem with compiling a kernel under slackware.<br /><br />it compiles fine, i follow all the steps, but upon reboot it cannot find any modules. &nbsp;i've tried generate-modprobe.conf and depmod -a but nether make a difference. &nbsp;if anyone knows how to make a .tgz pkg i could send a config, but i'd like to know how to do it myself.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7336">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;Which is worse, ignorance or apathy ?&nbsp; Who knows?&nbsp; Who cares?&quot;</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7337"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a></b>
+							<div class="smalltext">
+								Administrator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 769<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=9%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=118.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://slackwolf.com" title="http://slackwolf.com" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1544.msg7337.html#msg7337"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7337">
+										<a href="index.php%3Ftopic=1544.msg7337.html#msg7337">compiling 2.6.5 on slack</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #1 on:</b> April 09, 2004, 04:47:50 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">compiling you did do<br /><div class="codeheader">Code:</div><div class="code"><br />make bzImage &amp;&amp; make modules &amp;&amp; make modules_install<br /></div><br />correct?<br /><br />after that you just either copy or move the System.map to /boot<br />then find your bzImage which should be in ./arch/i386/boot<br />just move it to /boot as whatever u wanna call it or vmlinuz if u dont want to change your /etc/lilo.conf<br />then run lilo command and ur ready to reboot.....if it fails with those steps then something might be wrong with the .config for your kernel</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7337">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://www.megapathdsl.net/~vrandall/sea/slack.gif" alt="" border="0" /><img src="http://www.megapathdsl.net/~vrandall/sea/obsd.gif" alt="" border="0" /><br />&quot;Sending script kiddies to /dev/null since 1995&quot; --OpenBSD<br />OpenBSD is a great OS, but Theo de Raadt is an arse...</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7358"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=83.html" title="View the profile of Brent">Brent</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 464<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=37%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								kaboom?<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=83.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1544.msg7358.html#msg7358"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7358">
+										<a href="index.php%3Ftopic=1544.msg7358.html#msg7358">compiling 2.6.5 on slack</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #2 on:</b> April 11, 2004, 10:17:31 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">yup it faills. &nbsp;Always no matter what kernel. <br /><br />I can't imagine that my config file would be the cause because I carefully went through all things related to the modules.<br /><br />I'll see if i can't post my config file.<br /><br />I wouldn't read this if i were u ...just copy it over and grep or something.<br /><br /><div class="codeheader">Code:</div><div class="code"><br />#<br /># Automatically generated make config&#58; don't edit<br />#<br />CONFIG_X86=y<br />CONFIG_MMU=y<br />CONFIG_UID16=y<br />CONFIG_GENERIC_ISA_DMA=y<br /><br />#<br /># Code maturity level options<br />#<br />CONFIG_EXPERIMENTAL=y<br />CONFIG_CLEAN_COMPILE=y<br />CONFIG_STANDALONE=y<br /><br />#<br /># General setup<br />#<br />CONFIG_SWAP=y<br />CONFIG_SYSVIPC=y<br /># CONFIG_BSD_PROCESS_ACCT is not set<br />CONFIG_SYSCTL=y<br />CONFIG_LOG_BUF_SHIFT=15<br />CONFIG_HOTPLUG=y<br />CONFIG_IKCONFIG=y<br />CONFIG_IKCONFIG_PROC=y<br /># CONFIG_EMBEDDED is not set<br />CONFIG_KALLSYMS=y<br />CONFIG_FUTEX=y<br />CONFIG_EPOLL=y<br />CONFIG_IOSCHED_NOOP=y<br />CONFIG_IOSCHED_AS=y<br />CONFIG_IOSCHED_DEADLINE=y<br /># CONFIG_CC_OPTIMIZE_FOR_SIZE is not set<br /><br />#<br /># Loadable module support<br />#<br />CONFIG_MODULES=y<br />CONFIG_MODULE_UNLOAD=y<br />CONFIG_MODULE_FORCE_UNLOAD=y<br />CONFIG_OBSOLETE_MODPARM=y<br /># CONFIG_MODVERSIONS is not set<br />CONFIG_KMOD=y<br />CONFIG_STOP_MACHINE=y<br /><br />#<br /># Processor type and features<br />#<br />CONFIG_X86_PC=y<br /># CONFIG_X86_ELAN is not set<br /># CONFIG_X86_VOYAGER is not set<br /># CONFIG_X86_NUMAQ is not set<br /># CONFIG_X86_SUMMIT is not set<br /># CONFIG_X86_BIGSMP is not set<br /># CONFIG_X86_VISWS is not set<br /># CONFIG_X86_GENERICARCH is not set<br /># CONFIG_X86_ES7000 is not set<br /># CONFIG_M386 is not set<br /># CONFIG_M486 is not set<br /># CONFIG_M586 is not set<br /># CONFIG_M586TSC is not set<br /># CONFIG_M586MMX is not set<br /># CONFIG_M686 is not set<br /># CONFIG_MPENTIUMII is not set<br /># CONFIG_MPENTIUMIII is not set<br /># CONFIG_MPENTIUMM is not set<br /># CONFIG_MPENTIUM4 is not set<br /># CONFIG_MK6 is not set<br />CONFIG_MK7=y<br /># CONFIG_MK8 is not set<br /># CONFIG_MCRUSOE is not set<br /># CONFIG_MWINCHIPC6 is not set<br /># CONFIG_MWINCHIP2 is not set<br /># CONFIG_MWINCHIP3D is not set<br /># CONFIG_MCYRIXIII is not set<br /># CONFIG_MVIAC3_2 is not set<br /># CONFIG_X86_GENERIC is not set<br />CONFIG_X86_CMPXCHG=y<br />CONFIG_X86_XADD=y<br />CONFIG_X86_L1_CACHE_SHIFT=6<br />CONFIG_RWSEM_XCHGADD_ALGORITHM=y<br />CONFIG_X86_WP_WORKS_OK=y<br />CONFIG_X86_INVLPG=y<br />CONFIG_X86_BSWAP=y<br />CONFIG_X86_POPAD_OK=y<br />CONFIG_X86_GOOD_APIC=y<br />CONFIG_X86_INTEL_USERCOPY=y<br />CONFIG_X86_USE_PPRO_CHECKSUM=y<br />CONFIG_X86_USE_3DNOW=y<br /># CONFIG_HPET_TIMER is not set<br /># CONFIG_HPET_EMULATE_RTC is not set<br />CONFIG_SMP=y<br />CONFIG_NR_CPUS=8<br />CONFIG_PREEMPT=y<br />CONFIG_X86_LOCAL_APIC=y<br />CONFIG_X86_IO_APIC=y<br />CONFIG_X86_TSC=y<br />CONFIG_X86_MCE=y<br />CONFIG_X86_MCE_NONFATAL=y<br />CONFIG_X86_MCE_P4THERMAL=y<br /># CONFIG_TOSHIBA is not set<br /># CONFIG_I8K is not set<br /># CONFIG_MICROCODE is not set<br /># CONFIG_X86_MSR is not set<br />CONFIG_X86_CPUID=y<br /><br />#<br /># Firmware Drivers<br />#<br /># CONFIG_EDD is not set<br />CONFIG_NOHIGHMEM=y<br /># CONFIG_HIGHMEM4G is not set<br /># CONFIG_HIGHMEM64G is not set<br /># CONFIG_MATH_EMULATION is not set<br />CONFIG_MTRR=y<br /># CONFIG_EFI is not set<br />CONFIG_IRQBALANCE=y<br />CONFIG_HAVE_DEC_LOCK=y<br /># CONFIG_REGPARM is not set<br /><br />#<br /># Power management options &#40;ACPI, APM&#41;<br />#<br />CONFIG_PM=y<br /># CONFIG_SOFTWARE_SUSPEND is not set<br />CONFIG_PM_DISK=y<br />CONFIG_PM_DISK_PARTITION=&quot;/dev/hda2&quot;<br /><br />#<br /># ACPI &#40;Advanced Configuration and Power Interface&#41; Support<br />#<br />CONFIG_ACPI=y<br />CONFIG_ACPI_BOOT=y<br />CONFIG_ACPI_INTERPRETER=y<br />CONFIG_ACPI_SLEEP=y<br />CONFIG_ACPI_SLEEP_PROC_FS=y<br />CONFIG_ACPI_AC=y<br />CONFIG_ACPI_BATTERY=y<br />CONFIG_ACPI_BUTTON=y<br />CONFIG_ACPI_FAN=y<br />CONFIG_ACPI_PROCESSOR=y<br />CONFIG_ACPI_THERMAL=y<br /># CONFIG_ACPI_ASUS is not set<br /># CONFIG_ACPI_TOSHIBA is not set<br /># CONFIG_ACPI_DEBUG is not set<br />CONFIG_ACPI_BUS=y<br />CONFIG_ACPI_EC=y<br />CONFIG_ACPI_POWER=y<br />CONFIG_ACPI_PCI=y<br />CONFIG_ACPI_SYSTEM=y<br /># CONFIG_X86_PM_TIMER is not set<br /><br />#<br /># APM &#40;Advanced Power Management&#41; BIOS Support<br />#<br /># CONFIG_APM is not set<br /><br />#<br /># CPU Frequency scaling<br />#<br /># CONFIG_CPU_FREQ is not set<br /><br />#<br /># Bus options &#40;PCI, PCMCIA, EISA, MCA, ISA&#41;<br />#<br />CONFIG_PCI=y<br /># CONFIG_PCI_GOBIOS is not set<br /># CONFIG_PCI_GOMMCONFIG is not set<br /># CONFIG_PCI_GODIRECT is not set<br />CONFIG_PCI_GOANY=y<br />CONFIG_PCI_BIOS=y<br />CONFIG_PCI_DIRECT=y<br />CONFIG_PCI_MMCONFIG=y<br /># CONFIG_PCI_USE_VECTOR is not set<br />CONFIG_PCI_LEGACY_PROC=y<br />CONFIG_PCI_NAMES=y<br /># CONFIG_ISA is not set<br /># CONFIG_MCA is not set<br /># CONFIG_SCx200 is not set<br /><br />#<br /># PCMCIA/CardBus support<br />#<br /># CONFIG_PCMCIA is not set<br /><br />#<br /># PCI Hotplug Support<br />#<br /># CONFIG_HOTPLUG_PCI is not set<br /><br />#<br /># Executable file formats<br />#<br />CONFIG_BINFMT_ELF=y<br />CONFIG_BINFMT_AOUT=y<br />CONFIG_BINFMT_MISC=y<br /><br />#<br /># Device Drivers<br />#<br /><br />#<br /># Generic Driver Options<br />#<br /># CONFIG_FW_LOADER is not set<br /><br />#<br /># Memory Technology Devices &#40;MTD&#41;<br />#<br /># CONFIG_MTD is not set<br /><br />#<br /># Parallel port support<br />#<br />CONFIG_PARPORT=y<br />CONFIG_PARPORT_PC=y<br />CONFIG_PARPORT_PC_CML1=y<br /># CONFIG_PARPORT_SERIAL is not set<br /># CONFIG_PARPORT_PC_FIFO is not set<br /># CONFIG_PARPORT_PC_SUPERIO is not set<br /># CONFIG_PARPORT_OTHER is not set<br />CONFIG_PARPORT_1284=y<br /><br />#<br /># Plug and Play support<br />#<br /><br />#<br /># Block devices<br />#<br />CONFIG_BLK_DEV_FD=y<br /># CONFIG_PARIDE is not set<br /># CONFIG_BLK_CPQ_DA is not set<br /># CONFIG_BLK_CPQ_CISS_DA is not set<br /># CONFIG_BLK_DEV_DAC960 is not set<br /># CONFIG_BLK_DEV_UMEM is not set<br />CONFIG_BLK_DEV_LOOP=y<br /># CONFIG_BLK_DEV_CRYPTOLOOP is not set<br /># CONFIG_BLK_DEV_NBD is not set<br /># CONFIG_BLK_DEV_CARMEL is not set<br /># CONFIG_BLK_DEV_RAM is not set<br />CONFIG_LBD=y<br /><br />#<br /># ATA/ATAPI/MFM/RLL support<br />#<br />CONFIG_IDE=y<br />CONFIG_BLK_DEV_IDE=y<br /><br />#<br /># Please see Documentation/ide.txt for help/info on IDE drives<br />#<br /># CONFIG_BLK_DEV_HD_IDE is not set<br />CONFIG_BLK_DEV_IDEDISK=y<br />CONFIG_IDEDISK_MULTI_MODE=y<br /># CONFIG_IDEDISK_STROKE is not set<br />CONFIG_BLK_DEV_IDECD=y<br /># CONFIG_BLK_DEV_IDETAPE is not set<br /># CONFIG_BLK_DEV_IDEFLOPPY is not set<br /># CONFIG_BLK_DEV_IDESCSI is not set<br /># CONFIG_IDE_TASK_IOCTL is not set<br />CONFIG_IDE_TASKFILE_IO=y<br /><br />#<br /># IDE chipset support/bugfixes<br />#<br />CONFIG_IDE_GENERIC=y<br />CONFIG_BLK_DEV_CMD640=y<br /># CONFIG_BLK_DEV_CMD640_ENHANCED is not set<br />CONFIG_BLK_DEV_IDEPCI=y<br />CONFIG_IDEPCI_SHARE_IRQ=y<br /># CONFIG_BLK_DEV_OFFBOARD is not set<br />CONFIG_BLK_DEV_GENERIC=y<br /># CONFIG_BLK_DEV_OPTI621 is not set<br />CONFIG_BLK_DEV_RZ1000=y<br />CONFIG_BLK_DEV_IDEDMA_PCI=y<br /># CONFIG_BLK_DEV_IDEDMA_FORCED is not set<br />CONFIG_IDEDMA_PCI_AUTO=y<br /># CONFIG_IDEDMA_ONLYDISK is not set<br />CONFIG_BLK_DEV_ADMA=y<br /># CONFIG_BLK_DEV_AEC62XX is not set<br /># CONFIG_BLK_DEV_ALI15X3 is not set<br /># CONFIG_BLK_DEV_AMD74XX is not set<br /># CONFIG_BLK_DEV_ATIIXP is not set<br /># CONFIG_BLK_DEV_CMD64X is not set<br /># CONFIG_BLK_DEV_TRIFLEX is not set<br /># CONFIG_BLK_DEV_CY82C693 is not set<br /># CONFIG_BLK_DEV_CS5520 is not set<br /># CONFIG_BLK_DEV_CS5530 is not set<br /># CONFIG_BLK_DEV_HPT34X is not set<br /># CONFIG_BLK_DEV_HPT366 is not set<br /># CONFIG_BLK_DEV_SC1200 is not set<br />CONFIG_BLK_DEV_PIIX=y<br /># CONFIG_BLK_DEV_NS87415 is not set<br /># CONFIG_BLK_DEV_PDC202XX_OLD is not set<br /># CONFIG_BLK_DEV_PDC202XX_NEW is not set<br /># CONFIG_BLK_DEV_SVWKS is not set<br /># CONFIG_BLK_DEV_SIIMAGE is not set<br /># CONFIG_BLK_DEV_SIS5513 is not set<br /># CONFIG_BLK_DEV_SLC90E66 is not set<br /># CONFIG_BLK_DEV_TRM290 is not set<br /># CONFIG_BLK_DEV_VIA82CXXX is not set<br />CONFIG_BLK_DEV_IDEDMA=y<br /># CONFIG_IDEDMA_IVB is not set<br />CONFIG_IDEDMA_AUTO=y<br /># CONFIG_BLK_DEV_HD is not set<br /><br />#<br /># SCSI device support<br />#<br />CONFIG_SCSI=y<br /># CONFIG_SCSI_PROC_FS is not set<br /><br />#<br /># SCSI support type &#40;disk, tape, CD-ROM&#41;<br />#<br /># CONFIG_BLK_DEV_SD is not set<br /># CONFIG_CHR_DEV_ST is not set<br /># CONFIG_CHR_DEV_OSST is not set<br /># CONFIG_BLK_DEV_SR is not set<br /># CONFIG_CHR_DEV_SG is not set<br /><br />#<br /># Some SCSI devices &#40;e.g. CD jukebox&#41; support multiple LUNs<br />#<br /># CONFIG_SCSI_MULTI_LUN is not set<br /># CONFIG_SCSI_REPORT_LUNS is not set<br /># CONFIG_SCSI_CONSTANTS is not set<br /># CONFIG_SCSI_LOGGING is not set<br /><br />#<br /># SCSI Transport Attributes<br />#<br /># CONFIG_SCSI_SPI_ATTRS is not set<br /># CONFIG_SCSI_FC_ATTRS is not set<br /><br />#<br /># SCSI low-level drivers<br />#<br /># CONFIG_BLK_DEV_3W_XXXX_RAID is not set<br /># CONFIG_SCSI_ACARD is not set<br /># CONFIG_SCSI_AACRAID is not set<br /># CONFIG_SCSI_AIC7XXX is not set<br /># CONFIG_SCSI_AIC7XXX_OLD is not set<br /># CONFIG_SCSI_AIC79XX is not set<br /># CONFIG_SCSI_ADVANSYS is not set<br /># CONFIG_SCSI_MEGARAID is not set<br /># CONFIG_SCSI_SATA is not set<br /># CONFIG_SCSI_BUSLOGIC is not set<br /># CONFIG_SCSI_CPQFCTS is not set<br /># CONFIG_SCSI_DMX3191D is not set<br /># CONFIG_SCSI_EATA is not set<br /># CONFIG_SCSI_EATA_PIO is not set<br /># CONFIG_SCSI_FUTURE_DOMAIN is not set<br /># CONFIG_SCSI_GDTH is not set<br /># CONFIG_SCSI_IPS is not set<br /># CONFIG_SCSI_INIA100 is not set<br /># CONFIG_SCSI_PPA is not set<br /># CONFIG_SCSI_IMM is not set<br /># CONFIG_SCSI_SYM53C8XX_2 is not set<br /># CONFIG_SCSI_QLOGIC_ISP is not set<br /># CONFIG_SCSI_QLOGIC_FC is not set<br /># CONFIG_SCSI_QLOGIC_1280 is not set<br />CONFIG_SCSI_QLA2XXX=y<br /># CONFIG_SCSI_QLA21XX is not set<br /># CONFIG_SCSI_QLA22XX is not set<br /># CONFIG_SCSI_QLA2300 is not set<br /># CONFIG_SCSI_QLA2322 is not set<br /># CONFIG_SCSI_QLA6312 is not set<br /># CONFIG_SCSI_QLA6322 is not set<br /># CONFIG_SCSI_DC395x is not set<br /># CONFIG_SCSI_DC390T is not set<br /># CONFIG_SCSI_NSP32 is not set<br /># CONFIG_SCSI_DEBUG is not set<br /><br />#<br /># Multi-device support &#40;RAID and LVM&#41;<br />#<br /># CONFIG_MD is not set<br /><br />#<br /># Fusion MPT device support<br />#<br /># CONFIG_FUSION is not set<br /><br />#<br /># IEEE 1394 &#40;FireWire&#41; support<br />#<br />CONFIG_IEEE1394=y<br /><br />#<br /># Subsystem Options<br />#<br /># CONFIG_IEEE1394_VERBOSEDEBUG is not set<br /># CONFIG_IEEE1394_OUI_DB is not set<br /># CONFIG_IEEE1394_EXTRA_CONFIG_ROMS is not set<br /><br />#<br /># Device Drivers<br />#<br /><br />#<br /># Texas Instruments PCILynx requires I2C<br />#<br />CONFIG_IEEE1394_OHCI1394=y<br /><br />#<br /># Protocol Drivers<br />#<br /># CONFIG_IEEE1394_VIDEO1394 is not set<br /># CONFIG_IEEE1394_SBP2 is not set<br /># CONFIG_IEEE1394_ETH1394 is not set<br /># CONFIG_IEEE1394_DV1394 is not set<br />CONFIG_IEEE1394_RAWIO=y<br /># CONFIG_IEEE1394_CMP is not set<br /><br />#<br /># I2O device support<br />#<br /># CONFIG_I2O is not set<br /><br />#<br /># Networking support<br />#<br />CONFIG_NET=y<br /><br />#<br /># Networking options<br />#<br />CONFIG_PACKET=y<br /># CONFIG_PACKET_MMAP is not set<br /># CONFIG_NETLINK_DEV is not set<br />CONFIG_UNIX=y<br /># CONFIG_NET_KEY is not set<br />CONFIG_INET=y<br />CONFIG_IP_MULTICAST=y<br /># CONFIG_IP_ADVANCED_ROUTER is not set<br /># CONFIG_IP_PNP is not set<br /># CONFIG_NET_IPIP is not set<br /># CONFIG_NET_IPGRE is not set<br /># CONFIG_IP_MROUTE is not set<br /># CONFIG_ARPD is not set<br /># CONFIG_SYN_COOKIES is not set<br /># CONFIG_INET_AH is not set<br /># CONFIG_INET_ESP is not set<br /># CONFIG_INET_IPCOMP is not set<br /><br />#<br /># IP&#58; Virtual Server Configuration<br />#<br /># CONFIG_IP_VS is not set<br /># CONFIG_IPV6 is not set<br /># CONFIG_DECNET is not set<br /># CONFIG_BRIDGE is not set<br />CONFIG_NETFILTER=y<br /># CONFIG_NETFILTER_DEBUG is not set<br /><br />#<br /># IP&#58; Netfilter Configuration<br />#<br />CONFIG_IP_NF_CONNTRACK=y<br /># CONFIG_IP_NF_FTP is not set<br /># CONFIG_IP_NF_IRC is not set<br /># CONFIG_IP_NF_TFTP is not set<br /># CONFIG_IP_NF_AMANDA is not set<br />CONFIG_IP_NF_QUEUE=y<br />CONFIG_IP_NF_IPTABLES=y<br />CONFIG_IP_NF_MATCH_LIMIT=y<br />CONFIG_IP_NF_MATCH_IPRANGE=y<br />CONFIG_IP_NF_MATCH_MAC=y<br />CONFIG_IP_NF_MATCH_PKTTYPE=y<br />CONFIG_IP_NF_MATCH_MARK=y<br />CONFIG_IP_NF_MATCH_MULTIPORT=y<br />CONFIG_IP_NF_MATCH_TOS=y<br />CONFIG_IP_NF_MATCH_RECENT=y<br />CONFIG_IP_NF_MATCH_ECN=y<br />CONFIG_IP_NF_MATCH_DSCP=y<br />CONFIG_IP_NF_MATCH_AH_ESP=y<br />CONFIG_IP_NF_MATCH_LENGTH=y<br />CONFIG_IP_NF_MATCH_TTL=y<br />CONFIG_IP_NF_MATCH_TCPMSS=y<br />CONFIG_IP_NF_MATCH_HELPER=y<br />CONFIG_IP_NF_MATCH_STATE=y<br />CONFIG_IP_NF_MATCH_CONNTRACK=y<br />CONFIG_IP_NF_MATCH_OWNER=y<br />CONFIG_IP_NF_FILTER=y<br />CONFIG_IP_NF_TARGET_REJECT=y<br />CONFIG_IP_NF_NAT=y<br />CONFIG_IP_NF_NAT_NEEDED=y<br />CONFIG_IP_NF_TARGET_MASQUERADE=y<br />CONFIG_IP_NF_TARGET_REDIRECT=y<br />CONFIG_IP_NF_TARGET_NETMAP=y<br />CONFIG_IP_NF_TARGET_SAME=y<br /># CONFIG_IP_NF_NAT_LOCAL is not set<br /># CONFIG_IP_NF_NAT_SNMP_BASIC is not set<br />CONFIG_IP_NF_MANGLE=y<br />CONFIG_IP_NF_TARGET_TOS=y<br />CONFIG_IP_NF_TARGET_ECN=y<br />CONFIG_IP_NF_TARGET_DSCP=y<br />CONFIG_IP_NF_TARGET_MARK=y<br />CONFIG_IP_NF_TARGET_CLASSIFY=y<br />CONFIG_IP_NF_TARGET_LOG=y<br />CONFIG_IP_NF_TARGET_ULOG=y<br />CONFIG_IP_NF_TARGET_TCPMSS=y<br />CONFIG_IP_NF_ARPTABLES=y<br />CONFIG_IP_NF_ARPFILTER=y<br />CONFIG_IP_NF_ARP_MANGLE=y<br /><br />#<br /># SCTP Configuration &#40;EXPERIMENTAL&#41;<br />#<br /># CONFIG_IP_SCTP is not set<br /># CONFIG_ATM is not set<br /># CONFIG_VLAN_8021Q is not set<br /># CONFIG_LLC2 is not set<br /># CONFIG_IPX is not set<br /># CONFIG_ATALK is not set<br /># CONFIG_X25 is not set<br /># CONFIG_LAPB is not set<br /># CONFIG_NET_DIVERT is not set<br /># CONFIG_ECONET is not set<br /># CONFIG_WAN_ROUTER is not set<br /># CONFIG_NET_FASTROUTE is not set<br /># CONFIG_NET_HW_FLOWCONTROL is not set<br /><br />#<br /># QoS and/or fair queueing<br />#<br /># CONFIG_NET_SCHED is not set<br /><br />#<br /># Network testing<br />#<br /># CONFIG_NET_PKTGEN is not set<br />CONFIG_NETDEVICES=y<br /><br />#<br /># ARCnet devices<br />#<br /># CONFIG_ARCNET is not set<br />CONFIG_DUMMY=m<br /># CONFIG_BONDING is not set<br /># CONFIG_EQUALIZER is not set<br /># CONFIG_TUN is not set<br /><br />#<br /># Ethernet &#40;10 or 100Mbit&#41;<br />#<br />CONFIG_NET_ETHERNET=y<br />CONFIG_MII=y<br /># CONFIG_HAPPYMEAL is not set<br /># CONFIG_SUNGEM is not set<br /># CONFIG_NET_VENDOR_3COM is not set<br /><br />#<br /># Tulip family network device support<br />#<br /># CONFIG_NET_TULIP is not set<br /># CONFIG_HP100 is not set<br />CONFIG_NET_PCI=y<br /># CONFIG_PCNET32 is not set<br /># CONFIG_AMD8111_ETH is not set<br /># CONFIG_ADAPTEC_STARFIRE is not set<br /># CONFIG_B44 is not set<br /># CONFIG_FORCEDETH is not set<br /># CONFIG_DGRS is not set<br /># CONFIG_EEPRO100 is not set<br /># CONFIG_E100 is not set<br /># CONFIG_FEALNX is not set<br /># CONFIG_NATSEMI is not set<br /># CONFIG_NE2K_PCI is not set<br />CONFIG_8139CP=y<br />CONFIG_8139TOO=y<br />CONFIG_8139TOO_PIO=y<br /># CONFIG_8139TOO_TUNE_TWISTER is not set<br /># CONFIG_8139TOO_8129 is not set<br /># CONFIG_8139_OLD_RX_RESET is not set<br />CONFIG_8139_RXBUF_IDX=2<br /># CONFIG_SIS900 is not set<br /># CONFIG_EPIC100 is not set<br /># CONFIG_SUNDANCE is not set<br /># CONFIG_TLAN is not set<br /># CONFIG_VIA_RHINE is not set<br /><br />#<br /># Ethernet &#40;1000 Mbit&#41;<br />#<br /># CONFIG_ACENIC is not set<br /># CONFIG_DL2K is not set<br /># CONFIG_E1000 is not set<br /># CONFIG_NS83820 is not set<br /># CONFIG_HAMACHI is not set<br /># CONFIG_YELLOWFIN is not set<br /># CONFIG_R8169 is not set<br /># CONFIG_SIS190 is not set<br /># CONFIG_SK98LIN is not set<br /># CONFIG_TIGON3 is not set<br /><br />#<br /># Ethernet &#40;10000 Mbit&#41;<br />#<br /># CONFIG_IXGB is not set<br /># CONFIG_FDDI is not set<br /># CONFIG_HIPPI is not set<br /># CONFIG_PLIP is not set<br />CONFIG_PPP=y<br /># CONFIG_PPP_MULTILINK is not set<br /># CONFIG_PPP_FILTER is not set<br /># CONFIG_PPP_ASYNC is not set<br /># CONFIG_PPP_SYNC_TTY is not set<br />CONFIG_PPP_DEFLATE=m<br /># CONFIG_PPP_BSDCOMP is not set<br /># CONFIG_PPPOE is not set<br /># CONFIG_SLIP is not set<br /><br />#<br /># Wireless LAN &#40;non-hamradio&#41;<br />#<br /># CONFIG_NET_RADIO is not set<br /><br />#<br /># Token Ring devices<br />#<br /># CONFIG_TR is not set<br /># CONFIG_NET_FC is not set<br /># CONFIG_RCPCI is not set<br /># CONFIG_SHAPER is not set<br /># CONFIG_NETCONSOLE is not set<br /><br />#<br /># Wan interfaces<br />#<br /># CONFIG_WAN is not set<br /><br />#<br /># Amateur Radio support<br />#<br /># CONFIG_HAMRADIO is not set<br /><br />#<br /># IrDA &#40;infrared&#41; support<br />#<br /># CONFIG_IRDA is not set<br /><br />#<br /># Bluetooth support<br />#<br /># CONFIG_BT is not set<br /># CONFIG_NETPOLL is not set<br /># CONFIG_NET_POLL_CONTROLLER is not set<br /><br />#<br /># ISDN subsystem<br />#<br /># CONFIG_ISDN is not set<br /><br />#<br /># Telephony Support<br />#<br /># CONFIG_PHONE is not set<br /><br />#<br /># Input device support<br />#<br />CONFIG_INPUT=y<br /><br />#<br /># Userland interfaces<br />#<br />CONFIG_INPUT_MOUSEDEV=y<br />CONFIG_INPUT_MOUSEDEV_PSAUX=y<br />CONFIG_INPUT_MOUSEDEV_SCREEN_X=1024<br />CONFIG_INPUT_MOUSEDEV_SCREEN_Y=768<br />CONFIG_INPUT_JOYDEV=m<br /># CONFIG_INPUT_TSDEV is not set<br /># CONFIG_INPUT_EVDEV is not set<br /># CONFIG_INPUT_EVBUG is not set<br /><br />#<br /># Input I/O drivers<br />#<br /># CONFIG_GAMEPORT is not set<br />CONFIG_SOUND_GAMEPORT=y<br />CONFIG_SERIO=y<br />CONFIG_SERIO_I8042=y<br /># CONFIG_SERIO_SERPORT is not set<br /># CONFIG_SERIO_CT82C710 is not set<br /># CONFIG_SERIO_PARKBD is not set<br /># CONFIG_SERIO_PCIPS2 is not set<br /><br />#<br /># Input Device Drivers<br />#<br />CONFIG_INPUT_KEYBOARD=y<br />CONFIG_KEYBOARD_ATKBD=y<br /># CONFIG_KEYBOARD_SUNKBD is not set<br /># CONFIG_KEYBOARD_LKKBD is not set<br /># CONFIG_KEYBOARD_XTKBD is not set<br /># CONFIG_KEYBOARD_NEWTON is not set<br />CONFIG_INPUT_MOUSE=y<br />CONFIG_MOUSE_PS2=y<br /># CONFIG_MOUSE_SERIAL is not set<br /># CONFIG_MOUSE_VSXXXAA is not set<br /># CONFIG_INPUT_JOYSTICK is not set<br /># CONFIG_INPUT_TOUCHSCREEN is not set<br /># CONFIG_INPUT_MISC is not set<br /><br />#<br /># Character devices<br />#<br />CONFIG_VT=y<br />CONFIG_VT_CONSOLE=y<br />CONFIG_HW_CONSOLE=y<br /># CONFIG_SERIAL_NONSTANDARD is not set<br /><br />#<br /># Serial drivers<br />#<br />CONFIG_SERIAL_8250=y<br /># CONFIG_SERIAL_8250_CONSOLE is not set<br /># CONFIG_SERIAL_8250_ACPI is not set<br />CONFIG_SERIAL_8250_NR_UARTS=4<br /># CONFIG_SERIAL_8250_EXTENDED is not set<br /><br />#<br /># Non-8250 serial port support<br />#<br />CONFIG_SERIAL_CORE=y<br />CONFIG_UNIX98_PTYS=y<br />CONFIG_LEGACY_PTYS=y<br />CONFIG_LEGACY_PTY_COUNT=256<br />CONFIG_PRINTER=y<br /># CONFIG_LP_CONSOLE is not set<br /># CONFIG_PPDEV is not set<br /># CONFIG_TIPAR is not set<br /># CONFIG_QIC02_TAPE is not set<br /><br />#<br /># IPMI<br />#<br /># CONFIG_IPMI_HANDLER is not set<br /><br />#<br /># Watchdog Cards<br />#<br /># CONFIG_WATCHDOG is not set<br /># CONFIG_HW_RANDOM is not set<br /># CONFIG_NVRAM is not set<br /># CONFIG_RTC is not set<br /># CONFIG_GEN_RTC is not set<br /># CONFIG_DTLK is not set<br /># CONFIG_R3964 is not set<br /># CONFIG_APPLICOM is not set<br /># CONFIG_SONYPI is not set<br /><br />#<br /># Ftape, the floppy tape device driver<br />#<br />CONFIG_AGP=y<br /># CONFIG_AGP_ALI is not set<br /># CONFIG_AGP_ATI is not set<br /># CONFIG_AGP_AMD is not set<br /># CONFIG_AGP_AMD64 is not set<br />CONFIG_AGP_INTEL=y<br /># CONFIG_AGP_INTEL_MCH is not set<br /># CONFIG_AGP_NVIDIA is not set<br /># CONFIG_AGP_SIS is not set<br /># CONFIG_AGP_SWORKS is not set<br />CONFIG_AGP_VIA=y<br /># CONFIG_AGP_EFFICEON is not set<br />CONFIG_DRM=y<br /># CONFIG_DRM_TDFX is not set<br /># CONFIG_DRM_GAMMA is not set<br /># CONFIG_DRM_R128 is not set<br /># CONFIG_DRM_RADEON is not set<br /># CONFIG_DRM_I810 is not set<br /># CONFIG_DRM_I830 is not set<br /># CONFIG_DRM_MGA is not set<br /># CONFIG_DRM_SIS is not set<br /># CONFIG_MWAVE is not set<br /># CONFIG_RAW_DRIVER is not set<br /># CONFIG_HANGCHECK_TIMER is not set<br /><br />#<br /># I2C support<br />#<br /># CONFIG_I2C is not set<br /><br />#<br /># Misc devices<br />#<br /># CONFIG_IBM_ASM is not set<br /><br />#<br /># Multimedia devices<br />#<br /># CONFIG_VIDEO_DEV is not set<br /><br />#<br /># Digital Video Broadcasting Devices<br />#<br /># CONFIG_DVB is not set<br /><br />#<br /># Graphics support<br />#<br />CONFIG_FB=y<br /># CONFIG_FB_PM2 is not set<br /># CONFIG_FB_CYBER2000 is not set<br /># CONFIG_FB_IMSTT is not set<br /># CONFIG_FB_VGA16 is not set<br />CONFIG_FB_VESA=y<br />CONFIG_VIDEO_SELECT=y<br /># CONFIG_FB_HGA is not set<br /># CONFIG_FB_RIVA is not set<br /># CONFIG_FB_I810 is not set<br /># CONFIG_FB_MATROX is not set<br /># CONFIG_FB_RADEON_OLD is not set<br /># CONFIG_FB_RADEON is not set<br /># CONFIG_FB_ATY128 is not set<br /># CONFIG_FB_ATY is not set<br /># CONFIG_FB_SIS is not set<br /># CONFIG_FB_NEOMAGIC is not set<br /># CONFIG_FB_KYRO is not set<br /># CONFIG_FB_3DFX is not set<br /># CONFIG_FB_VOODOO1 is not set<br /># CONFIG_FB_TRIDENT is not set<br /># CONFIG_FB_VIRTUAL is not set<br /><br />#<br /># Console display driver support<br />#<br />CONFIG_VGA_CONSOLE=y<br /># CONFIG_MDA_CONSOLE is not set<br />CONFIG_DUMMY_CONSOLE=y<br />CONFIG_FRAMEBUFFER_CONSOLE=m<br />CONFIG_PCI_CONSOLE=y<br /># CONFIG_FONTS is not set<br />CONFIG_FONT_8x8=y<br />CONFIG_FONT_8x16=y<br /><br />#<br /># Logo configuration<br />#<br /># CONFIG_LOGO is not set<br /><br />#<br /># Sound<br />#<br />CONFIG_SOUND=y<br /><br />#<br /># Advanced Linux Sound Architecture<br />#<br />CONFIG_SND=y<br />CONFIG_SND_TIMER=y<br />CONFIG_SND_PCM=y<br />CONFIG_SND_HWDEP=y<br />CONFIG_SND_RAWMIDI=y<br />CONFIG_SND_SEQUENCER=y<br /># CONFIG_SND_SEQ_DUMMY is not set<br />CONFIG_SND_OSSEMUL=y<br />CONFIG_SND_MIXER_OSS=y<br />CONFIG_SND_PCM_OSS=y<br />CONFIG_SND_SEQUENCER_OSS=y<br /># CONFIG_SND_VERBOSE_PRINTK is not set<br /># CONFIG_SND_DEBUG is not set<br /><br />#<br /># Generic devices<br />#<br />CONFIG_SND_MPU401_UART=y<br /># CONFIG_SND_DUMMY is not set<br /># CONFIG_SND_VIRMIDI is not set<br /># CONFIG_SND_MTPAV is not set<br /># CONFIG_SND_SERIAL_U16550 is not set<br /># CONFIG_SND_MPU401 is not set<br /><br />#<br /># PCI devices<br />#<br />CONFIG_SND_AC97_CODEC=y<br /># CONFIG_SND_ALI5451 is not set<br /># CONFIG_SND_ATIIXP is not set<br /># CONFIG_SND_AU8810 is not set<br /># CONFIG_SND_AU8820 is not set<br /># CONFIG_SND_AU8830 is not set<br /># CONFIG_SND_AZT3328 is not set<br /># CONFIG_SND_BT87X is not set<br /># CONFIG_SND_CS46XX is not set<br /># CONFIG_SND_CS4281 is not set<br />CONFIG_SND_EMU10K1=y<br /># CONFIG_SND_KORG1212 is not set<br /># CONFIG_SND_MIXART is not set<br /># CONFIG_SND_NM256 is not set<br /># CONFIG_SND_RME32 is not set<br /># CONFIG_SND_RME96 is not set<br /># CONFIG_SND_RME9652 is not set<br /># CONFIG_SND_HDSP is not set<br /># CONFIG_SND_TRIDENT is not set<br /># CONFIG_SND_YMFPCI is not set<br /># CONFIG_SND_ALS4000 is not set<br /># CONFIG_SND_CMIPCI is not set<br /># CONFIG_SND_ENS1370 is not set<br /># CONFIG_SND_ENS1371 is not set<br /># CONFIG_SND_ES1938 is not set<br /># CONFIG_SND_ES1968 is not set<br /># CONFIG_SND_MAESTRO3 is not set<br /># CONFIG_SND_FM801 is not set<br /># CONFIG_SND_ICE1712 is not set<br /># CONFIG_SND_ICE1724 is not set<br />CONFIG_SND_INTEL8X0=y<br /># CONFIG_SND_INTEL8X0M is not set<br /># CONFIG_SND_SONICVIBES is not set<br /># CONFIG_SND_VIA82XX is not set<br /># CONFIG_SND_VX222 is not set<br /><br />#<br /># ALSA USB devices<br />#<br /># CONFIG_SND_USB_AUDIO is not set<br /><br />#<br /># Open Sound System<br />#<br /># CONFIG_SOUND_PRIME is not set<br /><br />#<br /># USB support<br />#<br />CONFIG_USB=y<br /># CONFIG_USB_DEBUG is not set<br /><br />#<br /># Miscellaneous USB options<br />#<br />CONFIG_USB_DEVICEFS=y<br /># CONFIG_USB_BANDWIDTH is not set<br /># CONFIG_USB_DYNAMIC_MINORS is not set<br /><br />#<br /># USB Host Controller Drivers<br />#<br />CONFIG_USB_EHCI_HCD=y<br /># CONFIG_USB_EHCI_SPLIT_ISO is not set<br /># CONFIG_USB_OHCI_HCD is not set<br />CONFIG_USB_UHCI_HCD=y<br /><br />#<br /># USB Device Class drivers<br />#<br /># CONFIG_USB_AUDIO is not set<br /># CONFIG_USB_BLUETOOTH_TTY is not set<br /># CONFIG_USB_MIDI is not set<br /># CONFIG_USB_ACM is not set<br />CONFIG_USB_PRINTER=y<br />CONFIG_USB_STORAGE=y<br /># CONFIG_USB_STORAGE_DEBUG is not set<br /># CONFIG_USB_STORAGE_DATAFAB is not set<br /># CONFIG_USB_STORAGE_FREECOM is not set<br /># CONFIG_USB_STORAGE_ISD200 is not set<br /># CONFIG_USB_STORAGE_DPCM is not set<br /># CONFIG_USB_STORAGE_HP8200e is not set<br /># CONFIG_USB_STORAGE_SDDR09 is not set<br /># CONFIG_USB_STORAGE_SDDR55 is not set<br /># CONFIG_USB_STORAGE_JUMPSHOT is not set<br /><br />#<br /># USB Human Interface Devices &#40;HID&#41;<br />#<br />CONFIG_USB_HID=y<br />CONFIG_USB_HIDINPUT=y<br /># CONFIG_HID_FF is not set<br /># CONFIG_USB_HIDDEV is not set<br /># CONFIG_USB_AIPTEK is not set<br /># CONFIG_USB_WACOM is not set<br /># CONFIG_USB_KBTAB is not set<br /># CONFIG_USB_POWERMATE is not set<br /># CONFIG_USB_MTOUCH is not set<br /># CONFIG_USB_XPAD is not set<br /># CONFIG_USB_ATI_REMOTE is not set<br /><br />#<br /># USB Imaging devices<br />#<br /># CONFIG_USB_MDC800 is not set<br /># CONFIG_USB_MICROTEK is not set<br /># CONFIG_USB_HPUSBSCSI is not set<br /><br />#<br /># USB Multimedia devices<br />#<br /># CONFIG_USB_DABUSB is not set<br /><br />#<br /># Video4Linux support is needed for USB Multimedia device support<br />#<br /><br />#<br /># USB Network adaptors<br />#<br /># CONFIG_USB_CATC is not set<br /># CONFIG_USB_KAWETH is not set<br /># CONFIG_USB_PEGASUS is not set<br /># CONFIG_USB_RTL8150 is not set<br /># CONFIG_USB_USBNET is not set<br /><br />#<br /># USB port drivers<br />#<br /># CONFIG_USB_USS720 is not set<br /><br />#<br /># USB Serial Converter support<br />#<br /># CONFIG_USB_SERIAL is not set<br /><br />#<br /># USB Miscellaneous drivers<br />#<br /># CONFIG_USB_EMI62 is not set<br /># CONFIG_USB_EMI26 is not set<br /># CONFIG_USB_TIGL is not set<br /># CONFIG_USB_AUERSWALD is not set<br /># CONFIG_USB_RIO500 is not set<br /># CONFIG_USB_LEGOTOWER is not set<br /># CONFIG_USB_LCD is not set<br /># CONFIG_USB_LED is not set<br /># CONFIG_USB_TEST is not set<br /><br />#<br /># USB Gadget Support<br />#<br /># CONFIG_USB_GADGET is not set<br /><br />#<br /># File systems<br />#<br />CONFIG_EXT2_FS=y<br /># CONFIG_EXT2_FS_XATTR is not set<br />CONFIG_EXT3_FS=y<br />CONFIG_EXT3_FS_XATTR=y<br /># CONFIG_EXT3_FS_POSIX_ACL is not set<br /># CONFIG_EXT3_FS_SECURITY is not set<br />CONFIG_JBD=y<br /># CONFIG_JBD_DEBUG is not set<br />CONFIG_FS_MBCACHE=y<br />CONFIG_REISERFS_FS=y<br /># CONFIG_REISERFS_CHECK is not set<br /># CONFIG_REISERFS_PROC_INFO is not set<br /># CONFIG_JFS_FS is not set<br /># CONFIG_XFS_FS is not set<br /># CONFIG_MINIX_FS is not set<br /># CONFIG_ROMFS_FS is not set<br /># CONFIG_QUOTA is not set<br /># CONFIG_AUTOFS_FS is not set<br />CONFIG_AUTOFS4_FS=y<br /><br />#<br /># CD-ROM/DVD Filesystems<br />#<br />CONFIG_ISO9660_FS=y<br />CONFIG_JOLIET=y<br /># CONFIG_ZISOFS is not set<br />CONFIG_UDF_FS=y<br /><br />#<br /># DOS/FAT/NT Filesystems<br />#<br />CONFIG_FAT_FS=y<br />CONFIG_MSDOS_FS=y<br />CONFIG_VFAT_FS=y<br /># CONFIG_NTFS_FS is not set<br /><br />#<br /># Pseudo filesystems<br />#<br />CONFIG_PROC_FS=y<br />CONFIG_PROC_KCORE=y<br /># CONFIG_DEVFS_FS is not set<br /># CONFIG_DEVPTS_FS_XATTR is not set<br />CONFIG_TMPFS=y<br /># CONFIG_HUGETLBFS is not set<br /># CONFIG_HUGETLB_PAGE is not set<br />CONFIG_RAMFS=y<br /><br />#<br /># Miscellaneous filesystems<br />#<br /># CONFIG_ADFS_FS is not set<br /># CONFIG_AFFS_FS is not set<br /># CONFIG_HFS_FS is not set<br /># CONFIG_HFSPLUS_FS is not set<br /># CONFIG_BEFS_FS is not set<br /># CONFIG_BFS_FS is not set<br /># CONFIG_EFS_FS is not set<br /># CONFIG_CRAMFS is not set<br /># CONFIG_VXFS_FS is not set<br /># CONFIG_HPFS_FS is not set<br /># CONFIG_QNX4FS_FS is not set<br /># CONFIG_SYSV_FS is not set<br /># CONFIG_UFS_FS is not set<br /><br />#<br /># Network File Systems<br />#<br />CONFIG_NFS_FS=y<br /># CONFIG_NFS_V3 is not set<br /># CONFIG_NFS_V4 is not set<br /># CONFIG_NFS_DIRECTIO is not set<br />CONFIG_NFSD=y<br /># CONFIG_NFSD_V3 is not set<br /># CONFIG_NFSD_TCP is not set<br />CONFIG_LOCKD=y<br />CONFIG_EXPORTFS=y<br />CONFIG_SUNRPC=y<br /># CONFIG_RPCSEC_GSS_KRB5 is not set<br /># CONFIG_SMB_FS is not set<br /># CONFIG_CIFS is not set<br /># CONFIG_NCP_FS is not set<br /># CONFIG_CODA_FS is not set<br /># CONFIG_INTERMEZZO_FS is not set<br /># CONFIG_AFS_FS is not set<br /><br />#<br /># Partition Types<br />#<br /># CONFIG_PARTITION_ADVANCED is not set<br />CONFIG_MSDOS_PARTITION=y<br /><br />#<br /># Native Language Support<br />#<br />CONFIG_NLS=y<br />CONFIG_NLS_DEFAULT=&quot;iso8859-1&quot;<br />CONFIG_NLS_CODEPAGE_437=y<br /># CONFIG_NLS_CODEPAGE_737 is not set<br /># CONFIG_NLS_CODEPAGE_775 is not set<br /># CONFIG_NLS_CODEPAGE_850 is not set<br /># CONFIG_NLS_CODEPAGE_852 is not set<br /># CONFIG_NLS_CODEPAGE_855 is not set<br /># CONFIG_NLS_CODEPAGE_857 is not set<br /># CONFIG_NLS_CODEPAGE_860 is not set<br /># CONFIG_NLS_CODEPAGE_861 is not set<br /># CONFIG_NLS_CODEPAGE_862 is not set<br /># CONFIG_NLS_CODEPAGE_863 is not set<br /># CONFIG_NLS_CODEPAGE_864 is not set<br /># CONFIG_NLS_CODEPAGE_865 is not set<br /># CONFIG_NLS_CODEPAGE_866 is not set<br /># CONFIG_NLS_CODEPAGE_869 is not set<br /># CONFIG_NLS_CODEPAGE_936 is not set<br /># CONFIG_NLS_CODEPAGE_950 is not set<br /># CONFIG_NLS_CODEPAGE_932 is not set<br /># CONFIG_NLS_CODEPAGE_949 is not set<br /># CONFIG_NLS_CODEPAGE_874 is not set<br /># CONFIG_NLS_ISO8859_8 is not set<br /># CONFIG_NLS_CODEPAGE_1250 is not set<br /># CONFIG_NLS_CODEPAGE_1251 is not set<br />CONFIG_NLS_ISO8859_1=y<br /># CONFIG_NLS_ISO8859_2 is not set<br /># CONFIG_NLS_ISO8859_3 is not set<br /># CONFIG_NLS_ISO8859_4 is not set<br /># CONFIG_NLS_ISO8859_5 is not set<br /># CONFIG_NLS_ISO8859_6 is not set<br /># CONFIG_NLS_ISO8859_7 is not set<br /># CONFIG_NLS_ISO8859_9 is not set<br /># CONFIG_NLS_ISO8859_13 is not set<br /># CONFIG_NLS_ISO8859_14 is not set<br /># CONFIG_NLS_ISO8859_15 is not set<br /># CONFIG_NLS_KOI8_R is not set<br /># CONFIG_NLS_KOI8_U is not set<br /># CONFIG_NLS_UTF8 is not set<br /><br />#<br /># Profiling support<br />#<br />CONFIG_PROFILING=y<br />CONFIG_OPROFILE=y<br /><br />#<br /># Kernel hacking<br />#<br /># CONFIG_DEBUG_KERNEL is not set<br />CONFIG_EARLY_PRINTK=y<br />CONFIG_DEBUG_SPINLOCK_SLEEP=y<br /># CONFIG_FRAME_POINTER is not set<br />CONFIG_X86_FIND_SMP_CONFIG=y<br />CONFIG_X86_MPPARSE=y<br /><br />#<br /># Security options<br />#<br /># CONFIG_SECURITY is not set<br /><br />#<br /># Cryptographic options<br />#<br /># CONFIG_CRYPTO is not set<br /><br />#<br /># Library routines<br />#<br />CONFIG_CRC32=y<br />CONFIG_ZLIB_INFLATE=m<br />CONFIG_ZLIB_DEFLATE=m<br />CONFIG_X86_SMP=y<br />CONFIG_X86_HT=y<br />CONFIG_X86_BIOS_REBOOT=y<br />CONFIG_X86_TRAMPOLINE=y<br />CONFIG_PC=y<br /></div></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7358">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;Which is worse, ignorance or apathy ?&nbsp; Who knows?&nbsp; Who cares?&quot;</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7359"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1544.msg7359.html#msg7359"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7359">
+										<a href="index.php%3Ftopic=1544.msg7359.html#msg7359">compiling 2.6.5 on slack</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #3 on:</b> April 12, 2004, 12:09:59 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">This is just my own observation, might be completely wrong...<br /><br />By default the 2.6 kernels seem to disable everything and only enable by default drivers it detects you are currently using. &nbsp;(And even those it defaults to compiling into the kernel, not as a module). &nbsp;If you want all the modules you had under 2.4 kernel to be available, you need to copy the config from your old kernel to the new kernel source directory. &nbsp;I think just something like:<br /><br />cp /boot/config-ide.2.4.22 /usr/src/linux-2.6.4/.config<br /><br />Then do your normal config and make routines. &nbsp;Be sure to go and check all kernel options because some of the options may not carry directly over, and you'll need to configure alsa / oss sound yourself.<br /><br />This makes sense if you look at your kernel config above, almost nothing is set to compile as a module. &nbsp;<br /><br />If you want something to work from, here's my .config for kernel 2.6.4 - at a minimum you'll need to alter the CPU type and sound stuff to match yours. &nbsp;Otherwise I've left it fairly stock. &nbsp;My sound card setup is ALSA Intel i810 audio, and cpu type is Pentium 4 with SMB enabled (because I have a hyperthreading processor I needed it). <br /><br />I was gonna copy-&gt;paste but it's too big, here's a link to my config file. &nbsp;<br /><a href="http://homeweb.org/~imnes/tmp/config-2.6.4" target="_blank">http://homeweb.org/~imnes/tmp/config-2.6.4</a><br /><br />Note: compiling kernel 2.6 with all these modules / options enable takes a long long time. &nbsp;Good luck.<br /><br />Nick</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7359">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7360"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=83.html" title="View the profile of Brent">Brent</a></b>
+							<div class="smalltext">
+								Master<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 464<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=37%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								kaboom?<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=83.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1544.msg7360.html#msg7360"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7360">
+										<a href="index.php%3Ftopic=1544.msg7360.html#msg7360">compiling 2.6.5 on slack</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #4 on:</b> April 12, 2004, 12:46:12 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">yeah i don't have alot as modules on purpose. &nbsp;That's what I have the problems with.<br /><br />For an example of what kind of problems I'm running into, try compiling the kernel, copy the files to your boot directory with a -2.6.1 extension and symlink it to your bzImage and System.map<br /><br />Note I took out some support for intel based motherboards Radeons, etc so you may need to modify slightly.<br /><br />I've checked that all my hardware is supported either built in or modules.<br /><br />Thanks for any help<br /><br />Brent</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7360">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;Which is worse, ignorance or apathy ?&nbsp; Who knows?&nbsp; Who cares?&quot;</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7361"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 2<br />
+								Posts: 1486<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=65%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=45.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1544.msg7361.html#msg7361"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7361">
+										<a href="index.php%3Ftopic=1544.msg7361.html#msg7361">compiling 2.6.5 on slack</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #5 on:</b> April 12, 2004, 08:38:15 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: Brent</div><div class="quote">For an example of what kind of problems I'm running into, try compiling the kernel, copy the files to your boot directory with a -2.6.1 extension and symlink it to your bzImage and System.map</div><br />Not sure it's related to your problem, but I always do NOT symlink the kernel, at least until things are working...<br /><br />Copy the newly compiled bzImage to /boot/vmlinuz-2.6.1 and the System.map to /boot/System.map-2.6.1.<br /><br />Then change the System.map symlink to point to this new one, and reference the /boot/vmlinuz-2.6.1 specifically in your bootloader config.<br /><br />Works for me!<br /><br />Dan</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7361">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://members.cox.net/danc3/icons/divineSW.gif" alt="" border="0" /></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7363"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=35.html" title="View the profile of imnes">imnes</a></b>
+							<div class="smalltext">
+								Old Hand<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 1526<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="avatars/Linux/4.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=35.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://www.homeweb.org" title="http://www.homeweb.org" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1544.msg7363.html#msg7363"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7363">
+										<a href="index.php%3Ftopic=1544.msg7363.html#msg7363">compiling 2.6.5 on slack</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #6 on:</b> April 12, 2004, 10:19:47 am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">What error message are you getting / what modules are you not able to load exactly?<br /><br />After rebooting with the new kernel, does the modules directlory name match the kernel version:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />imnes@msip4&#58;~$ uname -r<br />2.6.4<br /><br />imnes@msip4&#58;~$ ls /lib/modules<br />2.4.22/ &nbsp;2.6.4/<br /></div><br /><br />And for what it's worth I delete my /boot/System.map and /boot/vmlinuz symlinks completely. &nbsp;I edit my lilo.conf to have seperate entries for /boot/vmlinuz-ide-2.4.22 and /boot/vmlinuz-2.6.4<br /><br />Nicik</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7363">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">&quot;It better not eat anybody's disks, because when someone loses his porn collection, I hear about it for years.&quot;<br />&nbsp;-- Linus at the Kernel Summit on changing the default I/O scheduler in the kernel</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg7364"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a></b>
+							<div class="smalltext">
+								Administrator<br />
+								Old Hand<br />
+								<img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><img src="Themes/babylon/images/staradmin.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 769<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="index.php%3Faction=dlattach%3Battach=9%3Btype=avatar" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=118.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="http://slackwolf.com" title="http://slackwolf.com" target="_blank"><img src="Themes/babylon/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=1544.msg7364.html#msg7364"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_7364">
+										<a href="index.php%3Ftopic=1544.msg7364.html#msg7364">compiling 2.6.5 on slack</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #7 on:</b> April 12, 2004, 01:50:44 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><div class="quoteheader">Quote from: danc</div><div class="quote"><div class="quoteheader">Quote from: Brent</div><div class="quote">For an example of what kind of problems I'm running into, try compiling the kernel, copy the files to your boot directory with a -2.6.1 extension and symlink it to your bzImage and System.map</div><br />Not sure it's related to your problem, but I always do NOT symlink the kernel, at least until things are working...<br /><br />Copy the newly compiled bzImage to /boot/vmlinuz-2.6.1 and the System.map to /boot/System.map-2.6.1.<br /><br />Then change the System.map symlink to point to this new one, and reference the /boot/vmlinuz-2.6.1 specifically in your bootloader config.<br /><br />Works for me!<br /></div><br />ya what he said<br />i've been doing it since the 2.6.0test kernels and so far its never given me trouble except for 2.6.3 because they screwed up the intel pro/1000 CSA support for i875/ICH5-R boards running the intel CSA gigabit lan<br /><br />also another thing i'm getting into the habit of doing is having atleast 2 working kernels ready to boot with lilo in case i need a kernel to fall back on if the latest kernel build fails.....i used to keep 2.4.22 and the last working kernel but now I just started using my last 2 working kernels and just drop the older one after each new build<br /><br />another thing is I did my config from scratch(took about 5-10 error filled runs before i got it perfected for my machine) rather than using the stock .config from pat v.'s stock 2.4.22 kernel in slack-9.1....was easier just starting from scratch and adding in exactly what I needed (for my current configuration and future upgrades) and no more or less than taking a stock kernel filled with tons of modules and such and then limiting it down to what I need....now can upgrade to the next latest 2.6.x kernel, compile, load, and boot in under 10minutes total and so far its done well<br /><br />although using the stock 2.4.x config from slack is a good way to start if you dont want to spend too much time changing the config</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7364">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://www.megapathdsl.net/~vrandall/sea/slack.gif" alt="" border="0" /><img src="http://www.megapathdsl.net/~vrandall/sea/obsd.gif" alt="" border="0" /><br />&quot;Sending script kiddies to /dev/null since 1995&quot; --OpenBSD<br />OpenBSD is a great OS, but Theo de Raadt is an arse...</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> [<b>1</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=1544.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 1544;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="1544" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=1544.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 1482 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="index.php%3Ftopic=1544.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=1544.0%3Bprev_next=next.html#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0"> => Other Software</option>
+			<option value="?board=32.0" selected="selected"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.447 seconds with 16 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

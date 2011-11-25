@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Need help with supermount on slackware 9.1</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by:  on March 29, 2004, 05:30:01 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help with supermount on slackware 9.1</b><br />
+					Post by: <b></b> on <b>March 29, 2004, 05:30:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am trying to compile supermount into slack kernel 2.4.22. I patched the source and ran the make xconfig and selected yes for supermount support and saved it then I tried to compile but I get this error message<br /><br />make -C supermount fastdep<br />make: *** supermount: No such file or directory. &nbsp;Stop.<br />make: Entering an unknown directorymake: Leaving an unknown directorymake[3]: *** [_sfdep_supermount] Error 2<br />make[3]: Leaving directory `/usr/src/linux-2.4.22/fs'<br /><br />I thought the patch didn't work and tried to repatch it but it showed everything as already patched. Anybody have a clue as to what is wrong or have any suggestions or some other solution? Is supermount supported in slackware kernel 2.6?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help with supermount on slackware 9.1</b><br />
+					Post by: <b>lloydr</b> on <b>March 29, 2004, 05:47:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">slackware kernel 2.6 is just the vanilla kernel like 2.4.22 stock kernel....so you just get it from kernel.org and patch whatever u want in it<br /><br />i'd recommend if you really want to run supermount and plan on compiling a new kernel, look into upgrading to 2.6 if supermount has a patch for 2.6.x<br /><br />i'm personally running 2.6.4 and cant say that i remember a supermount in any of the vanilla 2.6 kernels</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help with supermount on slackware 9.1</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 01, 2004, 05:19:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just compiled the 2.6.4 kernel last friday and this is the first I've heard of it. &nbsp;Just what IS supermount, anyway?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help with supermount on slackware 9.1</b><br />
+					Post by: <b>rugmonster</b> on <b>April 01, 2004, 05:23:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Supermount is like automounter. You can setup supermount to handle your removable media such as floppies or cd-roms. Rather than having to mount and unmount a filesystem everytime it is changed, you can just insert your cd-rom or floppy and access the directory. Supermount handles mounting the media and unmount it when it is no longer needed. It's just one of those things that makes sense for certain media types.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help with supermount on slackware 9.1</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>April 16, 2004, 05:02:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, that is a pretty cool idea, I kinda like it. &nbsp;For audio CDs and such that could be very helpful...or for USB drives.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help with supermount on slackware 9.1</b><br />
+					Post by: <b>imnes</b> on <b>April 16, 2004, 05:57:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've got it compiled and installed for kernel 2.4.22 and 2.6.4 on my slackware machine. &nbsp;Works great! &nbsp;Use supermount-ng<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help with supermount on slackware 9.1</b><br />
+					Post by: <b>imnes</b> on <b>April 17, 2004, 09:36:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Are you actually running the command : make -C supermount fastdep <br /><br />I would try rebuilding the whole kernel with the usual commands see if that works.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - AA limited to 800x600</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: Brent on September 13, 2004, 10:36:26 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>AA limited to 800x600</b><br />
+					Post by: <b>Brent</b> on <b>September 13, 2004, 10:36:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey all,<br /><br />If we have any AA players around here, I was wondering what you have to do to get the resolution above 800x600. &nbsp;I tried changing it at setup and its gray'd out. &nbsp;I can run it at 1280x1024 on windows, and I run 1280x1024 for my desktop in linux. &nbsp;I even run et at 1280x1024 in linux no problem. &nbsp;<br /><br />Methinks it has to do with a def vars in ~armyops/System/Default.ini, but changing them yields no result.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>AA limited to 800x600</b><br />
+					Post by: <b>lloydr</b> on <b>September 13, 2004, 03:59:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i've played america's army and et perfectly with 1024x768 and 1280x1024<br /><br />sure you aren't messing with your x.org/xfree86 config files again?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>AA limited to 800x600</b><br />
+					Post by: <b>Brent</b> on <b>September 13, 2004, 08:40:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dead certain.<br /><br />The last change I made to xorg.conf was the great and mighty irc discussion that we had last wed or thursday, at which through much hand holding my xorg.conf was customized to my lcd's exact specifications.<br /><br />I know other ppl have had this same problem but i'm not getting very many bites on AA forums.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>problem solved</b><br />
+					Post by: <b>Brent</b> on <b>September 14, 2004, 04:48:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">turns out i had my def color depth at 16, not 24. &nbsp;Don't know what the deal is w that but it works now *sheepish grin*</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

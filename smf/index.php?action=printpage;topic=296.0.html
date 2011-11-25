@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Why hate?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: rugmonster on December 10, 2002, 05:55:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 10, 2002, 05:55:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was looking at the other two threads in here and got the distinct feeling that most of you don't especially care for Debian. What is it that you don't like that other distributions do better or that you would like to see Debian do in particular to make their distro better?<br /><br />I know the common complaints such as old installer (what's wrong with curses?) and slow package cycle, but those are being addressed. I'm curious about the other things. I personally like Debian, but I have my beefs as well. <br /><br />-------<br />Ruggy</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>imnes</b> on <b>December 10, 2002, 08:32:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, the reason's you love debian are most likely the same reason's most of us don't.<br /><br />Package System. &nbsp;It's very powerful. &nbsp;Very robust. &nbsp;And damned intimidating to use at first. &nbsp;Of course I guess anyone who's fired up the command line and seen the output of rpm would say the same about it.<br /><br />Old software. &nbsp;Debian (at least from my limited coverage) seems to have old software with it. &nbsp;That usually translates to &quot;stable&quot; software which some people like, but some others just see (KDE 2.2.2) when most distros starting using KDE 3.0.0alpha and feel like they've gone back in time or something &nbsp;:)<br /><br />No pretty installer. &nbsp;That's not too big a deal. &nbsp;How often do you plan to look at the installer anyway? &nbsp;I don't have a problem using a text based installer, but perhaps that's because it was a long time in MS-DOS and CP/M land before I <i>finally</i> had a computer that could run Windows 3.11/95.<br /><br />I guess it also has to do with what you're used to. &nbsp;I'm used to RedHat. &nbsp;The RPM installer, the /etc/rc.d/ scripts, the filesystem layout. &nbsp;I know what I'm doing and can figure things out simple. &nbsp;If I jump into Debian (or slackware or anything else that's different) I have to hitup the internet to figure things out. &nbsp;Like &quot;How do I configure my ADSL modem?&quot; &nbsp;Totally different in each distro, but easier for me to hack my way through it in something I&quot;m used to using.<br /><br />I guess that's pretty much the same stuff stated about using Debian over Redhat/MDK. &nbsp;Debian sets up a certain way, and you're used to it. &nbsp;You can find config files, and know how to interact with the scripts. &nbsp;<br /><br />I do tend to stick with what I'm used to though. &nbsp;I use VI almost exclusively. &nbsp;Emacs is cool, but I can't remember all the keystrokes. &nbsp;And when I'm used to typing (esc):wq to save my text changes and exit, I find myself trying to suse them in other editors and taking a moment to figure out why it didn't respond (like pico/nano I think it uses CTRL-X or something to exit), and emacs with it's C-x C-s, C-s C-c or whatever the combination is. &nbsp;<br /><br />I'm tired from a long night of school. &nbsp;Sorry if this isn't making total sense right now ;)<br /><br />NIck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 10, 2002, 09:08:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: imnes</div><div class="quote">Package System. It's very powerful. Very robust. And damned intimidating to use at first. Of course I guess anyone who's fired up the command line and seen the output of rpm would say the same about it. </div><br /><br />I have to admit, the first time I tried to use the package management system, I was intimidated. I hadn't used a package manager before because I had been used to ./configure; make; make install. That was simple to me. Sometimes I had to set some options on the ./configure, but beyond that, I downloaded what I needed and went. <br /><br />However, it didn't take me long to figure out dselect. Now they have aptitude which has a better ui. If you know the package you are looking for, apt-cache &lt;name&gt; is very simple. It gives you a listing of the available packages that match your search and then you do apt-get install &lt;pkg name&gt;. <br /><br />I still don't know how to install an rpm from command line and not all of the gui rpm managers are top notch. I will have packages that will make one manager crap out and work with another...so I have three on this laptop running Mandrake...<br /><br />As far as old software, I agree. I hesitate to use SID, which is considered unstable yet still far behind the bleeding edge. I think the major issue here is the nature of the binaries, interaction with varying systems and the complicated packaging. Has anyone actually tried to put together a .deb? I looked into it once and there is a lot of crap that goes into it. I'm surprised so many people maintain them for the hassel they are.<br /><br />I also understand the whole thing of using what you are used to. I personally like to try other distros, even flavors of unix, just to see what is different and to see what works. &nbsp;Most everything I have played with has done one or two things &quot;right&quot;, but no one has done it all &quot;right&quot;. I guess I'm just either waiting for someone else to do it, or for me to get off my lazy arse and finally make that killer distro...but even then, it won't fit everyone's tastes.<br /><br />-------<br />Ruggy</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rburt3</b> on <b>December 10, 2002, 09:28:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ah, yes, to each his/her own. That's whats beutiful about OSS. For my 2 pesetas on package management, ./configure &amp;&amp; make &amp;&amp; make install &amp;&amp; make clean has been the best, most consistant path to software goodness to date. Binaries just don't give me that warm fuzzy that rolling my own does.<br /><br />I don't think anyone here has it &quot;in&quot; for Deb, though. I think the earlier threads were more exploratory in nature. &quot;If I can get a distro with bleeding edge software and install it in less than an hour without having to think about it, why would anyone use anything else?&quot; I don't think the question was adaquately answered, but I tried.;)<br /><br />Debian has seen a resurgance as a desktop distro lately under the guise of Lindows and Xandros, both of which are getting great reviews. This having been said, I don't think I agree with the Deb Developers putting all of this new effort into graphical installers and &quot;user friendliness&quot;. Debian is a popular distro as is, so why not leave all of the &quot;sex appeal&quot; to the folks who want to build on its strengths and make some dough?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 10, 2002, 09:54:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">I don't think anyone here has it &quot;in&quot; for Deb, though. I think the earlier threads were more exploratory in nature. &quot;If I can get a distro with bleeding edge software and install it in less than an hour without having to think about it, why would anyone use anything else?&quot; I don't think the question was adaquately answered, but I tried.</div><br /><br />I thought the subject just sounded good &nbsp;:wink: . I read the other threads and I guess I spend just as much time tweaking one distro as much as another (minus download time for packages or compile time if we are talking source based distro such as Gentoo). But I do the same with Windows...actually, more time tweaking a Windows install because not all of your programs you want installed are done right off the bat. The point is, I don't really see much of a difference between a Redhat, Mandrake or Debian install as far as getting a working system because they all have to be tweaked to run the way I want them to. Debian just doesn't require you to burn a 650 mb cd or three (which takes me a long time with my old 2x burner).<br /><br /><div class="quoteheader">Quote from: rburt3</div><div class="quote">Debian has seen a resurgance as a desktop distro lately under the guise of Lindows and Xandros, both of which are getting great reviews. This having been said, I don't think I agree with the Deb Developers putting all of this new effort into graphical installers and &quot;user friendliness&quot;. Debian is a popular distro as is, so why not leave all of the &quot;sex appeal&quot; to the folks who want to build on its strengths and make some dough?</div><br /><br />I don't see it so much as Deb Developers trying to add &quot;sex appeal&quot; to it as them trying to keep the mindshare of the OSS community. Redhat and Mandrake and the other commercial distros are doing pretty well now. They are getting things right which is a good thing (tm). But Debian still needs to be there and it is good that they are pushing towards making new innovations. They got a little stagnant for a while and it is showing. People are moving away from them and as people move away, those packages won't get tested and the upgrade cycle will slow down further. As long as their attempts to keep things fresh and sexy don't take away from the core ideals of freedom (beer and speech) and quality, I see it as a good thing. Maybe we will get something great out of it.<br /><br />BTW, how ya doing? <br /><br />-------<br />Ruggy<br />daniel.givens@miab.aorcentaf.af.mil<br /><br />[/quote]</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rburt3</b> on <b>December 10, 2002, 10:20:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I see your point about midshare, but sheesh, one article (can't remember, but its in one of the threads in the Debian section) about losing mindshare and a tougher than average install, and they're falling over themselves creating a desktop taskforce and other nonsense. &nbsp;Didn't Deb start out so as to satisfy its developers? I say keep it that way.<br /><br />And I'm well. Hammered at work until the release this Friday, but I'll make it. Heathers in finals, but I'm sure you've heard by now. Drop me a line at rburt3@mchsi.com.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 10, 2002, 11:45:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">...but sheesh, one article...</div><br /><br />It was actually several articles. They got hammered really hard for their latest official release and they realized it. I think as long as they don't focus too hard on the desktop, I won't freak out too much. They have to remember that there are a whole bunch of moody Geeks that are very religious about their Debian, but since the hard core ones are maintaining it, I don't see there being too much problem. That also brings up the fact that the users are the ones who maintain it so they (we?) are only moving the direction they(we?) want to move in.<br /><br />I just hope that they don't try to spread themselves thin or wear down the quality of the overall system. They can't try to please everyone without compromising on something...<br /><br />-------<br />Ruggy</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rburt3</b> on <b>December 11, 2002, 08:09:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">I just hope that they don't try to spread themselves thin or wear down the quality of the overall system. They can't try to please everyone without compromising on something...</div><br />My fear exactly. I mean, I'm not, nor am I likely to be, a Debian user, but I wouldn't like to see it &quot;watered down&quot; because some editor didn't like it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>dpeach</b> on <b>December 11, 2002, 08:49:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">They are getting things right which is a good thing (tm).</div><br />And I thought rburt was the only one that did that kind of thing.<br /><br />My dislike of Debian comes from way back in the 90's anyone remember back then). I have not even tried them in probably close to 5 years. I realize lots may have changed, but there was not anything about Debian that appealed to me back then.<br /><br />I do appreciate that other distros are based on Deb. My favorite distro of the past was Corel Linux. I was shocked way back then when I found out that it was based on Deb. It had a very nice installer and very easy to configure. The problem with their distro was, if it did not recognize a peice of hardware, it was almost impossible to figure out how to make it work. Admittedly, that was back in my early days when I wouldn't know how to get anything working on my own.<br /><br />Funny thing though, I still have hardware not working. Hmmm?<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 11, 2002, 10:26:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">And I thought rburt was the only one that did that kind of thing. </div><br /><br />Too much slashdot...<br /><br /><div class="quoteheader">Quote from: dpeach</div><div class="quote">Funny thing though, I still have hardware not working. Hmmm?</div><br /><br />Well, does the kernel support that hardware that isn't working? Hardware support has always been in the kernel. Debian may not have had the support for that hardware built into the stock kernel, but that was something that a simple insmod or recompile could fix. <br /><br />I guess I'm a different from everyone else when it comes to kernels. I don't like to use stock kernels because for one, everything is in a module (I'm a weirdo and don't like modules), they have to have support for stuff I don't have a need for, thus slowing things down (SMP for example) and I also like to know exactly what is in my kernel. There are patches I like to apply to help things work a little better...but that's me.<br /><br />To each his own, so on and so forth...<br /><br />-------<br />Ruggy</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rburt3</b> on <b>December 11, 2002, 12:59:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">Too much slashdot...</div><br />Mmmmmm, jargon file (http://www.tuxedo.org/~esr/jargon/html/entry/TM.html)... &nbsp; :D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>crowe</b> on <b>December 18, 2002, 10:31:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote"><br />Mmmmmm, jargon file (http://www.tuxedo.org/~esr/jargon/html/entry/TM.html)... &nbsp; :D</div><br /><br />Recreational reading? &nbsp;:lol:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Why hate?</b><br />
+					Post by: <b>rburt3</b> on <b>December 18, 2002, 10:58:55 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You have to admit that some of the entries are a hoot. Besides, how would we communicate otherwise, you crufty (http://www.tuxedo.org/~esr/jargon/html/entry/crufty.html) B1FF (http://www.tuxedo.org/~esr/jargon/html/entry/B1FF.html). ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>meanwhile...</b><br />
+					Post by: <b>rburt3</b> on <b>December 18, 2002, 11:09:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">...back on topic (http://www.desktoplinux.com/articles/AT2559097045.html)...</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

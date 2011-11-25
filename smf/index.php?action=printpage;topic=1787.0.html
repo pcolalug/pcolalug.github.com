@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - NEC LCD1512 +SUSE</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: woodyharold on July 22, 2004, 02:14:28 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NEC LCD1512 +SUSE</b><br />
+					Post by: <b>woodyharold</b> on <b>July 22, 2004, 02:14:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am trying to install SUSE Pro9.1 on my computer hooked to a LCD Panel. When the CD starts the install I get a display then the install menu. I select Installation and the install starts, then a blank screen. Can anyone tell me what I have to pass to the kernel to make it recognize the LCD? I haven't had any trouble installing Mandrake 10.0 and some other distros with this panel.<br /><br />&nbsp; &nbsp; Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NEC LCD1512 +SUSE</b><br />
+					Post by: <b>steve</b> on <b>July 22, 2004, 06:43:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Are you sure it's a problem with the LCD? Is it a Dual Head video card? Is this a Laptop hooked to an LCD panel or a Desktop? What Video card do you have?<br /><br />Have you checked SuSE's web site? They have a pretty good knowledge base and a good hardware compatability chart for their distro.<br /><br />Thanks,<br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NEC LCD1512 +SUSE</b><br />
+					Post by: <b>imnes</b> on <b>July 22, 2004, 08:39:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I installed SuSE 9.1 pro yesterday on my machine with an NEC 1830 LCD. &nbsp;My video card is an NVidia GeForce FX 5600 256mb - I didn't have a problem so it might be something else giving you trouble. &nbsp;<br /><br />You can do a text-mode install if it's just graphical mode that's giving you trouble.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NEC LCD1512 +SUSE</b><br />
+					Post by: <b>woodyharold</b> on <b>July 22, 2004, 09:14:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I checked with the SUSE website and I couldn't find where my SIS740 chip is supported. It appears I may need to get a video card if I want to run SUSE on this cheapo SAM's linux box, but then again, why does the display work for the SUSE logo and the installation menu?Maybe I will try a text install and then configure later, if I can figure how to do a text install with SUSE.<br />&nbsp; Thanks Guys--------------------Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NEC LCD1512 +SUSE</b><br />
+					Post by: <b>rugmonster</b> on <b>July 23, 2004, 04:37:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: woodyharold</div><div class="quote">why does the display work for the SUSE logo and the installation menu</div><br /><br />X uses a different set of drivers.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NEC LCD1512 +SUSE</b><br />
+					Post by: <b>woodyharold</b> on <b>July 24, 2004, 12:05:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Update<br />&nbsp; No problem with the LCD Panel. I connected it to another computer and SUSE installed just fine.<br />&nbsp; I connected a CRT monitor to El cheapo Box and installed SUSE Pro9.1 without a hitch, then disconnected the CRT and replaced it with my LCD Panel. It boots up great and runs with the following problem: On boot,the display is good for the SUSE start-up until the Kernel loads as shown on the &quot;Kernel loading progress bar&quot;. The screen then goes blank and stays blank until the X-window opens, after that all is good until shutdown. The screen goes blank during the time scrooling should be displayed, then the machine shuts off correctly. By the way, Mandrake correctly identifies the SIS chip as SIS740 and SUSE sees it as SIS650.<br />&nbsp; &nbsp;Any ideas on why the blank screen? Can it be corrected? I can live with it, but I would like to have everything operating correctly.<br />&nbsp; &nbsp; &nbsp; &nbsp; Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NEC LCD1512 +SUSE</b><br />
+					Post by: <b>imnes</b> on <b>July 24, 2004, 01:46:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Probably a problem with the kernel fb drivers for your card. &nbsp;You're only option probably is to disable graphical bootup. &nbsp;I don't have suse installed right now I&quot;m not sure what you have to edit to do that.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - centrino chipset / ATI radeon mobility support</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: lloydr on January 28, 2004, 08:26:30 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>centrino chipset / ATI radeon mobility support</b><br />
+					Post by: <b>lloydr</b> on <b>January 28, 2004, 08:26:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok just finishing things up with the new laptop....toshiba tecra running centrino chipset w/ wifi, intel pentium-M, 768mb ddr266 ram, ati mobility radeon 9000 32mb vid, and slackware 9.1 w/ dropline-gnome<br /><br />now i remember why i've always liked nvidia cards....support<br />anyone happen to know where i can find any sort of support for this ati mobility radeon 9000 vid card for linux? was looking at the DRI site and trying to be sure that plan would work....<br /><br />I remember the DRI section of 2.6.x kernel config that had the ATI Radeon support and also above that section was the agp support.....would switching over to 2.6 kernel with enabling intel agpgart support and ati radeon dri support fix this problem? also another thing is the intel ICH4-M i8x0 based sound looks like its supported better in 2.6 over 2.4 because i remember on my old motherboard i had i845PE/ICH4 integrated soundmax sound and it didnt seem like like linux(my 2.4.20 atleast back then) much so ended up with a creative soundblaster live 5.1 card.....i cant change cards on the laptop so my only option is trying to get 2.6 to work with it<br /><br />the setup of laptop is:<br />intel centrino chipset<br />intel pentium-m (64kb L1 cache, 1mb of L2 cache) 1.4ghz processor<br />standard ide dvd-rom and 30gb harddrive...but the floppy drive is usb, so im kinda curious or should probaly look in the 2.6 config and figure out where the support for usb floppy comes in...anyone know off top of their head?<br />768mb of ddr266 ram<br />intel <br />slackware 9.1 <br />2.4.22 kernel<br />XFree86 4.3.0<br />dropline gnome <br /><br />also one other thing....sorry if some/most of this doesnt have to do with the topic im posting this under, but does anyone know the best processor family setting in the kernel config whether it be 2.4 or 2.6<br /><br /><br /><br />if anyone can get on aim, icq, or pm me and give me a shout on anything i'm needing help with, i'd appreciate it...right now all i believe i need to figure out is:<br />processor family optimization settings for the centrino/pentium-M systems<br />ati mobility radeon 9000 3D support<br />usb floppy drive support<br />ICH4-M soundmax sound support<br />if you know anything about the centrino Intel wireless support( i know intel doesnt offer drivers yet but has said they are working on developing one...but any other options might be nice)<br /><br />thanks, c ya</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>centrino chipset / ATI radeon mobility support</b><br />
+					Post by: <b>lloydr</b> on <b>January 28, 2004, 08:48:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">rather not make that post any longer...but i just went and edited my fstab because i knew /mnt/floppy shouldnt be pointed to /dev/fd0 so its now set to /dev/sda and works fine..... im going to guess and figure the usb floppy drive support would be somewhere around the scsi section or usb mass storage section of 2.6.x kernel config right?<br /><br /><br />update::::I just tried the stock Xfree86 radeon driver compared to the vesa and performance was terrible.....vesa did a much better job than that peice of junk....so any ideas of the stock radeon driver is a bad idea....looks like DRI is best bet....anyone with other ideas on this or anything else, lemme know<br /><br />c ya</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>centrino chipset / ATI radeon mobility support</b><br />
+					Post by: <b>lloydr</b> on <b>January 30, 2004, 01:25:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">anyone ever used NdisWrapper?<br /><br />http://ndiswrapper.sourceforge.net/<br /><br />they say they support intel centrino wireless and broadcom chips and all.....the only thing about it I don't like is that it runs with windows drivers.....which I guess if it works, it's better than nothing but still kinda wary of that<br /><br />another thing is about not able to have smp/HT enabled but thats no big deal with the centrino laptop, but if I had to make that choice I think i would stick to wired &nbsp;:wink: <br /><br />if anyone tested it before, let me know....otherwise I think I'm going to try it out tomorrow along with a 2.6.1 trial run and maybe get that stupid ati mobility radeon 9000 working too<br /><br />http://mirror.ati.com/support/drivers/linux/radeon-linux.html?type=linux&amp;prodType=graphic%E2%88%8F=productsLINUXdriver&amp;submit.x=7&amp;submit.y=9&amp;submit=GO%21<br />well I think I located drivers for ati graphics cards....funny part is, nowhere on the ati site I have been able to locate drivers for the mobility chips or even half the radeons....but when you hit google and find some suse forum lol you find a link to an ati mirror that has the latest drivers.....fairly interesting that ati doesn't advertise these drivers, and in the driver search when you select mobility it takes you to a page talking about no drivers and to check the laptop manufacturer</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>centrino chipset / ATI radeon mobility support</b><br />
+					Post by: <b>lloydr</b> on <b>January 31, 2004, 12:10:55 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">well, if anyone runs into this problem in future...this is what I did:<br /><br />compiled a 2.6.1-mm5(-mm5 patch gave me better centrino Pentium-M support) kernel with the toshiba acpi battery status fix patch.<br />just did a rpm2tgz on the ati drivers and went through an annoying process of making modules for the drivers and getting all that situated....and the intel centrino wireless I got running great using ndiswrapper<br /><br />if someone is looking for support for a few of the not so well supported wireless chipsets in linux, give ndiswrapper a peek, I definetely recommend it because so far the results from using this centrino 802.11b wireless is pretty nice....isn't flawless, but it's working just fine &nbsp;:D <br /><br />and alsa sound works great in 2.6.1 kernel with the i8x0 modules</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - OK NOW I feel dumb</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: Evil1Kenobi on April 05, 2005, 08:07:33 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OK NOW I feel dumb</b><br />
+					Post by: <b>Evil1Kenobi</b> on <b>April 05, 2005, 08:07:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sorry to sound like a stupid moron, but I've been having some issues (still)installing programs. &nbsp;One of which is Bit Torrent. &nbsp;The file I have is BitTorrent-4.0.0-1.noarch.rpm and if I just click on it, it prompts to install, then says it's already installed, if I go into terminal, and run &quot; rpm -i BitTorrent-4.0.0-1.noarch.rpm it gives me <br />&quot;error: cannot open lock file ///var/lib/rpm/RPMLOCK in exclusive mode<br />error: cannot open Packages database in /var/lib/rpm&quot;<br /><br />Frankly this is where I'm clueless, I fell stuck in 12th century england, where everyone speaks olde english...I kinda understand, but not enough to know what's going on.<br /><br />any help is appreachated<br /><br /><br />(BTW version of Linux- Mandrake 10.1<br /><br />*Edit* Rugmonster 5 Apr 2005 2200 CDT - Moved to appropriate section</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: OK NOW I feel dumb</b><br />
+					Post by: <b>dpeach</b> on <b>April 05, 2005, 09:32:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Evil1Kenobi</div><div class="quote">... if I just click on it, it prompts to install, then says it's already installed...</div><br />Well, is it installed?<br /><br />Have you tried installing from Mandrake Control Center? You can get there by going to &nbsp;Launcher | System | Configuration | Configure your computer. It will ask you to supply the root password. Then go to Software Managment then *Remove*. (Not install yet). When that is ready type in &quot;bittorrent&quot; (without quotes) and hit enter. If anything pops up, it will tell you what is installed. That is an easy way to check what is already on the system. Then you can cancel out of that and go to the installer if you still need to install it.<br /><br />If you are able to get on IRC then the ##mandrake channel at freenode has been really helpful to me. I have been hanging out there recently and am impressed with the helpfulness you can get there.<br /><br />**I don't want to divert questions away from the forum, but I have found IRC to be an excellent source of immediate help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OK NOW I feel dumb</b><br />
+					Post by: <b>capnpayne</b> on <b>April 06, 2005, 08:37:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">No offense, but I'd strongly suggest using http://www.linuxquestions.org/ and their excellent search feature. &nbsp;There's almost always an answer to *nix problems there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>OK NOW I feel dumb</b><br />
+					Post by: <b>rugmonster</b> on <b>April 07, 2005, 07:39:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">While we encourage people to search google prior to posting here, this is a forum for support for users. Don't discourage people from asking questions.<br /><br />Also, the lock issue sounds like permissions. To install a package, you need to be someone with permissions to do so, such as root. Try su'ing to root (or sudo is even better if you have it setup) and running that command again. If it says it's installed, then it probably is, just not in a menu anywhere. At a terminal type in bittorrent, or a part of it and hit tab. If it autocompletes, you can type &quot;which bittorrent&quot; (or whatever it autocompleted as) to find out exactly where it is installed.<br /><br />There are other bittorrent clients out there, such as Azureus (my personal favorite), to try if you continue having problems with the vanilla BT client.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

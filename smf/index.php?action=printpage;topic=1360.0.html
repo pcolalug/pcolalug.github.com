@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - lan woes</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: Brent on February 05, 2004, 09:28:18 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lan woes</b><br />
+					Post by: <b>Brent</b> on <b>February 05, 2004, 09:28:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys,<br /><br />I'm having a bit of a problem with my lan.<br /><br />I have my wirespeed modem going to a regular router...from the router it goes to my computer and then to a wifi router<br /><br />My roomates are connected using the wifi router. &nbsp;<br /><br />For some reason (not firewall) I can't host join or even see a lan game. &nbsp;However I can ping my roomates computers.<br /><br />I don't see why I can ping there comps but i can't join a game on there ip</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lan woes</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 05, 2004, 10:02:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If your regular router is using the same subnet routing scheme as your WIFI buddies (and they both are probably using 192.168.0.0/16 or the Class B private subnet), then your computer's default route is out the router, not the wifi, which is why you don't see them. Easiest thing to do would be to make the WIFI's DHCP pool use 10.0.0.0/8 addresses (the Class A private subnet). Then you would have a default route out the 192.168/16 port for internet, but any 10. addresses would route correctly through the WIFI, and CHEESY-POOF, you see the game going on the WIFI segment.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

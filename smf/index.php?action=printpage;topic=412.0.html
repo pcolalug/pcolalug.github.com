@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Wyse terminal</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by:  on January 20, 2003, 06:02:51 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wyse terminal</b><br />
+					Post by: <b></b> on <b>January 20, 2003, 06:02:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, here's a question for you...<br /><br />Has anyone here had any success connecting a Wyse terminal to the serial port of a Linux pc? I've been through the how-to many times and I think my problem is how my cable is wired. I have the pinouts for the terminal and the serial port but no matter how I wire the connectors I keep getting the &quot;getty respawning too fast&quot; error. Unfortunately, all the pinout diagrams I find are all ascii art that doesn't clearly show how what wires go where.<br /><br />Any ideas?<br /><br />Lester</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wyse terminal</b><br />
+					Post by: <b>rugmonster</b> on <b>January 20, 2003, 08:53:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: scarecrow000</div><div class="quote">&quot;getty respawning too fast&quot; error</div><br /><br />I had posted something different before, but have since been ejumicated...a little. Are you sure you have the terminal setup correctly? Also, have you done the possible options for you getty to do local modem control that are listed in the HOWTO (http://www.tldp.org/HOWTO/Text-Terminal-HOWTO-18.html#ss18.6)? I am not completely up on Wyse terminals, but could there be a possibility that it uses a weird cable standard? Also, this may sound stupid, but are you sure you are using the correct /dev/ttySx and that it is enabled in the bios?<br /><br />Best Wishes!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wyse terminal</b><br />
+					Post by: <b>rburt3</b> on <b>January 21, 2003, 09:08:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">email (not pm) hitechwizard. He's got one hooked up to one of our RH8.0 DB servers. Gotta say, kinda cool...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wyse terminal</b><br />
+					Post by: <b></b> on <b>July 20, 2003, 09:10:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sorry I'm late posting this, but I did finally get my Wyse terminal connected...<br /><br />My problem was getting the correct pinouts so I could make my own cable.<br /><br />Unfortunately?, I now believe I lost the motherboard on the computer I was connecting to and so, it no longer works...<br /><br />But fear not, I still have the cable, and the HOWTO shall lead the way once again...<br /><br />Lester</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I think this is great!</b><br />
+					Post by: <b>bhoff</b> on <b>July 20, 2003, 09:26:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Can you post your info here for the rest of us so we can use it vs looking it up elsewhere?<br />Thanks in advance<br />~Brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wyse terminal</b><br />
+					Post by: <b></b> on <b>August 02, 2003, 10:24:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">:oops:<br />Sorry, late posting this also, but, better late than never...<br /><br />Yes, &nbsp;I will post the correct pinouts, but this means I will have to open up <br />the test cable I made and sit down with a volt-ohmeter to find out exactly<br />what I did, and then, clearly write out in text instructions which DB9 pins<br />connect to which DB25 pins.<br /><br />I feel this is the best way to explain how to properly wire the cable because I have already searched the internet and found that all cable <br />pinout descriptions are in ASCI format and without an explanation of what wires connect where an ASCI diagram is worthless...<br /><br />I will emphasize one fact, right now...<br /><br />DO NOT use a 10 strand cable over 50 feet long!<br /><br />The working cable connection I was using was 50 feet long and there was <br />a definite lag in speed, but, if you research this on your own, I was pushing the extreme limit of a serial port connection by doing this...<br /><br />Oh, and by the way, the Loaves and Fishses Thrift store on &nbsp;Palafox has<br />2 Wyse terminals without keyboards...<br /><br />So, if you feel adventurous, pick up on of these terminals and find a keyboard, and you will get a glimpse of computer history...<br /><br />lester</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

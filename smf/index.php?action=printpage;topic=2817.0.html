@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - w32codecs</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: LinkZero on March 14, 2006, 11:56:50 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>w32codecs</b><br />
+					Post by: <b>LinkZero</b> on <b>March 14, 2006, 11:56:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">i have Ubuntu, and i need w32codecs.&nbsp; i tried http://ubuntuguide.org but apparently the w32codecs package is missing.&nbsp; i don&#039;t know how to compile from scratch in Ubuntu, or where to put the files once they&#039;re extracted.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: w32codecs</b><br />
+					Post by: <b>danc</b> on <b>March 14, 2006, 04:05:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;d try looking at this thread on the Ubuntu Forums:<br />http://www.ubuntuforums.org/showthread.php?t=120609&amp;highlight=win32codec<br /><br />You really should learn to use resources like that one, and to do a simple Google search...<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: w32codecs</b><br />
+					Post by: <b>Brent</b> on <b>March 14, 2006, 04:09:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Heh, you missed some things when you scanned over the guide:<br /><br /><div class="quoteheader">Quote</div><div class="quote">Q: How to install Multimedia Codecs?<br /><br />&nbsp; &nbsp;1. Read General Notes<br />&nbsp; &nbsp;2. Read How to add extra repositories?<br />&nbsp; &nbsp;3.<br /><br />&nbsp; &nbsp; &nbsp; sudo apt-get install gstreamer0.8-plugins<br />&nbsp; &nbsp; &nbsp; sudo apt-get install gstreamer0.8-lame<br />&nbsp; &nbsp; &nbsp; sudo apt-get install gstreamer0.8-ffmpeg<br />&nbsp; &nbsp; &nbsp; sudo apt-get install w32codecs<br />&nbsp; &nbsp; &nbsp; sudo apt-get install libdivx4linux<br />&nbsp; &nbsp; &nbsp; sudo apt-get install lame<br />&nbsp; &nbsp; &nbsp; sudo apt-get install sox<br />&nbsp; &nbsp; &nbsp; sudo apt-get install ffmpeg<br />&nbsp; &nbsp; &nbsp; sudo apt-get install mjpegtools<br />&nbsp; &nbsp; &nbsp; sudo apt-get install vorbis-tools<br />&nbsp; &nbsp; &nbsp; gst-register-0.8<br /></div><br />You just missed step one and two.<br /><br />Link:<br />http://www.ubuntuguide.org/#codecs<br /><br /><br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: w32codecs</b><br />
+					Post by: <b>imnes</b> on <b>March 14, 2006, 08:50:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Another option, download this archive (it&#039;s 12MB compressed)<br />http://www.mplayerhq.hu/MPlayer/releases/codecs/all-20050412.tar.bz2<br /><br />Extract the contents to /usr/lib/win32 by running<br /><div class="codeheader">Code:</div><div class="code">sudo mkdir /usr/lib/win32<br />cd /usr/lib/win32<br />sudo tar jxvf /path/to/all-20050412.tar.bz2<br />sudo mv all-20050412/* .<br />sudo rm -rf all-2005412</div><br />That will give you the latest win32 codecs (incase the ubuntu package isn&#039;t available, or you just want something newer).&nbsp; Also you&#039;ll have the best luck installing totem-xine for getting all your videos to work.&nbsp; <br /><div class="codeheader">Code:</div><div class="code">sudo apt-get install totem-xine</div><br />And for your web browser<br /><div class="codeheader">Code:</div><div class="code">sudo apt-get install totem-xine-firefox-plugin</div><br />If that browser plugin gives you any trouble try the mplayer one.<br /><div class="codeheader">Code:</div><div class="code">sudo apt-get remove totem-xine-firefox-plugin<br />sudo apt-get install mozilla-mplayer</div><br />If you&#039;re having trouble getting your /etc/apt/sources.list setup correctly, here&#039;s what I currently have:<br /><div class="codeheader">Code:</div><div class="code">#deb cdrom:[Ubuntu 5.10 _Breezy Badger_ - Release i386 (20051012)]/ breezy main restricted<br /><br /><br />deb http://us.archive.ubuntu.com/ubuntu breezy main restricted<br />deb-src http://us.archive.ubuntu.com/ubuntu breezy main restricted<br /><br />## Major bug fix updates produced after the final release of the<br />## distribution.<br />deb http://us.archive.ubuntu.com/ubuntu breezy-updates main restricted<br />deb-src http://us.archive.ubuntu.com/ubuntu breezy-updates main restricted<br /><br />## Uncomment the following two lines to add software from the &#039;universe&#039;<br />## repository.<br />## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu<br />## team, and may not be under a free licence. Please satisfy yourself as to<br />## your rights to use the software. Also, please note that software in<br />## universe WILL NOT receive any review or updates from the Ubuntu security<br />## team.<br />deb http://us.archive.ubuntu.com/ubuntu breezy universe multiverse<br />deb-src http://us.archive.ubuntu.com/ubuntu breezy universe multiverse<br /><br />## Uncomment the following two lines to add software from the &#039;backports&#039;<br />## repository.<br />## N.B. software from this repository may not have been tested as<br />## extensively as that contained in the main release, although it includes<br />## newer versions of some applications which may provide useful features.<br />## Also, please note that software in backports WILL NOT receive any review<br />## or updates from the Ubuntu security team.<br />deb http://us.archive.ubuntu.com/ubuntu breezy-backports main restricted universe multiverse<br />deb-src http://us.archive.ubuntu.com/ubuntu breezy-backports main restricted universe multiverse<br /><br />deb http://security.ubuntu.com/ubuntu breezy-security main restricted<br />deb-src http://security.ubuntu.com/ubuntu breezy-security main restricted<br /><br />deb http://security.ubuntu.com/ubuntu breezy-security universe multiverse<br />deb-src http://security.ubuntu.com/ubuntu breezy-security universe multiverse<br /></div><br />Nick<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: w32codecs</b><br />
+					Post by: <b>rugmonster</b> on <b>March 15, 2006, 06:04:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here&#039;s a sources.list generator from Ubuntu.<br /><br />http://www.ubuntulinux.nl/source-o-matic</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: w32codecs</b><br />
+					Post by: <b>LinkZero</b> on <b>March 15, 2006, 02:37:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok, i&#039;ve tried using every single method y&#039;all have offered, and nothing has worked.&nbsp; this is what usually comes up when i try to download or install a package.<br /><br /><div class="codeheader">Code:</div><div class="code">Package w32codecs is not available, but is referred to by another package.<br />This may mean that the package is missing, has been obsoleted, or<br />is only available from another source<br />W: Couldn&#039;t stat source package list http://ubuntu-backports.mirrormax.net hoary-backports/main Packages (/var/lib/apt/lists/ubuntu-backports.mirrormax.net_dists_hoary-backports_main_binary-i386_Packages) - stat (2 No such file or directory)<br />W: Couldn&#039;t stat source package list http://ubuntu-backports.mirrormax.net hoary-backports/universe Packages (/var/lib/apt/lists/ubuntu-backports.mirrormax.net_dists_hoary-backports_universe_binary-i386_Packages) - stat (2 No such file or directory)<br />W: Couldn&#039;t stat source package list http://ubuntu-backports.mirrormax.net hoary-backports/multiverse Packages (/var/lib/apt/lists/ubuntu-backports.mirrormax.net_dists_hoary-backports_multiverse_binary-i386_Packages) - stat (2 No such file or directory)<br />W: Couldn&#039;t stat source package list http://ubuntu-backports.mirrormax.net hoary-backports/restricted Packages (/var/lib/apt/lists/ubuntu-backports.mirrormax.net_dists_hoary-backports_restricted_binary-i386_Packages) - stat (2 No such file or directory)<br />W: Couldn&#039;t stat source package list http://antesis.freecontrib.org free/non-free Packages (/var/lib/apt/lists/antesis.freecontrib.org_mirrors_ubuntu_plf_breezy_dists_free_non-free_binary-i386_Packages) - stat (2 No such file or directory)<br />W: You may want to run apt-get update to correct these problems<br />E: Package w32codecs has no installation candidate<br /></div><br />i&#039;ve run apt-get several times, but it doesn&#039;t change anything.&nbsp; i&#039;ve also followed instructions from several other Ubuntu forums, but so far nothing has worked.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: w32codecs</b><br />
+					Post by: <b>rugmonster</b> on <b>March 15, 2006, 05:00:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just went to the mirrormax.net backports mirror and you need to change hoary-backports to hoary-extras. mplayer and the w32codecs are in the standard repositories, you just need to add multiverse and restricted to your sources.list. What this means is that you would find the line that says...<br /><br /><div class="codeheader">Code:</div><div class="code">deb http://us.archive.ubuntu.com/ubuntu hoary universe main</div><br />...make it look like...<br /><br /><div class="codeheader">Code:</div><div class="code">deb http://us.archive.ubuntu.com/ubuntu hoary universe main restricted multiverse</div><br />Have you run this since changing your sources.list?<br /><br /><div class="codeheader">Code:</div><div class="code">$ sudo apt-get update</div><br />One more thing, why are still using Hoary when Breezy is available? All it should take is changing all instances of hoary to breezy in your sources.list and running...<br /><br /><div class="codeheader">Code:</div><div class="code">$ sudo apt-get update &amp;&amp; sudo apt-get dist-upgrade</div><br />Next month, the next version of Ubuntu, Dapper will be released and I believe Hoary support will go away.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

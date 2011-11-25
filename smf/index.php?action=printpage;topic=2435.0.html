@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - HoneyPots</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: bhoff on May 15, 2005, 04:55:13 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>HoneyPots</b><br />
+					Post by: <b>bhoff</b> on <b>May 15, 2005, 04:55:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey has anyone here looked into honeypots or how to set them up effectively? I am leaning towards getting all my security together and online before I break down and get my own cox connection. Any thoughts.<br />I effectively have 5 levels now and this would be the first line behind firewall as decoy.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>HoneyPots</b><br />
+					Post by: <b>lloydr</b> on <b>May 15, 2005, 05:21:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've helped a friend setup a honeypot as a decoy. The LUG library has a book called &quot;Know your enemy&quot; that is completely about honeypots and has mentions about the honeynet project. I believe that book is checked out current by crowe. But you probaly would be ahead by checking out the honeynet project. They created the honeyd which allows you to setup decoy honeypots act like many different operating systems and many different server daemons.<br /><br />The one I helped a friend setup is running on an OpenBSD platform with everything closed off, 2 interfaces, and running honeyd. He has 1 interface for management and such that is closed off from the outside world and the other interface is for honeyd to be running on. the honeypot is the first box directly behind his firewall for a decoy like you were talking about.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>HoneyPots</b><br />
+					Post by: <b>Brent</b> on <b>May 15, 2005, 05:28:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm sure you've heard of http://www.honeynet.org/. &nbsp;These guys basically wrote the book when it comes to honey pots. &nbsp;I used to read their site religously in my younger (more paranoid) days.<br /><br />These days the security setup on my system is pretty meager (i just keep slackware patched, and don't run stuff I don't need).<br /><br />It's ok, I'm about to route my home network through a wrt54g router, ...sveasoft has some nice security features with it's firmware.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>HoneyPots</b><br />
+					Post by: <b>lloydr</b> on <b>June 06, 2005, 09:25:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">seen this in distrowatch weekly:<br /><br /><div class="quoteheader">Quote</div><div class="quote"><br />Honeywall CDROM. Honeywall CDROM is a Fedora-based distribution with the goal of capturing the activities of cyber threats and analysing the captured data. It has a GUI-based interface for system configuration, administration, and data analysis, and supports the new 3.x branch of Sebek. The CD, release under the General Public License, is a product of the Honeynet Project, a non-profit organisation dedicated to improving the security of the Internet by providing cutting-edge research for free.<br /></div><br />http://distrowatch.com/table.php?distribution=honeywall<br /><br />seems it's from the Honeynet project</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>HoneyPots</b><br />
+					Post by: <b>rburt3</b> on <b>June 07, 2005, 11:46:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I seem to remember some flap several years ago about legislation that called the legality of honeypots into question. Of course it fell off the radar with all of the other civil rights infringing legislation introduced after 9-11, but I wonder if its still around. Prolly nothing to be worried about in the long run, as it sounded like one of those selectivly-enforced rules used as &quot;gateway prosecution&quot;.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>HoneyPots</b><br />
+					Post by: <b>lloydr</b> on <b>June 08, 2005, 06:42:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I haven't really heard much about the legality of honeypots lately other than the info gathered has to be handled in a specific way if it is to be used in court.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>HoneyPots</b><br />
+					Post by: <b>altomo</b> on <b>June 23, 2005, 11:06:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">There was some talk to the nature of entrapment if legal action was pursued, but like someone else said it fell away fast. <br /><br />Just be sure to set it up safe and do not let traffic back outbound.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

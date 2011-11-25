@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - SuSE 9.3 Pro Review</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: imnes on April 21, 2005, 07:17:15 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SuSE 9.3 Pro Review</b><br />
+					Post by: <b>imnes</b> on <b>April 21, 2005, 07:17:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">(Work in progress, will change update this as I play with it some more)<br /><br />My copy of SuSE 9.3 finally arrived. &nbsp;I was worried about it not working because the LiveDVD version doesn't work on my system (USB keyboard and mouse never initialize). &nbsp;Luckily the installation went just fine and everything seems to be working great.<br /><br />I got the Student DVD version (which includes two DVDs and five CDs, a big green / red SuSE + Novell box, a printed User's guide, and a printed Admin guide). &nbsp;It was $59 + shipping.<br /><br />For a Gnome user, the default install is kind of annoying. &nbsp;In the installation you can choose to install Base Graphical System + KDE or Base Graphical System + Gnome. &nbsp;What it should have said was do you want KDE, or Gnome + KDE. &nbsp;I chose the Gnome install but every menu has a mix of Gnome and KDE applications. &nbsp;Under system utilities I have Gnome Terminal, Konsole, and other choices. &nbsp;Under Internet apps I have Firefox, Mozilla, and Konqueror. &nbsp;(The Gnome menu layout and icons are pretty much identical to the kde version (http://madpenguin.org/images/reviews/suse93/organization.png))I would have really preferred a Gnome-only install. &nbsp;I was previously using their Novell Linux Desktop 9 and that's the way it worked, a mostly clean KDE or Gnome install. &nbsp;I haven't installed the KDE option, but I'm guessing it doesn't have all the Gnome stuff mixed in (will try it and let you guys know).<br /><br />By default you don't have MP3 and other multimedia codecs installed. &nbsp;That's easily fixed durring installation when the Online Update runs. &nbsp;You get a choice to install some Multimedia Packs, Macromedia Flash, and the commercial NVidia driver. &nbsp;They all went on fine. &nbsp;But after first booting into the system and running Yast to install some additional software, I was bitten by RPM-dependency hell. &nbsp;There were lots (about 5 pages) of unresolved dependencies, I ended up putting the Install DVD back in and installing them all by hand. &nbsp;I think the 32 bit versions of everything got installed but not the 64 bit, after about 30 minutes of installing RMPs by hand, everything was happy and I could get into Yast without errors. &nbsp;<br /><br />One thing I've gotten used to with Gnome is auto-detecting my printers. &nbsp;My USB printer in SuSE 9.3 doesn't show up though (neither in yast or in Gnome CUPS manager). &nbsp;Not sure what's going on with that yet. &nbsp; (It did work in Novell Desktop 9, Ubuntu, and Solaris 10 though).<br /><br />I did a 64-bit install of the OS, and was surprised when prompted to install Macromedia Flash. &nbsp;But when I loaded up firefox and tried it out (http://www.homestarrunner.com/sbemail.html), it worked perfectly. &nbsp;I verified the build of firefox by going to help-&gt;about, they've got a 64 bit build of FireFox running the flash plugin. &nbsp;I don't know how, everything I've read says this is not supposed to work. &nbsp;But it works fine.<br /><br />They're running the Industrial Theme (which is also used in their Novell Desktop) in Gnome, but have included their KDE icons and menu layout which will really throw you off if you've used Gnome for any length of time. &nbsp;<br /><br />You can find some KDE and Gnome shots at http://madpenguin.org/cms/?m=show&amp;id=3851&amp;page=1<br /><br />For developers, they're including KDevelop, Eclipse 3.0, and MonoDevelop. &nbsp;By default only Java 1.4 runtime is installed, the JDK requires a trip to Yast to get it installed. &nbsp;(I wanted to remove Java 1.4 and install 1.5, but they've got OpenOffice dependant to the 1.4 version, so doing that would require removing OOo, so I stuck with 1.4 for now). &nbsp;They have chosen to stay with GCC version 3.3 instead of going to 4.0 (which is where the GNU java stuff really does well). &nbsp;Going to try installing the java specific parts of GCC later and see how well that works.<br /><br />I really prefer a less-molested Gnome install than SuSE 9.3 gives you - but it does work very well. &nbsp;KDE fans would probably be especially happy with SuSE, but for Gnome I would rather stick with Novell Desktop. &nbsp;(My only problem with that is they're on Gnome 2.6, which is too old for some of the development stuff I use). <br /><br />And apparently making free copies is OK - so if anyone wants to try this out, let me know and I'll bring them to the next meeting.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

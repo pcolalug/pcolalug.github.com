@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - How-to compile tar.gz on Linux!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on April 22, 2003, 08:30:28 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How-to compile tar.gz on Linux!</b><br />
+					Post by: <b>bhoff</b> on <b>April 22, 2003, 08:30:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Compiling software on Linux Boxes.<br /><br />This is by all means not the ends all of this subject if anyone sees a mistake or simplier method please add it in.<br />~Brett~<br /><br />First we are going to have a package we want to add to our system usaully in this format mypackage-xx.x.tar.gz<br /><br />Let's cp (cp is the linux command for copy) that tarball package to the /usr/local/src directory.<br />If you do not have a /usr/local/src directory try /usr/local/usr.<br />We have to make this usable to our system by untarring it.<br />Normally you will want to put this in the /usr/local/src directory where you will keep the tarballs in case you need them later.<br />This is how to untar the package. <br /><br />--(where &quot;/tar/mypackage-xx.x.tar.gz&quot; will be replaced by the package name!)<br />--(Note! start typing the name then press the &quot;tab&quot; key this is a shortcut to finish long names!)<br /><br />cd /usr/local/src<br />tar -tzvf ../tar/mypackage-xx.x.tar.gz<br />tar -xzvf ../tar/mypackage-xx.x.tar.gz<br /><br />Now that you have the package let's follow the steps below to finish the compile.<br /><br />(Notes on using ./configure)<br />Just running `./configure' is fine, but the following changes may be useful.<br />Type `./configure --help', which will list the options that can be passed to the configure script. <br />If the `configure' script stops with an error, read the error message carefully. Most errors can be corrected then and there by carefully editing the script or installing necessary packages/libraries. <br /><br />&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;The below command makes the shell run the script named ' configure ' <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; which exists in the current directory. The configure script <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; basically consists of many lines which are used to check some <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; details about the machine on which the software is going to be <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; installed. This script checks for lots of dependencies on your <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; system. For the particular software to work properly, it may be <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; requiring a lot of things to be existing on your machine already. <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; When you run the configure script you would see a lot of output on <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; the screen , each being some sort of question and a respective <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; yes/no as the reply. If any of the major requirements are missing on <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; your system, the configure script would exit and you cannot proceed <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with the installation, until you get those required things. <br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The main job of the configure script is to create a ' Makefile ' . <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This is a very important file for the installation process. <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Depending on the results of the tests (checks) that the configure <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; script performed it would write down the various steps that need to <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; be taken (while compiling the software) in the file named Makefile.<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If you get no errors and the configure script runs successfully (if <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; there is any error the last few lines of the output would glaringly <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; be stating the error) then you can proceed with the next command <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; which is<br /><br />1st. run the configure script as shown below.<br />./configure<br /><br />&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;make shown below is actually a utility which exists on almost all Unix <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; systems. For make utility to work it requires a file named Makefile <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; in the same directory in which you run make. As we have seen the <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; configure script's main job was to create a file named Makefile to <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; be used with make utility. (Sometimes the Makefile is named as <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; makefile also)<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; make would use the directions present in the Makefile and proceed <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with the installation. The Makefile indicates the sequence, that <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Linux must follow to build various components / sub-programs of your <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; software. The sequence depends on the way the software is designed <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; as well as many other factors.<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The Makefile actually has a lot of labels (sort of names for <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; different sections). Hence depending on what needs to be done the <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; control would be passed to the different sections within the <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Makefile Or it is possible that at the end of one of the section <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; there is a command to go to some next section.<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Basically the make utility compiles all your program code and <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; creates the executables. For particular section of the program to <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; complete might require some other part of the code already ready, <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this is what the Makefile does. It sets the sequence for the events <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; so that your program does not complain about missing dependencies.<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; One of the labels present in the Makefile happens to be named ' <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; install ' .<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If make ran successfully then you are almost done with the <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; installation.<br /><br />2nd. Run the make command at the prompt .<br />make<br /><br />&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;makefile shown below uses the file named Makefile in the same <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; directory. When you run make without any parameters, the instruction <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; in the Makefile begin executing from the start and as per the rules <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; defined within the Makefile (particular sections of the code may <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; execute after one another..thats why labels are used..to jump from <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; one section to another). But when you run make with install as the <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; parameter, the make utility searches for a label named install <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; within the Makefile, and executes only that section of the Makefile.<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The install section happens to be only a part where the executables <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and other required files created during the last step (i.e. make) <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; are copied into the required final directories on your machine. E.g. <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; the executable that the user runs may be copied to the <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /usr/local/bin so that all users are able to run the software. <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Similarly all the other files are also copied to the standard <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; directories in Linux. Remember that when you ran make, all the <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; executables were created in the temporary directory where you had <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; unzipped your original tarball. So when you run make install, these <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; executables are copied to the final directories.<br /><br />3rd. Run the make install command like shown.<br />make install<br /><br />&gt; &nbsp; &nbsp; &nbsp; &nbsp; makeclean listed below is not nessacary but go along way towards good computer maintance.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; It cleans up the temp files used in the above processes and any misc files created that <br />&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;are no longer needed.<br /><br />4th Run the make clean command. This one is optional but is a nice touch it cleans out all of the unneeded data and <br />files after the compile and cleans up /tmp.<br />make clean<br /><br />[/quote]Thanks to David for the Proof!<div class="quoteheader">Quote</div><div class="quote"></div></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

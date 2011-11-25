@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Wireless pcmcia/usb setup.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: L.Rentz on November 17, 2003, 09:30:19 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 17, 2003, 09:30:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have just set up SuSE 9.0 on my Toshiba Laptop 5205-s705. &nbsp;I have everything working except my wireless and a buggy sound card setup. &nbsp;I have tried everything to get my integrated mini pci card to work with no luck. &nbsp;So I went out and purchased a Netgear ma111 based off a prism chipset. &nbsp;I still cant get it to work. &nbsp;I am new to linux. &nbsp;I have messed with it on and off for a couple years but I would like to really get involved with it now. &nbsp;Any help would be appreciated. &nbsp;<br />Thanks,<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>dpeach</b> on <b>November 17, 2003, 11:51:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Welcome to the group!<br /><br />Do you have a copy of Knoppix (http://www.knopper.net/knoppix/index-old-en.html)? If so, or you can download it, you might give it a try to just make sure that the combination will work with Linux. PCMCIA protocol is very well supported in Linux. I have had great sucess with any device I have used.<br /><br />If Knoppix detects it, and it works, then I would say it is possible to run down your problem with the information Knoppix will give. If it does not work under Knoppix, then chances are it won't work. That is not to say that it would be impossible, but Knoppix detects just about everything you could imagine.<br /><br />If you are not familiar with Knoppix, it is a &quot;Live&quot; CD. This means that you boot directly from the CD and your system runs in a RAM disk. Nothing is installed to the hard drive. So it can be used without &quot;installing&quot; and messing up your current setup. It also has great hardware detection. <br /><br />Again, welcome.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>rugmonster</b> on <b>November 18, 2003, 04:52:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm guessing you got the USB MA111. It seems according to this (http://lists.shmoo.com/pipermail/hostap/2003-May/002556.html), granted from back in May, it does not work. I would suggest you search google for more information.<br /><br />For compatible hardware, I suggest checking your distribution for the list of devices that work with the version of the kernel that it comes with as well as searching google and checking the compatibility with the newest versions of the kernel.<br /><br />Oh yeah, David, the minipci devices are different than PCMCIA. They are cards like PCI, but meant for laptops.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>MA111 Usb Wireless.</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 18, 2003, 06:15:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was trying to do my research before I went and purchased. &nbsp;I found that &nbsp;it was &quot;supported&quot;, so they say at http://www.linux-wlan.org/docs/wlan_adapters.html &nbsp;But I was unsucessful. &nbsp;I am a newbie so I could be doing something incorrect. &nbsp;I hate that I missed the last users meeting. &nbsp;I just found this group. &nbsp;I appreciate the replies. &nbsp;I am downloading the Knoppix iso as we speak. &nbsp; I had originally tried the SuSE live cd before I installed and I had already did a little reasearch and found that someone could not get the integrated mini pci wireless to work with knoppix. &nbsp;http://linux.toshiba-dme.co.jp/linux/eng/pc/memo2/sat5205.htm &nbsp;But that he could get other wireless working &quot;pcmcia&quot; based on the prism chip set.. &nbsp;I will keep looking though. &nbsp; Thanks for the help everyone.<br /><br />Lee<br /><br /><i>[2003-11-18 10:26 - Edit by crowe. Fixed links that were borked.]</i></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Just tried Knoppix install.</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 18, 2003, 08:58:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well I &nbsp;just tried a knoppix cd ramdisk install. &nbsp;It did not recognize the Netgear MA111 mini usb wireless card. &nbsp;Back to the drawing board.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>imnes</b> on <b>November 18, 2003, 10:01:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a Toshiba Satellite with integrated mini-pci wireless and it works fine. &nbsp;I assume your card is probably the same. &nbsp;<br /><br />I don't use SuSE but under most versions of Linux and BSD you have to enable PCMCIA card services before the thing will work.<br /><br />Also my sound seems to be working reasonably well with the 2.4.22 kernel. &nbsp;My toshiba uses the i810 sound chipset...<br /><br />Here are the modules loaded on my system.<br /><br /><div class="codeheader">Code:</div><div class="code"><br />&#91;root@satellite imnes&#93;# /sbin/lsmod<br />Module &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Size &nbsp;Used by &nbsp; &nbsp;Tainted&#58; P<br />i810_audio &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 27752 &nbsp; 1 &nbsp;&#40;autoclean&#41;<br />ac97_codec &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 17192 &nbsp; 0 &nbsp;&#40;autoclean&#41; &#91;i810_audio&#93;<br />soundcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6468 &nbsp; 2 &nbsp;&#40;autoclean&#41; &#91;i810_audio&#93;<br />agpgart &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;54820 &nbsp; 3 &nbsp;&#40;autoclean&#41;<br />nvidia &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1764768 &nbsp;11 &nbsp;&#40;autoclean&#41;<br />lp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9060 &nbsp; 0 &nbsp;&#40;autoclean&#41;<br />parport &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;37056 &nbsp; 0 &nbsp;&#40;autoclean&#41; &#91;lp&#93;<br />ide-cs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5060 &nbsp; 1<br />autofs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 13364 &nbsp; 0 &nbsp;&#40;autoclean&#41; &#40;unused&#41;<br />orinoco_cs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5556 &nbsp; 1 &nbsp;&#40;autoclean&#41;<br />orinoco &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;39756 &nbsp; 0 &nbsp;&#40;autoclean&#41; &#91;orinoco_cs&#93;<br />hermes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8068 &nbsp; 0 &nbsp;&#40;autoclean&#41; &#91;orinoco_cs orinoco&#93;<br />ds &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8680 &nbsp; 3 &nbsp;&#91;ide-cs orinoco_cs&#93;<br />yenta_socket &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 13664 &nbsp; 3<br />pcmcia_core &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;57216 &nbsp; 0 &nbsp;&#91;ide-cs orinoco_cs ds yenta_socket&#93;<br />e100 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 56100 &nbsp; 0<br />floppy &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 58012 &nbsp; 0 &nbsp;&#40;autoclean&#41;<br />sg &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 36492 &nbsp; 0 &nbsp;&#40;autoclean&#41;<br />sr_mod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 18168 &nbsp; 0 &nbsp;&#40;autoclean&#41;<br />microcode &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4700 &nbsp; 0 &nbsp;&#40;autoclean&#41;<br />ide-scsi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 12208 &nbsp; 0<br />scsi_mod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;108168 &nbsp; 3 &nbsp;&#91;sg sr_mod ide-scsi&#93;<br />ide-cd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 35776 &nbsp; 0<br />cdrom &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;33728 &nbsp; 0 &nbsp;&#91;sr_mod ide-cd&#93;<br />keybdev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2976 &nbsp; 0 &nbsp;&#40;unused&#41;<br />mousedev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5556 &nbsp; 1<br />hid &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;24708 &nbsp; 0 &nbsp;&#40;unused&#41;<br />input &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5888 &nbsp; 0 &nbsp;&#91;keybdev mousedev hid&#93;<br />usb-uhci &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 26380 &nbsp; 0 &nbsp;&#40;unused&#41;<br />usbcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;79168 &nbsp; 1 &nbsp;&#91;hid usb-uhci&#93;<br />ext3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 71300 &nbsp; 1<br />jbd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;52084 &nbsp; 1 &nbsp;&#91;ext3&#93;<br /></div><br /><br />Good luck..<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 18, 2003, 10:17:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Out of curiosity, which Toshiba laptop do you have? &nbsp;I have the Satellite 5205-S705. &nbsp;I am unsure exactly what to do with your Module list, &nbsp;since I am fairly new to linux. &nbsp; I have the 2.4.21 kernel.<br /><br />Thanks,<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>imnes</b> on <b>November 18, 2003, 06:18:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have last years model, I think the satellite 1415-s173. &nbsp;I'm running a 2.4.22 kernel under Fedora. &nbsp;I just threw out my modules list incase you're running the same hardware you can verify the same modules are loaded. &nbsp;I'm not sure what your laptop came with...<br /><br />BTW: You said your new network card runs on the prism chipset, well my wireless one runs on the prim II chipset and it seems to work, so yours should be supported...<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 18, 2003, 08:01:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had purchased the Netgear MA111 mini usb wireless (which I took back today), because I thought my integrated mini pci wireless would not work. &nbsp;BTW I still dont have it working. &nbsp;My integrated wireless is identified as &quot;Toshiba wireless LAN card&quot; &nbsp; It says the driver status: orinoco_cs is active.<br />Driver Activation Cmd: modprobe orinoco_cs<br />The strange thing is when I select it to configure it the card is listed as a pcmcia card.. &nbsp;Which it is not. &nbsp;Any Ideas anyone?<br />Here is the list of the modules loaded &quot;I guess lol&quot;<br /><div class="codeheader">Code:</div><div class="code">Module &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Size &nbsp;Used by &nbsp; &nbsp;Tainted&#58; P<br />snd-seq &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;36656 &nbsp; 1 &#40;autoclean&#41;<br />snd-mixer-oss &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;13400 &nbsp; 0 &#40;autoclean&#41;<br />videodev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5696 &nbsp; 0 &#40;autoclean&#41;<br />agpgart &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;42040 &nbsp; 3 &#40;autoclean&#41;<br />nvidia &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1628608 &nbsp;11 &#40;autoclean&#41;<br />usbserial &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;18620 &nbsp; 0 &#40;autoclean&#41; &#40;unused&#41;<br />isa-pnp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;30664 &nbsp; 0 &#40;unused&#41;<br />lp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6208 &nbsp; 0 &#40;autoclean&#41;<br />parport &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;22888 &nbsp; 0 &#40;autoclean&#41; &#91;lp&#93;<br />speedstep-ich &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1584 &nbsp; 0 &#40;unused&#41;<br />speedstep-lib &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1408 &nbsp; 0 &#91;speedstep-ich&#93;<br />ipv6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;209824 &nbsp;-1 &#40;autoclean&#41;<br />key &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;63256 &nbsp; 0 &#40;autoclean&#41; &#91;ipv6&#93;<br />snd-intel8x0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 19492 &nbsp; 4<br />snd-pcm &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;65124 &nbsp; 0 &#91;snd-intel8x0&#93;<br />snd-timer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;15040 &nbsp; 0 &#91;snd-seq snd-pcm&#93;<br />snd-ac97-codec &nbsp; &nbsp; &nbsp; &nbsp; 39512 &nbsp; 0 &#91;snd-intel8x0&#93;<br />snd-page-alloc &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6004 &nbsp; 0 &#91;snd-intel8x0 snd-pcm&#93;<br />thermal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6148 &nbsp; 0 &#40;unused&#41;<br />snd-mpu401-uart &nbsp; &nbsp; &nbsp; &nbsp; 3584 &nbsp; 0 &#91;snd-intel8x0&#93;<br />processor &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8248 &nbsp; 0 &#91;thermal&#93;<br />snd-rawmidi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;14080 &nbsp; 0 &#91;snd-mpu401-uart&#93;<br />snd-seq-device &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4048 &nbsp; 0 &#91;snd-seq snd-rawmidi&#93;<br />fan &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1472 &nbsp; 0 &#40;unused&#41;<br />snd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;35172 &nbsp; 4 &#91;snd-seq snd-mixer-oss snd-intel8x0 snd-pcm snd<br />-timer snd-ac97-codec snd-mpu401-uart snd-rawmidi snd-seq-device&#93;<br />button &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2380 &nbsp; 0 &#40;unused&#41;<br />soundcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3588 &nbsp; 0 &#91;snd&#93;<br />battery &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5600 &nbsp; 0 &#40;unused&#41;<br />ac &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1664 &nbsp; 0 &#40;unused&#41;<br />hid &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;19972 &nbsp; 0 &#40;unused&#41;<br />orinoco_cs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4372 &nbsp; 1<br />orinoco &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;32248 &nbsp; 0 &#91;orinoco_cs&#93;<br />hermes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5872 &nbsp; 0 &#91;orinoco_cs orinoco&#93;<br />ds &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6668 &nbsp; 2 &#91;orinoco_cs&#93;<br />yenta_socket &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9760 &nbsp; 2<br />pcmcia_core &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;43232 &nbsp; 0 &#91;orinoco_cs ds yenta_socket&#93;<br />st &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 27760 &nbsp; 0 &#40;autoclean&#41; &#40;unused&#41;<br />sr_mod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 13432 &nbsp; 0 &#40;autoclean&#41;<br />sg &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 32224 &nbsp; 0 &#40;autoclean&#41;<br />keybdev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1996 &nbsp; 0 &#40;unused&#41;<br />mousedev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4084 &nbsp; 2<br />joydev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5120 &nbsp; 0 &#40;unused&#41;<br />evdev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3584 &nbsp; 0 &#40;unused&#41;<br />input &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3360 &nbsp; 0 &#91;hid keybdev mousedev joydev evdev&#93;<br />usb-ohci &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 18664 &nbsp; 0 &#40;unused&#41;<br />ehci-hcd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 16588 &nbsp; 0 &#40;unused&#41;<br />usbcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;58668 &nbsp; 1 &#91;usbserial hid usb-ohci ehci-hcd&#93;<br />raw1394 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;16592 &nbsp; 0 &#40;unused&#41;<br />ohci1394 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 23728 &nbsp; 0 &#40;unused&#41;<br />ieee1394 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;183332 &nbsp; 0 &#91;raw1394 ohci1394&#93;<br />af_packet &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;12208 &nbsp; 2 &#40;autoclean&#41;<br />e100 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 44584 &nbsp; 1<br />ide-scsi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10000 &nbsp; 0<br />scsi_mod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 97108 &nbsp; 4 &#91;st sr_mod sg ide-scsi&#93;<br />ide-cd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 29664 &nbsp; 0<br />cdrom &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26752 &nbsp; 0 &#91;sr_mod ide-cd&#93;<br />nls_iso8859-1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2812 &nbsp; 1 &#40;autoclean&#41;<br />ntfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 74924 &nbsp; 1 &#40;autoclean&#41;<br />reiserfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;200084 &nbsp; 1<br /></div><br /><br />Thanks for everyones help.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>L.Rentz</b> on <b>November 18, 2003, 10:41:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, &nbsp;When I look at KWiFiManger, &nbsp;I have a ip assigned via DCHP and I have excellent signal strenght and I can ping my router, but nothing beyond the router. <br /><br />Lee.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless pcmcia/usb setup.</b><br />
+					Post by: <b>rugmonster</b> on <b>November 20, 2003, 08:53:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would say check your router's settings. Are you using DSL or Cable? You may need to setup PPPoE if you are using DSL. Just a stretch...</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

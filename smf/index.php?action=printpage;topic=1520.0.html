@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - freebsd</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: Brent on March 30, 2004, 06:52:32 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>freebsd</b><br />
+					Post by: <b>Brent</b> on <b>March 30, 2004, 06:52:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey glad to see you got the page back up.<br /><br />I just got though installing freebsd 5.2 (5.2.1 didn't detect my partitions)<br /><br />Anyway I like what i see so far. &nbsp;However I'm having some problems.<br /><br />In KDE my mouse is stuck at the top right of the screen. &nbsp;It's wierd ...it reminds me of what the mouse does when you run links -mode blahxblahxblah. &nbsp;<br /><br />I have it setup as a simple ps/2 mouse. &nbsp;I even ran good ole xf86config choosing the same options as in slack but to no avail.<br /><br />Another question, does freebsd have a sound tool of some sort?<br /><br />I looked in the handbook and all they discribed was how to load the module.<br /><br />Uh isn't this the same freebsd with the excelent sound system?<br /><br />I thought it would ship with some sort of nifty alsaconfig and alsamixer like programs.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>freebsd</b><br />
+					Post by: <b>rugmonster</b> on <b>March 31, 2004, 01:50:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Since I'm not very familiar with FreeBSD, I'm not going to be much help, but it sounds like you don't have the correct device selected for your mouse. One thing that helps me out to see if I'm using the correct device is to run cat on it.<br /><div class="codeheader">Code:</div><div class="code">$ cat /dev/&#91;device file&#93;</div><br />When doing that on the mouse device, when you move the mouse, you should get random characters output to the console. It works great. Once you have that, you have only to determine the protocol of the mouse.<br /><br />Also, the same can be done for sound by directing some characters to the audio device file as long as you have write priveleges to it. <br /><div class="codeheader">Code:</div><div class="code"># cat /etc/passwd &gt; /dev/dsp</div><br />If you get some sound out, then you're good to go. By the way, the sound won't necessarily be good, but it will at least show it's working.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>flavor of the week</b><br />
+					Post by: <b>Brent</b> on <b>March 31, 2004, 04:10:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Anyway I dled the iso and I'm on hour 4 of the install ...and i haven't even starting emerging stuff yet lol. &nbsp;There's alot of stuff that goes into this.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>freebsd</b><br />
+					Post by: <b>Brent</b> on <b>March 31, 2004, 10:30:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i think links cut off my whole post. &nbsp;Actually i downloaded gentoo. &nbsp;Boy does it take a long time to install. &nbsp;it took me nearly 3 hours to work through all that mess, and I didn't even get to the emerge part. <br /><br />I emerged em10k1 and strangely it started emerging all kind of stuff. &nbsp; I'll try to install again sometime.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>freebsd</b><br />
+					Post by: <b>rugmonster</b> on <b>March 31, 2004, 10:42:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I usually check what is going to be installed with a --pretend flag. I hated when you emerged vim, it tried to do gvim and X and the whole dang gnome package when all I wanted with vim. In cases like that, you can use --nodeps &nbsp;and only install the packages you specify. Good luck!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

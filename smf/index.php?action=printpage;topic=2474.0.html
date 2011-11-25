@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Programming for Serial-USB</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: kilar on June 09, 2005, 03:06:17 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Programming for Serial-USB</b><br />
+					Post by: <b>kilar</b> on <b>June 09, 2005, 03:06:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Does anyone know how to program for serial-USB ports? I can write programs for the serial port (e.g. /dev/ttyS0), but I can not get it to work for serial-USB. I even went as far as doing <div class="codeheader">Code:</div><div class="code">mknod /dev/ttyUSB0 c 188 0</div> on the Linux system, and using <div class="codeheader">Code:</div><div class="code">#define SERIALPORT &quot;/dev/ttyUSB0&quot;</div> but that did not work. I know the device is there, because I can attach a USB device and see it with <div class="codeheader">Code:</div><div class="code">lsusb</div>, and I can do <div class="codeheader">Code:</div><div class="code">cat /proc/bus/usb/001/001</div> to verify that it reads a device there. <br /><br />Basically, my question is &quot;where does physically mount itself?&quot; A serial port is physically at the location /dev/ttySx. What is the USB equivalent?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Programming for Serial-USB</b><br />
+					Post by: <b>rugmonster</b> on <b>June 09, 2005, 08:21:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Have you checked the documentation for usb-serial from the kernel? If you have your source on your system, look at &lt;path to src&gt;/Documentation/usb/usb-serial.txt. <br /><br />It makes mention of /dev/usb/tts/{0,1,...}. Check there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Programming for Serial-USB</b><br />
+					Post by: <b>kilar</b> on <b>June 09, 2005, 09:11:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Been there. Done that. Kernel 2.6 uses the devfs (or usbfs), which makes use of /dev/tts/{n} and /dev/tty/USB{n}, but the n is a file which contains no information, unlike kernel 2.4 which does not use devfs, so the information is passed to /dev/ttyUSBn. <br /><br />I can read /dev/ttyUSBn, but I can not read /dev/tts/USBn--they are not handled the same. It is almost as if /dev/tts/USBn is not a physical location. Changing the permissions does nothing, since the entire usbfs is rebuilt at boot time under the dynamic devfs (at least that is how I understand it to be).<br /><br />BTW, /dev/tts/{n} is simply a symbolic link to /dev/ttyS{n}. The newer distros are switching to this convention for some reason.<br /><br />I am still lost. Even Google has not helped me on this one.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

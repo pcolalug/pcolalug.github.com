@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Unreal Tournament 2003</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: imnes on November 22, 2002, 06:20:19 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal Tournament 2003</b><br />
+					Post by: <b>imnes</b> on <b>November 22, 2002, 06:20:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've heard some of you guys on here talking about but haven't actually played it yet, so I'm downloading the linux demo of UT 2003. &nbsp;(Hopefully it runs in FreebSD, we'll see). &nbsp;If not I'll d/l it in windows and give it a shot.<br /><br />And of course there's always RtCW, RedFaction, and the other standby's.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal Tournament 2003</b><br />
+					Post by: <b>dpeach</b> on <b>December 19, 2002, 12:33:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">UT 2003 requires an NVidia card. &nbsp; :x <br /><br />I have one, but it is not the better of my two main cards.<br /><br />NVidia has 4MB and the Voodoo has 16. I choose to run the Voodoo. I just wish game makers would consider other hardware out there. Didn't we run into this back in the DOS ages? I remember having to go through every system requirement on the box to make sure that your machine fit the exact hardware that was needed. ARRRGH!<br /><br />Signed,<br />Frustrated</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal Tournament 2003</b><br />
+					Post by: <b>rburt3</b> on <b>December 19, 2002, 01:37:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The reason it works only with the newer NVidia drivers/cards and, recently, the new ATI drivers/cards is because UT2k3 uses some proprietary texture compression (SV3 or some such) routines only to be found in the GLX libs that come with these drivers. So, its not the hardware choice, but yet another example of the limitations of proprietary, close-source, software. <br /><br />Keep in mind, too, this is a Linux-only situation. It should run with whatever card under Windows (even the Voodoo), so long as it meets spec.<br /><br />Now if you're going to game, you really should upgrade at least one of those cards to a newer ATI or NVidia (GeForce3 would be sufficient) card. 'course, with these cards you *will* have to taint your system with non-free software in order to play the latest/greatest games. Then again, you could just game in Windows, but you'd still probably want a newer card.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal Tournament 2003</b><br />
+					Post by: <b>dpeach</b> on <b>December 19, 2002, 05:12:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, and I can buy a whole new system (new to me anyway) for the price of one of those cards.<br /><br />What gets me is that you spend $200+ for a nice card and you still have some games you can't play. I guess that is why I stick to Windows for most of my gaming. Linux just does not do it for me in that realm. <br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal Tournament 2003</b><br />
+					Post by: <b>rburt3</b> on <b>December 20, 2002, 08:30:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually, you can get a GeForce3 Ti200 for under a hundred bucks these days. This is the card I've been using for the last 10 months and I can run UT with everything turned up at 1024x768x32 and nary a stutter. Hitechwizard was shopping these cards recently, and I'm sure he could give you a heads up if you're in the market.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal Tournament 2003</b><br />
+					Post by: <b>rburt3</b> on <b>December 20, 2002, 12:28:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well wouldn't you know it. Appearently, Ryan Gordon (ex-Loki employee and maintainer for the Linux port of UT2k3) has a patch that removes the offending texture compression issues! Details are sketchy. I heard it here (http://www.happypenguin.org/).<br /><br />EDIT: The routines are fall-backs in case the driver/card you use doesn't implement this compression. If you have a card that will do it, there shouldn't be any change. I'll test it some this weekend and let you know how it affects cards/drivers that can use the ST3C compression.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unreal Tournament 2003</b><br />
+					Post by: <b>dpeach</b> on <b>December 20, 2002, 02:01:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">YeeHa! Too bad that game does not interest me. Only interested for the sake of getting together. I will give it a try one of these days.<br /><br />If anyone else tries it, give us a report. It might be a while before I am interested in giving it a go.<br /><br />David</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - My OpenMosix update</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: bhoff on October 16, 2005, 04:42:48 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>My OpenMosix update</b><br />
+					Post by: <b>bhoff</b> on <b>October 16, 2005, 04:42:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">OpenMosix Cluster update<br /><br />Well I have had to streamline my operation due to room restraints.<br />I now have 1 head machine<br />Amd 1.6 ghz 396meg ram 1 40 gig &amp; 1 20-gig HD 100mb nic dual 52x cd-burners<br />1 script back-up box also node<br />script 667mhz&nbsp; 256meg ram 12-gig HD 100mb nic<br />node 1&nbsp; 233mhz&nbsp; 32meg ram&nbsp; 2-gig HD 100mb nic<br />node 2&nbsp; 233mhz&nbsp;&nbsp;&nbsp;48meg ram&nbsp; 1.2-gig HD 100mb nic<br />node 3&nbsp; 233mhz&nbsp; 32meg ram&nbsp; 2-gig HD 100mb nic<br />node 4&nbsp; 120mhz&nbsp; 32meg ram&nbsp; 800-meg HD 100MB nic<br />node 6&nbsp; 200mhz&nbsp; 82meg ram&nbsp; 1.2-gig HD 100mb nic<br />node 7&nbsp; 200mhz&nbsp; 32meg ram&nbsp; 1.2-gig HD 100mb nic<br />node 8&nbsp; 166mhz&nbsp; 66meg ram&nbsp; 900-meg HD 100mb nic<br />node 9&nbsp; 200mhz&nbsp;&nbsp;&nbsp;32meg ram&nbsp; 5.2-gig and 1.8-gig HD 100mb nic<br />node 10 166mhz&nbsp; 32meg ram&nbsp; 400/500-meg HD 100mb nic<br />node 11 200mhz&nbsp; 40meg ram&nbsp; 4.2-gig HD 100mb nic<br />node 12 233mhz&nbsp; 66meg ram&nbsp; 500/700-meg HD 100mb nic<br />node 13 233mhz&nbsp; 128meg ram 2-gig HD 100mb nic<br />node 14 dual 1gig xeon 128meg ram 6-gig HD 100mb nic<br />node 15 three single board blade 2 233mhz &amp; 1 333mhz 256meg ram *3 20-gig scsi HD *3 100mb nic.<br />&nbsp;<br />So far I have built several bash and perl scripts to handle most of the management issues. So far processes migrate fine.<br />Single processes do not migrate but any and all multi process processes do migrate to avaliable nodes. I was using a combined 10mb and <br />100mb but was noticing really slow hand-off times. Now with a full 100mb network and proper switches I am getting full bandwidth.<br />I have built several test scripts that run large numbers forking the processes to fork as many times as there is nodes.<br />I am presently working on scripts to migrate single thread proccesses to available nodes.<br />I am presently running the stable openmosix kernel and openmosix-tools with the ram patch that gives me a total avaiable ram<br />that I have on all up nodes. Very nice.<br /><br />Well this is where I am at right now putting in new shelf in rack next weekend for last two nodes and adding cisco switch.<br />That will be it for my cluster then I will hit hard and heavy on scripting and programming at kernel level. should be educational.<br /><br />If anyone would like to discuss this type of clustering feel free to PM me or start thread here.<br /><br />Brett Hoff </div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

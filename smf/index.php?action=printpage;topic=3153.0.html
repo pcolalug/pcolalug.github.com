@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Ubuntu 7.04 (fiesty fawn) Released</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: Brent on April 19, 2007, 05:01:50 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ubuntu 7.04 (fiesty fawn) Released</b><br />
+					Post by: <b>Brent</b> on <b>April 19, 2007, 05:01:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ubuntu 7.04 has been released and is available for download.<br />http://www.ubuntu.com/getubuntu/releasenotes/704<br /><br />Among the notable new features I&#039;ve been looking for in this release, is built in support for the entire java tool-chain. (No more stupid gcj deps!)&nbsp; Also, proprietray codecs and drivers are easier than ever to download.&nbsp; Apparently it goes out and downloads codecs and drivers as needed now.<br /><br />Really looking forward to installing this.&nbsp; Post your impressions if ya decide to install it!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu 7.04 (fiesty fawn) Released</b><br />
+					Post by: <b>rugmonster</b> on <b>April 19, 2007, 05:10:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;ve been using pre-release Feisty for the past month or so at work and I like it. One of the most impressive features is the upgrade tools they have come out with for Edgy to Feisty upgrades. I did one system at work with dist-upgrade and another with do-release-upgrade. Where I had to do some tweaking following the dist-upgrade, do-release-upgrade was absolutely seemless. <br /><br />Note to those thinking of upgrading. You may want to wait a bit. I&#039;m running the upgrade right now on my desktop and I&#039;m getting very slow package downloads. I&#039;m averaging about 20KB/s, which translates to almost 12 hours to download the new packages for my system. The server installs were considerably less, but those have far fewer packages than a desktop install.<br /><br />Oddly enough, the CD image download I have going is clipping right along at about 500KB/s. I guess the package repos are getting hit harder.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu 7.04 (fiesty fawn) Released</b><br />
+					Post by: <b>L.Rentz</b> on <b>April 19, 2007, 07:50:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Kubuntu 7.04 DVD torrent is averaging about 39.5 KB/s for me right now.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu 7.04 (fiesty fawn) Released</b><br />
+					Post by: <b>bhoff</b> on <b>April 20, 2007, 06:27:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey I got a new guy over in Panama City wanting to go to it!<br />Could somebody give a brief overview of the install process.<br />It would be very helpful..............................<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu 7.04 (fiesty fawn) Released</b><br />
+					Post by: <b>rugmonster</b> on <b>April 20, 2007, 07:03:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Put in CD, make room for and/or create partition for Ubuntu, let it do it&#039;s thing, reboot. Done.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu 7.04 (fiesty fawn) Released</b><br />
+					Post by: <b>rugmonster</b> on <b>April 21, 2007, 07:47:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Further notes on Feisty upgrade.<br /><br />I have an AD, internal DNS domain, rugmonster.local, that I use for authentication. Since Avahi uses a .local namespace, I could not resolve any of my internal machine&#039;s names by FQDN due to Avahi&#039;s mdns being checked prior to dns in nsswitch.conf. To fix the issue (and since I don&#039;t use Avahi for crap), I changed my nsswitch.conf to the following:<br /><br />hosts:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; files dns mdns4_minimal [NOTFOUND=return] mdns4<br /><br />The impact of all of that went beyond not being able to resolve names properly via DNS. I could not authenticate against the AD on my Ubuntu machine because Kerberos could not talk to the KDC since it depends on DNS for name resolution. <br /><br />So if you&#039;re having problems where you can resolve a host by hostname alone, but not by FQDN and have a domain with .local as the TLD, then you may want to try this.<br /><br />Other than that, it&#039;s been smooth sailing. The home file server is getting the treatment now, followed by the business&#039;s web server.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

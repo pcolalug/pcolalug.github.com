@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Who's Interested?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: hitechwizard on May 11, 2005, 04:46:15 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>hitechwizard</b> on <b>May 11, 2005, 04:46:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was evaluating What's Up Small Business 2004 this week when it dawned on me to check Sourceforge and see if there was anything there. Turns out that there is a What's Up project, but it looks like it has been abandoned by its admin. I was wondering who locally would be interested in picking up the baton and making it happen? It shouldn't be too much to write it in perl, and I already have an SMTP engine I wrote for the email portion. I'd like to bring it up at the next meeting and possibly put our collective programming talents together for the greater good. I noticed a lot of Perl books being reviewed, so here's a chance to show what you know!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hey Dude</b><br />
+					Post by: <b>bhoff</b> on <b>May 12, 2005, 06:48:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How about a nice hyperlink for us to go check it out.....<br />Don't look at me thou I am still promising to get a Library up in the near future.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>rugmonster</b> on <b>May 12, 2005, 08:19:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So this would be an SNMP manager like What's Up Gold? What sort of interface would it have? I've never dealt with GTK+ or Qt before, but I know there is are Perl ties for GTK+. I can't say I would be able to dedicate a lot of time to this due to other commitments to include school, but I am interested. Give us some ideas as to what the goals of the project would be?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>hitechwizard</b> on <b>May 13, 2005, 07:48:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Goals of the project would be:<br /><br />Phase 1:<br />Write the base code in Perl and run as a daemon. No gui, just email notification. One of biggest problems I have with What's Up is that if you are monitoring the email server, and it goes down, how's what's up going to send you the message? To make things easy, I see a configuration file thats very similar to Apache's VirtualHost, where you can identify the server address, what services to monitor, and who to email (using the perl smtp mailer I've written) when they fail. It would also create a log file for reporting purposes.<br /><br />Phase 2:<br />For those that just gotta have a gui - Write a QT front end (QT so you can cross platform it) that will provide the visual part of the perl daemon - the perl daemon would still be running, and the GUI would just monitor the log file to determine the current state of each monitored machine.<br /><br /><br />Am I totally without my marbles, or does this sound like a do-able idea? I emailed the current admin of the project, but he/she hasn't responded yet.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>hitechwizard</b> on <b>May 13, 2005, 07:52:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I forgot, the sourceforge project is at:<br /><br />http://sourceforge.net/projects/whatsup/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>rugmonster</b> on <b>May 13, 2005, 08:14:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Looking into this more, it seems there are some SNMP modules out there for Perl. O'reilly's Perl for System Administrators has a section on SNMP (http://www.unix.org.ua/orelly/perl/sysadmin/ch10_03.htm). I think this could be very do-able.<br /><br />I do like the idea of including the mailer into the daemon itself. The thing that I would be interested in looking into more is the parsing of the MIBs and dynamically using them based on device type. I don't know much about the inner workings of SNMP and MIBs, but I'm certainly willing to learn about it.<br /><br />You mention Qt, but GTK+ can work on Windows as well as *nix. Gaim uses it, but it doesn't really matter to me because I would have to learn one of the other anyway. From what I hear, Qt is nicer to deal with than GTK anyway.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>hitechwizard</b> on <b>May 13, 2005, 08:24:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Qt, GTK, doesn't matter.<br /><br />Not sure SNMP would be needed. I was thinking that the script would do exactly like Whats up does, and actually use the services that its checking (For http, it does a head request, ftp, pop &amp; smtp checks attempt to login to the server, etc)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>rugmonster</b> on <b>May 13, 2005, 08:43:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: hitechwizard</div><div class="quote">...actually use the services that its checking...</div><br /><br />I didn't realize it did that. SNMP seems to be integral to WhatsUp for monitoring SNMP managed devices (routers, printers and other networked devices). For the functionality that you're saying, I don't think would be very difficult to implement.<br /><br />So what about the ability to monitor load and disk space on systems? I think with the appropriate MIBs loaded, you could monitor almost anything on any platform. SNMP can provide that. I think it would be valuable to include.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>hitechwizard</b> on <b>May 13, 2005, 08:58:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">It's that simple: Here's the log from my web server where What's up is monitoring it.... I have two machines monitoring, one is a version from 1997, and the .30 is my laptop with the new Small Business 2004 version<br /><div class="codeheader">Code:</div><div class="code"><br />www.socow.com 199.46.224.30 - - &#91;13/May/2005&#58;09&#58;49&#58;18 -0500&#93; &quot;HEAD / HTTP/1.0&quot; 200 -<br />www.socow.com 199.46.224.38 - - &#91;13/May/2005&#58;09&#58;49&#58;23 -0500&#93; &quot;HEAD / HTTP/1.0&quot; 200 -<br />www.socow.com 199.46.224.30 - - &#91;13/May/2005&#58;09&#58;50&#58;19 -0500&#93; &quot;HEAD / HTTP/1.0&quot; 200 -<br />www.socow.com 199.46.224.38 - - &#91;13/May/2005&#58;09&#58;50&#58;24 -0500&#93; &quot;HEAD / HTTP/1.0&quot; 200 -<br />www.socow.com 199.46.224.30 - - &#91;13/May/2005&#58;09&#58;51&#58;19 -0500&#93; &quot;HEAD / HTTP/1.0&quot; 200 -<br />www.socow.com 199.46.224.38 - - &#91;13/May/2005&#58;09&#58;51&#58;23 -0500&#93; &quot;HEAD / HTTP/1.0&quot; 200 -<br /></div><br /><br />Here's an entry from the DNS Log:<br /><div class="codeheader">Code:</div><div class="code">May 13 09&#58;56&#58;21 backup named&#91;3394&#93;&#58; client 199.46.224.30#4484&#58; query&#58; 1.0.0.127.in-addr.arpa IN PTR +<br /></div><br /><br />And for POP &amp; SMTP:<br /><div class="codeheader">Code:</div><div class="code">May 13 09&#58;49&#58;41 mail vm-pop3d&#91;24637&#93;&#58; Connect from 199.46.224.38<br />May 13 09&#58;49&#58;41 mail postfix/smtpd&#91;23833&#93;&#58; connect from unknown&#91;199.46.224.38&#93;<br />May 13 09&#58;49&#58;41 mail postfix/smtpd&#91;23833&#93;&#58; disconnect from unknown&#91;199.46.224.38&#93;<br /></div><br /><br />As far adding the SNMP, that would be cool too, and would make it a better tool than the Ipswitch version.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>imnes</b> on <b>May 13, 2005, 09:25:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was looking at some remote monitoring stuff done several years ago. &nbsp;Some cron jobs would periodically run that would try to go out and hit various servers and services on your network. &nbsp;If something wasn't available it got flagged and rechecked in a few minutes. &nbsp;If it failed again then it got flagged as down. &nbsp;Another script periodically ran and would check the list of failed services, if it was a non-vital service then an email would go out to the support staff for that service. &nbsp;If it was a vital service then a script would use the system's modem to dial out and page the team member responsible for that service.<br /><br />I don't know if this relates really to what you're going to build or not?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>hitechwizard</b> on <b>May 13, 2005, 09:28:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Absolutely. Most pagers now have been replaced with email capable cell phones, but if somebody wanted to add the dialer module, that would be fine to. That's the glory of working on something like this as a group.<br /><br />I just think it would give the LUG some exposure if we were to put up a project as a group, and it be something that could become popular.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>rugmonster</b> on <b>May 13, 2005, 03:48:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've been looking into the SNMP modules for Perl. I'll see about getting snmpd loaded and working on my linux box and whatever else on my network I can get snmp on and see about cobbling something together for at least reading snmp values. I'll let you guys know how it goes and do my best to comment the code well. No promises on pretty coding though. It's been a looong time since I played with Perl.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Who's Interested?</b><br />
+					Post by: <b>rugmonster</b> on <b>May 23, 2005, 03:15:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was just over at NewsForge (http://www.newsforge.com), reading commandment three of the ten commandments of system administration (http://software.newsforge.com/software/05/05/02/1426209.shtml?tid=91). I found this Zabbix.<br /><br />http://www.zabbix.com<br /><br />I believe this will do everything you want and it's F/OSS.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

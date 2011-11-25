@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - I don't claim to be a coder, phpBB and postnuke</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by:  on July 09, 2003, 03:41:50 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I don't claim to be a coder, phpBB and postnuke</b><br />
+					Post by: <b></b> on <b>July 09, 2003, 03:41:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Having said that. &nbsp;I have decided to try and implement phpnuke (www.phpnuke.org) or some such site. &nbsp;It comes with phpbb but after you login as an admin and go to members list it displays errors anyone have an idea of how to fix those errors ? <br /><br />/lance</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I don't claim to be a coder, phpBB and postnuke</b><br />
+					Post by: <b>imnes</b> on <b>July 09, 2003, 03:54:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Maybe, what are the errors?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I don't claim to be a coder, phpBB and postnuke</b><br />
+					Post by: <b></b> on <b>July 09, 2003, 04:05:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Warning: Cannot modify header information - headers already sent by (output started at /usr/local/apache_1.3.27/htdocs/nuke/header.php:32) in /usr/local/apache_1.3.27/htdocs/nuke/includes/sessions.php on line 222<br /><br />Warning: Cannot modify header information - headers already sent by (output started at /usr/local/apache_1.3.27/htdocs/nuke/header.php:32) in /usr/local/apache_1.3.27/htdocs/nuke/includes/sessions.php on line 223</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I don't claim to be a coder, phpBB and postnuke</b><br />
+					Post by: <b>rburt3</b> on <b>July 10, 2003, 07:52:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">&lt;cryptic&gt;Somebody flushed the response buffer... :twisted: &lt;/cryptic&gt;</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I don't claim to be a coder, phpBB and postnuke</b><br />
+					Post by: <b>imnes</b> on <b>July 10, 2003, 02:21:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Usually, a script tries to do some work in a database. &nbsp;The database spits out an error and the PHP script sends that information to the browser window (do you see any database related errors? &nbsp;Hit view source, maybe they show up there). &nbsp;Or something is causing text to be displayed to the browser. &nbsp;<br /><br />Then the script tries to redirect you to another page, or setup session information (or anything that requires modifying the HTML head tags). &nbsp;It can't do that though because when the error text got sent to the browser, so did any HTML headers, so it can't modify them, they've already gone out. &nbsp;<br /><br />Since you're using phpnuke, I think their code is probably good. &nbsp;You probably have misconfigured something, or setup the database incorrectly.<br /><br />If you can't get it figured out, go to the page giving you the error in your browser, hit 'view source', and copy-&gt;paste the entire output into a code block here so I (we) can get a better look at it.<br /><br />Good luck!<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

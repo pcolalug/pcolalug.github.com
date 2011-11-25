@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Nvidia 6106 driver</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: danc on July 01, 2004, 04:09:25 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvidia 6106 driver</b><br />
+					Post by: <b>danc</b> on <b>July 01, 2004, 04:09:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">For those who care, Nvidia came out with a new driver, version 6106 (yesterday). &nbsp;I have been using an older one (version 4496) because it was stable and worked well, but I figured it was time to update...<br /><br />Well, it installed OK, but at first running it failed with an error about permissions. &nbsp;Turned out to be a PAM issue which is well documented in the README. &nbsp;After some editing and chmod's/chown's it was working in 3D mode. &nbsp;However, I noticed a decrease in OpenGL framerates as compared to the 4496 driver (from 3450 fps to 3330 fps). &nbsp;This is measured using the &quot;glxgears&quot; test, which I know isn't completely accurate but is fine for direct comparison between two drivers.<br /><br />So, I'm back with the 4496 driver, and not concerned with things. &nbsp;As I said, this driver has always been solid for me, and have seen lots of people complaining about the newer versions (5336 and 5328). &nbsp;Of course, I'm still using a 2.4.x kernel too, so you people with 2.6.x may have a different experience. &nbsp;In fact, I'd be interested to hear what your results are if you try it.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvidia 6106 driver</b><br />
+					Post by: <b>lloydr</b> on <b>July 02, 2004, 01:38:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was running the 5336 drivers before and now am running the latest 6106...with 2.6 kernel without 4K stacks enabled, i did notice a decrease in performance overall, but isnt noticeable even in ut2004 unless i start turning up &nbsp;antialiasing and such..... ut2004 is still playable nonetheless since it still runs smooth as silk, the only way i could really tell the difference in performance was running the ut2004 benchmarks<br /><br />since the new nvidia driver supports 4K stacks in the kernel, i will give that a shot in the next day or 2 and see if i get any sort of performance boost....some people have said their system is slightly more responsive but hard to notice without benchmarking or on a lowend machine</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvidia 6106 driver</b><br />
+					Post by: <b>imnes</b> on <b>July 02, 2004, 05:18:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Oh that's cool (4k stack support) I'll load Fedora 2 for another try again tonight and see how it goes.<br /><br />Are any other kernels using 4K stacks or just the redhat / fedora stuff?<br /><br />BTW: Those of you who ordered the SuSE software kit, should be showing up soon, people at work have started receiving theirs.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvidia 6106 driver</b><br />
+					Post by: <b>rburt3</b> on <b>July 02, 2004, 07:31:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think all of the -mm kernels were 4k stack-only for a time. I haven't run one in a while so I don't know about 2.6.7-mmX.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvidia 6106 driver</b><br />
+					Post by: <b>lloydr</b> on <b>July 02, 2004, 08:04:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">I think all of the -mm kernels were 4k stack-only for a time. I haven't run one in a while so I don't know about 2.6.7-mmX.</div><br /><br />think either in 2.6.5 or 2.6.6 they merged the 4k stacks option into the kernel from the -mm patches but it was an option if u wanted it enabled or not and default was disabled....</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

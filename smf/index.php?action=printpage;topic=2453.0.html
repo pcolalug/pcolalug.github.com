@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Wireless GUI's</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: bhoff on May 26, 2005, 07:33:21 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless GUI's</b><br />
+					Post by: <b>bhoff</b> on <b>May 26, 2005, 07:33:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey out there coming to live from Cluster Central......<br />Anybody know of any decent Linux wireless GUI's I am looking for something &nbsp;that will list all the surronding networks and allow you to pick which one to use. Presently I kismet for networks then command line access!<br />Any thoughts here.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless GUI's</b><br />
+					Post by: <b>imnes</b> on <b>May 26, 2005, 08:24:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The built-in network config tool in Gnome (Ubuntu) will do it. &nbsp;You click on the network icon on the panel, click Configure, and it has a drop-down list of available wireless networks. &nbsp;You can setup a network profile for each location you frequent and easily switch to set configurations. &nbsp;(Handles reconfiguring wired, wireless, and dial-up networking based on location profiles).<br /><br />Officially it's called &quot;Gnome Network Administration Tool&quot; in the help file. &nbsp;<br /><br />(http://www.cs.uwf.edu/~nsmith/gnome-network-administration-tool-ss1.png)<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Sort of but not quite</b><br />
+					Post by: <b>bhoff</b> on <b>May 27, 2005, 04:40:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was using this But it does not do exactly what I want.<br />Looking for something like the linksys wireless app that shows all the wireless in your area then let's you choose to activcate or not.<br />does that make since?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless GUI's</b><br />
+					Post by: <b>rburt3</b> on <b>June 06, 2005, 12:38:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The network profiles/config app in Linspire is really good. I think it will allow you to scan for available networks. You can also save profiles and switch between them on the fly as you travel from spot to spot. Don't know how hard it would be to hack in to whichever distro you're using atm and it will need the KDE libs and some other wifi stuff to work.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>have got it</b><br />
+					Post by: <b>bhoff</b> on <b>June 06, 2005, 04:27:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a bash script that does it for me highlights all viewable ap's then let you associate with which ever one.......Really cool I will demo it at the next meeting....Works from command line also and it's bash what more is there to say......WOW!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless GUI's</b><br />
+					Post by: <b>imnes</b> on <b>June 10, 2005, 08:04:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wanted to point this little Gnome utility out. &nbsp;It's available for Fedora, Debian, Gentoo, SuSE, and probably everything else. <br /><br />http://people.redhat.com/dcbw/NetworkManager/<br /><br /><div class="quoteheader">Quote</div><div class="quote">The desktop user should never need to use the command-line to configure their network; it should &quot;Just Work&quot; as automatically as possible and intrude as little as possible into the users workflow. The computer should use the wired network connection when its plugged in, but automatically switch to a wireless connection when the user unplugs it and walks away from the desk. Likewise, when the user plugs the computer back in, the computer should switch back to the wired connection. The user should, most times, not even notice that their connection has has been managed for them; they should simply see uninterrupted network connectivity. </div><br /><br /><b>On SuSE</b><br />(http://rlove.org/images/nm-applet-1.jpg)<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wow !t so</b><br />
+					Post by: <b>bhoff</b> on <b>June 10, 2005, 09:05:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is what I am talking about this is a really well thought out and developed program and does what I want with out a lot of other clutter.<br />Will have to install install it so I can control my connections in X.......<br />will &nbsp;keep my bash script for those days when I don't use X which is most the time :)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

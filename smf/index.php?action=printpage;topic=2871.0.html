@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Unix Load Averages Explained</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Computer General => Topic started by: rugmonster on May 14, 2006, 09:32:12 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Unix Load Averages Explained</b><br />
+					Post by: <b>rugmonster</b> on <b>May 14, 2006, 09:32:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I got curious today about the little load average stat in top and uptime. I&#039;ve seen it vary widely on numerous systems. I&#039;ve seen it go up to over 9.0 on some systems and on my desktop, seeing it sit at 0.04 0.14 0.09. I found this article (http://www.teamquest.com/resources/gunther/display/5/index.htm) by Dr. Neil Gunther. I&#039;m going to reread it tomorrow because it&#039;s pretty heady stuff. In short, don&#039;t think that your load average is an indication of CPU load, as that is something related, but different.<br /><br />For example, here&#039;s some stats on my OpenBSD box:<br /><div class="codeheader">Code:</div><div class="code">load averages:&nbsp; 1.21,&nbsp; 0.94,&nbsp; 0.86&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;22:27:00<br />43 processes:&nbsp; 42 idle, 1 on processor<br />CPU states:&nbsp; 0.0% user,&nbsp; 0.0% nice,&nbsp; 0.2% system,&nbsp; 0.3% interrupt, 99.5% idle<br />Memory: Real: 51M/107M act/tot&nbsp; Free: 383M&nbsp; Swap: 0K/1024M used/tot</div><br />Here&#039;s the stats on my Debian box:<br /><div class="codeheader">Code:</div><div class="code">top - 22:28:09 up 1 day,&nbsp; 8:37,&nbsp; 4 users,&nbsp; load average: 0.00, 0.06, 0.07<br />Tasks: 122 total,&nbsp; &nbsp;2 running, 120 sleeping,&nbsp; &nbsp;0 stopped,&nbsp; &nbsp;0 zombie<br />Cpu(s):&nbsp; 2.1% us,&nbsp; 0.6% sy,&nbsp; 0.0% ni, 95.5% id,&nbsp; 0.5% wa,&nbsp; 0.0% hi,&nbsp; 1.3% si<br />Mem:&nbsp; &nbsp;1035320k total,&nbsp; &nbsp;818956k used,&nbsp; &nbsp;216364k free,&nbsp; &nbsp;161104k buffers<br />Swap:&nbsp; &nbsp; &nbsp; &nbsp; 0k total,&nbsp; &nbsp; &nbsp; &nbsp; 0k used,&nbsp; &nbsp; &nbsp; &nbsp; 0k free,&nbsp; &nbsp;290488k cached</div><br />The OpenBSD box is running Apache, BIND, Samba, NFSD, Sendmail, Proftpd, MySQLd and your typical cron, syslogd, etc. My Debian box is running X.org, Gnome, several terms, Gaim and various other programs, yet it reports my load average far lower. If you read the article, you may find out why. :P</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Unix Load Averages Explained</b><br />
+					Post by: <b>green_dragon37</b> on <b>May 14, 2006, 10:06:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code">$ ssh obelisk w<br />11:25PM&nbsp; up 78 days,&nbsp; 5:47, 0 users, load averages: 2.55, 2.24, 2.14<br />&lt;snip&gt;</div><br />I&#039;ve seen the load averages on that machine above 15 before, back when it had a single processor in it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Unix Load Averages Explained</b><br />
+					Post by: <b>SaiSoma</b> on <b>May 21, 2006, 04:13:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">load is some sort of combination of disk IO, ram utilization, swap utilization and cpu.&nbsp; i&#039;ll read the article for sure, cause that&#039;s about all i know about it:).<br /><br />i&#039;ve had boxes with 0% cpu and high loads (ide servers sending lots of files, disk IO problems -OR- boxes without enough RAM ).&nbsp; I don&#039;t like loads hanging above 2 regularly.&nbsp; That&#039;s a bit much for me.&nbsp; proper performance (imo) is below 1 under normal usage.<br /><br />if you haven&#039;t tried it, run vmstat.&nbsp; it shows disk IO and swap usage.&nbsp; great command to add to your regular box checks.&nbsp; get familiar with your box&#039;s disk IO and swap usage . .makes ALL the difference.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

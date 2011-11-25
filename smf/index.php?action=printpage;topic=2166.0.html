@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Python</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: imnes on January 06, 2005, 11:11:21 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>imnes</b> on <b>January 06, 2005, 11:11:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Started learning Python (and GTK). &nbsp;Decided to port a mac-only GPL database client I like called &quot;cocoamysql&quot; over to Gnome. &nbsp;I managed to get the whole gui written up and code to load it all in under an hour. &nbsp;This is pretty nice stuff. &nbsp;<br /><br />Here's what I have so far:<br /><br />http://www.homeweb.org/~nick/linux/database-client/shots/<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>rugmonster</b> on <b>January 07, 2005, 07:22:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Another language that is supposed to be great for being extremely quick is Ruby. I keep meaning to take some time to learn it. I know the Pragmatic guys (http://www.pragmaticprogrammer.com/index.html) love it and consider it to be the finest language out there. Back to Python though, I know portage (http://www.gentoo.org/proj/en/portage/index.xml) is written in it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>rburt3</b> on <b>January 07, 2005, 08:32:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You gonna host this on sourceforge or something? What's the back end of the original app written in? Are you going to have to re-code all of that?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>imnes</b> on <b>January 08, 2005, 01:16:40 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The original code was done in Objective-C. &nbsp;I'm going to rewrite all of it in Python. &nbsp;Partly because the existing program was only for MySQL and I want this to work with more systems. &nbsp;Also have some nice innovative features to implement that no other clients I've used have yet. &nbsp;More on that later (once I figure out if I can even get it working).<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>rburt3</b> on <b>January 08, 2005, 08:51:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Neat. Did you use some sort of designer or did you hand code the GUI stuff?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>imnes</b> on <b>January 09, 2005, 10:40:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Used the Glade gui builder in gnome. &nbsp;I like the way it works - you design the GUI and store it as XML. &nbsp;Then your program calls a library routine that parses the XML to reconstruct the interface, and bind your actual application logic to the interface. &nbsp;<br /><br />NIck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>rburt3</b> on <b>January 12, 2005, 04:55:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Like XUL (or any of the other XML UI varients)?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>imnes</b> on <b>January 12, 2005, 08:51:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't know, my only exposure to GUI programming has been Java Swing which is a pain to manage IMHO. &nbsp;<br /><br />Have you played with JavaServer Faces at all? &nbsp;I was wondering about writing a custom render kit that reads Glade XML file and renders as HTML JSF apps. &nbsp; Could be neat?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Python</b><br />
+					Post by: <b>rburt3</b> on <b>January 14, 2005, 12:27:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sounds vurry cool. Could do the same with XUL, XSWT, or any of the other XML UI languages. I've haven't really done a lot with JSF, but Mike makes the whole thing sound really neat.<br /><br />Oh, and if you are tired of Swing, give SWT a try. The Visual Editor plug-in for Eclipse makes it really easy to layout and code GUI stuff (for SWT, Swing, and AWT). You can get the plugin via the Eclipse Update Manager.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

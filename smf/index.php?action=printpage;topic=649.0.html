@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - PHP ACCESS Script help</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: trigger on April 23, 2003, 12:16:36 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP ACCESS Script help</b><br />
+					Post by: <b>trigger</b> on <b>April 23, 2003, 12:16:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am trying to run this script. That I downloaded. It is actually 3 scripts. Here they are:<br /><br /><span style="font-size: 9px; line-height: 1.3em;">1. Form.php: <br />&lt;? <br /><br />$title = &quot;Customer Login&quot;; <br /><br />?&gt; <br /><br />&lt;HTML&gt; <br />&lt;HEAD&gt; <br />&lt;TITLE&gt;&lt;? echo &quot;$title&quot; ?&gt;&lt;/TITLE&gt; <br />&lt;/HEAD&gt; <br />&lt;BODY&gt; <br />&lt;BR&gt; <br />&lt;FORM METHOD =&quot;POST&quot; ACTION=&quot;accesslist.php&quot;&gt; <br />&lt;table width=&quot;80%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt; <br />&lt;tr&gt; <br />&lt;td&gt; <br />&lt;FONT SIZE=&quot;-2&quot;&gt;Please Login:&lt;/FONT&gt;&lt;BR&gt; <br />&lt;input type=&quot;text&quot; name=&quot;name&quot; size=&quot;20&quot; maxlength=&quot;20&quot;&gt; <br />&lt;input type=&quot;password&quot; name=&quot;passin&quot; size=&quot;10&quot; maxlength=&quot;10&quot;&gt; <br />&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;go&quot;&gt; <br />&lt;/td&gt; <br />&lt;/tr&gt; <br />&lt;/form&gt; <br />&lt;/table&gt; <br />&lt;/body&gt; <br />&lt;/HTML&gt; <br /><br /><br /><br />2. Names.php: <br />&lt;? <br /><br /><br />switch ($name) <br />{ <br /><br /><br />case &quot;chris&quot;: <br />$pass = &quot;test&quot;; <br />$url = &quot;&lt;a href='http://www.icehousedesigns.com'&gt;Click here&lt;/A&gt;&quot;; <br />$meta = &quot;http://www.icehousedesigns.com&quot;; <br />break; <br /><br />case &quot;nick&quot;: <br />$pass = &quot;test2&quot;; <br />$url = &quot;&lt;a href='http://www.endzero.com&gt;Click here&lt;/A&gt;&quot;; <br />$meta = &quot;http://www.endzero.com&quot;; <br />break; <br /><br />case &quot;yahoo&quot;: <br />$pass = &quot;test3&quot;; <br />$url = &quot;&lt;a href='http://www.yahoo.com'&gt;Click here&lt;/A&gt;&quot;; <br />$meta = &quot;http://www.yahoo.com&quot;; <br />break; <br /><br />case &quot;google&quot;: <br />$pass = &quot;test4&quot;; <br />$url = &quot;&lt;a href='http://www.google.com'&gt;Click here&lt;/A&gt;&quot;; <br />$meta = &quot;http://www.google.com&quot;; <br />break; <br /><br />case &quot;teoma&quot;: <br />$pass = &quot;test5&quot;; <br />$url = &quot;&lt;a href='http://www.teoma.com'&gt;Click here&lt;/A&gt;&quot;; <br />$meta = &quot;http://www.teoma.com&quot;; <br />break; <br /><br /><br />// if none of them match... <br />default: <br />$url = &quot;Sorry, access denied&quot;; <br />break; <br /><br /><br />} <br /><br />?&gt; <br /><br /><br />3. Accesslist.php: <br />&lt;? <br /><br /><br />include (&quot;names.php&quot;); <br /><br /><br />?&gt; <br /><br />&lt;? <br /><br />if ( $passin != $pass ) <br />{ <br />?&gt; <br />&lt;html&gt; <br />&lt;head&gt; <br />&lt;TITLE&gt;Customer login - ACCESS DENIED&lt;/TITLE&gt; <br />&lt;basefont face=&quot;Arial&quot;&gt; <br />&lt;/head&gt; <br /><br />&lt;body&gt; <br />ACCESS DENIED - TRY AGAIN <br /><br />Either your username and / or password was incorrect <br />&lt;BR&gt; <br />They ARE case sensative! <br />&lt;BR&gt; <br />&lt;FORM METHOD =&quot;POST&quot; ACTION=&quot;accesslist.php&quot;&gt; <br />&lt;table width=&quot;80%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt; <br />&lt;tr&gt; <br />&lt;td&gt; <br />&lt;input type=&quot;text&quot; name=&quot;name&quot; size=&quot;20&quot; maxlength=&quot;20&quot;&gt; <br />&lt;input type=&quot;password&quot; name=&quot;passin&quot; size=&quot;10&quot; maxlength=&quot;10&quot;&gt; <br />&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;go&quot;&gt; <br />&lt;/td&gt; <br />&lt;/tr&gt; <br />&lt;/form&gt; <br />&lt;/table&gt; <br /><br />&lt;/body&gt; <br />&lt;/html&gt; <br />&lt;? <br />} <br />else <br />{ <br />?&gt; <br />&lt;html&gt; <br />&lt;head&gt; <br />&lt;TITLE&gt;Customer login&lt;/TITLE&gt; <br />&lt;basefont face=&quot;Arial&quot;&gt; <br />&lt;meta http-equiv=&quot;refresh&quot; content=&quot;1;URL=&lt;? echo &quot;$meta&quot; ?&gt;&quot;&gt; <br />&lt;/head&gt; <br /><br />&lt;body&gt; <br />Hello &lt;? echo $name; ?&gt;: <br />&lt;br&gt; <br />Please click the URL below to continue, or wait while we redirect you... <br />&lt;BR&gt; <br />&lt;? echo $url ?&gt; <br />&lt;? <br />} <br />?&gt; <br />&lt;br&gt; <br />&lt;/body&gt; <br />&lt;/html&gt; <br /><br />4. Readme:<br /><br />*PHP_ACCESS*<br /><br />The only thing you really need to change is the value of the variables in names.php. You should be able to figure it out. &nbsp;<br /><br /><br />form.php = the form <br />accesslist.php = the script that determines if vars. match up. <br />names.php = the script that holds the variable values ( usernames / passwords )<br /><br />If you have any questions regarding this script, support is offered here:<br /><br />http://www.icehousedesigns.com/community/viewforum.php?f=9<br /><br />DO NOT use this script to secure anything important. This script should be considered to be a minor<br />security measure.<br /><br /><br />Enjoy :)<br /><br /><br />Christopher Lover<br />http://www.icehousedesigns.com<br />http://www.pixelkingdom.com</span><br /><br /><br />I am a newbie to php. Could anyone tell me what I am doing wrong. I made a link on my homepage to form.php. Then I tested it and all the test usernames and passwords do not work. I have not put them in a folder. They are in my htdocs folder only. Thanks <br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP ACCESS Script help</b><br />
+					Post by: <b></b> on <b>April 23, 2003, 05:01:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I suspect your server is not configured to autocreate the variables based on the form values. You should be able to configure your server to do this for you. Try checking out the online php docs (http://www.php.net/manual/en/configuration.directives.php#ini.register-globals) for more details (pay attention to the part about register_globals).<br /><br />Another alternative is to get the value yourself. Near the top of accesslist.php, add the following line before the &quot;if&quot;:<br /><br />$passin = $_REQUEST['passin'];<br /><br />HTH</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP ACCESS Script help</b><br />
+					Post by: <b>trigger</b> on <b>April 24, 2003, 07:22:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright so this would be the new code:<br /><br />Accesslist.php: <br />&lt;? <br /><br /><br />include (&quot;names.php&quot;); <br /><br /><br />?&gt; <br /><br />&lt;? <br />$passin = $_REQUEST['passin'];<br />if ( $passin != $pass ) <br />{ <br />?&gt; <br />&lt;html&gt; <br />&lt;head&gt; <br />&lt;TITLE&gt;Customer login - ACCESS DENIED&lt;/TITLE&gt; <br />&lt;basefont face=&quot;Arial&quot;&gt; <br />&lt;/head&gt; <br /><br />&lt;body&gt; <br />ACCESS DENIED - TRY AGAIN <br /><br />Either your username and / or password was incorrect <br />&lt;BR&gt; <br />They ARE case sensative! <br />&lt;BR&gt; <br />&lt;FORM METHOD =&quot;POST&quot; ACTION=&quot;accesslist.php&quot;&gt; <br />&lt;table width=&quot;80%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt; <br />&lt;tr&gt; <br />&lt;td&gt; <br />&lt;input type=&quot;text&quot; name=&quot;name&quot; size=&quot;20&quot; maxlength=&quot;20&quot;&gt; <br />&lt;input type=&quot;password&quot; name=&quot;passin&quot; size=&quot;10&quot; maxlength=&quot;10&quot;&gt; <br />&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;go&quot;&gt; <br />&lt;/td&gt; <br />&lt;/tr&gt; <br />&lt;/form&gt; <br />&lt;/table&gt; <br /><br />&lt;/body&gt; <br />&lt;/html&gt; <br />&lt;? <br />} <br />else <br />{ <br />?&gt; <br />&lt;html&gt; <br />&lt;head&gt; <br />&lt;TITLE&gt;Customer login&lt;/TITLE&gt; <br />&lt;basefont face=&quot;Arial&quot;&gt; <br />&lt;meta http-equiv=&quot;refresh&quot; content=&quot;1;URL=&lt;? echo &quot;$meta&quot; ?&gt;&quot;&gt; <br />&lt;/head&gt; <br /><br />&lt;body&gt; <br />Hello &lt;? echo $name; ?&gt;: <br />&lt;br&gt; <br />Please click the URL below to continue, or wait while we redirect you... <br />&lt;BR&gt; <br />&lt;? echo $url ?&gt; <br />&lt;? <br />} <br />?&gt; <br />&lt;br&gt; <br />&lt;/body&gt; <br />&lt;/html&gt; <br /><br />I have tried this and it does not work.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP ACCESS Script help</b><br />
+					Post by: <b></b> on <b>April 24, 2003, 04:14:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is this posted someplace I could try it out? If not, what exactly is it doing? Does it display the &quot;Access Denied&quot; page?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP ACCESS Script help</b><br />
+					Post by: <b>trigger</b> on <b>April 24, 2003, 09:30:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is the output after I hit go: <br /><br />Notice: Undefined variable: name in d:\inetpub\wwwroot\names.php on line 4 <br /><br />Notice: Undefined variable: passin in d:\inetpub\wwwroot\accesslist.php on line 11 <br /><br />Notice: Undefined variable: pass in d:\inetpub\wwwroot\accesslist.php on line 11 <br />Hello <br />Notice: Undefined variable: name in d:\inetpub\wwwroot\accesslist.php on line 54 <br />: <br />Please click the URL below to continue, or wait while we redirect you... <br />Sorry, access denied <br /><br />If anyone has an answer let me know. <br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP ACCESS Script help</b><br />
+					Post by: <b>trigger</b> on <b>April 24, 2003, 09:33:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Oh also this where I got it:<br /><br />http://www.icehousedesigns.com/scripts/<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>PHP ACCESS Script help</b><br />
+					Post by: <b>imnes</b> on <b>April 25, 2003, 08:29:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay I think I've fixed it, you can run the code and view the source. &nbsp;To see the source click on the filename with .src on the end.<br /><br />http://www.homeweb.org/~imnes/lugcrap/codehelp/trigger/unsecure1/<br /><br />To run the script open form.php<br /><br />Known name + password pairs are:<br />chris test<br />nick test2<br />yahoo test3<br />google test4<br />teoma test5<br /><br />For the fix, I opened the file 'accesslist.php', used $_POST to retrieve the form variables (since they are not automatically created by PHP anymore). &nbsp;Then the next step was to move the include() directive AFTER the $_POST lines since that script needs those variables also.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nice!</b><br />
+					Post by: <b>trigger</b> on <b>April 25, 2003, 12:33:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nicely done! Works great!<br /><br />Thanks agian,<br /><br />Trigger<br /><br />P.S. By the way I have been waiting for a response from the icehousedesign.com people for over a week now and still no response. I really a appreciate your help.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

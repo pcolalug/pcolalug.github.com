@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Firewall issue (I think)</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: stevevan on August 28, 2006, 08:30:09 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Firewall issue (I think)</b><br />
+					Post by: <b>stevevan</b> on <b>August 28, 2006, 08:30:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Let me set the stage.&nbsp; Linux FC5 server, ppp0 is static IP BS DSL.&nbsp; Eth1 (10.0.0.1) goes to Linksys WRT54G wireless router, configured with static IP (10.0.0.50).&nbsp; From a wireless laptop connection (or any other wireless network connection on my network), I can ping the router and ping eth1 with no problems.&nbsp; However, I cannot get out onto the internet.&nbsp; Internet access from the server is fine.&nbsp; Here is my firewall rules (actual IP address replaced with x&#039;s):<br /><br /><div class="quoteheader">Quote</div><div class="quote"># (1) Policies (default)<br />iptables -P INPUT DROP<br />iptables -P OUTPUT DROP<br />iptables -P FORWARD DROP<br /><br /># (2) User-defined chain for ACCEPTed TCP packets<br />iptables -N okay<br />iptables -A okay -p TCP --syn -j ACCEPT<br />iptables -A okay -p TCP -m state --state ESTABLISHED,RELATED -j ACCEPT<br />iptables -A okay -p TCP -j DROP<br /><br /># (3) INPUT chain rules<br /><br /># Rules for incoming packets from LAN<br />iptables -A INPUT -p ALL -i eth1 -s 10.0.0.0/24 -j ACCEPT<br />iptables -A INPUT -p ALL -i lo -s 127.0.0.1 -j ACCEPT<br />iptables -A INPUT -p ALL -i lo -s 10.0.0.1 -j ACCEPT<br />iptables -A INPUT -p ALL -i lo -s xx.x.xxx.xxxx -j ACCEPT<br />iptables -A INPUT -p ALL -i eth1 -d 10.0.0.255 -j ACCEPT<br /><br /># Rules for incoming packets from Internet<br /><br /># Packets for established connections<br />iptables -A INPUT -p ALL -d xx.x.xxx.xxxx -m state --state \<br />ESTABLISHED,RELATED -j ACCEPT<br /><br /># TCP rules<br />iptables -A INPUT -p TCP -i ppp0 --destination-port 21 -j okay<br />iptables -A INPUT -p TCP -i ppp0 --destination-port 22 -j okay<br />iptables -A INPUT -p TCP -i ppp0 --destination-port 80 -j okay<br />iptables -A INPUT -p TCP -i ppp0 --destination-port 113 -j okay<br /><br /># UDF rules<br />iptables -A INPUT -p UDP -i ppp0 --destination-port 53 -j ACCEPT<br />iptables -A INPUT -p UDP -i ppp0 --destination-port 2074 -j ACCEPT<br />iptables -A INPUT -p UDP -i ppp0 --destination-port 4000 -j ACCEPT<br /><br /># ICMP rules<br />iptables -A INPUT -p ICMP -i ppp0 --icmp-type 8 -j ACCEPT<br />iptables -A INPUT -p ICMP -i ppp0 --icmp-type 11 -j ACCEPT<br /><br /># (4) FORWARD chain rules<br /># Accept the packets we want to forward<br />iptables -A FORWARD -i eth1 -j ACCEPT<br />iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT<br /><br /># (5) OUTPUT chain rules<br /># Only output packets with local addresses (no spoofing)<br />iptables -A OUTPUT -p ALL -s 127.0.0.1 -j ACCEPT<br />iptables -A OUTPUT -p ALL -s 10.0.0.1 -j ACCEPT<br />iptables -A OUTPUT -p ALL -s xx.x.xxx.xxxx -j ACCEPT<br /><br /># (6) POSTROUTING chain rules<br />iptables -t nat -A POSTROUTING -o ppp0 -j SNAT --to-source xx.x.xxx.xxxx<br />iptables -A FORWARD -s 10.0.0.0/24 -j ACCEPT<br />iptables -A FORWARD -d 10.0.0.0/24 -j ACCEPT<br />iptables -A FORWARD -s ! 10.0.0.0/24 -j DROP<br /><br /></div><br />I believe that I have the settings correct, based upon what I&#039;ve been able to google and research on line about iptables.&nbsp; Can anyone else see why I am not able to get to the internet through this particular router?&nbsp; And am I on the right track with iptables?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Firewall issue (I think)</b><br />
+					Post by: <b>rugmonster</b> on <b>August 28, 2006, 09:32:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Without really looking at the rules, are you sure you have ip forwarding enabled?<br /><br />Here&#039;s how to check:<br /><div class="codeheader">Code:</div><div class="code">cat /proc/sys/net/ipv4/ip_forward<br /></div><br />If you get 0 returned, then it is not enabled. If you get 1, then you are good to go and it is something with iptables. To enable ip forwarding, do the following:<br /><br /><div class="codeheader">Code:</div><div class="code">echo 1 &gt; /proc/sys/net/ipv4/ip_forward<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Firewall issue (I think)</b><br />
+					Post by: <b>stevevan</b> on <b>August 29, 2006, 04:44:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">ip forwarding <b>IS</b> enabled and good to go.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Firewall issue (I think)</b><br />
+					Post by: <b>hitechwizard</b> on <b>September 08, 2006, 02:54:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">iptables -A INPUT -p ALL -i lo -s 127.0.0.1 -j ACCEPT<br />iptables -A INPUT -p ALL -i lo -s 10.0.0.1 -j ACCEPT<br />iptables -A INPUT -p ALL -i lo -s xx.x.xxx.xxxx -j ACCEPT<br /><br /><br /><br />change to:<br />iptables -A INPUT -p ALL -i lo -s 127.0.0.1 -j ACCEPT<br />iptables -A INPUT -p ALL -i eth0 -s 10.0.0.1 -j ACCEPT<br />iptables -A INPUT -p ALL -i eth0 -s xx.x.xxx.xxxx -j ACCEPT<br /><br /><br />Nothing but 127.0.0.1 should be on the lo interface. I am assuming you have two nics (eth0 &amp; eth1)<br /><br />Realize I&#039;m not that great with using iptables as a firewall as I use pf &amp; openBSD instead. Something else to consider is what DSL adapter are you using? Most of the ones I have seen you set the outside IP address on the router, and everything behind it is 192.168.0.x<br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

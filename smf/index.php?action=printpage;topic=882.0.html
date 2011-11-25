@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Setting up a proxy</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: phed on July 15, 2003, 11:37:24 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Setting up a proxy</b><br />
+					Post by: <b>phed</b> on <b>July 15, 2003, 11:37:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Guys,<br /><br />Here's my problem that I would like your help with.<br /><br />I use a proxy to filter my Internet account. &nbsp;It works under M$ Windows in such a way as to set itself up when the computer boots up. &nbsp;All http and ftp requests are automatically routed to the proxy. &nbsp;This cannot be disabled by fiddling with the proxy settings in any of the browsers.<br /><br />Linux however is another story. &nbsp;So far I have only been able to set it up by using the proxy settings within the individual browsers. &nbsp;What I would like to be able to do is to have some kind of script run automatically each time a user logs in to their account. &nbsp;The script would need to send the username and password to the proxy server and subsequently redirect all furthur http and ftp requests from that user to the proxy server. &nbsp;I am currently using Mandrake 9.1 and Gnome 2.2 for my desktop.<br /><br />The object is to make it less easy for the casual user to disable the proxy simply by changing the proxy settings within the browser.<br /><br />The high speed proxy that I use under Linux is proxy.hedge.org on port 8080.<br /><br />Any help would be appreciated</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Setting up a proxy</b><br />
+					Post by: <b>crowe</b> on <b>July 16, 2003, 12:02:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Try adding this to your ~/.bash_profile (or such):<br /><br /><div class="codeheader">Code:</div><div class="code">export http_proxy=http&#58;//proxy.hedge.org&#58;8080<br />export ftp_proxy=http&#58;//proxy.hedge.org&#58;8080</div><br /><br />Log out, and log back in. &nbsp;Then see if it works afterwards.<br /><br />Of course, this would still be easy for the user to modify, if the user knew what they were doing..</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Setting up a proxy</b><br />
+					Post by: <b>phed</b> on <b>July 16, 2003, 12:09:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'll give it a try as soon as I get home in the morning. &nbsp;It would be great if it was this easy.<br /><br />Thanks Crowe &nbsp;:D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Setting up a proxy</b><br />
+					Post by: <b>rburt3</b> on <b>July 16, 2003, 07:57:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: crowe</div><div class="quote">Of course, this would still be easy for the user to modify, if the user knew what they were doing..</div><br /><br />I think you can also add that line to /etc/profile or some such. This defines the &quot;default&quot; environment for users. If you go with the per-~ route, you can always set permissions on .profile to something like 111 and chown it to root:root.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Setting up a proxy</b><br />
+					Post by: <b>steve</b> on <b>July 16, 2003, 09:35:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: phed</div><div class="quote"><br />I use a proxy to filter my Internet account. &nbsp;It works under M$ Windows in such a way as to set itself up when the computer boots up. &nbsp;All http and ftp requests are automatically routed to the proxy. &nbsp;This cannot be disabled by fiddling with the proxy settings in any of the browsers.</div><br /><br />Something to think about for the future is running your proxy on Linux. (You knew you'd hear that here...:D<br /><br />Anyway, the Linux Proxy &quot;Squid&quot; can run in transparent mode. In this mode all data is proxied whether the clients are setup for it or not. Squid is one of the programs built into the IPCop Linux firewall and all I do is build the firewall on my low end computer and enable the proxy via it's web interface. Then all systems on my network go through the proxy without knowing it. There's no setup on any of the Windows machines or Linux machines.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Setting up a proxy</b><br />
+					Post by: <b>rburt3</b> on <b>July 16, 2003, 03:37:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">steve, I don't think this is a local proxy. I think he wants to go through a proxy <i>service</i> on some other network.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Setting up a proxy</b><br />
+					Post by: <b>steve</b> on <b>July 16, 2003, 07:27:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">steve, I don't think this is a local proxy. I think he wants to go through a proxy <i>service</i> on some other network.</div><br /><br />Well then they should switch to a Linux proxy.... :lol:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>... well</b><br />
+					Post by: <b>Nomad</b> on <b>November 22, 2004, 04:51:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Anyway, the Linux Proxy &quot;Squid&quot; can run in transparent mode. ...<br /><br />yes and no...<br /><br />if your firewall is setup to route all traffic by the squid server, then your ok, but if your trying to limit bandwidth, or use pool, i would not recomend running Squid in this mode... things can get a little... <br /><br />Installing Apache 2.2 on 1.X with mod ssl perl and vpn and my_sql ish...<br /><br />but i do agree, they should swtich over.!!!<br /><br /><i>Edit by crowe: Removed double posting</i></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Setting up a proxy</b><br />
+					Post by: <b>rugmonster</b> on <b>November 23, 2004, 02:05:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nomad, could you finish your sentences, please?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Setting up a proxy</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 23, 2004, 12:46:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: steve</div><div class="quote"><div class="quoteheader">Quote from: rburt3</div><div class="quote">steve, I don't think this is a local proxy. I think he wants to go through a proxy <i>service</i> on some other network.</div><br /><br />Well then they should switch to a Linux proxy.... :lol:</div><br /><br />Now THAT'S funny.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

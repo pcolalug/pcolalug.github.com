@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Software firewall recommendation</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: hype8912 on September 06, 2007, 07:40:27 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Software firewall recommendation</b><br />
+					Post by: <b>hype8912</b> on <b>September 06, 2007, 07:40:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m hoping to start my linux firewall this weekend after being tired of troubleshooting off the shelf routers with poor throughput and interfaces.<br /><br />I am looking at 5 different systems but not really sure which one to pick. The ones I am looking at are m0n0wall, smoothwall 3.0, PFsense, Coyote, and IPCop. I&#039;ve heard IPCop and smoothwall were the easiest to use.<br /><br />I said hoping because I gave a friend a 500Mhz P3 about 6 months ago because he was going to build a file server. After my exhausted attempts of finding a P2 or P3 at the local thrift stores, ebay, and craigslist, I ask for it back nicely. He opted to give it back because it been sitting in his closet since I gave it to him but he keeps forgeting to bring it into work.<br /><br />I purchased a 24 port Fore managed switch with redundant power supplies off of ebay for $10 and its supposed to be delivered tomorrow.<br /><br />This will be my second experience with Linux and first with FreeBSD if I go with m0n0wall or PFsense. I tried Suse about 2 years ago when I was building my file server and gave up when I couldn&#039;t get all the windows computers to see the linux server along with not having printer drivers for linux. I ended up going with Windows Server 2003 and now running a beta version of Windows Home Server.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Software firewall recommendation</b><br />
+					Post by: <b>dpeach</b> on <b>September 06, 2007, 09:32:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It has been a while since I have used a firewall like this, but I have had experience with Coyote and Smoothwall. I used both of them and remember having an interesting time trying to get them configured. But, once I did, I never had problems out of them. I think the Smoothwall experience was a bit better (that is the one I ran most recently). I am sure much has changed in the 5+ years since I was doing this.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Software firewall recommendation</b><br />
+					Post by: <b>bhoff</b> on <b>September 07, 2007, 03:44:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes any of those firewall solutions will work well!<br />Why why are you running a windows server...................With the new Samba and the Swat gui you can easily manage your printers and shared folders.<br />Cups has support for any printer you can find just about......I would revisit the Linux server and post your questions in here to help you over the rough spots or better yet come on down to a meeting and meet the crew :)<br />Every third Saturday of the month.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Software firewall recommendation</b><br />
+					Post by: <b>hype8912</b> on <b>September 07, 2007, 09:42:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks bhoff.<br /><br />I may visit the Linux server idea again in the future but I like my windows&nbsp; home server right now. I like the idea that it does automatic updates of all the windows computers on my network everyday except my x64 laptop. MS has crappy support for x64. It also works with my media center PC and Xbox 360. Yes I did look at MythTv before I made a media center PC.<br /><br />Another reason I use a lot of Microsoft products is because I have an MSDN account through work so I get access to Microsoft software for free. Its supposed to be for development and testing.<br /><br />Anyway back to linux. I started on my firewall tonight. Pretty frustrated with it right now.&nbsp; I went with Smoothwall 3.0 but I can get the green side to talk to the red side. When it asked, I set everything to be open and then set my red side to DHCP. I turned on the DHCP for the green side but I still can&#039;t get access to the internet. Doesn&#039;t help that I&#039;ve got the cable modem plugged directly into the firewall trying to troubleshoot the issue and my wife is saying &quot;The internet is down!&quot;. Like duh women. Told her to connect to the neighbors wireless since its wide open.<br /><br />On another note, UPS delivered my switch today. I plugged it in and started plugging connections up. Began reading through the admin manual I found on the internet to find out that the previous person had setup an admin password on it and had disabled a bunch of the ports. I read in the manual that if you hook up a null modem cable you can reset the switch back to the factory defaults. I dug through my boxes of computer parts to find a old serial cable but it didn&#039;t have the right end on it. I think I needed a female-female cable and all I had was a male-female cable. I thought about trying to find another female end on another cable in my boxes and soldering the end on. <br /><br />I would like to come to a meeting and I may take you up on that in October. September is pretty booked with surgery and college.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Software firewall recommendation</b><br />
+					Post by: <b>hype8912</b> on <b>September 07, 2007, 11:13:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Finally got it up and working. Got it up and working on the second time of loading but I followed the manual step by step and didn&#039;t like the IP address they used. Ended up having to reload it to change the IP address since the DHCP said one set and the firewall was on a different set of addresses. It also didn&#039;t help that a good storm rolled through tonight and the internet kept going up and down all night.<br /><br />Loading it the third time was a breeze. Had it up and going in less than 10 minutes. I&#039;m loving the speed boost of the web proxy. Hopefully I don&#039;t have any problems with it. The CNO at work told me to watch out with using a proxy seeing someone elses login data on the network for visiting the same site.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Software firewall recommendation</b><br />
+					Post by: <b>bhoff</b> on <b>September 08, 2007, 02:14:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Once your up be sure to run a check against the outside Ip to check for open ports.<br />Also you will have to open a port for Microsoft updates I think.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Software firewall recommendation</b><br />
+					Post by: <b>hype8912</b> on <b>September 09, 2007, 02:09:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not sure what you mean by checking for open ports. I went to a couple websites and ran some port scans. All of them came up stealth.<br /><br />My microsoft updates are working right now.<br /><br />Here&#039;s a link to my current network topology. I did a speed test today. I couldn&#039;t believe how much my old Netgear router was slowing everything down. At best with the Netgear I sometimes would get 4 or 5Mb on dslreports.com. Now with the smoothwall, I&#039;m getting between 13 and 14Mb down. The linux firewall has over doubled my speed.<br /><br />http://www.joshdelong.com/shared/Current_Network_9-8-07.htm (http://www.joshdelong.com/shared/Current_Network_9-8-07.htm)<br /><br />Let me know if you think I should configure anything different. After my installation, I realized I couldn&#039;t access my (windows) server from outside the network no matter what type of port forwarding I set up. I later realized I&#039;m going to have to set the server up on a DMZ and then either pin hole it through to the green side or run a seperate lan cable to the green network. I&#039;m sure running another LAN cable isn&#039;t the most secure thing to do but it makes setup alot easier. This also allows me to specify which nic the internal traffic will use and the outside traffic will use. Anyway I&#039;m short one nic to set this up so I&#039;ve just left the server on the green side for now.<br /><br />I was playing with an old laptop I had in the closet today trying to make it a firewall, you&#039;ll see it on my diagram as the brick, but any version I could find with PCMCIA nic support wouldn&#039;t load. They&#039;ll just kept rebooting. </div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Home networking</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: geekforGod on April 27, 2006, 11:30:00 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Home networking</b><br />
+					Post by: <b>geekforGod</b> on <b>April 27, 2006, 11:30:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, so my brother has a dual boot setup with Mandriva and Windows XP. XP needed its annual reinstall the other day and he wrote all of his backup files to the Mandriva partition not knowing that linux can&#039;t write back onto NTFS(at least, not that I am aware of).<br /><br />So I was going to have him transfer the files to my computer and back to his since we are on the same network, but I am not sure of the best way to do it. Will NFS between the two linux boxes and then Samba from my linux box to his XP box work? Is there a program out there that automates it and makes it much easier? I don&#039;t mind playing with stuff when I need to, but sometimes it takes a while to get him to stop playing WoW or RTCW.<br /><br />Anyways, any suggestions are welcome. Thanks for your time guys, as always.<br /><br />Todd</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Home networking</b><br />
+					Post by: <b>dpeach</b> on <b>April 27, 2006, 03:40:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Funny, I have never networked 2 linux boxes before. But I assume it would be pretty simple. Once you get the info from his computer to yours, Samba works great. I share stuff all the time from my box (Linux) to my wife&#039;s box (XP) all the time. She can pull from my box to hers. She also has a FAT drive on her machine. That is like our file server to make easy transfers with the whole drive shared through Samba.<br /><br />There is a way to write to NTFS, but last I knew it was experimental. Supposedly it worked, but said stuff like &quot;don&#039;t come crying to us when you lose every bit of data you own.&quot; So, that was enough for me to stay away from it.<br /><br />A program called smb4k (http://smb4k.berlios.de/&quot;) makes Samba work smoothly.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Home networking</b><br />
+					Post by: <b>rugmonster</b> on <b>April 27, 2006, 04:02:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Depending on the type of partition he stored the stuff on under Linux, he has options for copying the data back inside of windows. <br /><br />For ReiserFS, there is YAReG (http://yareg.akucom.de/) and for Ext2/3 there is Ext2IFS (http://www.fs-driver.org/). YAReG is an application that is slow to copy large files, but works. Note that it is only for ReiserFS. Ext2IFS is a driver for Windows so that Ext2 and 3 volumes show up as native drives. I have not tested the Ext2IFS, but have read good things about it.<br /><br />As for copying between Samba, NFS, etc. Yeah, it will work. Probably the easiest thing would be to use scp between the linux boxes and then have him boot into Windows and make them both on the same Samba workgroup. There are numerous tools out there to set Samba up. Distros like SUSE, Fedora and Mandriva should have GUI based tools for it included.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Home networking</b><br />
+					Post by: <b>danc</b> on <b>April 27, 2006, 10:21:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;ve always found Samba to be a pain, but admittedly have not really put much effort into figuring it out.<br /><br />What I would do is to use &quot;scp&quot; to copy the files from his Linux partition to your Linux machine.&nbsp; Then, after he reinstalls XPee, I would just install &quot;putty&quot; and &quot;pscp&quot; (from same place as putty), and use &quot;pscp&quot; to copy stuff back into the windoze machine from your Linux box.&nbsp; This way there is no need for setting up servers and thrashing around with Samba/NFS.<br /><br />As usual with Linux, there are many ways to do the same thing, but I would find this to be the easiest.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Home networking</b><br />
+					Post by: <b>geekforGod</b> on <b>April 30, 2006, 07:40:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks guys. I installed the Ext2IFS driver on his computer and so far it seems to be working perfectly. I hope to get a new computer sometime soon and once I do I think I&#039;ll play with NFS and Samba some before I turn this one into a file server. I just want to play with it some, even if scp is much easier.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Home networking</b><br />
+					Post by: <b>Brent</b> on <b>May 01, 2006, 11:53:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Doh!&nbsp; I guess that&#039;s one area where Ext3 beats XFS, I&#039;m not aware of a driver to read/write to/from xfs from windows.&nbsp; <br /><br />Thats ok though, I just use fat32 for my windows partition.&nbsp; Only bad thing is fat32 has a 4gb limit file size, which, honestly your unlikely to run into unless you&#039;re editing a few hours of video.&nbsp; Also, the windows installer (2000) seems to put an artificial limit on partition size to 32g.&nbsp; Not that it matters for me, my windows parition is 15g, since I mainly just use it for gaming.<br /><br />There is also a very nice program for windows called filezilla, that supports sftp style transfers.&nbsp; It&#039;s interface is similar to gftp.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

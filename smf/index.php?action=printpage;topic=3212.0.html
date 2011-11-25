@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Laptop lid closing and Beryl video</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: Yossarian on August 18, 2007, 09:39:08 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Laptop lid closing and Beryl video</b><br />
+					Post by: <b>Yossarian</b> on <b>August 18, 2007, 09:39:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have two questions and I&#039;m not sure if there&#039;s a solution or not. &nbsp;I have a Dell Inspiron E1505 laptop, 1.83 Ghz Centrino Duo, 1 Gb RAM, 945GM Intel graphics card (224 MB). &nbsp;I&#039;m running PCLinuxOS.<br /><br />1) &nbsp;Whenever I close the lid on my laptop and then open it again, the screen won&#039;t come back on. &nbsp;The system doesn&#039;t go into standby or hibernate, and I&#039;ve tried Ctrl+Alt+F1 then Alt+F7. &nbsp;This happens whenever I run any linux distro, live or installed.<br /><br />2) &nbsp;I also run Beryl, but whenever I play a DVD in xine the video doesn&#039;t really &quot;wrap around&quot; or anything.<br /><br />Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Laptop lid closing and Beryl video</b><br />
+					Post by: <b>crowe</b> on <b>August 20, 2007, 12:06:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I can&#039;t help you much with the first issue, though that sounds like you&#039;re having a problem with your ACPI setup.&nbsp; That might be an avenue that you wish to explore.<br /><br />As to the second problem: What happens when you try to wrap a video around?&nbsp; Does the video continue playing (ie, audio with no visible picture)? Does the video stop playing completely?&nbsp; Does xine crash?&nbsp; Does your xserver crash?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Laptop lid closing and Beryl video</b><br />
+					Post by: <b>Yossarian</b> on <b>November 13, 2007, 07:51:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You were right.&nbsp; I tinkered around a bit with my ACPI setup and it stopped going blank, but just went into hibernate.<br /><br />As for the beryl, I guess my computer just cannot handle moving images whilst rotating the beryl/compiz cube, since it did this under OpenSUSE as well.&nbsp; Though, streaming videos worked fine.<br /><br /><br />But, recently I&#039;ve migrated to the new Fedora 8 release, so, we&#039;ll see once I get beryl installed there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Laptop lid closing and Beryl video</b><br />
+					Post by: <b>Yossarian</b> on <b>November 21, 2007, 08:03:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If anyone is still interested in helping me tackle this prblem (supposedly others have the same issue), this screenshot may help you understand what it is.<br /><br />http://i54.photobucket.com/albums/g96/Yossarian_3990/snapshot1-1.png<br /><br />The blue part should be the movie.&nbsp; But, KSnapshot takes it as all blue.&nbsp; In real life, you can see the video in the same place it was before the cube/effects.<br /><br />http://i54.photobucket.com/albums/g96/Yossarian_3990/snapshot2.png<br /><br />Space Mutiny, however, on Google Video bends just fine.&nbsp; (this is the desired result for Kaffeine/MPlayer/VLC I guess you could say).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Laptop lid closing and Beryl video</b><br />
+					Post by: <b>Yossarian</b> on <b>January 09, 2008, 12:12:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay.&nbsp; Update!<br /><br />It&#039;s fixed.&nbsp; It was a problem with my video card, Intel 945GM.&nbsp; A lot of other users have this problem with the blue patches appearing.<br /><br />The solution was found here:<br /><br />http://forum.compiz-fusion.org/showthread.php?t=4065</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Laptop lid closing and Beryl video</b><br />
+					Post by: <b>dpeach</b> on <b>January 09, 2008, 10:37:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did not really understand or look into the issue, so I was not much of a help, but I wanted to say <b>THANK YOU</b> for posting what you found out. That is the way the forum will be able to help others.<br /><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

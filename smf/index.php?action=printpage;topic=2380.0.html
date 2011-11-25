@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - two part question (xine)</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: LinkZero on April 12, 2005, 03:29:42 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>LinkZero</b> on <b>April 12, 2005, 03:29:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">this isn't really a hardware question, but it is a video question. &nbsp;for some reason, some .wmv video files will play on xine, but some don't. &nbsp;also, .avi and .mpg files open in the embedded gxine player in firefox. &nbsp;i want them to open with xine. &nbsp;gxine sometimes closes whenever i try to go full screen.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>rugmonster</b> on <b>April 12, 2005, 06:40:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: LinkZero</div><div class="quote">some .wmv video files will play on xine, but some don't</div><br />It depends on the codec they were encoded with. Just because they have the same files have the same extension, they may be requiring a decoder that you don't have on your system. I don't use desktop linux much at all, but I'm sure there is an equivalent to GSpot for linux.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>LinkZero</b> on <b>April 12, 2005, 06:53:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">o...k... any suggestions on what i should do?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>imnes</b> on <b>April 12, 2005, 08:45:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You can grab a codec pack from here:<br /><br />http://cambuca.ldhs.cetuc.puc-rio.br/xine/w32codec-0.52-1.i386.rpm<br /><br />Just install using:<br /><br /><div class="codeheader">Code:</div><div class="code">rpm -i w32codec-0.52-1.i386.rpm</div><br /><br />If you don't have RPM in your linux distribution let us know what you're running and we can point you to the right files.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>danc</b> on <b>April 12, 2005, 09:31:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">IIRC, he's running Slackware... <br /><br />I'd suggest installing MPlayer (from www.linuxpackages.net), and the w32 codec pack from here:<br /><br />http://www.accidia.net/download/slackware/tgz/10.1/<br /><br />&nbsp;:lol: <br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>LinkZero</b> on <b>April 12, 2005, 10:26:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i've got mplayer, but i hardly ever use it since it has to be opened in console. &nbsp;how do i open or install the codec package? &nbsp;or do i just need to put it somewhere? &nbsp;i know these are dumb questions but i'm new.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>danc</b> on <b>April 12, 2005, 10:53:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: LinkZero</div><div class="quote">i've got mplayer, but i hardly ever use it since it has to be opened in console. &nbsp;how do i open or install the codec package? &nbsp;or do i just need to put it somewhere? &nbsp;i know these are dumb questions but i'm new.</div><br /><br />1. &nbsp;Download the codec (with your browser)<br />2. &nbsp;In a terminal, as root, in the directory you saved it in, type:<br />&nbsp; &nbsp; &nbsp; installpkg &lt;filename&gt; &nbsp; &nbsp; (where &lt;filename&gt; is the name of the codec package)<br /><br />That's it!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>Brent</b> on <b>April 12, 2005, 11:13:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I need to show you how to install, setup and use the rox file manager.<br /><br />I've showed it to ya before, I have it setup to where i just click on a vid format and it opens it w mplayer automatically.<br /><br />Rather nice.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>LinkZero</b> on <b>April 13, 2005, 09:41:44 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote"><div class="quoteheader">Quote from: LinkZero</div><div class="quote">i've got mplayer, but i hardly ever use it since it has to be opened in console. &nbsp;how do i open or install the codec package? &nbsp;or do i just need to put it somewhere? &nbsp;i know these are dumb questions but i'm new.</div><br /><br />1. &nbsp;Download the codec (with your browser)<br />2. &nbsp;In a terminal, as root, in the directory you saved it in, type:<br />&nbsp; &nbsp; &nbsp; installpkg &lt;filename&gt; &nbsp; &nbsp; (where &lt;filename&gt; is the name of the codec package)<br /><br />That's it!</div><br /><br />i tried doing that, but it says &quot;command installpkg not found&quot;</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>imnes</b> on <b>April 13, 2005, 09:45:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: LinkZero</div><div class="quote">i tried doing that, but it says &quot;command installpkg not found&quot;</div><br /><br />Make sure you're running that command as root. &nbsp;Also you may try:<br /><br /><div class="codeheader">Code:</div><div class="code">/sbin/installpkg yourfilename.tgz</div><br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>two part question (xine)</b><br />
+					Post by: <b>LinkZero</b> on <b>April 13, 2005, 12:30:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">thanks so much. &nbsp;it worked. &nbsp;i can now play all my wmv files. &nbsp;and now i know how to install packages.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

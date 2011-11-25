@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Delete smb share folders</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by:  on April 08, 2004, 02:49:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Delete smb share folders</b><br />
+					Post by: <b></b> on <b>April 08, 2004, 02:49:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a problem that has really stumped me. I can't delete folders in my samba share that mounts at boot up even on folders I just create and try to delete. This only happens when I am running konqueror or nautilus, This happens in gnome and kde on mandrake 9.2.1 and mdk 10 community but not in Slackware 9.1 (or win98). The problem just started but I don't know of anything I've changed and I don't know how to look for a solution. I can't find anything on the net. &nbsp;I can use konsol and rmdir with no problem if I don't have the smb share folder visible in konqueror or nautilus. I get this error message &quot;Could not remove directory /mnt/hd/abc&quot; when I right click on folder abc and select delete. I have opened the &nbsp;terminal emulator in konqueror and ran the rmdir and it says &quot;Device or resource busy&quot;. It only does this on the smb share and not on any local mounts like I say this is only with mandrake and the permissions on the smb share mount are rwxrwxrwx. Here is my fstab and mtab<br />fstab:<br />/dev/hda6 / ext3 defaults 1 1<br />none /dev/pts devpts mode=0620 0 0<br />/dev/hda7 /home ext3 defaults 1 2<br />none /mnt/cdrom supermount dev=/dev/scd0,fs=auto,ro,--,iocharset=iso8859-1 0 0<br />none /mnt/cdwriter supermount dev=/dev/scd1,fs=auto,ro,--,iocharset=iso8859-1 0 0<br />none /mnt/floppy supermount dev=/dev/fd0,fs=ext2:vfat,--,iocharset=iso8859-1,umask=0,sync,codepage=850 0 0<br />//max/hd /mnt/hd smbfs username=%,dmask=0777,fmask=0777.rw 0 0<br />/dev/hda1 /mnt/win_c vfat umask=0,iocharset=iso8859-1,codepage=850 0 0<br />/dev/hdb1 /mnt/win_c2 vfat umask=0,iocharset=iso8859-1,codepage=850 0 0<br />none /proc proc defaults 0 0<br />/dev/hda5 swap swap defaults 0 0<br /><br />mtab:<br />/dev/ide/host0/bus0/target0/lun0/part6 / ext3 rw 0 0<br />none /proc proc rw 0 0<br />none /proc/bus/usb usbfs rw 0 0<br />none /dev devfs rw 0 0<br />none /dev/pts devpts rw,mode=0620 0 0<br />/dev/ide/host0/bus0/target0/lun0/part7 /home ext3 rw 0 0<br />none /mnt/cdrom supermount ro,dev=/dev/scd0,fs=auto,--,iocharset=iso8859-1 0 0<br />none /mnt/cdwriter supermount ro,dev=/dev/scd1,fs=auto,--,iocharset=iso8859-1 0 0<br />none /mnt/floppy supermount rw,sync,dev=/dev/fd0,fs=ext2:vfat,--,iocharset=iso8859-1,umask=0,codepage=850 0 0<br />/dev/ide/host0/bus0/target0/lun0/part1 /mnt/win_c vfat rw,umask=0,iocharset=iso8859-1,codepage=850 0 0<br />/dev/ide/host0/bus0/target1/lun0/part1 /mnt/win_c2 vfat rw,umask=0,iocharset=iso8859-1,codepage=850 0 0<br />//max/hd /mnt/hd smbfs &nbsp;0 0<br /><br />The //max/hd /mnt/hd smbfs &nbsp;0 0 line is the same as in slackware which I can delete folders in konqueror<br /><br />My equipment on my home network<br />server is mdk 9.2.1<br />1 mdk 9.2.1 workstation<br />1 mkd 10c workstation<br />1 slack 9.1 workstation<br />1 win98 workstation<br />Anybody got any suggestions?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Delete smb share folders</b><br />
+					Post by: <b>danc</b> on <b>April 08, 2004, 05:16:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Ed</div><div class="quote">I have a problem that has really stumped me. I can't delete folders in my samba share that mounts at boot up even on folders I just create and try to delete. This only happens when I am running konqueror or nautilus, This happens in gnome and kde on mandrake 9.2.1 and mdk 10 community but not in Slackware 9.1 (or win98). The problem just started but I don't know of anything I've changed and I don't know how to look for a solution. I can't find anything on the net. &nbsp;I can use konsol and rmdir with no problem if I don't have the smb share folder visible in konqueror or nautilus. I get this error message &quot;Could not remove directory /mnt/hd/abc&quot; when I right click on folder abc and select delete. I have opened the &nbsp;terminal emulator in konqueror and ran the rmdir and it says &quot;Device or resource busy&quot;. It only does this on the smb share and not on any local mounts like I say this is only with mandrake and the permissions on the smb share mount are rwxrwxrwx. Here is my fstab and mtab<br />fstab:<br />/dev/hda6 / ext3 defaults 1 1<br />none /dev/pts devpts mode=0620 0 0<br />/dev/hda7 /home ext3 defaults 1 2<br />none /mnt/cdrom supermount dev=/dev/scd0,fs=auto,ro,--,iocharset=iso8859-1 0 0<br />none /mnt/cdwriter supermount dev=/dev/scd1,fs=auto,ro,--,iocharset=iso8859-1 0 0<br />none /mnt/floppy supermount dev=/dev/fd0,fs=ext2:vfat,--,iocharset=iso8859-1,umask=0,sync,codepage=850 0 0<br />//max/hd /mnt/hd smbfs username=%,dmask=0777,fmask=0777.rw 0 0<br /></div><br />Ed, not entirely sure this is it, but look at the last line in the quote above. &nbsp;After the fmask=0777 there should be a (comma) not a (period). &nbsp;I'm guessing that is preventing the &quot;rw&quot; from being seen and affecting the permissions somehow. &nbsp;Not sure if changing it will require a reboot, but that would be a good idea to be sure. &nbsp;Try changing it and post your results...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Delete smb share folders</b><br />
+					Post by: <b></b> on <b>April 08, 2004, 05:49:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">danc I make the correction but it still won't let me delete folders. I'm supprised it didn't complain about the period on bootup. By the way if I login as root it won't let me delete samba share folders either. It seems to me it would have to be something with how mandrake and samba client work since it doesn't do it with slackware 9.1. If you think of anything else please let me know.<br /><br />I was looking at the log files and got the pid for smb and ran a [edward@Sun edward]$ ps -ax and it is mounted right<br />1206 ? &nbsp; &nbsp; &nbsp; &nbsp;S &nbsp; &nbsp; &nbsp;0:00 /sbin/mount.smbfs //max/hd /mnt/hd -o rw username % dmask 0777 fmask 0777<br /><br />another edit: I found out it is only folders I can't delete I can delete files.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

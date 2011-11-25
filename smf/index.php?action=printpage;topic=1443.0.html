@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - wine install problems</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: Brent on February 29, 2004, 09:48:53 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>wine install problems</b><br />
+					Post by: <b>Brent</b> on <b>February 29, 2004, 09:48:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys.<br /><br />This is my 2nd time trying to install wine and...well it's being a butt again. &nbsp;I compiled it using wineinstall. &nbsp;However, it doesn't find my win 2000 install. &nbsp;Secondly it can't seem to find the fake C:\ which it just made.<br /><br /><div class="codeheader">Code:</div><div class="code"><br />Preparing to install default Wine registry entries...<br />Installing default Wine registry entries...<br />&nbsp;<br />Could not stat /root/.transgaming/c_drive &#40;No such file or directory&#41;, ignoring drive C&#58;<br />Invalid path 'c&#58;\windows' for windows directory&#58; does not exist<br />Perhaps you have not properly edited or created your Wine configuration file.<br />This is &#40;supposed to be&#41; '/root/.wine/config'<br />Registry install failed.<br /></div><br /><br />This is something like the problems I had with wine the last time I tried to install it. &nbsp;This bugs me just about as bad as mplayer not having a default front end. &nbsp;(those of you who have tried compiling it know what i mean).<br /><br />btw this is winex 3.0-pre1. &nbsp;I wanted to play games like civilization 3, and such with it. &nbsp;I'm gona try before I buy cause it's subscription based<br /><br />--ps-- <br />I just had to add this.<br /><br /><div class="codeheader">Code:</div><div class="code"><br />bash-2.05b# mkdir /root/.transgaming/c_drive<br />mkdir&#58; cannot create directory `/root/.transgaming/c_drive'&#58; No such file or directory<br />bash-2.05b#<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>wine install problems</b><br />
+					Post by: <b>lloydr</b> on <b>February 29, 2004, 10:04:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">A while back i did a cvs install of winex which actually worked out pretty nicely except for it took a few fixes to get my mouse working in delta force - task force dagger<br /><br />the cvs version is actually free and legal....or atleast it was when i did my cvs install....can also try snatching the latest winex 3.2 or 3.3 or whatever it is now off a p2p network :wink: 3.0 is a little old so probaly go a little cleaner with latest</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>wine install problems</b><br />
+					Post by: <b>rugmonster</b> on <b>March 01, 2004, 01:58:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Do you have /root/.transgaming? If that doesn't exist, then you need to make that before you make c_drive.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>wine install problems</b><br />
+					Post by: <b>imnes</b> on <b>March 01, 2004, 11:34:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Or do like me, pay $5, get the installable package with the nice Point2Play app, and support the effort.<br /><br />I think you don't get all the software in the CVS version, because I have apps that will run through the prepackaged files but won't run properly through the CVS. &nbsp;I'm not sure what is missing. &nbsp;My guess is they are licensing some commercial code / DLLs to include that they can't redistribute in source form.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

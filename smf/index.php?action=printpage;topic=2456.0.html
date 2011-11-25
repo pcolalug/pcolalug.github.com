@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Toshiba-Mandriva and Synaptics Touchpad Problem</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: ats8 on May 28, 2005, 04:15:30 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>ats8</b> on <b>May 28, 2005, 04:15:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok. I'm not sure if what I did is related to what my laptop is doing now but if anyone has any comments, please respond...I have a Toshiba laptop and I was playing around with the configuration of Mandriva and under the mouse selection, I changed it from USB/something to Synaptics TouchPad (since that 's what is has on it with Windows). After doing that it asked me to test the mouse but when I used the touchpad to move the mouse, it went all crazy and I couldn't get it to hit cancel and I couldnt find any keys on the keyboard to cancel it either. I turned the computer off and back on again and when it boots up, it goes to a black screen where it asks me to enter the localhost login id and password. After doing that it gives me the last time I logged in and [allison@localhost allison]$ ...Of course, since I don't know how to use Linux, I dont know what to do at this point to get it to continue booting up. Any ideas?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>lloydr</b> on <b>May 28, 2005, 04:37:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">if you type<br />&nbsp;<div class="codeheader">Code:</div><div class="code">startx</div><br />does it startup the gui and everything?<br /><br />I'm not familiar with mandriva, I believe it uses xorg but you should be able to edit he pointer section of the /etc/X11/xorg.conf and change things back to normal. But it'd probaly be better explained from a Mandriva person.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>...</b><br />
+					Post by: <b>ats8</b> on <b>May 28, 2005, 04:46:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I typed in startx after entering my localhost login info and it said various things including <br /><br />&quot;Failed to load module &quot;synaptics&quot; (module does not exist)&quot; and No Core Pointer...Please Consult the X. Org Foundation support at http://wiki.X.org for help. Also check the log file at &quot;/var/log/Xorg.0.log&quot; for add. info.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>danc</b> on <b>May 28, 2005, 10:16:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Allison,<br /><br />You could try the following procedure to see if it'll get you back to the pre-Synaptic configuration. &nbsp;Just follow the steps in order, and remember that in Linux, capitalization is important (type things just as I put them).<br /><br />1. &nbsp;Log in to the text mode console as you said you were doing.<br />2. &nbsp;Type &quot;su&quot; (without quotes), then &quot;Enter&quot;, and then the root password followed by &quot;Enter&quot;.<br />3. &nbsp;Type &quot;cd /etc/X11&quot;<br />4. &nbsp;Type &quot;cp xorg.conf.old xorg.conf&quot; (and answer yes if it asks to confirm overwriting)<br />5. &nbsp;Type &quot;exit&quot;<br />6. &nbsp;Type &quot;startx&quot;<br /><br />That should bring you back to a graphical mode. &nbsp;Let us know if it does or not, and we'll go from there... &nbsp;<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>Brent</b> on <b>May 28, 2005, 10:31:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">^ The above should work, but if it doesn't...<br /><br />I *think* you can insert the madrake install disk and use it to configure a system. &nbsp;(You might have to tell it not to install anything to &nbsp;get to the configuration part.) &nbsp;This is probobly bad advice but I did use it once to recover a borked system.<br /><br />Really sorry to hear your having so much trouble. &nbsp;Just remember we're happy to help when you need it.<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I tried a combination of both...</b><br />
+					Post by: <b>ats8</b> on <b>May 29, 2005, 02:58:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I tried a combination of both replies but nothing seems to work. Is there any way I could try to reinstall Mandrake on my computer? I don't have anything added to it that I need to worry about or anything.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>rugmonster</b> on <b>May 29, 2005, 05:54:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Definitely. Go through the steps you did before when installing it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ok, I did that</b><br />
+					Post by: <b>ats8</b> on <b>May 29, 2005, 07:18:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, I reinstalled and it works fine again. haha. Now I know not to mess with stuff!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>woodyharold</b> on <b>May 29, 2005, 09:42:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Allison<br />&nbsp; &quot;messing with stuff&quot; is probably one of the best ways to learn. First you need to establish what is going to be your work station and leave that one alone. Have a separate box or partition for your &quot;learning&quot; linux system, then you can mess all you want to and when you screw-up and can't find the solution, then just re-install the OS and start over. Soon you will gain confidence and will be troubleshooting more and re-installing less. That is when linux gets to be more fun. Hang in there.<br />&nbsp; Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>Brent</b> on <b>May 29, 2005, 11:14:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I remember when I tried to optomize windows 3.1 to run quake.<br /><br />I totally messed my machine. &nbsp;I was 11, my parents were pulling in the driveway, I booted off a dos floppy, fixed it, rebooted and my parents walked in to find their sweet lil boy innocently playing with 'paint'.<br /><br />To this day i think that the fastest 'hunt/peck' typing speed i ever achieved.<br />&nbsp;:lol:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>geekforGod</b> on <b>May 30, 2005, 09:13:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Haha, I remember being 12 and trying to install BBS software on my IBM PS/2 so my friends could dial in and play games against me. I was looking through the manual to find the command I wanted and for some reason thought &quot;format C:\&quot; was what I needed. Deleted everything until it made its way into the dos directory and crashed. IBM sent recovery discs. It takes 12 3.5 inch floppies to reinstall DOS and Win 3.1. I did finally get that BBS up and running though.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Toshiba-Mandriva and Synaptics Touchpad Problem</b><br />
+					Post by: <b>rugmonster</b> on <b>May 30, 2005, 10:41:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just last night I broke my Xorg thanks to a kernel upgrade. I have a Radeon video card and use the ATI binary drivers which require a kernel module to run. When I upgraded my kernel, the module that the driver needed didn't work. Thank god I had my laptop sitting next to me. I did a search on google and found out what I had to do. Unfortunately, ATI didn't make the most intuitive install process for their drivers, but I did get it to work and the page with the instructions is bookmarked on my laptop. <br /><br />Best of luck on getting everything going. Remember that you learn most through your mistakes. Pick something you really want to learn or get working and work toward that. Along the way to that goal, you will find other things that interest you. Branch off from there and one goal will turn into countless others. To me, that's where computing gets fun.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Number one rule!</b><br />
+					Post by: <b>bhoff</b> on <b>May 30, 2005, 12:50:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Always remember to back-up any config file by doing<br /># cp filename.* filename.*.bak <br />That way you can always go back and remove the change and restore your old settings.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

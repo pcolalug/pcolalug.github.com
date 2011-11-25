@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - File/Internet connection sharing</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: DragonthePeanutUser on May 26, 2003, 04:58:16 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>File/Internet connection sharing</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>May 26, 2003, 04:58:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm having a problem setting up Internet Connection/File Sharing between 2 Mandrake systems. &nbsp;My HP is running Mandrake 9.1 with an Intel Celeron 1GHz processor, 256 MB PC 133 SDRAM, &nbsp;RealTek 8139 10 Base T PCI as a rtl8139too module, and a Linksys EtherPCI II 10 Base T as a ne2k-pci module. &nbsp;My internet connection is through the RealTek as eth0 and the Linksys is eth1. &nbsp;My other system is an IBM running Mandrake 8.2 on an Intel Pentium 166MHz MMX with 16 MB of RAM, and another RealTek 8139 under a rtl8139too module on eth0. &nbsp;I want to setup basic Internet and file sharing network. &nbsp;I've tried the HOWTO's of http://www.tldp.org. &nbsp;It didn't work. &nbsp;Jesse I would say may be able to offer the most help (in my opinion) because of his quite impressive(to me) network he has setup at his home. &nbsp;But I will take any suggestions from anyone who may be able to offer some insight.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>File/Internet connection sharing</b><br />
+					Post by: <b>danc</b> on <b>May 26, 2003, 08:33:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not quite sure what you're asking here... &nbsp;Is the HP with 2 NIC's acting as a gateway/router to the Internet, and you want the IBM to go through it to get on the Internet? &nbsp;If so you'll need to play with IPTABLES for firewall/forwarding. &nbsp;Does the HP have good connectivity to the net? &nbsp;To share files between the two machines you're looking at using either Samba or NFS. &nbsp;More details please...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>File/Internet connection sharing</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>May 26, 2003, 02:55:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">Is the HP with 2 NIC's acting as a gateway/router to the Internet, and you want the IBM to go through it to get on the Internet?</div><br /><br />Yes. &nbsp;Exactly what I want. &nbsp;The HP is what I want to be my gateway. I also want the File Sharing too. &nbsp;I really don't know too much about NFS or Samba..... &nbsp;I just need some help(tech and psych!!) lol</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>File/Internet connection sharing</b><br />
+					Post by: <b>danc</b> on <b>May 26, 2003, 04:22:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I did this once (iptables), and it was extremely difficult for me. &nbsp;Not using it anymore as I've found a commercial router to be much simpler. &nbsp;But you'll need to do a lot of reading on &quot;iptables&quot; for you firewall, just do some google searching and there's a lot of info out there. &nbsp;Same goes for Samba and NFS. &nbsp;Samba's website is www.samba.org and it has the software and some good info.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

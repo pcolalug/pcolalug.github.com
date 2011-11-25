@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Having troubles getting on the net with Slackware</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: trigger on April 17, 2003, 04:48:04 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Having troubles getting on the net with Slackware</b><br />
+					Post by: <b>trigger</b> on <b>April 17, 2003, 04:48:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am having difficulties getting on the network. I use DHCP. I have also tried seting a ip. I have ran netconfig a few times. Found my nic each time. Yet still cant seem to get on the net. What am I doing wrong. Here is what I enter during netconfig:<br /><br />localhost<br />localhost.org<br />DHCP<br />just hit enter<br />probe<br />a networking card using the tulip.o module has been detected.<br /><br />I have tried logging off and then back on. &nbsp;But still no luck. Do I need to restart the network.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Some quetions for you!</b><br />
+					Post by: <b>bhoff</b> on <b>April 17, 2003, 06:35:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">can you pull up ifconfig -u in teh console and let us know what it says.<br />If nothing try just ifconfig.<br /><br />~brett~</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Having troubles getting on the net with Slackware</b><br />
+					Post by: <b>rburt3</b> on <b>April 18, 2003, 08:18:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Also, did you try running either dhcpcd or dhclient from the console (not sure which one slack uses)? If not, try typing <div class="codeheader">Code:</div><div class="code">dhcpcd eth0</div> or <div class="codeheader">Code:</div><div class="code">dhclient eth0</div> from the console and then type <div class="codeheader">Code:</div><div class="code">ifconfig eth0</div> and see if you have an ip. Remember to replace &quot;eth0&quot; above with your network device.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ifconfig</b><br />
+					Post by: <b>trigger</b> on <b>April 21, 2003, 06:25:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright ifconfig -u: option -u not recognised<br /><br />ifconfig: &nbsp;Link encap:Local Loopback<br />inet addr: 127.0.0.1 Mask: 255.0.0.0<br /><br />Then tried dhcpcd eth0: pause for a second then next prompt appeared<br /><br />Then tried ifconfig again:<br /><br />Link encap:<br />Ethermet HWaddr OO:AO:CC:D3:19:SE<br />inet addr: 192.168.1.102 Bcast: 192.168.1.255 Mask:255.255.255.0<br /><br />Now I am on the internet. Thanks everyone!<br /><br />Trigger</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

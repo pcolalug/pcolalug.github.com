@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - RH9 hangs after intrd</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by:  on January 11, 2004, 01:35:42 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b></b> on <b>January 11, 2004, 01:35:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Booting 'Red Hat Linux &#40;2.4.20-8&#41;'<br />root &#40;hd0,1&#41;<br />Filesystem type is ext2fs, partition type 0x83<br />Kernel /vmlinuz-2.4.20-80 ro root=label=/ hdc=ide-scsi<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;Linux-bzImage, set up=0x1400,size=0x11098g&#93;<br />initrd /initrd-2.4.20-8.img<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;Linux-intrd @ 0x3fd8000, 0x14ce4 bytes&#93;</div><br /><br /><br />booted from the disk, and ran fsck..didnt help :(<br /><br />any suggestions?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b>rugmonster</b> on <b>January 11, 2004, 06:59:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just to throw a little background on this, I didn't have much time to help him with this at the time. What had happened, was he turned the computer off without doing a proper shutdown and when he turned it back on, it started doing this.<br /><br />Marshall, I'm thinking a reinstall would be your best bet if the fsck didn't work. You also might want to try out Mandrake. It does a good job of making things a little easier. Also, a lot of people here use it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: RH9 hangs after intrd</b><br />
+					Post by: <b>danc</b> on <b>January 11, 2004, 09:16:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Marshall</div><div class="quote"><div class="codeheader">Code:</div><div class="code"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Booting 'Red Hat Linux &#40;2.4.20-8&#41;'<br />root &#40;hd0,1&#41;<br />Filesystem type is ext2fs, partition type 0x83<br />Kernel /vmlinuz-2.4.20-80 ro root=label=/ hdc=ide-scsi<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;Linux-bzImage, set up=0x1400,size=0x11098g&#93;<br />initrd /initrd-2.4.20-8.img<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#91;Linux-intrd @ 0x3fd8000, 0x14ce4 bytes&#93;</div><br />booted from the disk, and ran fsck..didnt help :(<br />any suggestions?</div><br /><br />Better take a look at that Grub bootloader section above. &nbsp;Looks like you've got an extra &quot;zero&quot; on the Kernel line.<br /><br />&quot;Kernel /vmlinuz-2.4.20-80&quot; &nbsp;should be &nbsp;&quot;Kernel /vmlinuz-2.4.20-8&quot;<br /><br />The file you need to edit is called either &quot;grub.conf&quot; or &quot;menu.lst&quot;, and is located in /boot/grub. &nbsp;Perhaps the improper shutdown added the extra character or something. &nbsp;Just edit that file and reboot. &nbsp;Let us know if it works...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b></b> on <b>January 11, 2004, 03:37:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">Marshall, I'm thinking a reinstall would be your best bet if the fsck didn't work. You also might want to try out Mandrake. It does a good job of making things a little easier. Also, a lot of people here use it.</div><br /><br />Would Mandrake run on a P2 (maybe an early P3)?<br /><br />I got a computer out of storage, and the harddrive is kinda messed up..well at least it is now :P I was thinking about putting Redhat on it, but it doesn't have enough RAM..So now it's sitting here taking up space.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b>danc</b> on <b>January 11, 2004, 05:18:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Marshall</div><div class="quote">Would Mandrake run on a P2 (maybe an early P3)?<br /><br />I got a computer out of storage, and the harddrive is kinda messed up..well at least it is now :P I was thinking about putting Redhat on it, but it doesn't have enough RAM..So now it's sitting here taking up space.</div><br /><br />Marshall,<br />Yes, Mandrake would run on it, although the big desktop environments like KDE or Gnome might be a little slow. &nbsp;How fast is the processor, and how much RAM in the machine?<br /><br />Did you try my suggestion above regarding trying to get your RH9 to boot...?<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b></b> on <b>January 11, 2004, 06:09:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think it's 450mhz, pretty sure it has 32mb ram...<br /><br />No, I haven't tried to edit the file yet, have been busy.. Will try tonight :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b></b> on <b>January 12, 2004, 10:39:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">seem to be missing the vmlinuz-2.4.20-8 , or *80 .. going to uninstall and put on another OS</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b></b> on <b>January 15, 2004, 01:20:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">fixed it, formatted the partition, running Mandrake &nbsp;8)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b>DemetriusCrisco</b> on <b>September 12, 2004, 01:05:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">marshal....Ty ofr inviting me to the forums.. but from now on.. u can never say I dont know anyting about linux... Hmmm i wounder if ur active here alot?...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RH9 hangs after intrd</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>September 12, 2004, 09:14:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">For that older box, why not try Slackware? &nbsp;If you can live without GUIs (or maybe only using something like Fluxbox) then it's done fine by me. &nbsp;Mandrake should also run fine but I don't know if it comes with the smaller GUIs (I imagine it would, though).</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

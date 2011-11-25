@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Changing the Default SSH port.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: L.Rentz on June 14, 2004, 08:31:51 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 14, 2004, 08:31:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would like to change the default port of ssh to different port that is not normally &nbsp;scanned for. &nbsp; Generally is it ok to use a port greater than 1024 that is not used ? &nbsp;Or are there ports above 1024 that I should not use as well.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>lloydr</b> on <b>June 14, 2004, 08:41:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">on slackware, if you mean your openssh server, just edit the file /etc/ssh/sshd_config<br /><br />you will see the port options<br />also if you haven't already, you probaly will want to disable &quot;Permit root login&quot; so if you want to work as root remotely you will be required to do a su into root rather than a direct login as root....I also generally set the protocol to 2</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 14, 2004, 09:11:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thx, I found where to do it. &nbsp;I just want to know if there are ports I should NOT change it too? &nbsp;Or ports ranges that I should not use.?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Changing the Default SSH port.</b><br />
+					Post by: <b>danc</b> on <b>June 14, 2004, 09:11:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: L.Rentz</div><div class="quote">I would like to change the default port of ssh to different port that is not normally &nbsp;scanned for. &nbsp; Generally is it ok to use a port greater than 1024 that is not used ? &nbsp;Or are there ports above 1024 that I should not use as well.</div><br /><br />What lloyd said is good advice. &nbsp;Another thing you can do is (assuming your box is behind a router/firewall) - leave the ssh daemon running on the default port 22, but in the router, forward some other port from the internet side to port 22 on the desired computer. &nbsp;That way (hopefully) only you know what port number to ssh to from the outside world, and the router will just forward you to the box transparently. &nbsp;I don't think it matters what port you use, as long as it's not used by something else. &nbsp;Perhaps your zip code...? &nbsp; :lol: <br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 14, 2004, 09:17:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Terrific. &nbsp;I that is exactly what I want to do. &nbsp;I am behind a router/firewall. &nbsp;I was going to change the port on ssh and just port forward to the port that I changed the ssh daemon too. &nbsp;Now I just think I will do like you said and forward it to another port. &nbsp;Excellent. &nbsp;I will let you all know if it works in a sec.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 14, 2004, 09:50:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Root login<br />lloydr <br /><div class="quoteheader">Quote</div><div class="quote">you will see the port options<br />also if you haven't already, you probaly will want to disable &quot;Permit root login&quot;</div><br /><br />I set it to no and I still can log in as root. &nbsp;I could not remember the command to stop and start the service so I just rebooted. &nbsp;Still can login as root. &nbsp;I definately want to disable root login. &nbsp;Any ideas on why it is still letting me login?<br /><br />Thanks lloydr<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>lloydr</b> on <b>June 14, 2004, 09:58:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">you will want to uncomment the options so it takes effect, commented sets it to the default yes setting, also uncomment and for the protocol have it go for 2</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>altomo</b> on <b>June 14, 2004, 11:54:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">After you uncomment it and set to no be sure to restart openssh so the new setting take affect.<br /><br />To answer your earlier question about is it safe to use any port &gt; 1024. As long as nothing else is going to run on this port, depends on your box and configuration, it is safe to pick a random port.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 15, 2004, 05:21:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">hum... &nbsp;Thats what I did. &nbsp;I could not remember how to restart openssh so I just rebooted. &nbsp;Still did not work. &nbsp;I uncommented and changed variable to no. rebooted and still can log in.<br /><br />What does protocol 2 do? &nbsp;Mine says protocol 2,1 ?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing the Default SSH port.</b><br />
+					Post by: <b>altomo</b> on <b>June 15, 2004, 10:33:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">When the client connects to the server via ssh it uses one of two metods. SSH protocol v1 or SSH protocol v2. V1 is old and has some problems, even the original author recommends v2. V1 is only left in for backwards compatiblity.<br /><br />To make these changes your config should look like:<br /><br />Protocol 2<br /><br />PermitRootLogin no<br /><br /><br />If you changed this, saved the file, and rebooted and it still allows root to long on check to ensure you do not have a conflicting statement in the file. Also you may search for another sshd_config as you may have upgraded and the new ver of openssh be running from a different config.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

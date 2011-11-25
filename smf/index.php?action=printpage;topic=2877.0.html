@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Dual-boot vs. Virtualization</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: geekforGod on May 16, 2006, 11:02:01 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Dual-boot vs. Virtualization</b><br />
+					Post by: <b>geekforGod</b> on <b>May 16, 2006, 11:02:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was reading the other topic where someone suggested dual-booting a Linux newcomers machine to be able to use iTunes and I was wondering what you guys think. Is it easier to dual-boot or to install Linux with a VMWare Server image of Windows?<br /><br />Dual-booting is certainly easier to install and configure on any new Linux distribution. Dual-booting gives each OS full control over the hardware at the time and so there are no performance issues. Dual-booting is a pain just for one app though, especially an application you may want running much of the time, since you&#039;ll never use Linux that way. <br /><br />Virtualization allows you to run the Windows apps you want while still in Linux. If the Windows image gets infested with spyware, you just install a new image. I know sometimes Windows can be a pain to make sure it doesn&#039;t overwrite your Linux install when you reinstall it. Virtualization would take away from performance, but if the machine is relatively new and all you&#039;re running is desktop applications, then I don&#039;t think it would be that bad. I don&#039;t think I would use it for games. <br /><br />Anyways, just thought I would throw that out there and see what you guys think. <br /><br />Todd</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Dual-boot vs. Virtualization</b><br />
+					Post by: <b>rugmonster</b> on <b>May 16, 2006, 01:23:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I suppose this could be acceptable as a solution. The only downside is that running a virtualized operating system is resource intensive, especially if all you are wanting to do is run a media player. If you have the memory to do it, then okay. I just don&#039;t like to waste that much on a sluggish system. As you said, if you want to run any games, virtualization is not an option.<br /><br />Even if you reinstall Windows, all it does is overwrite the MBR and set the partition Windows is being loaded to as active. To get booted back into Linux, you just need a rescue disk to reset the boot flag on the bootable drive. Not such a big deal.<br /><br />I think virtualization has its purposes, but unless you have 2gigs of memory and a good processor, it&#039;s going to cause a serious hit on your systems performance. I&#039;ll leave virtualization to workstations and servers for testing and server consolidation. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Dual-boot vs. Virtualization</b><br />
+					Post by: <b>imnes</b> on <b>May 16, 2006, 07:06:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2877.msg14233.html#msg14233">Quote from: geekforGod on May 16, 2006, 11:02:01 am</a></div><div class="quote">I was reading the other topic where someone suggested dual-booting a Linux newcomers machine to be able to use iTunes and I was wondering what you guys think. Is it easier to dual-boot or to install Linux with a VMWare Server image of Windows?<br /></div><br />I use iTunes through wine.<br /><br />http://www.codeweavers.com/compatibility/browse/name?app_id=134<br /><br />Nick<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

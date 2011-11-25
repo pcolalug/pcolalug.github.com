@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - et &quot;out of range&quot;</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: Brent on March 04, 2004, 01:44:00 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>et &quot;out of range&quot;</b><br />
+					Post by: <b>Brent</b> on <b>March 04, 2004, 01:44:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">hey guys. &nbsp;<br />I just got through installing et on my slackware again. &nbsp;I'm still getting &quot;out of range&quot; errors when I try to start it. &nbsp;This happens because it's trying to put out values that my monitor can't handle, or it's using a bad driver (I'm using nvidia driver for X)<br /><br />I heard about some ppl having to lock to a certian res but I don't know how to lock the game to that. &nbsp;Is there anyway I can make it use the res and refresh rates in my XF86Config?<br /><br />Is there an et configure program?<br /><br />---ps---<br /><br /><br />For all two of you ATI fans out there, my roomate doesn't have an agp slot on his dell motherboard. &nbsp;I'm wanting to sell my 9700 for about $150. &nbsp;I bought it for about $250 over the summer. &nbsp;This card is an RMA replacement I got from the manufacturer. &nbsp;It's been used for maybe a week total. &nbsp;Verified known good. &nbsp;1 month money back guarrentee &nbsp;:wink: .<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>et &quot;out of range&quot;</b><br />
+					Post by: <b>imnes</b> on <b>March 04, 2004, 03:36:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Are you sure you are using the nvidia commercial driver? &nbsp;With the nvidia splash screen and all? &nbsp;I run ET in linux on 3 seperate computers, all with different nvidia cards (GeForce 3 Ti 500, GeForce 4 420 GO, and GeForce FX 5600) and they all work perfectly. &nbsp;I have never seen the error you're referring to?<br /><br />I think default the game runs in 800x600x16bit at 60hz which I think any monitor should be able to handle, unless you have some strange LCD panel that requires something else?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>et &quot;out of range&quot;</b><br />
+					Post by: <b>Brent</b> on <b>March 04, 2004, 10:12:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">yup nvidia module.<br /><br />I am using a samsung lcd. &nbsp;I don't understand why et would use values outside of those specified by X.<br /><br />Also, america's army works, which is strange. &nbsp;et doesn't even have command line options.<br /><br />Half life had command line options in windows!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>et &quot;out of range&quot;</b><br />
+					Post by: <b>imnes</b> on <b>March 05, 2004, 10:02:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay this took a lot of googling and experimenting. &nbsp;Assuming you are running your desktop at 1024x768 16-bit 60hz and it looks okay, this will run your game in 1024x768 and not switch refresh rates.<br /><br />Create a new file ~/.etwolf/etmain/autoexec.cfg<br /><br />It should contain:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />seta r_displayRefresh &quot;0&quot;<br />seta ui_r_displayRefresh &quot;0&quot;<br />seta r_mode &quot;6&quot; unsafe<br />seta ui_r_mode &quot;6&quot;<br />seta r_depthbits &quot;16&quot;<br />seta r_texturebits &quot;16&quot;<br />seta r_colorbits &quot;16&quot;<br />seta ui_r_depthbits &quot;16&quot;<br />seta ui_r_texturebits &quot;16&quot;<br />seta ui_r_colorbits &quot;16&quot;<br /></div><br /><br />Save the file, start your game. &nbsp;Let us know if it works. &nbsp; The biggest key is to match values that you are using for your desktop. &nbsp;If you are in 24 or 32 bit, change the depthbits options accordingly. &nbsp;If you are in a different resolution, change the mode options to one of those shown below.<br /><br />Some more details for those interested: <br /><br />Set those to whatever you like. Valid modes are below. &nbsp;Just match your desktop.<br /><div class="quoteheader">Quote</div><div class="quote"><br />&nbsp;// Mode &nbsp;0: 320x240<br />// Mode &nbsp;1: 400x300<br />// Mode &nbsp;2: 512x384<br />// Mode &nbsp;3: 640x480<br />// Mode &nbsp;4: 800x600<br />// Mode &nbsp;5: 960x720<br />// Mode &nbsp;6: 1024x768<br />// Mode &nbsp;7: 1152x864<br />// Mode &nbsp;8: 1280x1024<br />// Mode &nbsp;9: 1600x1200<br />// Mode 10: 2048x1536<br />// Mode 11: 856x480 (wide)<br /></div><br />&nbsp;<br />Might also have <br /><div class="quoteheader">Quote</div><div class="quote"><br />seta r_fullscreen &quot;0&quot;<br />seta r_fullscreen &quot;1&quot;<br /></div><br /><br />in which case you could get the game working in windowed-mode at least.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

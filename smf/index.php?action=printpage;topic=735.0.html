@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - IDE Controller Card</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: rugmonster on May 31, 2003, 01:32:49 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Controller Card</b><br />
+					Post by: <b>rugmonster</b> on <b>May 31, 2003, 01:32:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just got a new ATA133 hard drive and controller card. My motherboard has an ATA33 controller. Obviously, I want to get as much performance as I can. My problem is this. When I put my hard disks on the pci controller, they become hde-hdh instead of hda-hdd. Since my root partition is hda1, when I put it on the pci controller it becomes hde1 and causes a kernel panic. Also, when I have the drives hooked up to the pci controller, it boots those right off and won't boot a CD. I haven't tried a floppy yet, but I don't know how that will work either. The pci controller doesn't have any embedded configurations and my BIOS settings go out the window when using the pci controller. Also, if I split the config, having my hard disks on the pci controller and the cd devices on the mobo controller, I get &quot;Boot Failed&quot;. Unfortunately, Maxtor's tech support is off for the weekend, so I come to you all for ideas. I'm going to make a boot disk and try that, but any suggestions would be greatly appreciate.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Controller Card</b><br />
+					Post by: <b>imnes</b> on <b>June 01, 2003, 09:45:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Did you completely disable both on-board IDE controllers in your BIOS? &nbsp;Try that. &nbsp;I would think if they were disabled and your PCI was your only IDE controller then drives should show-up as a-d.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IDE Controller Card</b><br />
+					Post by: <b>rugmonster</b> on <b>June 01, 2003, 02:39:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I disabled the onboard IDE controller in the BIOS and linux still picked up the PCI controller's bus as e-h. Poop.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Workaround found</b><br />
+					Post by: <b>rugmonster</b> on <b>June 01, 2003, 06:48:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, after much weeping and nashing of teeth, I have fenagled a workaround. Yes, my BIOS is crappy, but thank Gateway and Phoenix for that. Here is what I ended up doing.<br /><br />1. Smart Boot Manager (http://btmgr.gnuchina.org/index.php3) was the answer to my problem with not being able to boot a cd. This boot manager, unlike lilo or grub, gives you the option to boot not only partitions, but floppy disks and cdroms. The only downside is that you are still required to use lilo or grub on your linux partitions.<br /><br />2. To get the cdroms to show up to the system, I had to attach them to the onboard IDE controller and the hard disks to the PCI IDE controller. SBM wouldn't recognize the cd drives when they were attached to the PCI IDE controller.<br /><br />3. I can't boot the system with a bootable cd in the drives. This gives me a boot failed; however, if I put the cd into the drive once SBM comes up and then select the drive, I am able to boot the cd.<br /><br />So here I have a fully functional system with the ATA133 controller. It isn't the most convenient, but that is what I get for melding old technology with new technology. This only has to get me by until I build my next system after the beginning of next year.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

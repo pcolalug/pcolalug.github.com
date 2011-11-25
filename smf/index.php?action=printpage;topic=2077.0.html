@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Slackware RunLevels</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: SiliconFOXX on December 01, 2004, 09:53:49 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 01, 2004, 09:53:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was thinking about changing the runlevel in Slackware 10 to something graphical, like runlevel 5 just to reduce time to start up X (I'm always going into X anyway).<br /><br />However, at LILO when I test it out, nothing happens. &nbsp;I forget the file, maybe it's /etc/inittab, but changing it there didn't seem to have any effect either. &nbsp;If I boot into 5 it hangs at trying to start up X. &nbsp;4 does nothing. &nbsp;Am I doing something wrong?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>Brent</b> on <b>December 01, 2004, 10:31:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"># These are the default runlevels in Slackware:<br /># &nbsp; 0 = halt<br /># &nbsp; 1 = single user mode<br /># &nbsp; 2 = unused (but configured the same as runlevel 3)<br /># &nbsp; 3 = multiuser mode (default Slackware runlevel)<br /># &nbsp; 4 = X11 with KDM/GDM/XDM (session managers)<br /># &nbsp; 5 = unused (but configured the same as runlevel 3)<br /># &nbsp; 6 = reboot<br /><br />I think u should be using 4....but i don't know what's going on with ur install...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>imnes</b> on <b>December 02, 2004, 07:35:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah edit /etc/inittab and change default to 4.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 02, 2004, 10:29:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's what I changed to 4, but at the end of the startup it would say, &quot;starting X11,&quot; and then the screen would go blank, a minute or two later click back to the console, go blank, ad infinitum. &nbsp;Real weird.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>danc</b> on <b>December 02, 2004, 01:14:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">That's what I changed to 4, but at the end of the startup it would say, &quot;starting X11,&quot; and then the screen would go blank, a minute or two later click back to the console, go blank, ad infinitum. &nbsp;Real weird.</div><br />Nothing weird about it. &nbsp;That just indicates that X is not configured correctly. &nbsp;You must get X configured properly, so that it starts when you use the &quot;startx&quot; command. &nbsp;Then (and only then) you can change the runlevel in /etc/inittab to start X on boot (runlevel 4).<br /><br />You need to run &quot;xorgcfg&quot; (or &quot;xorgconfig&quot;, can't recall which...) to get yourself a working X setup.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 09:10:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">But that's the thing, typing startx works perfectly, X runs like a dream. &nbsp;Still need to fine tune the refresh rate 'cause I'm afraid if I mess with it I'll fry my monitor but yeah, it runs perfect.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>imnes</b> on <b>December 03, 2004, 10:13:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay then maybe you're set to use one of the login managers not installed on your system. &nbsp;Are you running Gnome or KDE or something else?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 11:18:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">As I've never heard of a login manager, that sounds very likely. &nbsp; :lol: <br /><br />I'm using KDE 3.2. &nbsp;I'd use Gnome but...I dunno, it's cool but I just don't use it as much as KDE. &nbsp;I'd like to upgrade to KDE3.3 but I'm finding it difficult to find information on just how to go about that, just complaints about things being broken in KDE 3.3.<br /><br /><br />But yeah, tell me all about these &quot;login managers.&quot; :twisted:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>imnes</b> on <b>December 03, 2004, 11:47:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Slackware I think defaults to XDM which should be included by default. &nbsp;Login text mode and type <br />xdm<br /><br />See if it starts a login screen. &nbsp;If it doesn't then that's your problem. &nbsp;If it doesn't work, try<br />kdm<br /><br />If that doesn't work,<br />gdm<br /><br />Let us know what happens / which works. &nbsp;Maybe we can get this problem sorted out.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 01:39:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sure thing, I'll run it up as soon as I get home.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 04:43:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, I tried to run all three, xdm and so forth, and all of them told me that only root would want to run that. &nbsp;So I su root and ran /usr/X11R6/bin/xdm and while I got a login now my sound doesn't work (see Hardware Section).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Slackware RunLevels</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 10:34:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Update: &nbsp;got sound working again. &nbsp;Took a kernel rebuild/install ([edit]darn[/edit] I'm getting good at these).<br /><br />[moderated 2:27PM CST 12/21/2004 by Rugmonster due to profanity in body]</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

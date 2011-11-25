@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Best Distro for AMD64</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: rugmonster on August 03, 2005, 03:31:56 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best Distro for AMD64</b><br />
+					Post by: <b>rugmonster</b> on <b>August 03, 2005, 03:31:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I know, I know...there is no &quot;best&quot; distro, but I'm sort of getting frustrated with the state of the AMD64 world. Unfortunately, there are still a lot of things that I use that aren't quite x86-64 ready (ex. OpenOffice.org2, Flash w/ Firefox, w32codecs). There seems to be two solutions going around. The more popular is using lib32 and lib64 directories for 32-bit and 64-bit libraries. The other is to load the 32bit applications in a chroot jail along with their libs.<br /><br />SuSE handled the issue of lib32 and lib64 fairly seemlessly. I got what I needed installed and working, but things got very crufty and SuSE 9.3 just felt a little sluggish, especially compared to Slackware on my x86 laptop. <br /><br />Since Slackware and FRG seemed so nice on the laptop, I found SLAMD64 and installed it. Unfortunately, it didn't install X or anything I really needed and I was stuck running installpkg over and over and over. This was a bit more work than I wanted. I never even looked at how they address the 32bit applications and libraries.<br /><br />Next was Ubuntu Hoary. Apparently, they take the chroot route and to be honest, I don't want to fool with that. I'm looking at Gentoo again, but they too appear to use the clunky chroot environment for running 32bit apps. *sigh*<br /><br />So, am I stuck with SuSE for a hassle free 64-bit environment? Any suggestions?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best Distro for AMD64</b><br />
+					Post by: <b>imnes</b> on <b>August 03, 2005, 05:21:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Solaris 11 (Open Solaris) handles this well :) &nbsp;<br /><br />For Linux I've liked Novell Linux Desktop the best, but it has two things against it. &nbsp;1: It's not free. &nbsp;2: It runs Gnome 2.6 (kinda old).<br /><br />I think I'll like SuSE better once they finally have a completely clean Gnome install (gnome itself, with no KDE components, including Gnome Volume Manager, and other nice stuff). &nbsp;Right now it's not very clean.<br /><br />I haven't tried yet but I've been meaning to install Fedora 4 64-bit and try to get 32 bit browser, and video player installed. &nbsp;If you do give this a shot let me know how it goes.<br /><br />Haven't tried Mandrake either but I don't plan too, have never had too much luck with them. &nbsp;Last option I guess would be to try FreeBSD - but I have no idea if they have a mixed 32/64 setup or how you'd use it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best Distro for AMD64</b><br />
+					Post by: <b>rugmonster</b> on <b>August 04, 2005, 11:58:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: imnes</div><div class="quote">Last option I guess would be to try FreeBSD - but I have no idea if they have a mixed 32/64 setup or how you'd use it.</div><br /><br />Their AMD64 support is fairly new and the ability to run both 64 and 32 bit binaries is new to 5.4. From what I understand, it isn't perfect and I don't believe you can build 32 bit libraries and apps with ports. The only option is to install those from package. I'm not entirely sure of the details, but it seems like the whole 32/64 environment issue is still fairly immature.<br /><br />For the time being, I think you are correct in that the RPM distros handle this the best for now. I just don't care to futz with a chroot environment or anything like that. I'm headed back to SuSE. All and all, it worked very well with minimal effort. Maybe Adobe/Macromedia will give us a 64bit native Flash player and OO.o will make a version that will work under 64bit. Also, as the win32 codecs adapt to XP x64 Edition, we will get some 64bit codecs and all will be right with the world.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best Distro for AMD64</b><br />
+					Post by: <b>imnes</b> on <b>August 04, 2005, 02:55:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">I'm headed back to SuSE. </div><br /><br />Don't feel bad, that's what I run most of the time. &nbsp;Seems to do the job the best. &nbsp;I just upgraded to gnome 2.11 suse packages, has some nice little touches (some stuff is broken though, for whatever reason Red Carpet won't run anymore, it's &nbsp;a pygtk app so I filed a bug with them).<br /><br />Not really only a linux problem, I guess 64 bit Windows users also have problems with missing codecs and browser plugins if they run a 64 bit browser. &nbsp;Wonder how mac handles this for their 64 bit machines? &nbsp;(or do they just run 32 bit os?)<br /><br />If you install the QIndustrial theme, and as root run kcontrol and set kde's style to QIndustrial and colors to Industrial, you almost can't tell suse gave you a mixed KDE + Gnome environment :) &nbsp;Well, unless you're running KDE then you're OK.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best Distro for AMD64</b><br />
+					Post by: <b>Brent</b> on <b>August 04, 2005, 08:35:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is the 64bit versions of the OS really *better* than the 32bit versions? &nbsp;From what I've heard, the 64bit version just supports more than 4g of ram.<br /><br />Good for video rendering i guess, but does it really benifit the consumer?<br /><br />Found this:<br />http://en.wikipedia.org/wiki/64_bit<br /><br />Seems to be a good round-up.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best Distro for AMD64</b><br />
+					Post by: <b>rugmonster</b> on <b>August 05, 2005, 05:19:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The system just seem to perform a little better in most cases. Plus, it seems sort of rediculous to have a 64bit processor and not use it.<br /><br />And you're right, Nick. In WinXP x64 Edition, you have a 32bit and a 64bit version of IE right in the Programs menu. The problem I had when I tried it was finding drivers for my core hardware and there just not being any for my color printer. Of all things, I had the hardest time finding drivers for my NIC.<br /><br />That's where 64bit linux wins to me. While it doesn't support my color printer (come on CUPS), it does support everything else and with minimal work. And &nbsp;by the way, Linux has finally gotten to the point to where I can say that it isn't a lot of work to use and maintain. But I'm rambling.<br /><br />Anyhow, I got SuSE installed last night and I'll be patching everything up sometime this weekend.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best Distro for AMD64</b><br />
+					Post by: <b>imnes</b> on <b>August 05, 2005, 11:25:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">Is the 64bit versions of the OS really *better* than the 32bit versions? &nbsp;From what I've heard, the 64bit version just supports more than 4g of ram.</div><br /><br />64 bit does some stuff significantly faster (video rendering is one place), I think anywhere that the added bandwidth of a 64 bit bus would be helpful. &nbsp;But that does assume running a 64 bit OS and a compiled 64 bit version of that rendering / encoding application.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

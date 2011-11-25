@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Gigabit Ethernet</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: scottstancil on February 22, 2004, 11:51:04 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gigabit Ethernet</b><br />
+					Post by: <b>scottstancil</b> on <b>February 22, 2004, 11:51:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I recently upgraded a Penguin server's internals with a Tyan Tiger 7501S (2725) with dual Intel gigabit ports and installed an Intel Gigabit Server Adapter MT into another box. &nbsp;The Server Adapter MT box is running Red Hat 7.3 with the drivers from the Intel website. &nbsp;The newly upgraded Penguin box is running stock Red Hat ES drivers, although I have tried the Intel drivers as well.<br /><br />They light up at 1000 Mbps. &nbsp;The OS tells me that they are at 1000 Mbps. &nbsp;I get maximum 100 Mbps via scp or dd over NFS tests.<br /><br />I have set my MTU to 9000, but haven't really focused on the other optional parameters.<br /><br />Before I delve into adding kernel module parameters on a boxes in North Carolina, does anyone have a suggestion?<br /><br />Thanks in advance.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Gigabit Ethernet</b><br />
+					Post by: <b>lloydr</b> on <b>February 23, 2004, 12:05:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">cabling and hardware quality seems to have a big effect on systems on gigabit lan...also from what I've seen it takes a lot of storage bandwidth to be able to fill a gigabit pipeline<br /><br />if your running cat6 and good quality networking hardware or just using crossover cables, then problem might have to do with your harddrives not being able to move enough data to fill the gigabit pipeline but would expect atleast being able to reach above 500-600mbit rather than being stuck around 100mbit</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Hostname on HomeLAN</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: SiliconFOXX on May 25, 2004, 10:32:01 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>May 25, 2004, 10:32:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have two computers and an XBox on my LAN, all plugged into a shiny used Linksys wireless-B router (the XBox will be using the wireless aspect as soon as I've got the cash for a bridge). &nbsp;One box runs WindowsXP and the other is running my Slackware distro.<br /><br />I haven't set up Samba on Slackware yet mainly because of laziness. &nbsp;It didnt' work last time so I'm wary to try it again blindly. &nbsp;However, FTPing files between computers can't last forever, so now I'm back to the integration of the two.<br /><br />Before I get into that though I have a more fundamental question to ask. &nbsp;Linux names itself (hostname) as if it's always on a network, right? &nbsp;For instance, currently my Linux box believes itself to be &quot;localhost.localdomain.&quot; Of course, it's not actually a part of a more serious domain, just like localhost is more of a loopback than an actual &quot;name.&quot; On my windows box it knows that its name is &quot;Assault&quot; at the localdomain, but that's shielded from the user really and rather it's got that funny &quot;workgroup&quot; thing.<br /><br /><br />Anyway, I remember one of my curiosities last time when messing with Samba was that when it actually was connected to the network Windows had a serious problem because it saw there was another machine connected to the network named &quot;localhost.&quot; I'm beginning to wonder if that might have been the root of all my problems and would like to see if I can fix it before I begin mucking around with Samba.<br /><br /><br />How can I tell my Slackware box that its name should be &quot;Sam&quot; at the localdomain, just like the Windows box knows its name is &quot;Assault&quot; and my XBox (curiously) knows its name is &quot;XBox?&quot; The last time I just blantatly changed the machine name I lost all network capability inexplicably until I changed it back to &quot;localhost.&quot; Any ideas? &nbsp;Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>rburt3</b> on <b>May 25, 2004, 10:49:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Does anyone know if /etc/hostname is common to all distros? If so, you can (as root) <div class="codeheader">Code:</div><div class="code">echo &quot;sam&quot; &gt; /etc/hostname</div><br />Also, in /etc/hosts, see if you have the line<br /><div class="codeheader">Code:</div><div class="code"><br />127.0.0.1 &nbsp; &nbsp;sam sam.localdomain localhost<br /></div><br />or something similar. I'm doing this from memory which is bad, so let some other members check my work before you go doing anything.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>lloydr</b> on <b>May 25, 2004, 10:52:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">when you run netconfig as root it prompts for hostname and domain, i've never really had a problem with naming the machines what i want as far as hostnames go<br /><br />i think in slackware in /bin there is a hostname command to set or view the hostname(my brain is set on openbsd at moment) but im pretty sure that command will take care of the hostname....think theres also the domainname commands and so on up in /bin also</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>dpeach</b> on <b>May 25, 2004, 11:12:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">Does anyone know if /etc/hostname is common to all distros? </div><br />It's not. I have gone through several pages on the internet looking for how to do this on Mandrake. Many tell you to set it at /etc/hostname, which does not exist in Mandrake. Therefore, I would assume that it is a fairly common item, but not to Drake.<br /><br />But I don't think SiliconFOXX is running Drake.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>lloydr</b> on <b>May 25, 2004, 11:25:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">/etc/hostname doesn't exist on slackware either<br /><br /><br />edit:<br />while /etc/hostname doesn't exist<br />/etc/HOSTNAME does</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>May 25, 2004, 11:45:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, thanks for the help. &nbsp;As soon as I finish rebuilding the 2.6.4 kernel again and getting that to work I'll jump on that and let you know what happens. &nbsp;You're right, Peach, I'm running Slackware. &nbsp;Overall I still love it, just haven't had a need to run it up lately, but that's changing thankfully (it's nice to have a need for my machines). &nbsp;Ironically, this need is based on a want to reinstall WindowsXP on the Windows box (I find reinstall of Windows helps out its performance greatly) and I need to store everything from the Windows box on the Linux box temporarily 'cause it's got the biggest hard drive.<br /><br />I COULD do this with FTP, but...that's too easy. &nbsp;=)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>lloydr</b> on <b>May 25, 2004, 11:48:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">probaly your best bet if you want quick is just get the putty suite of tools for windows and just scp everything you wanna backup over to your linux box and be done and over with it that way all you need running is sshd on linux box and dont have to fool with samba</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>May 25, 2004, 11:59:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, definitely an idea, though I thought it might be good practice to get Samba running at least once.<br /><br /><br />Still, for the meantime, how would I go about enabling and configuring sshd?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hostname on HomeLAN</b><br />
+					Post by: <b>lloydr</b> on <b>May 25, 2004, 01:22:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">in slackware chances are its already enabled unless you disabled the start script<br /><br />but just in case:<br />as root<br /><div class="codeheader">Code:</div><div class="code">cd /etc/rc.d</div><br />then<br /><div class="codeheader">Code:</div><div class="code">chmod 755 rc.sshd</div><br />that will enable the ssh server to enable on boot, or if you want it to start and you don't want to reboot just do(after chmod 755 rc.sshd)<br /><div class="codeheader">Code:</div><div class="code">./rc.sshd</div><br />while your still in /etc/rc.d and after making sure the permissions allow it to be executed....in slackware to enable services in the /etc/rc.d directory to start on boot you chmod 755 their rc.x start script, to disable them you chmod 644 their rc.x start script(where x is the service in particular your wanting to enable or disable)<br /><br />default config probaly will work just fine for you for the most part, but in case you do want to edit the config(i recommend first thing is disabling root logins through ssh and force use of ssh2 only), the configuration file is in /etc/ssh, for the sshd server in particular, the file your looking for will be sshd_config<br /><br />hope that helps ya out &nbsp;:wink:</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

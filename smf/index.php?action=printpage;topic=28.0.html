@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Mounting NTFS</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: dpeach on June 12, 2002, 04:03:32 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mounting NTFS</b><br />
+					Post by: <b>dpeach</b> on <b>June 12, 2002, 04:03:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had a quirky install. I already had Windows 2000 installed on the machine. I then installed Mandrake 8.2. There was a problem with the 2000 partition and Mandrake either did not make the NTFS connection on the mount point, or could not. I am not sure if Linux will based on some articles I have read.<br /><br />I have read conflicting reports as to whether Linux will even have read/write access to NTFS. From a console I am able to read and copy files from the NTFS partition, but not write to it. It tells me that it is a read only file system. That is mostly OK.<br /><br />But my machine has a mount point already assigned for the NTFS partition, I just cannot get into the partition from the file manager within K. I believe this is caused by having installed Linux with the NTFS partition in shambles and therefore the installer never saw a valid mount partition.<br /><br />I have had some issues with altering my fstab in the past, but I would like to be able to mount this partition when I boot up. That way I do not have to do it manually each time. All that history to ask if someone could hold my hand through the fstab configuration so I don't lose another partition?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NTFS and Linux</b><br />
+					Post by: <b>jdennis</b> on <b>June 12, 2002, 07:44:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have also noticed that Linux will not read a NTFS partition. &nbsp;I just assumed that it couldn't. &nbsp;Although I have a friend that swears that since it is &quot;unix&quot; like linux should read it easier than a FAT 32. &nbsp; Sorry that I am no help, I just wanted to let you know that I have experienced the same thing.<br /><br />Jeff</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mounting and NTFS</b><br />
+					Post by: <b>steve</b> on <b>June 12, 2002, 08:16:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Please refer to Mandrakeuser.org and check out the excellent write up on mounting file systems in Mandrake. Link is below.<br /><br />Mounting Link (http://www.mandrakeuser.org/docs/admin/index.html#m)<br /><br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mounting NTFS</b><br />
+					Post by: <b>dpeach</b> on <b>June 12, 2002, 11:01:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the helpful link Steve.<br /><br />I read all of that and ended up setting my fstab file thusly:<br />/dev/hda1 /mnt/disk ntfs umask=0,quiet 0 0<br /><br />I added that to the end of the file. It had an error on boot saying that it was not defined as the proper type, or that there were too many mounts defined (both within the same error).<br /><br />So I changed it to this:<br />/dev/hda1 /mnt/disk -t ntfs umask=0,quiet 0 0<br /><br />This booted fine, but I still cannot browse that mount point. When I go into console and type mount, it does not show that I am mounted to that device. I can manually mount it from the console and see everything fine. After manually mounting, I can also see the drive as root inside the file manager, but not as a user.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DiskDrake</b><br />
+					Post by: <b>steve</b> on <b>June 13, 2002, 04:43:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I believe that Diskdrake has a menu where you can setup mount points. See if that helps. You can get to DiskDrake through the Mandrake control center. &nbsp;Also, go through your messages.log and see why the mount is not holding during boot.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mounting NTFS</b><br />
+					Post by: <b>rburt3</b> on <b>July 18, 2002, 07:30:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">AFAIK, NTFS is not (fully) supported currently. &nbsp;Check out link1 (http://sourceforge.net/projects/linux-ntfs/) &nbsp;and Link2 (http://linux-ntfs.sourceforge.net/info/index.html#3.0) for the latest efforts. A friend of mine has had some small success in mounting his Win2k drive, and I have mounted one, but I could only browse its / directory while su'd to root. &nbsp;I couldn't drill down into anything below that or open any files.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mounting NTFS</b><br />
+					Post by: <b>imnes</b> on <b>October 05, 2002, 02:21:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've successfully used NTFS mounts on my system without ever experiencing data loss or other problems. &nbsp;However to avoid any problems (since NTFS support is still considered beta I believe), Mandrake doesn't support the kernel module by default. &nbsp;You'll have to install the developer tools, kernel source, then compile a custom kernel to support it.<br /><br />Alternatively you may be able to just compile the ntfs module, not sure. &nbsp;If you want to try, it's something like:<br />cd /usr/src/linux<br />make menuconfig<br />Enable ntfs filesystem support, save and exit program.<br />make dep<br />make modules<br />make modules_install<br />depmod -a<br />modprobe ntfs (or maybe fs_ntfs, not sure exactly what the module name is)<br /><br />Then you should theoretically be able to mount the partition. &nbsp;I haven't tried this on mandrake, but if you like I'll take the time to compile an ntfs module and make it available for everyone here. &nbsp;Just let me know.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mounting NTFS</b><br />
+					Post by: <b>dpeach</b> on <b>October 05, 2002, 07:42:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nick, thanks for the input. I have forgotten some of the steps leading up to it, but I can now mount it. I am not able to write to it. Or, I assume I cannot. I have not tried in quite some time. Now that I am running 9.0 RC 3, I may be able to. <br /><br />I understand some of the reasoning that I cannot write to it. It has mostly to do with Microsoft not allowing people to reverse engeneer into their system.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Mounting NTFS</b><br />
+					Post by: <b>rburt3</b> on <b>October 06, 2002, 05:35:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">From what I was given to unserstand from the website (http://linux-ntfs.sourceforge.net/status.html#ntfsdriver), NTFS is just hella-hard to re. &nbsp;Seems there's a tone of stuff going on and getting updated during writes. &nbsp;So, the only thing Microsoft is doing is, at most, making it harder to reverse engineer the file system. &nbsp;AFAIK, you are only prohibited from reverse engineering MS's stuff if you wave that right by agreeing to the EULA.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

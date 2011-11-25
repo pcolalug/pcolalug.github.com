@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Forcing a 10/100 NIC to use 10 Mbps</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: dpeach on April 29, 2004, 04:00:54 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Forcing a 10/100 NIC to use 10 Mbps</b><br />
+					Post by: <b>dpeach</b> on <b>April 29, 2004, 04:00:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a 10/100 NIC that is attached to my cable modem from my router (this NIC is in the router). The cable modem only talks 10.<br /><br />On occasion, my Internet connection is down. I look over at my NIC and the light that tells me it is working in 100 mode is lit. I have to bring the NIC down and back up and get the IP served back to it. <br /><br />How can I force the NIC to only work in 10? This happens every few weeks where I have to reset it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Forcing a 10/100 NIC to use 10 Mbps</b><br />
+					Post by: <b>scottstancil</b> on <b>April 29, 2004, 07:58:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What is the model of the NIC?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Forcing a 10/100 NIC to use 10 Mbps</b><br />
+					Post by: <b>dpeach</b> on <b>April 29, 2004, 09:07:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">KNE111TX. It is a Kensington NIC. It uses the Tulip driver.<br /><br />When I posed the question I expected this to be just a standard answer for all NICs, that is why I did not include that info. As I have done some studying about this card, apparently this card is known for this problem (or one similar, I really don't understand all the lingo).<br /><br />It still seems to me that there would be a standard something in a config file that could control this. Not that I know anything about how that stuff works, just my thoughts.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Forcing a 10/100 NIC to use 10 Mbps</b><br />
+					Post by: <b>imnes</b> on <b>April 29, 2004, 09:56:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had this problem on a realtek and I think the option was like:<br /><br />modprobe rtl8139 media=10<br /><br />But I think some cards can also be set through ifconfig so I'm not sure.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Forcing a 10/100 NIC to use 10 Mbps</b><br />
+					Post by: <b>scottstancil</b> on <b>April 29, 2004, 10:15:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would recommend reading http://www.scyld.com/network/tulip.html. &nbsp;It has a nice table detailing the options to on the card, especially something like this for lilo. &nbsp;At the lilo/linux prompt on boot:<br /><br />lilo: linux ether=0,0,4,eth0<br /><br />Note the third parameter force the card's mediatype.<br /><br />I also found this in the newsgroups and although it is for RH 5.x, I suspect it hasn't changed too terribly much.<br /><br />C. Installation guide using Redhat 5.XX<br />=======================================<br /><br />Step 1 : Copy tulip.o into the latest kernel's modules:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cp tulip.o /lib/modules/2.0.XX/net/tulip.o<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Where the XX is the version number of the latest kernel.<br /><br />Step 2 : Update kernel's module dependencies:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/sbin/depmod -a<br /><br />Step 3 : Check /etc/conf.modules:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;alias eth0 tulip<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;options tulip options=X debug=X<br /><br />Step 4 : Valid media types selections for options=X are:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 Auto-select (default to the 10baseT link)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 10base2<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 AUI<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 100baseTx<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 10baseT-FD<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 100baseTx-FD<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 100baseT4<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 100baseFx<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8 100baseFx-FD<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9 MII 10baseT<br />&nbsp; &nbsp; &nbsp; &nbsp; 10 MII 10baseT-FD<br />&nbsp; &nbsp; &nbsp; &nbsp; 11 MII (autoselect)<br />&nbsp; &nbsp; &nbsp; &nbsp; 12 10baseT (no autoselect), v0.69 and later only<br />&nbsp; &nbsp; &nbsp; &nbsp; 13 MII 100baseTx<br />&nbsp; &nbsp; &nbsp; &nbsp; 14 MII 100baseTx-FD<br />&nbsp; &nbsp; &nbsp; &nbsp; 15 MII 100baseT4<br /><br />Step 5 : Valid debug levels for debug=X are:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1 normal output<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2 more verbose<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3 even more verbose<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4 even more verbose<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6 insanely verbose<br /><br />Step 6 : Reboot system:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/sbin/shutdown -r now<br /><br />Step 7 : when system boots, the driver will be load.<br /><br />Step 8 : run netconfig to setup TCP/IP<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(run 'ifconfig' or 'netstat -i' to see if there is a interface <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'eth0')</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Forcing a 10/100 NIC to use 10 Mbps</b><br />
+					Post by: <b>dpeach</b> on <b>April 30, 2004, 07:08:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thank you very much. I will try and figure out what all that means and give it a shot.<br /><br />I hate having to restart my router, but if that will fix the problem, I will try it.<br /><br />The only reason it was restarted before was this same problem. The easiest way I knew to fix it was reboot. I like telling people when they are complaining about their Windows machines crashing that I have a machine that has been up XXX number of days. I am at 94 days right now.<br /><br />Thanks again.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Forcing a 10/100 NIC to use 10 Mbps</b><br />
+					Post by: <b>scottstancil</b> on <b>April 30, 2004, 07:25:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The beauty of modules is not having to reboot. :) (Most of the time.)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Forcing a 10/100 NIC to use 10 Mbps</b><br />
+					Post by: <b>dpeach</b> on <b>May 04, 2004, 04:55:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is the followup to this saga.<br /><br />Fortunately, the NIC was not hosed. The router hardware was not the problem. After several days of troubleshooting, I narrowed it down to a bad network cable.<br /><br />The good part of it is that I ended up with better router hardware, at least quieter anyways. My former router was my first pre-built computer. It was noisy, but a nice small package. My new router is a Dell that is very quiet. I stepped backwards in speed by 34 Mhz (now running 166 as opposed to 200), but it works fine and is nice and quiet.<br /><br />Thanks for your help. Fortunately (as is typically the case), it was not as bad as it first appeared. Though sometime it is much worse.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

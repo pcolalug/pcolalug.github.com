@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Learn 10 good UNIX usage habits</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: rugmonster on December 16, 2006, 09:47:48 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Learn 10 good UNIX usage habits</b><br />
+					Post by: <b>rugmonster</b> on <b>December 16, 2006, 09:47:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Anyone that every mucks in the command line needs to check out the article, Learn 10 good UNIX usage habits (http://www-128.ibm.com/developerworks/aix/library/au-badunixhabits.html?ca=lnxw01GoodUnixHabits), from IBM developerWorks. I think this is going to get bookmarked and referred back to from time to time.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Learn 10 good UNIX usage habits</b><br />
+					Post by: <b>green_dragon37</b> on <b>December 16, 2006, 04:05:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nice article, had some good solid tips in there.<br /><br />Thanks for the find.<br /><br />Ian</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Learn 10 good UNIX usage habits</b><br />
+					Post by: <b>bhoff</b> on <b>December 16, 2006, 04:42:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wow that was a good one I have it bookmarked for quick reference!<br />I passed completly over that on slashdot. Glad you brought it up here again.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Learn 10 good UNIX usage habits</b><br />
+					Post by: <b>dpeach</b> on <b>December 18, 2006, 08:42:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That&#039;s a great list.<br /><br />I think something like this would be a great meeting topic. I know if I had someone sit down with me and hold my hand through a few sessions of the &quot;grep&quot; command I might understand what it is for and how to work it. I don&#039;t really even know what it is capable of and therefore only use it when told to do so through IRC or a step by step web page.<br /><br />I think sometimes we forget that there is a whole world out there filled with people that don&#039;t even understand the basics.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Learn 10 good UNIX usage habits</b><br />
+					Post by: <b>rugmonster</b> on <b>December 18, 2006, 02:37:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">grep is used to find a pattern(s) in one or more files.<br /><br />English translation, lets you search for a word, number, or combination of numbers, letters and characters.<br /><br />So say you want to see what your home directory is in /etc/passwd without opening the whole file, you can quickly grep it.<br /><br /><div class="codeheader">Code:</div><div class="code">$ grep &quot;givensdj&quot; /etc/passwd<br />givensdj:blah blah blah:/home/givensdj<br /></div><br />Often times, if I know there is a configuration option in a file, but not entirely sure which file it&#039;s in, I&#039;ll go to the directory that holds all of the configuration files and run a grep, like so...<br /><br /><div class="codeheader">Code:</div><div class="code">$ grep -R &quot;configure_option&quot; /etc</div><br />If the pattern is found in a file, it will tell me which file it is and then I can do what I need to do with it. By the way, the -R flag tells it to search recursively through all subdirectories in /etc.<br /><br />Another thing I find myself using it for a lot is finding where a function is defined in source code, or where a CSS class or id is defined. grep, cat, sed, awk, and find are my most used &quot;advanced&quot; command line tools above all others. There is so much you can do with them, especially when you string them together. A lot of the stuff you might use perl for can be done with these commands.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Learn 10 good UNIX usage habits</b><br />
+					Post by: <b>dpeach</b> on <b>December 19, 2006, 05:26:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3088.msg15145.html#msg15145">Quote from: rugmonster on December 18, 2006, 02:37:40 pm</a></div><div class="quote">A lot of the stuff you might use perl for can be done with these commands.</div><br />I normally just use perls to please my wife. Now I guess I can do it with grep, cat, sed, awk, and find.<br /><br />Thanks for the tip. :D</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

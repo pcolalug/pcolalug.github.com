@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Bootloader?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: DemetriusCrisco on September 14, 2004, 11:38:32 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bootloader?</b><br />
+					Post by: <b>DemetriusCrisco</b> on <b>September 14, 2004, 11:38:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, this is how i think it works, i know i am prolly wong but w/e... ok,, then u power up, the bios loads then the bootloader, then the bootlader ass you if you want windows or linux, Ok,, my question is... teh bootloader looks like mandrake, so if i get tired of mandrake and delete the parttion will it also delete my bootloader?. Like to where i wont be able to boot to windows.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Bootloader?</b><br />
+					Post by: <b>kilar</b> on <b>September 14, 2004, 05:20:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">There are two major bootloaders in Linux--GRUB and LILO. &nbsp;Most people put the bootloader in the Master Boot Record. &nbsp;If you do not want Mandrake anymore, you can not simply delete Mandrake. &nbsp;If this is what you want, you will need to use the Windows boot disk to boot the system and fix the MBR. &nbsp;If you want to keep Mandrake, you can rewrite the MBR in Windows and use the NT Loader to boot Windows or Mandrake. &nbsp;Or, you can install a different boot loader or different distro and still boot Linux or Windows.<br /><br />You will always have the ability to load Windows, as long as you do not delete the Windows partition. The MBR resides seperately from Linux or Windows. &nbsp;The MBR can be 'controlled' by either OS.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

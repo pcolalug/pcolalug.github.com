@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - lean slack old 66mhz</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Brent on September 19, 2003, 11:55:08 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lean slack old 66mhz</b><br />
+					Post by: <b>Brent</b> on <b>September 19, 2003, 11:55:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi everyone.<br /><br />I'm going home this weekend and I'll be stuck w my old 66mhz since I brought my 466mhz to college.<br /><br />I'm looking for some ways to make this old system run a little faster.<br /><br />Currently the system has a 66mhz pentium (isn't that a 486/66?). &nbsp;It has 24 mb of ram and a 531mb hd.<br /><br />I have X installed with window maker, but I think I'm going to try blackbox. &nbsp;I'm running links-2 (enhanced w javascript and graphical mode) and it's a fairly fast browser. &nbsp;Mozilla 1.0 was a HOG, and for some reason I can't get Firebird on it.<br /><br />I'm thinking about recompiling a bare bones kernel on my 466 and ftping it to the 66 box.<br /><br />Any suggestions to make this thing leaner and meaner?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lean slack old 66mhz</b><br />
+					Post by: <b>imnes</b> on <b>September 19, 2003, 12:07:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Firebird probably won't run because it may have been compiled for a 586 or 686 CPU. &nbsp;If you have a 486 then that could be it.<br /><br />You might want to run an older version of slackware, maybe slackware 8 or older. &nbsp;I think XFree86 version 3.x runs better on old hardware then XFree86 4 does. <br /><br />Also you could recompile your kernel, optimize it for your CPU, remove any and all unnecessary parts (for example if you don't use SCSI remove it, if you don't use a sound card, remove all that). &nbsp;Dunno if that will offer you any performance boost but the kernel would use less ram.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lean slack old 66mhz</b><br />
+					Post by: <b>crowe</b> on <b>September 19, 2003, 04:43:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">In addition to what imnes suggests, you may also want to take a look at dillo (http://www.dillo.org/). &nbsp;It's even more lightweight than firebird, and should work on the machine you've mentioned.<br /><br />rxvt (http://sourceforge.net/projects/rxvt) is a good replacement for xterm, if you're willing to sacrifice a few of the more advanced features.<br /><br />Also, take a look at this (http://www.volny.cz/basiclinux/oldpc/) page. &nbsp;It's a bit dated, but still good advice nonetheless.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lean slack old 66mhz</b><br />
+					Post by: <b>trigger</b> on <b>September 19, 2003, 05:46:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not sure if this helps but maybe some else can fill in the blanks. At one of the meetings someone had a version of linux that ran from the CDROM. I think it was called Knoppix. Don't quote me on that. I also do not know what it is capable of. It was just an idea.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lean slack old 66mhz</b><br />
+					Post by: <b>imnes</b> on <b>September 19, 2003, 10:52:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually knoppix runs ok on a Pentium 120 laptop with 64mb ram and 6x CD-ROM.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lean slack old 66mhz</b><br />
+					Post by: <b>rugmonster</b> on <b>September 20, 2003, 11:13:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You have to remember that most of the software and most of the distributions are being compiled for Intel 586 and 686. You might want to try a distribution like Debian since it is still compiled for 386 compatibility. Firebird is also one of those binaries compiled for 686, but you can get the source and compile your own. <br /><br />I would suggest you go with a bare bones Debian with Fluxbox, Blackbox or XFCE4 with Firebird and Thunderbird or another lightweight email client.<br /><br />Basically, you aren't going to get much out of that box. I wouldn't run X on it if it were mine. Command line is much faster and probably the way to go with that thing...but nothing says you can't do it the other way.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lean slack old 66mhz</b><br />
+					Post by: <b>rburt3</b> on <b>September 20, 2003, 04:02:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">#include &lt;_obligitory_gentoo_plug.h&gt;<br /><br />http://www.gentoo.org</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>lean slack old 66mhz</b><br />
+					Post by: <b>imnes</b> on <b>September 20, 2003, 06:45:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm sorry, but if you have a 486 66mhz I would not even attempt a compile of gentoo. &nbsp;(You do have to compile everything from scratch in gentoo still, right?)<br /><br />However, the new version of slackware coming out (Slackware 9.1 when it's released) is going to be compiled optimized for i486 so you could just use that.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>My suggestion!</b><br />
+					Post by: <b>bhoff</b> on <b>September 21, 2003, 08:01:38 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would suggest Redhat 7.2 with one of the lighter gui's like windowmaker.<br />I have probaly right now got more low end machines than anybody and that is my distro of choice. My all standards Redhat 7.2 was the most stable everbuilt in the redhat fleet. Even today most big companies still run it due to it's tight kernel and security hooks that made it so industructible.<br /><br />Brett</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

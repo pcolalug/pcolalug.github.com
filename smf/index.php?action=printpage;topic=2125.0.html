@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - NVIDIA drivers in Debian?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: SiliconFOXX on December 19, 2004, 10:45:22 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA drivers in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 19, 2004, 10:45:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hello. &nbsp;I've got a fresh install of Debian and looking to install those wonderful NVIDIA drivers. &nbsp;Naturally those need the kernel sources and I'm unfamiliar with how to install the sources for the current kernel. &nbsp;So far it seems to have enabled support for everything I use and seems to be fairly current so I wasn't too terribly crazy about rebuilding a whole new kernel if I didn't have to. &nbsp;Is there any way to install the sources for the kernel that came with Debian or am I going to end up building one anyway?<br /><br /><br />And, just for curiosity's sake, where do the kernel sources get installed to again? &nbsp;I can't seem to remember.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA drivers in Debian?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 19, 2004, 11:20:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You should be able to install the drivers directly from nvidia. It doesn't require a kernel rebuild because it just does an insmod for the module. The sources should be stored in /usr/src. It may or may not install the sources default.<br /><br />Here is a HOWTO regarding this:<br /><br />Andrew's Debian-nVidia HOWTO (http://home.comcast.net/~andrex/Debian-nVidia/)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA drivers in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 20, 2004, 12:03:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Very interesting. &nbsp;I tried to just do the #sh ./NVIDIA-Linux...blah blah blah (can't remember the exact driver notation, it was the 6629 driver and it complained about needing access to the sources.<br /><br />It also complained about not having gcc but a little apt-get fixed that.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA drivers in Debian?</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 20, 2004, 12:08:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Whew, just by first glance it looks like I've got a lot to learn about Debian, particularly in the way that things are done with regards to packages. &nbsp;To be honest, I'm not really used to that, but it would be good to learn.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA drivers in Debian?</b><br />
+					Post by: <b>rugmonster</b> on <b>December 20, 2004, 10:05:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Debian does some things weird, but there are a lot of distributions based on it. It's always a good thing to learn how different distros do things though. You never know what you will run into out there, but the more broad your experience, the more likely you will be to figure out those particulars are for the given environment.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

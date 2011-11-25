@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Network Services Setup</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: rugmonster on April 08, 2005, 09:11:37 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Network Services Setup</b><br />
+					Post by: <b>rugmonster</b> on <b>April 08, 2005, 09:11:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm reworking my home network and getting rid of my Win2k3 domain controller. Yes, I know, it's about time. My alternative is to utilize my Gentoo box as a Samba PDC, dhcp and dns server. I'm wanting to do an LDAP backend for my Samba authentication and tie dhcp updates into BIND. I'm wondering if I should go ahead and tie BIND into LDAP so it is stored there rather than in a standard zonefile. The other option is to host everything (Samba and BIND zone info) via MySQL that I already have running. I've never dealt with LDAP (unix flavor directly) before and I am interested in learning more about it, but do you guys think this would all be too much of a hassle?<br /><br />Also, anyone know of a HOWTO for actual administration of Samba? I need to know how to add computer accounts to a Samba PDC. I also want to be able to have a group that has administrative rights similar to Domain Admins in a typical Windows setup.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Network Services Setup</b><br />
+					Post by: <b>danc</b> on <b>April 09, 2005, 09:30:40 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">I'm reworking my home network and getting rid of my Win2k3 domain controller. Yes, I know, it's about time. My alternative is to utilize my Gentoo box as a Samba PDC, dhcp and dns server. I'm wanting to do an LDAP backend for my Samba authentication and tie dhcp updates into BIND. I'm wondering if I should go ahead and tie BIND into LDAP so it is stored there rather than in a standard zonefile. The other option is to host everything (Samba and BIND zone info) via MySQL that I already have running. I've never dealt with LDAP (unix flavor directly) before and I am interested in learning more about it, but do you guys think this would all be too much of a hassle?</div><br />I don't know how to do that stuff..., but my question would be: &nbsp;Why bother? &nbsp;Do you need a PDC, dhcp/dns servers on a home LAN? &nbsp;Use the ISP's DNS, and your WRT54G, and relax!<br /><br />Seriously, I don't know enough about these things, but would like to know why they would be worth the effort. &nbsp;Seems like unnecessary duplication of services already in place. &nbsp;What am I missing?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Network Services Setup</b><br />
+					Post by: <b>lloydr</b> on <b>April 09, 2005, 06:00:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">webmin has some decent sections for samba administration for the most part, there most likely is an addon for just about everything you want to get running in this case. <br /><br />Brett might be able to point you in the right direction for some mods/addons of webmin. I don't know of anything off the top of my head.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Right you are</b><br />
+					Post by: <b>bhoff</b> on <b>April 09, 2005, 08:07:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Webmin has some nice samba setup controls. It allows for setting up computers and accounts. Would probaly take care of all your needs.<br />Brett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Network Services Setup</b><br />
+					Post by: <b>rugmonster</b> on <b>April 10, 2005, 01:02:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">For the level of file sharing I do between my systems, yes I do need a domain controller of some sort. I don't want to put more strain on the WRT54G because they aren't very robust hardware and the software is lacking as well. I want to run DHCP/DNS because I like to be able to dynamically assign IPs and access those systems without having to know the IP. If I need to change my subnet, I change the DHCP scope and renew the IPs and it's all done. I don't have to worry about changing IP addresses and host files on all of the systems on the network. Also, a great deal of what I do is for educational purposes, so while I may be running a small network, my interest is in systems which can scale to very large environments.<br /><br />I'll have to look into webmin. I haven't ever seriously looked at it as an administration tool, prefering command line and straight config files. Time for my more of my elitism to go away. Thanks guys.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command Line</b><br />
+					Post by: <b>bhoff</b> on <b>April 10, 2005, 08:41:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You know I like Command line.......Oh yes I do.<br />But If you are looking for a one stop shop this is it...Especially if you are going to have to setup admin for users who are not comfortable with command. Then this is the tool for you and I have added my own scripts to it which it gives you handy page to do this. And modified the cluster tools to use with OpenMosix. Also if you install webmin on all your machines you can administer all of them from one machine or from remote because it runs from webserver. Very handy when you want to upgrade all your systems at once.<br />Wow I ought to be a salesman for webmin:)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - BellSouth DSL</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: sandspur on October 27, 2003, 03:22:33 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>sandspur</b> on <b>October 27, 2003, 03:22:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Been wrestling with getting BellSouth DSL service going. &nbsp;BellSouth offers NO Linux support. &nbsp;<br />Configuring the ethernet card and the DSL modem was straightforeward enough using RH9 GUIs.<br /><br />Read in some RH documentation not to set a host name when using DHCP and I took their advice. &nbsp;Don't know why that is important.<br /><br />The problem rested with dealing with BellSouth's login proceedures. &nbsp;Luckily my girlfriend's Windows XP computer was temporarily at my place. &nbsp;I connected the DSL modem to it and installed BellSouth's software. &nbsp;Rebooted and then doubleclicked on the MSIE icon and darned of a graphical login GUI did not appear.<br /><br />I wrote down the URL for the login page and on my Linux box I made that URL the start page for Mozilla. &nbsp;Without using the Windows box I'd have never guessed to do that.<br /><br />If any of you try BellSouth DSL service rember to make the following URL your start page in your browser: &nbsp;http://hometab.bellsouth.net.<br /><br />Anyway, after living with connect speeds like 26.4 with a 56.6 modem out here on Pensacola Beach with a dialup account &nbsp;the DSL is wonderful.<br /><br />Chuck<br /><br />http://www.pcola.com/sandspur/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>altomo</b> on <b>May 21, 2004, 10:00:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I use a router to handle everything for me now but if I remeber correctly I didnt have to do anything like that before.<br /><br />Setup ppoe, give my username and pass and its on. I didnt have to go to that url.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>rburt3</b> on <b>May 21, 2004, 06:52:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">FYI, you don't give your machine a host name if you are using DHCP because the DHCP server will likely assign one to the machine when it connects.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>May 25, 2004, 10:25:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">It would really assign a hostname to the machine? &nbsp;Is that a DSL only thing because I don't think that's ever happened to me with the cable modem. &nbsp;I get a dynamic IP, but the hostnames I supply myself.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>rburt3</b> on <b>May 25, 2004, 10:50:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm. Maybe just Mediacom does it, but its a something the DHCP server does/can do. To find out, you could <div class="codeheader">Code:</div><div class="code">ifconfig eth0</div> and <div class="codeheader">Code:</div><div class="code">cat /etc/hostname</div> and see if there's a difference.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>steve</b> on <b>May 25, 2004, 02:34:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you are sitting behind a router/Firewall then &quot;it&quot; will get the Host name. Last time I checked Cox assigns a host name through DHCP also. The device that's connected directly to the cable modem should get &quot;ALL&quot; of it's info from the upstream provider. This is normally only for home users to make life easier and so the ISP can identify who's connected and where.<br /><br />I can't speak for DSL as I haven't had much experience with them.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>altomo</b> on <b>June 15, 2004, 12:03:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Bellsouth DSL DOES NOT assign a hostname. They use ip, reverse dns, and probably the network port to track the user if needed.<br /><br /><br />For future reference dhcp assining a hostname is not a standard setup except for maybe in the ISP world.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>Perquisitor</b> on <b>January 30, 2005, 10:55:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have no idea how it worked, &nbsp;but previously I had trouble getting Mandrake 9 to work with BellSouth DSL. &nbsp; Got no success. &nbsp;<br />Later I installed RedHat on a whim, and it instantly recognized my DSL modem and correctly configured it automatically, and I was up and running.<br /><br />Perhaps you can do the same........ use RedHat 9 to get it going, and document all the necessary data to configure the Linux distro you really want to use.<br /><br />thoughts from a Newbie.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>BellSouth DSL</b><br />
+					Post by: <b>rugmonster</b> on <b>January 30, 2005, 01:02:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have had problems in the past with different dhcp clients working with some isps and others not. When I was living in Houston on Roadrunner, I had to use pump because dhcpcd wouldn't work.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

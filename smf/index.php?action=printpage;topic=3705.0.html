@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - StorageTek SL500 SNMP monitoring</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: mall0ry on July 14, 2010, 08:17:40 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>StorageTek SL500 SNMP monitoring</b><br />
+					Post by: <b>mall0ry</b> on <b>July 14, 2010, 08:17:40 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I wanted to monitor the SL500 tape library at work and it supports SNMP. I downloaded the MIB from the tape library, opened it and thought &quot;What is this gibberish? and How am I going to make sense of this?&quot;. I used snmptranslate, a lot of typing, and the following.<br /><br />Jangle: Java SNMP GUI - http://www.petertribble.co.uk/Solaris/jangle.html<br />The SNMP Cuddletech Reference - http://www.cuddletech.com/articles/tekref/SNMP.tekref.txt<br /><br />I wrote a script to check the tape drives temperature and another to check the fans status. I use cron to run them on Solaris 10 and should work on LInux with minor changes. The scripts below are generic to illustrate the concept.<br /><br /><div class="codeheader">Code:</div><div class="code">#!/usr/bin/bash<br /><br /># Retrive tape drive temperatures using SNMP and email output<br /><br />#Define variables<br />SNMPGET=/usr/sfw/bin/snmpget<br />AWK=/usr/bin/awk<br />DATE=$(/usr/bin/date)<br />SLEEP=/usr/bin/sleep<br />MAILX=/usr/bin/mailx<br /><br />#Retrive and format temperature<br />Y1=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />T1C=$(echo $Y1 | $AWK &#039;{ print $NF }&#039;)<br />T1F=$(echo $T1C | $AWK &#039;{ TF = (9 / 5) * $1 +32; print TF }&#039;)<br />#1 second pause between requests<br />$SLEEP 1<br /><br />Y2=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />T2C=$(echo $Y2 | $AWK &#039;{ print $NF }&#039;)<br />T2F=$(echo $T2C | $AWK &#039;{ TF = (9 / 5) * $1 +32; print TF }&#039;)<br />$SLEEP 1<br /><br />Y3=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />T3C=$(echo $Y1 | $AWK &#039;{ print $NF }&#039;)<br />T3F=$(echo $T3C | $AWK &#039;{ TF = (9 / 5) * $1 +32; print TF }&#039;)<br />$SLEEP 1<br /><br />Y4=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />T4C=$(echo $Y4 | $AWK &#039;{ print $NF }&#039;)<br />T4F=$(echo $T4C | $AWK &#039;{ TF = (9 / 5) * $1 +32; print TF }&#039;)<br /><br /># Clear previous contents and put current date and time in file<br />echo -e &quot;&quot;$DATE&quot;\n&quot; &gt; /path/to/output/file<br /># Append report title in file <br />echo &quot; Current SL500 tape drive temperatures. &quot; &gt;&gt; /path/to/output/file<br />echo &quot; Drive 1 temp is &quot;$T1C&quot;C&nbsp; &quot;$T1F&quot;F&quot; &gt;&gt; /path/to/output/file<br />echo &quot; Drive 2 temp is &quot;$T2C&quot;C&nbsp; &quot;$T2F&quot;F&quot; &gt;&gt; /path/to/output/file<br />echo &quot; Drive 3 temp is &quot;$T3C&quot;C&nbsp; &quot;$T3F&quot;F&quot; &gt;&gt; /path/to/output/file<br />echo &quot; Drive 4 temp is &quot;$T4C&quot;C&nbsp; &quot;$T4F&quot;F&quot; &gt;&gt; /path/to/output/file<br />echo -e &quot;\n\n&quot; &gt;&gt; /path/to/output/file<br />echo &quot;Warning temperature: 43C/109.4F&quot; &gt;&gt; /path/to/output/file<br />echo &quot;Automated library shutdown temperature: 48C/118.4F&quot; &gt;&gt; /path/to/output/file<br /><br /># Email report<br />cat /path/to/output/file | $MAILX -s &quot;SL500 tape drive temperatures&quot; email_address,another_email_address<br /><br /># This should also work<br /># $MAILX -s &quot;SL500 tape drive temperatures&quot; email_address,another_email_address &lt; /path/to/output/file<br /></div><br /><br /><div class="codeheader">Code:</div><div class="code">#!/usr/bin/bash<br /><br /># Retrive tape library fan status<br /><br />SNMPGET=/usr/sfw/bin/snmpget<br />AWK=/usr/bin/awk<br />DATE=$(/usr/bin/date)<br />SLEEP=/usr/bin/sleep<br />MAILX=/usr/bin/mailx<br />SED=/usr/bin/sed<br /><br />F1=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FP1=$(echo $F1 | $AWK &#039;{ print $NF }&#039;)<br />S1=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FS1=$(echo $S1 | $SED &#039;s/(2)//&#039; | $AWK &#039;{ print $NF }&#039;)<br />$SLEEP 1<br /><br />F2=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FP2=$(echo $F2 | $AWK &#039;{ print $NF }&#039;)<br />S2=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FS2=$(echo $S2 | $SED &#039;s/(2)//&#039; | $AWK &#039;{ print $NF }&#039;)<br />$SLEEP 1<br /><br />F3=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FP3=$(echo $F3 | $AWK &#039;{ print $NF }&#039;)<br />S3=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FS3=$(echo $S3 | $SED &#039;s/(2)//&#039; | $AWK &#039;{ print $NF }&#039;)<br />$SLEEP 1<br /><br />F4=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FP4=$(echo $F4 | $AWK &#039;{ print $NF }&#039;)<br />S4=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FS4=$(echo $S4 | $SED &#039;s/(2)//&#039; | $AWK &#039;{ print $NF }&#039;)<br />$SLEEP 1<br /><br />F5=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FP5=$(echo $F5 | $AWK &#039;{ print $NF }&#039;)<br />S5=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FS5=$(echo $S5 | $SED &#039;s/(2)//&#039; | $AWK &#039;{ print $NF }&#039;)<br />$SLEEP 1<br /><br />F6=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FP6=$(echo $F6 | $AWK &#039;{ print $NF }&#039;)<br />S6=$($SNMPGET -v snmp_version -c community_string -m /path/to/tape/library/MIB tape_library_IP_address OID)<br />FS6=$(echo $S6 | $SED &#039;s/(2)//&#039; | $AWK &#039;{ print $NF }&#039;)<br /><br />echo -e &quot;&quot;$DATE&quot;\n&quot; &gt; /path/to/output/file<br />echo &quot; SL500 fans status. &quot; &gt;&gt; /path/to/output/file<br />echo &quot; Fan $FP1 is $FS1&quot; &gt;&gt; /path/to/output/file<br />echo &quot; Fan $FP2 is $FS2&quot; &gt;&gt; /path/to/output/file<br />echo &quot; Fan $FP3 is $FS3&quot; &gt;&gt; /path/to/output/file<br />echo &quot; Fan $FP4 is $FS4&quot; &gt;&gt; /path/to/output/file<br />echo &quot; Fan $FP5 is $FS5&quot; &gt;&gt; /path/to/output/file<br />echo &quot; Fan $FP6 is $FS6&quot; &gt;&gt; /path/to/output/file<br /><br />cat /path/to/output/file | $MAILX -s &quot;SL500 fans status&quot; email_address,another_email_address<br /></div><br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

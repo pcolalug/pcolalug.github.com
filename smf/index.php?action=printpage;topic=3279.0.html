@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Camp Fire K12LTSP</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Club discussions => Topic started by: djoed_pcola on December 16, 2007, 01:30:25 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 16, 2007, 01:30:25 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, the K12LTSP server for Camp Fire USA is up and running.&nbsp; I downloaded and burned the 6 CD&#039;s for K12LTSP 6.0.&nbsp; I ran into several problems of my own making that took me a while to figure out.&nbsp; Apparently, I turned off a few services that are needed by LTS.&nbsp; Anyway, finally got past those problems.<br /><br />To perform a basic test, I used my home computer as a client.&nbsp; It is PXE enabled, so I didn&#039;t need to make a floppy boot disk.&nbsp; The client booted across the network from the LTS.&nbsp; Currently, I am using the client to post this message.<br /><br />Sometime next week, I will try to boot the Camp Fire client using an etherboot floppy, which I still need to create.&nbsp; Once I get that to work, I will create copies of the boot floppy.&nbsp; I wish the clients were PXE enabled, it would simplify things, but we have to work with what we have.&nbsp; Also, I need to try and setup network printing and sound.&nbsp; Lucky me.<br /><br />A few things to think about:<br />- On the client machines, we probably should either remove the hard drives, or at least disconnect the cables.<br /><br />- If the kids are going to be able to save their files on the server, then they probably should have their own user id&#039;s.&nbsp; Of couse, this adds administration overhead.&nbsp; If we use generic user id&#039;s, like user1, user2, etc., then the kids won&#039;t be able to save files that only they can access.&nbsp; Also, is there a way for the kids to use the clients without requiring a user id and password?&nbsp; Of course, this eliminates the possibility of saving personal files.<br /><br />- Just a reminder that the server can use more memory, if anyone has some extra.&nbsp; Also, we need a switch.<br /><br />- Need to think about the best ways to lockdown aspiring hackers.<br /><br />- Need to filter internet content for inappropriate material.<br /><br />- Need to setup the firewall.<br /><br />- Other ideas?<br /><br />It was great working with you guys today.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>oneadvent</b> on <b>December 16, 2007, 08:37:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The filter could be accomplished by using open dns. There is an option in there. Besides it is quicker than my default anyway.<br /><br />I mean if they know enough to get the ip address of a porno site, your probably not gonna stop them anyway.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>December 16, 2007, 11:21:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have the switch laying around here and we will get the connection to the back room!<br />Also I think the clients had the pxe option in the menu may want to check the bios!!<br />That would be great if that worked.<br /><br />Anyway let me know how the printer is going with the setup.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 16, 2007, 03:31:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi djoed_pcola, You may already know all this but if you will hit the del key on boot up and go into the bios and under the boot section change the 1st boot device to MBA UNDI it will try to boot PXE. Hope this helps.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 16, 2007, 05:07:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks, Ed.<br /><br />Looks like the BIOS supports PXE booting, but the NIC doesn&#039;t.&nbsp; Looks like I&#039;ll have to create an etherboot floppy after all.&nbsp; I probably won&#039;t get to it tonight though.<br /><br />Later.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 16, 2007, 09:09:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15813.html#msg15813">Quote from: djoed_pcola on December 16, 2007, 05:07:19 pm</a></div><div class="quote">Thanks, Ed.<br /><br />Looks like the BIOS supports PXE booting, but the NIC doesn&#039;t.&nbsp; Looks like I&#039;ll have to create an etherboot floppy after all.&nbsp; I probably won&#039;t get to it tonight though.<br /><br />Later.<br /><br /><br /></div>There may be a mix of nic&#039;s. The computer I brought home and fixed up tried to find the network but failed since there was not one. I downloaded k12lstp 6.0 today so tomorrow I will try to setup a server and see if it will connect. I will post the results.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 17, 2007, 04:26:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a k12lstp 6.0 server running on a duron 1.3 with 512mb and 1 client a gateway from campfireusa. It is connecting through the nic by PXE. It took more ram than the 64mb we put in the computers. I had to put in a 128mb (smallest I had since I use my 64mb in it already) to get it to load the xserver. The sound is not working yet. I have never used gnome which I like very much but can&#039;t find out how to shutdown the client. I can only logout and then it goes back to the login screen. I have lots of questions, maybe I find so answers that fix them questions soon. Overall I am liking K12LSTP. I hope it will fit our needs but that remains to be seen.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>December 17, 2007, 05:43:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">wow the needed additional 64 mb per machine may be a problem!<br /><br />I will see what I can get before Christmas this is going to get awkward in a hurry. Might need to look into stand alone distros to get them up than can run some sort of x in 64 mb of ram just in case!!<br /><br />possible solutions all education based<br /><br />http://www.skolelinux.org/ (http://www.skolelinux.org/)<br />http://www.debian.org/devel/debian-jr/ (http://www.debian.org/devel/debian-jr/)<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 17, 2007, 07:56:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That 128 MB requirement Ed experienced just doesn&#039;t make sense.&nbsp; When I previously experimented with K12LTSP, I had clients connected with only 32 MB of memory.&nbsp; Perhaps there is a LTS server configuration that will allow us to lower the memory footprint.&nbsp; A thin-client should be thin, in my way of thinking.<br /><br />I brought the memory of the Camp Fire client I&#039;m testing up to 128 MB, but the client tries PXE booting and then hangs somewhere in the boot process.&nbsp; I need to research some more.&nbsp; I am able to PXE boot two of my own computers into K12LTSP, so I know the server is up and running.<br /><br />The NIC my client has is a 3Com C905C TXM.&nbsp; Ed, is that the same NIC your client has?<br /><br />&nbsp; </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 17, 2007, 08:04:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Brett, It is not as bad as it sounds. We have 64 megs in each of the 12 computers. If we take 64 mb out of half the computers and put them in the other half we will need to come up with 6 128 mb sticks. I will donate a stick and that leaves 5. If 5 other people step up and donate a stick we will have it for the clients I don&#039;t know about the server ram. Now the next thing is to get the sound working. I am hoping to talk to Dennis and anyone else that can help us resolve that problem. As I see it the sound is the main problem also all the nic&#039;s are not PXE capable but that is fixed with a floppy. I hate to have a floppy since the children can remove them but we have to work with what we have.<br /><br />Dennis, It might be less than 128 but it is more than 64mb. I had 64mb installed and it would not load. I did a Ctrl+Alt+F2 to a shell screen and looked at the xorg.log and it said it didn&#039;t have enough memory to load. I stuck the smallest stick I had a 128 mb stick in and turned it on and it booted up and brought up the xserver and login screen without any other changes.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>December 17, 2007, 09:17:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Side note here if Either Ed you or Dennis come through Milton could you please stop buy and see why here printer is not printing.<br />I will try to get by there by Wednesday. She called today and I was in defuniak all day and probably tomorrow also.<br /><br />Thanks call if you can so I know to not try and stop by.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 17, 2007, 09:41:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15825.html#msg15825">Quote from: bhoff on December 17, 2007, 09:17:50 pm</a></div><div class="quote">Side note here if Either Ed you or Dennis come through Milton could you please stop buy and see why here printer is not printing.<br />I will try to get by there by Wednesday. She called today and I was in defuniak all day and probably tomorrow also.<br /><br />Thanks call if you can so I know to not try and stop by.<br /></div><br />Ed, if you end up in Milton this week, could you possibly take a look at her printing problem?&nbsp; I work in downtown Pensacola, so I won&#039;t be in the Milton area.&nbsp; Just let us know whether or not you can get to it.&nbsp; Thanks.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 18, 2007, 08:04:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am going to Walmart in Pace today so I will go by there and see about it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 18, 2007, 08:24:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15828.html#msg15828">Quote from: Ed on December 18, 2007, 08:04:36 am</a></div><div class="quote">I am going to Walmart in Pace today so I will go by there and see about it.<br /></div><br />Do you mind doing some Christmas shopping for me while your at Walmart?&nbsp; Just kidding.&nbsp; ;D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 18, 2007, 12:29:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15829.html#msg15829">Quote from: djoed_pcola on December 18, 2007, 08:24:32 am</a></div><div class="quote"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15828.html#msg15828">Quote from: Ed on December 18, 2007, 08:04:36 am</a></div><div class="quote">I am going to Walmart in Pace today so I will go by there and see about it.<br /></div><br />Do you mind doing some Christmas shopping for me while your at Walmart?&nbsp; Just kidding.&nbsp; ;D<br /></div><br />Not at all. In fact I got me some presents from you. I&#039;ll get you the bill.&nbsp; ;D<br /><br />Brett I went to CampfireUSA and got the problems Mona was having fixed. At least they were when I left. The printer was a formatting issue and the fax she fixed by changing settings. The electrical plug problem was a bad surge protector I think anyway after I replaced it she had not more power blips. That light switch in the classroom needs to be fixed by Thursday afternoon. I told her if you didn&#039;t get by there Wednesday I will change it out Thursday morning. She has a meeting between 10am and noon Wednesday and the place will be locked up. If you would rather me just fix it please let me know tonight.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>December 18, 2007, 08:10:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I will try to get the switch issue Wednesday. If not I will at least drop off switches and plates there are three switches and 4 plates.<br />the 2 switches in learning room and 1 in her office and the face plate in the bathroom that I hung light. I should be able to get it but not sure right now! Also I went by today and thanks Ed for getting by there. I was there about noon and you had already taken care of it.<br />By the way what did Dennis buy you :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 18, 2007, 08:26:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15831.html#msg15831">Quote from: bhoff on December 18, 2007, 08:10:36 pm</a></div><div class="quote">By the way what did Dennis buy you :)<br /></div><br />Let me just say the delivery trucks are very big. ;D<br />On the switches if you don&#039;t get through Wednesday I can finish it Thursday if you leave the material with Mona.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 18, 2007, 08:53:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15831.html#msg15831">Quote from: bhoff on December 18, 2007, 08:10:36 pm</a></div><div class="quote">By the way what did Dennis buy you :)<br /></div><br />It&#039;s gonna be a hard candy Christmas for you, buddy!<br /><br />Okay, here is the deal with the Camp Fire LTSP:<br /><br />1. The K12LTSP works fine with my own personal computers, but I cannot get the client I brought home with me to boot.&nbsp; I&#039;ve tried both PXE booting, and booting with a floppy that contained the appropriate NIC bootup software.&nbsp; The client seems to get most of the way thru the boot process, and then hangs.<br /><br />2. I downloaded the Edubuntu LTS CD&#039;s and installed on a spare computer.&nbsp; Again, both of my home computers boot fine using PXE, but the Camp Fire client hangs.&nbsp; With Ebuntu LTS, networked sound worked &quot;out of the box&quot;.&nbsp; &nbsp;<br /><br />3. For one and two above, I brought the client up to 256 MB of RAM.&nbsp; The Camp Fire client will just not boot for me.&nbsp; I&#039;m almost ready to promote it to my boat anchor.<br /><br />4. The next time we get together, I think I will bring my Edubuntu server along with the K12LTSP server.&nbsp; We can try some of the other clients to see what kind of results we get booting from each server.<br /><br />5. If anyone has any ideas why this client won&#039;t boot, I&#039;m open to suggestions.&nbsp; I&#039;ve poked around in the LTS documentation but haven&#039;t come across anything that helps.<br /><br />Ed, I apologize I haven&#039;t had a chance to call you yet.&nbsp; I did receive your pm.&nbsp; This week has been a blur so far.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 22, 2007, 12:57:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I just dusted off an old IBM P166 with 64 MB of RAM and it booted over the network into K12LTS just fine.&nbsp; I&#039;m really not sure why the Camp Fire client I brought home won&#039;t boot over the network.<br /><br />Has anyone come up with some more RAM for the K12LTS server?<br /><br />Merry Christmas and Happy Holidays to all fellow LUG members and lurkers out there.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 22, 2007, 08:30:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dennis, I feel your pain. I could never get sound with K12LTSP so I installed Edubuntu and could not get the client to boot all the way to a login screen. It also did not have all the software than K12LTSP comes with although it may be available for installation. I reinstalled K12LTSP last night so I will start on the sound problem again. I also noticed that the game childsplay has a good number and letters game. It is call findsound2 trouble is that it only works on the server and just flashes up on the client. The other modules in childsplay work fine minus the sound of course. I would like to appeal to anyone who knows how to setup a thin client network to please lend a hand. The is my first experience with it and am at a loss about the sound.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 22, 2007, 02:07:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ed,<br /><br />Here are a couple of ideas that might help in case you haven&#039;t already tried them:<br /><br />1. Check the lts.conf file located in /opt/ltsp/i386/etc directory.&nbsp; There should be an entry as follows:<br />SOUND = Y<br /><br />2.&nbsp; Try one of your own machines as a client.&nbsp; With my own pc as a client, the sound worked with Edbuntu.&nbsp; I haven&#039;t tried that computer with K12LTSP.&nbsp; The P166 client I&#039;m currently using with K12LTS doesn&#039;t have a sound card.&nbsp; Perhaps there is some incompatibility issue with these Camp Fire sound cards<br /><br />3. You have probably already tried this, but if you haven&#039;t, go into System &gt; Administration &gt; Soundcard Detection and follow the instructions.<br /><br />If we can&#039;t get all the issues resolved we may just have to load a stand alone distro on each Camp Fire computer.&nbsp; However, I really hope with can make the LTS approach work.<br /><br />Well, I need to go do some last minute desperate Christmas shopping for the wife.<br /><br />Good luck.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 22, 2007, 08:45:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Dennis, I do have SOUND=Y and the sound daemon is nasd. By running childsplay from the command line on the client I found that if childsplay can&#039;t find a working sound card it aborts on purpose on those plugins (games) listed in my last post. I have been reading a 60 page pdf on LTSP so maybe I&#039;ll learn what to do to fix the sound. I really like K12LTSP and would love for it to work for us. Oh by the way the sound card I have in the gateway client is a SB Live CT4870 and it uses emu10k1. I put enough memory in it to run pclinuxos and it works with it. I also change it out for another sb live sound card and that one didn&#039;t work with K12ltsp either. May be just a matter of getting it to load the right driver with a custom client configuration file. Merry CHRISTmass to everybody.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 23, 2007, 06:35:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am happy to report I finally got sound working on the Campfire client machine with K12LTSP. Google is your friend. After much googling I found a post that said to make this change in<br />/opt/ltsp/i386/etc/rc.sound go to line 67 which looks like this <br />/bin/esd -nobeeps -tcp -port 16001 -as 1 &amp;<br /><br />and make it look like this<br />/bin/esd -nobeeps -tcp -port 16001 -as 1 -public &amp;<br /><br />Using the ESD sound server sound now works for me on the client. There is still much work to be done. Right Dennis? I am doing the install on my test computer to learn. The real work is being done by Dennis on the real server.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>December 27, 2007, 03:03:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dennis and Ed, If you guys have&nbsp; &nbsp;things hashed out I would like to try and get back out there sometime in the second week of January. Let me know how this works for you guys right now I have the hub, but no takers for the ram so I am guessiing we will rob peter to pay paul this will atleast get them 6 computers going till I acquire more ram. Also there will be one admin account and&nbsp; 1 student account for all access. Not seperate passwords for each. If there are things we are still having problems with please let me know so I can address them. Thanks guys for all the hard work on this project and I know they&nbsp; appreciate it also.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>December 27, 2007, 04:26:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Brett, Anytime is fine with me. Just give me a day or two&#039;s notice.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 27, 2007, 06:50:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The second week of January works for me.&nbsp; Preferably a cold rainy day so I won&#039;t be tempted to go fishing instead.&nbsp; &nbsp;;D <br /><br />I still need to set up printing and try to get sound to work.&nbsp; I tried the setting that Ed posted, but it didn&#039;t work for me.&nbsp; &nbsp; Also, I never could get the Camp Fire computer to boot for me, but my own computers boot fine, as well as an old P166.&nbsp; My money is on Ed as the de-facto K12LTSP expert.<br /><br />Thanks for everybody&#039;s help.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Skreyola</b> on <b>December 29, 2007, 11:39:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">By then, I&#039;ll be back in classes, so it depends on what day and time. Saturdays are wide open, thus far.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>December 29, 2007, 09:43:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, if any of you geniuses know how to configure K12LTSP for auto login, I&#039;m open for ideas.&nbsp; So far, I haven&#039;t been able to figure it out, despite reading way too much documentation and hours of googling.&nbsp; Still need to get sound to work also.<br /><br />Network printing is now working for the Camp Fire server.<br /><br />Thanks for any ideas.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Skreyola</b> on <b>December 30, 2007, 09:22:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Does it use XDM or KDM? I believe both of them can be configured for convenience login, so that all the user has to do is click their face icon or hit enter (passwordless).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 01, 2008, 07:05:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">K12LTSP uses Gnome.<br /><br />I need to figure out how to make each workstation automatically logon after booting.&nbsp; According to the Linux Terminal Server documentation, http://www.ltsp.org (http://www.ltsp.org), each thin-client wokstation is assigned a unique id starting with ws001.&nbsp; I&#039;m thinking we could create user id&#039;s on the server that match each workstation id.&nbsp; Then, after each client boots it could run a script to determine it&#039;s workstation id and then pass the ws id to an automatic logon script.&nbsp; <br /><br />I just can&#039;t figure out the details on how to actually make the automatic logon happen.&nbsp; This may require some custom bash script creation, but one problem is determining where the script(s) should reside and when they should be launched.&nbsp; However, it is highly preferable that auto-logon be accomplished without any custom scripts.<br /><br />Still open for ideas.<br /><br />Happy New Year to all.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 01, 2008, 07:16:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ed, have you tried getting auto-login to work on your K12LTSP server?<br /><br />Thanks.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 01, 2008, 07:34:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is the startx script that is pointed to from the lts.conf file.&nbsp; This script is located in /opt/ltsp/i386/etc/screen.d directory.&nbsp; Perhaps this is the place to add some custom scripting to enable auto-login?&nbsp; My bash scripting is fairly rusty, so any help appreciated.<br /><br />#!/bin/bash<br />#<br /># remote_x<br />#<br /># This script will launch the Xserver on the workstation with<br /># a -qeary pointing back to the server.<br />#<br />PATH=/bin:$PATH; export PATH<br />. /etc/ltsp_functions<br /><br />#<br /># Get the lts.conf entries<br />#<br />eval `/bin/getltscfg -a`<br /><br />DEFAULT_SERVER=${SERVER:-&quot;192.168.0.254&quot;}<br />XDM_SERVER=${XDM_SERVER:-${DEFAULT_SERVER}}<br />reg_info XDM_SERVER<br /><br />TTY=`/usr/bin/basename \`/usr/bin/tty\` | sed s/tty//`<br />XFCFG=/tmp/XF86Config.${TTY}<br />export TTY<br /><br />if [ $# -lt 1 ]; then<br />&nbsp; &nbsp; XF_ARGS=&quot;&quot;<br />else<br />&nbsp; &nbsp; XF_ARGS=$*<br />fi<br /><br />################################################################################<br />#<br /># Setup the XF86Config file<br />#<br /><br />XSERVER=${XSERVER:-&quot;auto&quot;}<br /><br />if [ &quot;${XSERVER}&quot; = &quot;auto&quot; ]; then<br />&nbsp; &nbsp; echo &quot;Scanning for video card&quot;<br />&nbsp; &nbsp; XSERVER=`/sbin/pci_scan /etc/vidlist`<br />&nbsp; &nbsp; if [ -z &quot;${XSERVER}&quot; ]; then<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;&nbsp; WARNING: Auto probe of the video card failed !&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;You should specify the proper X server in lts.conf&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Proceeding with the SLOW vesa server&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo <br />&nbsp; &nbsp; &nbsp; &nbsp; sleep 5s<br />&nbsp; &nbsp; &nbsp; &nbsp; XSERVER=vesa<br />&nbsp; &nbsp; fi<br />fi<br />reg_info XSERVER<br /><br />if [ &quot;${XSERVER}&quot; = &quot;i810&quot; ]; then<br />&nbsp; &nbsp; if [ ! -f /tmp/i810_loaded ]; then<br />&nbsp; &nbsp; &nbsp; &nbsp; modprobe agpgart &gt;/dev/null 2&gt;&amp;1<br />&nbsp; &nbsp; &nbsp; &nbsp; &gt;/tmp/i810_loaded<br />&nbsp; &nbsp; fi<br />fi<br /><br />if [ ! -z &quot;${XF86CONFIG_FILE}&quot; ]; then<br />&nbsp; &nbsp; reg_info XF86CONFIG_FILE<br />&nbsp; &nbsp; #<br />&nbsp; &nbsp; # If XF86CONFIG_FILE is defined in the lts.conf file, then<br />&nbsp; &nbsp; # it points to an XF86Config file that is pre-made for a workstation<br />&nbsp; &nbsp; #<br />&nbsp; &nbsp; if [ -f /etc/${XF86CONFIG_FILE} ]; then<br />&nbsp;&nbsp;&nbsp;cp /etc/${XF86CONFIG_FILE} ${XFCFG}<br />&nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;Error! - ${XF86CONFIG_FILE} - File not found!&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; fi<br />else<br />&nbsp; &nbsp; #<br />&nbsp; &nbsp; # Build the XF86Config file from entries in the lts.conf file<br />&nbsp; &nbsp; # If it starts with &#039;XF86_&#039;, then we use XFree86 3.3.6.&nbsp; Otherwise,<br />&nbsp; &nbsp; # we use XFree86 4.x<br />&nbsp; &nbsp; #<br />&nbsp; &nbsp; case ${XSERVER} in<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; XF86_*)&nbsp; /etc/build_x3_cfg ${XSERVER} &gt;${XFCFG}<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;;;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; *)&nbsp; &nbsp; &nbsp; &nbsp;/etc/build_x4_cfg ${XSERVER} &gt;${XFCFG}<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;;;<br />&nbsp; &nbsp; esac<br />fi<br /><br />################################################################################<br />#<br /># Figure out how to run the X server<br />#<br />&nbsp;<br />case ${XSERVER} in<br /><br />&nbsp; &nbsp; XF86_*)&nbsp; XBINARY=&quot;${XSERVER}&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;XOPTS=&quot;&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;;;<br /><br />&nbsp; &nbsp; Xvesa)&nbsp; &nbsp;XBINARY=&quot;Xvesa&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;case &quot;${X_MODE_0}&quot; in<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1280x1024)&nbsp; &nbsp;XOPTS=&quot;-shadow -mode 0x011A&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1024x768)&nbsp; &nbsp; XOPTS=&quot;-shadow -mode 0x0117&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;800x600)&nbsp; &nbsp; &nbsp;XOPTS=&quot;-shadow -mode 0x0114&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;640x480)&nbsp; &nbsp; &nbsp;XOPTS=&quot;-shadow -mode 0x0111&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;XOPTS=&quot;-shadow -mode 0x0117&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;esac<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;;;<br /><br />&nbsp; &nbsp; *)&nbsp; &nbsp; &nbsp; &nbsp;XBINARY=&quot;Xorg&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;XOPTS=&quot;&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;;;<br />esac<br />#<br /># Setup the DISP variable<br />#<br />export DISP=:$(expr ${TTY} - 1).0<br /><br />DISABLE_ACCESS_CONTROL=${DISABLE_ACCESS_CONTROL:-&quot;N&quot;}<br />reg_info DISABLE_ACCESS_CONTROL<br />if [ &quot;${DISABLE_ACCESS_CONTROL}&quot; = &quot;Y&quot; ]; then<br />&nbsp; &nbsp; ACC_CTRL=&quot;-ac&quot;<br />else<br />&nbsp; &nbsp; ACC_CTRL=&quot;&quot;<br />fi<br /><br />if [ &quot;${XF_ARGS}&quot; = &quot;&quot; ]; then<br />&nbsp; &nbsp; XF_ARGS=&quot;-query ${XDM_SERVER}&quot;<br />fi<br /><br />XRAMPERC=${XRAMPERC:-100}<br /><br />if [ ${XRAMPERC} -lt 100 ]; then<br />&nbsp; XMEM=0<br />&nbsp; while read TYPE VALUE UNITS; do<br />&nbsp; &nbsp; case ${TYPE} in<br />&nbsp; &nbsp; &nbsp; MemFree:|SwapFree:)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; XMEM=$((${XMEM} + ${VALUE}))<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; &nbsp; esac<br />&nbsp; done &lt; /proc/meminfo<br />&nbsp; XMEM=$((${XMEM} * ${XRAMPERC} / 100))<br /><br />&nbsp; echo &quot;**** X server limited to ${XMEM} kB RAM ****&quot;<br /><br />&nbsp; ulimit -v ${XMEM}<br />fi<br /><br />if [ -w /proc/progress ]; then<br />&nbsp; &nbsp; /usr/X11R6/bin/${XBINARY} ${ACC_CTRL}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${XF_ARGS}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -xf86config ${XFCFG}&nbsp; &nbsp; &nbsp;\<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vt${TTY} ${DISP} &gt;/dev/null 2&gt;&amp;1<br />&nbsp; &nbsp; if [ $? -ne 0 ]; then<br />&nbsp; &nbsp; &nbsp; echo -n -e &quot;\n\rxserver failed, press &lt;enter&gt; to continue &quot;<br />&nbsp; &nbsp; &nbsp; read CMD<br />&nbsp; &nbsp; fi<br />else<br />&nbsp; &nbsp; /usr/X11R6/bin/${XBINARY} ${ACC_CTRL}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${XF_ARGS}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -xf86config ${XFCFG}&nbsp; &nbsp; &nbsp;\<br />-logfile /tmp/mnt/xorg.log \<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vt${TTY} ${DISP}<br />&nbsp; &nbsp; if [ $? -ne 0 ]; then<br />&nbsp; &nbsp; &nbsp; echo -n -e &quot;\n\rxserver failed, press &lt;enter&gt; to continue &quot;<br />&nbsp; &nbsp; &nbsp; read CMD<br />&nbsp; &nbsp; fi<br />fi<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>January 01, 2008, 10:31:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am looking at script now but was wondering do we need to start gdm or could we go to startx which bypasses the login?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 01, 2008, 11:13:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is the lts.conf file.&nbsp; Notice that &quot;SCREEN_01&quot; runs &quot;startx&quot;.&nbsp; In lts, startx resides in the /opt/ltsp/i386/etc/screen.d directory.&nbsp; I&#039;m thinking that maybe some tweaking of this startx script may allow us to implement an auto-login solution.&nbsp; Just not sure how.&nbsp; Perhaps by setting $USER to the wsxxx workstation id?<br /><br />#<br /># Copyright (c) 2002 by James A. McQuillan (McQuillan Systems, LLC)<br />#<br /># This software is licensed under the Gnu General Public License.<br /># The full text of which can be found at http://www.LTSP.org/license.txt<br />#<br />#<br /># Config file for the Linux Terminal Server Project (www.ltsp.org)<br />#<br /><br />[Default]<br />&nbsp; &nbsp; &nbsp; &nbsp; # IP address of the LTSP server<br />&nbsp; &nbsp; &nbsp; &nbsp; SERVER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 192.168.0.254<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; # LTSP 4.2 now defaults to restricting the video driver to 90% <br />&nbsp; &nbsp; &nbsp; &nbsp; # of the total memory available on the terminal. Setting this<br />&nbsp; &nbsp; &nbsp; &nbsp; # somewhere between 90 and 100 may help terminals with a marginal<br />&nbsp; &nbsp; &nbsp; &nbsp; # mount of memory, but it is probably a better idea to set<br />&nbsp; &nbsp; &nbsp; &nbsp; # USE_NBD_SWAP=Y for such terminals (see examples below)<br />&nbsp; &nbsp; &nbsp; &nbsp; XRAMPERC = 90<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; # Video drivers for the terminals<br />&nbsp; &nbsp; &nbsp; &nbsp; XSERVER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = &quot;auto&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # XFree 4 drivers: ati cirrus cyrix fbdev i128 i740 i810 mga<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp; &nbsp; neomagic nv r128 radeon rendition s3 s3virge savage <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp; &nbsp; siliconmotion sis tdfx tga trident tseng vesa vga via<br /><br />&nbsp;&nbsp;&nbsp;X4_MODULE_01 = glx<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # add the GLX module by default, blender and the like need it<br /><br /><br />&nbsp; &nbsp; ## Uncomment the following line to enable remote monitoring/control of<br />&nbsp; &nbsp; ## terminals, especially if you use fl_teachertool:<br />&nbsp;&nbsp;&nbsp;# X4_MODULE_02 = vnc<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; # Mice drivers for the terminals<br />&nbsp;&nbsp;&nbsp;X_MOUSE_PROTOCOL&nbsp; &nbsp;= &quot;auto&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;X_USBMOUSE_PROTOCOL = &quot;auto&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Mouse protocols: ExplorerPS/2 GlidePoint GlidePointPS/2<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp; &nbsp; IMPS/2 IntelliMouse Microsoft MouseManPlusPS/2 <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp; &nbsp; NetMousePS/2 NetScrollPS/2 PS/2 ThinkingMouse <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp; &nbsp; ThinkingMousePS/2 usb<br />&nbsp;&nbsp;&nbsp;X_MOUSE_DEVICE&nbsp; &nbsp; &nbsp;= &quot;/dev/psaux&quot;<br />&nbsp;&nbsp;&nbsp;&nbsp;X_USBMOUSE_DEVICE&nbsp; &nbsp;= &quot;/dev/input/mice&quot;<br />&nbsp;&nbsp;&nbsp;X_MOUSE_RESOLUTION = 400<br />&nbsp;&nbsp;&nbsp;&nbsp;X_USBMOUSE_RESOLUTION = 400<br />&nbsp;&nbsp;&nbsp;X_MOUSE_BUTTONS&nbsp; &nbsp; = 3<br />&nbsp;&nbsp;&nbsp;&nbsp;X_USBMOUSE_BUTTONS&nbsp; &nbsp;= 3<br />&nbsp;&nbsp;&nbsp;&nbsp;USBEMULATE_3_BUTTONS = &quot;off&quot;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; # Keyboards<br />&nbsp; &nbsp; &nbsp; &nbsp; XkbSymbols&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;us(pc101)&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; XkbModel&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;pc101&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; XkbLayout&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = &quot;us&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Example of setting a different (German) keyboard mapping,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp; XkbLayout = &quot;de&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # also see:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp;http://www.xfree86.org/current/XKB-Config2.html<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp;http://www.ltsp.org/documentation/ltsp-3.0-4-en.html#AEN1213<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp;/opt/ltsp/i386/usr/X11R6/lib/X11/xkb/rules/xfree86.lst<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp;(/opt/ltsp/i386/usr/X11R6/lib/X11/xkb/symbols/)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #&nbsp; &nbsp;(/opt/ltsp/i386/usr/X11R6/lib/X11/xkb/keymap/xfree86)<br /><br />&nbsp;&nbsp;&nbsp;USE_XFS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = N<br />&nbsp;&nbsp;&nbsp;LOCAL_APPS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= N<br />&nbsp;&nbsp;&nbsp;SCREEN_01&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = startx<br />&nbsp;&nbsp;&nbsp;#SCREEN_02&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = shell<br />&nbsp;&nbsp;&nbsp;#SCREEN_03&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = telnet<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# TELNET_HOST = 192.168.0.254<br />&nbsp;&nbsp;&nbsp;#SCREEN_04&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = rdesktop<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# RDP_SERVER = your.2k.server<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# RDP_OPTIONS = -F -u fred -d ltsp<br /><br />&nbsp; &nbsp; &nbsp; &nbsp;# local storage device (USB keys, cdrom, etc)<br />&nbsp; &nbsp; &nbsp; &nbsp;LOCAL_STORAGE = Y<br />&nbsp; &nbsp; &nbsp; &nbsp;LTSPFSD_OPTIONS=&quot;&quot;<br /><br />&nbsp;&nbsp;&nbsp;# uncomment the following line to enable SNMP support<br />&nbsp;&nbsp;&nbsp;#SNMPD = Y<br />&nbsp;<br />&nbsp; &nbsp; &nbsp; &nbsp; # enable sound by default<br />&nbsp; &nbsp; &nbsp; &nbsp; SOUND&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = Y<br />&nbsp; &nbsp; &nbsp; &nbsp; # choose either esd or nasd to be the default (esd only on x86_64)<br />&nbsp;&nbsp;&nbsp;SOUND_DAEMON&nbsp; &nbsp; &nbsp; &nbsp;= &quot;esd&quot;<br />&nbsp;&nbsp;&nbsp;#SOUND_DAEMON&nbsp; &nbsp; &nbsp;= &quot;nasd&quot;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; # default sound volume<br />&nbsp; &nbsp; &nbsp; &nbsp; VOLUME&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 75<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; ### For ISA sound cards, you have to specify the module to use:<br />&nbsp; &nbsp; &nbsp; &nbsp; # SMODULE_01&nbsp; &nbsp; &nbsp; &nbsp;= &quot;sb io=0x220 irq=5 dma=1&quot;<br /><br /><br />#------------------------------------------------------------------------------<br /># Below are sample mode lines for a variety of vertical refresh rates and<br /># resolutions.&nbsp; They are used to define the default client screen resolution.<br /># Some lines may not work with a given monitor and video chipset.<br /># To avoid damaging a monitor and video card, only specify mode lines that<br /># your client&#039;s hardware can support.<br /># Uncomment only *one* of the following X_MODE_0 lines at a time, or add one<br /># of your own.<br /><br /># 60 Hz Resolutions<br />#&nbsp; &nbsp;X_MODE_0 = 640x480&nbsp; &nbsp;25.175&nbsp; &nbsp;640&nbsp; 656&nbsp; 752&nbsp; 800&nbsp; &nbsp;480 490 492 525&nbsp; -hsync -vsync<br />#&nbsp; &nbsp;X_MODE_0 = 800x600&nbsp; &nbsp;40&nbsp; &nbsp; &nbsp; &nbsp;800&nbsp; 840&nbsp; 968 1056&nbsp; &nbsp;600 601 605 628&nbsp; +hsync +vsync<br />#&nbsp; &nbsp;X_MODE_0 = 1024x768&nbsp; 65&nbsp; &nbsp; &nbsp; 1024 1048 1184 1344&nbsp; &nbsp;768 771 777 806&nbsp; -hsync -vsync<br /><br /># 70 Hz Resolutions (Use instead of 72 Hz for 1024x768)<br />#&nbsp; &nbsp;X_MODE_0 = 1024x768&nbsp; 75&nbsp; &nbsp; &nbsp; 1024 1048 1184 1328&nbsp; &nbsp;768 771 777 806&nbsp; -hsync -vsync<br /><br /># 72 Hz Resolutions<br />#&nbsp; &nbsp;X_MODE_0 = 640x480&nbsp; &nbsp;31.5&nbsp; &nbsp; &nbsp;640&nbsp; 664&nbsp; 704&nbsp; 832&nbsp; &nbsp;480 489 492 520&nbsp; -hsync -vsync <br />#&nbsp; &nbsp;X_MODE_0 = 800x600&nbsp; &nbsp;50&nbsp; &nbsp; &nbsp; &nbsp;800&nbsp; 856&nbsp; 976 1040&nbsp; &nbsp;600 637 643 666&nbsp; +hsync +vsync<br />#&nbsp; &nbsp;X_MODE_0 = 1024x768&nbsp; 75&nbsp; &nbsp; &nbsp; 1024 1048 1192 1296&nbsp; &nbsp;768 771 777 806&nbsp; -hsync -vsync<br /><br /># 75 Hz Resolutions<br />#&nbsp; &nbsp;X_MODE_0 = 800x600&nbsp; &nbsp;49.5&nbsp; &nbsp; &nbsp;800&nbsp; 816&nbsp; 896 1056&nbsp; &nbsp;600 601 604 625&nbsp; +hsync +vsync<br /><br /># 85 Hz Resolutions<br />#&nbsp; &nbsp;X_MODE_0 = 800x600&nbsp; &nbsp;60.75&nbsp; &nbsp; 800&nbsp; 864&nbsp; 928 1088&nbsp; &nbsp;600 616 621 657&nbsp; -hsync -vsync<br /><br /><br />##------------------------------------------------------------------------------<br />##<br />## The sections below are for specific terminals. You can define the<br />## settings for an individual terminal in three ways:<br />##<br />## 1. MAC address<br />## 2. Hostname<br />## 3. IP address<br />##<br />## Using IP address or hostname usually means editing /etc/dhcpd.conf<br />## for each terminal in addtion to adding the entry below. As such,<br />## it is generally a good idea to use the terminal&#039;s MAC address.<br />##<br />##------------------------------------------------------------------------------<br />##<br />## Examples of specifying X settings for a workstation<br />##<br />#[08:00:46:43:42:91]<br />#&nbsp; &nbsp; &nbsp; &nbsp; XSERVER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = auto<br />#&nbsp; &nbsp; &nbsp; &nbsp; LOCAL_APPS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= N<br />#&nbsp; &nbsp; &nbsp; &nbsp; USE_NBD_SWAP&nbsp; &nbsp; &nbsp; &nbsp;= N<br />#&nbsp; &nbsp; &nbsp; &nbsp; SWAPFILE_SIZE&nbsp; &nbsp; &nbsp; = 48m<br />#<br />#[ws002]<br />#&nbsp; &nbsp; &nbsp; &nbsp; XSERVER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = XF86_S3<br />#&nbsp; &nbsp; &nbsp; &nbsp; LOCAL_APPS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= N<br />#&nbsp; &nbsp; &nbsp; &nbsp; USE_NBD_SWAP&nbsp; &nbsp; &nbsp; &nbsp;= N<br />#&nbsp; &nbsp; &nbsp; &nbsp; SWAPFILE_SIZE&nbsp; &nbsp; &nbsp; = 64m<br />#&nbsp; &nbsp; &nbsp; &nbsp; X_MODE_0&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 800x600<br />#<br />#[192.168.0.12]<br />#&nbsp; &nbsp; &nbsp; &nbsp; XSERVER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = ati<br />#<br /># ws004 is my virtual workstation running in a VMware session<br />#<br />#[ws004]<br />#&nbsp; &nbsp; &nbsp; &nbsp; DNS_SERVER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 192.168.0.254<br />#&nbsp; &nbsp; &nbsp; &nbsp; XSERVER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = auto<br />#&nbsp; &nbsp; &nbsp; &nbsp; X4_BUSID&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= &quot;PCI:0:15:0&quot;<br />#&nbsp; &nbsp; &nbsp; &nbsp; X_MODE_0&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 800x600<br />#&nbsp; &nbsp; &nbsp; &nbsp; LOCAL_APPS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= N<br />#&nbsp; &nbsp; &nbsp; &nbsp; USE_NBD_SWAP&nbsp; &nbsp; &nbsp; &nbsp;= N<br />#&nbsp; &nbsp; &nbsp; &nbsp; SWAPFILE_SIZE&nbsp; &nbsp; &nbsp; = 64m<br /><br />#------------------------------------------------------------------------------<br />#<br /># Example of a workstation configured to load some modules<br />#<br />#[ws001]<br />#&nbsp; &nbsp; MODULE_01&nbsp; &nbsp; &nbsp; &nbsp;= agpgart.o&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # This is for i810 video<br />#&nbsp; &nbsp; MODULE_02&nbsp; &nbsp; &nbsp; &nbsp;= uart401.o<br />#&nbsp; &nbsp; MODULE_03&nbsp; &nbsp; &nbsp; &nbsp;= &quot;sb.o io=0x220 irq=5 dma=1&quot;<br />#&nbsp; &nbsp; MODULE_04&nbsp; &nbsp; &nbsp; &nbsp;= opl3.o<br /><br />#------------------------------------------------------------------------------<br />#<br /># Example of ws001 configured for local apps<br />#<br />#[ws001]<br />#&nbsp; &nbsp; LOCAL_APPS&nbsp; &nbsp; &nbsp; = Y<br />#&nbsp; &nbsp; LOCAL_WM&nbsp; &nbsp; &nbsp; &nbsp; = Y<br />#&nbsp; &nbsp; NIS_DOMAIN&nbsp; &nbsp; &nbsp; = ltsp<br />#&nbsp; &nbsp; NIS_SERVER&nbsp; &nbsp; &nbsp; = 192.168.0.254<br /><br />#------------------------------------------------------------------------------<br />#<br /># Example of a parallel printer attached to /dev/lp0 on workstation ws001<br />#<br />#[ws001]<br />#&nbsp; &nbsp; PRINTER_0_DEVICE&nbsp; &nbsp;= /dev/lp0<br />#&nbsp; &nbsp; PRINTER_0_TYPE&nbsp; &nbsp; &nbsp;= P&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # P-Parallel, S-Serial<br /><br />#------------------------------------------------------------------------------<br />#<br /># Example of a serial printer attached to /dev/ttyS1 on workstation ws001<br />#<br />#[ws001]<br />#&nbsp; &nbsp; PRINTER_0_DEVICE&nbsp; &nbsp;= /dev/ttyS1<br />#&nbsp; &nbsp; PRINTER_0_TYPE&nbsp; &nbsp; &nbsp;= S&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # P-Parallel, S-Serial<br />#&nbsp; &nbsp; PRINTER_0_PORT&nbsp; &nbsp; &nbsp;= 9100&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;# tcp/ip port: defaults to 9100<br />#&nbsp; &nbsp; PRINTER_0_SPEED&nbsp; &nbsp; = 9600&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;# baud rate: defaults to 9600<br />#&nbsp; &nbsp; PRINTER_0_FLOWCTRL = S&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Flow control: S-Software (XON/XOFF),<br />#&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # H-Hardware (CTS/RTS)<br />#&nbsp; &nbsp; PRINTER_0_PARITY&nbsp; &nbsp;= N&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Parity: N-None, E-Even, O-Odd<br />#&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # (defaults to &#039;N&#039;)<br />#&nbsp; &nbsp; PRINTER_0_DATABITS = 8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Databits: 5,6,7,8 (defaults to 8)<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 01, 2008, 05:48:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15867.html#msg15867">Quote from: djoed_pcola on January 01, 2008, 07:16:24 am</a></div><div class="quote">Ed, have you tried getting auto-login to work on your K12LTSP server?<br /><br />Thanks.<br /><br /></div><br />Hi Dennis, I haven&#039;t looked at auto login but I will. Can&#039;t we assign an ID using the MAC address instead of a script to do that.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 01, 2008, 06:09:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think we should avoid using MAC address since if a client has to be swapped out later, someone will have to update the lts.conf file with the new client&#039;s MAC address.&nbsp; Just my opinion, but if you can figure out how to auto-logon using the mac, then perhaps that is our solution.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 01, 2008, 08:53:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Found a file called &quot;Xresources&quot; in the &quot;/opt/ltsp/i386/etc/X11/xdm&quot; directory.<br /><br />Perhaps this is the place that will allow us to auto-logon based on the workstation id?&nbsp; Just a shot in the dark.<br /><br /><b>Xresources</b><br /><br />! $Xorg: Xresources,v 1.3 2000/08/17 19:54:17 cpqbld Exp $<br />!<br />!<br />!<br />!<br />! $XFree86: xc/programs/xdm/config/Xres.cpp,v 1.6 2003/01/04 03:11:31 dawes Exp $<br />!<br /><br /><br />xlogin*login.translations: #override&nbsp; <br />&nbsp;&nbsp;&nbsp;Ctrl&lt;Key&gt;R: abort-display()\n <br />&nbsp;&nbsp;&nbsp;&lt;Key&gt;F1: set-session-argument(failsafe) finish-field()\n <br />&nbsp;&nbsp;&nbsp;&lt;Key&gt;Delete: delete-character()\n <br />&nbsp;&nbsp;&nbsp;&lt;Key&gt;Left: move-backward-character()\n <br />&nbsp;&nbsp;&nbsp;&lt;Key&gt;Right: move-forward-character()\n <br />&nbsp;&nbsp;&nbsp;&lt;Key&gt;Home: move-to-begining()\n <br />&nbsp;&nbsp;&nbsp;&lt;Key&gt;End: move-to-end()\n <br />&nbsp;&nbsp;&nbsp;Ctrl&lt;Key&gt;KP_Enter: set-session-argument(failsafe) finish-field()\n <br />&nbsp;&nbsp;&nbsp;&lt;Key&gt;KP_Enter: set-session-argument() finish-field()\n <br />&nbsp;&nbsp;&nbsp;Ctrl&lt;Key&gt;Return: set-session-argument(failsafe) finish-field()\n <br />&nbsp;&nbsp;&nbsp;&lt;Key&gt;Return: set-session-argument() finish-field()<br /><br /><br /><br /><br />xlogin*greeting: Welcome to CLIENTHOST<br />xlogin*namePrompt: \040\040\040\040\040\040\040Login:<br /><br />xlogin*fail: Login incorrect<br /><br />#if WIDTH &gt; 800<br />xlogin*greetFont: -adobe-helvetica-bold-o-normal--24-240-75-75-p-138-iso8859-1<br />xlogin*font: -adobe-helvetica-medium-r-normal--18-180-75-75-p-98-iso8859-1<br />xlogin*promptFont: -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1<br />xlogin*failFont: -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1<br />#else<br />xlogin*greetFont: -adobe-helvetica-bold-o-normal--17-120-100-100-p-92-iso8859-1<br />xlogin*font: -adobe-helvetica-medium-r-normal--12-120-75-75-p-67-iso8859-1<br />xlogin*promptFont: -adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1<br />xlogin*failFont: -adobe-helvetica-bold-o-normal--14-140-75-75-p-82-iso8859-1<br />#endif<br /><br />#ifdef COLOR<br /><br /><br /><br />xlogin*borderWidth: 1<br />xlogin*frameWidth: 5<br />xlogin*innerFramesWidth: 2<br />xlogin*shdColor: grey30<br />xlogin*hiColor: grey90<br />xlogin*background: grey<br />!xlogin*foreground: darkgreen<br />xlogin*greetColor: Blue3<br /><br />xlogin*failColor: red<br />*Foreground: black<br />*Background: #fffff0<br />#else<br /><br />xlogin*borderWidth: 3<br />xlogin*frameWidth: 0<br />xlogin*innerFramesWidth: 1<br />xlogin*shdColor: black<br />xlogin*hiColor: black<br /><br /><br /><br /><br /><br />#endif<br /><br />#if PLANES &gt;= 8<br />xlogin*logoFileName: /usr/X11R6/lib/X11/xdm/pixmaps/xorg.xpm<br />#else<br />xlogin*logoFileName: /usr/X11R6/lib/X11/xdm/pixmaps/xorg-bw.xpm<br />#endif<br />xlogin*useShape: true<br />xlogin*logoPadding: 10<br /><br /><br />XConsole.text.geometry:&nbsp;&nbsp;&nbsp;480x130<br />XConsole.verbose:&nbsp;&nbsp;&nbsp;true<br />XConsole*iconic:&nbsp;&nbsp;&nbsp;true<br />XConsole*font:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fixed<br /><br />Chooser*geometry:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;700x500+300+200<br />Chooser*allowShellResize:&nbsp;&nbsp;&nbsp;false<br />Chooser*viewport.forceBars:&nbsp;&nbsp;&nbsp;true<br />Chooser*label.font:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*-new century schoolbook-bold-i-normal-*-240-*<br />Chooser*label.label:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XDMCP Host Menu from CLIENTHOST<br />Chooser*list.font:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-*-*-medium-r-normal-*-*-230-*-*-c-*-iso8859-1<br />Chooser*Command.font:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*-new century schoolbook-bold-r-normal-*-180-*<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 02, 2008, 09:23:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dennis I found this on google. It is for K12LTSP 6.0 only so it should work for us.<br /><br />If you want all your clients to auto-login, create the&nbsp; <br />/usr/local/bin/autologin script so that all workstations get assigned an&nbsp; <br />autologin ID, like so:&nbsp; <br />&nbsp;<br />#!/bin/bash&nbsp; <br />&nbsp; &nbsp; &nbsp;CLIENT=$(echo $DISPLAY | cut -d. -f1)&nbsp; <br />&nbsp; &nbsp; &nbsp;case &quot;$CLIENT&quot; in&nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &quot;ws001&quot;)&nbsp; &nbsp; disp=auto1;;&nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &quot;ws002&quot;)&nbsp; &nbsp; disp=auto2;;&nbsp; <br /># repeat this for all ws numbers listed in /etc/hosts&nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &quot;ws253&quot;)&nbsp; &nbsp; disp=auto253;;&nbsp; <br />&nbsp; &nbsp; &nbsp;esac&nbsp; <br />&nbsp; &nbsp; &nbsp;echo $disp&nbsp; <br />&nbsp;<br />Then, create logins IDs auto1 through auto253.&nbsp; That way, no matter what&nbsp; <br />address a client machine gets, autologin will work, and you don&#039;t have&nbsp; <br />to specify MAC addresses in dhcpd.conf.&nbsp; You do not have to create&nbsp; <br />passwords for the login IDs, but if you don&#039;t, be sure to turn off the&nbsp; <br />password requirement in the screensaver or users won&#039;t be able to get&nbsp; <br />back in once the screensaver kicks in. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 02, 2008, 09:56:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ed,<br /><br />Thanks for finding this.&nbsp; This is exactly what I had in mind.<br /><br />Now we need to figure out how, where, and when this script gets called.&nbsp; For example, does it get called from the startx script, or somewhere else?<br /><br />I worked on this K12LTSP auto-login process so long yesterday that I dreamed about it last night.&nbsp; Then I woke up screaming.<br /><br />Thanks again.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 02, 2008, 10:51:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dennis I am working with it now but there is more to it as I have found out. Here is a more complete howto<br /><br />http://www.k12ltsp.org/mediawiki/index.php/A_more_complete_How-To_for_setting_up_autologin_of_clients_using_Gnome_%26_GDM#Steps_for_K12LTSP_6_only (http://www.k12ltsp.org/mediawiki/index.php/A_more_complete_How-To_for_setting_up_autologin_of_clients_using_Gnome_%26_GDM#Steps_for_K12LTSP_6_only)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 02, 2008, 11:07:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15879.html#msg15879">Quote from: Ed on January 02, 2008, 10:51:32 am</a></div><div class="quote"><br /><span style="font-size: 10pt; line-height: 1.3em;">but there is more to it ...<br /></span><br /></div><br />Ain&#039;t that the way it always is?<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 02, 2008, 02:23:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Dennis, I am happy to report I have autologin working on my client. I can&#039;t get it to login quicker that 5 seconds but that may be fast enough. The script default was 30 seconds and I changed it to 5 seconds and then tried 0 and it still used 5 seconds. I then set it to 1 second and it still used 5 seconds. There may be a gnome default of 5 seconds. I just don&#039;t know. I use KDE with PCLinusOS but the more I use Gnome the more I like it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 02, 2008, 03:25:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15881.html#msg15881">Quote from: Ed on January 02, 2008, 02:23:32 pm</a></div><div class="quote"><br /><span style="font-size: 10pt; line-height: 1.3em;">I am happy to report I have autologin working on my client. <br /></span><br /></div><br />You are da man!<br /><br />Thanks for your help!<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 02, 2008, 04:17:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think we need to get the adobe flash plugin working in firefox. I have it working on the server but not the clients. The kids are going to be using the internet for home work assignments. So much of the content on the internet requires flash. I haven&#039;t had much success solving this problem. Also I think we need to discuss the use of local apps to take the load off the server for the firefox browser and flash. Any comments? </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>January 02, 2008, 06:00:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well that is great work guys.........As it would have it I have got caught up in a project at work that blind sided me. AS for the last statement I will have more ram coming for the server shortly even if I have to buy it! and with mainly no hard drives I think putting any apps on the local machines would not only be bad but very bad idea!......Also I have now supplied a 16 port hub it is on site as we speak.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 02, 2008, 06:26:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15884.html#msg15884">Quote from: bhoff on January 02, 2008, 06:00:26 pm</a></div><div class="quote">Well that is great work guys.........As it would have it I have got caught up in a project at work that blind sided me. AS for the last statement I will have more ram coming for the server shortly even if I have to buy it! and with mainly no hard drives I think putting any apps on the local machines would not only be bad but very bad idea!......Also I have now supplied a 16 port hub it is on site as we speak.<br /></div><br />Brett running local apps means the app is loaded in the client memory not actually installed to a hard drive on the local machine. It is rather involved from what I read. It&nbsp; has the advantage of taking the load off the server but increasing network traffic.&nbsp; Here is a link to a PDF that explains it. Look at the contents for local applications.<br />http://wiki.ltsp.org/twiki/bin/view/Ltsp/Documentation (http://wiki.ltsp.org/twiki/bin/view/Ltsp/Documentation)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 05, 2008, 12:44:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">PM sent to Brett and Ed.<br /><br /><b>Camp Fire K12LTSP Status Update</b><br /><br /><b>Status so far:</b><br />- Printing works<br />- 21 User Accounts setup (camp1, camp2, ... camp21)<br />- /usr/bin/autologin script setup<br />- PXE and Etherbooting works (Mileage may vary, depending on specific NIC&#039;s)<br />- Sound does not work, however, I think Ed is the &quot;sound man&quot;.<br />- The Gateway Camp Fire client will not boot from the server.&nbsp; Neither PXE or Etherboot seems to work.&nbsp; All three of my computers were able to boot from the server.&nbsp; Two by PXE, one by Etherboot.<br />- Password for camp1 ... camp21 is ________.&nbsp; Password is not needed for auto-login.&nbsp; However, if you log directly on to the server with one of the camp user id&#039;s, you will need a password.<br /><br /><b>To be done on site:</b><br />- Setup each client&#039;s MAC address in the /etc/dhcpd.conf file.&nbsp; The MAC address for ws001 is for my computer at home, so it needs to be changed.<br />- Add memory to the K12LTSP server.<br />- Possibly add memory to the clients.<br />- Fix sound<br />- Setup firewall and filter server.&nbsp; Seems like we discussed using a separate box for these functions.&nbsp; The firewall is disabled on the K12LTSP server.&nbsp; Also, SELinux is disabled.<br />- Install Firefox browser plugins, such as Flash and Java.&nbsp; Since the kids probably won&#039;t be able to access the Internet right away, this can be done later.&nbsp; (IMO)<br />- Verify that all clients can boot from the K12LTSP server and run various applications.<br />- Identify and resolve remaining issues.<br /><br /><b>Final Details:</b><br />Documentation and training for Camp Fire personnel.<br />Documentation of all configuration files that were updated by us.<br />Success Story (hopefully a success story) submitted to K12LTSP and LTSP web-sites.<br />Pictures of the lab.<br />Perhaps notify the Gulf Coast IT members of this project.&nbsp; <br />Other thoughts?<br /><br />BIG thanks to Ed for finding a resolution to the auto-login problem.&nbsp; I wish there was a solution that didn&#039;t require using the MAC address, but at least it works.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 13, 2008, 06:39:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ed or Brett, any progress made on going live with the Camp Fire K12LTSP lab?<br /><br />Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Skreyola</b> on <b>January 19, 2008, 10:51:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I ran across this today and thought it might possibly serve useful to you in this project:<br />http://meadvillelibrary.org/os/ltsp.html</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 20, 2008, 05:46:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15917.html#msg15917">Quote from: Skreyola on January 19, 2008, 10:51:35 pm</a></div><div class="quote">I ran across this today and thought it might possibly serve useful to you in this project:<br />http://meadvillelibrary.org/os/ltsp.html<br /></div>Hi Skreyola, I took a quick look at the article. It is rather dated with lstp at 2.0 in the article and we are at 4.2 and red hat 6.2 was before they split off fedora which is at core 6 and fedora 8 but thanks for the post.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Skreyola</b> on <b>January 20, 2008, 08:57:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I hope some of the information about its interaction with other programs might be useful.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>January 20, 2008, 09:08:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">An update!<br /><br />We finally got the network cable from the office to the classroom for internet access. And got the K12 LTSP server and Monowall firewall up and functioning. Also have 10 clients up with the ram needed thanks to Ed. We are only running 4 clients right now waiting on additional ram for the server that I have ordered and should have by this weekend. Then we will have all 10 clients up and working with network printer and useful educational software and internet access.<br /><br />This got to be a very time intensive project very quickly and I thank everyone that got involved and helped.<br />I know that Camp Fire USA will greatly appreciate it and I know the kids do.<br /><br />I believe that Ed will have a short presentation at the meeting about the whole process and what K12 LTSP has to offer.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 20, 2008, 10:02:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I love it when a plan comes together!<br /><br />I hope there will be some more projects that the group can get involved with.&nbsp; The Camp Fire K12LTSP project was a lot of fun, and a great learning opportunity.&nbsp; Let&#039;s do some more!<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>danc</b> on <b>January 26, 2008, 09:16:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey Ed,<br /><br />I think the solution to the &quot;no sound with flash&quot; problem may be found here:<br /><br />http://pulseaudio.revolutionlinux.com/PulseAudio<br /><br />Another possible source of a fix is here:<br /><br />http://marc.info/?l=ltsp-discuss&amp;m=117390580113614&amp;w=1<br /><br />Perhaps not a trivial thing to get done, but there&#039;s an RPM package on the first site I listed (made for Mandriva, but might work OK with Fedora/LTSP) which would be easy to install and test.&nbsp; If it doesn&#039;t work, just uninstall the RPM and try the (harder) approaches.<br /><br />Good luck.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>danc</b> on <b>January 26, 2008, 09:24:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ed, <br /><br />Found another possible (probable) solution, right on the K12LTSP site:<br /><br />http://k12ltsp.org/mediawiki/index.php/WorkstationSound<br /><br />Scroll down a bit to the &quot;Getting Flash to work&quot; section, looks pretty simple from there...<br /><br />Let us know...<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 26, 2008, 09:39:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wow! Dan, Thanks for the links. I will work on them tomorrow and report back when I have some news. Very much appreciated. Ed</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>oneadvent</b> on <b>January 26, 2008, 10:26:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Auto Shutdown for Crontab:<br /><br />type:<br /><div class="codeheader">Code:</div><div class="code">sudo crontab -e</div><br />then add this to the end of the file:<br /><div class="codeheader">Code:</div><div class="code">* 22 * * * /sbin/shutdown -h now</div><br />That will shut down the computer at 10pm everynight. If you want a warning type system there is a good guide here:<br /><br />http://martin.ankerl.com/2008/01/24/howto-get-enough-sleep-despite-stumbleupon-with-ubuntu/<br /><br />Hope that helps!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 27, 2008, 07:23:55 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15946.html#msg15946">Quote from: oneadvent on January 26, 2008, 10:26:54 pm</a></div><div class="quote">Auto Shutdown for Crontab:<br /><br />type:<br /><div class="codeheader">Code:</div><div class="code">sudo crontab -e</div><br />then add this to the end of the file:<br /><div class="codeheader">Code:</div><div class="code">* 22 * * * /sbin/shutdown -h now</div><br />That will shut down the computer at 10pm everynight. If you want a warning type system there is a good guide here:<br /><br />http://martin.ankerl.com/2008/01/24/howto-get-enough-sleep-despite-stumbleupon-with-ubuntu/<br /><br />Hope that helps!<br /></div><br />Hi oneadvent, What I need is a script that will shutdown the 10 client machines and leave the server running. Then the clients can be started up one at a time as need the next day.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 27, 2008, 10:30:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am happy to report I have sound with flashplayer in firefox on the clients working at least on my test server at home. I tried to install the Mandriva rpm but it failed because of dependencies so I went in to try to add the missing lib. When I went into add or remove software I decided to just search for PulseAudio first and it was in the fedora repo so I installed it and support for flash plugin and it worked. PulseAudio is what I had installed that killed all the sound but it was not from fedora. Who would have guessed it would have been right in front of me and so easy to fix. Thanks again Dan for the links. Now on to the client shutdown script.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>oneadvent</b> on <b>January 27, 2008, 10:41:58 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thats right :) A remote shutdown.<br /><br />Ok, give me a little while. I&#039;ll figure it out...<br /><br />Hummmm....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>oneadvent</b> on <b>January 28, 2008, 08:54:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I got a stupid question.<br /><br />Are you using static or dynamic ip address&#039;s?<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>djoed_pcola</b> on <b>January 29, 2008, 10:37:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dynamic, although they should be in a specific range.<br /><br />In my opinion, I think an easier solution is for the Camp Fire staff just to power off the client machines when they leave for the day.&nbsp; On the server, perhaps a nightly cron could run that kills all client processes.&nbsp; Even easier, the server could just be scheduled to automatically reboot every night.&nbsp; Just my 2 cents worth.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>January 29, 2008, 02:37:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15952.html#msg15952">Quote from: oneadvent on January 28, 2008, 08:54:57 pm</a></div><div class="quote">I got a stupid question.<br /><br />Are you using static or dynamic ip address&#039;s?<br /><br /><br /></div><br />We are using static ip addresses and also have the computers named according to mac addresses. The host file that comes with k12ltsp is setup with ws001 always has 192.168.0.1 and so forth through 192.168.0.253. 192.168.0.254 is always assigned to the server (static ip). The director at Camp Fire wants the same kids to always use the same computer and since we are using autologin with mac addresses the same computer always gets the same name...camp1, camp2,camp3 and so on.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>oneadvent</b> on <b>February 02, 2008, 01:39:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">would something like this work?<br /><br />shutdown /?<br />Usage: shutdown [-i | -l | -s | -r | -a] [-f] [-m \\computername] [-t xx] [-c &quot;comment&quot;] [-d up:xx:yy]<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; No args&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Display this message (same as -?)<br />&nbsp; &nbsp; &nbsp; &nbsp; -i&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Display GUI interface, must be the first option<br />&nbsp; &nbsp; &nbsp; &nbsp; -l&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Log off (cannot be used with -m option)<br />&nbsp; &nbsp; &nbsp; &nbsp; -s&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Shutdown the computer<br />&nbsp; &nbsp; &nbsp; &nbsp; -r&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Shutdown and restart the computer<br />&nbsp; &nbsp; &nbsp; &nbsp; -a&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Abort a system shutdown<br />&nbsp; &nbsp; &nbsp; &nbsp; -m \\computername&nbsp; &nbsp; &nbsp; &nbsp;Remote computer to shutdown/restart/abort<br />&nbsp; &nbsp; &nbsp; &nbsp; -t xx&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Set timeout for shutdown to xx seconds<br />&nbsp; &nbsp; &nbsp; &nbsp; -c &quot;comment&quot;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Shutdown comment (maximum of 127 characters)<br />&nbsp; &nbsp; &nbsp; &nbsp; -f&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Forces running applications to close without warning<br />&nbsp; &nbsp; &nbsp; &nbsp; -d <span style="text-decoration: underline;">[p]:xx:yy&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;The reason code for the shutdown<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; u is the user code<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p is a planned shutdown code<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; xx is the major reason code (positive integer less than 256)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; yy is the minor reason code (positive integer less than 65536)</span></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>February 02, 2008, 01:01:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15966.html#msg15966">Quote from: oneadvent on February 02, 2008, 01:39:30 am</a></div><div class="quote">would something like this work?<br /><br />shutdown /?<br />Usage: shutdown [-i | -l | -s | -r | -a] [-f] [-m \\computername] [-t xx] [-c &quot;comment&quot;] [-d up:xx:yy]<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; No args&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Display this message (same as -?)<br />&nbsp; &nbsp; &nbsp; &nbsp; -i&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Display GUI interface, must be the first option<br />&nbsp; &nbsp; &nbsp; &nbsp; -l&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Log off (cannot be used with -m option)<br />&nbsp; &nbsp; &nbsp; &nbsp; -s&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Shutdown the computer<br />&nbsp; &nbsp; &nbsp; &nbsp; -r&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Shutdown and restart the computer<br />&nbsp; &nbsp; &nbsp; &nbsp; -a&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Abort a system shutdown<br />&nbsp; &nbsp; &nbsp; &nbsp; -m \\computername&nbsp; &nbsp; &nbsp; &nbsp;Remote computer to shutdown/restart/abort<br />&nbsp; &nbsp; &nbsp; &nbsp; -t xx&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Set timeout for shutdown to xx seconds<br />&nbsp; &nbsp; &nbsp; &nbsp; -c &quot;comment&quot;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Shutdown comment (maximum of 127 characters)<br />&nbsp; &nbsp; &nbsp; &nbsp; -f&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Forces running applications to close without warning<br />&nbsp; &nbsp; &nbsp; &nbsp; -d <span style="text-decoration: underline;">[p]:xx:yy&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;The reason code for the shutdown<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; u is the user code<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p is a planned shutdown code<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; xx is the major reason code (positive integer less than 256)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; yy is the minor reason code (positive integer less than 65536)<br /></span></div><br />Sent you a pm. Ed</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>February 03, 2008, 09:59:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Josh, I sent you another pm. Thanks very much, Ed</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>oneadvent</b> on <b>February 03, 2008, 08:43:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">hey, ed. Here is the script you pretty much wrote for yourself.<br /><br />See if it works then we&#039;ll add &#039;er to the crontab and it should do it all automatically.<br /><div class="codeheader">Code:</div><div class="code">#/usr/bin<br />#This script should shut down the clients ws001 through<br />#ws010.<br />cd /usr/bin/<br />ltspinfo --host=ws001 --shutdown<br />ltspinfo --host=ws002 --shutdown<br />ltspinfo --host=ws003 --shutdown<br />ltspinfo --host=ws004 --shutdown<br />ltspinfo --host=ws005 --shutdown<br />ltspinfo --host=ws006 --shutdown<br />ltspinfo --host=ws007 --shutdown<br />ltspinfo --host=ws008 --shutdown<br />ltspinfo --host=ws009 --shutdown<br />ltspinfo --host=ws010 --shutdown<br />exit 0<br /></div><br />(I am erring on repetition rather than errors....or something like that. Lets just see if this works.<br /><br />Good Luck, Ed.<br /><br />Josh</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>oneadvent</b> on <b>February 08, 2008, 10:30:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">so what happened?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>Ed</b> on <b>February 09, 2008, 01:49:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3279.msg15990.html#msg15990">Quote from: oneadvent on February 08, 2008, 10:30:51 pm</a></div><div class="quote">so what happened?<br /></div>So it worked. ;)<br />I setup all the clients to shutdown and they do. I also have them setup so root can view and control all the clients using a program called Teacher Tool. I had to take 5 of them off the server because it can&#039;t handle all 10 until the 1 gig memory chip is installed. I don&#039;t know the status of that only except Brett has the memory. If he has installed it I don&#039;t know it. Maybe he will read this and post.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Camp Fire K12LTSP</b><br />
+					Post by: <b>bhoff</b> on <b>February 09, 2008, 04:55:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have the 1 gig stick and if I can not get it installed I will endevor to get it dropped off so It can get installed and close this project out!<br />Will try to get by Monday or tuesday at the latest.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

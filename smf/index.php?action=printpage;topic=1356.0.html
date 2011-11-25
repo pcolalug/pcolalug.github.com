@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Nvu HTML editor</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: dpeach on February 05, 2004, 12:20:18 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvu HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>February 05, 2004, 12:20:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just saw a new program tonight called Nvu (pronounced N view). It is from Lindows and claims to be targeting the FrontPage/Dreamweaver market. I don't know that it is that robust, but it does do site managment and WYSIWIG (as well as allowing you to easily edit the HTML on the fly).<br /><br />See here for &nbsp;(http://nvu.com/features.html) it's feature list. I have not downloaded it yet, but am planning on giving it a spin sometime soon.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvu HTML editor</b><br />
+					Post by: <b>rburt3</b> on <b>February 05, 2004, 08:32:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Its a dressed-up Mozilla HTML editor, isn't it? The impression I get from the site is that its a project along the lines of Firebird (break out the components of Mozilla into stand-alone apps). I haven't played with the Moz editor in a year or so, but from what I remember, it didn't suck.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvu HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>February 05, 2004, 11:11:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, it is based on the Mozilla editor. But, from what I understand, this is not an official Mozilla project. It also includes some basic site managment tools that I believe are missing from the Mozilla &quot;whatever it is called.&quot;<br /><br />I will give a report in a few days when I get a couple of other projects out of the way.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvu HTML editor</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 05, 2004, 04:45:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This looks like it's going to be a kick-butt tool...Every time I went to conferences where Macromedia was at, my biggest complaint was when will the linux version of Dreamweaver be available... guess if you snooze you lose. :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvu HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>May 18, 2004, 01:34:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is my report on this software.<br /><br />I can't get it to run.<br /><br />I have downloaded the two precompiled versions I get different problems. From the debian/lindows version I get:<br /><div class="codeheader">Code:</div><div class="code">./nvu-bin&#58; error while loading shared libraries&#58; libstdc++-libc6.2-2.so.3&#58; cannot open shared object file&#58; No such file or directory<br /></div><br />From the Fedora version I get:<br /><div class="codeheader">Code:</div><div class="code">nsNativeComponentLoader&#58; GetFactory&#40;libwidget_gtk2.so&#41; Load FAILED with error&#58; /home/david/nvu-0.20/libgtkxtbin.so&#58; undefined symbol&#58; gdk_threads_lock<br /></div><br />I wanted to compile from source but you can only get the source from CVS. When running the cvs script I get:<br /><div class="codeheader">Code:</div><div class="code">cvs checkout&#58; warning&#58; failed to open /home/david/.cvspass for reading&#58; No such file or directory<br /></div><br />From my reading i think this is caused because of not having a cvsroot defined. But I have not been able to determine how to do that. Also, it seems from my reading that you would only need to set a cvsroot if you are serving up files via cvs. <br /><br />Can someone give me a hint?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvu HTML editor</b><br />
+					Post by: <b>danc</b> on <b>May 18, 2004, 02:07:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote"><br /><div class="codeheader">Code:</div><div class="code">./nvu-bin&#58; error while loading shared libraries&#58; libstdc++-libc6.2-2.so.3&#58; cannot open shared object file&#58; No such file or directory<br /></div></div><br />The file above exists on my Mandrake 9.2 system, in the /usr/lib directory. &nbsp;It is provided by the rpm package: libstdc++2.10-2.96-0.83mdk<br /><br />I believe these are libraries needed by the C compiler/linker. &nbsp;Not sure what distro you're using these days, but try installing that package and try again.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvu HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>May 18, 2004, 02:52:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Talk about embarassing. I was looking for something complicated. :oops: <br /><br />Thanks Danc. I installed that and it took care of the problem. I am running Mandrake 10 (Community Edition). I have had some little problems with 10 CE along the way and assumed that that might be part of the problem. <br /><br />Thanks again.<br /><br />Now I will give a report on this in a few days.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Nvu HTML editor</b><br />
+					Post by: <b>dpeach</b> on <b>December 09, 2004, 03:54:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: In my greatest intentions I</div><div class="quote">Now I will give a report on this in a few days.</div><br />It never happened. I tried it a few times, but was only interested in it when I was actually trying to get something done. A bad time to try software. I got frustrated with not being able to get it to do what I wanted.<br /><br />The software as a whole just does not have that much appeal to me. For the last 3 years, my website has been all about maintenance, not building. Therefore, editing the files in a text editor right on the server has worked for me. [DON'T do that! It is really stupid. No, really. Do you know how many times I have hosed a file and had to rebuild it from the start cause I didn't start with a backup?]</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

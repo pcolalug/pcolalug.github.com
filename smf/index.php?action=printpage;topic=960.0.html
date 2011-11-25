@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Virtual hosting under Linux w/Red Hat 9</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Club discussions => Topic started by:  on August 23, 2003, 01:18:51 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b></b> on <b>August 23, 2003, 01:18:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys,<br /><br />I've been leasing a server for about a year now, and since I bothered to get a business cable line I want to do all the hosting myself. I can figure out just about everything, except how the virtual hosts are exactly setup.<br /><br />Let me tell you what I mean and see if that's enough info.<br /><br />Say I have 3 sites, foo1.com, foo2.com and foo3.com.<br /><br />I want seperate users for all the domains, seperate space etc.<br /><br />On my server now, when users login, they login username@domain.com for ftp, telnet, ssh, email etc. So how is that setup?<br /><br />If someone could give me some general ideas. I'm pretty linux literate i just can't nail all of this together. Each site has it's own passwd file and group files in its own /etc directory.. How are those loaded and handle to cross reference users?<br /><br /><br /><br />Thanks for any info in advance.. Anyone at the LAN party tomorrow(today really) that can help, I can show them what I'm talking about on my server.<br /><br /><br />Thanks,<br /><br /><br /><br />Tim</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b>rugmonster</b> on <b>August 23, 2003, 09:23:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Woopie!<br /><br />Okay, there are a couple of ways this can be done with your standard linux products. The easiest is to find daemons that natively support virtual domains. The easiest of these will be Apache, ProFTPD and I believe QMail. The mail product should be fairly trivial. <br /><br />Your SSHD and telnet are going to be a little different. With the Apache, ProFTPD and QMail (if that is it), you only need one IP address for them all and the programs look at the DNS address you are requesting and handles it from there. Since SSH and telnet only care about the IP addresses, you may need to go with one of the other two options; virtuald or user mode linux.<br /><br />Virtuald is a hack found in the Virtual-Services-HOWTO (http://www.tldp.org/HOWTO/Virtual-Services-HOWTO.html). With this, you setup a bunch of chroot environments for each domain and they are handled independently. Before servers handled virtual domains by themselves, this was the way to go. I will tell you from experience, it is cumbersome, but effective. The administration of this far outways the benefits in my mind.<br /><br />Finally, there is user mode linux. This is something that has come about in the past year or so where the system emulates another system. It sections off that part of the computer and makes it look like another system. The primary use is for software testing in a controlled environment. You can however, give this virtual system an IP address and load servers on it and have independent users.<br /><br />The only problem that I see with the last two is that there are going to be more daemons running, therefore more overhead on the system. The advantage is that you will have completely seperate user databases. I think your other option here is to use something like RADIUSD for your user authentication. I believe ProRADIUS or something like that will handle multiple domains, but I'm not sure. I can talk to my former coworkers at the ISP for that. They have a fairly nice virtual host setup.<br /><br />The simplest solution is to just have your three services, mail, web and ftp done by virtual host aware servers. If you really need a chroot environment for your remote access via SSH and telnet, look into RADIUS or the two options I spoke of before.<br /><br />Best of luck and let me know if you have any questions.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b>hitechwizard</b> on <b>August 23, 2003, 10:35:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The other thought on this is why would you want users in virtual domains ssh into the box? This would be a very BAD idea in a commercial environment as one domain could potentially take out other domains on the same box. The way we handle it here at Inoch is if they want that much acces, they can co-locate a server, and then do as they please with it. Otherwise, virtual servers/space for mail, web and ftp is all they get.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b></b> on <b>August 23, 2003, 11:40:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well I can think of a couple of reasons. I like to do a lot of stuff with PHP and SQL. A lot of this this requires me to SSH into my account and change stuff around via the command line.. MyPhpAdmin or whatever allows you to do all your SQL stuff via the web, but like installing PostNuke or stuff like that. Of course you CAN FTP all those files up from your computer so that's no biggie. I agree with you, but the freedom of SSH/telnet is what led me on an escapade of having my own server to start with. So I was just curious on exactly how they were doing all the things they're doing on the box I lease.<br /><br />I wish I could get a carbon copy of the drive, but i doubt that's possible..<br /><br /><br />cheers,<br /><br />Tim</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b>dpeach</b> on <b>September 02, 2003, 04:01:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't know if cPanel (http://cpanel.net/) will allow your users to do all that you are looking for, but my web site host (http://alwayswebhosting.com/) uses cPanel and it has been everything that I have needed.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b>rugmonster</b> on <b>September 02, 2003, 04:47:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was using cPanel with my hosting provider and loved it. Granted, it wasn't a convenient as a shell, but I will take that if I can get the piece of mind knowing other people can't break the chroot jail and jack with my stuff.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b></b> on <b>September 07, 2003, 11:09:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Oh I'm sorry, did I forget to mention that I'm a student and can't buy anything.. LOL.. <br /><br /><br />cheers,<br /><br /><br />Tim</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b>rugmonster</b> on <b>September 07, 2003, 02:35:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If all you are doing is hosting three or four of your own domains, why do you need to be able to ssh in to each of them then? As long as you have access to that system, you have access to all of it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b></b> on <b>September 07, 2003, 07:16:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Grr, aren't we all the same in here? Ever wanted to do something just because you could? Besides what if I'm away when something fux0r up?<br /><br />Knowledge mainly... Just like to how to do as much as possible.. Trying to find the max capacity on my wee brain. :)<br /><br /><br />cheers,<br /><br /><br /><br />Tim</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b>rugmonster</b> on <b>September 07, 2003, 07:35:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The thing is, if you can log into the real root of the machine, you can access all of the domains.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Virtual hosting under Linux w/Red Hat 9</b><br />
+					Post by: <b>altomo</b> on <b>September 18, 2003, 09:53:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">build chroot environments then use the openssh chroot patch. create fake root type accts in each environment if you need different levels of access.<br /><br />apache and qmail both support virtual hosting.<br /><br />We have this setup under RH9.<br />http://hosting.780inc.com</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Installing Unreal Tournament 2003</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: danc on April 16, 2003, 07:35:51 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installing Unreal Tournament 2003</b><br />
+					Post by: <b>danc</b> on <b>April 16, 2003, 07:35:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Has anyone been able to accomplish this??? &nbsp;I have been unable to complete it. &nbsp;Basically when the installation script asks for a CD change (there's 3 CD's to the game), it will not recognize that the disc has been changed out and you have to cancel. &nbsp;Anybody got any clues? &nbsp;Thanks.<br />Dan<br /><br />P.S. - I have successfully set up the following games if anyone needs any assistance with them:<br />Return to Castle Wolfenstein<br />Quake3 Arena<br />TuxRacer<br />Chromium</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installing Unreal Tournament 2003</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>April 16, 2003, 10:57:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Think you might be able to help me with Counter Strike(a Half Life Mod), Half Life, or even Wine?? &nbsp;Mandrake 9.1 (Bamboo) is what I'm running if that may help.....<br /><br /><br />??? &nbsp;How did this get here??</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Installing Unreal Tournament 2003</b><br />
+					Post by: <b>crowe</b> on <b>April 17, 2003, 12:18:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">Has anyone been able to accomplish this??? &nbsp;I have been unable to complete it. &nbsp;Basically when the installation script asks for a CD change (there's 3 CD's to the game), it will not recognize that the disc has been changed out and you have to cancel. &nbsp;Anybody got any clues? &nbsp;Thanks.<br />Dan<br /></div><br /><br />Alrighty, this is kinda long and convoluted, but I'll give it a shot at explaining how I did it not too long ago. &nbsp;I did this all from within an xterm, of course, since the installer won't work from the console.<br /><br />First you'll need to mount Disc 3 (which is where the install script is located), and copy said installer (it's named 'linux-installer.sh' ) to somewhere like ~, or /tmp, or some other place on your drive that has plenty of space.<br /><br />The installer takes a shell variable, SETUP_CDROM, to tell it where to install from. &nbsp;Set this by doing:<br /><br /><div class="codeheader">Code:</div><div class="code">export SETUP_CDROM=/mnt/cdrom</div><br /><br />Substitute /mnt/cdrom for wherever the cd's actual mountpoint is.<br /><br />Then change over to the directory where you copied the installer to, and type &nbsp;'./linux-installer.sh', and the installer should start. <br /><br />When you change the CD, you'll have to manually mount/unmount them when it asks for the next disc before proceeding (I did this by bringing up another xterm). The names for each CD that the installer uses are different than what the actual CDs themselves are labelled. &nbsp;So if the installer asks for the PlayCD, give it CD 1, etc.<br /><br />Hope this helps! If you've got any questions about any of this, or if it doesn't work, post them here.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installing Unreal Tournament 2003</b><br />
+					Post by: <b>danc</b> on <b>April 17, 2003, 06:57:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: DragonthePeanutUser</div><div class="quote">Think you might be able to help me with Counter Strike(a Half Life Mod), Half Life, or even Wine?? &nbsp;Mandrake 9.1 (Bamboo) is what I'm running if that may help.....</div><br /><br />Dragon,<br />I haven't ever tried Wine, and don't intend to anytime soon. &nbsp;I hear it's not the smoothest working thing and don't care about trying to run Windows programs in Linux. &nbsp;Anyway, I have not tried HL or CS in Linux although I've played both in Windows, and like 'em. &nbsp;Are there linux-native versions available for both? &nbsp;I'll do some homework and get back to you...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Installing Unreal Tournament 2003</b><br />
+					Post by: <b>danc</b> on <b>April 17, 2003, 07:13:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: crowe</div><div class="quote">When you change the CD, you'll have to manually mount/unmount them when it asks for the next disc before proceeding (I did this by bringing up another xterm). The names for each CD that the installer uses are different than what the actual CDs themselves are labelled. &nbsp;So if the installer asks for the PlayCD, give it CD 1, etc.<br /><br />Hope this helps! If you've got any questions about any of this, or if it doesn't work, post them here.</div><br /><br />crowe,<br />Didn't know about the shell variable, will try adding that step. &nbsp;I was using two console windows the way you described... &nbsp;Is an xterm window different than a &quot;console&quot; window? &nbsp;I do have &quot;xterm&quot; installed but have been using a Gnome &quot;terminal&quot; window. &nbsp;Is there a difference? &nbsp;Thanks for the ideas and will be trying it again tonight.<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Installing Unreal Tournament 2003</b><br />
+					Post by: <b>crowe</b> on <b>April 17, 2003, 07:39:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote"><br />crowe,<br />Didn't know about the shell variable, will try adding that step. &nbsp;I was using two console windows the way you described... &nbsp;Is an xterm window different than a &quot;console&quot; window? &nbsp;I do have &quot;xterm&quot; installed but have been using a Gnome &quot;terminal&quot; window. &nbsp;Is there a difference? &nbsp;Thanks for the ideas and will be trying it again tonight.<br />Dan</div><br /><br />A Gnome terminal should work for this. &nbsp;The installer merely has to be called from your current X session in order to work (ie, this won't work from a normal tty)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installing Unreal Tournament 2003</b><br />
+					Post by: <b>danc</b> on <b>April 17, 2003, 10:24:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: DragonthePeanutUser</div><div class="quote">Think you might be able to help me with Counter Strike(a Half Life Mod), Half Life, or even Wine?? &nbsp;Mandrake 9.1 (Bamboo) is what I'm running if that may help.....</div><br /><br />Dragon,<br />OK, did some checking and it seems that HL/CS must be played under WINE (they haven't been ported to linux-native versions). &nbsp;I guess you already knew that, but I don't know anything about WINE right now. &nbsp;I did find this tutorial which may help you: &nbsp;http://lhl.linuxgames.com/howto.shtml<br />Sorry couldn't be more help than that, but let us know if you get it going.<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installing Unreal Tournament 2003</b><br />
+					Post by: <b>rburt3</b> on <b>April 17, 2003, 11:26:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Maybe this is crazy, but isn't the HL engine code freely available? Makes me wonder why the folks at icculus.org haven't ported it...<br /><br />Oh, and I never had to do the steps crowe describes to install UT2K3. In RedHat 8, I just inserted the cdrom, opened a terminal window and ran the installer from the CD. I did have to mount/unmount the cd, IIRC, and the fact that the disk labels don't match what the installer asks for is a pain, but the install ran smoothly, if not forever...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Installing Unreal Tournament 2003</b><br />
+					Post by: <b>danc</b> on <b>April 17, 2003, 03:55:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Got it! &nbsp;Although there is a catch... &nbsp;I followed crowe's suggestions above, and was still getting the problem of the cdrom not being recognized as mounted. &nbsp;After some teeth-gnashing, I thought I'd try disabling Mandrake's &quot;supermount&quot; function for removable drives. &nbsp;It still didn't work. &nbsp;So I wrote the changes to my fstab <div class="codeheader">Code:</div><div class="code">supermount -i disable</div> and rebooted the machine. &nbsp;That was it! &nbsp;You do still need two terminal windows, one for the installer/output and one for the manual CD mount/unmount. &nbsp;So the lesson learned here is that Supermount (although useful) is not always wanted...<br /><br />Thanks, crowe, for the tips! &nbsp;I haven't played this game in awhile, and had forgotten how cool it is. &nbsp;Should be a productive weekend... &nbsp; :lol: <br /><br />Rugmonster - (from your other thread) - this is the game you should try next! &nbsp;Good stuff.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

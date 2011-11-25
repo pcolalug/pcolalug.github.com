@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Debiam ZIP problem</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: woodyharold on November 16, 2003, 08:56:01 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debiam ZIP problem</b><br />
+					Post by: <b>woodyharold</b> on <b>November 16, 2003, 08:56:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have Debian Sarge loaded and am having a problem trying to unzip a ZIP file. When I right-click the file and select EXTRACT HERE, I get a warning that the Zip utility is not in my PATH. I get the same results when as USER or as ROOT. The ZIP app is in /usr/bin and when I do a $PATH it shows / usr/bin in the path. Neither Bzip2 nor gzip will work on the file <br />&nbsp; Any help will be welcomed. &nbsp;The file was downloaded from the realtek web site and is &quot;rtl8180-linuxdrv_v13(gcc3.xx).zip&quot;<br />&nbsp; Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debiam ZIP problem</b><br />
+					Post by: <b>rugmonster</b> on <b>November 16, 2003, 10:45:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Have you tried the absolute pathname?<br /><br /><div class="codeheader">Code:</div><div class="code">/usr/bin/unzip &lt;filename&gt;</div><br /><br />If that doesn't work, make sure it is executable.<br /><br /><div class="codeheader">Code:</div><div class="code">ls -l /usr/bin/unzip</div><br /><br />Look for the rwxr-xr-x, or something similar. I don't have any unix boxen here at the moment, so I can't be entirely sure that's right. It's 7:30 am here and my mind hasn't fully kicked in yet.<br /><br />Oh yeah, since it seems you are doing this is in X, try it in the console. You're handler in X could be setup wrong. I think your desktop environment handles that. Remember, I'm the console geek...X/Gnome/KDE are not my strong point.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debiam ZIP problem</b><br />
+					Post by: <b>steve</b> on <b>November 17, 2003, 07:49:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If the file is a true &quot;ZIP&quot; file, in other words, the extension is .zip then bzip and gzip will not work on it. You need a program called unzip.<br /><br />Here is the Debian Info on this program. (http://packages.debian.org/stable/utils/unzip.html)<br /><br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Debiam ZIP problem</b><br />
+					Post by: <b>woodyharold</b> on <b>November 17, 2003, 09:15:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks Guys<br />&nbsp; &nbsp; I was concentrating so hard on the ZIP I failed to considerUNZIP. I downed the file as Steve suggested and now I have UNZIPPED the realtec driver zip file. Now I can get back to my orignal problem of trying to get my wireless network going. &nbsp;Thanks again<br /><br />Harold</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - NVIDIA Drivers for Mandrake 10.0 RC2</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: hitechwizard on February 11, 2004, 11:25:44 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA Drivers for Mandrake 10.0 RC2</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 11, 2004, 11:25:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Don't freak out everybody.... I've switched my desktop from Redhat 9 to Mandrake 10, but I'm having a problem getting the NVIDIA drivers to install. I get the machine going in run level 3, and fire up the installer as root, but it says it can't find the correct kernel. Here's the error log.<br /><div class="codeheader">Code:</div><div class="code"><br />&#91;root@localhost log&#93;# cat nvidia-installer.log<br />nvidia-installer log file '/var/log/nvidia-installer.log'<br />creation time&#58; Wed Feb 11 22&#58;38&#58;23 2004<br /><br />option status&#58;<br />&nbsp; license pre-accepted &nbsp; &nbsp;&#58; false<br />&nbsp; update &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#58; false<br />&nbsp; force update &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#58; false<br />&nbsp; expert &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#58; false<br />&nbsp; uninstall &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#58; false<br />&nbsp; driver info &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#58; false<br />&nbsp; no precompiled interface&#58; false<br />&nbsp; no ncurses color &nbsp; &nbsp; &nbsp; &nbsp;&#58; false<br />&nbsp; query latest driver ver &#58; false<br />&nbsp; OpenGL header files &nbsp; &nbsp; &#58; false<br />&nbsp; no questions &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#58; false<br />&nbsp; silent &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#58; false<br />&nbsp; XFree86 install prefix &nbsp;&#58; /usr/X11R6<br />&nbsp; OpenGL install prefix &nbsp; &#58; /usr<br />&nbsp; Installer install prefix&#58; /usr<br />&nbsp; kernel source path &nbsp; &nbsp; &nbsp;&#58; &#40;not specified&#41;<br />&nbsp; kernel install path &nbsp; &nbsp; &#58; &#40;not specified&#41;<br />&nbsp; proc mount point &nbsp; &nbsp; &nbsp; &nbsp;&#58; /proc<br />&nbsp; ui &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#58; &#40;not specified&#41;<br />&nbsp; tmpdir &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#58; /root/tmp<br />&nbsp; ftp site &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#58; ftp&#58;//download.nvidia.com<br /><br />Using&#58; nvidia-installer ncurses user interface<br />-&gt; License accepted.<br />-&gt; No precompiled kernel interface was found to match your kernel; would you li<br />&nbsp; &nbsp;ke the installer to attempt to download a kernel interface for your kernel f<br />&nbsp; &nbsp;rom the NVIDIA ftp site &#40;ftp&#58;//download.nvidia.com&#41;? &#40;Answer&#58; Yes&#41;<br />-&gt; No matching precompiled kernel interface was found on the NVIDIA ftp site;<br />&nbsp; &nbsp;this means that the installer will need to compile a kernel interface for<br />&nbsp; &nbsp;your kernel.<br />-&gt; Kernel source path&#58; '/usr/src/linux'<br />-&gt; Performing cc_version_check with CC=&quot;cc&quot;.<br />ERROR&#58; Unable to determine the NVIDIA kernel module filename.<br />ERROR&#58; Installation has failed. &nbsp;Please see the file<br />&nbsp; &nbsp; &nbsp; &nbsp;'/var/log/nvidia-installer.log' for details. &nbsp;You may find suggestions<br />&nbsp; &nbsp; &nbsp; &nbsp;on fixing installation problems in the README available on the Linux<br />&nbsp; &nbsp; &nbsp; &nbsp;driver download page at www.nvidia.com.<br /></div><br /><br />It would be nice to have my system back for tomorrow nights gaming. &nbsp;:roll:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA Drivers for Mandrake 10.0 RC2</b><br />
+					Post by: <b>imnes</b> on <b>February 12, 2004, 12:24:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">What error is in: /var/log/nvidia-installer.log<br /><br />You might have to pass some command line arguments like IGNORE_CC_MISMATC=yes or something similar. &nbsp;Also verify that your kernel source is in /usr/src/linux<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA Drivers for Mandrake 10.0 RC2</b><br />
+					Post by: <b>danc</b> on <b>February 12, 2004, 08:01:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Jesse,<br /><br />Haven't tried this personally, but remembered these tips from the Mandrake newsgroup, where it's been a hot topic... &nbsp;<br /><br />1. &nbsp;When you run the nVidia installer script, add this option:<br />./NVIDIA-Linux-x86-1.0-5336-pkg1.run --add-this-kernel<br /><br />This will rebuild an rpm, which you can then install the normal way. &nbsp;I would assume you need the kernel source (headers) installed for this to work.<br /><br />2. &nbsp;Check out: &nbsp;http://www.minion.de<br />They have some prebuilt packages there that reportedly work well.<br /><br />Good luck,<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA Drivers for Mandrake 10.0 RC2</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>February 12, 2004, 09:48:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had the same problem when I went to mdk 9.2 RC2. &nbsp;I installed the kernel sources and it installed fine. &nbsp;You'll have to edit your XF Config, but I'm sure you know that already.<br /><br /><br /><br /><br />Sorry.... &nbsp;still a noob... &nbsp;Just had to add my 2 cents.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA Drivers for Mandrake 10.0 RC2</b><br />
+					Post by: <b>danc</b> on <b>February 12, 2004, 10:47:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: DragonthePeanutUser</div><div class="quote">I had the same problem when I went to mdk 9.2 RC2. &nbsp;I installed the kernel sources and it installed fine. &nbsp;You'll have to edit your XF Config, but I'm sure you know that already.</div><br />This is a whole different thing, with Mandrake 10.0 and the 2.6.2 kernel.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA Drivers for Mandrake 10.0 RC2</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 12, 2004, 11:44:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's a weird one... I thought 10.0 was going to use the 2.6 kernel. My /usr/src directory has:<br /><br /><div class="codeheader">Code:</div><div class="code">lrwxrwxrwx &nbsp; 1 root root &nbsp;24 Feb 11 13&#58;57 linux -&gt; linux-2.4.25-0.pre7.2mdk/<br />drwxr-xr-x &nbsp;18 root root 688 Feb 11 13&#58;57 linux-2.4.25-0.pre7.2mdk/<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA Drivers for Mandrake 10.0 RC2</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 12, 2004, 11:53:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">To make things stranger....<br /><br /><div class="codeheader">Code:</div><div class="code">Linux version 2.6.2-0.rc3.1mdk &#40;nplanel@no.mandrakesoft.com&#41; &#40;gcc version 3.3.2<br />&#40;Mandrake Linux 10.0 3.3.2-4mdk&#41;&#41; #1 Mon Feb 2 16&#58;49&#58;47 CET 2004<br />BIOS-provided physical RAM map&#58;<br />&nbsp;BIOS-e820&#58; 0000000000000000 - 000000000009d800 &#40;usable&#41;<br />&nbsp;BIOS-e820&#58; 000000000009d800 - 00000000000a0000 &#40;reserved&#41;<br />&nbsp;BIOS-e820&#58; 00000000000f0000 - 0000000000100000 &#40;reserved&#41;<br />&nbsp;BIOS-e820&#58; 0000000000100000 - 000000001fef0000 &#40;usable&#41;<br />&nbsp;BIOS-e820&#58; 000000001fef0000 - 000000001fef3000 &#40;ACPI NVS&#41;<br />&nbsp;BIOS-e820&#58; 000000001fef3000 - 000000001ff00000 &#40;ACPI data&#41;<br />&nbsp;BIOS-e820&#58; 00000000fec00000 - 00000000fec01000 &#40;reserved&#41;<br />&nbsp;BIOS-e820&#58; 00000000fee00000 - 00000000fee01000 &#40;reserved&#41;<br />&nbsp;BIOS-e820&#58; 00000000ffff0000 - 0000000100000000 &#40;reserved&#41;<br />510MB LOWMEM available.<br />found SMP MP-table at 000f5b70<br /></div><br /><br />Why would the installer put the 2.4.25 sources, but install the 2.6.2 kernel is beyond me. &nbsp;:roll:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NVIDIA Drivers for Mandrake 10.0 RC2</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 12, 2004, 06:50:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Problem solved. It boils down to the fact that if you tell the installer to install the kernel source files, it installs the wrong ones. Went to the CD, installed the correct ones and CHEESY-POOF, everything compiles without complaining.<br /><br />I guess that's why it's still RC2. :)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

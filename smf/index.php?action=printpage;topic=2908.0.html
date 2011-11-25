@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Fedora assistance</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: stevevan on June 12, 2006, 04:49:52 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora assistance</b><br />
+					Post by: <b>stevevan</b> on <b>June 12, 2006, 04:49:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have an older P-II, 400MHz machine with 400MB RAM that I want to use as a &quot;gateway&quot; machine in my home network.&nbsp; It is connected via ppp to a static DSL IP.&nbsp; I can get it online just fine.&nbsp; Now comes the problems.&nbsp; I have a Linksys WMP-54G wireless card that I would like to use as my access point for the rest of my network.&nbsp; (I read in one of those Fedora &quot;bible&quot; books that FC was able to do this.)&nbsp; However, I cannot get the card to be recognized by FC. <br /><br />Questions: <br /><br />- Has anyone had any success installing a WMP-54G wireless cards and getting it to work as a wireless access point?<br />- If this card will not work like this, how easy/difficult would it be to get a Linksys WRT-54G routers to work going into eth1 on the &quot;gateway&quot;?<br />- Does anyone have any tutorials / documentation that they work recommend on iptables?<br /><br />I guess that&#039;s about all for now, although I&#039;m sure I&#039;ll have more questions later!&nbsp; The bad part is that due to extensive travel requirements for my job, I&#039;m only able to be home to work on the system during the weekends.&nbsp; So any links or helpful hints that anyone can provide will be most appreciative.&nbsp; </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Fedora assistance</b><br />
+					Post by: <b>dpeach</b> on <b>June 13, 2006, 10:05:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=2908.msg14350.html#msg14350">Quote from: stevevan on June 12, 2006, 04:49:52 pm</a></div><div class="quote">Questions: <br /><br />- Has anyone had any success installing a WMP-54G wireless cards and getting it to work as a wireless access point?<br />- If this card will not work like this, how easy/difficult would it be to get a Linksys WRT-54G routers to work going into eth1 on the &quot;gateway&quot;?<br />- Does anyone have any tutorials / documentation that they work recommend on iptables?<br /></div><br />Questions 1 and 3 I have no authority on, but question 2 is a simple one. Yes, it will work. And work well. You will go out of your gateway into the WRT-54G box. Then at that point that box just works like it normally would. It does not matter where you provide the connection from, directly from the Internet, or from a box inside the network, that Linksys router will work just like normal.<br /><br />The only caveat I can see though is that you will then have 2 firewalls. If you want to port forward anything or just open a port, you will need to do it on your gateway and on the Linksys box. This will allow for a much more flexible network and greater security overall (assuming that you watch your P&#039;s and Q&#039;s).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Fedora assistance</b><br />
+					Post by: <b>rugmonster</b> on <b>June 14, 2006, 04:19:40 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Question 1 - Search Google. That&#039;s what I always do. There are a lot of chipsets supported, but not all of them work with HostAP. I think you&#039;re on to something with using a WRT54G.<br /><br />Question 2 - Yes, this would work. You have several options here. You could get the Sveasoft, HyperWRT or OpenWRT firmware and do all kinds of cool stuff. But just for a basic setup, plug the network from your system into one of the four switched ports and then your wireless clients and your linux system will all be on the same network; no NAT, no firewall, nothing between them. This can be a good thing or a bad thing. The best part about it is you would be seperating your wireless network from your internal wired network, which is a <span style="text-decoration: underline;">very</span> good thing.<br /><br />Question 3- netfilter.org (http://www.netfilter.org). Also, a Google search will give you lots of these. There are also plenty of tools that will assist you with coming up with iptables rules, such as firestarter, shorewall, gnome-lokkit, guarddog, etc.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Fedora assistance</b><br />
+					Post by: <b>stevevan</b> on <b>June 16, 2006, 07:14:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">All...Thanks for the info.&nbsp; I think I will use the router, open the router up (other than the wireless access of course - still keep that encrypted and clamped down), and use the Fedora box and iptables as my firewall.&nbsp; I don&#039;t plan on having anything that would require the &quot;double firewall&quot; situation.&nbsp; And thanks for the website suggestion.&nbsp; As soon as I get a free weekend to hack and whack, I&#039;ll post back and let people know my results.&nbsp; Maybe it will help other newbies! <br /><br />Hopefully I&#039;ll be able to make it to a meeting soon and thank you all in person!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Fedora assistance</b><br />
+					Post by: <b>stevevan</b> on <b>July 15, 2006, 06:23:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">UPDATE:&nbsp; Good news...Got things finally working!&nbsp; Bad news...had to purchase a D-Link wireless router.&nbsp; I had a heck of a time getting the Linksys router to work as I wanted.&nbsp; For some reason, it refused to act as only a wireless router.&nbsp; (Yes, I reset everything to the default setup.)&nbsp; Purchased a D-Link DWL-G700AP, set it up via the wizard, tossed it in line, and everything is now working exactly as I want it to in about 10 minutes.&nbsp; Even read through a LOT of how-to&#039;s and other doc&#039;s to secure my box.&nbsp; It must work as I&#039;ve noticed by the log files that several IP&#039;s have tried to get in, but the built in security (plus iptables) works as advertised.&nbsp; Looking forward to a long healthy relationship with Linux and hopefully completely doing away with any windoze boxes in the near future!<br /><br />P.S. I promise I&#039;ll make it to one of the meetings soon!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

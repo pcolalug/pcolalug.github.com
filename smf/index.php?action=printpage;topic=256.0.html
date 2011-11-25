@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Command line install</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: dpeach on November 21, 2002, 09:40:13 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command line install</b><br />
+					Post by: <b>dpeach</b> on <b>November 21, 2002, 09:40:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Now that I am home and have a nice internet connection, I want to know how to install a package from the command line.<br /><br />I know, I am the one that complains that this should not be the prime way to install packages, but it is nice when you have the connection.<br /><br />I am running Mandrake 9.<br /><br />Thanks,<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Command line install</b><br />
+					Post by: <b>steve</b> on <b>November 21, 2002, 12:34:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">Now that I am home and have a nice internet connection, I want to know how to install a package from the command line.<br /><br />I know, I am the one that complains that this should not be the prime way to install packages, but it is nice when you have the connection.<br /><br />I am running Mandrake 9.<br /><br />Thanks,<br /><br />David</div><br /><br />urpmi <i>package name</i></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command line install</b><br />
+					Post by: <b>rburt3</b> on <b>November 21, 2002, 03:22:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code">./configure<br />make &amp;&amp; make install &amp;&amp; make clean</div> ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command line install</b><br />
+					Post by: <b>dpeach</b> on <b>November 21, 2002, 04:36:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Steve, The urpmi almost does what I need. It is asking for the CD, which is what I don't have at my current location. I want to install from the web.<br /><br />Is there something that I need to set to make it look to the web and not to the CD?<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command line install</b><br />
+					Post by: <b>steve</b> on <b>November 21, 2002, 07:11:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">See urpmi.addmedia <br /><br />Check the man page on it or, if you're a member of Mandrake Club, they have step by step instructions.<br /><br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command line install</b><br />
+					Post by: <b>dpeach</b> on <b>November 27, 2002, 11:52:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I ended up finding &nbsp;my CDs and installed the packages off of them. <br /><br />I read all the documentation that I could find. They seemed to be complete, but not clear. It would have helped to have gotten some examples.<br /><br />man urpmi.addmedia told me to do this:<br /><div class="codeheader">Code:</div><div class="code"><br />&nbsp;urpmi.addmedia &nbsp;&#91;options&#93; &nbsp;&lt;name&gt; &nbsp; http&#58;//&lt;host&gt;/&lt;path&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp;&#91;with &lt;relative path of synthesis|hdlist&gt;&#93;<br /></div><br /><br />A few examples would have been nice to understand what they mean by &lt;name&gt; and [with &lt;relative path of synthesis|hdlist&gt;]. Those just don't mean anything to me. I know that 5 years from now as I learn more about this stuff that that may make sense then, but today I am clueless.<br /><br />I guess that is why the command line is not for people like me.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command line install</b><br />
+					Post by: <b>steve</b> on <b>November 28, 2002, 09:40:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">A few examples would have been nice to understand what they mean by &lt;name&gt; and [with &lt;relative path of synthesis|hdlist&gt;]. Those just don't mean anything to me. I know that 5 years from now as I learn more about this stuff that that may make sense then, but today I am clueless.<br /><br />I guess that is why the command line is not for people like me.<br /><br />David</div><br /><br />Google is our friend. I spent about 5 minutes searching on google for urpmi.addmedia and found a decent site, that unfortunately doesn't exist anymore. But, that's ok because google caches all of the pages it finds and I just pulled up the page from google's cache. It is below.<br /><br />Before I paste it, though, I learned most of what I know about commands in Linux from the man pages in combination with searching google and most importantly irc. Don't be afraid to ask how a command works in irc. Most people will be glad to help you out if you states that you already checked the man page and searched google. I usually ask a question by asking if someone could point me to a good place to learn how to use command &quot;X&quot; and that I couldn't make heads or tails of the man page.<br /><br />Steve<br /><br /><br /><br />3. The urpmi tools.<br /><br />This section discusses all the individual urpmi tools. I present this information with a lot of examples, but don't explore many of the less well used options available. For full details of each command and the more advanced options, refer to the man pages.<br />3.1. urpmi<br /><br />The urpmi tool is the central tool to the whole urpmi toolset. This tool allows you to install known rpms and will suggest and resolve dependencies for you based on it's package databases. The simplest invocation of this command is to install a package, this is done as follows:<br /><br />urpmi vim - this will install the vim package and any packages it depends upon.<br /><br />urpmi also tries its best to help you out if you don't know the exact package name. For example, if we want to install the docbook document preperation system and we don't know what packages we need, we could do this:<br /><br />[root@deneb root]#urpmi docbook<br />The following packages contain docbook: docbook-dtd31-sgml docbook-dtd412-xml koffice docbook-style-dsssl<br />docbook-style-dsssl-doc docbook-style-xsl docbook-utils docbook-dtd41-sgml<br /><br />[root@deneb root]#urpmi docbook-dtd41-sgml<br />To satisfy dependencies, the following packages are going to be installed (1 MB):<br />libxml2-utils-2.4.16-2mdk.i586 docbook-dtd41-sgml-1.0-5mdk.noarch sgml-common-0.6.3-4mdk.noarch<br />Is it OK? (Y/n)<br /><br />[... listing trimmed ...]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />3.2. urpme<br /><br />The urpme command is similar to the urpmi command except it removes (erases) installed packages. It also will ask to remove all packages that are dependent on the package to be removed. For example, uninstalling samba-common, using the command urpme samba-common gives this output:<br /><br />[root@deneb root]#urpme samba-common<br />To satisfy dependencies, the following packages are going to be removed (14 MB):<br />samba-common-2.2.3a-10mdk samba-2.2.3a-10mdk samba-client-2.2.3a-10mdk<br />Is it OK? (Y/n)<br /><br />[... listing trimmed ...]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />3.3. urpmq<br /><br />The urpmq command allows you to search for packages. You supply a search term and urpmq will try to find package names containing that term. It will return results from both installed and available package lists. So, for example, if we want to know what packages we have that are related to the kernel, we can use the command urpmq kernel, this will do the following<br /><br />[root@deneb root]#urpmq kernel<br />The following packages contain kernel: kernel-source kernel-headers kernel22<br />kernel-secure-2.4.18.6mdk kernel-doc-pdf kernel-doc-ps kernel-doc kernel-alert<br />kernel22-smp fortune-kernelcookies kernel-2.4.18.6mdk kernel-doc-html<br />kernel-enterprise-2.4.18.6mdk kernel-smp-2.4.18.6mdk<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />3.4. urpmf<br /><br />The urpmf command is a more advanced search tool which allows you to search for a filename in all known packages (both installed and available). So, for example if we are trying to compile a program and the configure script is complaining about not finding ncurses.h, we can do a urpmf ncurses.h to find that it is part of the libncurses5-devel package (we can use urpmi libncurses5-devel to install this if we want to).<br /><br />[root@deneb root]#urpmf ncurses.h<br />libncurses5-devel:/usr/include/ncurses.h<br />libncurses5-devel:/usr/include/ncurses/ncurses.h<br />php-devel:/usr/src/php-devel/extensions/ncurses/php_ncurses.h<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />3.5. urpmi.addmedia<br /><br />This command allows you to add new sources of rpms to your urpmi databases. If the source is a remote site, it must have the proper hdlist files available (Mandrake mirrors have these files, non-Mandrake sites usually don't). You can also use this command to add sources that are on CD or hard disk. A list of official Mandrake sources is available on the Mandrake web site.<br /><br />First, we will add a source containing security updates for Mandrake 8.2, this is done as follows:<br /><br />[root@deneb root]#urpmi.addmedia updates \<br />&nbsp;&nbsp;&nbsp;ftp://ftp.sunet.se/pub/Linux/distributions/mandrake/updates/8.2/RPMS \<br />&nbsp;&nbsp;&nbsp;with ../base/hdlist.cz<br />added medium updates<br />retrieving description file of &quot;updates&quot;...<br />...retrieving done<br />retrieving source hdlist (or synthesis) of &quot;updates&quot;...<br />&nbsp; % Total &nbsp; &nbsp;% Received % Xferd &nbsp;Average Speed &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Curr.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dload &nbsp;Upload Total &nbsp; &nbsp;Current &nbsp;Left &nbsp; &nbsp;Speed<br />100 &nbsp;402k &nbsp;100 &nbsp;402k &nbsp; &nbsp;0 &nbsp; &nbsp; 0 &nbsp; 3653 &nbsp; &nbsp; &nbsp;0 &nbsp;0:01:52 &nbsp;0:01:52 &nbsp;0:00:00 &nbsp;4833<br />...retrieving done<br />examining whole urpmi database&nbsp;&nbsp;&nbsp;<br /><br />[... listing trimmed ...]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />Once the security source is added, we can check for and install security updates with urpmi.update -a followed by urpmi --auto-select.<br /><br />For our next example, assume we have been downloading rpms from the internet and we have stored them in /files/myrpms. It would be nice to let urpmi know about these rpms so that we can update them and solves dependencies easily. So, we add the local rpm source like this:<br /><br />[root@deneb root]#urpmi.addmedia myrpms file://files/myrpms<br />added medium myrpms<br />building hdlist [/var/cache/urpmi/partial/hdlist.myrpms.cz]<br /><br />[... listing trimmed ...]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />Now perhaps we have collected lots of cool rpms and have decided to put them onto a CD, we can do this with the following command:<br /><br />[root@deneb root]#urpmi.addmedia mycd removable://mnt/cdrom/<br />added medium mycd<br />building hdlist [/var/cache/urpmi/partial/hdlist.mycd.cz]<br /><br />[... listing trimmed ...]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />3.6. urpmi.removemedia<br /><br />This command removes a package source from the database. For example urpmi.removemedia updates will remove the updates source we added earlier in this HOWTO.<br />3.7. urpmi.update<br /><br />The urpmi.update command visits all the sources of rpms that you have defined and updates the package lists if necessary. For example, if you added a security source a couple of months ago and some new updates have been released, you need to do a urpmi.update -a to update the databases. You can then install the updates with a urpmi --auto-select.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command line install</b><br />
+					Post by: <b>dpeach</b> on <b>November 28, 2002, 07:57:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How can I find a list of ftp mirrors?<br /><br />I just tried the example given and it was not able to find the ftp site. I am sure that it is just not used any more.<br /><br />Thanks for the info.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Command line install</b><br />
+					Post by: <b>steve</b> on <b>November 28, 2002, 08:02:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">How can I find a list of ftp mirrors?<br /><br />I just tried the example given and it was not able to find the ftp site. I am sure that it is just not used any more.<br /><br />Thanks for the info.<br /><br />David</div><br /><br />Try checking Mandrake's site. Go through support and security updates for updates. If you are trying to do an install try the downloads section of Mandrake's site. <br /><br /><br />Try IRC.<br /><br />Steve</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

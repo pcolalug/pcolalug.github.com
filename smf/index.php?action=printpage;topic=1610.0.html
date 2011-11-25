@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - 2.6.5 strangeness</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Brent on May 14, 2004, 10:01:26 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.5 strangeness</b><br />
+					Post by: <b>Brent</b> on <b>May 14, 2004, 10:01:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've seen linux do some wierd things in my time, but when I compiled 2.6.5 a number of strange things have broken on my pc.<br /><br />For instance, my modem script no longer works because something went funky with insmod, /dev/cdrom no longer exsists, and apparently my pc speaker doesn't work anymore, and of course as always alsa is broken.<br /><br />I will be SOOO glad when slackware - current moves to 2.6.x. &nbsp;Seriously, it's times like this that I want to drop slackware.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.5 strangeness</b><br />
+					Post by: <b>danc</b> on <b>May 14, 2004, 10:33:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is there any particular reason you need to move to the 2.6.x? &nbsp;What will it give you that 2.4.x is not giving you?<br /><br />I have found that I must provide a solid answer to those kinds of questions (to myself), before bothering with an upgrade.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.5 strangeness</b><br />
+					Post by: <b>Brent</b> on <b>May 14, 2004, 11:43:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I dunno I've just heard so many good things about 2.6.x performance wise.<br /><br />I also have a sound looping problem in civ3 under winex.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.5 strangeness</b><br />
+					Post by: <b>danc</b> on <b>May 15, 2004, 07:49:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">I dunno I've just heard so many good things about 2.6.x performance wise.</div><br />Usually a little over-rated. &nbsp;There may be some performance increase, but it's not all that noticeable in most cases.<br /><br /><div class="quoteheader">Quote from: Brent</div><div class="quote">I also have a sound looping problem in civ3 under winex.</div><br />I wouldn't think that has anything to do with the kernel.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.5 strangeness</b><br />
+					Post by: <b>rburt3</b> on <b>May 15, 2004, 08:16:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">There are some really nice things in 2.6, but many of the things you're used to are gone or changed a bit.<br /><br />First, ALSA is part of the kernel now. There's a nice ALSA guide here (http://www.gentoo.org/doc/en/alsa-guide.xml). Its for Gentoo, but if any time it says to emerge something, just install it like you would on your distro instead.<br /><br />devfs (/dev/*) is deprecated and turned off by default in 2.6, so you have to explicitly select support for it when you compile your kernel. I heard a blurb somewhere that devfs won't be in 2.7 at all, so we'll all have to start learning about udev (the new device file system) sooner or later.<br /><br />As for your module loading problems, did you install the new modutils package? 2.6 requires that you do.<br /><br />All that being said, danc is right. Unless 2.6 gives you something you really need, like bluetooth or better USB support, then I wouldn't stress too much about it until your distro &quot;officially&quot; supports it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.5 strangeness</b><br />
+					Post by: <b>lloydr</b> on <b>May 15, 2004, 11:27:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">so we'll all have to start learning about udev (the new device file system) sooner or later.<br /></div><br />/udev rules lol<br />i use that for mounting my thumb drive on my main machine using slack and 2.6.6 kernel and it works like a dream when your locating devices of that such</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.5 strangeness</b><br />
+					Post by: <b>rburt3</b> on <b>May 15, 2004, 01:24:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">I heard a blurb somewhere that devfs won't be in 2.7 at all</div><br />Ooops. I meant that the rumor I heard said that devfs won't be in <b>2.6.7</b>, wich is right around the corner. Those of you using boxed/standard distros will probably not have to worry about that until the end of the year, I'd imagine.<br /><br />Good to hear that you're having success with it, lloydr. The new proc/pci interface stuff is nice. I much prefer lspci over grepping through /proc/ for stuff. I haven't looked into switching from devfs to udev, but Gentoo, once again, has a guide (http://www.gentoo.org/doc/en/udev-guide.xml) that I've been meaning to get to...</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

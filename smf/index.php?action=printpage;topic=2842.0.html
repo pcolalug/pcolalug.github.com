@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - ATI/Nvidia Binary Drivers with Modular X.org 7.0</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Desktops => Topic started by: rugmonster on April 19, 2006, 06:11:25 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>ATI/Nvidia Binary Drivers with Modular X.org 7.0</b><br />
+					Post by: <b>rugmonster</b> on <b>April 19, 2006, 06:11:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was very surprised this last weekend following an update of my Debian unstable box to find X.org 7.0 get installed. After a reboot, I was no longer able to get into X. At the time, I was using the ATI binary drivers (fglrx) and little did I know that with Xorg 7.0, comes a completely new filesystem location. Rather than living under /usr/X11R6, it now resides at /usr/lib/xorg. Unfortunately, ATI and Nvidia&#039;s installer installs things under /usr/X11R6 still.<br /><br />To remedy this, I made sure /usr/X11R6 was empty and did an install of the ATI binary drivers. Then, I copied all of the contents of /usr/X11R6 to /usr/lib/xorg and I was back up and running. This same technique will work with the Nvidia drivers, as I have just confirmed this with my new card. <br /><br />At this time, I know Fedora Core 5, Debian Unstable and Ubuntu Dapper Drake are running X.org 7.0, so heads up if you are using one of those and want to use the latest and greatest drivers from your card&#039;s manufacturer.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ATI/Nvidia Binary Drivers with Modular X.org 7.0</b><br />
+					Post by: <b>geekforGod</b> on <b>April 20, 2006, 02:33:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Would it have been possible to empty the /usr/X11R6 directory and then just make it a link to the /usr/lib/xorg directory? I forget how links work exactly and I was just curious.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: ATI/Nvidia Binary Drivers with Modular X.org 7.0</b><br />
+					Post by: <b>rugmonster</b> on <b>April 20, 2006, 04:39:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">With the modular X.org 7.0, /usr/X11R6 should be gone completely, however, you could use symbolic links like this:<br /><br />/usr/X11R6/bin -&gt; /usr/bin<br />/usr/X11R6/lib -&gt; /usr/lib/xorg<br /><br />ATI also installs some headers into /usr/X11R6/include, and guess you could send those to /usr/lib/include, but I don&#039;t know for sure. </div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

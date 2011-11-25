@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - need help installing a .gz file</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: ktshaffer on October 31, 2004, 03:54:08 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>ktshaffer</b> on <b>October 31, 2004, 03:54:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok first let's assume i need &nbsp;hand holding oin this.:) I have a fresh install oif linux fedora core 3. Ive installed it and now am tryiong to get the system fully operating. The modem isnt identified and i have downloaded aprogram from linmoidems.org which is suppose to identy my modem for me. Here is the problem. I dont know how to uncompress the gz &nbsp;file they had me download so i can execute the 3 programs it contains. becasue that will allow me to determine which lindows modem software they have for supporting a presario laptop 1200-xl111. I need this sop i can get on the internet. else i have a very expensive word processor on my laptop. Which wont print because the printer isnt installed either. <br /><br />If someone could explain in detail the steps i should follow i will be happy to try them out. thanks</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>rugmonster</b> on <b>October 31, 2004, 04:04:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'll assume the file ends in tar.gz. Try this in a Terminal.<br /><br /><div class="codeheader">Code:</div><div class="code">tar -xzvf &lt;filename&gt;.tar.gz</div><br /><br />Here is what the switches mean:<br /><ul style="margin-top: 0; margin-bottom: 0;">x = expand<br />z = gzip compressed<br />v = verbose<br />&nbsp;f = filename[/list:u]<br />Tar files are like zip files without the compression. gzip is what provides the compression. There is also bzip2 for compression, usually identified with tar.bz2. You can use -xjvf for those files.<br /><br />I don't know if you've learned about manpages yet, but any command you use, should have an associated manpage. You can use the following command to find out what the syntax and options are for any command.<br /><br /></ul><div class="codeheader">Code:</div><div class="code">man &lt;command&gt;</div><br /><br />There are GUI tools for dealing with archives such as this, but they vary so much depending on your distro and environment that it's just easier some times to give the command line info.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>not a tar.gz</b><br />
+					Post by: <b>ktshaffer</b> on <b>October 31, 2004, 04:33:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ive checked it twice...this file downloads from a link off the linmodems.org page. When i download it it was strictly scanModem.gz.<br />First I typed it in &quot;terminal&quot; as you request.but i cant seem to point it to the flash drive &nbsp;to have it extract it. my flash drive identifies &nbsp;on the desktop when i plug it in. But executing your command &nbsp;returns &quot;no such file or directory found&quot;. You may need to give more detail...assum i dont know enuff yet.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>rugmonster</b> on <b>October 31, 2004, 08:53:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">When you work in a shell, you are usually dropped in your home directory (something like /home/username). Apparently, this file is on your thumb drive, so you will have to change your working directory to the mountpoint for that device. Unlike windows where you have seperate drive letters for different physical and logical drives, Unix filesystems work as a single hierarchy. You &quot;mount&quot; a filesystem within the single root. To find out what filesystems are currently mounted and where you can type the following:<br /><br /><div class="codeheader">Code:</div><div class="code">mount</div><br /><br />This will give you a listing of what is mounted, where and what type of filesystem it is. Since this is a thumb drive, look for one of those lines that says fat32. You will then want to copy that file from the thumb drive to your home directory unless you want to mess with permissions. So, let's say your thumb drive is being mounted at /mnt/flash. To copy the file over, you would do something like this:<br /><br /><div class="codeheader">Code:</div><div class="code">cp /mnt/thumb/scanmodem.gz /home/ktshaffer</div><br /><br />What this does is copy the file residing at /mnt/thumb with the name scanmodem.gz to the directory /home/ktshaffer with the same name as the original file. Keep in mind that Unix shells are case sensitive, so pay attention to what is capitolized and what isn't.<br /><br />I would check out this (http://linmodems.technion.ac.il/first.html) documentation on gunzipping that file and running the program. Not to be a jerk, but I found that directly off the linmodem.org site. One thing that you have to realize is that most linux users can be elitists and will tell you to RTFM. I'm not saying that, but there is a wealth of information available between manpages (once you figure out the art of reading them), Google, the sites of the project you are working on and the Linux Documentation Project (http://www.tldp.org/). There aren't too many things out there that you will have to reinvent the wheel on at this point in the game, and chances are, someone has written a primer or HOWTO on it. I suggest you spend a few minutes reading up on stuff and if you are still stumped, let us know how we can help you.<br /><br />Before you get much more into things, may I suggest you check out the Introduction to Linux (http://www.tldp.org/LDP/intro-linux/html/index.html) from the Linux Documentation Project. I think you'll understand things a lot better and have a better idea of what's going on with your brand new install.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>ageros</b> on <b>November 01, 2004, 08:31:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Most likely FC3 has a graphical way of extracting the files from the .gz file. In mandrake I simply open the file, and it opens &quot;Ark&quot; which is, I assume, a file manager. Also, try right click on the file and seeing if there are any menus or submenus that say extract. I understand the confusion with these particular files, and I find the easiest way to get used to them is extracting them from the GUI first, and then wheen yourself off of the GUI until you are more active with the terminal.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>dpeach</b> on <b>November 01, 2004, 09:37:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was going to suggest the same thing ageros, but since I am unfamiliar with Gnome, I was not sure how to step him through this.<br /><br />I find the command line very powerful and helpful. But, thankfully, these days with Linux you are able to walk (GUI) before you have to run (CLI). It used to be the other way around.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>rburt3</b> on <b>November 01, 2004, 12:23:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: ageros</div><div class="quote">(...), and it opens &quot;Ark&quot; which is, I assume, a file manager.</div><br />Ark would be analogous to WinZip.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>ageros</b> on <b>November 01, 2004, 09:13:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks, that makes a lot more sense.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>gonna rtfm</b><br />
+					Post by: <b>ktshaffer</b> on <b>November 02, 2004, 10:11:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">thanks guys i really appreciated the input....and as one suggested im gonna read the manual...then ill repost to let u know how i am doing. i hate not getting the laptop online but with out the modem and some reading its kinda hard......i have been really busy with work and the kids sooo plz excuse the time lags. thanks again</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>rburt3</b> on <b>November 03, 2004, 08:12:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">No problem, take your time. Modem stuff in Linux is a bit of a PITA because of really poor manufacturer support. The community, however, has made some really great strides (without said support, I might add...) over the last couple of years in this area. Now, if we can only get some progress on the wireless front...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>need help installing a .gz file</b><br />
+					Post by: <b>rugmonster</b> on <b>November 03, 2004, 10:46:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've had great luck with wireless as long as it is a chipset supported under one of the two or three drivers out there. I was very surprised to see Ubuntu find my wireless nic at install.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - CD/RAMDisk only Server</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: rugmonster on December 20, 2002, 12:17:14 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rugmonster</b> on <b>December 20, 2002, 12:17:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Howdy all. I'm about to set forth on a grand adventure. I have a problem that I am going to work up a solution for (maybe get airmen of the quarter for it...). Enough build up? Okay!<br /><br />My squadron is a tenant unit to Tinker AFB. One of our jobs is sysadmin, but we have no admin access to the base network. We have exercises every once and a while where we have to go and setup a live network in a couple of days. The problem is, the base won't let us hook up to their live network to test our servers prior to actually going out.<br /><br />Solution...Since we aren't on any official live network in our shop and don't so much have to worry about &quot;approved&quot; OSes, I am thinking about making up a portable server solution so that I can test out our server configs prior to going out to the field. My idea is to setup an all purpose server on a CD to include DNS, mail, web and FTP. The reason I don't want to do a standard install on a system is that our systems tend to get stuff pulled often and hard drives seem to get tossed from one system to another and sometimes we end up short on drives.<br /><br />My goal is to have a portable (as in CD/floppy combo) that I can put into one of three or four systems so that I can simulate a distant end. Of course this can also be used to test our long haul transmission folks because they can set up their stuff and then we put this server on a seperate network on the other side. &nbsp;We can then get our routers talking to the other side and then test our firewall for connectivity. It always seems like we have a hard time getting our rules setup (sidewinder sucks), so we spend most of our time fooling with that and getting exchange setup. Also, I want this to just run. Put in the CD, boot from it and then when it asks for the floppy, put it in and then maybe have to put in the network info. Some of our folks aren't as gifted as me :wink:, so if others are going to benefit from this, it needs to be as hands off as possible. <br /><br />I have looked into Knoppix, but it seems geared toward desktop use; however, I'm going in that direction. The binaries and such can all remain static on the cd. Since an NFS server won't be an option, I will need to rely on floppy to hold probably the /etc. This will allow me to make a different config for a different system and change configs without having to burn a new cd. Then I was thinking about doing a Ramdisk for logs and mail. It won't be high volume by any means, so I am not worrying about running out of space. <br /><br />I guess I'm just looking for suggestions. I was thinking about tweaking LFS and using that as as starting point. I was also going to look into syslinux to make the bootable cd (need to look more into that). Does anyone see any major flaws or have any ideas that might save me some head-beating-against-the-wall time? This is completely at the concept stage. Bare bones, but idiot simple is what I'm going for (this is an important point). Thanks!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rugmonster</b> on <b>December 20, 2002, 12:35:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">One more thing...I just found http://cd-linux.org (http://cd-linux.org/). That may prove helpful....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rugmonster</b> on <b>December 21, 2002, 02:16:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just for an update on this. I have the base packages for a LFS install with the addition of isolinux. This too some trickery on my part to be able to download all that without being noticed, but I got the tarballs of the sources downloaded. It took all night with our slow connection (if I had been at home, it would have take all of about 10 minutes), but I'm beginning to map out dependencies to begin my planning. I'm starting to think a little more broadly than this specific use. Perhaps there are other opportunities in this...<br /><br />I am going to setup another partition or two on this system and configure it initially to use lilo to boot and when testing mount it RO. I figure I'll be able to save a few cds this way. I'll keep you guys posted as to the progress. My short term goal is to get all packages absolutely necessary installed with dependencies mapped and then a bootable system. Once I get the base down, then I'll move on to the server daemons. <br /><br />Wish me luck...and if anyone wants to offer some suggestions, I'm all...um...eyes :?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>dpeach</b> on <b>December 21, 2002, 08:26:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I talked with Brett (non-active on the forums member) about this. He has seen something that would fit your bill. He is to get me more information on this over the next day or two.<br /><br />It is a project that allows you to &quot;roll your own&quot; features using a floppy and Zip(tm) disk. We think that it should work with a CD. <br /><br />Basically, from what I understand, you have the kernel and add in the specific software that you need. All of it can be loaded up into a RAM disk with any config changes going on the floppy.<br /><br />I will let you know what he is able to find out for us.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>dpeach</b> on <b>December 21, 2002, 08:44:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just googling a bit I found this:<br />http://www.cs.inf.ethz.ch/~rauch/linux/zipramdisk.html<br /><br />I did not read it in depth, but with the exception of choosing your software, I believe all the info is there that is needed.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rburt3</b> on <b>December 21, 2002, 12:50:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I really thought that I posted this the other day, but try Knoppix (http://knoppix.net). They have tutorials on how to painlessly re-master their cd and customize and burn your own. And, since Knoppix is based on Deb, removing and installing software should be a snap using apt.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rugmonster</b> on <b>December 21, 2002, 02:20:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks guys. I looked at the zip/floppy howto. That one is going for a different approach than I had in mind. It seems that they have their stuff compress on floppy and zip disk and then it is decompressed into a couple of RAMDisks. Since I don't know how much memory the systems I'm planning to use have, I want to keep the RAMDisk usage low. I'm thinking at the most 20 or so meg. <br /><br />Knoppix...yep, I saw your last post and have heard all the buzz around the rest of the community about it. I'm sort of torn because it sounds great and it uses the best package management system in the world(!), apt. My only problem with going that route is the bandwidth that I have out here. Four shotgunned modems don't get you much when a whole base of people is trying to use that pipe out. I might try it out when I get home. And no, I'm not going to spend my own money to get a cd sent out here. They won't spend money on it, so I won't. I can't wait to get home to my 2+ Mb cable. It's a tease to be able to ssh in from time to time (for the occasional apt-get update/upgrade). Seeing 250 and 300 KB/sec downloads is like a dream now.<br /><br />Thanks guys. I'll be working on compiling my packages tonight. Once I get them done, I'm considering myself stuck into reinventing the wheel. Who knows, maybe I'll stumble across something that can be done differently and make something great.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rburt3</b> on <b>December 21, 2002, 09:31:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How much would it cost to send you a cd? I can shoot you one if it means the kids still get to have Christmas. ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rugmonster</b> on <b>December 21, 2002, 09:44:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">How much would it cost to send you a cd? I can shoot you one if it means the kids still get to have Christmas. </div><br /><br />Well, your wife (who was my sister long before she became your wife) is working on sending me a cd or two already, so you could include it with that. I told her before that priority mail gets here /much/ quicker than standard mail (two weeks opposed to one and a half months), so whatever that costs. I would so appreciate it. I'll continue to work on my plan, but that focus can easily be redirected to something else I've been wanting to do, provided Knoppix works out. <br /><br />Well, last night wasn't quite as productive as I hoped it would be. My endless clicking on the keyboard got me kicked out of the tent because it was keeping one of my tent mates up. I ended up going in to work and the call of Q3 caught me. I couldn't help it. The next thing I knew, day shift was coming in and now I&quot;m back in my tent, no closer to my goal than earlier. There is always tonight I guess.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rugmonster</b> on <b>December 22, 2002, 02:22:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay...I didn't think I was going to be staying up and working on this stuff, but I have the first stage done in building the chroot environment. I have my base packages compiled, so tonight I'll be chrooting into the new environment to compile the true system base. <br /><br />I have a question for the code monkeys out there. What harm could I possibly do in not including gcc? Are there particular libraries and such that are going to be needed by other programs? I have noticed that it is one of the larger packages, so I may need to cut corners where ever possible. I don't forsee a need for any compiling of new programs from the CD, so what could it hurt in not including it in the image?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>crowe</b> on <b>December 22, 2002, 02:32:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">What harm could I possibly do in not including gcc? Are there particular libraries and such that are going to be needed by other programs?</div><br /><br />Not including gcc in your build would hurt very little, if anything, AFAIK. &nbsp;As for libraries and such though, you /will/ need to include glibc at least, since anything dynamically linked will of course need the basic functions, system calls, et. al.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rugmonster</b> on <b>December 22, 2002, 10:56:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I knew glibc was required, but thanks. I'll just have to compile gcc again and find what stuff it installs and then take that stuff out when it comes to image time.<br /><br />On a seperate note, I have discovered I am going to _have_ to implement devfs. I didn't think about this, but a typical /dev structure has to be RW. I would have either had to setup a RAMDISK for /dev or I can implement devfs...I think I'll take devfs, thank you very much. I am reading over the faq on devfs right now. I'll have to figure out how to make the transition over.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rburt3</b> on <b>December 22, 2002, 12:33:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Don't need gcc unless you plan to compile programs yourself later. Also, what about remastering a gentoo LIVE cd? The ISO isn't really all that large. Like 300 meg or something.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CD/RAMDisk only Server</b><br />
+					Post by: <b>rugmonster</b> on <b>December 22, 2002, 01:09:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I am well down the path of building my own cd now. I'm not seeing it as being too difficult, but I appreciate the ideas. Yes, I'm stubborn, but I like to reinvent the wheel occasionally &nbsp;:P <br /><br />If you guys have any suggestions of possible eliminations (such as unneeded files from glibc or other large base packages) I would appreciate it. I'm not too familiar with these as of yet, but I will be reading while waiting on stuff to compile. I have also figured out that I can safely remove the kernel source since I copied by headers to /usr/include...yippee! Once this system is bootable, I'll have to find my daemons...in mini form!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Oh happy day!</b><br />
+					Post by: <b>rugmonster</b> on <b>December 22, 2002, 11:53:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, my system is all compiled minus the daemons (yippee) and guess what I just found! Making a bootable cd (http://hints.linuxfromscratch.org/hints/boot-cd_easy.txt) from an LFS system. I will be reading this and tweaking. I still have to go through and delete the unnecessary. Oh yeah, I've also got to compile my kernel and tweak my init scripts, but I've got the big stuff out of the way. <br /><br />Some suggestions on server daemons. I was thinking about UW's IMAP/POP3 implementation and exim for mail, bind for dns (since this does need to be a full fledged dns implementation), Antiweb HTTPD (http://freshmeat.net/projects/awhttpd/) and then I haven't decided on an FTPD yet. Do you guys know of any &quot;tiny&quot; implementations? Also, is there a way to make a BIND server act like a root server? I have heard of local root, but ideally, I would like to be able to change the root.cache on the firewall on my test network and be able to get some basic dns resolution...without doing an explict forward. Is that too much to ask for? <br /><br />I may start posting these questions to other sections when it comes down to daemon specifics...yeah, that would be better. Thanks guys. You may get an article out of me when this is all done with. I remember the complaints about &quot;rolling your own&quot; binaries, so it may be worth while for me to go over the basics of compiling stuff from source. Anyway, things are well on their way.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

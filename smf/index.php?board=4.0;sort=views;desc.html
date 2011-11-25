@@ -1,0 +1,830 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Club discussions" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>Club discussions</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="index" href="index.php%3Fboard=4.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 02:39:41 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="brd[4]" value="4" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+		<table width="100%" cellpadding="3" cellspacing="0">
+			<tr>
+				<td><a name="top"></a><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#2" class="nav">Club Stuff</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=4.0.html" class="nav">Club discussions</a></b></span></td>
+			</tr>
+		</table>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+			<tr>
+				<td class="catbg" height="30">
+					<table cellpadding="3" cellspacing="0" width="100%">
+						<tr>
+							<td><b>Pages:</b> [<b>1</b>] <a class="navPages" href="index.php%3Fboard=4.20%3Bsort=views%3Bdesc.html">2</a> <a class="navPages" href="index.php%3Fboard=4.40%3Bsort=views%3Bdesc.html">3</a> <b> ... </b><a class="navPages" href="index.php%3Fboard=4.320%3Bsort=views%3Bdesc.html">17</a> </td>
+							<td align="right" nowrap="nowrap" style="font-size: smaller;"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+			<table border="0" width="100%" cellspacing="1" cellpadding="4" class="bordercolor">
+				<tr class="titlebg">
+					<td width="9%" colspan="2"></td>
+					<td><a href="index.php%3Fboard=4.0%3Bsort=subject.html">Subject</a></td>
+					<td width="14%"><a href="index.php%3Fboard=4.0%3Bsort=starter.html">Started by</a></td>
+					<td width="4%" align="center"><a href="index.php%3Fboard=4.0%3Bsort=replies.html">Replies</a></td>
+					<td width="4%" align="center"><a href="index.php%3Fboard=4.0%3Bsort=views.html">Views <img src="Themes/babylon/images/sort_down.gif" alt="" border="0" /></a></td>
+					<td width="24%"><a href="index.php%3Fboard=4.0%3Bsort=last_post.html">Last post</a></td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_15808"><a href="index.php%3Ftopic=3279.0.html">Camp Fire K12LTSP</a></span>
+						<span class="smalltext" id="pages15808">&#171; <a href="index.php%3Ftopic=3279.0.html">1</a> <a href="index.php%3Ftopic=3279.15.html">2</a> <a href="index.php%3Ftopic=3279.30.html">3</a> <a href="index.php%3Ftopic=3279.45.html">4</a> <a href="index.php%3Ftopic=3279.60.html">5</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=242.html" title="View the profile of djoed_pcola">djoed_pcola</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						69
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						13410
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3279.msg15992.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						February 09, 2008, 04:55:37 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=17.html">bhoff</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_2788"><a href="index.php%3Ftopic=639.0.html">LAN Party?</a></span>
+						<span class="smalltext" id="pages2788">&#171; <a href="index.php%3Ftopic=639.0.html">1</a> <a href="index.php%3Ftopic=639.15.html">2</a> <a href="index.php%3Ftopic=639.30.html">3</a> <a href="index.php%3Ftopic=639.45.html">4</a> <a href="index.php%3Ftopic=639.60.html">5</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						71
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						12899
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=639.msg3627.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						June 25, 2003, 06:27:24 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=45.html">danc</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/normal_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_2779"><a href="index.php%3Ftopic=634.0.html">O'Reilly (4-18)</a></span>
+						<span class="smalltext" id="pages2779"></span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						0
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						10847
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=634.0.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						April 19, 2003, 09:21:28 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=9.html">dpeach</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_14295"><a href="index.php%3Ftopic=2896.0.html">First Annual hack attack </a></span>
+						<span class="smalltext" id="pages14295">&#171; <a href="index.php%3Ftopic=2896.0.html">1</a> <a href="index.php%3Ftopic=2896.15.html">2</a> <a href="index.php%3Ftopic=2896.30.html">3</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=17.html" title="View the profile of bhoff">bhoff</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						32
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						6999
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=2896.msg14436.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						July 10, 2006, 03:15:17 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=17.html">bhoff</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_8905"><a href="index.php%3Ftopic=1814.0.html">2004 - 2005 Steering Committee Nominations</a></span>
+						<span class="smalltext" id="pages8905">&#171; <a href="index.php%3Ftopic=1814.0.html">1</a> <a href="index.php%3Ftopic=1814.15.html">2</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=23.html" title="View the profile of rburt3">rburt3</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						25
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						6155
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=1814.msg9231.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						September 07, 2004, 11:18:57 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=178.html">scottstancil</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_15928"><a href="index.php%3Ftopic=3292.0.html">Linux/Alternate OS Transition Presentation for UWF Community</a></span>
+						<span class="smalltext" id="pages15928">&#171; <a href="index.php%3Ftopic=3292.0.html">1</a> <a href="index.php%3Ftopic=3292.15.html">2</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=318.html" title="View the profile of green_dragon37">green_dragon37</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						27
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						6141
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3292.msg16145.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						April 24, 2008, 09:46:20 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=17.html">bhoff</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_16249"><a href="index.php%3Ftopic=3372.0.html">Where are we going? -- Back on track</a></span>
+						<span class="smalltext" id="pages16249">&#171; <a href="index.php%3Ftopic=3372.0.html">1</a> <a href="index.php%3Ftopic=3372.15.html">2</a> <a href="index.php%3Ftopic=3372.30.html">3</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=318.html" title="View the profile of green_dragon37">green_dragon37</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						31
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						6099
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3372.msg16446.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						October 27, 2008, 07:05:45 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=45.html">danc</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_8994"><a href="index.php%3Ftopic=1830.0.html">SSH Workshop</a></span>
+						<span class="smalltext" id="pages8994">&#171; <a href="index.php%3Ftopic=1830.0.html">1</a> <a href="index.php%3Ftopic=1830.15.html">2</a> <a href="index.php%3Ftopic=1830.30.html">3</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=178.html" title="View the profile of scottstancil">scottstancil</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						35
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						6037
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=1830.msg9272.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						September 11, 2004, 02:13:11 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=9.html">dpeach</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_6150"><a href="index.php%3Ftopic=1298.0.html">Are we operating in a vaccuum?</a></span>
+						<span class="smalltext" id="pages6150">&#171; <a href="index.php%3Ftopic=1298.0.html">1</a> <a href="index.php%3Ftopic=1298.15.html">2</a> <a href="index.php%3Ftopic=1298.30.html">3</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=157.html" title="View the profile of microserf">microserf</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						35
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						5675
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=1298.msg6527.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						February 07, 2004, 02:19:46 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=157.html">microserf</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_poll.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_16286"><a href="index.php%3Ftopic=3381.0.html">Meeting Day Change</a></span>
+						<span class="smalltext" id="pages16286">&#171; <a href="index.php%3Ftopic=3381.0.html">1</a> <a href="index.php%3Ftopic=3381.15.html">2</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=318.html" title="View the profile of green_dragon37">green_dragon37</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						29
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						5567
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3381.msg16764.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						April 03, 2009, 11:40:08 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=118.html">lloydr</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_16335"><a href="index.php%3Ftopic=3389.0.html">2008-2009 Steering Committee Nominations</a></span>
+						<span class="smalltext" id="pages16335">&#171; <a href="index.php%3Ftopic=3389.0.html">1</a> <a href="index.php%3Ftopic=3389.15.html">2</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=318.html" title="View the profile of green_dragon37">green_dragon37</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						28
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						5288
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3389.msg16439.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						October 26, 2008, 06:06:54 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=793.html">Skreyola</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_16961"><a href="index.php%3Ftopic=3543.0.html">August 2009 Meeting - LAN Party</a></span>
+						<span class="smalltext" id="pages16961">&#171; <a href="index.php%3Ftopic=3543.0.html">1</a> <a href="index.php%3Ftopic=3543.15.html">2</a> <a href="index.php%3Ftopic=3543.30.html">3</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						43
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						5081
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3543.msg17064.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						August 24, 2009, 11:52:11 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=318.html">green_dragon37</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/hot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_16123"><a href="index.php%3Ftopic=3339.0.html">Asus Eee Pc</a></span>
+						<span class="smalltext" id="pages16123">&#171; <a href="index.php%3Ftopic=3339.0.html">1</a> <a href="index.php%3Ftopic=3339.15.html">2</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=137.html" title="View the profile of L.Rentz">L.Rentz</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						16
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						4891
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3339.msg16407.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						October 10, 2008, 03:32:42 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=17.html">bhoff</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/normal_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_2167"><a href="index.php%3Ftopic=499.0.html">O'Reilly 2-21</a></span>
+						<span class="smalltext" id="pages2167"></span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=9.html" title="View the profile of dpeach">dpeach</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						0
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						4884
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=499.0.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						February 22, 2003, 10:24:29 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=9.html">dpeach</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_17295"><a href="index.php%3Ftopic=3613.0.html">Ubuntu 10.4 Lucid Lynx Release Party</a></span>
+						<span class="smalltext" id="pages17295">&#171; <a href="index.php%3Ftopic=3613.0.html">1</a> <a href="index.php%3Ftopic=3613.15.html">2</a> <a href="index.php%3Ftopic=3613.30.html">3</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=1021.html" title="View the profile of maxolasersquad">maxolasersquad</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						30
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						4758
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3613.msg17578.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						April 21, 2010, 07:19:08 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=45.html">danc</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_1724"><a href="index.php%3Ftopic=402.0.html">Suggestion for new meeting place</a></span>
+						<span class="smalltext" id="pages1724">&#171; <a href="index.php%3Ftopic=402.0.html">1</a> <a href="index.php%3Ftopic=402.15.html">2</a> <a href="index.php%3Ftopic=402.30.html">3</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=46.html" title="View the profile of phed">phed</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						32
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						4707
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=402.msg1860.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						January 29, 2003, 11:18:41 pm<br />
+						by steve
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/hot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_15757"><a href="index.php%3Ftopic=3271.0.html">Charity starts at home!</a></span>
+						<span class="smalltext" id="pages15757">&#171; <a href="index.php%3Ftopic=3271.0.html">1</a> <a href="index.php%3Ftopic=3271.15.html">2</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=17.html" title="View the profile of bhoff">bhoff</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						19
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						4121
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=3271.msg15819.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						December 17, 2007, 04:08:40 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=788.html">Ed</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/hot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_14612"><a href="index.php%3Ftopic=2985.0.html">2006 - 2007 Steering Committee Nominations and Election</a></span>
+						<span class="smalltext" id="pages14612">&#171; <a href="index.php%3Ftopic=2985.0.html">1</a> <a href="index.php%3Ftopic=2985.15.html">2</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=45.html" title="View the profile of danc">danc</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						17
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						4114
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=2985.msg14755.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						September 12, 2006, 06:16:08 pm<br />
+						by <a href="index.php%3Faction=profile%3Bu=20.html">mviron</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post_locked.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_10783"><a href="index.php%3Ftopic=2135.0.html">SuSE Forum</a></span>
+						<span class="smalltext" id="pages10783">&#171; <a href="index.php%3Ftopic=2135.0.html">1</a> <a href="index.php%3Ftopic=2135.15.html">2</a> <a href="index.php%3Ftopic=2135.30.html">3</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						steve
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						35
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						4110
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=2135.msg11054.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						January 08, 2005, 09:50:11 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=9.html">dpeach</a>
+					</td>
+				</tr>
+				<tr class="windowbg2">
+					<td valign="middle" align="center" width="5%">
+						<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" />
+					</td>
+					<td valign="middle" align="center" width="4%">
+						<img src="Themes/babylon/images/post/xx.gif" alt="" />
+					</td>
+					<td class="windowbg" valign="middle" >
+						<span id="msg_11040"><a href="index.php%3Ftopic=2174.0.html">Alabama LUGFEST 2005</a></span>
+						<span class="smalltext" id="pages11040">&#171; <a href="index.php%3Ftopic=2174.0.html">1</a> <a href="index.php%3Ftopic=2174.15.html">2</a> &#187;</span>
+					</td>
+					<td valign="middle" width="14%">
+						<a href="index.php%3Faction=profile%3Bu=118.html" title="View the profile of lloydr">lloydr</a>
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						27
+					</td>
+					<td class="windowbg" valign="middle" width="4%" align="center">
+						3974
+					</td>
+					<td class="smalltext" valign="middle" width="22%">
+						<a href="index.php%3Ftopic=2174.msg11743.html#new"><img src="Themes/babylon/images/icons/last_post.gif" alt="Last post" title="Last post" border="0" style="float: right;" /></a>
+
+						March 08, 2005, 10:39:53 am<br />
+						by <a href="index.php%3Faction=profile%3Bu=45.html">danc</a>
+					</td>
+				</tr>
+			</table>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+			<tr>
+				<td class="catbg" width="100%" height="30">
+					<table cellpadding="3" cellspacing="0" width="100%">
+						<tr>
+							<td><a name="bot"></a><b>Pages:</b> [<b>1</b>] <a class="navPages" href="index.php%3Fboard=4.20%3Bsort=views%3Bdesc.html">2</a> <a class="navPages" href="index.php%3Fboard=4.40%3Bsort=views%3Bdesc.html">3</a> <b> ... </b><a class="navPages" href="index.php%3Fboard=4.320%3Bsort=views%3Bdesc.html">17</a> </td>
+							<td align="right" nowrap="nowrap" style="font-size: smaller;"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td class="smalltext" style="padding-top: 1ex;">
+					<img src="Themes/babylon/images/topic/my_normal_post.gif" alt="" align="middle" /> Topic you have posted in<br />
+					<img src="Themes/babylon/images/topic/normal_post.gif" alt="" align="middle" /> Normal Topic<br />
+					<img src="Themes/babylon/images/topic/hot_post.gif" alt="" align="middle" /> Hot Topic (More than 15 replies)<br />
+					<img src="Themes/babylon/images/topic/veryhot_post.gif" alt="" align="middle" /> Very Hot Topic (More than 25 replies)
+				</td>
+				<td class="smalltext" valign="top" style="padding-top: 1ex;">
+					<img src="Themes/babylon/images/topic/normal_post_locked.gif" alt="" align="middle" /> Locked Topic<br />
+					<img src="Themes/babylon/images/topic/normal_post_sticky.gif" alt="" align="middle" /> Sticky Topic<br />
+					<img src="Themes/babylon/images/topic/normal_poll.gif" alt="" align="middle" /> Poll
+				</td>
+				<td class="smalltext" align="right" valign="middle">
+					<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+						<label for="jumpto">Jump to</label>:
+						<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+							<option value="">Please select a destination:</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="#2">Club Stuff</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="?board=3.0"> => Announcements</option>
+							<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+							<option value="?board=4.0" selected="selected"> => Club discussions</option>
+							<option value="?board=26.0"> => Articles</option>
+							<option value="?board=27.0"> => Swap Meet</option>
+							<option value="?board=29.0"> => Introductions</option>
+							<option value="?board=30.0"> => Library</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="#3">Distributions</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="?board=44.0"> => RPM Based Distributions</option>
+							<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+							<option value="?board=46.0"> => Other Linux Distributions</option>
+							<option value="?board=47.0"> => Other Operating Systems</option>
+							<option value="?board=41.0"> => Security</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="#4">Hardware</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="?board=12.0"> => Graphics/Video</option>
+							<option value="?board=14.0"> => Network</option>
+							<option value="?board=16.0"> => Other Hardware</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="#5">Software</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="?board=17.0"> => Games</option>
+							<option value="?board=19.0"> => Desktops</option>
+							<option value="?board=48.0"> => Networking</option>
+							<option value="?board=22.0"> => Other Software</option>
+							<option value="?board=32.0"> => Programming/Development</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="#6">Misc</option>
+							<option value="" disabled="disabled">-----------------------------</option>
+							<option value="?board=38.0"> => Newbie Corner</option>
+							<option value="?board=24.0"> => Computer General</option>
+							<option value="?board=25.0"> => Other Misc</option>
+							<option value="?board=31.0"> => IT Jobs</option>
+							<option value="?board=36.0"> => The Big Debate</option>
+						</select>&nbsp;
+						<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+					</form>
+				</td>
+			</tr>
+		</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_board.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+
+	// Hide certain bits during topic edit.
+	hide_prefixes.push("pages", "newicon");
+
+	// Use it to detect when we've stopped editing.
+	document.onclick = modify_topic_click;
+
+	var mouse_on_div;
+	function modify_topic_click()
+	{
+		if (in_edit_mode == 1 && mouse_on_div == 0)
+			modify_topic_save("706836f2c9352cfd8e021c614df871f7");
+	}
+
+	function modify_topic_keypress(oEvent)
+	{
+		if (typeof(oEvent.keyCode) != "undefined" && oEvent.keyCode == 13)
+		{
+			modify_topic_save("706836f2c9352cfd8e021c614df871f7");
+			if (typeof(oEvent.preventDefault) == "undefined")
+				oEvent.returnValue = false;
+			else
+				oEvent.preventDefault();
+		}
+	}
+
+	// For templating, shown when an inline edit is made.
+	function modify_topic_show_edit(subject)
+	{
+		// Just template the subject.
+		setInnerHTML(cur_subject_div, '<input type="text" name="subject" value="' + subject + '" size="60" style="width: 99%;"  maxlength="80" onkeypress="modify_topic_keypress(event)" /><input type="hidden" name="topic" value="' + cur_topic_id + '" /><input type="hidden" name="msg" value="' + cur_msg_id.substr(4) + '" />');
+	}
+
+	// And the reverse for hiding it.
+	function modify_topic_hide_edit(subject)
+	{
+		// Re-template the subject!
+		setInnerHTML(cur_subject_div, '<a href="http://www.pcolalug.org/smf/index.php?topic=' + cur_topic_id + '.0">' + subject + '</a>');
+	}
+// ]]></script></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.551 seconds with 12 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

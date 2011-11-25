@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Scalable VPN Solution</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: diamondice on February 04, 2008, 01:50:04 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Scalable VPN Solution</b><br />
+					Post by: <b>diamondice</b> on <b>February 04, 2008, 01:50:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, so I have am looking for insight about all these different possibilities and solutions for my problem.&nbsp; Right now I work at a doctors office and manage their network and it&#039;s always been the biggest pain in my rear.<br /><br />Firstly, the SOHO (befsx41) routers we have do absolutely no logging what so ever.<br /><br />Secondly, the routers cannot handle the smallest of loads, as soon as the VPN connects the web management ability is dropped completely.&nbsp; I can no longer log into the router to manage squat.<br /><br />Thirdly, I cannot do any remote management what so ever nor is the VPN working properly.<br />-At the clinic I can access computers shared folders at the office.<br />-The office cannot access computers shared folders at the clinic.<br /><br />Fourth, the VPN tends to spike a lot, ~2000 ms in 30 ms intervals.&nbsp; Basically, i get a 2000ms spike and a ~30 ms response then another spike.&nbsp; It continues to do this until I reboot the routers.<br /><br />Resolution, hardware replacement.&nbsp; What I am looking for in a nutshell is a VPN Endpoint/Router/Gateway that allows me some power within the management of it.&nbsp; I would also like to be able to access network resources on both sides of the VPN from both locations.&nbsp; I am also looking for a device that has expandability options for a possible hub and spoke setup when we implement a second clinic and possibly a third so that all of the spokes can talk to each other as well as the hub talking to each spoke.<br /><br />Right now I am eyeballing pfsense, monowall and ipcop.&nbsp; I really like their abilities and don&#039;t mind building a machine for each router but it would be nice to buy a component that has this functionality already in it, the simple&#039;r the better, less to go wrong.<br /><br />Each office has about ~10 computers and they do a good bit of talk between each other but internet traffic is nothing more than AOL, E-mail and whatever I do.&nbsp; I really want a rock solid device that alllows for expansion and reliability.&nbsp; Any insight at all is greatly appreciated :).<br /><br />--Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Scalable VPN Solution</b><br />
+					Post by: <b>bhoff</b> on <b>February 04, 2008, 04:29:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would and do use OpenBSD with pf fully manageable and tons of QOS features. Also using x11vnc with ssh and works great and totally encrypted. Have it set up right now! using it also on my home network to take out some keyboards.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Scalable VPN Solution</b><br />
+					Post by: <b>danc</b> on <b>February 04, 2008, 08:29:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m using IPCop, and have been for a while.&nbsp; It&#039;s outstanding and I&#039;d recommend it.<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

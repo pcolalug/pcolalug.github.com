@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - back up scripts</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: bhoff on May 23, 2009, 03:16:48 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back up scripts</b><br />
+					Post by: <b>bhoff</b> on <b>May 23, 2009, 03:16:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is what I hope will be a long run on scripting for back-ups. Feel free to post or take something that someone else does and add some functionality and share it with the group.<br /><br />My scripts and windows installers will be fourth coming..</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>oddball</b> on <b>May 24, 2009, 03:02:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here&#039;s my backup script:<br /><br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br /><br />tar -X exclude.txt -czvf $(date +%d.%m.%Y).tar.gz ~/ ; sudo tar -czvf $(date +%d.%m.%Y)_logs.tar.gz /var/log/</div><br />The date stuff is to give the resulting tarballs the current date, in the form of dd.mm.yyyy.<br /><br />The exclude.txt is a listing of stuff I don&#039;t want backed up, and it currently contains:<br /><div class="codeheader">Code:</div><div class="code">~/tmp/<br />*.tar.gz<br />*.iso<br />~/.thumbnails<br />~/.Trash</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>bhoff</b> on <b>May 24, 2009, 10:56:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">right now I am using rsync and ssh to make this work for our windows clients I am using cygwin on windows to give me the basic Linux commands.<br />If you have not looked at this you must check it out it is the most awesome tool out there for bringing windows into Linux environment.<br />I have bash,vim,ssh, and rsync and all the core utilities right from a C: prompt very handy.<br />As for my installer to setup every thing and install what I want and the scripts I am using Nullsoft Scriptable Install System. This allows me to package every thing up into a nice<br />installable that I can send to remote clients and install without being there.<br /><br />This works really well from across the room or across the country.<br />I use the windows automated task manager to run the scripts and of course cron on Linux.<br /><br />This is the basic overview. I will have the scripts coming as I clean them up.<br /><br />And the things I am working on is checking who did not backup and email me a pass/fail list.<br />to have the client try a secondary server if the primary is down and also a file that the client can drop a file into and it creates a shortcut to that file for the script to add that to the backups.<br /><br />Right now I am using this between 2 Linux scp servers and it runs every 15 minutes with great success..<br /><br />So let me know if you have any ideas.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>bhoff</b> on <b>May 25, 2009, 08:43:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">For those following this Check out deltacopy for windows and mac it is a gui front end for cygwin&amp;rsync that allows for easy setup for backups from one machine to another and even works with ssh.<br />Also has nice feature to allow restore from remote computer and email notification on success and fails of backups.<br />Also everyone should be aware of cygwin this utility lets you run linux commands in Windows very handy for those of us that work in both fields.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>oddball</b> on <b>December 19, 2009, 02:33:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">here&#039;s my current backup scripts:<br /><br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />backup_logs;backup_root;rpm_backup;backup_main</div>Each command is another script.<br /><br />backup_logs:<br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />sudo tar -czvf /crap/$(date +%d.%m.%Y)_logs.tar.gz /var/log/</div><br /><br />backup_root:<br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />sudo tar -X /crap/exclude_root.txt -czvf /crap/$(date +%d.%m.%Y)_root.tar.gz /bin /boot /etc /lib /opt /root /sbin /srv /usr /var; sudo -k</div><br /><br />rpm_backup:<br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />rpm -qa &gt;&gt; ~/packages_$(date +%d.%m.%Y).txt</div><br /><br />backup_main:<br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />tar -X /crap/exclude.txt -czvf /crap/$(date +%d.%m.%Y).tar.gz ~/ /usr/share/fortune/ /usr/share/icons/ /usr/share/wallpapers/ /etc/zypp/repos.d/; split -b 4400M --verbose -d /crap/$(date +%d.%m.%Y).tar.gz /crap/$(date +%d.%m.%Y)_part</div><br /><br />exclude_root.txt contains:<br /><div class="codeheader">Code:</div><div class="code">/var/cache<br />/var/lock<br />/var/run<br />/var/tmp</div><br /><br />exclude.txt contains:<br /><div class="codeheader">Code:</div><div class="code">~/tmp/<br />*.tar.gz<br />*.iso<br />~/.thumbnails<br />~/.Trash</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>green_dragon37</b> on <b>December 19, 2009, 07:00:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How about mine:&nbsp; It creates ISO images and burns them to a cd-rw sitting in the drive, I&#039;m not sure how well it works any more though, I haven&#039;t used it in a few years and just pulled it out of what I thought was non-existence, while cleaning up my drive! :D<br /><br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />#<br /># This is a _full_ backup script.&nbsp; It doesn&#039;t care about<br /># file creation times, or anything except the diretories<br /># you tell it to back up. :)<br />#<br /><br /># Customize these to match your site setup<br />MKISOFS=&quot;/usr/bin/mkisofs&quot;<br />MKISOFSOPTS=&quot; -o&quot;<br /><br />CDRECORD=&quot;/usr/bin/cdrecord&quot;<br />CDRECORDOPTS=&quot;dev=0,0,0 speed=12 -tao&quot;<br />CDRECORDOPTS_BLANK=&quot;dev=0,0,0 speed=12 blank=fast&quot;<br /><br />TAR=&quot;/bin/tar&quot;<br />TAROPTS=&quot; --create --bzip2 --file&quot;<br /><br /># Even more config settings<br />backup_dir=&quot;/tmp/backups&quot;.`date +%Y%m%d`<br /><br /># OK, no more changes :p<br />opts=$*<br /><br /># Version Information<br />echo &quot;`basename $0` Version 0.10a -- Mar 2004&quot;<br /><br /># First, a help option<br />for opt in $opts; do<br />&nbsp; if [ &quot;$opt&quot; = &quot;-u&quot; ]; then<br />&nbsp; &nbsp; echo &quot;`basename $0` [-h] [-e] [-w] DIR1 [DIR2...]&quot;<br />&nbsp; &nbsp; exit 0<br />&nbsp; elif [ &quot;$opt&quot; = &quot;-h&quot; ]; then<br />&nbsp; &nbsp; echo &quot;`basename $0` -- Useful for backing up to CD media<br />&nbsp; &nbsp; -u<span style="white-space: pre;">	</span>Usage information<br />&nbsp; &nbsp; -w<span style="white-space: pre;">	</span>Write to CD media<br />&nbsp; &nbsp; -e<span style="white-space: pre;">	</span>Erase CDRW (implies \&quot;-w\&quot;)<br />&nbsp; &nbsp; -h<span style="white-space: pre;">	</span>Show this help&quot;<br />&nbsp; &nbsp; exit 0<br />&nbsp; elif [ &quot;$opt&quot; = &quot;-e&quot; ]; then<br />&nbsp; &nbsp; opts=${opts#-e}<br />&nbsp; &nbsp; erase=1<br />&nbsp; &nbsp; write=1 # Erase implies write<br />&nbsp; &nbsp; #echo $opts<br />&nbsp; elif [ &quot;$opt&quot; = &quot;-w&quot; ]; then<br />&nbsp; &nbsp; opts=${opts#-w}<br />&nbsp; &nbsp; write=1<br />&nbsp; fi<br />done<br /><br /># Then, check for problems between the keyboard and chair<br />if [ -z &quot;$2&quot; ] ; then<br />&nbsp; echo &quot;Not enough arguments, try &#039;`basename $0` -h&#039; for help&quot;<br />&nbsp; exit 15<br />fi<br /><br /># Finally, It begins...<br />mkdir -p &quot;$backup_dir/iso&quot; &quot;$backup_dir/tar&quot; &quot;$backup_dir/tbz2&quot;<br /><br />for i in $opts; do<br />&nbsp; archive=&quot;$backup_dir/tbz2/`echo $i | sed s/\\\//_/g`.tbz2&quot;<br />&nbsp; echo &quot;Backing up $i to $archive&quot;<br />&nbsp; echo &quot;================&quot;<br />&nbsp; $TAR $TAROPTS $archive &quot;$i&quot;<br />&nbsp; echo<br />done<br /><br /># Making one big tar<br />cd &quot;$backup_dir/tbz2&quot;<br />$TAR --create --file &quot;$backup_dir/tar/`hostname`_`date +%Y%m%d`.tar&quot; *<br /><br /># Making the iso<br />echo &quot;Making ISO file.&quot;<br />echo &quot;================&quot;<br />$MKISOFS $MKISOFSOPTS &quot;$backup_dir/iso/`hostname`_`date +%Y%m%d`.iso&quot; $backup_dir/tar/*.tar<br />echo &quot;ISO file complete.&quot;<br />echo &quot;==================&quot;<br /><br />if [ &quot;$erase&quot; = &quot;1&quot; ]; then<br />&nbsp; # Blanking disc<br />&nbsp; echo &quot;Blanking CDRW.&quot;<br />&nbsp; echo &quot;==============&quot;<br />&nbsp; $CDRECORD $CDRECORDOPTS_BLANK<br />&nbsp; echo &quot;Blanking complete.&quot;<br />&nbsp; echo &quot;==================&quot;<br />fi<br /><br />if [ &quot;$write&quot; = &quot;1&quot; ]; then<br />&nbsp; # Burning to disc<br />&nbsp; echo &quot;Burning ISO to disc.&quot;<br />&nbsp; echo &quot;====================&quot;<br />&nbsp; $CDRECORD $CDRECORDOPTS $backup_dir/iso/*.iso<br />&nbsp; echo &quot;Burning complete.&quot;<br />&nbsp; echo &quot;=================&quot;<br />fi<br /><br /># And, We&#039;re done!<br />echo -e &quot;\n`basename $0` $* done.&quot;<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>sontek</b> on <b>December 20, 2009, 04:09:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The problem I see with most backup scripts posted here is they are re-backing up everything everytime they run, which wastes hard drive space and bandwidth if you are backing it up to a remote location (I would recommend this, I use Amazon S3 Webservice, JungleDisk is also a good backup service, it uses Amazon).<br /><br />I use rdiff-backup for my backs... It does a combination of incremental backups and mirroring. Here is what I do:<br /><div class="codeheader">Code:</div><div class="code">#!/bin/sh<br /><br /># Where the backups go, this is an sshfs mount for me<br />DESTINATION=&quot;/home/sontek/backups/&quot;<br />LOG=&quot;/var/log/backup/&quot;<br />TIMESTAMP=`date +%m%d_%H%M`<br /><br /># How long to keep backup history (6 months)<br />MAXAGE=&quot;6M&quot;<br /><br /># Options from man page<br />OPTIONS=&quot;--force --print-statistics --exclude **.iso&quot;<br /><br /># Make sure $DESTINATION exists<br />if [ ! -d &quot;$DESTINATION&quot; ]; then<br />&nbsp;&nbsp; &nbsp;echo &quot;Error: &#039;$DESTINATION&#039; does not exist!!&quot;<br />&nbsp;&nbsp; &nbsp;exit 1<br />fi<br /><br /># Check if rdiff-backup exists<br />if ! which rdiff-backup; then<br />&nbsp;&nbsp; &nbsp;echo &quot;You need to install rdiff-backup&quot;<br />&nbsp;&nbsp; &nbsp;exit 1<br />fi<br /><br /># Just put all the folders you want backed here.<br />for SOURCE in &quot;/home/sontek/dotfiles/&quot;<br />do<br />&nbsp;&nbsp; &nbsp;if [ ! -d &quot;$DESTINATION/$SOURCE&quot; ]; then<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;echo &quot;Creating folder $DESTINATION/$SOURCE&quot;<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;mkdir -p &quot;$DESTINATION/$SOURCE&quot;<br />&nbsp;&nbsp; &nbsp;fi<br /><br />&nbsp;&nbsp; &nbsp;echo &quot;Backup: rdiff-backup $OPTIONS $SOURCE $DESTINATION/$SOURCE&quot;<br />&nbsp;&nbsp; &nbsp;rdiff-backup $OPTIONS &quot;$SOURCE&quot; &quot;$DESTINATION/$SOURCE&quot;<br /><br />&nbsp;&nbsp; &nbsp;# It went well, remove stuff older than MAXAGE<br />&nbsp;&nbsp; &nbsp;if [ &quot;$?&quot; -eq 0 ]; then<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;echo &quot;Cleanup: rdiff-backup --force --remove-older-than $MAXAGE<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;$DESTINATION/$SOURCE&quot;<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;rdiff-backup --force --remove-older-than $MAXAGE &quot;$DESTINATION/$SOURCE&quot;<br />&nbsp;&nbsp; &nbsp;else<br />&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;echo $? &gt; $LOG/fail$TIMESTAMP.log<br />&nbsp;&nbsp; &nbsp;fi<br />done<br /></div>and then if you ever want to grab the latest backup of a specific file:<br />rdiff-backup --restore-as-of (time) /home/backups/home/sontek/dotfiles/.vimrc<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>sontek</b> on <b>December 20, 2009, 04:14:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I also maintain my .vimrc, .bashrc, .screenrc, and some util scripts (including this backup script) on github http://github.com/sontek</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>green_dragon37</b> on <b>December 20, 2009, 05:13:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would have preferred incremental backups when I came up with my script, but I wasn&#039;t keeping around the original ISO images, or keeping the CDR in the computer after I did a backup... I never bothered to go any further with it, either! :D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>sontek</b> on <b>December 21, 2009, 10:32:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Haha, yeah... I don&#039;t trust myself with any physical media (usb sticks, dvds, tapes, etc), so I stick with all remote backups over the network either with rsync or sshfs + rdiff-backup. Its actually pretty fast after the initial backup and pretty easy to restore, and makes it much easier to do nightlies since you don&#039;t have to remember to put a new disk in the drive every night.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>Yossarian</b> on <b>December 22, 2009, 11:18:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I feel bad.&nbsp; Whenever I do backups I just manually copy my files to an external hard drive.&nbsp; Nothing fancy or impressive about that!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: back up scripts</b><br />
+					Post by: <b>sontek</b> on <b>December 22, 2009, 12:34:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My backup strategy is just another way to hide my inability to be organized... If I waited until I was formatting / thought of doing a backup, it&#039;d never get done... So I have this script and just set it up in cron right after a format and just never think about it, and then 6 months down the road when I format and get the *OH CRAP* moment thinking of all the things I didn&#039;t back up, they are magically sitting on my Amazon S3 server :P</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

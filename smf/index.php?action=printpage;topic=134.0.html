@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Some useful mySQL commands</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on August 25, 2002, 04:41:24 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Some useful mySQL commands</b><br />
+					Post by: <b>bhoff</b> on <b>August 25, 2002, 04:41:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you have mySQL installed you can start using right away from command line goto your terminal window and type &quot;mysql&quot; this should bring up the prompt mysql, from here you can use the commands to start using the database.<br /><br />Here are a few of the useful commands<br /><span style="text-decoration: underline;"><b>Note! you must always have the &quot;;&quot; after each line.</b></span><br /><br /><b>show database; </b>&gt;should show you any databases that already exist. On a clean install of mySQL it loads a test database called test for you.<br /><b>create database &quot;name&quot;;</b>&gt;will create a database with the name given.<br /><b>use &quot;name&quot;;</b>&gt;set to use the database named.<br /><b>drop database &quot;name&quot;;</b>&gt;will delete the named database.<br /><b>show tables;</b>&gt;will show you the tables in whatever database you are in.<br /><b>describe db;</b>&gt;will give you a breakdown description of the tables.<br /><br />These are all very useful commands if you donnot already have mySQL I would suggest you get it as soon as possible. It is a great enterprise level database and has several GUI based tools on there site also to work with the database. http://www.mysql.org.<br />Brett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Some useful mySQL commands</b><br />
+					Post by: <b>rugmonster</b> on <b>January 04, 2004, 03:39:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Guys, I was trying to move this to Articles, but somehow it got moved to Library instead...could the mod for Library move this to Articles...or try to?<br /><br />I was going to add to this, phpmyadmin (http://www.phpmyadmin.net) is an indespensable tool for managing your mySQL server. I don't run a mySQL server without it these days.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Some useful mySQL commands</b><br />
+					Post by: <b>ctrlz</b> on <b>January 27, 2004, 11:45:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">some commands i found useful for backing up db's in mysql<br /><br /><div class="codeheader">Code:</div><div class="code">machine# mysqldump -u root -p mydb&gt; mydb.sql</div><br /><br />to import back in, just do:<br /><br /><div class="codeheader">Code:</div><div class="code">machine# mysql -u root -p mydb &lt; mydb.sql</div></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

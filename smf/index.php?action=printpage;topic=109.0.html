@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Anyone running 8.2 and using a Linksys Router?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: trigger on August 17, 2002, 10:13:41 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Anyone running 8.2 and using a Linksys Router?</b><br />
+					Post by: <b>trigger</b> on <b>August 17, 2002, 10:13:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey all,<br /><br />I am having a problem with my linux box. &nbsp;Difficulty accessing the internet and other computers on the network. If anyone could help please throw me a line.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Problems?</b><br />
+					Post by: <b>bhoff</b> on <b>August 18, 2002, 10:06:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">What type of problem give as many details as possible.<br />Thanks<br />BRett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Anyone running 8.2 and using a Linksys Router?</b><br />
+					Post by: <b>rburt3</b> on <b>August 18, 2002, 01:37:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is it the kind of Linksys with built-in DHCP?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Here is the problem</b><br />
+					Post by: <b>trigger</b> on <b>August 19, 2002, 06:56:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have been running Red hat 7.0 for some time and I decided that I wanted to try out the Mandrake 8.2. Everything is great on Mandrake but I can't seem to get it connected to the internet. I forgot the settings i had on Red hat. Things like what host name or domain name I put in. I was wondering if there was someone else that uses Cox cable internet service, using Linksys Router 4 port, and is running Mandrake 8.2. Just so I could see what kind of settings they are using. &nbsp;Or of course all help is greatly accepted. <br /><br />Thanks,<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Anyone running 8.2 and using a Linksys Router?</b><br />
+					Post by: <b>rburt3</b> on <b>August 19, 2002, 07:28:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Doesn't cox use dhcp? &nbsp;If so, you need to start the dhcpcd deamon and that should get you your information. &nbsp;I once made the mistake of turning on dhcpd instead of dhcpcd and couldn't get anywhere, since my local dhcp was overriding Mediacom's. &nbsp;Bad day. &nbsp;Your Linksys may be doing the same if it has a built-in dhcp server.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cox does use Dhcp</b><br />
+					Post by: <b>trigger</b> on <b>August 19, 2002, 12:32:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">But I have 4 computers running with internet, The only one not working is the Mandrake because I just installed itt so I do not think it is my router. &nbsp;Does Mediacomm require you to use a host name or a domain name to connect to the internet. &nbsp;I have nothing pluged in to those places on my Mandrake system.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Anyone running 8.2 and using a Linksys Router?</b><br />
+					Post by: <b>steve</b> on <b>August 19, 2002, 02:44:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Make sure you set your Mandrake computer to obtain it's ip address from a dhcp server. Go into the Mandrake control panel and setyup networking then go to the network card settings and set it to dhcp. You should not have to setup dhcpd for this as all you need is dhcpcd which is the client. Mandrake should set this up for you.<br /><br />If you have this done then you should be able to run a shell and su to root. Then type ifconfig and it should show you your ip address.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Anyone running 8.2 and using a Linksys Router?</b><br />
+					Post by: <b>rburt3</b> on <b>August 19, 2002, 02:53:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah, what Steve said is what I was trying to get at... sorry if I was unclear. &nbsp;Following Steve's instructions, you should not have to enter a host name or domain, but you might want to check Cox's website or their tier 1 support &nbsp;:roll: to be sure.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I use Cox and have a homemade router/firewall</b><br />
+					Post by: <b>bhoff</b> on <b>August 19, 2002, 07:20:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Cox does not require domain names or anything else for that matter they go by your MAC address now. so setting your MAndrake box for DHCP as steve suggested is all that is needed.<br />Brett</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Anyone running 8.2 and using a Linksys Router?</b><br />
+					Post by: <b>steve</b> on <b>August 19, 2002, 10:40:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I run a redhat 7.2 box on Cox through a linksys router, I have it set up the exact way Steve recommended, and it has always worked great :).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Alright new problem?</b><br />
+					Post by: <b>trigger</b> on <b>August 21, 2002, 01:34:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I set it to the specs you said and now My internet is down on all my computers and when I try to go to 192.168.1.1 It gives me that I am trying to access a Mandrake Server. Now when I installed Mandrake on my linux box, I insstalled everything I could. Including the server packages. I did not think that programs like Samba automatically activate. I shut down my linux box and restarted my other computers and they work fine. &nbsp;I am still afraid to hook the Linux box back on to the network till I get the settings right. how do you turn off the server program that is running. I have never used a server and am losted when it comes to this.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Anyone running 8.2 and using a Linksys Router?</b><br />
+					Post by: <b>steve</b> on <b>August 21, 2002, 04:50:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It sounds like your Mandrake box is set to IP address 192.168.1.1.<br /><br />This has nothing to do with any of the servers installed. You can stop them all and your other computers still wouldn't be able to get out because the Mandrake computer is using the same address as your gateway. The one thing you need to do is remove the dhcp server program. You only need the dhcp client installed as Mandrake is only a client.<br /><br />To do this, run up the Mandrake computer. Log in and, through the menu, go to Configuration/Packageing/Software Manager. Once you're in software manager click on the tab that says &quot;installed&quot; Then, in the &quot;find&quot; box type &quot;dhcp&quot; (without the quotes). The only program listed should be &quot;dhcpcd&quot; Make sure it is spelled exactly as I have typed it. Anyway, if there are any other programs listed, and you are sure you're in the Installed tab then put a check mark by the other programs and click on Install/Remove. This will remove any other dhcp programs you have. Once that's done restart your Mandrake computer. Your other computers on the network will also have to be restarted so they can get the correct IP information from the router.<br /><br />Once the Mandrake computer is back up, run a shell and type &quot;su&quot; type in your root password to go into root mode. When you get the prompt, type &quot;ifconfig&quot; Make sure it doesn't list 192.168.1.1 as your IP address. If it does then you'll have to go back into Mandrake Control panel and setup your network adapter to use dhcp.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Anyone running 8.2 and using a Linksys Router?</b><br />
+					Post by: <b>rburt3</b> on <b>August 21, 2002, 07:07:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Told ya that pesky dhcpd'd getcha! &nbsp;:wink:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>THANKS EVERYONE!!!!!!!!!!!!!!!!!!!!!</b><br />
+					Post by: <b>trigger</b> on <b>August 27, 2002, 07:37:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just wanted to say thanks to everyone. I am up and running perfect know so agian Thanks!<br /><br />Trigger</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

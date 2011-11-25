@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Need help</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by:  on February 29, 2004, 06:08:49 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help</b><br />
+					Post by: <b></b> on <b>February 29, 2004, 06:08:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I installed Slackware 9.1 on my test computer today and I am trying to install openoffice 1.1. It requires a file called libiconv-1.9.1-i686-1dl.tgz.. I have extracted it and cd'ed to the folder it made. I ran the command ./configure --prefix=/usr/local and I get this error message &quot;-bash: ./configure: No such file or directory&quot; . Anyone got any ideas as to what I need to do</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help</b><br />
+					Post by: <b>danc</b> on <b>February 29, 2004, 06:38:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ed,<br />Is there some reason you're trying to compile it yourself? &nbsp;I installed it in Slack 9.1 with no difficulty, by using the included &quot;install&quot; script, which is contained in the big tarball downloaded from OpenOffice.org. &nbsp;The filename I have is:<br />OOo_1.1.0_LinuxIntel_install.tar.gz and is about 74.7 Mb in size. &nbsp;I'd recommend you go that route.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help</b><br />
+					Post by: <b>lloydr</b> on <b>February 29, 2004, 06:43:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I compiled my openoffice myself back a while back just because I didn't wanna bother locating a slackpack.....but the tgz you extracted and tried doing ./configure, are you sure it wasn't in slackpack form where you just will run installpkg filename.tgz....or i generally just do installpkg firstfewletters* cuz i'm lazy and don't ever feel like typing it all out lol<br /><br />also a good site for slackpack files where all you run is installpkg for installing is<br />http://www.linuxpackages.net<br /><br />p.s. http://www.linuxpackages.net/pkg_details.php?id=2136<br />there is link to that package you were talking about.... gives explanation of why it's lookin for it probaly....I know that one for sure all you do is...as root: <div class="codeheader">Code:</div><div class="code">installpkg libiconv-1.9.1-i686-1jim.tgz</div><br />or can just do installpkg libiconv*tgz<br />&nbsp;:wink:<br /><br />also, did you happen to try out dropline-gnome yet?<br />I think the thing about requiring libiconv has to do with not having dropline gnome....er well atleast looks like that when I read the description of the package</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Thanks Dan and LLoyd</b><br />
+					Post by: <b></b> on <b>March 01, 2004, 08:37:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I got openoffice installed. I tried both of your methods. I had problems because I did not read the instructions first but I learned how to install and remove packages in Slackware. Thank you both very much!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Need help</b><br />
+					Post by: <b>danc</b> on <b>March 01, 2004, 09:23:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ed,<br />Glad to hear you got it going, and are enjoying Slack! &nbsp;It's a great distro. &nbsp;If you are a Gnome desktop fan (like me), you've got to check out Dropline Gnome! &nbsp;It's a Gnome desktop optimized for Slack, and has an auto-update feature that is very nice.<br /><br />http://www.dropline.net/gnome<br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

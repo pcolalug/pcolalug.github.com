@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Well I guess that answers THAT kernel question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on December 09, 2004, 01:30:18 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 09, 2004, 01:30:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I suppose I have to enable high mem on a 1GB of RAM system after all.<br /><br /><div class="quoteheader">Quote</div><div class="quote">Warning only 896MB will be used.<br />Use a HIGHMEM enabled kernel.<br />896MB LOWMEM available.</div><br /><br />That's from /var/log/dmesg (which I don't know exactly what that is, but I'm guessing it's the boot-up sequence). &nbsp;I always wondered if I should enable high mem and I suppose this answers that.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>lloydr</b> on <b>December 09, 2004, 01:59:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">the HIGHMEM 4gb setting in the kernel is used for when you have 1gb-4gb of ram</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>rugmonster</b> on <b>December 09, 2004, 10:21:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">What kernel are you using? The 2.6 series shouldn't have any problem with 1GB.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>lloydr</b> on <b>December 09, 2004, 10:52:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">2.6 still requires that you enable HIGHMEM with the 4gb setting<br /><br />HIGHMEM off is for &lt;1gb<br />HIGHMEM 4gb is for 1gb-4gb<br />HIGHMEM 64gb is for 4gb+</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>rugmonster</b> on <b>December 09, 2004, 12:42:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's why I said 1GB</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>danc</b> on <b>December 09, 2004, 04:18:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">That's why I said 1GB</div><br />Huh? &nbsp;Better read it again...<br /><br />With 1Gb of memory, you need to have the HIGHMEM 4Gb option set in the kernel config (including 2.6.x), or only about 900Mb will be recognized.<br /><br />( &quot;&lt;&quot; = &quot;less than&quot; )<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 10, 2004, 09:39:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">See, this is what I was so curious about when reading the descriptions in XConfig. &nbsp;If I remember right they say leave it off for up to 1GB, on for up to 4GB...it's one of those &quot;on the fence&quot; deals.<br /><br /><br />Well, I've got to rebuild anyway to enable I2C or else I won't be able to use tvtime properly (at least, I THINK it's tvtime...it's some program like that).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>danc</b> on <b>December 10, 2004, 10:41:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">There's nothing &quot;on the fence&quot; about it... &nbsp;If you have 1Gb of memory, you do not have *LESS THAN* 1Gb !!!<br /><br />Again, &quot;&lt;&quot; means &quot;less than&quot;...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>rugmonster</b> on <b>December 10, 2004, 12:32:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dan, calm down. You get so worked up over such small things.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>danc</b> on <b>December 10, 2004, 02:58:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Not worked up at all... &nbsp;Just trying to get a simple point to be understood, that's all. &nbsp;Sometimes I wonder if people even read what's written.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>Brent</b> on <b>December 11, 2004, 01:27:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">well, danc is a puffy little peguin.<br /><br />And rug is ...some annoying wierd guy with a stick (movie reference i don't get?).<br /><br />And finally theirs me, an all american Bloodthirsty cyborg with a gun.<br /><br />My random .02 &nbsp;:lol:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>rugmonster</b> on <b>December 11, 2004, 08:46:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually, the avatar is from a SNL skit parodying VH1's Behind the Music of The Blue Oyster Cult. That's Will Farrell playing the guy with the cowbell in Don't Fear the Reaper. It was a very funny skit and the phrase &quot;I need more cowbell&quot; because a common thing heard during my time at Baghdad.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Well I guess that answers THAT kernel question</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 13, 2004, 10:07:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Danc, last time I read about the highmem capability in Xconfig it said to leave it off if you've got up to 1GB. &nbsp;I've got 1GB, that'd be right &quot;up to&quot; 1GB. &nbsp;I don't have over 1GB, so I didn't see a reason to turn it on.<br /><br /><br />That's just the way I read it anyway but rest assured, I spend several hours reading absolutely everything about every feature when I do a kernel rebuild.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

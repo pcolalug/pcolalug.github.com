@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - RedHat AS 2.1 or how i found out about the sysctl.conf file</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by:  on July 08, 2003, 11:00:15 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RedHat AS 2.1 or how i found out about the sysctl.conf file</b><br />
+					Post by: <b></b> on <b>July 08, 2003, 11:00:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK for some reason RedHat ships 2.1 with absolutly no tunning what so ever. &nbsp;After installing it on a Proliant GL580 G2, w 4x 1.9ghz procs and 4gb ram and 4 x 72gb 15k rpm drives. &nbsp;i created a fairly large filesystem (about 120gb striped across all four disks well kinda of anyway, using the compaq smart raid controller it just looked like a 2x2 mirror so the os only saw a 144gb hard drive. &nbsp;(needless to say) after running a small test on aproximatly 1000 log files. &nbsp;web access log files to be exact, each at least 12mb gziped (-9). and running the following script<br />&gt;fin<br />for i in *gz<br />do<br />cat $i|awk '{print $7}' |sort -u &gt;$i.sort &amp;<br />done<br />cat *sort |sort -u &gt;m_list<br />for i in `cat m_list`<br />do<br />echo $i `grep $i *gz|wc -l` &gt;&gt;fin &amp;<br />done<br /><br />(ok so you get the jist, don't knock my coding, this was done for a reason. &nbsp;I ran out of several things first was filesystem inodes, then was process in the process table, you would think with that box i could have more then 1023 process but no not out of the box.<br /><br />This leads to my search of the equiv to /etc/system in solaris (/etc/system is where the kernel modules, and variables are defined)<br /><br />After a quick search (calling hp backline support engineer, since redhat had 1 full day to research my problem) &nbsp;they came up with /etc/sysctl.conf so i started hunting around for what can be put in there and here's what i found.<br /><br />[seminole@www seminole]$ man -k sysctl<br />sysctl &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (2) &nbsp;- read/write system parameters<br />sysctl &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (8) &nbsp;- configure kernel parameters at runtime<br />sysctl.conf [sysctl] (5) &nbsp;- sysctl(8) preload/configuration file<br />&nbsp;<br />all ok referneces, but what can be put in there and what's best practices and such like that <br /><br />Most people want you to write something like <br />echo 0 &gt;/proc/sys/net/ipv4/tcp_syncookies in rc.local (that's all good and well, but there had to be some mechanism other then an echo statement which wouldn't get run til rc.local got run, so where to put this kinda stuff to take affect before the network is intiated well here we go /etc/init.d/network runs the following command sysctl -e -p /etc/sysctl.conf. &nbsp;odd but can other things besides network stuff go in here definitly. &nbsp;<br /># Disables packet forwarding<br />net.ipv4.ip_forward = 0<br /># Enables source route verification<br />net.ipv4.conf.default.rp_filter = 1<br /># Disables the magic-sysrq key<br />kernel.sysrq = 0<br />&nbsp;(is a sample file)<br /><br />whow that looks just like the /proc filesystem (oddly enough it is) /proc/sys is re-configed from this file so if you want to properly change /proc/sys/net/unix/max_dgram_qlen from the default of 10 you could just put <br />net.unix.max_dgram_qlen = # in the sysctl.conf file and rerun sysctl -p <br /><br />ok now for what can be put in there <br />run sysctl -a <br /><br /><br />ok have fun hacking this file</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RedHat AS 2.1 or how i found out about the sysctl.conf file</b><br />
+					Post by: <b>imnes</b> on <b>July 09, 2003, 09:42:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">We have a few racks of Dell PowerEdge 1650's, Dual 1.5ghz, 4gb RAM, 2*75gb 15kRPM scsi mirrored raid. &nbsp;I had to do the same thing to make it ready for Oracle DB and Application Servers, in rc.local with no problem.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RedHat AS 2.1 or how i found out about the sysctl.conf file</b><br />
+					Post by: <b>rburt3</b> on <b>July 09, 2003, 10:55:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Can you say &quot;server envy&quot;? imnes, are you still using SuSE's enterprise OS across the street? If so, comments, sugguestions?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Server Envy</b><br />
+					Post by: <b></b> on <b>July 09, 2003, 11:23:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">600 + Sun Solaris Servers, from Sparc Center 1000, w 2 x 50mhz procs on a 25mhz fsb with a whopping 128mb ram and a SSA-110 with 30 x 2gb drives (all 3k rpm) mind you it's a single fiber connection from the Sparc Center to the SSA, but then it drops down to SCSI. &nbsp;All the way to e15k's with 72 900mhz procs and more disk space then i care to look at. :D unfortunatly Idon't get to bring any of them with me.<br /><br />/lance &nbsp;:shock: &nbsp; 8) &nbsp; :arrow:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RedHat AS 2.1 or how i found out about the sysctl.conf file</b><br />
+					Post by: <b></b> on <b>July 09, 2003, 11:53:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok so there is a wait command after the first done</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

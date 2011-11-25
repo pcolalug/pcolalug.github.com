@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Wireless tools</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: bhoff on January 23, 2005, 03:52:49 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>bhoff</b> on <b>January 23, 2005, 03:52:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I thought I would take a moment to haep my praise upon a wireless app I am currently using. Kismet what a great tool for monitoring wireless access points hooked with airsnort and the kismet log viewer which takes the ugly xml files and renders nice html webpages of your captured data inputing the &nbsp;airsnort info also. was a little difficult to get running and had to write a script &nbsp;to run the log viewers many parts as one function, but it is up and running and loving it. also downloaded some sounds and wav files for it so it tels me &nbsp;if the wap is encrypt or not and a few aother key things.<br />Worth your time to download and setup if you are using wireless.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>cyberonin</b> on <b>January 23, 2005, 04:13:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Have you tried Netstumbler? A co-worker recommended it to me. Gonna try it out this week. http://www.netstumbler.com/faqs/general/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>rugmonster</b> on <b>January 23, 2005, 04:44:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Netstumbler is a win32 app. I'm not all that impressed by it compared to what is out there for linux.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yea</b><br />
+					Post by: <b>bhoff</b> on <b>January 23, 2005, 05:55:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have netstumbler installed in my other OS .<br />I am not impressed at all compared to kismet and airsnort<br />with those two you can do anything including but not limited to checking your wep encryption against the wep cracker tools and finding your cloud.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 24, 2005, 05:41:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have been working on getting kismet running on and off for about a week with no luck. &nbsp;I will get it though. &nbsp;Sooner or later. &nbsp;I have not been to persistant. &nbsp;<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>rugmonster</b> on <b>January 24, 2005, 11:58:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Kismet will only work with certain chipsets. Make sure your card is supported.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 26, 2005, 10:08:08 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">How can I check if my wireless card supports raw monitoring (rfmon). &nbsp;Since it is a built in wireless on my toshiba laptop I dont have &nbsp;specific card info. &nbsp;I use the orinoco drivers and it works fine. &nbsp;I am researching the error right now.<br />Also, how can I check which version of the orinoco driver I am using?<br /><br />I think this is the problem but I dont know exactly how to fix it.<br /><br /><div class="quoteheader">Quote</div><div class="quote"><br /><br /># A common problem I am hearing about is people installing pcmcia-cs when they already have kernel pcmcia built in. The problem is that the orinoco drivers for kernel pcmcia install to a different location than the orinoco drivers for pcmcia-cs. This often results in two sets of drivers being present after doing a make install on the pcmcia-cs sources. The problem is that the patched version of the orinoco drivers will not be used, rather the old unpatched drivers get loaded and you will be led to believe that the patch has failed. Make sure that you do not have more than one copy of hermes.o, orinoco.o and orinoco_cs.o in your /lib/modules/&lt;kernel&gt; subtree. Test that you are actually using patched drivers with the following:<br /><br />iwpriv eth0<br /><br />If you do not see &quot;monitor&quot; listed as the last available private ioctl, then you are not using patched drivers. Remove any old drivers that you find per the instructions above.<br /><br /># You must be configured to use the orinoco_cs driver. NOT the wvlan_cs or wavelan_cs drivers.</div><br /><br />Well maybe it isnt the problem, I do not see monitor listed when I run that command but when I run the lsmod command I see orinoco_cs listed.<br /><br /><div class="codeheader">Code:</div><div class="code">linux&#58;/home/lee # lsmod<br />Module &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Size &nbsp;Used by<br />bluetooth &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;44932 &nbsp;0<br />snd_intel8x0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 31396 &nbsp;2<br />snd_ac97_codec &nbsp; &nbsp; &nbsp; &nbsp; 69728 &nbsp;1 snd_intel8x0<br />snd_pcm &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;96776 &nbsp;2 snd_intel8x0,snd_ac97_codec<br />snd_timer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;24708 &nbsp;1 snd_pcm<br />snd_page_alloc &nbsp; &nbsp; &nbsp; &nbsp; 10248 &nbsp;2 snd_intel8x0,snd_pcm<br />nvram &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8328 &nbsp;0<br />nvidia &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4815052 &nbsp;12<br />usbserial &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;26856 &nbsp;0<br />parport_pc &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 37824 &nbsp;0<br />lp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 10536 &nbsp;0<br />parport &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;37960 &nbsp;2 parport_pc,lp<br />cpufreq_userspace &nbsp; &nbsp; &nbsp; 5208 &nbsp;2<br />speedstep_ich &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5004 &nbsp;0<br />speedstep_lib &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4228 &nbsp;1 speedstep_ich<br />freq_table &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;4356 &nbsp;1 speedstep_ich<br />thermal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;17928 &nbsp;0<br />ipv6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;237312 &nbsp;15<br />processor &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;25640 &nbsp;1 thermal<br />fan &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5380 &nbsp;0<br />button &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8464 &nbsp;0<br />battery &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;11396 &nbsp;0<br />ac &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;6404 &nbsp;0<br />snd_mixer_oss &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;19200 &nbsp;1<br />snd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;60164 &nbsp;7 snd_intel8x0,snd_ac97_codec,snd_pcm,snd_timer,snd_mixer_oss<br />soundcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 9056 &nbsp;2 snd<br />toshiba_acpi &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5908 &nbsp;0<br />af_packet &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;20872 &nbsp;0<br />edd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;10012 &nbsp;0<br />orinoco_cs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8968 &nbsp;1<br />orinoco &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;37388 &nbsp;1 orinoco_cs<br />hermes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;8960 &nbsp;2 orinoco_cs,orinoco<br />ds &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 17796 &nbsp;5 orinoco_cs<br />usbhid &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 40132 &nbsp;0<br />joydev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9664 &nbsp;0<br />sg &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 35872 &nbsp;0<br />st &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 37404 &nbsp;0<br />sd_mod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 16912 &nbsp;0<br />sr_mod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 16292 &nbsp;0<br />scsi_mod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;111052 &nbsp;4 sg,st,sd_mod,sr_mod<br />ohci_hcd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 20228 &nbsp;0<br />ehci_hcd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 29188 &nbsp;0<br />yenta_socket &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 19840 &nbsp;1<br />pcmcia_core &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;66100 &nbsp;3 orinoco_cs,ds,yenta_socket<br />intel_agp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;21024 &nbsp;1<br />agpgart &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;32168 &nbsp;2 intel_agp<br />ide_cd &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 38176 &nbsp;0<br />cdrom &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;36508 &nbsp;2 sr_mod,ide_cd<br />subfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 7552 &nbsp;1<br />evdev &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8960 &nbsp;0<br />nls_utf8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2176 &nbsp;1<br />ntfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 91888 &nbsp;1<br />dm_mod &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 54524 &nbsp;0<br />e100 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 33664 &nbsp;0<br />mii &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4992 &nbsp;1 e100<br />usbcore &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 106724 &nbsp;6 usbserial,usbhid,ohci_hcd,ehci_hcd<br />reiserfs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;242000 &nbsp;1<br /></div><br /><br />Output from my pcmcia cardinfo lists: &nbsp;Intersil Prism2 wireless card.<br />Any Ideas?<br />Thanks,<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>danc</b> on <b>January 26, 2005, 11:00:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The &quot;lspci&quot; command (might have to be root) may give you more specifics on your card...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 26, 2005, 11:31:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, I have found out the model of the card. It is:<br /><br />Agere (Lucent) RUBY MPCI3A-20/R<br /><br />This is a mini pci card.<br /><br />I do think the problems is no monitor mode. &nbsp;I think if I know what driver version I am using (which I dont and dont know how to find out) I could see if I need to update of course this would be after I figure out how to update. :D <br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>danc</b> on <b>January 26, 2005, 11:42:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: L.Rentz</div><div class="quote">Ok, I have found out the model of the card. It is:<br /><br />Agere (Lucent) RUBY MPCI3A-20/R<br /><br />This is a mini pci card.<br /><br />I do think the problems is no monitor mode. &nbsp;I think if I know what driver version I am using (which I dont and dont know how to find out) I could see if I need to update of course this would be after I figure out how to update. :D <br /></div><br /><br />Lee,<br /><br />You should be able to see the driver version using the &quot;dmesg&quot; command, like this:<br /><br />dmesg | grep -i agere<br />or<br />dmesg | grep -i mpci3a<br />or<br />etc..... whatever you want to search on in your card model string above.<br /><br />As for upgrading the driver, depends how you installed it (rpm, source, etc). &nbsp;Let us know if there's anything else you need help with.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 26, 2005, 01:23:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks Dan, I did grep the output of dmesg earlier. &nbsp;(see I do know something) :lol: &nbsp;However I did not grep for orinoco. &nbsp;I think that it is using the orinoco_cs 0.13e &nbsp;now I need to find out if I need to patch or update. &nbsp;Will keep trying.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 26, 2005, 01:38:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, the latest orinoco driver is 0.15rc2. &nbsp;I did not originally install the 0.13e version. &nbsp;Suse just detected the card and used that driver which must have been on the dvd (boxed version). &nbsp;The latest version is orinoco-0.15rc2.tar.gz<br />I have updated rpms before but not did any updates using a tar.gz.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>could you post your kismet.conf file from your /etc</b><br />
+					Post by: <b>bhoff</b> on <b>January 26, 2005, 08:10:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you send it to me I can check it for errors there are several changes you must make for it to work.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>danc</b> on <b>January 26, 2005, 10:20:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: L.Rentz</div><div class="quote">Ok, the latest orinoco driver is 0.15rc2. &nbsp;I did not originally install the 0.13e version. &nbsp;Suse just detected the card and used that driver which must have been on the dvd (boxed version). &nbsp;The latest version is orinoco-0.15rc2.tar.gz<br />I have updated rpms before but not did any updates using a tar.gz.<br /><br />Lee</div><br /><br />I think I would try to first remove the older driver rpm package, either with Suse tools (YAST?), or from the command line with &quot;rpm -e packagename&quot;. &nbsp;Then you should be able to install the new one by untarring the tarball with: &nbsp;tar -xzvf orinoco-0.15rc2.tar.gz<br /><br />Then do the usual &quot;./configure&quot;, &quot;make&quot;, and &quot;make install&quot; (last one as root) and see if it works...<br /><br />Oh, and I hereby disclaim any fault of my own if this totally hoses your system... &nbsp; :lol: <br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>L.Rentz</b> on <b>January 27, 2005, 05:56:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">If you send it to me I can check it for errors there are several changes you must make for it to work.</div><br /><br />Excuse my ignorance, What do I send to you to check?<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>config files</b><br />
+					Post by: <b>bhoff</b> on <b>January 27, 2005, 07:23:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I help Woody Harold set his up in suse on a toshiba laptop.<br />you could send me your kismet.conf from your /etc directory.<br />this is the settings for kismet also the kismet_drone file also there are changes to be made for it to work properly.<br />which laptop do you have exactly model number?<br />thanks</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wireless tools</b><br />
+					Post by: <b>L.Rentz</b> on <b>February 04, 2005, 06:25:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, Still looking on a solution. &nbsp;I will try to update the driver this weekend. &nbsp;It is not as easy as removing the driver in yast and installing the new one. &nbsp;I have did a search in yast with no results. &nbsp;I have read a couple of posts elsewhere that I will give a try this weekend. &nbsp;<br /><br />Brett, I have already edited the .config file. &nbsp;But I first have to get my wireless card to drop to monitor mode. &nbsp;If I get that working and my .config does not work. &nbsp;I will take you up on your offer. &nbsp;Thanks.<br /><br />Lee</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

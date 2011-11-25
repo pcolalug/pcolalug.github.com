@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Encryption Question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Computer General => Topic started by: rugmonster on January 03, 2003, 05:21:09 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Encryption Question</b><br />
+					Post by: <b>rugmonster</b> on <b>January 03, 2003, 05:21:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Throughout my career, I have never really taken the time to learn how modern day encryption works. I am mainly wondering about SSL and SSH connections. Also, if I were to have an intrusion detection system which monitors all traffic, incoming and outgoing, would it be able to decrypt the encrypted traffic since it sees the encryption keys being exchanged? To go further into that, would there be the possibility that someone else intercepts the encryption key being able to then capture the encrypted transmissions and then decrypting that transmission?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Encryption Question</b><br />
+					Post by: <b>stocke2</b> on <b>January 05, 2003, 06:08:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I believe ssh (haven't really loooked into it in a while) uses two keys for encryption. I think it is a public key / private key encryption. anyone may feel free to correct me if i am wrong. if that is the case, they may have the public key all they want, they need the private key to decrypt it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Encryption Question</b><br />
+					Post by: <b>rugmonster</b> on <b>January 05, 2003, 06:22:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My understanding of public key encryption is this. Your server has a private and public key. When a client makes a request to the server, the server passes the client the public key, which the client then uses to encrypt its data. When the data reaches the server, the server uses it's private key to decrypt it. By what key does the data sent back to the client get encrypted? If it is the public key, then the data could then be decrypted by anyone with the appropriate tools, considering they captured the public key on its way to the client. I am hoping I am wrong on this, so someone please set me straight....please.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Encryption Question</b><br />
+					Post by: <b></b> on <b>January 05, 2003, 10:02:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">IIRC, once the client establishes a secure connection with a server, it generates a new master key and transmits it (encrypted) through the secure connection. Since the server is theoretically the only holder of the private key, only it can decrypt this new master key. All subsequent transmissions are encrypted and decrypted using the new key.<br /><br />Hope this sheds a little light on the subject.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Encryption Question</b><br />
+					Post by: <b>altomo</b> on <b>February 21, 2003, 12:54:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">To answer your question about can and IDS system montior the encrpyted traffic:<br /><br />It depends on the IDS. If the IDS is host based and lives between the OS and the application then yes since the traffic is decrypted at some point it can monitor and or stop an attack. If the IDS lives on the host at the same level as the application then no since it is really just a network sniffer at that point.<br /><br />Now there are some exceptions to the rules of course. Some encryption is weak, base64, so an IDS could be writtent to crack base64, check the traffic and then respond although this would have to be done quickly.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Encryption Question</b><br />
+					Post by: <b>rugmonster</b> on <b>February 22, 2003, 02:01:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">What about the cisco netranger product? Not that I have to worry about it now, but I'm just curious.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Encryption Question</b><br />
+					Post by: <b>altomo</b> on <b>February 23, 2003, 11:50:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The net ranger product from cisco has several differnet types. The host system intercepts system calls so this product would recieve data that was encrypted after it was decrypted on the system. &nbsp;The network monitoring sensors can not decrypt your encrypted traffic since they just watch what goes by on the line, though it would be possible but by design of modern encryption it would take to long to decrypt.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Encryption Question</b><br />
+					Post by: <b>rburt3</b> on <b>March 07, 2003, 10:48:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just FYI, SSH2 protocol specs (drafts) can be found here (http://www.ietf.org/html.charters/secsh-charter.html), and here (http://www.openssh.org/txt/draft-ietf-secsh-architecture-12.txt) is an archetecture draft. You can also find good info from the OpenBSD (primary maintatiners of OpenSSH) at http://www.openssh.org</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

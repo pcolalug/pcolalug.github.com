@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - wireless host name issue</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by:  on February 13, 2004, 08:04:56 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>wireless host name issue</b><br />
+					Post by: <b></b> on <b>February 13, 2004, 08:04:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">have freebsd installed on my laptop. pcmcia wireless card is recognized. setup card for dhcp. it gets its ip info from my wireless router. checked with ifconfig and wicontrol. but i connect connect from there. gives error saying my &quot;host name&quot; is not listed. mentions adding entry to /etc/hosts. not sure what to add when using dhcp... suggestions?<br /><br />also. when i try to shutdown it hangs (i'm assuming the wireless card is not getting properly turned off).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>wireless host name issue</b><br />
+					Post by: <b>rugmonster</b> on <b>February 13, 2004, 11:45:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">add the name you called your system in /etc/hosts<br /><br />Example, all my computers are named after Ender's Game characters. My main system is always Ender and the secondary is always Bean, and laptop is Dink. Well, I have an entry in my hosts files that looks like this:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />ender &nbsp; &nbsp; &nbsp; 192.168.1.2<br />bean &nbsp; &nbsp; &nbsp; &nbsp;192.168.1.3<br />dink &nbsp; &nbsp; &nbsp; &nbsp;192.168.1.4<br />valentine &nbsp; 192.168.1.5<br />peter &nbsp; &nbsp; &nbsp; 192.168.1.6<br /></div><br /><br />A hosts file is like a simple DNS. In fact, DNS takes the place of hosts files, but on a small network, it is all that is necessary. Like DNS, it's a mapping of easy to remember computer names and their IP addresses.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>wireless host name issue</b><br />
+					Post by: <b></b> on <b>February 14, 2004, 08:59:25 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">and that works if the card gets its address through dhcp?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>wireless host name issue</b><br />
+					Post by: <b>rugmonster</b> on <b>February 14, 2004, 11:56:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You can also set it the host to 127.0.0.1. It sounds like it is trying to identify itself, so that should work. You can also setup static IPs with your router rather than doing DHCP. In a home network, you don't really have to worry about management of resources like you do in a large scale network.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

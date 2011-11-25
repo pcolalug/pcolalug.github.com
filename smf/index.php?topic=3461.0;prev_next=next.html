@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Ajax to POST" />
+	<meta name="robots" content="noindex" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="Themes/default/script.js%3Ffin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://www.pcolalug.org/smf/Themes/babylon";
+		var smf_images_url = "http://www.pcolalug.org/smf/Themes/babylon/images";
+		var smf_scripturl = "http://www.pcolalug.org/smf/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>Ajax to POST</title>
+	<link rel="stylesheet" type="text/css" href="Themes/babylon/style.css%3Ffin11.css" />
+	<link rel="stylesheet" type="text/css" href="Themes/default/print.css%3Ffin11.css" media="print" />
+	<link rel="help" href="index.php%3Faction=help.html" target="_blank" />
+	<link rel="search" href="index.php%3Faction=search.html" />
+	<link rel="contents" href="index.php.html" />
+	<link rel="alternate" type="application/rss+xml" title="Pensacola Linux User's Group - RSS" href="index.php%3Ftype=rss%3Baction=.xml" />
+	<link rel="prev" href="index.php%3Ftopic=3407.0%3Bprev_next=prev.html" />
+	<link rel="next" href="index.php%3Ftopic=3407.0%3Bprev_next=next.html" />
+	<link rel="index" href="index.php%3Fboard=22.0.html" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+</head>
+<body>
+	<div id="headerarea" style="padding: 12px 30px 4px 30px;">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%" style="position: relative;">
+			<tr>
+				<td colspan="2" valign="bottom" style="padding: 5px; white-space: nowrap;">
+					<img src="Themes/babylon/images/smflogo.gif" style="width: 250px; float: right;" alt="" />
+					<span style="font-family: Georgia, sans-serif; font-size: xx-large;">Pensacola Linux User's Group</span>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top">
+					<div class="headertitles" style="margin-right: 5px; position: relative;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="position: relative; margin-right: 5px; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/userinfo.gif" style="position: absolute; left: -1px; top: -16px; clear: both;" alt="" />
+						<table width="99%" cellpadding="0" cellspacing="5" border="0"><tr><td valign="top" class="smalltext" style="width: 100%; font-family: verdana, arial, sans-serif;">
+							Welcome, <b>Guest</b>. Please <a href="index.php%3Faction=login.html">login</a> or <a href="index.php%3Faction=register.html">register</a>.<br />
+							November 19, 2011, 03:38:46 pm<br />
+
+							<script language="JavaScript" type="text/javascript" src="Themes/default/sha1.js"></script>
+
+							<form action="http://www.pcolalug.org/smf/index.php?action=login2" method="post" accept-charset="ISO-8859-1" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '706836f2c9352cfd8e021c614df871f7');">
+								<div style="text-align: right;">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									Login with username, password and session length
+									<input type="hidden" name="hash_passwrd" value="" />
+								</div>
+							</form>
+						</td></tr></table>
+					</div>
+
+					<form action="http://www.pcolalug.org/smf/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<div style="margin-top: 7px;">
+							<b>Search: </b><input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+							<input type="submit" name="submit" value="Search" style="width: 8ex;" />&nbsp;
+							<a href="index.php%3Faction=search%3Badvanced.html">Advanced search</a>
+							<input type="hidden" name="advanced" value="0" />
+							<input type="hidden" name="topic" value="3407" />
+						</div>
+					</form>
+
+				</td>
+				<td style="width: 262px; padding-left: 6px;" valign="top">
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif); margin-bottom: 8px;">
+						<img src="Themes/babylon/images/english/newsbox.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="height: 50px; overflow: auto; padding: 5px;" class="smalltext">Happy New Year!</div>
+					</div>
+					<div class="headertitles" style="width: 260px;"><img src="Themes/babylon/images/blank.gif" height="12" alt="" /></div>
+					<div class="headerbodies" style="width: 260px; position: relative; background-image: url(Themes/babylon/images/box_bg.gif);">
+						<img src="Themes/babylon/images/english/keystats.gif" style="position: absolute; left: -1px; top: -16px;" alt="" />
+						<div style="min-height: 35px; padding: 5px;" class="smalltext">
+							<b>15812</b> Posts in <b>3083</b> Topics by <span style="white-space: nowrap;"><b>139</b> Members</span><br />
+							Latest Member: <b> <a href="index.php%3Faction=profile%3Bu=2198.html">speakatself</a></b>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<a href="javascript:void(0);" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="Themes/babylon/images/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 2px 2ex 2px 0;" border="0" /></a>
+				<a href="index.php.html"><img src="Themes/babylon/images/english/home.gif" alt="Home" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=help.html"><img src="Themes/babylon/images/english/help.gif" alt="Help" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=search.html"><img src="Themes/babylon/images/english/search.gif" alt="Search" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=calendar.html"><img src="Themes/babylon/images/english/calendar.gif" alt="Calendar" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=login.html"><img src="Themes/babylon/images/english/login.gif" alt="Login" style="margin: 2px 0;" border="0" /></a> 
+				<a href="index.php%3Faction=register.html"><img src="Themes/babylon/images/english/register.gif" alt="Register" style="margin: 2px 0;" border="0" /></a>
+	</div>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+		<td id="bodyarea" style="padding: 1ex 20px 2ex 20px;">
+<a name="top"></a>
+<a name="msg16413"></a>
+<table width="100%" cellpadding="3" cellspacing="0">
+	<tr>
+		<td valign="bottom"><span class="nav"><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html" class="nav">Pensacola Linux User's Group</a></b><br /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php.html#5" class="nav">Software</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Fboard=22.0.html" class="nav">Other Software</a></b><br /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_main.gif" alt="| " border="0" /><img src="Themes/babylon/images/icons/linktree_side.gif" alt="|-" border="0" /><img src="Themes/babylon/images/icons/folder_open.gif" alt="+" border="0" />&nbsp; <b><a href="index.php%3Ftopic=3407.0.html" class="nav">Ajax to POST</a></b></span></td>
+		<td valign="bottom" align="right" class="smalltext">
+			<span class="nav"><a href="index.php%3Ftopic=3407.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=3407.0%3Bprev_next=next.html#new">next &raquo;</a></span>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-bottom: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="35">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<b>Pages:</b> [<b>1</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=3407.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+	<tr class="titlebg">
+		<td valign="middle" width="15%" style="padding-left: 6px;">
+			<img src="Themes/babylon/images/topic/normal_post.gif" alt="" align="middle" /> Author
+		</td>
+		<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+			Topic: Ajax to POST &nbsp;(Read 1305 times)
+		</td>
+	</tr>
+</table>
+<form action="http://www.pcolalug.org/smf/index.php?action=quickmod2;topic=3407.0" method="post" name="quickModForm" accept-charset="ISO-8859-1" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('706836f2c9352cfd8e021c614df871f7') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=782.html" title="View the profile of oneadvent">oneadvent</a></b>
+							<div class="smalltext">
+								Inquistive<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 49<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=782.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=3407.msg16413.html#msg16413"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_16413">
+										<a href="index.php%3Ftopic=3407.msg16413.html#msg16413">Ajax to POST</a>
+									</div>
+									<div class="smalltext">&#171; <b> on:</b> October 13, 2008, 05:51:49 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I want to change this page (below) to use Ajax to post it and stay on the same page. I have been beating my head into the desk for too long now, and I just do not understand how to make it work, does anyone here have any experience in this?<br /><br />Thanks!<br /><br /><div class="codeheader">Code:</div><div class="code">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Frameset//EN&quot;&gt;<br />&lt;html&gt;&lt;head&gt;<br />&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;<br />&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;<br />&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache&quot;&gt;<br />&lt;meta name=&quot;ROBOTS&quot; content=&quot;NONE&quot;&gt;<br />&lt;meta name=&quot;ROBOTS&quot; content=&quot;NOINDEX,NOFOLLOW&quot;&gt;&lt;title&gt;Turn On/Off Camera&lt;/title&gt;<br /><br />&lt;script language=&quot;JavaScript&quot;&gt;<br />&lt;!--<br />function ImageDelete() {<br />if (confirm(&quot;Are you sure you want to delete?&quot;) == false) {<br />return;<br />}<br />document.forms[0].ClearImage.value = &#039;1&#039;;<br />document.forms[0].TransCondition.value = &#039;4&#039;;<br />document.forms[0].submit();<br />return;<br />}<br />function ClickCancel() {<br />self.location = &quot;http://68.157.251.100/CgiImageTransfer?Page=0&amp;Language=0&quot;;<br />}<br />function ONStatus(){<br />document.forms[0].ConditionSave.value = &#039;1&#039;;<br />document.forms[0].TaskEnable.checked = true<br />document.forms[0].submit();<br />}<br />function OFFStatus(){<br />document.forms[0].ConditionSave.value = &#039;1&#039;;<br />document.forms[0].TaskEnable.checked = false<br />document.forms[0].submit();<br />}<br />// --&gt;<br />&lt;/script&gt;<br /><br /><br />&lt;/head&gt;<br /><br /><br />&lt;body style=&quot;color: rgb(255, 255, 255); background-color: rgb(51, 51, 51);&quot; alink=&quot;#0000ff&quot; link=&quot;#0000ff&quot; vlink=&quot;#0000ff&quot;&gt;<br />&lt;center&gt;<br />&lt;br&gt;<br />&lt;br&gt;<br />&lt;br&gt;<br /><br /><br />&lt;form method=&quot;post&quot; action=&quot;http://68.157.251.100/CgiImageTransfer&quot;&gt;<br />&lt;input name=&quot;Language&quot; value=&quot;0&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;Page&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TaskId&quot; value=&quot;2&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMode&quot; value=&quot;0&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStartTue&quot; value=&quot;4&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStartThu&quot; value=&quot;16&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStartFri&quot; value=&quot;32&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryTimeMode&quot; value=&quot;86399999&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStartAMPM&quot; value=&quot;0&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStartHour&quot; value=&quot;12&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStartMin&quot; value=&quot;0&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStopAMPM&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStopHour&quot; value=&quot;11&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryStopMin&quot; value=&quot;59&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryResolution&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryQuality&quot; value=&quot;8&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryPreIntervalNum&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryPreIntervalPer&quot; value=&quot;1000&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryPreNum&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryPreEnable&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryPostNum&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryPostEnable&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;SensorIgnoreTime&quot; value=&quot;10&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryPostIntervalNum&quot; value=&quot;1&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;PrimaryPostIntervalPer&quot; value=&quot;1000&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferMode&quot; value=&quot;48&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferMailServer&quot; value=&quot;smtp.east.cox.net&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferSMTPPortNo&quot; value=&quot;25&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferPopServer&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferAuth&quot; value=&quot;0&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferPOP3PortNo&quot; value=&quot;110&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferPopID&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferSMTPID&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferPopPassword&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferSMTPPassword&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferMailFrom&quot; value=&quot;oneadvent@gmail.com&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferMailTo1&quot; value=&quot;8502925075@tmomail.net&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferMailTo2&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferMailTo3&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferMailSubject&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;TransferMailText&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;Position&quot; value=&quot;255&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMode&quot; value=&quot;0&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMailServer&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageSMTPPortNo&quot; value=&quot;25&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessagePopServer&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageAuth&quot; value=&quot;0&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessagePOP3PortNo&quot; value=&quot;110&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessagePopID&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageSMTPID&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessagePopPassword&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageSMTPPassword&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMailFrom&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMailTo1&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMailTo2&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMailTo3&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMailSubject&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;MessageMailText&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;ClearImage&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br />&lt;input name=&quot;ConditionSave&quot; value=&quot;&quot; type=&quot;hidden&quot;&gt;<br /><br /><br /><br /><br />&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;630&quot;&gt;<br /><span style="white-space: pre;">	</span>&lt;tbody&gt;<br /><br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;tr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;td align=&quot;center&quot;&gt; &lt;font style=&quot;font-size: 28px;&quot; color=&quot;#9f1a1a&quot; face=&quot;Arial&quot;&gt;&lt;b&gt;Turn<br /><span style="white-space: pre;">	</span>Off and On&lt;/b&gt;<br /><span style="white-space: pre;">	</span>&lt;/font&gt; <span style="white-space: pre;">	</span>&lt;/td&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;/tr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;tr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;td&gt;&amp;nbsp;&lt;/td&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;/tr&gt;<br /><br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;tr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;td&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;hr&gt;&lt;/td&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;/tr&gt;<br /><br />&lt;/tbody&gt;<br />&lt;/table&gt;<br />&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; width=&quot;630&quot;&gt;<br /><span style="white-space: pre;">	</span>&lt;tbody&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;tr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;td valign=&quot;top&quot; width=&quot;210&quot;&gt;<br /><br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;center&gt; &lt;/center&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;table style=&quot;width: 609px; height: 29px;&quot; border=&quot;0&quot; cellpadding=&quot;3&quot; cellspacing=&quot;2&quot;&gt;<br /><span style="white-space: pre;">	</span>&lt;tbody&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;tr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;/tr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;tr&gt;<br /><br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;td&gt;<br /><br />&lt;center&gt;<br /><br /><br />&lt;input name=&quot;ON&quot; value=&quot; ON &quot; onclick=&quot;JavaScript:ONStatus();&quot; type=&quot;button&quot; style=&quot;width: 100px;height:50px&quot;&gt; <br /><br /><br />&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp<br /><br /><br />&lt;input name=&quot;OFF&quot; value=&quot; OFF &quot; onclick=&quot;JavaScript:OFFStatus();&quot; type=&quot;button&quot; style=&quot;width: 100px;height:50px&quot;&gt; <br />&lt;/center&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;/tr&gt;<br /><span style="white-space: pre;">	</span>&lt;/tbody&gt;<br />&lt;/table&gt;<br />&lt;table border=&quot;0&quot; cellpadding=&quot;3&quot; cellspacing=&quot;2&quot; width=&quot;630&quot;&gt;<br />&lt;/table&gt;<br />&lt;table style=&quot;width: 613px; height: 57px;&quot; border=&quot;0&quot; cellpadding=&quot;3&quot; cellspacing=&quot;2&quot;&gt;<br /><span style="white-space: pre;">	</span>&lt;tbody&gt;<br /><br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;tr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;hr&gt;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>&lt;/tr&gt;<br /><br /><span style="white-space: pre;">	</span>&lt;/tbody&gt;<br />&lt;/table&gt;<br />&lt;/td&gt;<br />&lt;/tr&gt;<br />&lt;/tbody&gt;<br />&lt;/table&gt;<br />&lt;/form&gt;<br />&lt;/body&gt;&lt;/html&gt;<br /></div><br />+1 to anyone that can make sense to Ajax!</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_16413">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg16503"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=782.html" title="View the profile of oneadvent">oneadvent</a></b>
+							<div class="smalltext">
+								Inquistive<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 49<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=782.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=3407.msg16503.html#msg16503"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_16503">
+										<a href="index.php%3Ftopic=3407.msg16503.html#msg16503">Re: Ajax to POST</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #1 on:</b> November 15, 2008, 07:05:39 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I did:<br /><br /><div class="codeheader">Code:</div><div class="code">&lt;script language=&quot;JavaScript&quot;&gt;<br />&lt;!--<br />var xmlhttp = new XMLHttpRequest();&nbsp; <br />function OnStatus(){<br />document.forms[0].ConditionSave.value = &#039;1&#039;<br />document.forms[0].TaskEnable.checked = true;<br />var url = &quot;/cam1/CgiImageTransfer&quot;;<br />xmlhttp.open(&quot;POST&quot;, url, false);<br />xmlhttp.send(&quot;Language=0&amp;Page=1&amp;TaskId=2&amp;MessageMode=0&amp;PrimaryStartSun=1&amp;PrimaryStartMon=2&amp;PrimaryStartTue=4&amp;PrimaryStartWed=8&amp;PrimaryStartThu=16&amp;PrimaryStartFri=32&amp;PrimaryStartSat=64&amp;PrimaryTimeMode=86399999&amp;PrimaryStartAMPM=0&amp;PrimaryStartHour=12&amp;PrimaryStartMin=0&amp;PrimaryStopAMPM=1&amp;PrimaryStopHour=11&amp;PrimaryStopMin=59&amp;PrimaryResolution=1&amp;PrimaryQuality=8&amp;PrimaryPreIntervalNum=1&amp;PrimaryPreIntervalPer=1000&amp;PrimaryPreNum=1&amp;PrimaryPreEnable=1&amp;PrimaryPostNum=1&amp;PrimaryPostEnable=1&amp;SensorIgnoreTime=10&amp;PrimaryPostIntervalNum=1&amp;PrimaryPostIntervalPer=1000&amp;TransferMode=48&amp;TransferMailServer=smtp.east.cox.net&amp;TransferSMTPPortNo=25&amp;TransferPopServer=&amp;TransferAuth=0&amp;TransferPOP3PortNo=110&amp;TransferPopID=&amp;TransferSMTPID=&amp;TransferPopPassword=&amp;TransferSMTPPassword=&amp;TransferMailFrom=oneadvent%40gmail.com&amp;TransferMailTo1=8502925075%40tmomail.net&amp;TransferMailTo2=&amp;TransferMailTo3=&amp;TransferMailSubject=&amp;TransferMailText=&amp;Position=255&amp;MessageMode=0&amp;MessageMailServer=&amp;MessageSMTPPortNo=25&amp;MessagePopServer=&amp;MessageAuth=0&amp;MessagePOP3PortNo=110&amp;MessagePopID=&amp;MessageSMTPID=&amp;MessagePopPassword=&amp;MessageSMTPPassword=&amp;MessageMailFrom=&amp;MessageMailTo1=&amp;MessageMailTo2=&amp;MessageMailTo3=&amp;MessageMailSubject=&amp;MessageMailText=&amp;ClearImage=&amp;ConditionSave=1&amp;TransCondition=4&amp;TaskEnable=Enable&quot;)<br />var url2 = &quot;/cam2/CgiImageTransfer&quot;;<br />xmlhttp.open(&quot;POST&quot;, url2, false);<br />xmlhttp.send(&quot;Language=0&amp;Page=1&amp;TaskId=2&amp;MessageMode=0&amp;PrimaryStartSun=1&amp;PrimaryStartMon=2&amp;PrimaryStartTue=4&amp;PrimaryStartWed=8&amp;PrimaryStartThu=16&amp;PrimaryStartFri=32&amp;PrimaryStartSat=64&amp;PrimaryTimeMode=86399999&amp;PrimaryStartAMPM=0&amp;PrimaryStartHour=12&amp;PrimaryStartMin=0&amp;PrimaryStopAMPM=1&amp;PrimaryStopHour=11&amp;PrimaryStopMin=59&amp;PrimaryResolution=1&amp;PrimaryQuality=8&amp;PrimaryPreIntervalNum=1&amp;PrimaryPreIntervalPer=1000&amp;PrimaryPreNum=1&amp;PrimaryPreEnable=1&amp;PrimaryPostNum=1&amp;PrimaryPostEnable=1&amp;SensorIgnoreTime=10&amp;PrimaryPostIntervalNum=1&amp;PrimaryPostIntervalPer=1000&amp;TransferMode=48&amp;TransferMailServer=smtp.east.cox.net&amp;TransferSMTPPortNo=25&amp;TransferPopServer=&amp;TransferAuth=0&amp;TransferPOP3PortNo=110&amp;TransferPopID=&amp;TransferSMTPID=&amp;TransferPopPassword=&amp;TransferSMTPPassword=&amp;TransferMailFrom=oneadvent%40gmail.com&amp;TransferMailTo1=8502925075%40tmomail.net&amp;TransferMailTo2=&amp;TransferMailTo3=&amp;TransferMailSubject=&amp;TransferMailText=&amp;Position=255&amp;MessageMode=0&amp;MessageMailServer=&amp;MessageSMTPPortNo=25&amp;MessagePopServer=&amp;MessageAuth=0&amp;MessagePOP3PortNo=110&amp;MessagePopID=&amp;MessageSMTPID=&amp;MessagePopPassword=&amp;MessageSMTPPassword=&amp;MessageMailFrom=&amp;MessageMailTo1=&amp;MessageMailTo2=&amp;MessageMailTo3=&amp;MessageMailSubject=&amp;MessageMailText=&amp;ClearImage=&amp;ConditionSave=1&amp;TransCondition=4&amp;TaskEnable=Enable&quot;)<br />alert(&#039;Done, both Cameras are on.&#039;)<br />}<br /><br /><br />function OffStatus(){<br />document.forms[0].ConditionSave.value = &#039;1&#039;<br />document.forms[0].TaskEnable.checked = false;<br />var url = &quot;/cam1/CgiImageTransfer&quot;;<br />xmlhttp.open(&quot;POST&quot;, url, false);<br />xmlhttp.send(&quot;Language=0&amp;Page=1&amp;TaskId=2&amp;MessageMode=0&amp;PrimaryStartSun=1&amp;PrimaryStartMon=2&amp;PrimaryStartTue=4&amp;PrimaryStartWed=8&amp;PrimaryStartThu=16&amp;PrimaryStartFri=32&amp;PrimaryStartSat=64&amp;PrimaryTimeMode=86399999&amp;PrimaryStartAMPM=0&amp;PrimaryStartHour=12&amp;PrimaryStartMin=0&amp;PrimaryStopAMPM=1&amp;PrimaryStopHour=11&amp;PrimaryStopMin=59&amp;PrimaryResolution=1&amp;PrimaryQuality=8&amp;PrimaryPreIntervalNum=1&amp;PrimaryPreIntervalPer=1000&amp;PrimaryPreNum=1&amp;PrimaryPreEnable=1&amp;PrimaryPostNum=1&amp;PrimaryPostEnable=1&amp;SensorIgnoreTime=10&amp;PrimaryPostIntervalNum=1&amp;PrimaryPostIntervalPer=1000&amp;TransferMode=48&amp;TransferMailServer=smtp.east.cox.net&amp;TransferSMTPPortNo=25&amp;TransferPopServer=&amp;TransferAuth=0&amp;TransferPOP3PortNo=110&amp;TransferPopID=&amp;TransferSMTPID=&amp;TransferPopPassword=&amp;TransferSMTPPassword=&amp;TransferMailFrom=oneadvent%40gmail.com&amp;TransferMailTo1=8502925075%40tmomail.net&amp;TransferMailTo2=&amp;TransferMailTo3=&amp;TransferMailSubject=&amp;TransferMailText=&amp;Position=255&amp;MessageMode=0&amp;MessageMailServer=&amp;MessageSMTPPortNo=25&amp;MessagePopServer=&amp;MessageAuth=0&amp;MessagePOP3PortNo=110&amp;MessagePopID=&amp;MessageSMTPID=&amp;MessagePopPassword=&amp;MessageSMTPPassword=&amp;MessageMailFrom=&amp;MessageMailTo1=&amp;MessageMailTo2=&amp;MessageMailTo3=&amp;MessageMailSubject=&amp;MessageMailText=&amp;ClearImage=&amp;ConditionSave=1&amp;TransCondition=4&quot;)<br />var url2 = &quot;/cam2/CgiImageTransfer&quot;;<br />xmlhttp.open(&quot;POST&quot;, url2, false);<br />xmlhttp.send(&quot;Language=0&amp;Page=1&amp;TaskId=2&amp;MessageMode=0&amp;PrimaryStartSun=1&amp;PrimaryStartMon=2&amp;PrimaryStartTue=4&amp;PrimaryStartWed=8&amp;PrimaryStartThu=16&amp;PrimaryStartFri=32&amp;PrimaryStartSat=64&amp;PrimaryTimeMode=86399999&amp;PrimaryStartAMPM=0&amp;PrimaryStartHour=12&amp;PrimaryStartMin=0&amp;PrimaryStopAMPM=1&amp;PrimaryStopHour=11&amp;PrimaryStopMin=59&amp;PrimaryResolution=1&amp;PrimaryQuality=8&amp;PrimaryPreIntervalNum=1&amp;PrimaryPreIntervalPer=1000&amp;PrimaryPreNum=1&amp;PrimaryPreEnable=1&amp;PrimaryPostNum=1&amp;PrimaryPostEnable=1&amp;SensorIgnoreTime=10&amp;PrimaryPostIntervalNum=1&amp;PrimaryPostIntervalPer=1000&amp;TransferMode=48&amp;TransferMailServer=smtp.east.cox.net&amp;TransferSMTPPortNo=25&amp;TransferPopServer=&amp;TransferAuth=0&amp;TransferPOP3PortNo=110&amp;TransferPopID=&amp;TransferSMTPID=&amp;TransferPopPassword=&amp;TransferSMTPPassword=&amp;TransferMailFrom=oneadvent%40gmail.com&amp;TransferMailTo1=8502925075%40tmomail.net&amp;TransferMailTo2=&amp;TransferMailTo3=&amp;TransferMailSubject=&amp;TransferMailText=&amp;Position=255&amp;MessageMode=0&amp;MessageMailServer=&amp;MessageSMTPPortNo=25&amp;MessagePopServer=&amp;MessageAuth=0&amp;MessagePOP3PortNo=110&amp;MessagePopID=&amp;MessageSMTPID=&amp;MessagePopPassword=&amp;MessageSMTPPassword=&amp;MessageMailFrom=&amp;MessageMailTo1=&amp;MessageMailTo2=&amp;MessageMailTo3=&amp;MessageMailSubject=&amp;MessageMailText=&amp;ClearImage=&amp;ConditionSave=1&amp;TransCondition=4&quot;)<br />alert(&#039;Done, both Cameras are off.&#039;)<br />}<br /><br />&lt;/script&gt;<br /></div><br />with a redirect in my apache server for /cam1/ to be an internal ip address( that of one camera) and /cam2/ to the second.<br /><br />It works great on everything but my phone, so I used iframes to do that. I have no more tweaking to do to it. It was fun while it lasted.<br /><br /><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_16503">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg16506"></a><a name="new"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="index.php%3Faction=profile%3Bu=782.html" title="View the profile of oneadvent">oneadvent</a></b>
+							<div class="smalltext">
+								Inquistive<br />
+								<img src="Themes/babylon/images/star.gif" alt="*" border="0" /><img src="Themes/babylon/images/star.gif" alt="*" border="0" /><br />
+								<br />
+								Approval: 0<br />
+								Posts: 49<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="index.php%3Faction=profile%3Bu=782.html"><img src="Themes/babylon/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="index.php%3Ftopic=3407.msg16506.html#msg16506"><img src="Themes/babylon/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_16506">
+										<a href="index.php%3Ftopic=3407.msg16506.html#msg16506">Re: Ajax to POST</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #2 on:</b> November 15, 2008, 07:25:50 pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" nowrap="nowrap" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Oh, and I&#039;m sorry for those of you that want to know how I did the same basic thing with Iframes, I did it by:<br /><div class="codeheader">Code:</div><div class="code">&lt;html&gt; <br />&lt;head&gt; <br />&lt;center&gt; <br />&lt;title&gt;Turn on and off Camera&lt;/title&gt; <br />&nbsp;<br />&lt;script language=&quot;javascript&quot;&gt; <br />function loadTwo(iframe1URL, iframe2URL)<br />{<br />parent.cam1off.location.href=iframe1URL<br />parent.cam1on.location.href=iframe2URL<br />setTimeout(&quot;alert(&#039;Done Baby.&#039;)&quot;,4000);<br />}<br />&lt;/script&gt; <br />&lt;br&gt; <br />&lt;br&gt; <br />&lt;/head&gt; <br />&lt;body style=&quot;color: rgb(255, 255, 255); background-color: rgb(51, 51, 51);&quot; alink=&quot;#0000ff&quot; link=&quot;#0000ff&quot; vlink=&quot;#0000ff&quot;&gt; <br />&nbsp;<br />&lt;font style=&quot;font-size: 28px;&quot; color=&quot;#9f1a1a&quot; face=&quot;Arial&quot;&gt;&lt;b&gt;Turn<span style="white-space: pre;">	</span>Off and On &lt;/b&gt; <br /><span style="white-space: pre;">	</span>&lt;/font&gt; <br />&nbsp;<br />&lt;br&gt; <br />&lt;br&gt; <br />&lt;hr width=230/&gt; <br />&lt;a&nbsp; href=&quot;javascript:loadTwo(&#039;http://oneadvent2.viewnetcam.com:50000/mobileImageTransfer?S=160x120&amp;Q=Mobile&amp;N=0&amp;E=0x0&amp;C=25967732&amp;T=0&amp;M=3&amp;O=2&#039;,&#039;http://oneadvent.viewnetcam.com:50001/mobileImageTransfer?S=160x120&amp;Q=Mobile&amp;N=0&amp;E=0x0&amp;C=87925761&amp;T=0&amp;M=3&amp;O=2&#039;)&quot;&gt;&lt;img src=&quot;on.png&quot; border=&quot;0&quot;&gt;&lt;/a&gt; <br />&nbsp;<br />&lt;a src=&quot;off.png&quot; style=&quot;color: #ffffff&quot; href=&quot;javascript:loadTwo(&#039;http://oneadvent.viewnetcam.com:50001/mobileImageTransfer?S=160x120&amp;Q=Mobile&amp;N=0&amp;E=0x0&amp;C=87920808&amp;T=0&amp;M=4&amp;O=2&#039;,&#039;http://oneadvent2.viewnetcam.com:50000/mobileImageTransfer?S=160x120&amp;Q=Mobile&amp;N=0&amp;E=0x0&amp;C=87920808&amp;T=0&amp;M=4&amp;O=2&#039;)&quot;&gt;&lt;img src=&quot;off.png&quot; border=&quot;0&quot;&gt;&lt;/a&gt; <br />&lt;hr width=230/&gt; <br />&lt;iframe name=&quot;cam1off&quot; src=&quot;about:blank&quot; width=0 height=0 style=&quot;display:none&quot;&gt;&lt;/iframe&gt; <br />&lt;iframe name=&quot;cam1on&quot; src=&quot;about:blank&quot; width=0 height=0 style=&quot;display:none&quot;&gt;&lt;/iframe&gt; <br />&nbsp;<br />&lt;/body&gt; <br />&lt;/html&gt; </div><br />I did put in my username and password as part of the url, but that is not necessary, I put it in the &quot;<a href="http://USERNAME:PASSWORD@sumtin.com:50000/mobiletransfering?Blah=1&amp;blah2=2" target="_blank">http://USERNAME:PASSWORD@sumtin.com:50000/mobiletransfering?Blah=1&amp;blah2=2</a>&quot;<br /><br />I omitted it here for obvious reasons. I also put this page on a secure website, that no one has access to, because it would be pointless to have passwords if I was just going to let everyone look at the source with them.<br /><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_16506">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="Themes/babylon/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="margin-top: 1ex;">
+	<tr>
+		<td class="catbg" width="100%" height="30">
+			<table cellpadding="3" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<a name="bot"></a><b>Pages:</b> [<b>1</b>] 
+					</td>
+					<td align="right" style="font-size: smaller;"><a href="index.php%3Faction=printpage%3Btopic=3407.0.html" target="_blank"><img src="Themes/babylon/images/english/print.gif" alt="Print" border="0" /></a>&nbsp;
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 3407;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="706836f2c9352cfd8e021c614df871f7" /><input type="hidden" name="topic" value="3407" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'706836f2c9352cfd8e021c614df871f7\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://www.pcolalug.org/smf/index.php?topic=3407.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 1305 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top" align="right" class="smalltext"> <span class="nav"> <a href="index.php%3Ftopic=3407.0%3Bprev_next=prev.html#new">&laquo; previous</a> <a href="index.php%3Ftopic=3407.0%3Bprev_next=next.html#new">next &raquo;</a></span></td>
+	</tr>
+</table>
+<div style="padding-top: 4px; padding-bottom: 4px;"></div>
+</form>
+<div align="right" style="margin-bottom: 1ex;">
+	<form action="index.php.html" method="get" accept-charset="ISO-8859-1">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Club Stuff</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Announcements</option>
+			<option value="?board=40.0"> => PcolaLUG By-Laws</option>
+			<option value="?board=4.0"> => Club discussions</option>
+			<option value="?board=26.0"> => Articles</option>
+			<option value="?board=27.0"> => Swap Meet</option>
+			<option value="?board=29.0"> => Introductions</option>
+			<option value="?board=30.0"> => Library</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Distributions</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=44.0"> => RPM Based Distributions</option>
+			<option value="?board=45.0"> => Debian Based Distrtibutions</option>
+			<option value="?board=46.0"> => Other Linux Distributions</option>
+			<option value="?board=47.0"> => Other Operating Systems</option>
+			<option value="?board=41.0"> => Security</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => Graphics/Video</option>
+			<option value="?board=14.0"> => Network</option>
+			<option value="?board=16.0"> => Other Hardware</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Software</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=17.0"> => Games</option>
+			<option value="?board=19.0"> => Desktops</option>
+			<option value="?board=48.0"> => Networking</option>
+			<option value="?board=22.0" selected="selected"> => Other Software</option>
+			<option value="?board=32.0"> => Programming/Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Misc</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=38.0"> => Newbie Corner</option>
+			<option value="?board=24.0"> => Computer General</option>
+			<option value="?board=25.0"> => Other Misc</option>
+			<option value="?board=31.0"> => IT Jobs</option>
+			<option value="?board=36.0"> => The Big Debate</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://www.pcolalug.org/smf/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div>
+<br /></td>
+	</tr></table>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="Themes/babylon/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="Themes/babylon/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="Themes/babylon/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="Themes/babylon/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" border="0" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<span class="smalltext">Page created in 0.373 seconds with 20 queries.</span>
+		</div>
+		<div id="ajax_in_progress" style="display: none;">Loading...</div>
+	</body>
+</html>

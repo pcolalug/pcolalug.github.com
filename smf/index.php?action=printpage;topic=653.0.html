@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Recurring date calculator for calendar</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by:  on April 25, 2003, 06:50:32 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Recurring date calculator for calendar</b><br />
+					Post by: <b></b> on <b>April 25, 2003, 06:50:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi,<br /><br />Work continues on my CMS and one feature will be a calendar/events application. Does anyone know of a good existing function/class that will calculate a recurring scheduled?<br /><br />Given:<br />pStartDate -- Start of event<br />pEndDate -- End date of event<br />pSchedulingArguments -- Should handle things like every Tuesday, every third Wednesday of month, only weekdays, etc.<br /><br />Returns:<br />Array of dates that the event falls on.<br /><br />I have been searching hotscripts, but many of the calendar apps are complete applications and not just a class library I can use. I also checked out MCAL, but I do not think I can install the additional drivers.<br /><br />TIA, <br />Jamie</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Recurring date calculator for calendar</b><br />
+					Post by: <b>imnes</b> on <b>April 25, 2003, 08:10:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Check out the PHP Manual (http://www.php.net/manual/en/) if you haven't yet.<br /><br />The PHP date and time functions are very powerful. &nbsp;Check out the reference but more importantly look at the user comments and examples on the bottoms of all the manual pages.<br /><br />A link from a user to a working appointment calendar (I haven't tried to see if the code actually works, I assume it does). &nbsp;http://www.stargeek.com/scripts.php?script=5<br /><br />If you need more help post again and I'll try to help you hack something out.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Recurring date calculator for calendar</b><br />
+					Post by: <b></b> on <b>April 25, 2003, 08:40:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi Imnes,<br /><br />Unfortunately none of them deal with scheduling :( I'm looking for something that will give me a date array of say every 1st and 3rd Thursday of the month between 1/1/2003 and 12/31/2003.<br /><br />Jamie</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Recurring date calculator for calendar</b><br />
+					Post by: <b>imnes</b> on <b>April 25, 2003, 08:52:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was suggesting use the built-in routines to write your own function if you have the know-how and feel like doing it. &nbsp;<br /><br />I don't think you'll find a ready-to-use routine. &nbsp;I'll hack one out and post it here today (unless I get side-tracked, very possible).<br /><br />Good Luck,<br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

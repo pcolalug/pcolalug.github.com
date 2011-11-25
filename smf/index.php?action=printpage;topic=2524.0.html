@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Best way to update Slack</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: geekforGod on July 15, 2005, 02:21:54 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>geekforGod</b> on <b>July 15, 2005, 02:21:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So I have been running Slack for a while and I haven't updated my system in a while. What is the best way to go about it using Slack? It is just a basic 10.1 install. I don't think there is a update manager. I suppose I could check each package individually and download it that way, but that seems tedious. Any suggestions?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>Brent</b> on <b>July 15, 2005, 02:39:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, <br /><br />The standard recommendation is to update everything with the newest release, and also apply security updates. &nbsp;www.slackware.com<br /><br />to upgrade package you have to use a command called *drumroll* upgradepkg.<br /><br />If they'res a specific program you want updated check out www.linuxpackages.com.<br /><br />I wouldn't really recommend swaret or slapt-get ...as they have been known to nuke the unsuspecting victim</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>kilar</b> on <b>July 15, 2005, 07:17:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you use Slack, upgrade everything by hand, or by using upgradepkg. Do not be a sissy and use slapt-get or whatever else is out there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>danc</b> on <b>July 15, 2005, 08:19:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: kilar</div><div class="quote">If you use Slack, upgrade everything by hand, or by using upgradepkg. Do not be a sissy and use slapt-get or whatever else is out there.</div><br /><br />I don't use slapt-get (or swaret), but I'm not sure I'd agree with someone being a &quot;sissy&quot; if they did... &nbsp;Why would you think that?<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>kilar</b> on <b>July 15, 2005, 09:00:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">No real reason. If I want a package manager, then I boot into Gentoo. If I want to do everything by hand, I boot into Slack. If I want a headache, I boot into Fedora or Suse.<br /><br />Slack's strong point is not with slapt-get or slackpackage. Even though they both depend on Slack's native package manager, *things go bad* quite often with unsupported, third-party apps. The only thing worse is emerde, portage for Slackware. People like Slackware for its stability, so why introduce instability to a stable system? If you want instability, or fancy bells and whistles, why waste your time with Slackware or Debian? If you want bells, whistles, and a dancing monkey, there is always Suse or Fedora.<br /><br />That's my 2 cents (5 cents Canadian).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>woodyharold</b> on <b>July 15, 2005, 09:36:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I like bells,whistles, and dancing monkeys, I guess that is why I use SUSE<br />Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>rugmonster</b> on <b>July 15, 2005, 10:57:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's some pretty hardcore elitism there, buck-o. Bring it down a notch. People use what they use because it works for them. I don't have all of the time in the world to upgrade individual packages by hand. Going along your train of thought, why use a package management system at all? Why not run LFS and compile everything from scratch? You too can make a system just like Slackware! Come on now. No need to make people think they aren't as l33t as you because they like something that just works.<br /><br />By the way, I refused to use linux on the desktop for several years until I used SuSE. Ubuntu has come a long way and it runs on my laptop. Why do I run them? Because things work.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>kilar</b> on <b>July 16, 2005, 07:02:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm not trying to be elitist. What I am trying to point out is that there a hundreds of distros available, each with an intended use and audience to suit a multitude of personal preferences. <br /><br />When you try to force one distro to act like another, it introduces an unknown element. For example, if you run emerde on Slackware, you will spend some time fixing broken apps because emerge was not designed for Slackware--it was designed for Gentoo. Slackware uses the System V init scheme, whereas Fedora, Ubuntu and many other distros use the BSD style. Gentoo uses an init scheme similar to System V, but uses proprietary tools to administer those scripts (rc-update). What all that means is that config files are not in the same place between certain distros, yet you are using a third-party app which circumvents the differences, but is not accurate in keeping track of those differences, thus resulting in a broken system.<br /><br />If you use distro X, use its native package manager, or build from scratch. Or, know how to code, and fix the problems along the way, because there will be a lot of problems.<br /><br />Slackware is a no-nonsense distro. One should administer it with the same philosophy. Otherwise, you are defeating the purpose of the distro's philosophy, and using the philsophy of another distro. Use what you want--there are hundred distros available. Just don't complain if you take distro X, try to make it work like distro Y, then complain about it not working.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>danc</b> on <b>July 16, 2005, 10:20:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: kilar</div><div class="quote">I'm not trying to be elitist. What I am trying to point out is that there a hundreds of distros available, each with an intended use and audience to suit a multitude of personal preferences.</div><br />A distro's &quot;intended use&quot; can only be defined by the user who is using it, wouldn't you think? &nbsp;You may say that Slackware or Debian are &quot;intended&quot; to be used as servers (and I would agree to a point). &nbsp;However, I use Slackware as my desktop, and there is no reason in the world that a person couldn't run a web server on Mandrake or Suse or....<br /><br /><div class="quoteheader">Quote from: kilar</div><div class="quote">When you try to force one distro to act like another, it introduces an unknown element.</div><br />Perhaps, but nobody was talking about doing that...<br /><br /><div class="quoteheader">Quote from: kilar</div><div class="quote">For example, if you run emerde on Slackware, you will spend some time fixing broken apps because emerge was not designed for Slackware--it was designed for Gentoo.</div><br />It may break some things, yes. &nbsp;Just to clarify though, &quot;emerge&quot; was indeed designed for Gentoo, but &quot;emerde&quot; is a PORT of emerge, designed *specifically* for Slackware.<br /><br /><div class="quoteheader">Quote from: kilar</div><div class="quote">Slackware uses the System V init scheme, whereas Fedora, Ubuntu and many other distros use the BSD style.</div><br />You sure about that, Mr. Expert? &nbsp;.......Didn't think so. &nbsp;Just a typo maybe....<br /><br /><div class="quoteheader">Quote from: kilar</div><div class="quote">Slackware is a no-nonsense distro. One should administer it with the same philosophy. Otherwise, you are defeating the purpose of the distro's philosophy, and using the philsophy of another distro.</div><br />While I would tend to agree with that, it should be noted that that is *YOUR OPINION*, and not necessarily a hard-and-fast FACT. &nbsp;People can do whatever they'd like to with it.<br /><br /><div class="quoteheader">Quote from: kilar</div><div class="quote">Use what you want--there are hundred distros available. Just don't complain if you take distro X, try to make it work like distro Y, then complain about it not working.</div><br />I didn't see anyone complaining. &nbsp;Did you?<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>Brent</b> on <b>July 16, 2005, 10:46:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think patrick might someday create a dependency tracking package system. &nbsp;The thing is when he does we can be sure it will be rock solid stable.<br /><br />One thing i like about slackware, is that it's lib system does away with alot of the dependency problems to start with. &nbsp;I love the fact that I can compile most anything without having to wait for 5 dev packages to be downloaded.<br /><br />Then of course distros like ubuntu that, while a very nice distro, doesn't even install a compiler by default *shudders*. &nbsp;<br /><br />I think that's why I like slackware. &nbsp;It has a functional installer, it's packages are both up-to-date and stable, and I can compile things when I choose to, without fuss.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>rugmonster</b> on <b>July 16, 2005, 07:19:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You know, not installing a compiler can actually be a *FEATURE*. If I have a production server, I don't think I would want a compiler on there. Imagine someone breaking in and then typing ./configure &amp;&amp; make &amp;&amp; make install for their favorite rootkit. I could rather them not have it that easy. As a general rule, users do not <span style="text-decoration: underline;">need</span> a compiler. That's what package managers are for. Look at Windows systems or the days before free compilers. COBOL compilers used to be $30,000 and that was the least expensive!<br /><br />Also, you may want to read up on SysV Init and BSD Init.<br /><br />System V Style Initialization (http://nico.schotteli.us/papers/linux/howto/minit-howto/minit-howto-v0.2.2/node35.html)<br /><br />BSD Style Initialization (http://nico.schotteli.us/papers/linux/howto/minit-howto/minit-howto-v0.2.2/node36.html)<br /><br />I think you will find that you have those backwards.<br /><br />Oh, and I use apt on my SuSE box. It works great. I have my x86_64 sources and things just work. Apt was originally written for use on Debian with their deb packages. You know what, they wrote it with the intention of it being able to be ported to other binary package formats. It isn't the fault of the package manager being ported to another distro that makes things flakey. It's the package makers who make crappy packages that break. I'm sure the package manager (apt/emerge/etc) has done it's job of find dependencies, if it is capable of doing that, and putting the files where they need to go.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>kilar</b> on <b>July 16, 2005, 10:17:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for pointing out my typo. Slackware uses the BSD style init; most others use the System V. <br /><div class="quoteheader">Quote</div><div class="quote">A distro's &quot;intended use&quot; can only be defined by the user who is using it, wouldn't you think? You may say that Slackware or Debian are &quot;intended&quot; to be used as servers (and I would agree to a point). </div><br />The distro's intended use is determined by whoever releases the distro, either explicitly in the release notes or on a website, or implicitly in the way they package the distro. I use Slackware as a desktop as well. Good for me. I would not recommend Slack as desktop to a newbie, because that is not Slack's strong suit. I don't mind typing &quot;startx&quot;, not having fancy buttons, and not having GUIs do everything from configuring my printer to connecting to wireless. However, Pat V has implicitly targeted an audience by setting up Slack the way he did. Fedora implicitly determines its intended use by making it easy for any monkey to get a GUI interface for everything, allowing root SSH logins by default, and opening more unneeded ports by default than Slack or Debian. Any Linux distro can be made into a good server, but the actions of the people releasing a distro implicitly determine the intended use. A final example is *BSD. BSD makes a fine server, but takes a lot of work to make it into a desktop. I have used BSD as a desktop, but the amount of work put into doing so tells me that BSD was not intended to be a desktop.<br /><br /><div class="quoteheader">Quote</div><div class="quote">kilar wrote:<br />For example, if you run emerde on Slackware, you will spend some time fixing broken apps because emerge was not designed for Slackware--it was designed for Gentoo.<br /><br />It may break some things, yes. Just to clarify though, &quot;emerge&quot; was indeed designed for Gentoo, but &quot;emerde&quot; is a PORT of emerge, designed *specifically* for Slackware. </div><br />Thanks for quoting the obvious. Emerde was designed specifically for Slack, yet it breaks many Slack boxes. The Linux gods did not intend for portage to put into Slack. If you want portage, use Gentoo. On a similar note, the Linux gods did not intend for Gentoo to have an Anaconda-like installer. The VidaLinux port of Anaconda breaks many VidaLinux boxes (not all, but many--search through help forums to get an idea of how many complaints there are).<br /><br />The code monkeys responsible for a package are responsible for making quality packages. But, the Linux gods apparently do not agree with letting certain packages work. Emerde, VidaLinux, and slapt-get apparently do not get the Linux gods' blessings. I believe the Linux gods have determined implicitly that the Slackware package management is not compatible with Gentoo package management (Emerde), and that Red Hat's Anaconda installer is not compatible with Gentoo's philosophy (VidaLinux). Slapt-get falls somewhere in between, but Slackware may &nbsp;need its own, supported bells-and-whistles package manager if it wants to compete with the other distros. <br /><br /><div class="quoteheader">Quote</div><div class="quote">kilar wrote:<br />Slackware is a no-nonsense distro. One should administer it with the same philosophy. Otherwise, you are defeating the purpose of the distro's philosophy, and using the philsophy of another distro.<br /><br />While I would tend to agree with that, it should be noted that that is *YOUR OPINION*, and not necessarily a hard-and-fast FACT. People can do whatever they'd like to with it.<br /></div> I am not basing this on my opinion, but the philosophy of the distro releasers. Just read the blurb on each distro's web site or EULA or README files. The user can use the software as s/he sees fit, but there is an intended use and targeted audience, or else we would not have a hundred different distros.<br /><br /><div class="quoteheader">Quote</div><div class="quote">kilar wrote:<br />Use what you want--there are hundred distros available. Just don't complain if you take distro X, try to make it work like distro Y, then complain about it not working.<br /><br />I didn't see anyone complaining. Did you? </div><br />Nope. No one is complaining here. I see the same thing on other forums, and they do complain. I just wanted to be a little proactive here and prevent someone from having to complain. Besides, it sure is fun to see people get all riled up over nothing. I am just offering advice based on my experience.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>rugmonster</b> on <b>July 17, 2005, 12:23:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: kilar</div><div class="quote">Slapt-get falls somewhere in between, but Slackware may need its own, supported bells-and-whistles package manager if it wants to compete with the other distros.</div><br /><br />Why does every freaking distro need it's own package manager?! I'll never understand the reinvent-the-wheel mentality of the OSS community. The &quot;Linux gods&quot; is an absolutely ridiculous thing to say. Anyone can make a package for whatever platform/distro/package management system they want and release it. What breaks a package management system is the quality of the port and the quality of the packages created for that package manager. Debian has the right idea with their packages because so much testing goes into them before they get put into stable. You know those packages are going to work, period. If you run sid, you may get some broken packages, but it's a fast moving repository, so it will probably be fixed quickly.<br /><br />Now, the big problems I see with running a non-distro-native package manager is first, the quality of the packages isn't always the best. Some body out there gets a wild hair to package up something and builds the package with little understanding of that package format. This gets released with the assumption &quot;Hey, it works on my Amiga! It should work on everyone's system.&quot; No testing! Then that author loses interest and you have a broken package sitting in the repositories. People complain, a few fix it, but no one takes up the responsibility of maintaining the package.<br /><br />Second is dependent on how active the community is surrounding that package management system on that distribution. For example, Apt on SuSE is extremely active. If there is something that won't install or is broken on install, more than likely, it will be fixed within a day. Mind you, I run on the bleeding edge with a lot of Alpha and Beta releases. I couldn't see apt-rpm being very popular for Gentoo...although I'm sure it exists. The more people involved, the more testing and the more submissions to the repositories. You have more quality in the user pool. If there aren't many people involved...well, see my first point.<br /><br />So there you go. My view on package managers. It all depends on how many people are involved for the manager/distro/architecture which will help with the testing of the packages leading to better quality and less broken systems. Linux gods have nothing to do with it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Best way to update Slack</b><br />
+					Post by: <b>kilar</b> on <b>July 17, 2005, 01:42:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I, too, would like to see a grand, unified, package manager. Then, the debate starts about which one will be the one--apt, yum, pacman, portage or {insert any package manager I may have forgotten}? If enough code monkeys joined together, it could happen, but Linux is a chaotic world. I do not see it happening. People says chaos is Linux's weakness and strength. As long as there are hundred different distros, there will be a dozen or so package managers, each taking potential code monkeys away from unified package management compatability.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

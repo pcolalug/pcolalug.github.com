@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - back in slack</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Brent on October 28, 2003, 04:54:03 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back in slack</b><br />
+					Post by: <b>Brent</b> on <b>October 28, 2003, 04:54:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yep,<br /><br />As much as slack ticks me off I keep going back to it, mandrake just wasn't giving me enough problems :wink:. &nbsp;I wanted to try a 3rd stage gentoo install but alas, I don't have a burner right now.<br /><br />I tried compiling the 2.6.0 test1 kernel but I don't think I pointed it to my modules correctly. &nbsp;If anyone has successfully compiled the 2.6 kernel let me know what steps you used. &nbsp;I did the following.<br /><br /><br /><div class="codeheader">Code:</div><div class="code"><br />make clean; make mrproper<br />make menuconfig<br />make; make modules; make modules_install; make install<br /></div><br /><br />I got in my 9700 graphics card to day so I'll finally have my kickass comp up soon<br />Specs:<br />2600+ AMD<br />512mb ram<br />NEC DVD+RW<br />120 gb hd<br />9700 vid<br />17&quot; flat screen<br /><br />wget linuxiso.org :^p</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back in slack</b><br />
+					Post by: <b>lloydr</b> on <b>October 28, 2003, 07:39:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i did a 2.6-test7 setup on slack9.1 on a p1mmx 233 system and the last few steps in your list is what i did differently....<br /><br />make bzImage<br />make modules<br />make modules_install<br /><br /><br />then just move the bzimage and system.mapand over to /boot and update lilo and so on....<br />heres a link i found sorta resourceful when i was looking around <br />http://kerneltrap.org/node/view/799</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back in slack</b><br />
+					Post by: <b>imnes</b> on <b>October 28, 2003, 09:48:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">hmm, I think it will automatically pick the modules by version number of the running kernel, so make sure you're actually booting the 2.6 kernel. &nbsp;Run &quot;uname -a&quot; should tell you. &nbsp;You might need to update lilo after installing the kernel.<br /><br />Another possibility you might need new modutils package (or whatever it's called), I had to do that under the previous version of slackware when going to 2.6 kernel.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back in slack</b><br />
+					Post by: <b>lloydr</b> on <b>October 28, 2003, 09:52:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">if its slack9.1 then its 2.6 ready...just need to make the new kernel image and modules and install em and get lilo to boot new kernel</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back in slack</b><br />
+					Post by: <b>imnes</b> on <b>October 28, 2003, 10:00:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've been having some troubles with the new slackware. &nbsp;I have all my hardware functioning happily but gnome is unusable (mozilla, and nautilus crash frequently) also happens under dropline gnome. &nbsp;KDE is ok but I'm not really a KDE fan, konqueror has crashed a few times but is usable.<br /><br />Anybody tried the latest SuSE? &nbsp;I was thinking of giving it a try soon, I've tried previous versions but never stick with it long.<br /><br />I'm one of the many who leave slackware but always seem to come back sooner or later. &nbsp;Although I gotta say, so far I've been more impressed with FreeBSD than any of the linux distros, the only thing holding me away from it is the apps. &nbsp;Specifically Java, they finally have an official Sun 1.3jdk working, I'm waiting on 1.4 to get working (in FreeBSD 5 Current). &nbsp;<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back in slack</b><br />
+					Post by: <b>lloydr</b> on <b>October 28, 2003, 10:53:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">slack9.1 seems to be all working fine for me....mozilla 1.4 loads sluggish in gnome on my p1mmx test system when im running the stock 2.4.22 kernel...but other than that, its pretty quick and havent really had any problems...p1mmx 233 / 48mb ram....can boot slack with everything installed in about 20-30seconds....can start x and load up gnome in probaly around same amount of time as normal bootup(20-30s)....ive been pretty satisfied with it... once i replace rh9 with slack9.1 on my main system, ill probaly move back into the 2.6 kernels &nbsp;:D &nbsp; 2.6-test7 didnt like my nic in my p1mmx system lol</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back in slack</b><br />
+					Post by: <b>Brent</b> on <b>October 29, 2003, 12:28:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've been kinda leery of freebsd. &nbsp;It's something I've wanted to try, but I'm not sure if it has the drivers I need. &nbsp;I'm not sure how their pkg system works and I want to run the same apps on freebsd as I do on linux. &nbsp;<br /><br />I hear that freebsd has a thing in the kernel that'll let you run linux binarys, and I'm pretty sure I would be able to compile most things.<br /><br />In your experience, what hasn't gotten along very well with freebsd?<br /><br /><br />oh btw lloydr, If I were you I'd consider fluxbox instead of gnome, and firebird instead of the standard mozilla. &nbsp;my current comp feels kinda clunky running gnome.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>back in slack</b><br />
+					Post by: <b>imnes</b> on <b>October 29, 2003, 08:23:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay I'm not a BSD expert, this just just what I've noticed on my own system.<br /><br />My newer hardware works great in FreeBSD before it works well under Linux. &nbsp;That's one of the main reasons I like it. &nbsp;APM/ACPI support actually works (I can suspend and resume without a problem), something I still can't do under linux.<br /><br />Linux binaries work find under it, most games I've tried work. &nbsp;In fact, Enemy Territory had strange audio problems for me under Linux and Windows XP, but works flawlessly under BSD.<br /><br />If you have an nvidia card, then you get official drivers from them just like under Linux.<br /><br />The sound system of FreeBSD is also great, it can mix multiple sound streams in the kernel (something you'll appreciate if you've ever had the joy of running artsd or esd along with another program that wants to grab the sound card and have the program hang).<br /><br />I like the package system of FreeBSD. &nbsp;If you want to install a binary package, like Gnome 2, you just type:<br />pkg_add -r gnome2<br /><br />It will fetch the packages off of the FTP and install them. &nbsp;I think it automatically grabs dependencies too.<br /><br />If you want to compile from source you go into the 'ports' directory, find your application, and run &quot;make install&quot;, it grabs the source code from the project's ftp page, applies any patches from FreeBSD, compiles and installs. &nbsp;You can also do make deinstall, make upgrade (I think).<br /><br />The only downside, Wine quit compiling under FreeBSD for a while but it's now working again. &nbsp;Sun didn't release a native java SDK for it (but the BDS folks have implemented it themselves and sun has taken the project and made it official), it's only 1.3 though, but should be okay for most people. &nbsp;Those are the only two apps I really had any trouble with, otherwise everything seems to be available.<br /><br />You have two compiler systetems to deal with I think, because sometimes I grab some source code that's not in the ports system to compile and install myself, running 'make' doesn't work, I have to run 'gmake'. &nbsp;That's just a minor annoyance.<br /><br />Right now there's two versions of FreeBSD, the older 4.x releases and the beta 5.x releases. &nbsp;I like 5.x better, once it becomes the standard release and the java port to it is working I might make the switch back to FreeBSD on my desktop, right now I just have it running on a mail/web/ftp server.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

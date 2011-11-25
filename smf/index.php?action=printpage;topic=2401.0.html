@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - tar.gz</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: LinkZero on April 22, 2005, 01:09:40 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>LinkZero</b> on <b>April 22, 2005, 01:09:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i need to learn how to compile and install packages with tar.gz extensions. &nbsp;i can compile them with tar -xzvf, but i can't get beyond that.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>rugmonster</b> on <b>April 22, 2005, 01:27:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">tar -xzvf is just decompressing and unpackaging the archive. Go into the newly created directory and look for a README or INSTALL file for further instructions. Usually, to compile, it goes something along the lines of ./configure (and some options), then make and then (as root) make install, but consult the documentation for specific compile options.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>LinkZero</b> on <b>April 22, 2005, 01:52:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i unpacked it, and did ./configure. &nbsp;it started it, but then this came up at the end:<br /><br />./configure: line 5361: curl-config: command not found<br />no<br />configure: WARNING: curl-config was not found<br />configure: error:<br />&nbsp; &nbsp; &nbsp; &nbsp; WARNING: curl &gt;= 7.9.5 is not found.<br />&nbsp; &nbsp; &nbsp; &nbsp; Please check that curl-config is in your default path, check out<br />&nbsp; &nbsp; &nbsp; &nbsp; LD_LIBRARY_PATH or equivalent variable.<br />&nbsp; &nbsp; &nbsp; &nbsp; Or this might also be that your curl-config has other name.<br />&nbsp; &nbsp; &nbsp; &nbsp; Please try again with --with-curl-config=/usr/bin/curl-config<br />&nbsp; &nbsp; &nbsp; &nbsp; (replace /usr/bin/curl-config with a valid path to your curl-config).<br />&nbsp; &nbsp; &nbsp; &nbsp; If you use compiled packages check if you have devel pack installed.<br />&nbsp; &nbsp; &nbsp; &nbsp; To download the lastest version check http://curl.haxx.se/download.html for sources.<br /><br />help!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>danc</b> on <b>April 22, 2005, 04:01:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: LinkZero</div><div class="quote">i unpacked it, and did ./configure. &nbsp;it started it, but then this came up at the end:<br /><br />./configure: line 5361: curl-config: command not found<br />no<br />configure: WARNING: curl-config was not found<br />configure: error:<br />&nbsp; &nbsp; &nbsp; &nbsp; WARNING: curl &gt;= 7.9.5 is not found.<br />&nbsp; &nbsp; &nbsp; &nbsp; Please check that curl-config is in your default path, check out<br />&nbsp; &nbsp; &nbsp; &nbsp; LD_LIBRARY_PATH or equivalent variable.<br />&nbsp; &nbsp; &nbsp; &nbsp; Or this might also be that your curl-config has other name.<br />&nbsp; &nbsp; &nbsp; &nbsp; Please try again with --with-curl-config=/usr/bin/curl-config<br />&nbsp; &nbsp; &nbsp; &nbsp; (replace /usr/bin/curl-config with a valid path to your curl-config).<br />&nbsp; &nbsp; &nbsp; &nbsp; If you use compiled packages check if you have devel pack installed.<br />&nbsp; &nbsp; &nbsp; &nbsp; To download the lastest version check http://curl.haxx.se/download.html for sources.<br /><br />help!</div><br /><br />One thing you must learn to do with Linux is to read the messages it provides to you... &nbsp;Did you see this line:<br /><div class="codeheader">Code:</div><div class="code">WARNING&#58; curl &gt;= 7.9.5 is not found.</div><br />This is telling you that the &quot;curl&quot; program (version 7.9.5 or greater) is needed, but is missing. &nbsp;So, you'll need to install it before you can proceed.<br /><br />Not sure why it isn't installed already, as it should be part of a standard Slackware installation... &nbsp;Find the &quot;curl&quot; package on your installation CD, and install it with &quot;installpkg&quot;. &nbsp;Then try the above again...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>Brent</b> on <b>April 22, 2005, 08:00:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually, If you don't have it you should just visit the site that it gave you in ./configure output. <br /><br />Four simple steps to compiling software:<br /><br />tar -xzf foo.tar.gz or tar -xjf bar.tar.bz2<br />./configure (setting up compile options)<br />make (actual compiling)<br />make install (putting everything in it's nessesary place)<br /><br />Of course from time to time you run across packages that may need other packages to build correctly, but fortunately this is rare in slackware.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>rugmonster</b> on <b>April 23, 2005, 11:27:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you don't have a prereq installed, you don't have a prereq installed. It doesn't matter what distro you are running. Granted, Slackware doesn't leave out the -dev packages needed to compile things from source, but it's sort of silly saying that Slackware has less problems than others. It all depends on what you are trying to compile and what that needs.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>LinkZero</b> on <b>April 23, 2005, 11:35:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">well i got the curl thing, and i've done every thing else.<br /><br />tar -xzvf file.tar.gz<br />./configure<br />make<br />make install (as root)<br /><br />now how do i open the program? &nbsp;i installed aMule, but i can't find the program anywhere. &nbsp;also, i downloaded the unrar extracting program but it won't run the ./configure command.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>rugmonster</b> on <b>April 23, 2005, 01:50:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So you install curl? Did you compile it from source and install it? What steps have you taken so far and where are you at? If you have successfully compiled and installed the program you started out to install, more than likely, it was installed in /usr/local/bin. You should be able to open up a terminal and type whatever the name of the program is. Look in /usr/local/bin to see if it is there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>LinkZero</b> on <b>April 23, 2005, 06:00:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">yes i completely compiled and installed the program, but i cannot find it anywhere. &nbsp;i've looked in /usr/local/bin and in /usr/bin, but it's not there. &nbsp;i also tried typing the name of the program in the console, but that doesn't work either. &nbsp;i can't even find it using slocate.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>danc</b> on <b>April 23, 2005, 06:27:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm a little unclear on what program you are trying to install... &nbsp;Is it aMule?<br /><br />I don't have that installed, but try opening it from a command line again, using different spellings (amule, aMule, Amule, etc...). &nbsp;Commands in Linux are case-sensitive, so capitalization matters...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>kilar</b> on <b>April 23, 2005, 09:18:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Try <div class="codeheader">Code:</div><div class="code">whereis amule</div> It should give you the executable, the library, and the man page path for amule. Or, if you just want the executable, just do <div class="codeheader">Code:</div><div class="code">which amule</div><br /><br />Normally, if you install an app yourself, it goes into /usr/local. You can prepend the installation path if ou want it to go into /usr/bin or /bin. Some distros even put your installed apps into /opt, if you do not tell it otherwise.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>Brent</b> on <b>April 23, 2005, 10:17:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Patrick,<br /><br />I really hope you've read over those README and INSTALL files that came with the packages you're trying to install. &nbsp;Remember, I told you that sometimes certain packages will do things differently, but they will ALWAYS tell you exactly what to do in the INSTALL or README files.<br /><br />Those files are there, and they're fully capitalized (unusual in linux) for the sole purpose of telling the user how to install it.<br /><br />To read those files, go to your console, and type:<br /><br /><div class="codeheader">Code:</div><div class="code">less filename</div><br /><br />Heck you can even view them through your web browser if you want too.<br /><div class="codeheader">Code:</div><div class="code"> firefox filename</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>LinkZero</b> on <b>April 24, 2005, 09:38:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">yes aMule is the program i'm trying to install. &nbsp;and yes i read the readme file first. &nbsp;although it didn't say anything i could understand. &nbsp;i didn't see anything about how to install it in there. &nbsp;i tried using whereis amule, and which amule, but it didn't give me anything either.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>rugmonster</b> on <b>April 24, 2005, 01:09:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">whereis and which will only work if the program is installed in somewhere in his path. What I think is that his compile failed and did not install anything. <br /><br />What you should do is go into the directory that you built the source and look for an executable, amule. Remember that the command line is case sensitive, so you may have to type it in aMule or something like that. <br /><br />Have you looked for a Slackware package of this program?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>danc</b> on <b>April 24, 2005, 04:54:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">Have you looked for a Slackware package of this program?</div><br /><br />There's an idea!<br /><br />There is indeed one available at Linuxpackages.net<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>LinkZero</b> on <b>April 24, 2005, 05:39:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">that's it. &nbsp;i give up. &nbsp;i downloaded the package from linuxpackages.net and that didn't even work. &nbsp;i scanned the install readme file over carefully and found out that i need like five other packages in order to get it to work, and of course i can't find any of them. &nbsp;this is more trouble than it's worth.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>dpeach</b> on <b>April 24, 2005, 10:55:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">One of the nice things is that when you get all of the prerequisit programs for amule, then you have that many more prereqs for future programs you install.<br /><br />With packages from linuxpackages.net you don't have to untar them. Just navigate to the directory where you downloaded the file then get root privileges and type: <div class="codeheader">Code:</div><div class="code">installpkg amule*</div><br />That should be it for that. I have just downloaded it and installed it using these instructions. I then exited from being root and ran the program by typing &quot;amule&quot; without the quotes. I got this error:<div class="quoteheader">Quote</div><div class="quote">amule: error while loading shared libraries: libwx_gtk2_xrc-2.5.so.3: cannot open shared object file: No such file or directory</div><br />So now I go in search of what that file is. I find out that it has something to do with wxBase and wxGTK (found this information on LinuxPackages). So, I downloaded the files and navigated to the directory in a console. su'd to root. Then typed:<div class="codeheader">Code:</div><div class="code">insallpkg wx*</div><br />After those two installed, I tried typing amule again. Same error (not surprised, I need to reinstall it). So I type:<div class="codeheader">Code:</div><div class="code">removepkg amule</div><br />After it is done, I install it again. Then I get the same error over.<br /><br />Hmph! All of that was typed to show you how easy it is, and then it goes and doesn't work for me. Any thoughts someone?<br /><br />I look and find that there are several similar libs installed in /usr/lib/. So I did the symlink thing and linked to the most recent version of the same file. Then I followed a whole string of those linking away. Then in the end I get this error:<br /><div class="quoteheader">Quote</div><div class="quote">amule: /usr/lib/libwx_base_net-2.5.so.3: version `WX_2.5' not found (required by amule)<br />amule: /usr/lib/libwx_base-2.5.so.3: version `WX_2.5' not found (required by amule)<br />amule: /usr/lib/libwx_gtk2_core-2.5.so.3: version `WX_2.5' not found (required by amule)</div><br />So there is more to it. <br /><br />Patrick, this is not normal. Someone here can help you out...eventually. You just have to stay with it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>rugmonster</b> on <b>April 25, 2005, 05:25:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Slackware has Swaret and Apt available for package management. They will handle all of your updates and installing new software, taking care of dependencies for you. Perhaps one of the Slackware folks will tell you how to get one of those setup. That, or you can use a distro that already has a good package manager setup for you.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>dpeach</b> on <b>April 25, 2005, 08:58:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, I tried it with slapt-get (the normal way I install things) and swaret. Swaret did not have it available. slapt-get, got it, but I had the same problems. I even uninstalled the wx packages and amule. Then reinstalled amule from slap-get. That should have taken care of any dependencies. Did not work. Same problem.<br /><br />I would venture to say something is wrong with that amule build. At least for me. Not that I really care about amule, I was just trying to be helpful in getting it running for Patrick.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>imnes</b> on <b>April 25, 2005, 09:50:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I took a look at the wx packages on linuxpackages.net, there are several version of them. &nbsp; This one looks closest to what you need, so download and install it http://www.linuxpackages.net/download.php?id=6231<br /><br />It still won't work correctly because the library your amule package wants is called libwx_gtk2_xrc-2.5 and the one in the package is slightly different: libwx_gtk2u_xrc-2.5. &nbsp;But this will be the right version (2.5).<br /><br />I have a feeling making a link to the expected filename will work with this, so after installing that package, type these commands as root:<br /><br /><div class="codeheader">Code:</div><div class="code">cd /usr/lib<br />ln -s libwx_gtk2u_xrc-2.5.so.4.0.0 libwx_gtk2_xrc-2.5.so.3<br />ldconfig</div><br /><br />That will create a link to the library you installed with the name that amule is expecting. &nbsp;<br /><br />Now install your amule package and try to run it. &nbsp;The above steps *may* need to be done again for any of the other wx libraries that are named wrong (look in /usr/lib/libwx_*u* for other possibilities) if amule is looking for more.<br /><br />I'm at work right now and can't test this out, could some other slack user (dpeach) give it a shot?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>dpeach</b> on <b>April 25, 2005, 10:01:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">imnes, that is exactly what I did last night. And there are about 7 other files that you have to link to. And, that is the same package I downloaded.<br /><br />Made all of the symlinks necessary and ended up with the error I mentioned above.<br /><div class="quoteheader">Quote</div><div class="quote">amule: /usr/lib/libwx_base_net-2.5.so.3: version `WX_2.5' not found (required by amule)<br />amule: /usr/lib/libwx_base-2.5.so.3: version `WX_2.5' not found (required by amule)<br />amule: /usr/lib/libwx_gtk2_core-2.5.so.3: version `WX_2.5' not found (required by amule)</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>imnes</b> on <b>April 25, 2005, 02:58:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">imnes, that is exactly what I did last night. And there are about 7 other files that you have to link to. And, that is the same package I downloaded.</div><br /><br />Are you sure? &nbsp;Because the other version of the package is named identically (and shows up first on the list at linuxpackages) and is version 2.4. &nbsp;Since this is 2.5 it shouldn't give you the &quot;version `WX_2.5' not found&quot; message. &nbsp;<br /><br />I'm not sure though, I just got home so I'll give it a try and let you know if I have any luck with it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>imnes</b> on <b>April 25, 2005, 03:04:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay I tried and this works perfectly (I'm on slackware 10.1 right now):<br /><br />Download amule-2.0.0rc8-i486-2tsu.tgz<br />http://www.linuxpackages.net/download.php?id=5806<br /><br />Install it:<br />&nbsp; installpkg amule-2.0.0rc8-i486-2tsu.tgz &nbsp;<br /><br />Trying to run it gave:<br />&nbsp; &nbsp;amule: error while loading shared libraries: libwx_gtk2_xrc-2.5.so.3: cannot open shared object file: No such file or directory<br />&nbsp; &nbsp;<br />Download &nbsp;wxall-2.5.3-i486-1tsu.tgz<br />http://www.linuxpackages.net/download.php?id=5814<br /><br />Then install it:<br />&nbsp; &nbsp;installpkg wxall-2.5.3-i486-1tsu.tgz<br />&nbsp; &nbsp;<br />Now amule will run fine.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>dpeach</b> on <b>April 25, 2005, 04:51:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: imnes</div><div class="quote">Are you sure? &nbsp;Because the other version of the package is named identically (and shows up first on the list at linuxpackages) and is version 2.4. &nbsp;Since this is 2.5 it shouldn't give you the &quot;version `WX_2.5' not found&quot; message. &nbsp;</div><br />The one you linked to is the one I downloaded. But the one you eventually used is the 2.5.3. I have not tried that, but when I get back to that machine I will. If I have problems I will report.<br /><br />Either way, slapt-get <b>did not</b> take care of the dependency. Which actually makes me feel pretty good since I have another piece of software that refuses to work in Slack from the package I got at LinuxPackages. I have been convinced that it is a dependency problem, yet slapt-get should have taken care of that. Now I know it does not always take care of it, so this helps push me towards the thinking that it might indeed be a dependency problem.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>dpeach</b> on <b>April 25, 2005, 08:06:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">After doing &quot;slapt-get --install wxall&quot;, amule works like a charm. There is the answer Patrick. <br /><br />See, I told you if you gave us time and info we could help you through this.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>tar.gz</b><br />
+					Post by: <b>LinkZero</b> on <b>April 25, 2005, 11:53:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ok i can get aMule up and running. &nbsp;at first i couldn't get it to connect to any servers, but just now it did. &nbsp;thanks for all the help. &nbsp;i'm sure i'll be back soon to bug y'all with an all new problem though. &nbsp;lol</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

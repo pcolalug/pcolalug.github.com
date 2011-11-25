@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Postal 2 howto install the AW7 patch.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: mitchr on April 24, 2006, 07:12:50 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Postal 2 howto install the AW7 patch.</b><br />
+					Post by: <b>mitchr</b> on <b>April 24, 2006, 07:12:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">First install postal 2 (share the pain) and postal 2 AW (apocalypse weekend).<br />I installed those in my /usr/local/games dir.<br />Then you will need the AW7 patch, be sure to download AW7Final.zip and not the self extracting windows version.<br />You can get it from here: http://www.postalnetwork.org/files/file.shtml?ID=322<br /><br />Unzip the file in the ApocalypseWeekend dir which is in the postal2 dir. ( /usr/local/games/postal2/ApocalypseWeekend/ )<br /><br />Download <br />http://webpages.charter.net/kgroombr/Postal2AW7.ini (Should this link stop working let me know and I will find a new one)<br />and replace the existing file: <br />/usr/local/games/postal2/ApocalypseWeekend/System/Postal2AW7.ini.<br /><br />If you have played AW already then delete<br />.lgp/postal2/System/Postal2AW7.ini.<br />in your home dir.<br /><br />Copy:<br /><br />postal2 -ini=Postal2AW7.ini -userini=Apocalypseweekenduser.ini -savedgameini=ApocalypseWeekendSavedGameInfo.ini -BASEDIR=../ApocalypseWeekend/System<br /><br />into a file named postal2aw7.&nbsp; <br />Be sure to chmod 755 postal2aw7<br />I stuck that in /usr/local/games/postal2 dir since postal2 and postal2aw are both there.<br /><br />Simple as that and Postal 2 with the AW7 patch should start.<br /><br />Thanks<br />Mitchr</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

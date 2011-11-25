@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - The money where the mouth is</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: rburt3 on November 15, 2002, 12:09:30 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>The money where the mouth is</b><br />
+					Post by: <b>rburt3</b> on <b>November 15, 2002, 12:09:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am posting using lynx while my gentoo install boostraps to stage 2. Finally took the plunge after all of those links (http://www.gentoo.org). Its currently building gcc for the second time around (post glibc), so I may wait to finish tomorrow. All in all, though, its been painless, and in the end I will have a system completely optimized for my rig. I'll let you know how it handles after I get the desktop business set up.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>The money where the mouth is</b><br />
+					Post by: <b>rburt3</b> on <b>November 20, 2002, 06:02:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, the pain started when I tried to emerge kde. It seems that to call 1.4 a release canidate is really optimistic. Many of the ebuilds have libs masked or have confilicting requirements with other programs. Folks seem to be working hard to get things straight, but I just don't know enough about their system to be of any help right now.<br /><br />I will say this, however, gentoo makes your machine *scream*. I don't have hard numbers, but compiles (when they finished) flew by. Boot time seemed to be cut by 2/3 (though I did compile a lot into the kernel instead of modules).<br /><br />Another handy feature that may not get a lot of notice is their rc-update script. Instead of adding scripts to the appropriate run level, one does something like<br /><div class="codeheader">Code:</div><div class="code">rc-update add apache default</div><br />This would add apache to the default run level. It is smart enough to know that the network should be up before apache, so it makes sure that happens for you. Really handy. So, to have a graphical workstation when you boot, you would have to do something like<br /><div class="codeheader">Code:</div><div class="code">emerge -p gnome<br />emerge gnome<br />rc-update add gdm default</div><br />Simple, no?<br /><br />This all having been said, however, I'm putting RH8 on my primary partition tonight so I can be productive again, rather than trying to track down broken dependencies in ebuild scripts. I'll give it another go when 1.4 is released.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>problems?</b><br />
+					Post by: <b>stocke2</b> on <b>November 20, 2002, 09:28:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">you are having problems with packages on the 1.4 rc1 install?, I have been running 1.4 rc1 for months without any problems, well had a problem with the mozilla java plugin, but that is because the binaries from sun are compiled with gcc 3.1.x and Gentoo Linux 1.4 uses 3.2, but we recently fixed that by adding a new ebuild that actually compiles sun jdk 1.4. anyhow, you might want to ask on irc #gentoo or post a bug with more info on the problems so they can be addressed.<br /><br />&nbsp;:D <br /><br />Eric Stockbridge</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>The money where the mouth is</b><br />
+					Post by: <b>rburt3</b> on <b>November 21, 2002, 07:33:55 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks. The main show stopper is the same as this (http://forums.gentoo.org/viewtopic.php?t=22138) post. Similar things happened when I tried to emerge gdm. Lots of undefined references and the like. Also, it seemed that a couple of times (lynx, for example) I had to make a symlink from libx.y.z.so to lib.so for it to work. Is this common (having to make the links, I mean)?<br /><br />And, don't get me wrong, I'm not abandoning it, I'm just not comfortable enough with it to use it everyday. I'm rebuilding on a secondary partition so I can play around and become more familiar.<br /><br />Oh, and I forgot to say welcome! in the introduction thread, so welcome! We're still finding our way, I think, as a group, but its a great bunch of folks. Glad to have you with us! :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>The money where the mouth is</b><br />
+					Post by: <b>stocke2</b> on <b>November 21, 2002, 08:56:59 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">honestly I have never had to make any symlinks like that and Gentoo has been my default OS since ver. 1.2 came out.<br />not sure what you problem with gdm was, but if you want to boot into X then you don't add gdm or kdm to your init...instead you add xdm and there is a configuration (can't remember off the top of my head...will look it up once I get home) that lets you tell it what display manager to use with it...can choose xdm/gdm/kdm<br /><br />however, it is still a release canidate...we have a lot of bugfixes and all going into the tree right now...hopefully soon it will be ready, I think the graphical installer is getting pretty close to done as well.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>The money where the mouth is</b><br />
+					Post by: <b>stocke2</b> on <b>November 21, 2002, 09:00:19 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">by the way, I know you are not abandoning it, we have a TON of stuff going on. It will only get better :)<br /><br />and if anyone wants to contribute some documentation for anything we really do appreciate submissions :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>The money where the mouth is</b><br />
+					Post by: <b>rburt3</b> on <b>November 21, 2002, 12:17:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Did you say graphical installer?!! Oh, I can't wait to see what that's like! Really, you folks have a great &quot;meta-distrobution&quot;. I'd love to jump in, its just a lack of time at the moment.<br /><br />Wonder if it might have been agressive optimizations? Admittedly, I used ones I found in the faq that were listed as something like &quot;as far as I would push global optimizations&quot;.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>The money where the mouth is</b><br />
+					Post by: <b>stocke2</b> on <b>November 21, 2002, 02:46:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">some porgrams don't like really aggressive compile options, you might post a bug...if it is one of those that can not handle it, they will probably rewrite the ebuild to force lower optimizations.<br /><br />as far as anyone who wants to write some documentation, if you know any Linux utility well, like at/cron or any program lots of people are likely to use like sendmail, we could use more guides like those too :)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

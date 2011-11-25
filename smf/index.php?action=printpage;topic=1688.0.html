@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Problem with Linspire 4.5??</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by:  on June 07, 2004, 02:23:46 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Problem with Linspire 4.5??</b><br />
+					Post by: <b></b> on <b>June 07, 2004, 02:23:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok let me start from the beginning. I had Windows 98 on my computer all along. I updated a while ago to Windows XP. There was still some Windows 98 on it that didn't go away. It started giving me some trouble so I just installed Linspire 4.5 on it. Well I have 3 hdds on this computer and the first 2 are partitioned. I installed the Linspire OS on the first hdd/partition thinking it would just takeover all hdds. Well, when it came up to the main screen it said:<br />1. Linspire<br />2. Redetect<br />3. Diagnostics<br />4. Windows 98<br />5. DOS<br /><br />Why does it say Windows 98 and DOS on here? How can I get rid of them without reinstalling, or is there a way? I wanted to make Linspire on all 3 of my hard drives if that is possible.<br /><br />The lindows support told me to do this:<br />Linspire.com has been aiming at the market of home users. The main goal of Linspire is &quot;Affordable Choice&quot;. We are trying to make entry-level computer systems that the average, non-technical user can use.<br /><br />Linspire.com does not support editing any files as it requires advanced Linux skills. If you are comfortable with it you are encouraged to do so. However we do not officially support it.<br /><br />Please type the following command at the console and send us the created file ‘lilo.txt’ as attachment.<br />(‘L’ panel&gt; Program &gt; Utilities &gt; Console)<br /><br />#cat /etc/lilo.conf &gt;&gt; lilo.txt<br /><br />Ok now here is whats up: I emailed the Lindows Support back with this:<br />Well I did that thing you told me to do and it seemed to do nothing. I looked under /etc and there was no lilo.txt. I tried it again and there was still nothing. I then did a search for lilo.txt and my computer locked up. I had to reboot it with the main reboot button on my computer. Now when I boot up it gets half way with the bars and then it just stops. I tried again and it does the same thing. Somehow, I just messed up my computer. I guess I'll just reinstall Linspire, unless you have any ideas??? Any help will be appreciated!!<br /><br />Linspire still has bugs, along with any operating system of course. But I really do like Linspire a whole lot better then Windows. And I am getting more into linux. It is really easier then the whole Mandrake or Suse. I'm not cutting them down, I was just saying that it is easier for me.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Problem with Linspire 4.5??</b><br />
+					Post by: <b>rburt3</b> on <b>June 07, 2004, 02:52:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">From what I can tell, Linspire doesn't give you the option to take over all drives in the system. So, unless you have the option to manually partition and format your drives during set up, its the old fashioned way involving config files and the like. I got a Lindows guru here at work that's checking on it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Thanks</b><br />
+					Post by: <b></b> on <b>June 07, 2004, 03:06:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for getting some one to check on it. I know the support told me that they don't support some ways to do that which I am guessing the way your talking about with config or something. I know nothing about the real advanced linux. Thanks for your help!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Problem with Linspire 4.5??</b><br />
+					Post by: <b>imnes</b> on <b>June 07, 2004, 03:55:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's the general idea...<br /><br />Boot up with a DOS or Windows boot disk. &nbsp;<br />Delete all partitions on all drives. &nbsp;(I assume you don't want to keep anything).<br />Install linspire as usual.<br /><br />Once installed, you can partition your other two drives and mount them wherever you want, for example making one /usr and one /home and your original drive as / for example. &nbsp;<br /><br />If you need detailed instructions let me know and I'll work it out later and post it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hey!</b><br />
+					Post by: <b></b> on <b>June 07, 2004, 04:27:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So your saying that I can use 1 hard drive for almost every directory for Linspire? How do I do that in the advanced install of Linspire? That may be too complicating to worry about. Whenever I update Linspire (not clean install) will I have to redo anything?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Lindows with multiple disk drives</b><br />
+					Post by: <b>tuxmoose</b> on <b>June 07, 2004, 05:14:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm not a techie, but I am a somewhat experienced Lindows <b>user</b> (rburt's Lindows-guy-at-work). &nbsp;<br /><br />The Lindows installer provides basically two options: (1) take over an entire disk drive: &nbsp;This will repartition/reformat the single disk drive selected with no option to take over multiple disk drives. &nbsp;(2) take over an existing partition: &nbsp;This option requires a pre-existing partition with no resize, etc. options.<br /><br />Under the hood, Lindows is basically Debian Linux with the file system defaulted to Rieser-FS. &nbsp;With Lindows installed on hda, you could use the standard command line (terminal mode) utilities to format/partitiion the other drives. &nbsp;When that is done, there are a couple of techniques to auto-mount the other drives when rebooting. &nbsp;Maybe some of you more advanced users can help fill in the details here...<br /><br />The word in the Lindows (sponsered) user community is that Lindows 5.0 (built on the 2.6... kernel) will include a more advanced installer which will provide many more options for disk drive setup. &nbsp;When is it due to be released? &nbsp;No one knows for sure except it supposed to be realsoonnow...<i> :shock: </i></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Problem with Linspire 4.5??</b><br />
+					Post by: <b>imnes</b> on <b>June 07, 2004, 08:35:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The rumors are we will get a release this month. &nbsp;I dunno, they just re-released the 4.5 rebranded so dunno if they'd follow up with 5.0 so soon. &nbsp;We'll see.<br /><br />NIck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Hey!</b><br />
+					Post by: <b></b> on <b>June 07, 2004, 09:03:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think I am just going to wait and just go ahead and reinstall 4.5 and then wait for 5.0 and see if it has different installation features in it. If not, then ok thats fine. But if it does, then thats great. Linspire is awesome! The Lindows Team surely put a good product on the market and I can't wait to see what happens with the whole Microsoft lawsuit. I really think Lindows will win it and I hope they do because I want to see fair competition and not a monopoly. Maybe Microsoft will lower their prices, I doubt it but hey it could happen.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Problem with Linspire 4.5??</b><br />
+					Post by: <b>imnes</b> on <b>June 08, 2004, 02:31:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What are they suing for now? &nbsp;The last thing was that the Lindows name was too close to Windows and it would confuse users. &nbsp;(Like Microsoft with JScript, and C#).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Lawsuit</b><br />
+					Post by: <b></b> on <b>June 08, 2004, 03:24:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Basically, the lawsuit is saying that Windows is trademarked and too close. Lindows says that windows is a generic term. To read all the latest stuff go here: http://info.linspire.com/lindows/.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

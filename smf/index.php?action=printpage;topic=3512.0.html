@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - May 2009 meeting -- Backup Solutions</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Club discussions => Topic started by: dpeach on May 06, 2009, 07:48:16 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2009, 07:48:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The May meeting will be May 21 at the usual location.<br /><br />Meeting topic will be &quot;Backup Solutions.&quot; What do you use for backing up your system? What are the steps you take? There are some great tools out there, but do you know how to use them? At the last meeting there was quite a bit of talk about backing up your data. Mostly we talked about on-line solutions for off-site backups. While these are necessary, there is still a valid need for local backups. Come share your experiences with different websites and software.<br /><br />We won&#039;t have just one person presenting for the meeting. We will just be sharing our collective information. If you do plan to share your solution, and your solution warrants it, bring printed information that other members can take home and put right to use.<br /><br />I regret that I will not be able to attend the May meeting. The reason this topic is important to me right now is that I painfully worked through a recent backup in which I simply copied my whole /home directory to a different drive so I could do a clean install. I wished I had someone to talk me through doing an automatic backup so that I would not have had to babysit the entire transfer both directions and then make sure everything copied fine.<br /><br />Come share!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>Yossarian</b> on <b>May 18, 2009, 01:00:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I too had to do a backup recently, but I&#039;m afraid I just copied files/directories to an external HDD, which is the only method of backing up that I know of.&nbsp; Hopefully this meeting will be quite enlightening.<br /><br />Also, there doesn&#039;t seem to be an announcement for this meeting on the front page of the website.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>oddball</b> on <b>May 19, 2009, 03:33:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Unfortunately, I will not be at the meeting.&nbsp; My summer class meets on Thursday nights.<br /><br />My backup routine simply consists of tarballing my home partition and the system logs, and then copying the tarball to an external hard drive.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>danc</b> on <b>May 21, 2009, 08:45:21 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I use a custom bash script to back up my /home and /etc directories, tar them up and make into an .iso file for burning to CDR/RW.&nbsp; I will bring printed copies of the script and briefly go through it if anyone is interested.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>oddball</b> on <b>May 21, 2009, 09:50:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3512.msg16865.html#msg16865">Quote from: danc on May 21, 2009, 08:45:21 am</a></div><div class="quote">I use a custom bash script to back up my /home and /etc directories, tar them up and make into an .iso file for burning to CDR/RW.&nbsp; I will bring printed copies of the script and briefly go through it if anyone is interested.<br /><br /><br /></div><br /><br />Any chance you can post the script here, for those of us who can&#039;t make it to the meeting?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>danc</b> on <b>May 21, 2009, 10:16:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3512.msg16867.html#msg16867">Quote from: oddball on May 21, 2009, 09:50:31 am</a></div><div class="quote">Any chance you can post the script here, for those of us who can&#039;t make it to the meeting?<br /></div><br /><br />Sure:<br /><br /><div class="codeheader">Code:</div><div class="code">#!/bin/bash<br />#<br /># This is a script to back up my laptop machine home directory (/home/danc) and /etc.<br /># It makes gzip&#039;d tarballs of /home/danc and /etc, and produces an ISO image,<br /># which can then be burned to CDR/RW or copied to an external location.<br /># The backup filenames include today&#039;s date.<br /># Written by Dan C, 2003-08-01.<br /><br /># Define some variables<br />HOMEDIR=/home/danc<br />SAVEDIR=/home/danc/downloads<br /># BACKUPDIR=<br />FILENAME1=&quot;lap_danc_$(date +%Y%m%d)&quot;<br />FILENAME2=&quot;lap_etc_$(date +%Y%m%d)&quot;<br />BACKUP_ISO=&quot;lap_backup_$(date +%Y%m%d).iso&quot;<br /><br /># Start<br />clear<br />echo<br />echo &quot;Starting backup script for $HOME and /etc, on $(date +%F)&quot;<br />echo &quot;This will produce an ISO for burning to CDR/RW...&quot;<br />read -p &quot;Press Return to begin...&quot;<br /><br />cd $HOMEDIR<br /><br /># Tar up the home directory<br />echo &quot;Creating tarball of $HOME...&quot;<br />tar -X exclude.lst -czf $FILENAME1.tar.gz .<br />sleep 3<br /><br /># Tar up the /etc directory<br />echo &quot;Creating tarball of /etc...&quot;<br />sudo tar -czf $FILENAME2.tar.gz /etc<br />sleep 3<br /><br />### This section for possible future use to copy tarballs to remote machine,<br />### via scp or NFS.&nbsp; Needs further editing...<br /># Copy tarballs to storage volume<br /># echo &quot;Copying tarballs to $BACKUPDIR...&quot;<br />#cp $FILENAME1.tar.gz $BACKUPDIR<br />#cp $FILENAME2.tar.gz $BACKUPDIR<br />#sleep 3<br /><br /># Make filesystem to put on CDRW<br />echo &quot;Making ISO...&quot;<br />mkisofs -l -r -allow-multidot -o $BACKUP_ISO $FILENAME1.tar.gz $FILENAME2.tar.gz<br />sleep 3<br />echo &quot;Making md5sum of ISO...&quot;<br />md5sum $BACKUP_ISO &gt; $BACKUP_ISO.md5<br />sleep 3<br /><br /># Clean up<br />rm -f $FILENAME1.tar.gz<br />sudo rm -f $FILENAME2.tar.gz<br />mv $BACKUP_ISO $SAVEDIR<br />mv $BACKUP_ISO.md5 $SAVEDIR<br /><br />echo &quot;Backup ISO and md5sum completed, and moved to $SAVEDIR&quot;<br />echo &quot;All done!&quot;<br /><br /># EOF<br /></div><br /><br />The &quot;exclude.lst&quot; file which is referenced in the script is simply a text file listing of files/dirs that I don&#039;t want to be included in the backup.&nbsp; My current one looks like this:<br /><br /><div class="codeheader">Code:</div><div class="code">./*.tar.gz<br />.Trash<br />temp<br />temp2<br />temp3<br />.thumbnails<br />.googleearth<br /></div><br /><br />This works well for me, and is very open to further enhancements as you may see fit.&nbsp; There is some commented-out code in there now which shows the basic idea of automatically copying the backup to another machine.&nbsp; Currently I just manually copy the resulting .iso file to a storage server on my home LAN, where I can burn it to CDR/RW if desired, or mount it there and extract whatever file(s) are desired.<br /><br />Dan<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>oddball</b> on <b>May 21, 2009, 10:19:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>dpeach</b> on <b>May 21, 2009, 01:22:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Danc3, I have played with your script before but did not get it working well for me. I was hoping you would be at the meeting so you could share this. I am excited that you will be there but regret that I can&#039;t.<br /><br />Also, don&#039;t forget to talk about off-site backup solutions. Any of the web services work in Linux? Do you trust them?<br /><br />Look forward to hear how it goes. Please share the collected info here on the forums. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>danc</b> on <b>May 21, 2009, 03:11:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dpeach:&nbsp; I got to looking at this again, and probably the reason it didn&#039;t work for you is that you don&#039;t have &quot;passwordless sudo&quot; working.&nbsp; There are a couple of lines in the script that require root priveliges because of file ownerships in the /etc directory.&nbsp; This is easily enabled (at least on Slackware) by using the command &quot;visudo&quot; to edit the file /etc/sudoers, and adding yourself to the list of users who can use sudo (either with or without requiring a password).&nbsp; Another thing you can do (that I do myself) is to only allow users that are in the &quot;wheel&quot; group to use sudo in the first place, which is a good security practice.&nbsp; For even more security, you can have a file called /etc/suauth which allows/denies root/sudo access even more specifically.<br /><br />I will discuss this more at the meeting, as well.<br /><br />Dan<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>bhoff</b> on <b>May 21, 2009, 05:01:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sorry guys but with the new job I was on to something else before I remembered&nbsp; the meeting tonight.<br />As for back-up&#039;s I like rsync over ssh works great and will post my script soon as I get back down to office.<br />I use password keys for ssh connections and just works. will work for windows/mac or unix/linux. can do incremental or full and schedule easily using cron.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>bhoff</b> on <b>May 23, 2009, 07:59:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Also I am going to start a topic under the forums on back-ups as I am now going to be designing and building all of our back-up scripts.<br />I will release the code as it comes out for you guys and girls to use.<br />It will include encrypted channels, passwordless ssh, email notification and more and possibly a web gui.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: May 2009 meeting -- Backup Solutions</b><br />
+					Post by: <b>bhoff</b> on <b>May 23, 2009, 03:18:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">All right I have started a thread under coding can all you guys move your code and comments to that thread please. I want to really make this a community project.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - using disk quotas</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: bhoff on August 17, 2008, 03:46:14 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>using disk quotas</b><br />
+					Post by: <b>bhoff</b> on <b>August 17, 2008, 03:46:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is the setup. You have setup a linux machine to share with your friends, But you have one guy or girl that keeps hogging up disk space on your machine and causing system wide problems. Solution is use disk quotas.<br /><br />First we have decide what partition to use.<br />looking at /etc/fstab lets us see how to best set quotas.<br />[root@localhost home]# cat /etc/fstab<br />/dev/md0&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 1<br />/dev/Vol01/LogVol01&nbsp; &nbsp; &nbsp;/home&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 2<br />/dev/Vol01/LogVol02&nbsp; &nbsp; &nbsp;/opt&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 2<br />/dev/Vol01/LogVol03&nbsp; &nbsp; &nbsp;/tmp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 2<br />LABEL=/boot&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/boot&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 2<br />tmpfs&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/dev/shm&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tmpfs&nbsp; &nbsp;defaults&nbsp; &nbsp; &nbsp; &nbsp; 0 0<br />devpts&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /dev/pts&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;devpts&nbsp; gid=5,mode=620&nbsp; 0 0<br />sysfs&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /sys&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sysfs&nbsp; &nbsp;defaults&nbsp; &nbsp; &nbsp; &nbsp; 0 0<br />proc&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /proc&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;proc&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 0 0<br />/dev/Vol01/LogVol00&nbsp; &nbsp; &nbsp;swap&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;swap&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 0 0<br /><br />I can see here that /home is on it&#039;s own partition so it is a simple matter to set up user quotas by setting the default to usrquota<br /><br />/dev/md0&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 1<br />/dev/Vol01/LogVol01&nbsp; &nbsp; &nbsp;/home&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ext3&nbsp; &nbsp; <span style="font-family: Verdana;">usrquota </span>&nbsp; &nbsp; &nbsp; 1 2<br />/dev/Vol01/LogVol02&nbsp; &nbsp; &nbsp;/opt&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 2<br />/dev/Vol01/LogVol03&nbsp; &nbsp; &nbsp;/tmp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 2<br />LABEL=/boot&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/boot&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ext3&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 1 2<br />tmpfs&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/dev/shm&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tmpfs&nbsp; &nbsp;defaults&nbsp; &nbsp; &nbsp; &nbsp; 0 0<br />devpts&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /dev/pts&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;devpts&nbsp; gid=5,mode=620&nbsp; 0 0<br />sysfs&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /sys&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;sysfs&nbsp; &nbsp;defaults&nbsp; &nbsp; &nbsp; &nbsp; 0 0<br />proc&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /proc&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;proc&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 0 0<br />/dev/Vol01/LogVol00&nbsp; &nbsp; &nbsp;swap&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;swap&nbsp; &nbsp; defaults&nbsp; &nbsp; &nbsp; &nbsp; 0 0<br />&nbsp;<br />Now we must run mount -o remount /home to activate the changes.<br /><br />next step is to create the quota file<br />quotacheck -cu /home<br />now&nbsp; you are all good it is a simle matter to set quotas now<br />edquota username to do this<br />#edquota brett<br />Disk quotas for user brett (uid 500):<br />&nbsp; Filesystem&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;blocks&nbsp; &nbsp; &nbsp; &nbsp;soft&nbsp; &nbsp; &nbsp; &nbsp;hard&nbsp; &nbsp; &nbsp;inodes&nbsp; &nbsp; &nbsp;soft&nbsp; &nbsp; &nbsp;hard<br />&nbsp; /dev/mapper/Vol01-LogVol01&nbsp; &nbsp; &nbsp;68&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 30&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;70&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0&nbsp; &nbsp; &nbsp; &nbsp; 0<br />blocks are in 1k size so here I have set soft to 30 and hard to 70<br />This will allow the user brett to move,copy,create files up to the size of 30k without warning and upto 70k with warnings and nothing above that without the admin adjusting the quoats.<br /><br />now to turn off and on just use the quotaon quotaoff command<br />quotaon /home<br />quotaoff /home<br /><br /><br />you can set the quotas to whatever you want to allow. you could have made this 1024k just as easy.<br />Just remember to be careful when setting quotas to small and you will get calls daily on this.<br />note above that the block show 68 that is how many 1k blocks that you are using so other wise you have 2 1k blocks left so I may want to adjust the quotas for this user the inodes show how many inodes exist in this file and we can set the soft and hard limits on this. I recommend using the blocks limits and setting the soft and hard inodes to 0 0<br /><br />you are now ready to start using user quotas!<br />have fun and let me know how it goes!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Remote Connection Question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: djoed_pcola on June 01, 2005, 11:25:10 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Remote Connection Question</b><br />
+					Post by: <b>djoed_pcola</b> on <b>June 01, 2005, 11:25:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hello,<br /><br />At home, I have BellSouth DSL with a static IP address assigned to the modem. &nbsp;My simple home network consists of the Westell modem connected to a hub that networks 1 Windows™ XP machine plus two Linux (Mandrake, Ubuntu) machines. &nbsp;Additionally, I plan to add a machine running Linux plus the Linux Terminal Server software.<br /><br />Via a remote web browser, I want to point to my static IP address and logon to my desktop on the LTSP machine. &nbsp;Is this possible?<br /><br />Since the static IP address is assigned to the modem, which assigns a DHCP address to the other machines, how do I get past the modem to a specific machine?<br /><br />Any ideas appreciated. &nbsp;I'm like a fish out of water when it comes to networking.<br /><br />Thanks.<br /><br />dennis</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Remote Connection Question</b><br />
+					Post by: <b>lloydr</b> on <b>June 01, 2005, 11:39:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">if your trying to connect to a specific port from the outside nad map that port back to a certain LAN machine, then you use NAT which should be included inside your westell modem/router if you browse to the modem's LAN ip which is generally 192.168.1.1 , 192.168.0.1 , 192.168.1.254 , or 192.168.0.254 whichever is your gateway address that dhcp is assigning.<br /><br />If your doing this all on the LAN side, from a LAN LTSP machine to a LAN linux machine then you simply put in the LAN dhcp lease address, or you can statically assign the machines on the LAN an address that is on the same LAN as the modem but out of the dhcp lease range.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Remote Connection Question</b><br />
+					Post by: <b>djoed_pcola</b> on <b>June 06, 2005, 09:15:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the info. &nbsp;I found the place to make configuration changes to the Westell modem. &nbsp;Looks like it will be best to turn off the DHCP IP assignment and statically assign the addresses to each machine on my local network using addresses in the 10. or 192. address range. &nbsp;Except, I'll have to assign one machine to be the static IP pass-thru machine.<br /><br />I'll probably be hollering for help again once I get into the gory details. &nbsp;Now it's just a matter of making the time to start this project. &nbsp;My boss seems to think that work related projects have higher priority.<br /><br />Thanks again.<br /><br />dennis</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

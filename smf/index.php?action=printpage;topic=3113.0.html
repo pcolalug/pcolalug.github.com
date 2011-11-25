@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - CHMOD FOR FC5</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: bigtoss03 on January 24, 2007, 12:15:04 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>CHMOD FOR FC5</b><br />
+					Post by: <b>bigtoss03</b> on <b>January 24, 2007, 12:15:04 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yesterday I spent hours trying to do a chmod to give access to several users of my church to one particular folder. I accessed the forum and communicated with several members. Here is the result and where I am standing.<br /><br />1. Only after I finally found the full distribution under the root user could I use the chmod command. It changed the permissions but only I can see it and none of the other users.<br /><br />2. After I did that chmod the permissions reflected the new change. Later someone wrote that I should try 777 to see if this resolves the issue but I wasn&#039;t able to change it to that.<br /><br />Anyone has any suggestions I would greatly appreciate it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: CHMOD FOR FC5</b><br />
+					Post by: <b>rugmonster</b> on <b>January 24, 2007, 10:40:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">http://www.analysisandsolutions.com/code/chmod.htm<br /><br />First, create a group that you want to have access to the folder.<br /><br />As root:<br /><div class="codeheader">Code:</div><div class="code"># groupadd &lt;groupname&gt;</div><br />Then, add the users to the group.<br /><br />As root again:<br /><div class="codeheader">Code:</div><div class="code"># usermod -a -G &lt;groupname&gt; &lt;user&gt;</div><br />Repeat this for each user. <br /><br />Explanation:<br />usermod - change a user&#039;s account settings<br />&nbsp; &nbsp;-a&nbsp; append the user to the secondary group(s) listed after....<br />&nbsp; &nbsp;-G list of secondary group(s) you want to add the user to<br /><br />Why would you do that? You can give the folder the desired permission to that group. If you need to give the same permission to someone else, all you have to do is put them in the group you created above.<br /><br /><b>BIG NOTE! If you add a user to a group, they have to log out and log back in before their session will register that they are part of that new group!!!</b><br /><br />So to set the permission on the folder in question, you use chmod. Here&#039;s the quick and dirty of it. You have Read, Write, and Execute for your file permissions. Those file permissions apply to three classes of permissions: User, Group, and Other. <br /><br />A note on execute on directories. If you want someone to be able to list the contents of a directory, they need both read AND execute permissions on that directory. <br /><br />So let&#039;s say you own the directory. We&#039;ll call it /usr/share/files. If you did an &#039;ls -l&#039; in /usr/share, (assuming no other files or directories existed in /usr/share), you would see something like this.<br /><br /><div class="codeheader">Code:</div><div class="code">drwxr-xr-x&nbsp; &nbsp;7 bigtoss users&nbsp; &nbsp; &nbsp; &nbsp; 94 2007-01-21 16:22 files</div><br />RWX...that&#039;s Read, Write and Execute. Notice that there are three sets, RWX for User (bigtoss), R-X for Group (users), R-X for Others (everyone else on the system). Now, let&#039;s say you want to make the group &#039;files-users&#039; have read-only permissions on that directory. You need to use &#039;chown&#039;.<br /><br /><div class="codeheader">Code:</div><div class="code"># chown bigtoss:files-users /usr/share/files</div><br />chown changes file and directory ownership, where the user comes first and then group, separated by a colon. Okay, so now the output of &#039;ls -l&#039; will look like this.<br /><br /><div class="codeheader">Code:</div><div class="code">drwxr-xr-x&nbsp; &nbsp;7 bigtoss files-users&nbsp; &nbsp; &nbsp; &nbsp; 94 2007-01-21 16:22 files</div><br />To give files-users Write access to the directory, you use chmod. Here&#039;s what it would look like.<br /><br /><div class="codeheader">Code:</div><div class="code"># chmod 775 files</div><br />Alternatively...<br /><br /><div class="codeheader">Code:</div><div class="code"># chmod g+w files</div><br />The numbers represent RWX. <br /><br />Values for the math<br /><br />R = 4<br />W = 2<br />X = 1<br /><br />So if you add up all three, you get 7. If you add the values for R and X, you get 5. See how that works? The other method is to add or subtract specific permissions (r, w, or x) for a particular class (user, group, other). So g+w means the group is added write permission. If you then did g-w, then you would take write permission away from them. u stands for user, g for group, and o for other (or everyone else).<br /><br />So there you go. Quick and dirty. If you still can&#039;t figure it out between this and the link posted at the top of this, give us the group name that the users belong to, the directory and what you want them to be able to do in that directory (read/write or just read). We&#039;ll give you what you need to put in to make it happen.<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: CHMOD FOR FC5</b><br />
+					Post by: <b>mall0ry</b> on <b>January 25, 2007, 03:54:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">To add to what rugmonster said, you can set the Group User ID on the directory so that all files created in that directory will be owned by the group owner of the directory and not the primary group of the user creating the file. You do this with:<br /><br />chmod g+s directoryname<br />l<br />s -ld dircetoryname should show these permissions drwxr-sr-x . The &#039;s&#039; will be large or small depending on whether or not the execute permission was set.<br /><br /><br />You can set the sticky bit on the directroy to prevent users from deleting files they don&#039;t own. You do this with:<br /><br />chmod o+t directoryname<br /><br />ls -ld directoryname should show these permissions&nbsp; drwxr-xr-t . The &#039;t&#039; will be large or small depending on whether or not the execute permission was set.<br /><br />Hope this makes sense.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

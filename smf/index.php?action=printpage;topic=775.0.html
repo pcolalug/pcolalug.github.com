@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Cox users...</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: dpeach on June 14, 2003, 03:11:54 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cox users...</b><br />
+					Post by: <b>dpeach</b> on <b>June 14, 2003, 03:11:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am looking for someone that is using Cox as their service provider and has an e-mail server that you log onto from your mail program. My parents and Newt are experiencing something strange that we need help narrowing down the blame.<br /><br />Previously, my parents were able to send mail through Cox from their @dpeach.com address. Now (as of Wednesday) they are only able to send through Cox. It is like Cox has somehow made it so that they are not able to log onto another mail server from Outlook Express. <br /><br />Newton is experiencing the same thing. But we have not narrowed it down to Cox's problem because Newt and I have the same hosting company, even though we have different domains. My ISP (AT&T) has never allowed me to send mail from another server when using Outlook Express.<br /><br />We can still send mail through Cox, just not from the Cox connection and through my domain's mail server.<br /><br />Anyone out there experience this happening to them that is not using Always Web Hosting (http://www.alwayswebhosting.com/)?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Relaying is bad...</b><br />
+					Post by: <b>hitechwizard</b> on <b>June 14, 2003, 07:41:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It's probably a case of Cox finally shutting down the relay on their mail servers. Unless they are sending the mail directly to your SMTP server for delivery (which probably is not the case), then Cox is going to deny mail that appears to be originating (by the from address) outside the Cox (or coxmail) domain.<br /><br />If you are using Outlook, when you go to click send, you can drop down the send button to select which server to use to send the mail.<br /><br /><br />Hope this helps.<br /><br />Jesse</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cox users...</b><br />
+					Post by: <b>dpeach</b> on <b>June 14, 2003, 09:28:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks Jesse. I have been getting around the problem by using the drop down &quot;send from&quot; box.<br /><br />None of this is a big deal to me, I have had to do it with AT&T for several years. But I would like to fix it for my parents sake if this is something we can get around. <br /><br />I am really looking for confirmation of the problem to see if it really is Cox.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox users...</b><br />
+					Post by: <b>steve</b> on <b>June 14, 2003, 10:16:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">My ISP (AT&T) has never allowed me to send mail from another server when using Outlook Express.<br /><br />We can still send mail through Cox, just not from the Cox connection and through my domain's mail server.<br /></div><br /><br />OK. First off for an ISP to prevent you from sending mail though an outside e-mail server using smtp (Outlook Express) would be senseless. I have never run across this and I've used at least 5 different ISPs. I currently use Cox as my ISP but use my own domain hosted by my company to send my e-mail through. Cox does not block the smtp port (IP Port 25).<br /><br />You need to make sure when you set up your e-mail accounts in Outlook Express that you match the sending smtp server with the receiving account. Otherwise you create a relay situation which most e-mail servers will not allow. What happens in a relay situation is that you are sending e-mail from user@cox.net through the e-mail server at mydomain.com. Most email servers will not allow this. That's why the account receving server and sending server must match. Believe me, I deal with this all day.<br /><br />However, make sure you set your default e-mail account to whichever one you want to use. This makes it easier in the long run when you are forwarding mail or creating new mail. <br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox users...</b><br />
+					Post by: <b>dpeach</b> on <b>June 15, 2003, 06:28:37 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: steve</div><div class="quote">I currently use Cox as my ISP but use my own domain hosted by my company to send my e-mail through. Cox does not block the smtp port (IP Port 25).</div><br />Hmmm. So you are using Cox and sending mail through steve@whatever.com. Which is what we are trying to do.<br /><br />What is strange about this is that it just started happening this week for my parents Cox account. With my AT&T account, if I am hooked into someone else's ISP, then I can send through my @dpeach.com account without problems. Exept now I cannot do it through Cox. Nothing has changed on my @dpeach.com account (at least nothing that I have done). That is why I was wondering if other Cox users were experiencing the same thing.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox users...</b><br />
+					Post by: <b>steve</b> on <b>June 15, 2003, 08:12:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote"><div class="quoteheader">Quote from: steve</div><div class="quote">I currently use Cox as my ISP but use my own domain hosted by my company to send my e-mail through. Cox does not block the smtp port (IP Port 25).</div><br />Hmmm. So you are using Cox and sending mail through steve@whatever.com. Which is what we are trying to do.<br /><br />What is strange about this is that it just started happening this week for my parents Cox account. With my AT&T account, if I am hooked into someone else's ISP, then I can send through my @dpeach.com account without problems. Exept now I cannot do it through Cox. Nothing has changed on my @dpeach.com account (at least nothing that I have done). That is why I was wondering if other Cox users were experiencing the same thing.</div><br /><br />OK. I went back and read through the thread again. hitechwizard is right. Cox has probably shutdown the relay on their mail server. If you'r sending an e-mail and the &quot;From&quot; address is not the same as the server your sending it through, it should not be able to be sent. In other words if my from address says &quot;steve@mydomain.com&quot; then I must send it though the mail server at mydomain.com. If the email from address read steve@cox.net then I must send it through the cox.net mail servers. I can not send an email with the from address of steve@mydomain.com through the cox.net servers. This would be relaying and is bad.<br /><br />In order to make things easier, you can go into your account settings for each of your mail accounts and change the &quot;Reply To&quot; address to your prefered mail address. This way, eventually, most email will come to that address meaning most email you reply to will also go out that server. Also, remember to make your &quot;Default mail account&quot; the one you prefer. This is what's used when you originate email.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cox users...</b><br />
+					Post by: <b>rburt3</b> on <b>June 16, 2003, 07:47:49 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">FWIW, Ruggy says Cox shut down 25. No relays, no personal email servers. This may be different for their commercial customers (ie hitechwizard).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cox users...</b><br />
+					Post by: <b>steve</b> on <b>June 16, 2003, 08:17:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">FWIW, Ruggy says Cox shut down 25. No relays, no personal email servers. This may be different for their commercial customers (ie hitechwizard).</div><br /><br />This must be for incoming port 25 from outside on the internet. I can still send mail from my mail client to my pop server at work and to my mail server at my domain being hosted at work.<br /><br />I've always known that Cox blocks ports to keep you from hosting your own web sites and mail servers from your cox.net home service. But if you're using an external mail service that supports pop mail, everything should work.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cox users...</b><br />
+					Post by: <b>dpeach</b> on <b>June 17, 2003, 02:54:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What is strange to me, without any changes, this just started happening this week. I will have to check with my hosting company to see if anything changed there.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Relaying is bad...</b><br />
+					Post by: <b>mviron</b> on <b>June 17, 2003, 10:24:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually, as indicated by http://support.cox.net/custsup/email/email_info.shtml , that isn't the case. &nbsp;The problem is that COX has blocked the ability for users of its service to send e-mail through 3rd party outbound servers.<br /><br />Farther down, it mentions that you can send e-mail that appears to be from (ie, the from or reply-to headers) any valid domain. &nbsp;This means that although you can send e-mail using an email address such as user@whatever.org, you must still send it through the appropriate COX smtp server. &nbsp;The smtp server settings for this can be found at http://support.cox.net/custsup/email/POP_SMTP_settings.shtml .<br /><br />They also mention, further down:<br /><br />&quot;Q: I pay for my own domain name so I can send personal email through that server. Why are you blocking this legitimate use?<br />A: We understand that some customers have vanity domain names and this action should not keep you from using your personal domain name. To ensure your ability to send email from your personal domain, your mail client must be set to a Cox outgoing mail server. This change in settings will be transparent to email recipients, and will not impact your ability to receive email. If you have a business requirement to bypass the Cox mail servers, please contact Cox Business Services for additional options.&quot;<br /><br />David -- you aren't the only one experiencing this...it goes for all residential cox customers.<br />--<br />Michael<br />President<br />Pensacola Linux Users Group<br /><br /><div class="quoteheader">Quote from: hitechwizard</div><div class="quote">It's probably a case of Cox finally shutting down the relay on their mail servers. Unless they are sending the mail directly to your SMTP server for delivery (which probably is not the case), then Cox is going to deny mail that appears to be originating (by the from address) outside the Cox (or coxmail) domain.<br /><br />If you are using Outlook, when you go to click send, you can drop down the send button to select which server to use to send the mail.<br /><br /><br />Hope this helps.<br /><br />Jesse</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Relaying is bad...</b><br />
+					Post by: <b>steve</b> on <b>June 18, 2003, 07:14:58 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: mviron</div><div class="quote">Actually, as indicated by http://support.cox.net/custsup/email/email_info.shtml , that isn't the case. &nbsp;The problem is that COX has blocked the ability for users of its service to send e-mail through 3rd party outbound servers.<br /></div><br /><br />This is in complete contrast to what I do throughout the day on my Cox@Home connection. My email client is set to send my outgoing email through my domain mail server at my company. It does this quite well.<br /><br />The only reason I can think this might work even though Cox is blocking outgoing email server connections is that my domain mail server at my company is on a Cox bussiness conection. It may never be getting to the Cox filtering service. I'll have to create an account out on the net somewhere and test this out.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cox users...</b><br />
+					Post by: <b>steve</b> on <b>June 18, 2003, 07:32:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK. I did a little research via Google News Groups and found that Michael is right. Cox is blocking outgoing SMTP connections. They are doing this to get control of the Spammers on their network.<br /><br />Mine must be working because my company is on Cox's network.<br /><br />Anyway, you need to just set your smtp server to Cox's mail server. Set your &quot;Reply-To&quot; address to your private mail server. This will allow you to still recevie mail through your private domain and all replies to mail you send should go there. You will only be using Cox's server to send your outgoing mail.<br /><br />Think of it as sending mail though a local post office but the return address on all of your mail is somewhere else. It has no affect on your availability to use a seperate mail server for receiving mail.<br /><br />I prefer to use my personal domain to receive mail because it's not ISP dependant. That way I can change ISPs anytime I want without any impact on my email address.<br /><br />Steve</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

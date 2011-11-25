@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Using a 17 inch monitor</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: dr43058 on April 24, 2005, 09:31:20 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using a 17 inch monitor</b><br />
+					Post by: <b>dr43058</b> on <b>April 24, 2005, 09:31:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am getting a message from my monitor that says:<br /><br />Attention <br />Signal frequency is out of range<br /><br />H 31.5 KHz<br />V 70.2 Hz<br /><br />Please change signal setting<br /><br />I don't know how to use UBUNTU or GNOME, wich is the OS, how do I go about correcting this problem. The display of the desktop is cut off about half way the lenghth of the monitor. <br />HELP WHAT DO I DO!?!?!?!?!?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using a 17 inch monitor</b><br />
+					Post by: <b>danc</b> on <b>April 24, 2005, 10:01:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You are trying to send signals to your monitor (from the Xwindow display) that the monitor cannot handle (the signals are &quot;out of range&quot;).<br /><br />There may be graphical tools in Ubuntu to adjust the screen resolution / refresh rate. &nbsp;Look through the menus for that, maybe under Gnome Configuration Center or something similar.<br /><br />The other way to correct this would be to edit the configuration file manually. &nbsp;To do this, first you will need to research the Horizontal and Vertical frequency ranges of your monitor. &nbsp;Either look in the manual if you have it, or online, and find the numbers, usually something like 30-90 Horizontal, and 50-160 Vertical. &nbsp;Then edit the file /etc/X11/xorg.conf and put those frequency range numbers into the &quot;Monitor&quot; section (you'll see some existing numbers there that apparently wrong). &nbsp;Start / restart X windows after editing the file, and things should be fixed.<br /><br />Not sure of your experience level, so if the above makes no sense, say so and we'll try another approach... &nbsp; :lol: <br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

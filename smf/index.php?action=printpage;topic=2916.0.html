@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - SwiftFox</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: Brent on June 19, 2006, 10:59:31 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SwiftFox</b><br />
+					Post by: <b>Brent</b> on <b>June 19, 2006, 10:59:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">We all know how those unwashed gentoo hordes are aways raving about the speed up you get from compiling software for your specific arch.<br /><br />Well, I ran across an optimized build of firefox called swiftfox.&nbsp; It&#039;s built off the same source as the standard release, and all the extensions I&#039;ve tried work as well on it as they do on firefox.&nbsp; You can find it http://getswiftfox.com/<br /><br />Let me know if you notice any real speedup.&nbsp; I have, but that could just be suggestibility talking<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SwiftFox</b><br />
+					Post by: <b>Brent</b> on <b>June 21, 2006, 09:38:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Err oops, apparently, it&#039;s an optimized build for *ubuntu*&nbsp; :-[ though it doesn&#039;t say anywhere on the website.<br /><br />I figured that out after I went back and installed slackware today.&nbsp; You know, it&#039;s funny though, in ubuntu, normal firefox took about 10 seconds to load and render slashdot.&nbsp; Swiftfox did it in 4 seconds.&nbsp; Today, I timed firefox in slackware under fluxbox.&nbsp; My time? 4 seconds!&nbsp; Go figure.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SwiftFox</b><br />
+					Post by: <b>rugmonster</b> on <b>June 22, 2006, 01:03:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Where did you get that it was optimized for ubuntu? I just installed the 1.8.0 branch for athlon-xp on my Debian Unstable box and it&#039;s rockin&#039;. I didn&#039;t think it would make much of a difference, but this build is amazingly fast. Took about 3 seconds to resolve, download and render slashdot for me. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SwiftFox</b><br />
+					Post by: <b>danc</b> on <b>June 24, 2006, 09:56:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">It is NOT only for Ubuntu...&nbsp; I don&#039;t see any noticeable difference between it and regular Firefox.&nbsp; This is on a Slackware system, a Mandriva box, and a Ubuntu box.<br /><br />To be fair, I&#039;ve tweaked my &quot;regular&quot; Firefox a little.&nbsp; If you didn&#039;t know about this, open up &quot;about:config&quot; in Firefox, and scroll down to &quot;network.http.pipelining&quot; (and similar settings in that area).&nbsp; I&#039;ll leave it as an exercise for the reader as to what to do once you&#039;re there...&nbsp; &nbsp;;D<br /><br />It makes quite a difference on most pages.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SwiftFox</b><br />
+					Post by: <b>Brent</b> on <b>June 24, 2006, 12:59:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, perhaps it was my goof.&nbsp; When I tried running it in slackware it complained of a pango-cario dependency.&nbsp; As long as you have that installed, you should be fine.&nbsp; However, it is NOT part of the default slack install, so I&#039;m guessing you&#039;d need gnome to satisfy it.<br /><br />As I previously reported though, firefox was just as fast on slackware as swiftfox was on ubuntu so it may mainly be useful for the more heavyweight binary distros.<br /><br />Also, regarding the net tweaks, there&#039;s a extension out now called fasterfox which will change all those net speed settings for you.&nbsp; I recommend setting it to one above normal, as the highest setting actually seemed to slow things down for me.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SwiftFox</b><br />
+					Post by: <b>rugmonster</b> on <b>June 24, 2006, 02:39:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was running fasterfox and found it still to be slower than swiftfox. On Debian, binaries are compiled with i386 optimization. I was using swiftfox for athlon-xp (I have an Athlon64 in 32 bit mode). Once again, I notice a <i>huge</i> difference.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SwiftFox</b><br />
+					Post by: <b>dpeach</b> on <b>August 10, 2006, 09:58:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So here we are a month and a half later. Anyone still using this? Did it get an upgrade last week when Firefox did? Is there really any compelling reason to switch?<br /><br />If this is so good, why doesn&#039;t Firefox make these builds officially available?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: SwiftFox</b><br />
+					Post by: <b>rugmonster</b> on <b>August 11, 2006, 05:25:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m still using it. Stability is sometimes sketchy, but it is faster. It&#039;s updated quite frequently (several times a week). I&#039;m using the 1.8 branch myself.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

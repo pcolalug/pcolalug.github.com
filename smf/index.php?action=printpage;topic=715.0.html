@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - RTCW Demo Problems</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Games => Topic started by: rugmonster on May 24, 2003, 09:37:34 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b>rugmonster</b> on <b>May 24, 2003, 09:37:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just got the RTCW and ET demos installed and I am having problems. I have the nvidia drivers installed and I can get OpenGL stuff to work (yes, I am using nv in my XF86Config), but I can't get either of these to work. For some reason, it is saying that I am using Mesa...and as far as I know, I'm not. If you guys have any suggestions, I would appreciate it. I am in the process of downloading the Q3A demo. If I get any more info, I'll let you guys know. Thanks!<br /><br />Update:<br /><br />Seems that I'm running Mesa. I don't know why. Maybe you can help me get rid of it. Here is what I get when I run glxinfo:<br /><br /><div class="codeheader">Code:</div><div class="code">name of display&#58; &#58;0.0<br />display&#58; &#58;0 &nbsp;screen&#58; 0<br />direct rendering&#58; No<br />server glx vendor string&#58; SGI<br />server glx version string&#58; 1.2<br />server glx extensions&#58;<br />&nbsp; &nbsp; GLX_EXT_visual_info, GLX_EXT_visual_rating, GLX_EXT_import_context<br />client glx vendor string&#58; NVIDIA Corporation<br />client glx version string&#58; 1.3<br />client glx extensions&#58;<br />&nbsp; &nbsp; GLX_ARB_get_proc_address, GLX_ARB_multisample, GLX_EXT_visual_info,<br />&nbsp; &nbsp; GLX_EXT_visual_rating, GLX_EXT_import_context, GLX_SGI_video_sync,<br />&nbsp; &nbsp; GLX_SGIX_swap_group, GLX_SGIX_swap_barrier, GLX_SGIX_fbconfig,<br />&nbsp; &nbsp; GLX_SGIX_pbuffer, GLX_NV_float_buffer<br />GLX extensions&#58;<br />&nbsp; &nbsp; GLX_EXT_visual_info, GLX_EXT_visual_rating, GLX_EXT_import_context,<br />&nbsp; &nbsp; GLX_ARB_get_proc_address<br />OpenGL vendor string&#58; Mesa project&#58; www.mesa3d.org<br />OpenGL renderer string&#58; Mesa GLX Indirect<br />OpenGL version string&#58; 1.3 Mesa 4.0.4<br />OpenGL extensions&#58;<br />&nbsp; &nbsp; GL_ARB_imaging, GL_ARB_multitexture, GL_ARB_texture_border_clamp,<br />&nbsp; &nbsp; GL_ARB_texture_cube_map, GL_ARB_texture_env_add,<br />&nbsp; &nbsp; GL_ARB_texture_env_combine, GL_ARB_texture_env_dot3, GL_EXT_abgr,<br />&nbsp; &nbsp; GL_EXT_blend_color, GL_EXT_blend_minmax, GL_EXT_blend_subtract,<br />&nbsp; &nbsp; GL_EXT_texture_env_add, GL_EXT_texture_env_combine,<br />&nbsp; &nbsp; GL_EXT_texture_env_dot3, GL_EXT_texture_lod_bias<br />glu version&#58; 1.3<br />glu extensions&#58;<br />&nbsp; &nbsp; GLU_EXT_nurbs_tessellator, GLU_EXT_object_space_tess<br />&nbsp;<br />&nbsp; &nbsp;visual &nbsp;x &nbsp;bf lv rg d st colorbuffer ax dp st accumbuffer &nbsp;ms &nbsp;cav<br />&nbsp;id dep cl sp sz l &nbsp;ci b ro &nbsp;r &nbsp;g &nbsp;b &nbsp;a bf th cl &nbsp;r &nbsp;g &nbsp;b &nbsp;a ns b eat<br />----------------------------------------------------------------------<br />0x23 24 tc &nbsp;1 24 &nbsp;0 r &nbsp;y &nbsp;. &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;0 &nbsp;0 16 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 0 None<br />0x24 24 tc &nbsp;1 24 &nbsp;0 r &nbsp;y &nbsp;. &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;0 &nbsp;0 16 &nbsp;8 16 16 16 &nbsp;0 &nbsp;0 0 None<br />0x25 24 tc &nbsp;1 24 &nbsp;0 r &nbsp;y &nbsp;. &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;0 16 &nbsp;8 16 16 16 16 &nbsp;0 0 None<br />0x26 24 tc &nbsp;1 24 &nbsp;0 r &nbsp;. &nbsp;. &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;0 16 &nbsp;8 16 16 16 16 &nbsp;0 0 None<br />0x27 24 dc &nbsp;1 24 &nbsp;0 r &nbsp;y &nbsp;. &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;0 &nbsp;0 16 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 &nbsp;0 0 None<br />0x28 24 dc &nbsp;1 24 &nbsp;0 r &nbsp;y &nbsp;. &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;0 &nbsp;0 16 &nbsp;8 16 16 16 &nbsp;0 &nbsp;0 0 None<br />0x29 24 dc &nbsp;1 24 &nbsp;0 r &nbsp;y &nbsp;. &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;0 16 &nbsp;8 16 16 16 16 &nbsp;0 0 None<br />0x2a 24 dc &nbsp;1 24 &nbsp;0 r &nbsp;. &nbsp;. &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;8 &nbsp;0 16 &nbsp;8 16 16 16 16 &nbsp;0 0 None<br /></div><br /><br />Help!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b>danc</b> on <b>May 24, 2003, 11:58:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It looks to me like you don't have the Nvidia drivers loaded completely/properly. &nbsp;Unless it was a typo, you should have &quot;nvidia&quot; in your XF86Config file as the driver, NOT the &quot;nv&quot; as you stated. &nbsp;Major difference.<br /><br />Here's a snip from glxinfo on my system:<br /><br /><div class="codeheader">Code:</div><div class="code">name of display&#58; &#58;0.0<br />display&#58; &#58;0 &nbsp;screen&#58; 0<br />direct rendering&#58; Yes<br />server glx vendor string&#58; NVIDIA Corporation<br />server glx version string&#58; 1.3<br />server glx extensions&#58;<br />&nbsp; &nbsp; GLX_EXT_visual_info, GLX_EXT_visual_rating, GLX_SGIX_fbconfig,<br />&nbsp; &nbsp; GLX_SGIX_pbuffer, GLX_ARB_multisample<br />client glx vendor string&#58; NVIDIA Corporation<br />client glx version string&#58; 1.3<br />client glx extensions&#58;<br />&nbsp; &nbsp; GLX_ARB_get_proc_address, GLX_ARB_multisample, GLX_EXT_visual_info,<br />&nbsp; &nbsp; GLX_EXT_visual_rating, GLX_EXT_import_context, GLX_SGI_video_sync,<br />&nbsp; &nbsp; GLX_SGIX_swap_group, GLX_SGIX_swap_barrier, GLX_SGIX_fbconfig,<br />&nbsp; &nbsp; GLX_SGIX_pbuffer, GLX_NV_float_buffer<br />GLX extensions&#58;<br />&nbsp; &nbsp; GLX_EXT_visual_info, GLX_EXT_visual_rating, GLX_SGIX_fbconfig,<br />&nbsp; &nbsp; GLX_SGIX_pbuffer, GLX_ARB_multisample, GLX_ARB_get_proc_address<br />OpenGL vendor string&#58; NVIDIA Corporation<br />OpenGL renderer string&#58; GeForce4 Ti 4200/AGP/SSE/3DNOW!<br />OpenGL version string&#58; 1.4.0 NVIDIA 43.63<br /></div><br /><br />Note the third line, and the last three lines. &nbsp;Did you load the 1.0.4363 driver install script from Nvidia website? &nbsp;If not, do that, and double check the &quot;nv / nvidia&quot; line in your XF86Config...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b>rugmonster</b> on <b>May 25, 2003, 08:27:24 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Seems I needed to reload the nvidia drivers and change my XF86Config to nvidia. It used to be that nvidia was the stock X driver and when you installed the 3d drivers, you changed it to nv. Oh well. I got everything to work...now. So if anyone is hosting any servers of Q3A, RTCW or ET, let me know. I'll hop on.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b></b> on <b>May 25, 2003, 10:47:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey Rugmonster,<br /><br />In response to your server request, I have one running on Linux (Mandrake) called &quot;Newbi Slaughterhouse&quot; at IP/Port &nbsp; &nbsp;24.117.84.82:27960<br /><br />It is running RTCW, Shrub Mod-Beach, Type 5. &nbsp;It is up 24/7 (now that I said that it will crash for sure). &nbsp;I had it passworded for the LAN Party so if we used it only we would be there. &nbsp;I removed the pword now, so it is back open to the world.<br /><br />Enjoy, and let me know if it worked OK? &nbsp;Still sort of in &quot;testing it out&quot; mode.<br /><br />Narsil</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b>rburt3</b> on <b>May 26, 2003, 12:14:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The ET server is still (and will be) running from the LAN party. Its called something like plug_et_ded or the like.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b>danc</b> on <b>May 26, 2003, 01:53:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, I was on it earlier today. &nbsp;Interesting note: &nbsp;it wasn't visible from the in-game server browser, but I was able to connect manually to the IP address. &nbsp;I suspect that's because the server browsers require another port (27952) to be open (I think). &nbsp;No big deal to me, and maybe it's better that way. &nbsp;Anyway I may be stopping in there occasionally to see if anyone's around.<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b>rugmonster</b> on <b>May 26, 2003, 02:20:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, today I bought RTCW GOTY Edition so I will soon be gaming again &nbsp;:twisted: &nbsp;Look out for me!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b>rugmonster</b> on <b>May 26, 2003, 03:07:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is sort of weird. I just installed RTCW GOTY according to the install instructions and when I go to join a multiplayer game, I get <br /><div class="codeheader">Code:</div><div class="code">Game code &#40;ui.mp.i386.so&#41; failed Pure Server check</div><br />Any ideas?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b>danc</b> on <b>May 26, 2003, 04:28:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is this with ALL servers? &nbsp;Do you have PunkBuster enabled (you should)? &nbsp;Did you copy the six required *.pk3 files into your /usr/local/games/wolfenstein/main directory?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>RTCW Demo Problems</b><br />
+					Post by: <b></b> on <b>May 26, 2003, 10:38:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Rugmonster,<br /><br />If the server you are trying to join has the soundpak.pk3 file in the &lt;RTCW/shrubmod&gt; directory instead of the &lt;RTCW/main&gt; directory, AND you don't already have the soundpak.pk3 file, you will get this error message.<br /><br />You can avoid this by downloading the soundpak.pk3 file and putting it in your &lt;RTCW/main&gt; directory. &nbsp;Once you do this, your software does not try to get the file from the server, and all should be well. &nbsp;There may be other reasons for getting this error message, but this is one of the biggies.<br /><br />Narsil</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

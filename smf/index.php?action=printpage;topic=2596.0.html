@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - slack 10.2 fluxbox backgrounds and transparency</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Brent on September 16, 2005, 10:48:45 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>slack 10.2 fluxbox backgrounds and transparency</b><br />
+					Post by: <b>Brent</b> on <b>September 16, 2005, 10:48:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all.<br /><br />I have a slack 10.2 install in front of me right now. &nbsp;Everything went smooth in the install. &nbsp;However, my fluxbox wm doesn't want to set my backgrounds full screen anymore, nor does aterm do transparency.<br /><br />fbsetbg -f blahpic.jpg usually sets a picture fullscreen in fluxbox, but now, it doesn't strech or scale the picture, it just pops it up there with the remaining bg black. &nbsp;Not only that, but &nbsp;aterm no longer goes transparent, which is a bummer cause I love aterm. &nbsp;I think the problem is xorg changed the interface a lil bit in slack 10.2, and fluxbox doesn't know how to handle it.<br /><br />I cannot rest until miss september has her rightful place restored.<br /><br />[edit] I installed fluxbox .14, and i now have transparency working again, but no fullscreen backgrounds as of yet</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>slack 10.2 fluxbox backgrounds and transparency</b><br />
+					Post by: <b>danc</b> on <b>September 16, 2005, 11:34:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is mostly a wild guess..., but try this command instead:<br /><br /><div class="codeheader">Code:</div><div class="code">wpsetters=feh fbsetbg -f /path/to/image.jpg</div><br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>slack 10.2 fluxbox backgrounds and transparency</b><br />
+					Post by: <b>kilar</b> on <b>September 17, 2005, 11:07:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am not certain if this will work in Fluxbox, but this is what I use in Blackbox (add this to .xinitrc):<br /><div class="codeheader">Code:</div><div class="code">display -window root /home/myhome/miss_september.png &amp;</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>slack 10.2 fluxbox backgrounds and transparency</b><br />
+					Post by: <b>Brent</b> on <b>September 17, 2005, 01:58:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks guys, <br /><br />I'm sure I'll get it straight, it's not bothering me that bad.<br /><br />I went home this weekend, and I wanted to show you another chapter in incompetent isp administration.<br /><br />Those of you who were on irc will remember, last weekend, that my isp's dns was hosed (they use bind on sgi's irix i believe). &nbsp;Well this weekend, I ping www.magbelle.com, to test my dns, and I get this:<br /><br /><div class="codeheader">Code:</div><div class="code">bash-3.00# ping www.magbelle.com<br />PING magbelle.com &#40;68.152.44.17&#41; 56&#40;84&#41; bytes of data.<br />64 bytes from cityofbrewton.org &#40;68.152.44.17&#41;&#58; icmp_seq=1 ttl=62 time=218 ms<br />64 bytes from magbelle.net &#40;68.152.44.17&#41;&#58; icmp_seq=2 ttl=62 time=239 ms<br />64 bytes from hornadytransportation.com &#40;68.152.44.17&#41;&#58; icmp_seq=3 ttl=62 time=2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;38 ms<br />64 bytes from stats.harvestersfcu.com &#40;68.152.44.17&#41;&#58; icmp_seq=4 ttl=62 time=229 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ms<br />64 bytes from swat.magbelle.com &#40;68.152.44.17&#41;&#58; icmp_seq=5 ttl=62 time=229 ms<br />64 bytes from grpware.magbelle.net &#40;68.152.44.17&#41;&#58; icmp_seq=6 ttl=62 time=239 ms<br />64 bytes from mail.jinright-turner.com &#40;68.152.44.17&#41;&#58; icmp_seq=7 ttl=62 time=22 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;9 ms<br />64 bytes from neptune.magbelle.com &#40;68.152.44.17&#41;&#58; icmp_seq=8 ttl=62 time=229 ms<br />64 bytes from harvestersfcu.com &#40;68.152.44.17&#41;&#58; icmp_seq=9 ttl=62 time=239 ms<br />64 bytes from ambtgroup.com &#40;68.152.44.17&#41;&#58; icmp_seq=10 ttl=62 time=219 ms<br />64 bytes from fumcbrewton.org &#40;68.152.44.17&#41;&#58; icmp_seq=11 ttl=62 time=219 ms<br /><br /></div><br /><br />That's right folks, rest assured Brewton's main (and pretty much only) isp is being administered by the finest experience a msce can buy. &nbsp;What you're seeing here is basically every website of every online company in Brewton. &nbsp;Hell, my dad's busness was on here (I left them off the list).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>slack 10.2 fluxbox backgrounds and transparency</b><br />
+					Post by: <b>rugmonster</b> on <b>September 18, 2005, 08:45:11 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Is magbelle.com a non-existant domain? Seems like they have setup an inproper round-robin for non-existant domains. That's not proper at all. That's simply amazing.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

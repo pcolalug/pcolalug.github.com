@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - debian package screwups</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: Brent on October 08, 2006, 11:47:53 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>debian package screwups</b><br />
+					Post by: <b>Brent</b> on <b>October 08, 2006, 11:47:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">First, let me say, thus far into my testing of xubuntu, I have been really impressed.&nbsp; <br />See http://www.pcolalug.org/smf/index.php?topic=2993.0<br /><br />However, I&#039;ve run into a problem repeatedly that stems back to debian itself.<br /><br />For some reason, debian developers can&#039;t resist mucking around with packages that do not fit their definition of &quot;free software&quot;.<br /><br />For instance, don&#039;t bother installing anything that requires java from the package management system.&nbsp; Everything is linked and crosslinked with gcj (and it&#039;s multitude of dependencies).&nbsp; For that reason, your better off getting Open office, azureus and others from their respective official download sites.&nbsp; <br /><br />Another thing that I came across today, while trying to burn the latest version of Knoppix, is the fact they&#039;ve rewritten parts of cdrtools in their binary version, and introduced several nifty bugs in the process. <br />See http://cdrecord.berlios.de/old/private/cdrecord.html<br /><br /><div class="quoteheader">Quote</div><div class="quote">Warning: do not use Debian binaries as they include many Debian specific bugs and still do not run correctly on Linux-2.6<br />Be careful with cdrecord derivates from Debian, Debian seems to ignore the new constraints for<br />SCSI pass through on Linux-2.6. As a result, that they still incorrectly believe that it is possible<br />to use SCSI pass through as non-root on Linux-2.6, they created a cdrecord variant that tries to hide<br />the problems instead of dealing with the problems.<br /></div><br />To be fair, suse and redhat are also guilty of this to some degree.<br /><br />You all know I don&#039;t have a high tolerence for this sort of thing in distributions.&nbsp; I have to say, as nice as *buntu is, this is pushing it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: debian package screwups</b><br />
+					Post by: <b>danc</b> on <b>October 08, 2006, 12:05:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This should help:<br /><br />http://www.slackware.com/getslack/<br /><br />&nbsp;;)<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: debian package screwups</b><br />
+					Post by: <b>rugmonster</b> on <b>October 08, 2006, 12:32:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">No, this should help.<br /><br />http://www.getautomatix.com/<br /><br />More of the non-free stuff is there. You have to realize that Debian is upholding <i>ideals</i>. I can&#039;t think of a single distro that does it all 100% right, but Debian and Ubuntu have gotten the closest to it for me. By the way, I&#039;ve never had a problem with cdrecord under Debian Unstable or Ubuntu. I don&#039;t know what he&#039;s complaining about.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: debian package screwups</b><br />
+					Post by: <b>Brent</b> on <b>October 08, 2006, 01:27:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, took the authors advice, downloaded and compiled the vanilla sources after uninstalling the debian binaries.<br /><br />I successfully burned my knoppix disc, after making two coasters from the previous tools.<br /><br /><div class="quoteheader">Quote</div><div class="quote">By the way, I&#039;ve never had a problem with cdrecord under Debian Unstable or Ubuntu. I don&#039;t know what he&#039;s complaining about.</div><br />Dude I included both a quote from the site, and a link to it.&nbsp; <br /><br />If a tree falls in the woods, and lands on my house instead of yours, don&#039;t say it didn&#039;t fall.&nbsp; Likewise, if I get bit by a bug that is documented to exsist in the software...well there&#039;s obiously a bug now isn&#039;t there?&nbsp; ::)<br /><br />I&#039;m sticking with xubuntu for now.&nbsp; Sure, I found a few rough edges, but it&#039;s nothing a subtle application of brute force won&#039;t fix.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: debian package screwups</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>October 11, 2006, 04:19:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">eh?&nbsp; The most annoying package screwup I&#039;ve dealt with from Debain completely obliterated my startup scripts, it was fixed within an hour and I just happened to be unlucky.&nbsp; As for the CDRecord thing, I&#039;m sure that&#039;ll sort itself out.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

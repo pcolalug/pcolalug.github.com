@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - 2.6.1 kernel</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: Brent on February 02, 2004, 09:35:06 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.1 kernel</b><br />
+					Post by: <b>Brent</b> on <b>February 02, 2004, 09:35:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey guys,<br /><br />I'm trying to compile and install a 2.6.1 kernel. &nbsp;I can compile the kernel just fine, but when I try to install it I get 'kernel panic' ... it says it can't find root on /dev/hda2.<br /><br />Now granted, the first time i tried it I didn't have reiser fs support installed. &nbsp; I realized my mistake, changed my .conf file , and recompiled bzImage.<br /><br />I then overwrote bzImage in boot with the new bzImage.<br /><br />Unfortunately it did the same thing.<br /><br />It doesn't help that the instructions in the HOWTO are kinda vague.<br /><br />Could anyone give me good instructions on the install process? &nbsp;Or even better ...a script! &nbsp;(imnes common you slackn fool) &nbsp;:D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.1 kernel</b><br />
+					Post by: <b>rugmonster</b> on <b>February 02, 2004, 10:44:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The 2.6 series made kernel compilation a little simpler. The new series of steps is:<br /><br />make clean (not necessary, but good to do just in case)<br />make menuconfig<br />make<br />make modules_install (modules are done in the make)<br /><br />You may have to add some support for your IDE controller. I would search on google for your motherboard, or if you have an offboard IDE controller that model number, and the compatibility of it with the 2.6 kernels. Also, make sure Reiser is completely stable with 2.6.1. I don't see why it wouldn't be, but it's worth looking into. Also, is /dev/hda2 the first partition to load or are there others before it? If so, what are their filesystem types?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.1 kernel</b><br />
+					Post by: <b>Brent</b> on <b>February 02, 2004, 11:52:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I got the 2.6 kernel compiled.<br /><br />For some reason it fails to load some modules.<br /><br />For some reason I don't get my fb console at 1024x724x256 like with 2.4<br /><br />The bcm ethernet module &nbsp;works without complaining. &nbsp;I'll try to install my nvida and mobo drivers tomarrow.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>2.6.1 kernel</b><br />
+					Post by: <b>rugmonster</b> on <b>February 03, 2004, 12:08:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I never setup a fb in 2.4, but if you look at my kernel config in this (http://www.pcolalug.org/phpBB2/viewtopic.php?p=6277#6277) post and then use a grub config like this:<br /><div class="codeheader">Code:</div><div class="code"># With framebuffer but without bootsplash<br />title=&lt;insert title&gt; &#40;+fb -splash&#41;<br />root=&#40;hd0,0&#41;<br />kernel=&#40;hd0,0&#41;/boot/bzImage root=/dev/hda3 video=vesa&#58;ywrap,mtrr vga=0x31A </div><br /><br />or for lilo:<br /><div class="codeheader">Code:</div><div class="code">image=&quot;/boot/bzImage&quot;<br />vga=0x31A<br />root=&quot;/dev/hdb2&quot;<br />label=&lt;label&gt;<br />read-only # read-only for checking<br />append=&quot;video=vesa&#58;ywrap,mtrr&quot;</div><br /><br />Configs taken from this (http://forums.gentoo.org/viewtopic.php?t=49036&amp;highlight=bootsplash) HOWTO, also linked in my previous post. I would check your kernel config though and make sure you have the right things going on.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

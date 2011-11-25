@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - zsh autocompletion of module names non-functional when not root</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: OmnipotentEntity on August 30, 2006, 03:06:07 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>zsh autocompletion of module names non-functional when not root</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>August 30, 2006, 03:06:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m assuming this has something to do with my permissions.&nbsp; But I can&#039;t find how, because /usr/lib/modules seems to be world readable.&nbsp; Any ideas?<br /><br />Sample:<br />omnipotententity@oberus ~/firefox% sudo modprobe snd<br />---- no match for: `arguments&#039;, `modules&#039;, `module&#039;, or `corrections&#039;<br />omnipotententity@oberus ~/firefox% su<br />Password:<br />root@oberus /home/omnipotententity/firefox# modprobe snd-emu<br />---- module<br />snd-emu10k1&nbsp; &nbsp; &nbsp; &nbsp; snd-emu10k1-synth&nbsp; snd-emu10k1x&nbsp; &nbsp; &nbsp; &nbsp;snd-emu8000-synth&nbsp; snd-emux-synth <br /><br />My .zshrc is below:<br /><br /># Lines configured by zsh-newuser-install<br /><br />fg_cyan=$&#039;%{\e[0;36m%}&#039;<br />fg_light_gray=$&#039;%{\e[0;37m%}&#039;<br />fg_red=$&#039;%{\e[1;31m%}&#039;<br />fg_purple=$&#039;%{\e[1;35m%}&#039;<br /><br />PROMPT=&quot;${fg_red}%(?..(%?%))${fg_purple}%n${fg_red}@${fg_purple}%m${fg_red}%#${fg_light_gray} &quot;<br />RPROMPT=&quot;${fg_cyan}%~${fg_light_gray}&quot; #That last light gray is required, or my text is cyan.&nbsp; :/<br />alias ls=&#039;ls --color=tty&#039;<br /><br />XTITLE=&quot;%n@%m:%~&quot;<br /><br />HISTFILE=~/.histfile<br />HISTSIZE=1000<br />SAVEHIST=1000<br />setopt beep extendedglob nomatch notify<br />unsetopt appendhistory<br />bindkey -v<br /># End of lines configured by zsh-newuser-install<br /># The following lines were added by compinstall<br />zstyle :compinstall filename &#039;/home/omnipotententity/.zshrc&#039;<br />zstyle &#039;:completion:*&#039; completer \<br />&nbsp; &nbsp; &nbsp; &nbsp; _complete _prefix _approximate:-one _ignored \<br />&nbsp; &nbsp; &nbsp; &nbsp; _complete:-extended _approximate:-four<br /><br />zstyle &#039;:completion::prefix-1:*&#039; completer _complete<br />zstyle &#039;:completion:incremental:*&#039; completer _complete _correct<br />zstyle &#039;:completion:predict:*&#039; completer _complete<br /><br />zstyle &#039;:completion:*:approximate-one:*&#039;&nbsp; max-errors 1<br />zstyle &#039;:completion:*:approximate-four:*&#039; max-errors 4<br />zstyle &#039;:completion::complete:*&#039; use-cache 1<br />zstyle &#039;:completion::complete:*&#039; cache-path ~/.zsh/cache/$HOST<br />zstyle &#039;:completion:*&#039; expand &#039;yes&#039;<br />zstyle &#039;:completion:*&#039; squeeze-slashes &#039;yes&#039;<br /><br /># }}}<br /># {{{ Don&#039;t complete uninteresting users<br /><br />zstyle &#039;:completion:*:*:*:users&#039; ignored-patterns \<br />&nbsp; &nbsp; &nbsp; &nbsp; adm apache bin daemon games gdm halt ident junkbust lp mail mailnull \<br />&nbsp; &nbsp; &nbsp; &nbsp; named news nfsnobody nobody nscd ntp operator pcap postgres radvd \<br />&nbsp; &nbsp; &nbsp; &nbsp; rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs<br /><br /># ... unless we really want to.<br />zstyle &#039;*&#039; single-ignored show<br /><br /># Separate matches into groups<br />zstyle &#039;:completion:*:matches&#039; group &#039;yes&#039;<br /><br /># Describe each match group.<br />zstyle &#039;:completion:*:descriptions&#039; format &quot;%B---- %d%b&quot;<br /><br /># Messages/warnings format<br />zstyle &#039;:completion:*:messages&#039; format &#039;%B%U---- %d%u%b&#039;<br />zstyle &#039;:completion:*:warnings&#039; format &#039;%B%U---- no match for: %d%u%b&#039;<br /><br /># Describe options in full<br />&nbsp;zstyle &#039;:completion:*:options&#039; description &#039;yes&#039;<br />&nbsp;zstyle &#039;:completion:*:options&#039; auto-description &#039;%d&#039;<br /><br />autoload -Uz compinit<br />compinit<br /># End of lines added by compinstall<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: zsh autocompletion of module names non-functional when not root</b><br />
+					Post by: <b>danc</b> on <b>August 30, 2006, 07:56:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don&#039;t use zsh, and the following is a completely wild guess (pretty much), but you might try moving this portion of the .zshrc file:<br /><br />autoload -Uz compinit<br />compinit<br /><br />...from the very bottom of the file to somewhere earlier in the file, especially above the various &quot;completion&quot; lines.<br /><br />Again, just a guess, but may be worth a try.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: zsh autocompletion of module names non-functional when not root</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>August 31, 2006, 03:29:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I can&#039;t see why that would affect it, but I gave it a shot just in case and no go.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

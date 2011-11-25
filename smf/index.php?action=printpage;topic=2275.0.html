@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - kde/mc and file systems</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Desktops => Topic started by: Brent on February 15, 2005, 07:05:30 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>kde/mc and file systems</b><br />
+					Post by: <b>Brent</b> on <b>February 15, 2005, 07:05:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey all,<br /><br />I've noticed something pecular with kde and mc. &nbsp;They do not seem to want to write to non native file systems. &nbsp;I know what your going to say, &quot;it's not mounted read-write&quot; or &quot;normal users don't have permission to write to a mounted file system&quot;. &nbsp;I assure you, it's rw, and I'm root. &nbsp;However, using cp actually works. &nbsp;Not only that, but mc can actually corrupt a fat32 file system just trying.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>kde/mc and file systems</b><br />
+					Post by: <b>rugmonster</b> on <b>February 15, 2005, 08:22:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You sure it's not just midnight commander? I don't see how kde would have anything to do with that.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>kde/mc and file systems</b><br />
+					Post by: <b>Brent</b> on <b>February 16, 2005, 01:04:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yup, kde is funky about allowing write access to mounted file systems too.<br /><br />I have to think it's some sort of inbuilt protection, despite the fact the mount was done manually in read write mode.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>kde/mc and file systems</b><br />
+					Post by: <b>danc</b> on <b>February 16, 2005, 07:45:36 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">Yup, kde is funky about allowing write access to mounted file systems too.</div><br />Huh? &nbsp;Didn't know you could write to an un-mounted file system... &nbsp;(you can't).<br /><br /><div class="quoteheader">Quote from: Brent</div><div class="quote">I have to think it's some sort of inbuilt protection, despite the fact the mount was done manually in read write mode.</div><br />I'd have to think that the manual mount has something to do with the &quot;funkiness&quot;...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>kde/mc and file systems</b><br />
+					Post by: <b>Brent</b> on <b>February 16, 2005, 12:06:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Read. &nbsp;I ment &quot;too&quot; as not excluding kde. &nbsp;:roll: <br /><br />I've just about always manually mounted my stuff, and I don't remember having this problem. &nbsp;Personally I don't think konqueror should care how a volume was mounted. &nbsp;<br /><br />A buddy of mine (link_z_ro) runs mepis. &nbsp;It automagically mounts floppies, and his usb sticks ro. &nbsp; I guided him through the steps of manually unmounting and remounting the drive rw. &nbsp;(We've used the mount rw option within the kde menu). No dice. &nbsp; When an OS deems to do something for me, it better do it right, or at least let me easily change it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>kde/mc and file systems</b><br />
+					Post by: <b>danc</b> on <b>February 16, 2005, 12:18:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">Read. &nbsp;I ment &quot;too&quot; as not excluding kde.</div><br />I know what &quot;too&quot; means. &nbsp;What I said was that you can't write to a non-mounted filesystem, using KDE or any other method.<br /><br />Am I misunderstanding what you mean? <br /><br /><div class="quoteheader">Quote from: Brent</div><div class="quote">A buddy of mine (link_z_ro) runs mepis. &nbsp;It automagically mounts floppies, and his usb sticks ro. &nbsp; I guided him through the steps of manually unmounting and remounting the drive rw. &nbsp;(We've used the mount rw option within the kde menu). No dice. &nbsp; When an OS deems to do something for me, it better do it right, or at least let me easily change it.</div><br />Why not just (easily) fix his /etc/fstab file, which is the cause of this &quot;problem&quot;...</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

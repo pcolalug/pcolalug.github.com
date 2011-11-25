@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Making my computer a wireless bridge.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: OmnipotentEntity on July 04, 2007, 09:18:51 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Making my computer a wireless bridge.</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>July 04, 2007, 09:18:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m getting a new, auxillary computer for to make a media slave out of it.<br /><br />I was planning on broadcasting a low power radio station out of my house so I don&#039;t have to run speaker wire everywhere.<br /><br />The plan was to put it in my room near my workstation, and I have a wireless card now set up on that station.&nbsp; I now have, as a result, an unused NIC card on my computer.<br /><br />So I was planning on running some crossover from my workstation to my media slave and I was wondering if anyone knew off the top of their head how to turn that interface into a network bridge so that anyone can change the song playing from anywhere within my home network.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Making my computer a wireless bridge.</b><br />
+					Post by: <b>rugmonster</b> on <b>July 04, 2007, 07:53:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You&#039;ll need the bridge utilities first to give you brctl. Once you have that, follow this:<br /><br /><div class="codeheader">Code:</div><div class="code"># brctl addbr br0<br /># brctl addif br0 &lt;wirednic&gt;<br /># brctl addif br0 &lt;wirelessnic&gt;<br /># ifconfig &lt;wirednic&gt; 0.0.0.0<br /># ifconfig &lt;wirelessnic&gt; 0.0.0.0<br /># ifconfig br0 your.ip.address.here<br />===or===<br /># dhcpcd br0<br />===or===<br /># dhclient br0<br />===or===<br /># your-dhcp-client br0<br /></div><br />That&#039;s all there is to it. Explanation of the above here (http://linux-net.osdl.org/index.php/Bridge). By the way, very cool and amazingly obvious idea.<br /><br />Edit: Updated link to proper page</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - sendmail load balancing and failover ?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by:  on September 29, 2003, 12:26:57 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b></b> on <b>September 29, 2003, 12:26:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">How can I setup a Sendmail server pair/farm in order to achieve load<br />balancing and failover function ?<br /><br />Say, if I wish to deploy sendmail in a large corp (2000+ users), I don't<br />possible expect a single sendmail server can do all the job, so, I'm<br />thinking of a sendmail server pair (or farm).<br /><br />But I'm not exactly sure on the detailed direction..., should I dig into :<br />1. linux clusters ?<br />2. sendmail settings ?<br />3. 3rd party solutions ?<br /><br /><br />Any help appreciated, thanks</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>imnes</b> on <b>September 29, 2003, 06:41:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's my idea:<br /><br />It will require minimum of 3 machines. &nbsp;Two machines have identical software installs on them, identical configurations.<br /><br />A third machine will act as shared drive storage for the other ones. &nbsp;Setup an nfs share on it. &nbsp;May be best to have it on a mirrored raid array just incase (because at this point there's still the single point of failure of the shared storage).<br /><br />The machines should store all their sendmail files on the shared storage.<br /><br />One machine would run at a time, monitoring the other one. &nbsp;A simple ping script could do it.<br /><br />To be visible on the network one machine would run a virtual IP address in addition to it's primary IP address. &nbsp;If something happens and that machine goes down, the second machine should notice, and take over the virtual IP address. &nbsp;When the first machine is restarted it notices the second machine is running so it sits idle until it notices the second machine fail then it takes over the virtual IP.<br /><br />I don't know the specifics of implementing everything, but I think that should work. &nbsp;The toughest part I think are getting the machines to monitor each other correctly and take over when needed. &nbsp;I'm sure there's probably 3rd party software to do it but it's probably not free. &nbsp;Sun has a hardware solution as well if you're really serious about it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>crowe</b> on <b>September 29, 2003, 06:46:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sendmail can be made to do load-balancing quite easily, if i remember correctly. &nbsp; What you'd be concerned with would be your domain's MX records. &nbsp;Simply mirror your mail server and add another corresponding MX record of equal priority, and that should provide load-balancing. <br /><br />The only part, though, that I don't remember is how you'd handle the matter of the two mail servers having seperate spools; &nbsp;so maybe someone who's a bit more knowledgable about this &nbsp;subject will speak up.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>rugmonster</b> on <b>September 29, 2003, 04:28:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You could do some sort of load balancing via a network device between the two and have a shared spool via NFS. I don't think this would be very hard to accomplish, but could be expensive.<br /><br />I'm not entirely sure if the MX record would work as efficiently as a truely network load balanced setup. Also, the failover setup with a &quot;heartbeat&quot; ping is used more for system redundancy rather than load balancing.<br /><br />Since I believe sendmail spawns a new process for each message, you could setup a OpenMosix cluster and go that route, once again with a centralized spool and storage system. Without a doubt, you will want to have some redundancy with your storage system...and I would recommend a RAID 5 setup with at least LVD160 drives.<br /><br />You can also look into what Sendmail, Inc. (http://www.sendmail.com) has to offer. They have some very good corporate and enterprise level products available for multiple platforms as well as excellent support. I met some of their engineers a couple years back at ISPCON and was very impressed with their products and the level of knowledge they had.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>even easier...</b><br />
+					Post by: <b>erc</b> on <b>September 30, 2003, 11:35:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Back in 1994, I worked for a company in Toronto called Platform Computing. &nbsp;You might have heard of them - they do load balancing software.<br /><br />Here's how they did it, in a nutshell, and very simplified, but workable for your situation. &nbsp;Your gateway box accepts incoming connections, then runs redirector software to tunnel the packets back to whatever machine is either randomly selected or is selected via rup.<br /><br />If you'd like, I'd be happy to email you the port redirector code - it's written in C, it's quite stable, and I've used it in several production environments for over a year. &nbsp;It would take some minor modification to make it work in your environment - currently it's designed to redirect to a single machine - but it would be the work of less than an hour to make it do what you wanted it to do.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>rugmonster</b> on <b>October 01, 2003, 05:13:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I didn't post the link, but here is the Linux Virtual Server Project (http://www.linuxvirtualserver.org/). Everything you need to make a highly available virtual server. This describes pretty much everything you would need. If this is going to be used in a more enterprise level environment, I would suggest a dedicated commercial product instead, though.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>re: commercial</b><br />
+					Post by: <b>erc</b> on <b>October 01, 2003, 08:08:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Why is that? &nbsp;Most Open Source software I know is better and more stable than their commercial counterparts.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: re: commercial</b><br />
+					Post by: <b>rburt3</b> on <b>October 01, 2003, 08:11:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: erc</div><div class="quote">Why is that? &nbsp;Most Open Source software I know is better and more stable than their commercial counterparts.</div><br />Prolly 'cause PHB's are more comfortable spending money for stuff. A lot of 'em I've run into have a hard time wrapping their head around &quot;do it for fun, give it away, then sell 'em a support contract&quot;. I know how it can be a bit of a stealth operation at times to slip FOSS into the &quot;enterprise&quot; (no Spock jokes, please...).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>rugmonster</b> on <b>October 01, 2003, 09:01:04 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The reason I say that is the fact that most management types like to know that there is some mystical corporate entity they can blame should something break. If you can convince your management to go with an open source solution with no commercial support for a mission critical part of your network, good on you. My suggestion is to thoroughly test this and get to know it inside and out before you employ it.<br /><br />Also, most of the commercial load balancers on the market are supposed to be pretty darn good, as well they should for the money you spend. I've never dealt with them, but talked to people about them. I look at them like I do routers. They are designed from the ground up to do what they do and will therefore do a better job at it than a PC running a general purpose server OS with specialization bolted on to it. I also wouldn't be surprised to find out that the commercial products run a modified cisco IOS or an embedded version of linux or *bsd.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>re: load balancers</b><br />
+					Post by: <b>erc</b> on <b>October 01, 2003, 09:09:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Actually, this is incorrect. &nbsp;Most of the leading load balancing software runs on top of UNIX platforms.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>rugmonster</b> on <b>October 01, 2003, 12:27:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I was mainly talking about the load balancing appliances such as those by F5 Networks (http://www.f5.com), but now that I do more reading, I'm finding that a hardware load balancers may not be best suited for what you want to do. Maybe for a large network with a large cluster, this might be warranted.<br /><br />Once again, there are commercial software load balancing products, should management need the artificial security of having commercial software and support (which usually justs adds to TCO).<br /><br />I don't want to give the wrong impression. Personally, I would use LVS any day because I have a lot of faith in myself. In fact, I'm thinking about setting it up at home now that I'm reading more about it. I just want to point out the commercial options since most management types aren't as open minded or liberal as we are when it comes to technology...but then it is sometimes our job to convince them to see our way of thinking.<br /><br /><b>Edit</b><br /><br />After talking a little with our engineer on this we came up with some stuff. A single real server (not a PC) could handle ~2000 users and you could do two servers with a round robin DNS setup by setting the two MX records equal to the same value or one to 10 and the other 15 so that if one stops responding, it would roll over. You could then host the mail spools on a file server through NFS or Coda.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>imnes</b> on <b>October 01, 2003, 03:41:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Our reason for using commercial software at work is simple. &nbsp;You get great support. &nbsp;Granted you have to pay entirely too much for it, but when your service goes down or program has a bug, you can be sure a staff of 10 engineers will work round the clock until the problem is fixed. &nbsp;(Oracle's products are horrible but their support is great).<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>commercial support</b><br />
+					Post by: <b>erc</b> on <b>October 01, 2003, 04:02:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's not always the case, in fact it's the exception. &nbsp;Customer support and service is the #1 issue that people complain about, and it's across the board in all product areas. &nbsp;Very few customers get &quot;great support&quot;.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>rugmonster</b> on <b>October 01, 2003, 04:33:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ed, I think you're just being contrary :P <br /><br />In all seriousness, I think if you are paying extra for support, you should get outstanding support. From what I have seen, paid support by far outdoes support that &quot;comes&quot; with a product. I think this paid support is what most companies are looking for, despite the cost.<br /><br />It's nice to have that extra safety net...in case your headhunter screwed you with a crappy admin.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>sendmail load balancing and failover ?</b><br />
+					Post by: <b>rburt3</b> on <b>October 01, 2003, 06:00:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I tend to agree with Ed on this one as far as support is concerned. Oracle is an exception, of course, but I've found the cost/benefit ratio of paid support is too high to warrent it in most cases. Unless I need it yesterday and nothing is working, I can usually figure it out by-and-by.<br /><br />Now, forgive me for this, but... I think paid support is a crutch that many managers feel they need to compensate for lack of faith in their staff, lack of understanding of the technologies the business runs on, a lack of competent employees (I mean, cmon, take a few courses at UWF and then see how much faith *you* have in the average CS/CIS graduate), or a combination of the above.<br /><br />Besides, a well-designed system is easy and intuitive to use, right ;).</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

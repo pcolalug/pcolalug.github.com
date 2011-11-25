@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - How to start a daemon on startup?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: dpeach on April 05, 2003, 03:22:22 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 05, 2003, 03:22:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This sounded like a good question to go here.<br /><br />I need to know how to start a daemon (httpd) on startup. I have been looking on the web and have found that there are apparently several ways to do this, depending on which distro you have. I am sure there is some standard way that would work in any distro though. I am trying to do this on my Zaurus running kernel 2.4.6.<br /><br />In Mandrake I can set some check boxes that will start items at startup. <br /><br />I already have /home/www/bin in my path, so I just need to add the command &quot;httpd&quot; somewhere to make it start when I reboot.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>danc</b> on <b>April 05, 2003, 03:39:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">To start it now, use:<br /><div class="codeheader">Code:</div><div class="code">/home/www/bin/httpd start</div><br /><br />To have it start every time you reboot:<br /><div class="codeheader">Code:</div><div class="code">chkconfig httpd on</div><br /><br />Good luck,<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 05, 2003, 03:46:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code">bash&#58; chkconfig&#58; command not found</div><br /><br />This is what I get when I try that. The Z has quite a few things stripped out. I figure there is a file that is read during startup that would allow me to run commands at startup.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>danc</b> on <b>April 05, 2003, 04:25:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmmmm..... &nbsp;You do have to be ROOT to run the chkconfig command. &nbsp;Not too familiar with the Zaurus... &nbsp;do you log into it? &nbsp;If so, try it as root (or use &quot;su -&quot; first). &nbsp;Hope it helps.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>imnes</b> on <b>April 05, 2003, 04:57:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I really don't think there's a 'standard' way to do this. &nbsp;I think the chkconfig scripts are from RedHat (I don't have it on my Slackware router for example). &nbsp;The most common way I can tell you is to edit /etc/rc.d/rc.local and add the commands / scripts you want to the end of that. &nbsp;rc.local is the last script to get run at bootup. &nbsp; <br /><br />In fact that's what I did on my router, here's my rc.local file<br /><br /><div class="codeheader">Code:</div><div class="code"><br />#!/bin/sh<br />#<br /># /etc/rc.d/rc.local&#58; &nbsp;Local system initialization script.<br />#<br /># Put any local setup commands in here&#58;<br /><br /># Call the Internet<br />pppd call adsl<br /><br /># Start DHCPD server<br />/usr/sbin/dhcpd<br /><br /># Launch the Firewall script<br />/etc/rc.d/rc.firewall<br /><br /># Update ZoneEdit IP<br />/etc/rc.d/rc.homeweb.org &<br /><br /># Starting MySQL Server<br />/usr/bin/safe_mysqld &<br /></div><br /><br /><br />Good luck,<br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 05, 2003, 09:26:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: danc</div><div class="quote">do you log into it?</div><br />Nope, always run as root.<br /><br />Imnes, I have tried adding just &quot;httpd&quot; to the end of the /etc/rc.d/rc.local file. That did not work, so I tried adding the hard path to the file (/home/www/bin/httpd), that did not work either.<br /><br />Because the /etc/rc.d/rc.local file exists, I expected that this approach would work. But alas, no worky.<br /><br />Back to the google (http://www.google.com).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>rugmonster</b> on <b>April 05, 2003, 11:23:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Did you check your /var/log/syslog or /var/log/messages? Any kind of errors? You might want to check the main initialization script and make sure rc.local is included in the execution list. Also, make sure rc.local is executable.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 06, 2003, 12:12:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rugmonster</div><div class="quote">You might want to check the main initialization script and make sure rc.local is included in the execution list.</div><br />How do I find out whether something is in the execution list?<br /><br /><div class="quoteheader">Quote from: rugmonster</div><div class="quote"> Also, make sure rc.local is executable.</div><br />What would tell me if it is executable or not?<br /><br />I don't have those two log files that you mention. I do have one, dmesg. It does not have anything about the rc.local or httpd in it.<br /><br />My normal place for Zaurus information is down today, so I can't go to my main resource at the moment.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>imnes</b> on <b>April 06, 2003, 12:15:53 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you do something like<br /><br /><div class="codeheader">Code:</div><div class="code"><br />ls -l /etc/rc.d/rc.local<br /></div><br /><br />You should get a response like<br /><div class="codeheader">Code:</div><div class="code"><br />-rwxr-xr-x &nbsp; &nbsp;1 root &nbsp; &nbsp; root &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;338 Apr &nbsp;2 15&#58;44 /etc/rc.d/rc.local*<br /></div><br /><br />That first list of letters &quot;-rwxr-xr-x&quot; tells you that the file is R (Readable), W (Writable), X (eXecutable) for users on the system. &nbsp;To make the file executable by everyone just type:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />chmod a+x /etc/rc.d/rc.local<br /></div><br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 06, 2003, 12:37:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">It was already<br /><div class="codeheader">Code:</div><div class="code">-rwxrwxr-x</div><br />After doing the chmod, it is the same thing. I assume that your a+x should change it from -rwxr-xr-x to -rwxrwxr-x. Right?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>rugmonster</b> on <b>April 06, 2003, 12:41:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">How do I find out whether something is in the execution list?</div><br /><br />You have &quot;runlevels&quot; in unix-like systems. Runlevels are for each stage of bootup or shutdown of your system. These runlevels are all dependent on your system and distribution as they are not set in stone. Anyway, different things are either initialized or disabled depending on the change of runlevel. The scripts that make these changes are the initialization scripts.<br /><br />The initialization scripts, or init scripts, are setup in one of two fashions: BSD or System V. In most modern linux distributions, the SysV style is used. This is where you have scripts for each daemon in /etc/init.d and then you /etc/rcX.d for each runlevel. The scripts in /etc/init.d are symbolically linked to the /etc/rcX.d directory that it needs to be executed on; X being the particular runlevel.<br /><br />BSD style init scripts work a little differently, however. Slackware and its derivates are the only major linux distributions that I know of that still use BSD style init scripts, but they are still worth mentioning. In BSD style, you have /etc/rc.d. In this directory, you have rc.X which is for the appropriate runlevel and then those scripts call up the various rc.[insert name]. <br /><br />Now, with that established, you want to make sure rc.local is executable like imnes said. Once that is determined, you need to make sure rc.local is going to be executed on system startup. On a BSD style system, you can look in (typically) /etc/rc.d/rc.M. This is the file that initializes your multiuser mode. On a SysV style system, check /etc/rc[2345].d for a symbolic link to /etc/init.d/rc.local. It will probably look like /etc/rc2.d/S99rc.local and be pointed to /etc/init.d/rc.local. To find symbolic links, you use ls -l and it will show you where the link is pointing to. <br /><br />Let me know what you find after this and we can go from there. I hate to go through the explanation for both styles of init scripts on how to add a new init script if it is unnecessary. The biggest help would be knowing how the init scripts are setup.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 06, 2003, 02:18:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Isn't this fun? :lol: <br /><br />OK, I have inside the directory /etc/rc.d<br />init.d<br />rc<br />rc.local<br />rc.modules<br />rc.rofilesys<br />rc.serial<br />rc.sysinit<br />rc0.d<br />rc1.d<br />rc2.d<br />rc3.d<br />rc4.d<br />rc5.d<br />rc6.d<br /><br />I have looked inside each of those files and do not find a link to the rc.local.<br /><br />Inside of init.d I have:<br />atd<br />fbvncinput<br />functions<br />halt<br />inet<br />irda<br />pcmcia<br />portmap<br />sd<br />single<br />syslog<br />usb<br />cd <br /><br />Hope this sheds some light. <br /><br />Can we write a script for that would work inside one of the run levels that would start up Apache? If other scripts are being run, I don't know why we cannot make this one work.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>rugmonster</b> on <b>April 06, 2003, 03:59:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I bet you could add a line to the end of the inet file to start your daemon. If it is broken up into start|stop|restart, then add that line to the end of the start section of that script.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>steve</b> on <b>April 07, 2003, 07:15:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK, now for Steve's easy, more like Windows, way. Install Webmin, log into webmin, click on system and then services. Put a check next to the httpd service to start it during bootup.<br /><br />I believe in making things as easy and GUI friendly as possible.<br /><br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>rugmonster</b> on <b>April 07, 2003, 07:18:38 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: steve</div><div class="quote">I believe in making things as easy and GUI friendly as possible.</div><br /><br />Blasphemy! One should never be afraid of bare configs. GUIs fail and can make things take longer than they need to take.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>danc</b> on <b>April 07, 2003, 08:04:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, let's see...... this thread is about 3 days old now.... &nbsp; :lol: &nbsp; Maybe sometimes GUI's are our friends...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 07, 2003, 08:17:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Steve thanks for the suggestion. How easy is that to install on the Zaurus? From what I understand, I need Perl to install Webmin. That is yet another package to download and install. Though it is only 1 Mb and Webmin (tarred) is only 6.1 MB, I did not want to have to add all the bloat if one line in a config file can be added.<br /><br />Perl is useful outside of this project, but I will probably dump Webmin after this use.<br /><br />At the moment I need to put off the project for the day. I will get back to it in the morning, after I wake up from the Indianapolis to Pensacola drive today.<br /><br />Thanks</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 07, 2003, 08:22:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">GUIs fail and can make things take longer than they need to take.</div><br />Well, Ruggy, you and I were up to what, 2:00 this morning working on this? So maybe the long winded GUI may not be a bad idea.<br /><br />&nbsp;:lol:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>steve</b> on <b>April 07, 2003, 09:13:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">Steve thanks for the suggestion. How easy is that to install on the Zaurus? From what I understand, I need Perl to install Webmin. That is yet another package to download and install. Though it is only 1 Mb and Webmin (tarred) is only 6.1 MB, I did not want to have to add all the bloat if one line in a config file can be added.<br /><br />Perl is useful outside of this project, but I will probably dump Webmin after this use.<br /><br />At the moment I need to put off the project for the day. I will get back to it in the morning, after I wake up from the Indianapolis to Pensacola drive today.<br /><br />Thanks</div><br /><br />Aaaahhh, that's what I get for losing track of the thread. I forgot this was about the Zaurus. Webmin would be used on a dekstop. Unfortunately, on the Zaurus, you will have to go into a shell to do it. I'm not sure about how to exactly set it up on the Zaurus as I don't have a PHD yet in programming and Linux. &nbsp;:D <br /><br />You might head over to the Zaurus Zone and post the question there. They would probably know the easiest way to do this.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>imnes</b> on <b>April 07, 2003, 12:48:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">What if you just add the line <br /><br />httpd<br /><br />or maybe just<br /><br />http<br /><br />to your /etc/rc.d/init.d file? &nbsp;Otherwise open up /etc/inittab and look for the line<br /><br />id:4:initdefault <br /><br />(or something like that). That tells you what runlevel your system starts in. Mine starts in 4 (I think the zaurus is the same, or it might use 3?) &nbsp;But then open up /etc/rc.d/rc.4 (or rc.3) and ad the line to start your httpd server.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>danc</b> on <b>April 07, 2003, 02:54:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">I will get back to it in the morning, after I wake up from the Indianapolis to Pensacola drive today.</div><br /><br />David, got those Mdk9.1 CD's ready for ya when you run out of things to do... &nbsp;Just let me know when you'd like to get 'em...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>altomo</b> on <b>April 07, 2003, 07:46:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is my apache start up file<br />---start file-------------<br />[altomo@780 altomo]$ more /etc/rc.d/init.d/httpd<br />#!/bin/sh<br />#<br /># Startup script for the Red Hat Secure Web Server<br />#<br /># chkconfig: 345 85 15<br /># description: Secure version of Apache World Wide Web server. &nbsp;It is \<br /># &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;used to serve HTML files and CGI over SSL.<br /># processname: httpd<br /># pidfile: /var/run/httpsd.pid<br /># config: /etc/httpd/conf/access.conf<br /># config: /etc/httpd/conf/httpd_app.conf<br /># config: /etc/httpd/conf/srm.conf<br /><br /><br /># Source function library.<br />. /etc/rc.d/init.d/functions<br />RETVAL=0<br /><br />httpdargs() {<br />&nbsp; &nbsp; &nbsp; &nbsp; args=&quot; -f /etc/httpd/conf/httpd_app.conf&quot;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; # if there is a key, start up in secure mode, otherwise<br />&nbsp; &nbsp; &nbsp; &nbsp; # start up in normal apache mode.<br />&nbsp; &nbsp; &nbsp; &nbsp; SSLDomains=`/usr/lib/opcenter/virtualhosting/GetSSLDomains -q 2>/dev/null`<br />&nbsp; &nbsp; &nbsp; &nbsp; if [ -n &quot;$SSLDomains&quot; ]; then<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; args=&quot;${args} -DSSL $SSLDomains&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; fi<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; #moduledir=/usr/lib/apache<br />&nbsp; &nbsp; &nbsp; &nbsp; moddef=/etc/appliance/apachemodules<br />&nbsp; &nbsp; &nbsp; &nbsp; module_list=`ls $moddef/*module`<br />&nbsp; &nbsp; &nbsp; &nbsp; for module in $module_list<br />&nbsp; &nbsp; &nbsp; &nbsp; do<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; module_name=`echo $module | cut -f 5 &nbsp;-d '/'`<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; args=&quot;${args} -D $module_name&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; done<br />&nbsp; &nbsp; &nbsp; &nbsp; #if [ $? -eq 0 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;if [ -e &quot;${moduledir}/libphp4.so&quot; ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; args=&quot;${args} -D vwh_php4_module&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;else<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; echo &quot;Could not find ${moduledir}/libphp4.so&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; return 1<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;fi<br />&nbsp; &nbsp; &nbsp; &nbsp; #fi<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; #if [ $? -eq 0 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;if [ -e &quot;${moduledir}/libperl.so&quot; ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; args=&quot;${args} -D vwh_perl_module&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;else<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; echo &quot;Could not find ${moduledir}/libperl.so&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp; &nbsp; return 1<br />&nbsp; &nbsp; &nbsp; &nbsp; # &nbsp; &nbsp;fi<br />&nbsp; &nbsp; &nbsp; &nbsp; #fi<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; echo ${args}<br />&nbsp; &nbsp; &nbsp; &nbsp; return 0<br />}<br /><br />start(){<br />&nbsp; &nbsp; echo -n &quot;Starting httpd: &quot;<br /><br />&nbsp; &nbsp; # Set maximum open files for apache. &nbsp;Default is normally 1K, we<br />&nbsp; &nbsp; # want at least 4K<br />&nbsp; &nbsp; ulimit -n 4096<br /><br />&nbsp; &nbsp; myarg=`httpdargs`<br />&nbsp; &nbsp; if [ $? -eq 1 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; #then myarg contains the error msg<br />&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;$myarg&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; exit 1<br />&nbsp; &nbsp; fi<br />&nbsp; &nbsp; echo &quot;$myarg&quot; | grep &quot;DSSL&quot; > /dev/null 2>&1<br />&nbsp; &nbsp; if [ $? -eq 0 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp; /usr/sbin/httpd `echo ${myarg}`<br />&nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; daemon httpd `echo ${myarg}`<br />&nbsp; &nbsp; fi<br />&nbsp; &nbsp; RETVAL=$?<br />&nbsp; &nbsp; if [ $RETVAL -eq 0 ] ; then<br />&nbsp; &nbsp; &nbsp; &nbsp;success &quot;httpd startup&quot;<br />&nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp;failure &quot;httpd startup&quot;<br />&nbsp; &nbsp; fi<br />&nbsp; &nbsp; echo<br />&nbsp; &nbsp; [ $RETVAL = 0 ] && touch /var/lock/subsys/httpd<br />&nbsp; &nbsp; return $RETVAL<br />}<br /><br />stop() {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo -n &quot;Shutting down http: &quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; killproc httpd<br />&nbsp; &nbsp; &nbsp; &nbsp; RETVAL=$?<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; &nbsp; [ $RETVAL = 0 ] && rm -f /var/lock/subsys/httpd /var/run/httpd.pid<br />}<br /><br /><br /><br /># See how we were called.<br />case &quot;$1&quot; in<br />&nbsp; start)<br />&nbsp; &nbsp; &nbsp; &nbsp; start<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; stop)<br />&nbsp; &nbsp; &nbsp; &nbsp; stop<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; status)<br />&nbsp; &nbsp; &nbsp; &nbsp; status httpd<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; restart)<br />&nbsp; &nbsp; &nbsp; &nbsp; stop<br />&nbsp; &nbsp; &nbsp; &nbsp; start<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; reload)<br />&nbsp; &nbsp; &nbsp; &nbsp; echo -n &quot;Reloading httpd: &quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; killproc httpd -HUP<br />&nbsp; &nbsp; &nbsp; &nbsp; RETVAL=$?<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; reload-grc)<br />&nbsp; &nbsp; &nbsp; &nbsp; echo -n &quot;Reloading httpd gracefully: &quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; killproc httpd -USR1<br />&nbsp; &nbsp; &nbsp; &nbsp; RETVAL=$?<br />&nbsp; &nbsp; &nbsp; &nbsp; echo<br />&nbsp; &nbsp; &nbsp; &nbsp; ;;<br />&nbsp; *)<br />&nbsp; &nbsp; &nbsp; &nbsp; echo &quot;Usage: $0 {start|stop|restart|reload|reload-grc|status}&quot;<br />&nbsp; &nbsp; &nbsp; &nbsp; exit 1<br />esac<br /><br />exit $RETVAL<br />---end file----------<br /><br /><br />You might find your httpd file a little different but that should give you an idea. /etc/rc.d/init.d/httpd<br /><br />When you got this:<br />bash: chkconfig: command not found<br />It means chkconfig was prob not in your path or not installed. I have chkconfig at /sbin/chkconfig</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>steve</b> on <b>April 08, 2003, 07:19:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Have you tried This? (http://www.prometheanheat.com/zaurus/)<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 08, 2003, 08:47:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK, let me try and catch up.<br /><br />Steve, Yes, I have been to prometheanheat.com. That is where I got the apachectl and actlsetup. Though Apache was working fine before, I did install apachectl and it still works fine. Zauruszone did not have my answer and www.zaurus.com/dev/board has been off and on all weekend. I was able to post my question when it was up once and I have gotten an answer that I will try and let you know the results.<br /><br />Imnes, rc.5 is what the Z runs at. Already tried that.<br /><br />Altomo, forgive me for not completely understanding all of that. But I think you are showing me how to check and make sure Apache will start. Apache works great, I am just trying to figure out how to get it to start at bootup.<br /><br />I did not mean for this to be so difficult. I thought this would be a good discussion to go into here because it would be a simple answer for newbies to know how to accomplish this. I have a lead from the Zaurus forum that I will try and let you know how it goes.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>altomo</b> on <b>April 08, 2003, 11:49:45 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote"><br /><br />Altomo, forgive me for not completely understanding all of that. But I think you are showing me how to check and make sure Apache will start. Apache works great, I am just trying to figure out how to get it to start at bootup.<br />quote]<br /><br />That is the startup script for apache. btw this page would have saved you some time:<br /><br />http://httpd.apache.org/docs/invoking.html<br /><br />or check out this page<br /><br />http://www.ozetechnology.com/howtos/apache_start.shtml</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>rugmonster</b> on <b>April 08, 2003, 12:04:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">After working with David on this one night, I wonder if the Zaurus doesn't do something funky during startup. We put the apachectl start as last line of the inet script in the start section and it still didn't start up. Has anyone thought to look in the /var/logs? Wouldn't any errors be recorded in /var/log/messages? I know those init scripts are supposed to be run as root, but what if it isn't on the Zaurus or it is something weird like that? I don't think this is the methods we have tried to get this thing to startup. I think this is a funkiness of the Zaurus.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 08, 2003, 01:43:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Success!<br /><br />After asking on the www.zaurus.com/dev/board my question, I have come up with the following answer.<br /><br /><div class="quoteheader">Quote from: My new best friend, hausman</div><div class="quote">Create a text file called S49local in /etc/rc.d/rc5.d<br /><br />inside it, put<br /><br />/home/www/bin/httpd start<br /><br />make S49local executable, and restart.</div><br />I have no idea what is special about the S49local name, but it did the trick.<br /><br />Rugmonster, I only have two logs in /var/log directory: dmesg, wtemp. dmesg does not have anything that looks like what I am going after and wtmp is empty.<br /><br />Here is the thread (http://www.zaurus.com/dev/board/index.php?s=212843285c1fb2c609b3df3e22f0ebfd&act=ST&f=3&t=2197&st=0&#entry12685) at the other board.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>altomo</b> on <b>April 08, 2003, 01:59:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">S means start<br /><br />49 this is the number in which this process will start. ie. will start before any higher numbers and after any lower numbers.<br /><br />local means nothing really<br /><br />I would suggest reading about startup and shutdown scripts. &nbsp;This is what I was getting to in my early posts, but I guess I wasnt clear or assumed to much.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>rugmonster</b> on <b>April 08, 2003, 02:10:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, that approach isn't exactly proper because the right way to do it is to make your httpd initialization script in /etc/rc.d/init.d and then make a symbolic link to the rcX.d as SXXhttpd. The X in rcX.d being the corresponding runlevel and X in SXXhttpd being the order number of which you want it to start. Anywho, glad you got it working. I was trying to avoid that by having you put it in another script, but whatever &nbsp;:wink:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>dpeach</b> on <b>April 08, 2003, 03:53:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Let me try to do it the &quot;proper&quot; way later. At the moment it works and I am happy.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>How to start a daemon on startup?</b><br />
+					Post by: <b>rugmonster</b> on <b>April 08, 2003, 04:04:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">oh no...I'm glad it works..I was just saying</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

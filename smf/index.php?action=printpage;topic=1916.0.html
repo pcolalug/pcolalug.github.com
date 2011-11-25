@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - SMP Capable Distribution</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => The Big Debate => Topic started by: hitechwizard on October 13, 2004, 09:52:45 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SMP Capable Distribution</b><br />
+					Post by: <b>hitechwizard</b> on <b>October 13, 2004, 09:52:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just acquired a nice dual processor server that I'm wanting to put Linux on - Dual 866 Xeon's w/128meg RAMBUS memory. Anybody got any opinions on which distro is best/easiest to install with SMP support? I'm looking at using this for mail/web/dns server, if that should matter any.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SMP Capable Distribution</b><br />
+					Post by: <b>rugmonster</b> on <b>October 14, 2004, 04:46:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would suggest one, but I would get yelled at for it not being the easiest. By the way, when you ask for &quot;best&quot;, it tends to start one of those very heated religious wars.<br /><br />Can you tell us what you're looking for in this distro? What do you want it to do for you and what do you want to have to do to it? You can make just about anything be a mail/web/dns server, but different distros are geared a little more to being &quot;server&quot; distros and some go so far as to providing you tools for managing a whole bunch of servers from a central gui app. Depends on how free you want it and all that jazz.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SMP Capable Distribution</b><br />
+					Post by: <b>rburt3</b> on <b>October 14, 2004, 07:25:50 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Other than the criteria ruggy mentioned, FreeBSD, NetBSD, or any OS based on the Linux kernel should do SMP just fine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SMP Capable Distribution</b><br />
+					Post by: <b>hitechwizard</b> on <b>October 14, 2004, 07:48:10 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Easy as in, get enough of the kernel and source libraries installed so that servers such as Apache, Postfix and Bind can be compiled from source. Kind of like an OpenBSD install - short, sweet, and can be done in one sitting.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SMP Capable Distribution</b><br />
+					Post by: <b>rugmonster</b> on <b>October 14, 2004, 08:09:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you like OpenBSD, Slackware (loved by so many here) is a very BSD centric linux distro. It's simple, very giving to source compiling and can definitely be installed in one sitting. SMP support is going to be based on the kernel you compile. I believe they may even have a stock SMP kernel, but recompiling the kernel is one of the first things I do because I hate modules.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>SMP Capable Distribution</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 08:15:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I just reinstalled Slack 10.0 for the new game box (finally came up with a name for it, &quot;Anubis&quot;) and that wasn't just done in one sitting, it was done in one hour.<br /><br /><br /><br /><br /><br />That does remind me, there was some serious strangeness installing Slack 10 last night. &nbsp;My first attempt I installed LILO into the &quot;root&quot; directory which of course didn't work with dual boot. &nbsp;So just restart the install, no harm no foul, right? &nbsp;Just put LILO in the MBR.<br /><br />For whatever odd reason, my second installation couldn't recognize my DVD drive. &nbsp;Nevermind the fact I got all teh way up to &quot;selecting packages&quot; and such off of the CD, it just refused to see it. &nbsp;I rebooted, tried again and it worked. &nbsp;Oddness.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

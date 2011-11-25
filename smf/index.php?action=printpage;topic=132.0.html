@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Package management</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: bhoff on August 25, 2002, 04:12:34 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Package management</b><br />
+					Post by: <b>bhoff</b> on <b>August 25, 2002, 04:12:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">From <b>Joshua Jensen @ redhat</b><br />A package is made up of<br />&nbsp;*Files<br />&nbsp;-/etc/rmt,/sbin/rmt<br />&nbsp;*Dependecies<br />&nbsp;-libtermcap.so.2<br />&nbsp;*Install/Uninstall Scripts<br />&nbsp;*Changelogs<br />&nbsp;*General PAckage Information<br /><br /><b>Package benefits</b><br />&nbsp;*Dependecy Checking<br />&nbsp;-Upgading<br />&nbsp;-Removing<br />&nbsp;-Installing<br />&nbsp;*Saves time<br />&nbsp;*Security<br /><br /><b>Package commands</b><br />&nbsp;*Install<br />&nbsp;-/bin/rpm -i [options] &lt;package name&gt;<br />&nbsp;Example-/bin/rpm -ivh tar-1.13.11-1.i386.rpm<br />&nbsp;-Network support FTP and HTTP<br />&nbsp;-/bin/rpm -ivh ftp://ftp.redhat.com/path/*ldap*rpm<br />&nbsp;*Erase<br />&nbsp;-/bin/rpm -e[options] &lt;package name&gt;<br />&nbsp;Example-/bin/rpm -e [options] &lt;package name&gt;<br />&nbsp;*Upgrade<br />&nbsp;-U, upgrade -F, freshen<br />&nbsp;-/bin/rpm &lt;-U|-F&gt; [options] &lt;package file&gt;<br />&nbsp;-Upgrade erase old (if there), install new<br />&nbsp;-Freshen &nbsp;Upgrade only if old package present, else do nothing<br />&nbsp;*Query<br />&nbsp;-/bin/rpm -q [options] &lt;package name&gt;<br />&nbsp;-/bin/rpm -qp [options] &lt;package file&gt;<br />&nbsp;-File listing -l, package owner -f, General information -i<br />&nbsp;-/bin/rpm --querytags<br />&nbsp;-/bin/rpm --qf &lt;format&gt; -q &lt;package name&gt;<br />&nbsp;-Query for what is not installed<br />&nbsp;1) install rpmdb-redhat<br />&nbsp;2) rpm -ivh rpmdb-redhat*rpm<br />&nbsp;3) rpm -q --redhatprovides libssl.so.2openssl-0.9.6b-8<br />&nbsp;*Verify<br />&nbsp;-/bin/rpm -V [options] &lt;package name&gt;<br />&nbsp;-/bin/rpm -Vp /mnt/cdrom/packagefile<br />&nbsp;-Verify package sig.<br />&nbsp;-#gpg --import /usr/share/rhn/RPM-GPG-KEY<br />&nbsp;-#rpm -K [options] &lt;package file&gt;<br />&nbsp;*Build<br />&nbsp;-install SRPM sources in /usr/src/redhat<br />&nbsp; ./build/ ./RPMS/ ./SOURCES/ ./SPECS/ ./SRPMS/<br />&nbsp;-/bin/rpm ib &lt;-a|-p|-c|-i|-b&gt; &lt;spec file&gt;<br /><br />Hope this helps a little. These are excerpts from my trip to San Diego.<br />Brett</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

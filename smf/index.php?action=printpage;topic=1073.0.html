@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - DSL coming</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: sandspur on October 16, 2003, 12:29:21 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>sandspur</b> on <b>October 16, 2003, 12:29:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just signed up for BellSouth DSL service and the ehternet modem should arrive next Tuesday.<br /><br />I'm running RH9 and have two ethernet cards. &nbsp;eht0 is for my LAN and eth1 is not configured yet. &nbsp;I had a choice of a dynamic or static IP address and I asked that they assign me a static IP address.<br /><br />At the monent both ethernet cards are connected to a switch. &nbsp;I am assuming that I should disconnect eth1 from the switch and plug in the ethernet modem to the card (or can I plug the modem into the switch?).<br /><br />Would appreciate any of your experiences with BellSouth and any coaching. &nbsp;Thanks!<br /><br />Chuck<br /><br />P.S. &nbsp;Behold the gnarly new avatar.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>lloydr</b> on <b>October 16, 2003, 02:31:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">i setup bellsouth dsl on my grandmas system and whenever we signed up for the dsl....the $45/mo or whatever plan was pppoe and the ethernet modem was a westell.... only static ip packages i seen were $99/mo and thats $34 more than what megapath charges for their home office accounts that have a bit better service.... dunno, that was my only experience with bellsouth....the pppoe was kinda a pain because when i first started testing the connection and doing speed tests, the ip kept needing to be refreshed...but eventually it chilled out i guess(havent heard if its done it again lately)....for the price and what they were going to use it for, it was fine....<br /><br />but im kinda fond of my $65/mo megapath dsl since they dont have any caps on amount of data you can transfer monthly like a lot of cable companies and dont care about servers like a lot of dsl/cable isps...but bellsouth seemed fine other than a few annoyances...but last i heard from a few of my friends who ran ftp and gaming servers from the $99/mo static ip accounts....bellsouth didnt exactly like them running the servers<br /><br />lata</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL</b><br />
+					Post by: <b>sandspur</b> on <b>October 16, 2003, 03:32:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks lloydr. &nbsp;BellSouth must be in a heavy promotional campaign --- promised a static IP address for $40 a month and a full rebate on the modem. &nbsp;<br /><br />Others may be wanting to check what they are offering at the moment:<br />http://www.fastaccess.com<br /><br />Chuck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>dpeach</b> on <b>October 16, 2003, 04:13:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You should be able to plug your modem to the switch and the switch to the different computers. Without a need for two NICs in the main computer. <br /><br />But...there is always a but, depending on your switch, this probably will leave you without a firewall.<br /><br />I don't know how you want to handle giving out IP addresses to all the computers on the network and handle firewalling. I personally (did this once and it worked, there is probably a better way), would run your modem to ethX and set up firewall and dhcp server (and any other server that you want), then go out to the switch with ethY (X being one and Y the other, your choice, but I think standard is 0 going to the WAN and 1 going to the LAN).<br /><br />There are security freaks that will say that this is potentially dangerous, having your Firewall being on the same box as any other servers. They are probably right, but I never had a problem with it. Ran like this for two years and did all the security checks that I could to find any problems. Never found any.<br /><br />That is my recommendation.<br /><br />I like what Bellsouth is doing to the DSL. Giving more options. I have read that several others are getting ready to do the same. The DSL lite ($29.95) that they are selling is as fast as the DSL that I used to have and I was paying $50 a month. Now for $39.95 ($10 more) you can get 6 times faster down and twice as fast up. That is great. I don't know if there service stinks (if it is as bad as their Cell service, it does), but it is a great price and I am glad to see it coming.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>imnes</b> on <b>October 16, 2003, 04:30:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">When I signed up you could only get USB dsl modem for home users and ethernet modem for soho users. &nbsp;FreeBSD drivers for the USB one sucked so I got a cayman DSL modem+router off ebay pretty cheap it works great.<br /><br />It was nice, with the router and my laptop on UPS I was able to keep internet access and my computer going for over 4 hours yesterday durring a lenghtly power outage, I could have probably gone 5 more hours but luckily power came back. &nbsp;Having a tiny hardware router was nice because it pulled almost no power off the UPS whereas a full-blown PC based router would have eaten it up quickly.<br /><br />I don't have any problems running servers off my account (it is a dynamic IP though). &nbsp;I have it tied to a domain name (homeweb.org) and have a script that keeps the DNS records updated when my IP changes. &nbsp;I haven't really had any downtime yet. &nbsp;I have mail server, web, telnet, ssh, ftp, and postgres database running on it, remotely accessible. &nbsp;I haven't experienced any bandwidth problems / limits. &nbsp;I usually get around 350k/s downloads and I move a lot of bandwidth for web-based videos I use for school. &nbsp;I've pulled down close to 16gb worth within the last month.<br /><br />Oh well YMMV. &nbsp;Let us know...<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>dpeach</b> on <b>October 16, 2003, 04:50:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would agree, hardware router is the way to go. Less hassle, maybe less configurable, but much less headache.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>rugmonster</b> on <b>October 17, 2003, 02:37:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">...hardware router is the way to go. Less hassle, maybe less configurable, but much less headache.</div><br /><br />And less electricity!<br /><br />Lower energy bills are good</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>rburt3</b> on <b>October 17, 2003, 05:13:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">And less electricity!<br /><br />Lower energy bills are good</div><br /><br />Am I going to be the Last Geek Standing?! Build your own routers like men and quit yer whinin' (http://www.openbsd.org)! ;)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>lloydr</b> on <b>October 17, 2003, 05:37:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">nope &nbsp;you aint gonna be the last one running a home built router hehe :lol: &nbsp;but mines linux 2.4.22 based &nbsp; :wink:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>DSL coming</b><br />
+					Post by: <b>steve</b> on <b>October 17, 2003, 06:05:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just my opinion, but if you have an old computer laying around, it will make a good router/firewall. Otherwise, just take $50 down to Best Buy or Circuit City and get a Netgear or Dlink router. It's a lot cheaper than investing in the hardware and &quot;TIME&quot; to build and maintane your own.<br /><br />(Not Linksys, they don't do Statefull Packet Inspection, SPI)<br /><br />Steve</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

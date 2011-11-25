@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - codec</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: Pace boy on December 27, 2007, 06:15:19 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>codec</b><br />
+					Post by: <b>Pace boy</b> on <b>December 27, 2007, 06:15:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi i have a Ubuntu Linux computer and it for some reason wont let me down load any thing to it, i also cant watch a majority of the movies online, it wont play them under media player, only flash player, . i cant use my cd/dvd burner either, to play watch down loader or burn movies i need help gettin a codec or something so i can burn movies watch them online or off line and download them 2. please help, im a newbie on the computer systems, so if u could call me it would also help me easier, but anything would help right now, thank you </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: codec</b><br />
+					Post by: <b>Skreyola</b> on <b>December 29, 2007, 12:04:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">A lot of DVDs are encrypted using CSS (not to be confused with Cascading Stylesheets). To view them on your computer, you need to download the libdvdcss package. It&#039;s not included in Debian or Ubuntu repositories, if memory serves me, because of copyright issues (various countries have differing laws on such things as fair use), but you can download it directly using this command at the command prompt:<br /><div class="codeheader">Code:</div><div class="code">$&nbsp; wget http://download.videolan.org/pub/videolan/libdvdcss/1.2.9/deb/libdvdcss2_1.2.9-1_i386.deb</div>Since you&#039;re running Ubuntu, you can download the deb package. Other distros would get the tar.gz and compile from source. (There&#039;s an RPM package for RH users)<br />Then either become root and run:<br /><div class="codeheader">Code:</div><div class="code">#&nbsp; dpkg -i /path_to_deb_file/libdvdcss2_1.2.9-1_i386.deb</div>or if your system was set up without root (common with Ubuntu):<br /><div class="codeheader">Code:</div><div class="code">$ sudo dpkg -i /path_to_deb_file/libdvdcss2_1.2.9-1_i386.deb</div>Making sure to change the path to wherever you were when you downloaded the deb file. If you run the sudo command in the same directory, you can omit the path portion, of course.<br /><br />I didn&#039;t want to waste your time with stuff I think you probably know, but if you need help on getting to a command line, just post a reply and one of us will walk through the steps.<br /><br />For burning CDs/DVDs, the standard seems to be the X CD Roaster. If you&#039;ve tried this and are having trouble, post the error messages you&#039;re getting.<br /><br />Watching commercial DVDs on your computer is fair use, but downloading unlicensed copyrighted material is, of course, illegal.<br /><br />As far as watching Flash(tm) files, I just use my browser and the flash plugin, so I don&#039;t know anything about playing them in a standalone media player.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: codec</b><br />
+					Post by: <b>Pace boy</b> on <b>December 29, 2007, 03:20:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">tried all of the links that were posted and they kept taking me to Google.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: codec</b><br />
+					Post by: <b>Skreyola</b> on <b>December 29, 2007, 08:52:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The links? Links where? The links on the download.videolan.org site?<br />I&#039;m confused what you&#039;re trying to access that is taking you to Google.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: codec</b><br />
+					Post by: <b>Pace boy</b> on <b>December 30, 2007, 12:40:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">no im srry it i tried the download links u gave me and it took me 2 a search in Google </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: codec</b><br />
+					Post by: <b>bhoff</b> on <b>December 30, 2007, 08:59:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Those are links but not like you normally use that whole string is a command you put in the terminal I was telling you about.<br /><div class="quoteheader">Quote</div><div class="quote">$&nbsp; wget http://download.videolan.org/pub/videolan/libdvdcss/1.2.9/deb/libdvdcss2_1.2.9-1_i386.deb</div>Here wget is a command line tool for downloading the required file . you also need to be root or sudo root however ubuntu does it.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: codec</b><br />
+					Post by: <b>Skreyola</b> on <b>December 30, 2007, 09:26:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes. Exactly as bhoff said. The $ or # indicates what type of prompt is required for the command. # means you need to be root. $ is a command you should run as a normal user.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

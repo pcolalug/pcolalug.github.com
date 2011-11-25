@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Working... not working</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: dpeach on April 12, 2003, 10:03:04 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Working... not working</b><br />
+					Post by: <b>dpeach</b> on <b>April 12, 2003, 10:03:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have sound when I first boot into KDE (Mandrake 9.1). After I log out and try Gnome, then come back into KDE I get an error that tells me my sound card has been captured and that ARtS will not be able to use the card, but that it will output to a null device.<br /><br />Here are the things I know:<br />Works in KDE when first boot up, but not after switching to Gnome and back to KDE.<br />Killing X and relogging into KDE does not bring my sound back.<br />Restarting machine gives me my sound back.<br />Going back into Gnome after this happens does not give sound in Gnome.<br /><br />This is what I don't know (well a short list, I really cannot accurately tell you what I don't know, 'cause if I could then I would know that I don't know it and therefore would probably know it at that point.)<br />I do not know if I have sound in Gnome when first booting up and going in there, I have just never tried it.<br />I don't know if when I switch from KDE to Gnome the first time whether I have sound or not, I have never checked.<br /><br />I am sure it is as simple as shutting down the sound card and having ARtS restart. But, I don't know how to do that.<br /><br />Appreciate the help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Working... not working</b><br />
+					Post by: <b>imnes</b> on <b>April 12, 2003, 11:42:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Try this<br /><br />killall esd<br /><br />Then restart KDE.<br /><br />When you run gnome it runs the Esound daemon (esd).<br /><br />Hope this helps,<br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Working... not working</b><br />
+					Post by: <b>dpeach</b> on <b>April 12, 2003, 11:58:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did still have a copy of esd running. But after killing it and restarting KDE, it still did not work. I wonder if there is another process that goes hand in hand with it?<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Working... not working</b><br />
+					Post by: <b>imnes</b> on <b>April 13, 2003, 09:08:56 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, esd is the only thing that would be blocking audio so far as I know. &nbsp;Maybe a stray lock file in /var/lock or somewhere? &nbsp;Anybody else have any ideas?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Working... not working</b><br />
+					Post by: <b>dpeach</b> on <b>April 14, 2003, 09:43:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have not fixed the cause of the problem, but I have sound working agian. Strange that after we talked on this issue that I never had sound again, even after a reboot. So I went into Mandrake Control Center and just completely reloaded the sound drivers for my card. That did the trick. I am not in love with Gnome enough to be switching over there often. So, this should not be a big issue.<br /><br />Thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Working... not working</b><br />
+					Post by: <b>phed</b> on <b>April 21, 2003, 11:35:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I too am encountering a sound problem with KDE. &nbsp;I'm running whatever version installed with Mandrake 9.1. &nbsp;When I first loaded 9.1 I found that my sound did not work. &nbsp;I saw David's message and went into the control center. &nbsp;I ended up having to load the alternate driver for my sound card and that seemed to fix the problem.<br /><br />Sound is now out again :x . &nbsp;I was running XMMS and opened Konqueror...that killed all sound and I have not been able to get it back again.<br /><br />I went through everything I did before without success. &nbsp;I went into the mandrake Control Center and tried their sound troubleshooting procedure. &nbsp;Any help would be much appreciated.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Working... not working</b><br />
+					Post by: <b>imnes</b> on <b>April 22, 2003, 07:33:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I assume that KDE still uses the ArtsD sound server, or did they switch over to ESD? &nbsp;Go into your configuration for XMMS and make sure it's set to use the ArtsD sound output. &nbsp;If it's not going through a sound server and accessing your card directly then that would have blocked access for the rest of KDE from making sounds. &nbsp;But if that's all it is the problem should have cleared up after a reboot if not on its own.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

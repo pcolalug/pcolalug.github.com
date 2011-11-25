@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Using Dialog</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: bhoff on November 26, 2003, 10:46:38 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using Dialog</b><br />
+					Post by: <b>bhoff</b> on <b>November 26, 2003, 10:46:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Using The Dialog Command In Linux.<br />You may asking why do I need the Dialog function if I have a GUI Desktop.<br />&nbsp;Well what if it crashes or what if you are like me and prefer to work from the command prompt.<br />&nbsp;I am hoping that the following examples will get you interested in this seldom used function and finding uses on your own to use it. <br /><br />First you must have Dialog installed on your system.<br />You can find out by running <br /># rpm -q dialog<br />This should tell you the version number of Dialog if it is installed on your system if not you will need to install it to continue.<br /><br />I will attempt to show you a few examples to get you right into coding with it to show you how easy it is.<br />At the prompt type<br /># dialog --fselect / 12 20<br />This will use dialog to create a box 12 high 20 wide with the window showing the contents of / . <br />You can adjust the path line to see other directories.<br /><br />For our next example I was looking for a calendar when I came across this next app for planning backup's for the year.<br />At the prompt type<br /># dialog --calendar &quot;2003 calendar&quot; 15 20 26 11 2003<br />You now have a handy calendar for checking dates with days.<br />Use the tab key to move to the month or year to move up and down thru the calendar.<br />&nbsp;&quot; &quot; is the text on the top of the calendar, 15=height 21=width 26=day 11=month 2003=year <br />feel free to change these as your heart desires.<br /><br />You know I have showed you some examples but you know if you are like me you don't want to have to type<br />&nbsp;this in every time you want to use it so how about we make a nice little script to run it.<br /><br /># vi example1<br />use i to insert the following<br /># #!/bin/bash<br /># dialog --fselect / 12 20<br />#<br />Then save with<br /># :wq<br /><br />Now for example 2<br /># vi example2<br />Again use i to insert the following<br /># #!/bin/bash<br /># dialog --calendar &quot;2003 calendar&quot; 15 20 26 11 2003<br />#<br />Then save with <br /># :wq<br />there you have it our first two examples saved as scripts in your directory.<br />be sure to make them executable before trying to run them by.<br /># chmod 700 example1<br /># chmod 700 example2<br />You now have 2 executable scripts. What you did with the chmod is make the scripts readable,writable <br />and executable by the owner being you.<br /><br />Let's now add a little to the scripts with some input.<br />First <br /># vi example1<br />now change the script like so.<br /># #!/bin/bash<br /># echo -n &quot; Enter directory path to view &quot;<br /># read -e path<br /><br /># dialog --fselect $path 12 20<br /><br />Now save with <br /># :wq<br />you have now added the ability for the script to become pretty useful by having you ask for the path ahead of time to view.<br />Go ahead and run it and see what I mean.<br />What you have done is echo to the monitor the question, read you response and put this in the variable path<br />which we then use as a variable $path in the dialog function.<br /><br />I hope this has been educational and got you thinking of some interesting things to do with it.<br />More information can be found in the man pages.<br /># man dialog<br /><br />Ideas password tool for admin, User manger, script launcher just for a few. I use it to mange my Cluster with great success.<br /><br />Brett Hoff<br />President PcolaLug</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using Dialog</b><br />
+					Post by: <b>dpeach</b> on <b>November 26, 2003, 11:29:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dialog works for me, but when I do the:<br />rpm -q dialog<br /><br />I get:<br />package dialog is not installed<br /><br />So I dont know which version I have, but it at least works.<br /><br />Running Mandrake 9.1<br /><br />Thanks for the info.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>That's odd</b><br />
+					Post by: <b>bhoff</b> on <b>November 27, 2003, 09:33:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That is strange indeed!<br />rpm -q tells you if a package is installed and the version number.<br />rpm -q =querry package<br />Well atleast it works hope you can find some uses for it.<br /><br /><br />If anyone has something interesting they are trying to do with it and having trouble? If they will post it here we can all work on it together.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using Dialog</b><br />
+					Post by: <b>geekforGod</b> on <b>November 28, 2003, 12:09:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That is a pretty interesting utility, thanks for the quick intro Brett. I am sure I can find something to use it for. <br /><br />I have Mandrake 9.1 as well David, and it is installed under cdialog instead of just dialog, though the command is just dialog.<br /><br />Todd</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

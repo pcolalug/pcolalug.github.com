@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - installing FreeBSD on a laptop (or i want wireless!)</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by:  on January 22, 2004, 07:46:02 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>installing FreeBSD on a laptop (or i want wireless!)</b><br />
+					Post by: <b></b> on <b>January 22, 2004, 07:46:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">howdy.<br />thought i would try installing freeBSD 4.9 on my laptop. when booting from the cd it shows no 'conflicts' in the initial driver probe, then when checking devices it locks up and has several entries like...<br /><b>pci2 &lt;unknown card&gt; vender=bleh_hex_number...<br />pci0 &lt;unknown card&gt; vender=some_hex_number...</b><br />i have tried 'removing' any devices that are associated with pc* or pci* in the driver probe. same results. as far as i can tell it recognizes all my other hardware just fine.<br />is this a lost cause? is there anything i can do?<br /><br />on a slightly related issue, linux and freeBSD say they support my wireless card (on their websites), but i have not been able to get it working on linux. hence the freeBSD install attempt.<br />btw... my wireless card is is a hawking we110p. prism chipset (2.5 i think)<br /><br />if anyone has any tips on getting pcmcia wireless cards working in linux that would solve my main problem. and i could abandon the freeBSD install for the moment.<br /><br />thanks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>installing FreeBSD on a laptop (or i want wireless!)</b><br />
+					Post by: <b>ctrlz</b> on <b>January 22, 2004, 10:26:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">5.x has (better) cardbus support. i'd give it a whirl. (pref. 5.2)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>installing FreeBSD on a laptop (or i want wireless!)</b><br />
+					Post by: <b>imnes</b> on <b>January 22, 2004, 11:15:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a prismII based card, works in Linux and FreeBSD. &nbsp;FreeBSD you'll have to build support into your kernel I'm pretty sure. &nbsp;Most recent linux distro's should support it by default, might have to enable cardservices or something related.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>installing FreeBSD on a laptop (or i want wireless!)</b><br />
+					Post by: <b></b> on <b>January 23, 2004, 08:16:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">will retry the card in linux, reading more on card services now.<br />10-4 on the latest freeBSD.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>installing FreeBSD on a laptop (or i want wireless!)</b><br />
+					Post by: <b>dpeach</b> on <b>January 23, 2004, 10:25:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a couple of wirless cards. The D-Link &quot;just worked&quot; in Mandrake 9.1. I don't remember trying the Linksys. I have tried neither since moving up to 9.2, but I suspect it should work. <br /><br />These are both pcmcia cards.<br /><br />Don't know if that helps or not.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

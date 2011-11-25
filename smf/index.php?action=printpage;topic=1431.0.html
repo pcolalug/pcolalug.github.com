@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - usb wlan adapter network problems</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: danielos on February 25, 2004, 05:50:52 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>usb wlan adapter network problems</b><br />
+					Post by: <b>danielos</b> on <b>February 25, 2004, 05:50:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">My wireless adapter is prism-based I think,and at the linuxwlan project page it says my adapter/card is supported,but their software is too complicated for me,but my brother tried it once,and only got to the point of picking up the signal from the router,and not being assigned an ip.<br />The card is the Linksys WUSB 11 version 2.6.<br />Before I reinstalled Suse 9,it locked up the kernal(and did it in mandrake,and red hat 9 too)<br />Now I can plug it in,and it doesn't freeze up.I got into YAST, select the adapter,set it as a network device, but I don't know what port number or whatever it's on, and it ends up not working.<br /><br />&nbsp;Plus,I can't even boot into suse 9 right now because I reinstalled XP because of wireless issues that only seem to happen after trying to configure the adapter in linux,so I need to make a boot disk first. Luckily,my brother has a dual boot of suse 9 and xp pro too, so we can try to make a boot disk. But when we do try, it says the image isn't any good, nor the floppy any good. So about 2 months ago I was in the same position, so I just did the ftp install again &nbsp;:cry: . Atleast that solved the problem,and it took three less hours than the original install.<br /><br />Another thing that puzzles me: How come when I try to configure devices in linux they don't work in windows anymore? It seems like it shouldn't affect how they work in windows at all. :?: <br /><br />So in conclusion, are there any programs out there for my wireless adapter? I have spent many hours searching the google linux search,and none have worked for me so far. Should I trash this adapter and get one that's guaranteed for linux and works for other people?<br /><br />Thanks in advance, <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Daniel</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>usb wlan adapter network problems</b><br />
+					Post by: <b>dpeach</b> on <b>February 25, 2004, 10:51:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">When I was having problems with a USB to RJ-45, I booted up Knoppix. With Knoppix running the card/adapter worked fine. I was able to see what driver it was using and any other information I needed. I then went back into Mandrake and configured Mandrake to use the same information.<br /><br />Sorry that I cannot help you with more information than that. I had someone holding my Linux stunted brain through this process. He was able to tell me the commands to use to get the information I needed.<br /><br />Give Knoppix a shot. If it works in Linux, it will probably work with Knoppix.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>usb wlan adapter network problems</b><br />
+					Post by: <b>danielos</b> on <b>April 08, 2004, 10:37:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, after lots of searching, I think I found the solution.<br />http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/<br />Jean Tourrilhes has written a large document of supported devices in linux and where to get the drivers for them.On accident i printed out the whole document; its 79 pages long. :shock: Tons of devices.<br />Anyways, I found the chipset for my wireless adapter and the drivers for it;hopefully everything works out.<br />Maybe if anybody needs it in the LUG i can mail it to the user group since you &nbsp;probably have a better use for the big document to help people than me.<br />wish me luck! :)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>usb wlan adapter network problems</b><br />
+					Post by: <b>danielos</b> on <b>April 30, 2004, 07:05:05 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Fixed!<br />Instead of messing with wlan usb adapters, I bought a wireless to ethernet bridge and i plugged it into the ethernet port on my computer, which is supported in linux. :D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linux (2.4x) + Wifi+ USB = 0</b><br />
+					Post by: <b>tuxmoose</b> on <b>November 30, 2004, 10:05:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The word in the Lindows/Linspire community is that Wifi via USB is a lost cause for any pre-2.6 kernal, and not a sure thing even in 2.6. &nbsp;While 802.11b is readily doable, 802.11g is only for those with a great deal more time and luck than I'll ever have.<br /><br />Just get an Ornioco card PC-Card (PCMIA). &nbsp;They simply work.<br /><br />Hope this helps.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

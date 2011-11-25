@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - XFree 3.3.2 or 4.2</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: dpeach on August 30, 2003, 09:19:23 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>XFree 3.3.2 or 4.2</b><br />
+					Post by: <b>dpeach</b> on <b>August 30, 2003, 09:19:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I wanted to change my X server to 3.3.2 because my video is dog slow in 4.2. I made the change in Mandrake Control Center (9.1). Now I can get X to run, but not right. I have the desktop wallpaper showing and on occasion some of the icons. When it is actually bringing KDE up, I get flashes on the screen when it changes screen images, but I never actually see the images.<br /><br />I have an ATI Rage LT Pro AGP 2X. It has either 8 or 16 MB of RAM, I can't remember, but I lean towards it being 8. This is in my notebook, so it is a built in card.<br /><br />What I want to do is go back to using 4.2, or something that works. How do I do this?<br /><br />I can include a copy of my XF86Config file if necessary.<br /><br />I tried doing XFree86 -configure, but that did not yeild me the results I wanted. I have not tried every combination of all the possible settings in just doing an xf86config. But can if necessary. I have already spent 3 days at this.<br /><br />Thanks for your help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>XFree86</b><br />
+					Post by: <b></b> on <b>August 31, 2003, 07:15:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">David I have never tryed this but read it in the Mandrake Definitive Manual. You can log in as root in console and run XFdrake. It will bring up the configuration tool. If you pick graphic card and scroll to the bottom of the list there are selections for XFree3 and XFree4. These are drop down list. I tried it and picked a different card for my system under XFree4 since I am running it, it would let me make the changes or test it. I backed out and selected a card under XFree3 and it wanted to install software, I assume XFree86 3.3.6 (which it on the 9.1 powerpack disk set) so I backed out. So you might try reconfiguring it that way. &nbsp; Also I read on Mandrake club to install a different XFree86 rpm, get it, then run as root in console:<br />urpmi --allow-nodeps --allow-force XFree86-x.x.x-xmdk.i586.rpm<br />Maybe some of this will help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>XFree 3.3.2 or 4.2</b><br />
+					Post by: <b>dpeach</b> on <b>August 31, 2003, 10:45:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Excuse the version numbers. I realized that I am working with 4.3, not 4.2. But anyway, thanks for the reply Ed.<br /><br />I have tried the XFdrake. But it always crashes out when I test it. I have not tried doing it without a test. I know I have read somewhere to not test your configuration, but actually put it in place to see if it works. I will give it a try later.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>XFree 3.3.2 or 4.2</b><br />
+					Post by: <b>dpeach</b> on <b>August 31, 2003, 04:29:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That was it. Just don't test after setting it up. I set it up with 4.3. I have not tried again to get 3.3.2 going, I was just happy to have anything. I will try with 3.3.2 the next time I am there. Right now I am trying to figure out why my modem connection keeps crashing out.<br /><br />Thanks for prodding me to think through old knowledge piled up in my brain somewhere.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

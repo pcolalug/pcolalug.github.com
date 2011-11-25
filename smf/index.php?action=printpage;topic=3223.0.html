@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Using mplayer as a not laggy mythTV?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: OmnipotentEntity on September 10, 2007, 01:31:51 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Using mplayer as a not laggy mythTV?</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>September 10, 2007, 01:31:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Question, I&#039;m looking into making my computer into a place where I can record myself playing video games.&nbsp; Like PS2 games.<br /><br />I have my capture card installed and configured and I can play it with mplayer or anything else really.<br /><br />However, I can&#039;t play it and capture it at the same time.<br /><br />Well, I&#039;ve come up with two different ways to do that actually, but each has a problem.<br /><br />I can tee /dev/video0 to two fifos and play from one and record from the other, but it only runs at 10fps because the v4l driver doesn&#039;t run the control commands for the device correctly because it&#039;s attempting to act upon the fifo and not the block device.<br /><br />Or I can mplayer then dump the video stream to a fifo, tee the fifo into another instance of mplayer and mencoder, but that&#039;s results in a 1/5 second of lag, which is undoable for playing video games.<br /><br />Does anyone know how I can send the device control signals directly to /dev/video0 so when I attempt to play the video it runs at 29.97 fps?<br /><br />Or of a different way to do it altogether?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Using mplayer as a not laggy mythTV?</b><br />
+					Post by: <b>Brent</b> on <b>September 24, 2007, 09:02:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had the same basic issue here, trying to record video games on a pvr 250.<br /><br />There will always be some lag between what you do in game, and what happens on the tuner.&nbsp; Honestly, your best option is to split out the coax.&nbsp; One goes to the tv, and the other goes to the capture card.&nbsp; I took the raw mpeg and converted it to avi using ffmpeg, then edited it using avidemux.&nbsp; The end result can be found here:<br /><br />http://video.google.com/videosearch?q=tastygrunt<br /><br />Keep in mind the source vids were much higher quality.<br /><br />Can&#039;t wait to try the in game playback in halo 3.&nbsp; Looks like it will rock.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Using mplayer as a not laggy mythTV?</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>September 26, 2007, 04:10:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3223.msg15583.html#msg15583">Quote from: Brent on September 24, 2007, 09:02:01 am</a></div><div class="quote">I had the same basic issue here, trying to record video games on a pvr 250.<br /><br />There will always be some lag between what you do in game, and what happens on the tuner.&nbsp; Honestly, your best option is to split out the coax.&nbsp; One goes to the tv, and the other goes to the capture card.&nbsp; I took the raw mpeg and converted it to avi using ffmpeg, then edited it using avidemux.&nbsp; The end result can be found here:<br /><br />http://video.google.com/videosearch?q=tastygrunt<br /><br />Keep in mind the source vids were much higher quality.<br /><br />Can&#039;t wait to try the in game playback in halo 3.&nbsp; Looks like it will rock.<br /></div><br />Pulling it directly from the tuner yeild less than a noticible amount of lag.&nbsp; The lag in this case is generated from mplayer converting it and dumping it.&nbsp; I&#039;ve been getting my TV downstairs setup for just this task, but I had to get a new cheapass computer with a giant hard drive first. :3</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - slack 11 xfs on sata drive</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Brent on October 28, 2006, 10:01:38 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>slack 11 xfs on sata drive</b><br />
+					Post by: <b>Brent</b> on <b>October 28, 2006, 10:01:38 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I reckon I&#039;m officially done with slackware.<br /><br />I wanted to install slack 11 this weekend, just to give it a spin, but I ran into a major problem.<br /><br />I have xfs partitions set up on my nice shiny sata drive that i wanted to use for slackware.&nbsp; Slackware has a boot kernel for sata support.&nbsp; Slackware has a boot kernel for xfs support.&nbsp; Lo and behold, slackware has NO kernel for xfs and sata support&nbsp; &gt;:(<br /><br />IMO slack should have a sata kernel that supports most journaling file systems (ext3,rieser, xfs, and jfs).&nbsp; It wouldn&#039;t really add *that* much weight to the default kernel, and besides, who uses the default kernel anyways?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>lloydr</b> on <b>October 28, 2006, 11:34:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">actually, for kernels, the xfs kernel DOES infact support sata.<br /><br />http://slackware.mirrors.tds.net/pub/slackware/slackware-11.0/kernels/SATA-SUPPORT.TXT<br /><div class="codeheader">Code:</div><div class="code">xfs.s/config:# CONFIG_BLK_DEV_IDE_SATA is not set<br />xfs.s/config:CONFIG_SCSI_SATA=y<br />xfs.s/config:CONFIG_SCSI_SATA_AHCI=m<br />xfs.s/config:CONFIG_SCSI_SATA_SVW=m<br />xfs.s/config:CONFIG_SCSI_SATA_NV=m<br />xfs.s/config:CONFIG_SCSI_SATA_QSTOR=m<br />xfs.s/config:CONFIG_SCSI_SATA_PROMISE=m<br />xfs.s/config:CONFIG_SCSI_SATA_SX4=m<br />xfs.s/config:CONFIG_SCSI_SATA_SIL=m<br />xfs.s/config:CONFIG_SCSI_SATA_SIS=m<br />xfs.s/config:CONFIG_SCSI_SATA_ULI=m<br />xfs.s/config:CONFIG_SCSI_SATA_VIA=m<br />xfs.s/config:CONFIG_SCSI_SATA_VITESSE=m<br /></div><br />it is set as modules as far as the individual devices, like all kernels. only difference in the sata kernel is that the devices are all set to yes.<br /><br />also, in the sata kernel, xfs support is set as a module. <br /><br />now, there is a tool called minitrd that is used in this situation <br /><br />when you read /boot/README.initrd, you see this:<br /><div class="quoteheader">Quote</div><div class="quote">The usual reason to use an initrd is because you need to load kernel<br />modules before mounting the root partition. Usually these modules are<br />required to support the filesystem used by the root partition (ext3,<br />reiserfs, xfs), or perhaps the controller that the hard drive is attached<br />to (SCSI, RAID, etc). Essentially, there are so many different options<br />available in modern Linux kernels that it isn&#039;t practical to try to ship<br />many different kernels to try to cover everyone&#039;s needs. It&#039;s a lot more<br />flexible to ship a generic kernel and a set of kernel modules for it.<br /></div><br />best bet would be use sata kernel and use mkinitrd for xfs, _OR_ if you look at using huge26 kernel..... it has _EVERYTHING_<br /><div class="codeheader">Code:</div><div class="code">huge26.s/config:# CONFIG_BLK_DEV_IDE_SATA is not set<br />huge26.s/config:CONFIG_SCSI_SATA=y<br />huge26.s/config:CONFIG_SCSI_SATA_AHCI=y<br />huge26.s/config:CONFIG_SCSI_SATA_SVW=y<br />huge26.s/config:CONFIG_SCSI_SATA_MV=y<br />huge26.s/config:CONFIG_SCSI_SATA_NV=y<br />huge26.s/config:CONFIG_SCSI_SATA_QSTOR=y<br />huge26.s/config:CONFIG_SCSI_SATA_PROMISE=y<br />huge26.s/config:CONFIG_SCSI_SATA_SX4=y<br />huge26.s/config:CONFIG_SCSI_SATA_SIL=y<br />huge26.s/config:CONFIG_SCSI_SATA_SIL24=y<br />huge26.s/config:CONFIG_SCSI_SATA_SIS=y<br />huge26.s/config:CONFIG_SCSI_SATA_ULI=y<br />huge26.s/config:CONFIG_SCSI_SATA_VIA=y<br />huge26.s/config:CONFIG_SCSI_SATA_VITESSE=y<br />huge26.s/config:CONFIG_SCSI_SATA_INTEL_COMBINED=y<br /></div>all sata enabled, and, http://slackware.mirrors.tds.net/pub/slackware/slackware-11.0/kernels/huge26.s/config<br />looking at config, xfs is added directly in, rather than a module.<br /><div class="codeheader">Code:</div><div class="code">CONFIG_XFS_FS=y<br />CONFIG_XFS_EXPORT=y<br />CONFIG_XFS_QUOTA=y<br />CONFIG_XFS_SECURITY=y<br />CONFIG_XFS_POSIX_ACL=y</div><br />;) next time, I&#039;d recommend researching the kernel variations first heh... they all have the same essential base. although, to save from having a monster bloated kernel with everything enabled like huge26, they just kick certain things back to module, but mkinitrd is always there.....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>danc</b> on <b>October 28, 2006, 01:54:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14967.html#msg14967">Quote from: Brent on October 28, 2006, 10:01:38 am</a></div><div class="quote">Well, I reckon I&#039;m officially done with slackware.</div><br /><br />Haven&#039;t you been done with it for quite a while?<br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14967.html#msg14967">Quote from: Brent on October 28, 2006, 10:01:38 am</a></div><div class="quote">I wanted to install slack 11 this weekend, just to give it a spin, but I ran into a major problem.</div><br /><br />Well, lloydr beat me to it, but what you really had was a *minor* problem.&nbsp; As he said, just use the &quot;huge26&quot; kernel to get installed, and then compile your own kernel with whatever support you need.&nbsp; Easy, especially since you don&#039;t use the default kernel, anyway.&nbsp; Right?<br /><br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14967.html#msg14967">Quote from: Brent on October 28, 2006, 10:01:38 am</a></div><div class="quote">IMO slack should have a sata kernel that supports most journaling file systems (ext3,rieser, xfs, and jfs).&nbsp; It wouldn&#039;t really add *that* much weight to the default kernel, and besides, who uses the default kernel anyways?<br /></div><br /><br />Ummm..., right.&nbsp; See above.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>rugmonster</b> on <b>October 29, 2006, 08:02:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wow, that was a lot of RTFM. I understand where Brent is coming from. I think it&#039;s completely understandable to expect a modern distro to detect and properly handle your hardware. You guys are acting like he insulted your first born child by voicing his dislike of Slackware. My question is, why on earth is 2.4 still the default kernel and why is it that the kernel that supports such common hardware and better filesystems not the default? It is only the install kernel and those that want a more finely tuned kernel can and will compile their own. Most distros include all of the necessary modules but only enables the ones that are necessary for the target system based on hardware detection at install. This definitely touches on a point that I think is valid and not really deserving of the response it received. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>danc</b> on <b>October 29, 2006, 09:35:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14973.html#msg14973">Quote from: rugmonster on October 29, 2006, 08:02:49 pm</a></div><div class="quote">Wow, that was a lot of RTFM. I understand where Brent is coming from. I think it&#039;s completely understandable to expect a modern distro to detect and properly handle your hardware. You guys are acting like he insulted your first born child by voicing his dislike of Slackware. My question is, why on earth is 2.4 still the default kernel and why is it that the kernel that supports such common hardware and better filesystems not the default? It is only the install kernel and those that want a more finely tuned kernel can and will compile their own. Most distros include all of the necessary modules but only enables the ones that are necessary for the target system based on hardware detection at install. This definitely touches on a point that I think is valid and not really deserving of the response it received. <br /></div><br /><br />The distro (Slackware) does detect and properly handle the hardware, assuming one chooses an appropriate kernel (from a list of them) provided at the beginning of the installation.&nbsp; In the case in question, all that was required was to choose the &quot;huge26&quot; kernel and proceed...<br /><br />The default kernel is still 2.4.x because Pat V. thinks the 2.6 is not yet stable enough for his distro.&nbsp; That&#039;s pretty much it, and there isn&#039;t much more to say about it.&nbsp; Again, the 2.6 (several variations) *is* included and can be chosen at the beginning of the install.&nbsp; It will be used for the install, and will be the bootable kernel once the installation is completed.&nbsp; A more finely tuned kernel can certainly be done, if desired, but is not required.&nbsp; All required modules are included, and no compiling is needed.<br /><br />The response that the original post received was due in large part to the inaccurate description of a problem which doesn&#039;t really exist.&nbsp; It&#039;s just a matter of doing the install properly.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>Brent</b> on <b>October 29, 2006, 11:51:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">To be fair, back when I was using slackware, all the documentation I read on the included 2.6 kernel basically stated that 2.4 should be installed first, and then 2.6 is installed, just so you have a safety net if something goes wrong.&nbsp; Also, 2.6 comes on the second cd (or used to).&nbsp; Since I never download the second cd, booting from 2.6 never even crossed my mind.&nbsp; Heck I didn&#039;t even know the installer would correctly set 2.6 up from boot.&nbsp; ^-^<br /><br />Anyway, during the whole slackware shebang, I reinstalled xubuntu.&nbsp; That&#039;s when I realized that customizing slackware to look and feel like xubuntu would take alot more customization than it&#039;d be worth.&nbsp; Although linux is linux, some flavors taste different than others, and lately I&#039;ve gotten used to *buntu.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>danc</b> on <b>October 30, 2006, 08:56:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14975.html#msg14975">Quote from: Brent on October 29, 2006, 11:51:11 pm</a></div><div class="quote">To be fair, back when I was using slackware, all the documentation I read on the included 2.6 kernel basically stated that 2.4 should be installed first, and then 2.6 is installed, just so you have a safety net if something goes wrong.&nbsp; Also, 2.6 comes on the second cd (or used to).&nbsp; Since I never download the second cd, booting from 2.6 never even crossed my mind.&nbsp; Heck I didn&#039;t even know the installer would correctly set 2.6 up from boot.&nbsp; ^-^</div><br /><br />To be fair, not keeping up with the progress/changes in a distro before (falsely) knocking it, is not at all fair.&nbsp; Making assumptions based on old/incorrect information is the fault only of the one doing the assuming.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>Brent</b> on <b>October 30, 2006, 09:48:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">* kernels/huge26.s/* - added a 2.6.17.13 kernel to the official <br />&nbsp; &nbsp; &nbsp; (supported) package set.&nbsp; The user will be given a choice of<br />&nbsp; &nbsp; &nbsp; whether to install the 2.4.33.3 or 2.6.17.13 kernel.&nbsp; If a 2.6<br />&nbsp; &nbsp; &nbsp; kernel is used, additional packages must be added after the<br />&nbsp; &nbsp; &nbsp; installation -- at the very least the kernel-modules package.<br />&nbsp; &nbsp; &nbsp; Possibly also the kernel-headers to provide /usr/include/sound<br />&nbsp; &nbsp; &nbsp; used to compile ALSA applications.</div><br />^&nbsp; That language just screams officially supported to me .... ::)&nbsp; I&#039;m sorry, but if you have to add packages for modules and headers *after* you boot into the installed system, that doesn&#039;t inspire much confidence in me.&nbsp; I consider something &#039;fully supported on boot&#039; to be entirely setup and ready to go.&nbsp; It doesn&#039;t look like support for the 2.6 kernel has changed much at all from 10.x to me.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>danc</b> on <b>October 30, 2006, 02:34:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14978.html#msg14978">Quote from: Brent on October 30, 2006, 09:48:16 am</a></div><div class="quote"><div class="quoteheader">Quote</div><div class="quote">* kernels/huge26.s/* - added a 2.6.17.13 kernel to the official <br />      (supported) package set.  The user will be given a choice of<br />      whether to install the 2.4.33.3 or 2.6.17.13 kernel.  If a 2.6<br />      kernel is used, additional packages must be added after the<br />      installation -- at the very least the kernel-modules package.<br />      Possibly also the kernel-headers to provide /usr/include/sound<br />      used to compile ALSA applications.</div><br />^  That language just screams officially supported to me .... ::)  I&#039;m sorry, but if you have to add packages for modules and headers *after* you boot into the installed system, that doesn&#039;t inspire much confidence in me.  I consider something &#039;fully supported on boot&#039; to be entirely setup and ready to go.</div><br /><br />&lt;sigh&gt;.....  The modules and headers are *ON THE INSTALLATION CD*, and are installed using &quot;installpkg&quot;, just like any other Slackware package.  Yes, a reboot is then required, and it&#039;s done.  There are 3 or 4 packages, which is not a big deal.<br /><br />Is *buntu (or any other distro) &quot;entirely setup and ready to go&quot; after the first boot-up?  Does it have MP3/DVD support ready to go?  Nope.  You have to edit something to add the sources to go and download them, and then install them, right?  Is that easier than installing something from the installation CD?  I don&#039;t think so.<br /><br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14978.html#msg14978">Quote from: Brent on October 30, 2006, 09:48:16 am</a></div><div class="quote"> It doesn&#039;t look like support for the 2.6 kernel has changed much at all from 10.x to me.</div><br /><br />That&#039;s because you&#039;re not looking very well.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>rugmonster</b> on <b>October 30, 2006, 03:18:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">MP3, yes. DVD, no.<br /><br />The target audience of Slackware is a different crowd than the folks that use the various flavors of Debian and Ubuntu. For this reason, no one should be pushing the Slackware crowd to do anything differently. It may not make sense to the folks that find Debian, Ubuntu, Fedora, SUSE, or Gentoo attractive, but it makes sense to Slackware folks. Just like I hate YaST, yum, RPMs and most distro specific (Fedora/SUSE) config tools, I&#039;m not going to try to convince someone who thinks they&#039;re the bee&#039;s knees otherwise.<br /><br />The only thing we have accomplished here is to establish Brent likes Xubuntu better than he likes Slackware. Dan and Lloyd like Slackware and things work well for them. Different strokes for different folks.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: slack 11 xfs on sata drive</b><br />
+					Post by: <b>danc</b> on <b>October 30, 2006, 09:04:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14982.html#msg14982">Quote from: rugmonster on October 30, 2006, 03:18:47 pm</a></div><div class="quote">MP3, yes. DVD, no.<br /><br />The target audience of Slackware is a different crowd than the folks that use the various flavors of Debian and Ubuntu. For this reason, no one should be pushing the Slackware crowd to do anything differently. It may not make sense to the folks that find Debian, Ubuntu, Fedora, SUSE, or Gentoo attractive, but it makes sense to Slackware folks. Just like I hate YaST, yum, RPMs and most distro specific (Fedora/SUSE) config tools, I&#039;m not going to try to convince someone who thinks they&#039;re the bee&#039;s knees otherwise.</div><br /><br />Was anyone here trying to get anyone else to do something different, or to convince them of one distro&#039;s superiority over another?&nbsp; I don&#039;t think so -- certainly I was not doing that.&nbsp; My involvement in this thread was to point out some mistaken beliefs about what kernel(s) are available in a Slackware installation.&nbsp; Simple correction of facts.&nbsp; My statement/question about MP3/DVD was simply to illustrate that *all* distros require some configuration after the initial install to get things the way you want them.&nbsp; There isn&#039;t much difference between installing kernel modules and installing multimedia support, as far as the mechanics of doing it.<br /><br /><br /><br /><div class="quoteheader"><a href="index.php%3Ftopic=3046.msg14982.html#msg14982">Quote from: rugmonster on October 30, 2006, 03:18:47 pm</a></div><div class="quote">The only thing we have accomplished here is to establish Brent likes Xubuntu better than he likes Slackware. Dan and Lloyd like Slackware and things work well for them. Different strokes for different folks.</div><br /><br />Well, we&#039;ve accomplished something else, too... but I&#039;ll be tactful and not mention it.&nbsp; &nbsp; :-*<br /><br />Dan<br /></div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

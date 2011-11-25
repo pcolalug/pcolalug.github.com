@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Port Knocking</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Security => Topic started by: danc on February 06, 2004, 08:21:44 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Port Knocking</b><br />
+					Post by: <b>danc</b> on <b>February 06, 2004, 08:21:44 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Found this article about how to remotely access your machine, without leaving any ports open. &nbsp;Haven't tried it, but seems like a great idea.<br /><br />Info here: &nbsp;http://www.linuxjournal.com/article.php?sid=6811<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>I see a problem with this</b><br />
+					Post by: <b></b> on <b>February 07, 2004, 03:11:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I see a problem with this.<br /><br />On packet switched networks, you can't be certain that your packets will arrive in order that your port-knock &quot;password&quot; requires.<br /><br />If you wanted to implement this properly here's what I suggest.<br />Implement a seeded random port sequence that changes on a timed basis, i.e. &quot;Secure-ID&quot; style. &nbsp;This would prevent anyone who guessed your port-knock combo to &nbsp;be able to use it again. &nbsp;Well, they could use it until the current combo expires, and they would need the correct seed to stay in sync.<br /><br />Other than that, it's not a bad idea. &nbsp;I also can see two more downsides:<br />1. &nbsp;Increase port scans (people looking for port-knock combos), which lead to bigger log files to review.<br />2. &nbsp;Increased firewall ruleset complexity, which is never a good thing.<br /><br />Later,<br />Kyle</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

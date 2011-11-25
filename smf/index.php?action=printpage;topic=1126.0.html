@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - FreeBSD and Java</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Operating Systems => Topic started by: imnes on November 04, 2003, 11:31:00 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FreeBSD and Java</b><br />
+					Post by: <b>imnes</b> on <b>November 04, 2003, 11:31:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">So far I've gotten everything working in FreeBSD that I wanted. &nbsp;So far APM support is working perfect, sound card is good (I have the kernel mixing 4 audio sources so I can run ESD, ArtsD, and native sound apps all at the same time). &nbsp;PCCard support working, built-in wireless card finally working again. &nbsp;One thing I'm not sure of...<br /><br />I've installed the Diablo SDK 1.3 port on BSD 4.9. &nbsp;How do I register it so that all users and other programs can find it? &nbsp;I'm used to the ports system doing this for me. &nbsp;<br /><br />Just to get things working I updated my .cshrc file and set my own path, but other programs that I launch from a GUI that need to know where java is apparently don't rely on my csh path setttings....<br /><br />I assume I can just modify a global path setting... somewhere... &nbsp;Or am I supposed to do something different?<br /><br />Where can I update the global system path?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>FreeBSD and Java</b><br />
+					Post by: <b>imnes</b> on <b>November 04, 2003, 12:54:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Under linux all I would do is create two new files:<br /><br />/etc/profile.d/java.sh<br />/etc/profile.d/java.csh<br /><br />Make them executable, append the PATH in each, and everything was happy. &nbsp;Not sure what the equivalent would be in FreeBSD. &nbsp;From what I've read so far in my google searches I need to edit the path in the files<br /><br />/etc/profile<br />/etc/cshrc<br /><br />to get similar results. &nbsp;I'll try it when I get home tonight and see if it works...<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

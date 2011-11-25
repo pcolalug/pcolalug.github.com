@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Linspire PhoneGaim</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: imnes on July 18, 2004, 08:17:27 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>imnes</b> on <b>July 18, 2004, 08:17:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Linspire has integrated their SIPphone (IP Based phone) service into gaim and named it PhoneGaim. &nbsp;As usual, linspire uses get a binary package and other users can grab the source. &nbsp;Their SIP phone service is free, you get a phone number, can call other IP based phone users for free, and can call regular phones. &nbsp;I think the site says you get 5 minutes of calls to 10 different countries free per day.<br /><br />http://www.homeweb.org/~imnes/linux/linspire/screens/phonegaim1.png<br /><br />The website for their SIP phone service is http://www.sipphone.com/<br />They have physical phone hardware, and software-based phones for Windows, Mac, and Linux.<br /><br />And the website for PhoneGaim is <br />http://www.phonegaim.com/<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>L.Rentz</b> on <b>July 19, 2004, 05:31:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">imnes,<br />I have been using skype on a windows box for voip for some time now, well several weeks ago they came out with a linux version. &nbsp;It is far superior to any voip that I have ever used. &nbsp;Strictly computer to computer. The linux version is not quite as good as the windows version but its good. &nbsp; Check it out at:<br /><br /><br />http://www.skype.com/<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>imnes</b> on <b>July 19, 2004, 06:37:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I do like the ability of phonegaim / sip to be able to call regular phone #'s and have regular phones call me. &nbsp;That's a nice feature. &nbsp;<br /><br />I'll give Skype a try and see how it does. &nbsp;I have Java Desktop 2 on my laptop so I can run it there but I have Linspire (Debian Sid) on my desktop, not sure if any of the binaries will work on it. &nbsp;Do you know if a source package / debian build is available?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>L.Rentz</b> on <b>July 19, 2004, 01:39:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Only see the binaries. &nbsp; :( <br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>imnes</b> on <b>July 24, 2004, 09:44:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'll have a slackware package of phonegaim up later if anyone wants to try it. &nbsp;I'm building it on Slackware 10 with Dropline Gnome but hopefully it will work on stock Slackware 10 as well. &nbsp;I'll have someone try it on a Slackware 9 setup also and see if it functions there.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>imnes</b> on <b>July 24, 2004, 02:02:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Got an initial build of it done. &nbsp;What a mess, had to completely hack the dependencies and makefiles to get it to build. &nbsp;Only problem seems to be one missing icon for the Call button - I'm not sure why I'll try to perfect it later. &nbsp;<br /><br />If anyone using slackware 10 wants to try it out, first remove your existing gaim, then get the packages from <br />http://www.cs.uwf.edu/~nsmith/phonegaim-0.79-slackware-10/<br />(there's 4 of them) and installpkg them.<br /><br />Let me know if it works, if you notice any problems, if it crashes, if it won't even run, etc.<br /><br />Also any brave users with older revisions of slackware could try it as well, I only have 10.0 to try on right now.<br /><br />Screenshot: http://www.cs.uwf.edu/~nsmith/phonegaim-0.79-slackware-10/0_79_on_10.png<br /><br />I think I have to open up a port in my firewall before this will work, but it you want to try calling me from your SIP Phone / PhoneGaim client, my # is 1-747-669-7873<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>compiling on slack ..</b><br />
+					Post by: <b>frig_neutron</b> on <b>November 23, 2004, 08:04:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">hi. &nbsp;for the past day or so, I have been trying to attempt the same feat and compile phonegaim 0.79 on slack 10. &nbsp;<br /><br />thanks to your posted binaries, this is no longer imperative, but I still want build it for sport.<br /><br />something puzzles me though.. I get the following error during compilation:<br /><br />phonegaim-0.79/src/sipphone.c:235: undefined reference to `linphone_core_check_stun_settings'<br /><br />unlike all the other missing symbols errors, I cannot for the life of me find a mention of &quot;linphone_core_check_stun_settings&quot; in any headers on my system (i installed linphone-0.12.2 as a prerequisite), or for that matter, on google. &nbsp;The only other place I have ever seen this symbol, is in a diff file called &quot;t&quot;, in the src directory. &nbsp;And all that does is removes the line from the source file.<br /><br />That sorf of implies that i can just comment out the line, and everything will compile, which it does. &nbsp;But still WTF? &nbsp;The diff doesn't even cleanly apply to sipphone.c! &nbsp;<br /><br />Anyway.. yadayadayada, my phonegaim build doesn't load any plugins, thanks a lot for the slack binaries, and if you have anything to say about this, i would be very interested to hear it.<br /><br />also - since you've probably dealt with it, the reason my phonegaim build does not work, is because none of the plugins load. &nbsp;and i am not quite sure why..</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>imnes</b> on <b>November 23, 2004, 08:49:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sorry man, it's been 4 months since I did that, and it was a nightmare to get it to build. &nbsp;I don't really remember all the hacking that went on to get it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>frig_neutron</b> on <b>November 23, 2004, 08:55:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">np - thanks anyway.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Linspire PhoneGaim</b><br />
+					Post by: <b>imnes</b> on <b>January 06, 2005, 04:41:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">PhoneGaim is now available for Windows.<br /><br />http://sipphone.com/phonegaim/<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

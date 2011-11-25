@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Newbie-Style install question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by:  on February 08, 2004, 12:14:25 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b></b> on <b>February 08, 2004, 12:14:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, this question sounds rather silly but here goes...<br /><br />I have a brand spanking new, unpartioned hard drive(D) in my computer. My main hard drive(C) runs XP. Now, I want to put Linux, by way of Mandrake, on my new hard drive but all of the instructions I have been reading involve partitioning one drive to run both OS. So, do I just install Linux to my second hard drive as though Windows does not exist on my machine, and choose which hard drive to boot on startup, or do I need to form a new partition in my main hard drive so Linux does not try to crawl over and eat windows when it gets bored? Thanks for any advice as I have never installed an OS before.... :D<br /><br />Miranda</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>rugmonster</b> on <b>February 08, 2004, 01:04:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Linux looks at your hard drives a little differently than Windows does. Say you have your C: drive, being the only partition on your first hard drive. If you were to partition and format the second hard drive, it would be D: or whatever drive letter you assign it.<br /><br />In linux, devices have their own names based on several factors. IDE hard drives are pretty easy. Based on what place your hard drive is at on your IDE chain will determine what device name it is. <br /><br />Primary Channel/Master Device (normally C: ) = /dev/hda<br />Primary Channel/Slave Device = /dev/hdb<br />Secondary Channel/Master Device (normally cd-rom) = /dev/hdc<br />Secondary Channel/Slave Device = /dev/hdd<br /><br />Then, on those devices, you have partitions. They are numbered by order. If there is one partition on /dev/hda, then the partition will be known as /dev/hda1. Primary partitions are numbered 1 through 4 and extended partitions start at 5 and go up. No matter how many primary partitions you have, your first extended partition will always be 5.<br /><br />So, lets take a hypothetical system with two hard drives dual booting Windows and Linux. For simplicity, we will have one partition for Windows on one drive and a root partition and a swap partition on the second. There is a CD-ROM and a CD-RW in this system as well, so in Windows, you will probably have a drive layout like so.<br /><br />1st Partition on Primary Master HD = C:<br />CD-ROM on Secondary Master = D:<br />CD-RW on Secondary Slave = E:<br /><br />Windows won't even recognize the other drive normally because it only cares about filesystems it knows how to read. You will see it if you go to Disk Management however.<br /><br />On Linux, your disk layout will look like this.<br /><br />1st Partition on Primary Master HD = /dev/hda1<br />1st Partition on Primary Slave HD (root partition) = /dev/hdb1<br />2nd Partition on Primary Slave HD (swap partition) = /dev/hdb2<br />CD-ROM on Secondary Master = /dev/hdc<br />CD-RW on Secondary Slave = /dev/hdd<br /><br />Your boot device will be determined by your BIOS more than likely. You tell it there which device you want to boot from. Then, in fdisk or whatever disk partition tool you use, you would set which partition on the drive you want to be bootable. For the linux disk, you would set /dev/hdb1 bootable. You set the partition that your kernel resides on as bootable.<br /><br />You can then use either the Windows bootloader for your dual boot by setting the Primary Master as your boot device in your BIOS and using bootpart (http://www.winimage.com/bootpart.htm) if you are using WinNT/2k/XP. You can also set the boot device to the Primary Slave and use your favorite Linux based bootloader to select which OS you start up. That is up to you and what you feel comfortable with. Regardless, you will have two bootloaders, one for each OS as they tell the system where to find the OS boot information on your hard drive.<br /><br />Let us know if you need any more help. I know I can help on either side using Windows' bootloader, Lilo or Grub.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>danc</b> on <b>February 08, 2004, 01:39:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote"><br />1st Partition on Secondary Master HD (root partition) = /dev/hdb1<br />2nd Partition on Secondary Master HD (swap partition) = /dev/hdb2<br /></div><br />Nice explanation, Ruggy, except that &quot;Secondary Master&quot; above should be &quot;Primary Slave&quot;...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>rugmonster</b> on <b>February 08, 2004, 10:23:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah, it was late when I typed that. I'll fix it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Newbie-Style install question</b><br />
+					Post by: <b>steve</b> on <b>February 10, 2004, 09:32:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: mab</div><div class="quote">So, do I just install Linux to my second hard drive as though Windows does not exist on my machine, and choose which hard drive to boot on startup, or do I need to form a new partition in my main hard drive so Linux does not try to crawl over and eat windows when it gets bored? Thanks for any advice as I have never installed an OS before.... :D<br /><br />Miranda</div><br /><br />In a short, non-technical, answer, Mandrake should handle all of this for you. When you boot up the Mandrake CD it should see that Windows is installed on your &quot;first&quot; drive and offer to install Mandrake on the second drive. When finished, it should create a boot menu for you so when you turn the power to your computer on a menu will appear giving you the option to boot Windows or Linux.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b></b> on <b>February 10, 2004, 09:37:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Bah! now you've gone all technical on the poor guy...<br /><br />Look if you have a bunch of files you cant backup or dont have the windows install disk grab an il*coff*LEGAL copy of Partition magic and size down your C: to about half. Now go and Install Linux boy!<br /><br />If you dont believe in il*coff*LEGAL software from the p2p networks you can always backup your documents and start by Installing XP fresh... use the 'C' option in setup to configure your own partitions. Windows needs 4gb at the bare minimum(can we say tons of unused drivers?)<br /><br />thats two ways of doing it the SIMPLE WAY. ooooOORRRRrr you can go with the Linux Boot Disk(ghetto-style.......word..)<br /><br />Anyways thats what i figured out, I may be way wrong which im sure anyone of them more technical ppl will pound the crap our of me for....eerrr correct me on.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>steve</b> on <b>February 10, 2004, 10:25:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: modki</div><div class="quote">Look if you have a bunch of files you cant backup or dont have the windows install disk grab an il*coff*LEGAL copy of Partition magic and size down your C: to about half. Now go and Install Linux boy!</div><br /><br />Not necessary. If everyone paid attention to the original post, Drive D is unpartitioned. Most Linux CDs will detect this and install to that drive leaving the C drive alone. The only change to C wil be (Technical explenation) modifying the boot sector.<br /><br />You all are making this way more complicated than is needed.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>rugmonster</b> on <b>February 10, 2004, 10:48:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Steve</div><div class="quote">You all are making this way more complicated than is needed.</div><br /><br />Why do you say that? I provided a background of how linux deals with ide devices and partitions, which is invaluable in any kind of use of a linux. How is that overly complicated? Every beginner's guide covers this.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>steve</b> on <b>February 10, 2004, 10:57:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote"><div class="quoteheader">Quote from: Steve</div><div class="quote">You all are making this way more complicated than is needed.</div><br /><br />Why do you say that? I provided a background of how linux deals with ide devices and partitions, which is invaluable in any kind of use of a linux. How is that overly complicated? Every beginner's guide covers this.</div><br /><br />Yes you did provide a background and it was very well done and precise. <br /><br />However, I'm afraid that when a new user asks how to install Linux on an empty drive, that kind of answer is more likely to scare them away from Linux than entice them to use it and learn it as they use it.<br /><br />Example, If people were to get an explanation at Best Buy or Circuit City about all of the technical aspects Windows goes through when installing itself on a system, they'd never even buy a computer. The object in all operating systems is to isolate the normal user as much as possible from the behind the scenes complications that an OS goes through to run your computer. Only us Geeks are interested in that.<br /><br />If the questions had been phrased &quot;How does Linux install and play nice on a computer with Windows&quot; then your explanation would have been more appropriate.<br /><br />She was just asking how to get the OS on an empty D drive using Mandrake.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>rburt3</b> on <b>February 13, 2004, 07:57:19 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Of course, folks new to an operating system love to hear its supporters bicker over trivialities, too... :roll:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>DragonthePeanutUser</b> on <b>February 13, 2004, 03:04:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Look... &nbsp;still being a Linux noob, maybe I can explain in layman's terms...... &nbsp;Currently, I'm running Mandrake 9.2 and WinXP Home. &nbsp;When I installed, I was given 4 options. &nbsp;Personally, I chose the custom disk partitioning, clicked the tab that says hdb(your 2nd HD) and set 5.7GB as Ext3 and the rest to swap. &nbsp;If you need more help, I can give you my # and we'll handle it. &nbsp; 8)<br /><br /><br /><div class="quoteheader">Quote from: modki</div><div class="quote"><br />If you dont believe in il*coff*LEGAL software from the p2p networks you can always backup your documents and start by Installing XP fresh... </div><br /><br />P2P?? &nbsp;Can we say trojan??</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Thanks again</b><br />
+					Post by: <b></b> on <b>February 14, 2004, 04:13:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have Linux :D <br /><br />Thanks for all fo the help, and, um, spirited discussion!<br /><br />Linux is offically my favorite new toy.....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>rugmonster</b> on <b>February 14, 2004, 11:02:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: mab</div><div class="quote">...spirited discussion!</div><br />We normally leave the bickering out of the help, I promise. We usually have that stuff out in The Big Debate part of the forums.<br /><br />Glad you're enjoying things. Let us know if you need any help. Most of us also have our various flavors of IM posted on here at the bottom of each of our posts. Feel free to use those as well.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Thanks again</b><br />
+					Post by: <b>dpeach</b> on <b>February 18, 2004, 10:20:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: mab</div><div class="quote">I have Linux :D </div><br />Great to hear. And what better day to fall in love with a new project.<br /><br />And ignore much of the &quot;discussion.&quot; For the most part we are harmless. We talk this way on the board, but still like to get together for pizza and meetings. As far as I have been able to see, no one avoids anyone else in person. We are all bark and try to hide behind our forum names.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>rugmonster</b> on <b>February 18, 2004, 01:14:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">As far as I have been able to see, no one avoids anyone else in person.</div><br /><br />I don't know what you're talking about because I avoid rburt3 at all costs. You think I want to be seen anywhere near such a low life?<br /><br /><span style="font-size: 7px; line-height: 1.3em;">mab, rburt3's my brother</span></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Newbie-Style install question</b><br />
+					Post by: <b>rburt3</b> on <b>February 20, 2004, 09:30:41 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Its true. Last time we saw eachother, he flew all the way to Iraq to get away from me... :P</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

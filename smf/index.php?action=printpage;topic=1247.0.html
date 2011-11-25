@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Split: rburt3 mentors imnes on g33k jobs</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => IT Jobs => Topic started by: imnes on October 15, 2002, 10:22:50 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>imnes</b> on <b>October 15, 2002, 10:22:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">How about this?<br /><br />http://www.mkssoftware.com/docs/man1/openssl_req.1.asp<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>rburt3</b> on <b>October 16, 2002, 08:02:17 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks, but I looked at that yesterday, and its part of a proprietary toolkit (unless I am mistaken and this is part of the standard ssl libs?). &nbsp;I kinda need to do this on the cheap. &nbsp;I did find, however, that Mozilla has extensions in its Javascript engine that allows a call like this:<div class="codeheader">Code:</div><div class="code"><span style="white-space: pre;">	</span>try&#123;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>crypto.generateCRMFRequest&#40;&#41;;<br /><span style="white-space: pre;">	</span>&#125;catch&#40;e&#41;&#123;<br /><span style="white-space: pre;">	</span><span style="white-space: pre;">	</span>alert&#40;&quot;no go.&quot;&#41;;<br /><span style="white-space: pre;">	</span>&#125;</div>I think I'll play with this some and let you know how it comes out. &nbsp;Thanks for your help, imnes!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>imnes</b> on <b>October 16, 2002, 11:32:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I would guess it's free open-source stuff. &nbsp;It's installed on my default RedHat system. &nbsp;I don't know anything about SSL, but the example commands given on that manual page seem to work fine.<br /><br /><div class="codeheader">Code:</div><div class="code"><br />&#91;imnes@nick imnes&#93;$ openssl req -newkey rsa&#58;1024 -keyout key.pem -out req.pem<br />Using configuration from /usr/share/ssl/openssl.cnf<br />Generating a 1024 bit RSA private key<br />........................++++++<br />..............++++++<br />writing new private key to 'key.pem'<br /></div><br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>rburt3</b> on <b>October 16, 2002, 11:50:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think I love you, Nick. Now to get OpenSSL on my Win2k box at work... &nbsp;:roll:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>imnes</b> on <b>October 16, 2002, 01:54:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Looks like OpenSSL is part of the CygWin package. &nbsp;If you get that installed you can check and let everyone else know for sure.<br /><br />The software is hosted on:<br />http://www.cygwin.com/</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>rburt3</b> on <b>October 16, 2002, 07:12:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Cygwin has saved my butt more and more lately. &nbsp;I went ahead and dl'd the latest OpenSSH and built it in Cygwin, since that seemed much easier than using VC++. &nbsp;Anyway, once I generated the request per the command line above, I took the key to our CA so I could get a cirtificate. The whole reason we're doing this is that we need an offline meathod of getting certs, so he pasted the output from openssl into Netscape CMS and voila, Randall had his new cert. I brought the new cert (cert.p7b) back to my desk and copied back down to the harddrive as cert.pem. I then had to do the following<div class="codeheader">Code:</div><div class="code">openssl pkcs12 -export -in cert.pem -inkey key.pem &nbsp;-name &quot;Randall Burt&quot; -out p12cert.p12</div><br />I then used IE to import the pkcs12 file into my local keystore. &nbsp;To test, I signed a small Outlook macro and restarted Outlook. To my wonder and amazement, I was offered the opportunity to trust myself! &nbsp;Thanks agiain for your help. <br /><br />Now, I have to document the whole process as I am leaving this job for another one at the end of this month. &nbsp;I hope to maybe post it as an article for the group.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>All is said and done...</b><br />
+					Post by: <b>rburt3</b> on <b>October 20, 2002, 05:49:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here (http://home.mchsi.com/~rburt3/objectsigning.html) is the result (non-DoD version) of this discussion. &nbsp;Thanks again, imnes!<br /><br />Let me know if there are any questions/comments.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>dpeach</b> on <b>October 21, 2002, 11:38:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">I am leaving this job for another one at the end of this month.</div><br />Whe're you going? You moving to Best Buy with Steve so you can play all day?<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>rburt3</b> on <b>October 21, 2002, 01:55:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">:D &nbsp;No, though sometimes I wish it were that easy! I'm going to work for Anteon (http://www.anteon.com), a DoD contractor, as a Software Engineer (J2EE and such). I will soon turn them to the true way of Linux/BSD/Unix computing! &nbsp;:twisted:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>imnes</b> on <b>October 22, 2002, 08:24:05 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">rburt: Think they could find a place for a college-student Programmer / System Administrator? &nbsp;Or maybe an Internship position? &nbsp;<br /><br />I'm getting desperate to find a programming position around here. &nbsp;All the college advisors have offered up is &quot;Sign up for our summer internship, we'll send you to Atlanta for a month or two to get some experience. &nbsp;Maybe.&quot; &nbsp;<br /><br />Another question: As a 'working' software-engineer, what are the best languages to focus on mastering? &nbsp;It used to be C, then Java/ASP, Now C# or some such. &nbsp;What's the industry focus now? &nbsp;Or is it completely different with each company?<br /><br />Nick<br />imnes@go.com</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>rburt3</b> on <b>October 22, 2002, 12:25:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: imnes</div><div class="quote">rburt: Think they could find a place for a college-student Programmer / System Administrator? &nbsp;Or maybe an Internship position?</div>Check this post (http://pcolalug.com/phpBB2/viewtopic.php?t=202) for a programmer position<div class="quoteheader">Quote from: imnes</div><div class="quote">I'm getting desperate to find a programming position around here. &nbsp;All the college advisors have offered up is &quot;Sign up for our summer internship, we'll send you to Atlanta for a month or two to get some experience. &nbsp;Maybe.&quot;</div>Yeah, its a bit dry right now. Have you looked around Ft. Walton? I know it may be a bit of a drive. When I get &nbsp;over there in a couple of weeks, I can ask around. I'll check more here(Dyntel/NETPDTC) &nbsp;too.<div class="quoteheader">Quote from: imnes</div><div class="quote">Another question: As a 'working' software-engineer, what are the best languages to focus on mastering? &nbsp;It used to be C, then Java/ASP, Now C# or some such. &nbsp;What's the industry focus now? &nbsp;Or is it completely different with each company?</div>The quotes are quite appropriate, as its not really like work, is it? :D I have found, so far, that the shops that care alot about specific language skills are hard to work for. The shop I am in now is 100% Microsoft. Visual Studio, MSSQL Server, Citrix, yadda yadda. &nbsp;I think that if you represent yourself as having excellent general programming skills and a deep understanding of the fundamentals of design and development, the rest is syntax. Now, as for where I'm going, the environment is more open to new/different (read non-MS) technologies. The project I'll be moving too will be using J2EE, as I mentioned, but that's just preliminary. IMHO, just concentrate on being the best *programmer* you can be. Play with any and all languages you can, and constantly improve your craft in fun ways.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>imnes</b> on <b>October 22, 2002, 01:04:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">So far I know C, C++, PowerBASIC, Pascal, Delphi/Kylix, Assembler, ASP (vbscript), PHP, SQL (MySQL, PostGreSQL, and Access). &nbsp;C skills are strong, haven't played around with OO in C++ much yet. &nbsp;I haven't played with Java at all, I might give that a try next.<br /><br />Sounds good, let me know if you find any job openings. &nbsp;Thanks ;)<br /><br />Nick<br />imnes@go.com</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>rburt3</b> on <b>October 22, 2002, 01:12:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">No problem. Be sure to email dave.malicoat@cnet.navy.mil if you are interested in the VB position. VB is easy to pick up but can be pretty intolerable at times. And, as a C programmer at heart, C can never go out of style!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>rburt3</b> on <b>October 23, 2002, 02:42:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You always find just what you are looking for after you've already gone and built it yourself. (http://homepage.ntlworld.com/wayne_grant/downloads.html)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>imnes</b> on <b>October 23, 2002, 07:15:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Things always seem to work out that way, don't they?<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>dpeach</b> on <b>October 26, 2002, 06:59:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I am glad you got that figured out. I was getting ready to find out what Certificate Requesting was and why you would want to generate it. Then I could tell you how to do it.<br /><br />Now I can save myself the trouble of even finding out what you are talking about.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Split: rburt3 mentors imnes on g33k jobs</b><br />
+					Post by: <b>rugmonster</b> on <b>January 04, 2004, 04:02:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">These forums just don't work the way you think they would. I messed up a split here...I was trying to split out the imnes/rburt3 discussion here...oh well</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - err Help! wrt54g</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: Brent on August 15, 2005, 12:06:25 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>Brent</b> on <b>August 15, 2005, 12:06:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The other day my roomie (patrick) noted that our internet had stopped working. &nbsp;I didn't think that much about it, because mine was still working fine. &nbsp;Anyway, I was fiddling w his laptop (i wrote a shell script to get him connected) and I noticed the wrt54g wasn't responding. &nbsp;<br /><br />I figured, well the wireless is down. &nbsp;We had a power blip the other day, but the wifi was down before that so ... &nbsp;I go back to my room (remember my net connection is still working), and I try to connect to 192.168.1.1 to check and see if the wifi was down. &nbsp;Only thing was, I couldn't connect to the router at all!<br /><br />I pinged it, no response, I nmaped it, no reponse, I nmaped the entire 192.168.1.*. Nothing. &nbsp;I have no clue as to what's going on. &nbsp;I had an admin pw set for the router, fairly strong one, so I can rule out foul play. &nbsp;<br /><br />I've never seen a router do this before. &nbsp;If I had the interface up, I could reinstall the firmware, but I have no interface!<br /><br />Honestly I don't know what to do. &nbsp;The router isn't &nbsp;a brick, but it's like it decided to turn off wifi and and close down it's admin interface on it's own.<br /><br />(I haven't made any changes to it for the last 30 days)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>lloydr</b> on <b>August 15, 2005, 12:51:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">try punching the tiny little reset button on back, I believe you push and hold it for a certain amount of time to revert to factory defaults.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>danc</b> on <b>August 15, 2005, 02:06:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yup, holding the reset button for 10 seconds will reset to factory defaults, so you should then be able to log in to 192.168.1.1. &nbsp;Leave the username blank, and the factory password is &quot;admin&quot;.<br /><br />If you can't connect to it with a browser, remember that the machine you are using to do that with must also be on the same subnet (192.168.1.x).<br /><br />Dan (who just went through this when flashing his router to the newest firmware...).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>Brent</b> on <b>August 15, 2005, 05:31:12 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, <br /><br />I got the router reset, but now I can't get my buds lappy back online via wifi.<br /><br />Here's a basic rundown of what i'm doing:<br />ifconfig eth0 down (eth0 is his wifi card for some funky reason)<br />iwconfig essid &quot;blahid&quot; channel 11 mode Managed key xxxxxxxxx<br />ifconfig eth0 168.192.1.101 netmask 255.255.255.0<br />ifconfig eth0 up<br />route add default gw 192.168.1.1 dev eth0<br /><br />can't ping yahoo or the router itself ...even the ip.<br /><br />I get Network Unreachible.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>danc</b> on <b>August 15, 2005, 09:16:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Some things to check:<br />1. &nbsp;Does &quot;ifconfig&quot; show the eth0 interface as up and running, with an IP ?<br />2. &nbsp;Is there a driver/module loaded for the wifi card (&quot;lsmod&quot;)?<br />3. &nbsp;Are you SURE that the channel, essid, and WEP key are the same between what you posted above (the NIC), and what is set in the router? &nbsp;Check for spelling/typos... &nbsp;Then check it again...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>rugmonster</b> on <b>August 16, 2005, 07:24:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">1. Have you changed the essid on the router from the default Linksys?<br /><br />2. Are you sure you enabled WEP and are you sure you're putting in the correct WEP key?<br /><br />3. Driver/firmware(if required) loaded on his laptop (lsmod and iwconfig to see)<br /><br />4. Ensure iwconfig sees the wireless extensions for the WNIC. (iwconfig)<br /><br />5. Check to see if his laptop sees the AP by running (iwlist eth0 scan).<br /><br />6. Your iwconfig above is incorrect. It should be:<br /><div class="codeheader">Code:</div><div class="code"># iwconfig eth0 essid blahid key xxxxxxxxx</div><br />Also, once you type that in, be sure to commit it with<br /><div class="codeheader">Code:</div><div class="code"># iwconfig eth0 commit</div><br />I wouldn't set a channel because it should find it and managed should be the default mode.<br /><br />7. Why are you doing ifconfig eth0 down and up? Those aren't necessary.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>hitechwizard</b> on <b>August 16, 2005, 07:48:44 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">ifconfig eth0 168.192.1.101 netmask 255.255.255.0 <br /></div><br /><br />Hopefully that was a typo and is really 192.168.1.101</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>Brent</b> on <b>August 16, 2005, 04:00:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah it was a typo.<br /><br />Anyway, I decided to dissable wep encryption, and use mac filtering since pats lappy will automatically jump on the strongest non-encrypted connection. &nbsp;Lot easier than doing it manualy every boot, and having to fight with the ndis software over who gets control of the wifi card. &nbsp;I just added his MAC address to those allowed on the network.<br /><br />Yeah, I know it's unsecure. &nbsp;I know someone w tcpdump could probobly grab his mac address, knock him off the network, and hijack the connection, but he likes it this way, and it's HIS data flowing unencrypted, not mine.<br /><br />Anyway, now i have &nbsp;a new problem. &nbsp;I flashed the wrt54g w sveasoft (TI) firmware, but now it won't resolve dhcp. &nbsp;Release, renew just gets me a line of zeros. &nbsp;I did power cycle the cable modem so that it would pick up the router. &nbsp;I seem to recall having this same problem with sveasoft before.<br /><br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>err Help! wrt54g</b><br />
+					Post by: <b>danc</b> on <b>August 16, 2005, 05:27:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">Anyway, now i have &nbsp;a new problem. &nbsp;I flashed the wrt54g w sveasoft (TI) firmware, but now it won't resolve dhcp. &nbsp;Release, renew just gets me a line of zeros. &nbsp;I did power cycle the cable modem so that it would pick up the router. &nbsp;I seem to recall having this same problem with sveasoft before.</div><br /><br />It's recommended to &quot;factory reset&quot; the router (reset button for 10 seconds) before AND after flashing the firmware. &nbsp;I'd try that, then reconfigure the router to your desired settings, and it should work. &nbsp;I've used many versions of sveasoft firmware and never had any problems.<br /><br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

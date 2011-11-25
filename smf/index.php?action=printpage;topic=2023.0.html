@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Apache2 on SuSE 9.1</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: jj on November 12, 2004, 09:15:26 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Apache2 on SuSE 9.1</b><br />
+					Post by: <b>jj</b> on <b>November 12, 2004, 09:15:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I messed up httpd.conf, now i need to &quot;re-install&quot; Apache if possible. &nbsp;First of all is it possible to re-install packages and will it reset original settings? there are some files that i don't want over-written in the process. &nbsp;Thanks for any help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Apache2 on SuSE 9.1</b><br />
+					Post by: <b>dpeach</b> on <b>November 12, 2004, 11:00:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">There are a couple of ways to do this I would think.<br /><br />One is that you could just ask here (maybe with the version of 2 that you are running) and someone could give you a copy of theirs. Or, you could get the source of Apache2 and look in the ./docs/conf directory of the tarball. There are a couple of different config files in there.<br /><br />That would get you a config file. I don't know if anything else is messed up. If you suspect that you have deeper problems than just the config file, you could uninstall Apache (easy to do in Mandrake) and then make sure that it pulled your config files out. Then just reinstall that one program.<br /><br />*hint* Make a backup next time. *hint* It is so easy to remember to say that to others, but I find myself getting in trouble for not doing it.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Apache2 on SuSE 9.1</b><br />
+					Post by: <b>rburt3</b> on <b>November 13, 2004, 12:04:19 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't think you can hose httpd.conf so bad as to need a re-install. How about going into some detail and posting your config. I'm sure someone here can help you out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Apache2 on SuSE 9.1</b><br />
+					Post by: <b>jj</b> on <b>November 15, 2004, 11:28:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">OK, not just httpd.conf, &nbsp;SuSE uses many include files, i think i need to reset them all to orig and start over. Yes, i know better, and normally do save before editing, but i thought &nbsp;how har could it be??</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Apache2 on SuSE 9.1</b><br />
+					Post by: <b>rburt3</b> on <b>November 15, 2004, 02:39:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, then. The easiest route *may* be just to use YaST to uninstall apache then re-install. For the files you don't want over-written, just copy them off before the un-install, then put them back after the re-install (though one or more of them may be the root of your problem...).</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

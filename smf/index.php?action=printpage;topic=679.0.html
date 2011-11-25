@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Boot Problem</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: dpeach on May 05, 2003, 11:08:32 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>dpeach</b> on <b>May 05, 2003, 11:08:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is not a new problem, I am just now getting fed up with it and am seeking professional help.<br /><br />When I first installed Mandrake 9.1 it booted fine. I put a Compact Flash card in my card reader (and it worked). Since then, every time I boot I get this error:<br />ldm_validate_partition_table(): disk read failed<br /><br />If I insert a CF card into the reader, all boots fine. If I don't then I get that error scrolling continuously until I do insert a CF card. This has been reported to Mandrake and is covered under bug 3153. They say (loose paraphrase) &quot;it is a Kernel problem and not a Mandrake problem, look somewhere else for help.&quot;<br /><br />There is a similar bug reported as bug 930. That is concerning a SCSI Zip drive. They have some help offered here. (https://qa.mandrakesoft.com/show_bug.cgi?id=930) But I don't understand any of it.<br /><br />Can someone help me interpret this?<br /><br />Here is the patch (https://qa.mandrakesoft.com/attachment.cgi?id=111&action=view) that I think I need. <br /><br />I have done the Mandrake update and updated &quot;initscripts&quot; and &quot;devfsd,&quot; which seem to be the two updates that should take care of my problem. But, they don't.<br /><br />Appreciate your help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>rburt3</b> on <b>May 06, 2003, 07:36:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">From the forum posts, sounds like you need to patch the kernel. I can do it, but not well enough to talk you through it. How's 'bout giving ruggy, crowe, or imnes a shout? Those guys should be able to walk you through a kernel patch and compile.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>rugmonster</b> on <b>May 06, 2003, 05:44:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Aren't you guys lucky I got out of combat training early today and decided to browse the forums.<br /><br />Yippee...kernel time!!!<br /><br />Okay, once you have your kernel patch, you need to get your kernel source...be it from Mandrake or from kernel.org (http://www.kernel.org). *Hint: Mandrake kernels will have added support for things you probably use, such as Supermount and other desktop enhancements.* Basically, it is a patched kernel already. Anywho, you get your patch and your kernel source.<br /><br />The short and sweet of it is to run inside of either the top directory of your kernel source or the directory above the source:<br /><div class="codeheader">Code:</div><div class="code">patch -p0 &lt;name of patch&gt;</div><br /><br />You may need to look in the patch file itself to figure out exactly what place in the directory structure it is looking for...be it above the kernel source or in the base directory of it. As a rule of thumb, do your patching in another directory besides /usr/src/linux and also backup of the originals should you need them.<br /><br />You will then need to recompile your kernel. In the kernel configuration, you will probably find the option to include the functions the patch provides. If not, don't worry too much. Test it out and see what happens. For more information on kernel compilation, see the Kernel HOWTO (http://www.tldp.org/HOWTO/Kernel-HOWTO/index.html). I will give this warning though. Not all patches work like they should, so if you have problems with it, check with the author or appropriate mailing lists/websites...or us if you like. :P</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2003, 09:10:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You guys make this sound like it is going to be fun!?! I am not sure I share your sentiments. If I get brave tonight, I may attempt this.<br /><br />Do I just stick the Kernel source on the hard drive? Can I compile from a standard boot, or do I need to boot to a special run level? I guess I need to read the HOWTO.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>crowe</b> on <b>May 06, 2003, 10:50:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">You guys make this sound like it is going to be fun!?!</div><br />But re-compiling your kernel /is/ fun! &nbsp;:D<br /><br /><div class="quoteheader">Quote</div><div class="quote">Do I just stick the Kernel source on the hard drive?</div><br />Yes. &nbsp; Though like Rugmonster already said, you may wish to use the Mandrake's kernel source RPM(s), since it'll already have the distro-specfic patches applied to it.<br /><br /><div class="quoteheader">Quote</div><div class="quote"><br />Can I compile from a standard boot, or do I need to boot to a special run level? </div><br /><br />A standard boot is all that's needed. &nbsp;It compiles and installs pretty much like anything else.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>rburt3</b> on <b>May 07, 2003, 09:29:18 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">&lt;hint&gt;Sounds like a good presentation topic: Configuring, Patching, and Compiling your kernel for fun and profit.&lt;/hint&gt;</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>dpeach</b> on <b>May 07, 2003, 12:21:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, I did not get it done last night. Not because I chickened out, but because I was too tired to read the HOWTO. I am still working on it and plan to give it a shot tonight. This just seems like a project to do at night. You never hear of anyone starting a big project during the day. Strange.<br /><br />I'll keep you posted.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>rugmonster</b> on <b>May 07, 2003, 04:51:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">&lt;hint&gt;Sounds like a good presentation topic: Configuring, Patching, and Compiling your kernel for fun and profit.&lt;/hint&gt;</div><br /><br />I would do it...but... :wink:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Boot Problem</b><br />
+					Post by: <b>rburt3</b> on <b>May 07, 2003, 08:19:09 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">excuses, excuses... ;)<br /><br />And David, I think its actually in the HOW-TO that you have to start a kernel compile at night. Late at night. After coding for 6 hours. With a bag of Doritos (TM).</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

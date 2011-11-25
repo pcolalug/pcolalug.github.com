@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Cox cable and Linux</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Networking => Topic started by: bhoff on November 19, 2006, 11:04:39 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cox cable and Linux</b><br />
+					Post by: <b>bhoff</b> on <b>November 19, 2006, 11:04:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Step one get Modem from Cox cable and subscribe to service.<br /><br />Step two throw disk that came with modem away!<br /><b><br />At this point computer and modem should be off!</b><br /><br />Step three connect your cable to supplied modem.<br /><br />Step four Plug in supplied rj45 cable from back of modem to computer nic card.<br /><br />Step five Plug in modem and give roughly 10 minutes for it to do it&#039;s magic.<br /><br />Step six Turn on your computer. <br /><br />If everything went well you should have picked up the ip from modem and now be connected.<br />Hooray you should be able to connect to internet!<br /><br />If nothing then we need a command prompt.<br />From your menu you should have a terminal !<br />open the terminal and see if your eth0 is getting an ip like so<br />type in ifconfig at the prompt.<br />brett@home:~# ifconfig<br />eth0&nbsp; &nbsp;Link encap:Ethernet&nbsp; HWaddr 00:10:5A:C7:22:59<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>inet addr:192.168.128.12&nbsp; Bcast:192.168.128.255&nbsp; Mask:255.255.255.0</b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; UP BROADCAST NOTRAILERS RUNNING MULTICAST&nbsp; MTU:1500&nbsp; Metric:1<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RX packets:506597 errors:0 dropped:0 overruns:0 frame:0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TX packets:506824 errors:0 dropped:0 overruns:0 carrier:0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; collisions:0 txqueuelen:1000<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RX bytes:213309874 (203.4 Mb)&nbsp; TX bytes:50175819 (47.8 Mb)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Interrupt:11 Base address:0x2000<br /><br />see the bolded area that is what you are looking for on your terminal.<br />If not post here to the forums what you are getting and we will ammend these directions to better help.<br /><br />Please feel free to add to these directions as needed to make a better guide.<br />Please do not post problems to this page as this is a how-to . Problems need to be posted in new forum.<br /><br />Amended 11-20-06<br /><br />Note this is probally the least secure way to connect your computer, But if you are using Linux you are way ahead<br />Of the rest. What would be ideal is to have a router between your modem and your computer. The wrt54g is wonderful<br />Choice and can be readily found. The tutorial that comes with the router is very usefulfor setting it up as there is nothing<br />Special for Linux. <b>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;BUT do change the default password! &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</b><br /><br />Thanks<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>November 20, 2006, 08:11:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I use Cox, here&#039;s my setup for my router/server.<br /><br /><br /><br />/etc/network/interfaces<br /><br /><tt># This file describes the network interfaces available on your system<br /># and how to activate them. For more information, see interfaces(5).<br /><br /># The loopback network interface<br />auto lo eth-inet eth-lan<br /><br />iface lo inet loopback<br /><br />iface eth-lan inet static<br />&nbsp; &nbsp; &nbsp; &nbsp; address 192.168.0.1<br />&nbsp; &nbsp; &nbsp; &nbsp; netmask 255.255.255.0<br />&nbsp; &nbsp; &nbsp; &nbsp; pre-up iptables-restore &lt; /etc/network/inet-masq<br /><br />iface eth-inet inet dhcp<br />&nbsp; &nbsp; &nbsp; &nbsp; # pre-up macchanger -m 90:AB:8F:E6:84:01 eth-inet<br />&nbsp; &nbsp; &nbsp; &nbsp; pre-up macchanger -m 00:0c:41:E6:84:01 eth-inet</tt><br /><br />The macchanger part was because Cox blocked my mac for a while.&nbsp; So I changed it to a nonsense one, I changed it back a few weeks later.<br /><br /><br />iptables-save<br /><br /><tt># Generated by iptables-save v1.2.11 on Mon Nov 20 20:06:42 2006<br />*filter<br />:INPUT DROP [361547:39011291]<br />:FORWARD DROP [0:0]<br />:OUTPUT ACCEPT [10134499:8654924978]<br />-A INPUT -p udp -m udp --dport 68 -j ACCEPT<br />-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT<br />-A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT<br />-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT<br />-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT<br />-A INPUT -i lo -j ACCEPT<br />-A INPUT -i eth-lan -j ACCEPT<br />-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT<br />-A INPUT -j LOG<br />-A FORWARD -p tcp -m tcp --dport 6881:6883 -j ACCEPT<br />-A FORWARD -p udp -m udp --dport 6881:6883 -j ACCEPT<br />-A FORWARD -i eth-lan -o eth-inet -j ACCEPT<br />-A FORWARD -i eth-inet -o eth-lan -m state --state RELATED,ESTABLISHED -j ACCEPT<br />-A FORWARD -j LOG<br />COMMIT<br /># Completed on Mon Nov 20 20:06:42 2006<br /># Generated by iptables-save v1.2.11 on Mon Nov 20 20:06:42 2006<br />*nat<br />:PREROUTING ACCEPT [1118013:155951403]<br />:POSTROUTING ACCEPT [48401:2657080]<br />:OUTPUT ACCEPT [15855:1347559]<br />-A PREROUTING -i eth-inet -p tcp -m tcp --dport 6883 -j DNAT --to-destination 192.168.0.3<br />-A PREROUTING -i eth-inet -p udp -m udp --dport 6883 -j DNAT --to-destination 192.168.0.3<br />-A PREROUTING -i eth-inet -p udp -m udp --dport 6881 -j DNAT --to-destination 192.168.0.7<br />-A PREROUTING -i eth-inet -p tcp -m tcp --dport 6881 -j DNAT --to-destination 192.168.0.7<br />-A PREROUTING -i eth-inet -p udp -m udp --dport 6882 -j DNAT --to-destination 192.168.0.2<br />-A PREROUTING -i eth-inet -p tcp -m tcp --dport 6882 -j DNAT --to-destination 192.168.0.2<br />-A POSTROUTING -o eth-inet -j MASQUERADE<br />COMMIT<br /># Completed on Mon Nov 20 20:06:42 2006<br /># Generated by iptables-save v1.2.11 on Mon Nov 20 20:06:42 2006<br />*mangle<br />:PREROUTING ACCEPT [45645097:25859316281]<br />:INPUT ACCEPT [8304115:1164956338]<br />:FORWARD ACCEPT [37118495:24623078698]<br />:OUTPUT ACCEPT [10134534:8654929886]<br />:POSTROUTING ACCEPT [47256689:33278645758]<br />COMMIT<br /># Completed on Mon Nov 20 20:06:42 2006</tt><br /><br />The important lines here are the udp accept on port 68.&nbsp; You must, must, must have this, or else you can&#039;t get a DHCP response.<br /><br />All of the rest of that stuff is stuff for ssh and or bittorrent that I have set up.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>danc</b> on <b>November 21, 2006, 07:20:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3066.msg15047.html#msg15047">Quote from: OmnipotentEntity on November 20, 2006, 08:11:47 pm</a></div><div class="quote">I use Cox, here&#039;s my setup for my router/server.<br /><br />/etc/network/interfaces<br /><br /><tt># This file describes the network interfaces available on your system<br /># and how to activate them. For more information, see interfaces(5).<br /><br /># The loopback network interface<br />auto lo eth-inet eth-lan<br /><br />iface lo inet loopback<br /><br />iface eth-lan inet static<br />&nbsp; &nbsp; &nbsp; &nbsp; address 192.168.0.1<br />&nbsp; &nbsp; &nbsp; &nbsp; netmask 255.255.255.0<br />&nbsp; &nbsp; &nbsp; &nbsp; pre-up iptables-restore &lt; /etc/network/inet-masq</tt></div><br /><br />Hmmmm.... that must be some distro-specific stuff there.&nbsp; What are you using?<br /><br />I don&#039;t even have an /etc/network directory on my systems (Slackware), and no &quot;iface&quot; command either.<br /><br />Dan<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>Brent</b> on <b>November 21, 2006, 11:14:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Has anyone ever really had a real problem with connecting to cox using linux?&nbsp; I mean I haven&#039;t had to fool around with anything network wise for over a year, but I do have a fuzzy memory of me booting a computer connected directly to the cable modem, I don&#039;t remember a whole lota fuss involved in it honestly, I just had it setup for dhcp and boom, done.&nbsp; </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>November 21, 2006, 11:17:15 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3066.msg15049.html#msg15049">Quote from: danc on November 21, 2006, 07:20:53 pm</a></div><div class="quote"><div class="quoteheader"><a href="index.php%3Ftopic=3066.msg15047.html#msg15047">Quote from: OmnipotentEntity on November 20, 2006, 08:11:47 pm</a></div><div class="quote">I use Cox, here&#039;s my setup for my router/server.<br /><br />/etc/network/interfaces<br /><br /><tt># This file describes the network interfaces available on your system<br /># and how to activate them. For more information, see interfaces(5).<br /><br /># The loopback network interface<br />auto lo eth-inet eth-lan<br /><br />iface lo inet loopback<br /><br />iface eth-lan inet static<br />&nbsp; &nbsp; &nbsp; &nbsp; address 192.168.0.1<br />&nbsp; &nbsp; &nbsp; &nbsp; netmask 255.255.255.0<br />&nbsp; &nbsp; &nbsp; &nbsp; pre-up iptables-restore &lt; /etc/network/inet-masq</tt></div><br /><br />Hmmmm.... that must be some distro-specific stuff there.&nbsp; What are you using?<br /><br />I don&#039;t even have an /etc/network directory on my systems (Slackware), and no &quot;iface&quot; command either.<br /><br />Dan<br /><br /></div><br />It&#039;s just the debian setup, wherever you keep your network interfaces file is where you have to look, and iface isn&#039;t a command it&#039;s a configuration parameter in the config file.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>November 21, 2006, 11:18:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3066.msg15050.html#msg15050">Quote from: Brent on November 21, 2006, 11:14:02 pm</a></div><div class="quote">Has anyone ever really had a real problem with connecting to cox using linux?&nbsp; I mean I haven&#039;t had to fool around with anything network wise for over a year, but I do have a fuzzy memory of me booting a computer connected directly to the cable modem, I don&#039;t remember a whole lota fuss involved in it honestly, I just had it setup for dhcp and boom, done.&nbsp; <br /></div><br />The reason I had to fool around with it is because I&#039;m using a computer as a router, rather than a router. :3</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>bhoff</b> on <b>November 22, 2006, 09:48:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Guys let&#039;s sort of keep this clean!<br />Sort of a how-to and not a lot of random stuff.<br />If you post please list steps and distro if needed.<br />Remember these are people who are coming to LInux!</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>November 28, 2006, 02:56:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, a HOWTO for most peoples.<br /><br />Hook up your cable modem to the cable and power, then let it power up, finally hook it up to your computer (you don&#039;t have to powerdown your computer to make this work!)&nbsp; Most modern distributions will detect the new interface and automagically grab an IP via DHCP.<br /><br />If it doesn&#039;t then all you have to do is manually do a DHCP call on the command line<br />$ sudo dhclient</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>November 29, 2006, 06:10:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am going to have to agree with Omni, on this one. I think we&#039;re moving past the times when you really had to work hard to get networking going in Linux. Truth is, if you put a network card in a system, it&#039;s going to work the next time you turn on the system way more often than it would under Windows. Linux is becoming MUCH easier and the included instructions that come with a cable modem or router are going to pretty much apply since there shouldn&#039;t be much more to it than plug in ethernet and coax/phone cables. I&#039;m all for giving LINUX support, on any given topic, getting on the Internet included. The thing that I fear is that the Google spiders are going to start bringing us up in searches for Cox or Mediacom support, period. Windows users can call tech support. Same thing with Mac.<br /><br />I am also a little hesitant to agree with the whole getting publicity from the cable companies by offering free support is such a great idea. If anything, as long as they don&#039;t offer tech support for Linux, we should be raising a stink fit, not pandering to them. If someone comes here asking why their router isn&#039;t pulling an IP address and it goes beyond the link lights are on, we can&#039;t do jack crap from there. They are still going to have to call tech support and the Cox or Mediacom support tech is either going to turn them away because it&#039;s not something they officially support, or if they actually do attempt support and still can&#039;t figure it out, they will tell them to load a supported OS with a supported setup. If Cox or Mediacom want to mention the civic group that is Pensacola Linux User&#039;s Group in a community newsletter, fine, but don&#039;t sell us out as free tech support when they already have people on staff to do that.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>bhoff</b> on <b>November 29, 2006, 06:01:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Wow that was a mouthful...................<br /><br />First I would like to point out that our membership is down right disheartning!<br />Dan did a great job last year but we have only seen marginal membership increase and little or no <br />turnout at the meetings, I believe it would be a good chance to get other linux users involved in our group.<br />Secondly I was not pandering to The Cable companies.......Plain and simple they are not going to support Linux!<br />We had a member show up at the last meeting and was having trouble getting on the internet and when he<br />Called Cox for support they stated to him that they would not give him internet becasuse they do not support <br />Linux! Not just give suppport but was going to kill his already paid for interenet. So me I was guilty of pandering<br />To the Members that this group was brought together to help!<br />This may have not been my brightest idea but I am not seeing a hugh influx of ideas from the group.<br />I was grasping at something to infuse this group with energy.<br /><br />Brett Hoff<br />President Pensacola Linux Users Group</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>November 29, 2006, 06:04:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">eh?&nbsp; I doubt that they&#039;d kill his internet unless he was using it as a webserver or something.&nbsp; I&#039;ve been on Cox support more than a few times.&nbsp; I give them the disclaimer that I&#039;m running Linux, and just have them conceptually tell me what they want me to do rather than say, Press Start, go to control panel. (etc etc)<br /><br />As long as you keep legit and keep civil they have no reason to deny you service; remember, you&#039;re the one paying them.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>bhoff</b> on <b>November 29, 2006, 06:18:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hopefully the member who was at the November meeting will post to this forum the details of his problem?<br />I can only elaborate on what he stated to me at said meeting and he said they were dropping his service.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>November 30, 2006, 06:16:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">My problem is not with giving people support, but to go to the ISPs and say &quot;Send your *nix customers to us&quot;, or even to promote them in some fashion seems ridiculous when they are threatening customers using Linux. I&#039;m just offering my opinion, which has no more weight than any one else, and if we want to reach people and raise interest, the non-Linux friendly ISPs may not be the route to go. It looks like we are endorsing them when the organization as a whole puts up permanent links of the front page and such when <i>I feel</i> that we should be seeking out the Linux friendly ISPs and putting our endorsement on them. <br /><br />When it comes to getting on the Internet with cable, there isn&#039;t much to it. If you&#039;re running a router, you add a layer of complexity, but I think these things have already been answered in the forums. While I think putting together a simplified, one page guide is good, we should really just handle the questions as they come in. But there is only so much a person can do before they have to call tech support. Troubleshooting that is within your scope of control includes looking for a link light, power cycling the modem and trying to renew your IP through DHCP. You can try to ping your gateway, DNS server, google.com and something else and if that fails do a traceroute. Most service level issues with ISPs have to do with connectivity and for that you have to call tech support. So my point was that we just are not equipped to properly offer support for problems that pass the demarcation. The bigger problem is that Cox and Mediacom give you such a hard time when you aren&#039;t running Windows, so you can&#039;t get your connectivity problem fixed even though it has nothing to do with your computer which may or may not be running Windows.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>Brent</b> on <b>November 30, 2006, 11:50:58 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I think the &quot;one page guide&quot; is a good idea.<br /><br />Also, regarding ISP support in linux...<br /><br />When you call in for tech support, you&#039;re almost *always* going to get some lowly call center techie who gets paid ~$8/hr and has *no* idea what linux is, beyond the fact that it&#039;s different than windows, and therefore scary.&nbsp; The very next thing he&#039;ll do is ask his supervisor, which tells him to give you the standard line of &quot;we don&#039;t support linux...&quot;.<br /><br />I *never* tell tech support I&#039;m using linux.&nbsp; I always just tell them I&#039;m using windows 2000, and translate any commands they give to the network tool on the current distro I&#039;m using. <br /><br />I don&#039;t think an ISP is evil or wrong for not supporting linux.&nbsp; This is just a fact of life for us.&nbsp; We can&#039;t expect anyone to cater to us when we&#039;re only 2-3% of the customer base.&nbsp; This goes for everything from applications to services.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>November 30, 2006, 12:11:53 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I realize who I&#039;m talking to when I call tech support. I know they&#039;re reading through prompt questions. That is not my problem. Their complete refusal to help with issues that are obviously on their side of the demarc because I&#039;m running something they don&#039;t know anything about on my side is what I have a problem with.<br /><br />I can translate all the time, but they know I am not running Windows. The issue becomes what happens when they start saying you have to run Windows XP or higher for support. What happens when they have to send a technician out to the house to do on site troubleshooting? What is the threshold for supporting an OS? Mac only has 5% or 6% of the end-user base, yet they are supported. Our job as a Linux User&#039;s Group is to promote the spread of and support for the GNU/Linux operating system. We need to be giving them hell when they say they don&#039;t support it. The reason I make sure I tell support people I&#039;m running Linux is to just spread the good word a little bit. If I show them that my stuff is working fine, then I maybe have sparked a curiosity in that poor, underpaid, overworked technician.<br /><br />Complaining about the state of ISP support services aside. My point is, <b>we shouldn&#039;t be making endorsements for them or any other commercial entity that doesn&#039;t in some way support and/or promote Linux in some capacity. Nor should we be offering to be unpaid support for them to direct folks to when they aren&#039;t running something they don&#039;t support.</b></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>green_dragon37</b> on <b>November 30, 2006, 09:07:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Keep in mind, Brent, that the purpose of this initiative by bhoff, is for new Linux users, people who probably won&#039;t be able to translate the commands from win2k to Linux, to have a way to get support.<br /><br />I&#039;m somewhat divided on the issue at hand here, though.&nbsp; On one hand, if the ISP doesn&#039;t want to support Linux, and no amount of our begging or squeezing will get them to, getting them to refer to us would mean that the new Linux users out there get at least some support.&nbsp; We don&#039;t want them hitting a brick wall when they try Linux, and giving up because their ISP told them to.&nbsp; On the other hand, I tend to agree with ruggy, in that endorsing some ISP on <b>our</b> site, which isn&#039;t Linux-friendly, seems silly.&nbsp; I believe that if we are to endorse any of them, we should be endorsing ISPs which <b>do</b> support Linux.&nbsp; We surely aren&#039;t paid to do tech support, though I don&#039;t believe any of us would turn down a request for help from a newbie who can&#039;t get his internet working in Linux, there just isn&#039;t any use in giving those ISPs an easy out, because if they take it, which they probably will, then they must be lacking something heavy in the old sense of the term &quot;customer service.&quot;<br /><br />$0.02<br />Ian<br /><br />PS - The last time I called <i>my</i> ISP, and needed support, the guy I got on the phone ran Linux, and despite the fact that I threw OpenBSD at him, and nothing other than windows is <i>officially</i> supported by my ISP, he did his best to help me find the problem.&nbsp; Perhaps other ISPs could learn a lesson from my tech support. :D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>November 30, 2006, 11:16:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don&#039;t want anyone to get the idea that I don&#039;t want to help Linux users get their Internet going. I&#039;m all for helping the community. I commonly help co-workers and family with their Windows systems and offer advice when their Internet connection is giving them fits. I&#039;m all for helping people avoid telephone tech support if it can be helped.<br /><br /><br /><font size="1" style="line-height: 1.3em;">...unless I don&#039;t like them. Then I urge them to call tech support in hopes that they&#039;ll lose a couple of hours of their life answering futile questions and waiting on hold and call backs as their issue is escalated. &gt;:D</font></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Cox cable and Linux</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>December 01, 2006, 11:56:07 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hint: When Tech Support says, &quot;Reboot your computer,&quot; just restart your networking service and wait 3 minutes so they don&#039;t get suspicious.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

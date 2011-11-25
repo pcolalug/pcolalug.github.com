@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Web-server move</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Club discussions => Topic started by: bhoff on March 06, 2004, 11:34:28 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>bhoff</b> on <b>March 06, 2004, 11:34:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hello everyone,<br />I am here to let you all know of our pending web-server move.<br />As you know we have been hosted by Techsoft here in town for about two years now.<br />And Steve has been faithfully been administering the web-server for us, and doing a great job!<br />But this is a tireless job with little gratitude. Due to the sensitive nature of our present host we have been unable <br />to pass some of the responsibility to anyone else. So Jesse has offered to host the Web-server for us.<br />From this local it may be possible to delegate some of the load to a couple of people vs. one person.<br />And give a little more control over the web-server. Presently the Domain has been paid up for the nest 5 years by us<br />in the Steering committee. The only other cost is to have an I.P. address for our site thru COX $60.00 a year. to this end I have sent a request to meet with COX's public relations person to see if they would be willing to sponsor us on this. If not I have also been talking to a new sponsor about possibly picking up the cost. This will be resolved one way or another.<br />The second cost is the Web-server to this ends I am donating to the Group a Sun Cobalt RAQ3 server serial no. 3C03AM0265170 It is an AMD350 processor, 128 meg of ram and 16 gig hd rack mount. I am delivering it to Jesse tomorrow in hopes that he can start prepping it for a April 1st move.<br /><br />I just thought I would make this public and let you know the strides we the steering committee are making to plan for the groups future.<br /><br />Sincerely Brett A. Hoff</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>lloydr</b> on <b>March 06, 2004, 12:15:25 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">sounds cool to me, any idea what the database(I'm gonna guess probaly mysql?) will be hosted on for the forum? or same system as the webserver?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>You guessed it!</b><br />
+					Post by: <b>bhoff</b> on <b>March 06, 2004, 01:53:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yea will be Mysql and also on the same machine since it is already setup.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>woodyharold</b> on <b>March 06, 2004, 10:15:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I don't fully understand the reason for the move, but I have faith in the steering committee to do what is best for the club. One thing I do know is there is no other that works harder for this club and I think we all owe a big round of applause to Steve for his effort.<br />&nbsp;Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>southbound</b> on <b>March 06, 2004, 11:02:34 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Why would you not want to just switch one user to a business line and go that route??? &nbsp;I have ran several servers on Cox's Business line. &nbsp;I set up a router that mapped all request on 80 to my server and it worked great. &nbsp;I used Clark Connect for my firewall, router and MySql server and stuck a IIS machine behind it to serve the http.... &nbsp;(I'm an asp guy).<br /><br />I'm guessing that is what your trying and where the 60 bucks comes in....<br /><br />If you can't find any options, let me know and I might be able to offer you a local IP on an OC3 line....</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>hitechwizard</b> on <b>March 07, 2004, 12:25:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Technically, that is what we are doing with Cox. I have two IP's coming in already, and port 80 is already taken up by both of them (one for my IIS/ASP customers, one for my Apache/Perl/php customers). We <i>could</i> put the site on the linux server, but I personally felt the lug would be better served (no pun intended) if it had a dedicated server for its use. Brett brought over the Cobalt today, and it looks like it has a dying hard drive. Once that issue is resolved, it looks like its going to be a rock solid system, all in a 1U package.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>southbound</b> on <b>March 07, 2004, 12:38:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Good Deal! &nbsp;Glad you have something in the works. &nbsp;I agree that's it's much nicer to have it on the same server when you can!<br /><br />Let me know if I can help with anything.... &nbsp;Would like to get to know everyone here. &nbsp;I don't have much Linux experience but do know a lot about MySQL if that helps...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>rugmonster</b> on <b>March 07, 2004, 04:52:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you guys will accept it, I would be more than happy to drop a few bucks toward the cost of the extra IP as a donation toward the cause. Thanks Steve for keeping the site up and going and thanks Jesse for taking it on. There are a lot of people all over the world (literally) that appreciate what this LUG does and what this site provides.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Funds</b><br />
+					Post by: <b>bhoff</b> on <b>March 07, 2004, 05:08:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks to all that offered to assist with the funding.<br />I may have to at a later date ask for donations for things like keeping our website up and the such,<br />But I do not wish to go this route unless all other avenues have been exhausted!<br />Also we ahve to be very careful of taking donations or goods less we become an what we don't want.<br />A bussiness. We will never I mean never charge anybody for anything we provide. we are all here for the Love of Linux and the empowerment of sharing knowledge without cost to make it the O.S it can be.<br />We strive everyday to keep the cost of the group as low as possible while still getting the word out via advertising and our website. If the need to call out for donations ever does arise Please do not feel obligated to do so. This is a great group<br />and I do not wish to scare anyone off with some as trivial as Money<br /><br />Brett Hoff<br />President: Pensacola Linux User Group</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>hitechwizard</b> on <b>March 08, 2004, 10:12:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's some &quot;homecoming&quot; shots of the server...<br /><br />Temporary IP address:<br />(http://www.hitechwizard.net/pcolalug/00_00024.JPG)<br /><br /><br />In need of some rack ears:<br />(http://www.hitechwizard.net/pcolalug/00_00025.JPG)<br /><br /><br />Time to clean up the server room:<br />(http://www.hitechwizard.net/pcolalug/00_00023.jpg)[/code]</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web-server move</b><br />
+					Post by: <b>microserf</b> on <b>March 10, 2004, 02:09:46 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Good ole Cobalt. We had ton's of 'em in the Atlantic.Net G'ville NOC. Sea of blue...</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Coding help!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: hitechwizard on February 03, 2004, 05:22:00 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Coding help!</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 03, 2004, 05:22:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here's a code snippet that keeps doing nice segment faults. Problem is, I've stared at it too long to see why. Does anybody else see anything that's obvious?<br /><div class="codeheader">Code:</div><div class="code"><br />void removeClient&#40;char * host, int port&#41;<br />&#123;<br />&nbsp; &nbsp; char * temp, temp1, tempHost;<br />&nbsp; &nbsp; int tempPort;<br /><br />&nbsp; &nbsp; temp = calloc&#40;1, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp space allocated.\n&quot;&#41;;<br />&nbsp; &nbsp; tempHost = calloc&#40;1, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;tempHost space allocated.\n&quot;&#41;;<br />&nbsp; &nbsp; strcpy&#40;temp, clientList&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;clientList copied to temp\n&quot;&#41;;<br />&nbsp; &nbsp; memset&#40;clientList, 0, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;clientList cleared.\n&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp=%s\n&quot;, temp&#41;;<br />&nbsp; &nbsp; temp1 = strtok&#40;temp, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp tokenized into temp1\n&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;starting while loop, \nhost=%s\n&quot;, host&#41;;<br />&nbsp; &nbsp; while &#40;temp1 != NULL&#41;<br />&nbsp; &nbsp; &#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;copying temp1 into tempHost&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; strcpy&#40;tempHost, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;%stemp = %s\n&quot;, RED, temp&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;Temp1 is %s\n&quot;, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; temp1 = strtok&#40;NULL, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; strcpy&#40;tempPort, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;removeClient&#58; comparing %s&#58;%d to %s&#58;%d &nbsp;&quot;, host, port, tempHost, atoi&#40;tempPort&#41;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; if &#40;strcmp&#40;tempHost, host&#41; != 0 || atoi&#40;tempPort&#41; != port&#41;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;No Match.\n&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strcat&#40;clientList, tempHost&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strcat&#40;clientList, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strcat&#40;clientList, tempPort&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strcat&#40;clientList, &quot;|&quot;&#41;; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#125;else&#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;Matched!\n&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#125;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;removeClient&#58; clientList = %s\n&quot;, clientList&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; temp1 = strtok&#40;NULL, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; &#125;<br />&nbsp; &nbsp; free&#40;temp, tempHost&#41;;<br />&#125;<br /></div><br /><br />Here's the text output:<br /><br /><div class="codeheader">Code:</div><div class="code"><br />temp space allocated.<br />tempHost space allocated.<br />clientList copied to temp<br />clientList cleared.<br />temp=127.0.0.1|32769|neo.hitechwizard.net|5309|<br />temp tokenized into temp1<br />starting while loop,<br />host=127.0.0.1<br />Segmentation fault<br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Coding help!</b><br />
+					Post by: <b>steve</b> on <b>February 03, 2004, 05:34:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Before you start your while loop, try doing a printf of temp1. It evidently is never getting to or past the while statement.<br /><br />Also, try putting a printf satement just before the last &quot;free&quot; statement to see if it's skipping the while loop completely and the &quot;free&quot; statement is causeing the seg fault.<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Coding help!</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 03, 2004, 07:08:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Put the printf just before the free statement, and now I can confirm it is the while (temp1 != NULL) that is causing the segfault.<br /><br />Weird.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Coding help!</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 03, 2004, 07:16:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Scratch that.... thought about putting a fflush(stdout) just before the strcpy, and voila! Its in the while loop. Added some more code/debug... here's the result:<br /><br /><br /><div class="codeheader">Code:</div><div class="code">udpPacket_t size is 256<br />temp space allocated.<br />tempHost space allocated.<br />clientList copied to temp<br />clientList cleared.<br />temp=127.0.0.1|32772|neo.hitechwizard.net|5309|<br />temp tokenized into temp1<br />starting while loop,<br />host=127.0.0.1<br />copying temp1 into tempHost<br />temp1 = -8<br />Segmentation fault<br /></div><br /><br /><div class="codeheader">Code:</div><div class="code">char * temp, temp1, tempHost;<br />&nbsp; &nbsp; int tempPort;<br /><br />&nbsp; &nbsp; printf&#40;&quot;udpPacket_t size is %d\n&quot;, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; temp = calloc&#40;1, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp space allocated.\n&quot;&#41;;<br />&nbsp; &nbsp; tempHost = calloc&#40;1, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;tempHost space allocated.\n&quot;&#41;;<br />&nbsp; &nbsp; strcpy&#40;temp, clientList&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;clientList copied to temp\n&quot;&#41;;<br />&nbsp; &nbsp; memset&#40;clientList, 0, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;clientList cleared.\n&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp=%s\n&quot;, temp&#41;;<br />&nbsp; &nbsp; temp1 = strtok&#40;temp, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp tokenized into temp1\n&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;starting while loop, \nhost=%s\n&quot;, host&#41;;<br />&nbsp; &nbsp; while &#40;temp1 != NULL&#41;<br />&nbsp; &nbsp; &#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;copying temp1 into tempHost\n&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; fflush&#40;stdout&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;temp1 = %d\n&quot;, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; fflush&#40;stdout&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; strcpy&#40;tempHost, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;%stemp = %s\n&quot;, RED, temp&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;Temp1 is %s\n&quot;, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; temp1 = strtok&#40;NULL, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; strcpy&#40;tempPort, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;removeClient&#58; comparing %s&#58;%d to %s&#58;%d &nbsp;&quot;, host, port, tempHost, atoi&#40;tempPort&#41;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; if &#40;strcmp&#40;tempHost, host&#41; != 0 || atoi&#40;tempPort&#41; != port&#41;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;No Match.\n&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strcat&#40;clientList, tempHost&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strcat&#40;clientList, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strcat&#40;clientList, tempPort&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strcat&#40;clientList, &quot;|&quot;&#41;; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#125;else&#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;Matched!\n&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#125;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;removeClient&#58; clientList = %s\n&quot;, clientList&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; temp1 = strtok&#40;NULL, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; &#125;<br />&nbsp; &nbsp; printf&#40;&quot;exited the loop&quot;&#41;;<br />&nbsp; &nbsp; free&#40;temp, tempHost&#41;;</div><br /><br />Why would temp1 be returning a negative number and not an address?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Coding help!</b><br />
+					Post by: <b>steve</b> on <b>February 03, 2004, 08:01:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code">printf&#40;&quot;temp1 = %d\n&quot;, temp1;</div><br /><br />Should be:<br /><br /><div class="codeheader">Code:</div><div class="code">printf&#40;&quot;temp1 = %s\n&quot;, temp1&#41;;</div><br /><br />I think....<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Coding help!</b><br />
+					Post by: <b>rburt3</b> on <b>February 03, 2004, 08:36:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">or, if you want the memory address of temp1, you would need<br /><div class="codeheader">Code:</div><div class="code">printf&#40;&quot;temp1 = %d\n&quot;, &amp;temp1&#41;;</div><br />but if you wanted the value of temp1, I think you'd want<br /><div class="codeheader">Code:</div><div class="code">printf&#40;&quot;temp1 = %s\n&quot;, temp1*&#41;;</div><br />But then again, my C is *really* rusty.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Coding help!</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 03, 2004, 08:40:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Nevermind... found a more elegant way of doing what I needed:<br /><br /><div class="codeheader">Code:</div><div class="code"> &nbsp; &nbsp;char client&#91;sizeof&#40;udpPacket_t&#41;&#93;;<br />&nbsp; &nbsp; char * temp;<br />&nbsp; &nbsp; int ptr1, ptr2;<br /><br />&nbsp; &nbsp; temp = calloc&#40;1, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; sprintf&#40;&amp;client, &quot;%s|%d|&quot;, host, port&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;Client=%s\n&quot;, client&#41;;<br />&nbsp; &nbsp; ptr2 = 0;<br />&nbsp; &nbsp; for &#40;ptr1=0; ptr1 &lt; strlen&#40;clientList&#41;; ptr1++&#41;<br />&nbsp; &nbsp; &#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; if &#40;strncmp&#40;clientList + ptr1, &amp;client, strlen&#40;client&#41;&#41; == 0&#41;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;Found string at offset %d, moved ptr1 to&quot;, ptr1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ptr1 += strlen&#40;client&#41;-1;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;%d\n&quot;, ptr1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#125;else&#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;Transferring&#58; ptr1=%d &nbsp;ptr2=%d &amp;temp+ptr2=%d, clientList+ptr1=%d\n&quot;, ptr1, ptr2, temp+ptr2, clientList+ptr1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; memcpy&#40;temp+ptr2, clientList + ptr1, 1&#41;; &nbsp; &nbsp; &nbsp; &nbsp;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ptr2++;<br />&nbsp; &nbsp; &nbsp; &nbsp; &#125;<br />&nbsp; &nbsp; &#125;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; printf&#40;&quot;Results&#58; %s\n&quot;, temp&#41;;<br />&nbsp; &nbsp; strcpy&#40;clientList, temp&#41;;<br />&nbsp; &nbsp; free&#40;temp&#41;;<br /></div><br /><br />Still makes me wonder why the other way didn't work. :(</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>A late reply...</b><br />
+					Post by: <b>Madwilli</b> on <b>February 04, 2004, 11:47:25 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I went through this really fast so I might have missed somethings or went overboard. &nbsp;Let me know ---<br /><br /><div class="codeheader">Code:</div><div class="code"><br />void removeClient&#40;char * host, int port&#41;<br />&#123;<br />&nbsp; &nbsp; char * temp, temp1, tempHost;<br />&nbsp; &nbsp; int tempPort;<br /><br />&nbsp; &nbsp; temp = calloc&#40;1, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp space allocated.\n&quot;&#41;;<br />&nbsp; &nbsp; tempHost = calloc&#40;1, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;tempHost space allocated.\n&quot;&#41;;<br />&nbsp; &nbsp; /****** warn&#58; where was 'clientList' declared? *****/<br />&nbsp; &nbsp; /****** warn&#58; strncpy&#40;temp, clientList, sizeof&#40;udpPacket_t&#41;&#41;<br />&nbsp; &nbsp; &nbsp;****** &nbsp; &nbsp; &nbsp; will avoid any tricky issues. Still have to watch<br />&nbsp; &nbsp; &nbsp;****** &nbsp; &nbsp; &nbsp; out though so it might be even better to do the·<br />&nbsp; &nbsp; &nbsp;****** &nbsp; &nbsp; &nbsp; enforce it&#58;<br />&nbsp; &nbsp; &nbsp;****** &nbsp; &nbsp; &nbsp; temp&#91;sizeof&#40;udpPacket_t&#41;-1&#93; = '\0';<br />&nbsp; &nbsp; &nbsp;****** &nbsp; &nbsp; &nbsp; &#40;assuming sizeof is the size of a char...&#41;<br />&nbsp; &nbsp; &nbsp;******/<br />&nbsp; &nbsp; strcpy&#40;temp, clientList&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;clientList copied to temp\n&quot;&#41;;<br />&nbsp; &nbsp; memset&#40;clientList, 0, sizeof&#40;udpPacket_t&#41;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;clientList cleared.\n&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp=%s\n&quot;, temp&#41;;<br />&nbsp; &nbsp; /****** warn&#58; rindex&#40;&#41; and index&#40;&#41; are safer functions to use for·<br />&nbsp; &nbsp; &nbsp;****** &nbsp; &nbsp; &nbsp; parsing of this nature. strtok and strsep are old<br />&nbsp; &nbsp; &nbsp;******/<br /><br />&nbsp; &nbsp; /*-*-* ERROR&#58; strtok returns a char *, temp1 is just a char.·<br />&nbsp; &nbsp; &nbsp;*-*-*/<br />&nbsp; &nbsp; temp1 = strtok&#40;temp, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;temp tokenized into temp1\n&quot;&#41;;<br />&nbsp; &nbsp; printf&#40;&quot;starting while loop, \nhost=%s\n&quot;, host&#41;;<br />&nbsp; &nbsp; while &#40;temp1 != NULL&#41;<br />&nbsp; &nbsp; &#123;<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;copying temp1 into tempHost&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; /*-*-* ERROR&#58; tempHost and temp1 are not pointers·<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-* This is a segfault condition.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-*/<br />&nbsp; &nbsp; &nbsp; &nbsp; strcpy&#40;tempHost, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; /***** warn&#58; where is RED declared? *****/<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;%stemp = %s\n&quot;, RED, temp&#41;;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; /*-*-* This will segfault - see above.·<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-*/<br />&nbsp; &nbsp; &nbsp; &nbsp; printf&#40;&quot;Temp1 is %s\n&quot;, temp1&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; /*-*-* ERROR&#58; strtok returns a char *, temp1 is just a char.·<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-*/<br />&nbsp; &nbsp; &nbsp; &nbsp; temp1 = strtok&#40;NULL, &quot;|&quot;&#41;;<br />&nbsp; &nbsp; &nbsp; &nbsp; /*-*-* ERROR&#58; tempPort and temp1 are not pointers·<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-* tempPort is an int!! Use atoi&#40;temp1&#41; if temp1 was<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-* an array of chars.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-*·<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-* This is a segfault condition.<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*-*-*/<br />&nbsp; &nbsp; &nbsp; &nbsp; strcpy&#40;tempPort, temp1&#41;;<br />&nbsp; &nbsp;/****** I quit going through it here *******/<br /></div><br /><br />are you compiling with gcc? if so use -Wall to get all the warnings. &nbsp;I imagine it'd pick some of these up.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Coding help!</b><br />
+					Post by: <b>geekforGod</b> on <b>February 06, 2004, 12:30:42 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That is what caught my eye first<br /><br />char * temp, temp1, tempHost;<br /><br />will only make temp a char pointer, the other two will only be chars. If you intended for them to be pointers as well could be a cause of your grief. But other than that, I haven't used C in a while, so can't help.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

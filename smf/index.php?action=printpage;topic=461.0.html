@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Ext2 VS Ext3 VS Reiser VS XFS VS EVERYONE ELSE!!!</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => The Big Debate => Topic started by: rugmonster on February 06, 2003, 03:55:58 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ext2 VS Ext3 VS Reiser VS XFS VS EVERYONE ELSE!!!</b><br />
+					Post by: <b>rugmonster</b> on <b>February 06, 2003, 03:55:58 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Why is your favorite filesystem the one filesystem &quot;to rule them all&quot;?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ext2 VS Ext3 VS Reiser VS XFS VS EVERYONE ELSE!!!</b><br />
+					Post by: <b>imnes</b> on <b>February 06, 2003, 07:38:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I like to use XFS. &nbsp;Because it's from SGI and that's just cool. &nbsp;But also I read (I dunno if it's truthful) that it's the most high-performance of the filesystem options. &nbsp;<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ext2 VS Ext3 VS Reiser VS XFS VS EVERYONE ELSE!!!</b><br />
+					Post by: <b>rburt3</b> on <b>February 07, 2003, 10:49:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">XFS, huh? Never tried that one. I like Reiser, myself. Seems to me to be the fastest/most stable of the journaling FS's. 'Course its plain 'ole Ext2 for /boot...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ext2 VS Ext3 VS Reiser VS XFS VS EVERYONE ELSE!!!</b><br />
+					Post by: <b>rugmonster</b> on <b>February 07, 2003, 11:04:39 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I use Ext2 and Ext3. I'm not hugely concerned with the speed increase that the other jfs's give. It isn't enough to really matter to me really. Ext3 is very stable for me. <br /><br />Also, XFS and ReiserFS are good for different things. I can't remember which, but one is fast with small files and actions where the other is good with large files and actions. There is a trade off with each. I think you have to judge what you will be dealing with and make the decision based on your needs. I just like Ext3 because should I need to, I can use a bootdisk with Ext2 support and access my files without worrying about too much funkiness. <br /><br />Funkiness is a bad thing...most of the time.<br /><br />~Ruggy<br />...one funky motha</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ext2 VS Ext3 VS Reiser VS XFS VS EVERYONE ELSE!!!</b><br />
+					Post by: <b>crowe</b> on <b>February 07, 2003, 11:40:34 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm partial to Ext3, myself, simply for the reason that it's an all-around good journalling filesystem.<br /><br /><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">*snip*<br />Also, XFS and ReiserFS are good for different things. I can't remember which, but one is fast with small files and actions where the other is good with large files and actions. There is a trade off with each.<br />*snip*<br /></div><br /><br />For your reading pleasure, of course:<br /><br />Ext2 - Nothing special here. &nbsp;We all know what this one is! &nbsp;Nice and rather solid, but absolutely no journalling support.<br /><br />Ext3 - The sucessor to Ext3. &nbsp;Almost identical to ext2, save for metadeta journalling and ordered block writing, effectively giving it the capabilities of a journalling fs.<br /><br />XFS - SGI's offering to the world of journalling filesystems; I've had some nasty experiences with this one. &nbsp;Had a brown-out here while compiling something rather large.. System comes back up, my entire /home filesystem is poofed. &nbsp;That's just my experience with it, though.. XFS is, however, supposed to be good at handling and moving large amounts of data.<br /><br />ReiserFS - I used to run this for a while; &nbsp;seems to handle small blocksizes better than ext2/3 by a rather noticeable difference, but has a tendency to choke when doing large, sequential reads and writes.<br /><br />JFS - This is IBM's offering, if I remember correctly. &nbsp;Does anyone have any experiences with this?<br /><br />//crowe</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ext2 VS Ext3 VS Reiser VS XFS VS EVERYONE ELSE!!!</b><br />
+					Post by: <b>steve</b> on <b>February 07, 2003, 05:59:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Linux Magazine did a pretty decent article on Journaling File Systems last October. Here is the Link. (http://www.linux-mag.com/2002-10/jfs_01.html)<br /><br />Steve</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

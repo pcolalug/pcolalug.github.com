@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Question about server Apache</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: trigger on April 11, 2003, 10:51:43 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Question about server Apache</b><br />
+					Post by: <b>trigger</b> on <b>April 11, 2003, 10:51:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am having diffculties. I am running apache 2.0. Why is it that I can not view my pages when I use my external ip in the code. I don't understand. Why when I put in my external ip, I get page not found. Yet anyone outside of the network pulls it up fine. I can find fine when i am using internal ip. Just getting tired of changing all the links to internal just to test the site for added features and then back to external after I am finished. I am not sure that this is a server problem. Just did not know what section to put it on. So is there anything I can do.<br /><br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Question about server Apache</b><br />
+					Post by: <b>danc</b> on <b>April 11, 2003, 11:18:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">While I certainly don't know a whole lot about web servers... &nbsp;I'm assuming you are running behind a router, and suspect that the problem has to do with NAT/masquerading (address translation). &nbsp;I've had major problems with that while trying to operate a game server. &nbsp;Not sure of the solution, but that's my guess as to what's wrong...<br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Question about server Apache</b><br />
+					Post by: <b>imnes</b> on <b>April 11, 2003, 02:36:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dumb question but why are you putting an ip / url in the code at all? &nbsp;Assuming all your documents are on your site you should just be using relative URLs. &nbsp;At least that's what I do.<br /><br />Ex: if your page INDEX has a link to USERS/LOGIN, I would just link to USERS/LOGIN not mysite.com/USERS/LOGIN. &nbsp;Make sense?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>makes sense</b><br />
+					Post by: <b>trigger</b> on <b>April 11, 2003, 03:23:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That makes sense but I do not have a website or maybe I should say a domain name. The server is my work computer. I have been given the assignment to build a file download server for certain people that do stuff at their house. So when they access the site they put in http://123.<br />123.123.123/index.html. So hence all my links are http://123.123.123.123/otherfolders/index.html. But I have to go in and change the 123.123.123.123 to 192.168.1.102 for every link on every page just to test and see if it works. It is not a big problem I came up with the idea to have a double set of web folders that I just switch out indexes on to run test. It started to get old. Thanks for all the help though.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Question about server Apache</b><br />
+					Post by: <b>imnes</b> on <b>April 11, 2003, 04:15:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Maybe I don't get it. &nbsp;I still don't see why you need to put the http://123.123.123.123 part. &nbsp;Assuming all the files are on the same server as the HTML index or whatever HTML file the links are in. &nbsp;The server will add the http://ipaddress part to all the links itself. &nbsp;(Or is it the browser that does it?) &nbsp;Anyways you should not have to specify the URL or IP address in your links unless you're linking to a different site than your HTML page is on.<br /><br />About your problem with apache not serving you the pages when you use your external address from the internal network? &nbsp;I dunno that's just wierd. &nbsp;I tried it on my server and it works fine. &nbsp;(Are you on dial-up / DSL? &nbsp;If so make sure you're using your INET address and not your PTP address as your external). &nbsp;Sorry I don't have any more ideas about that problem.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Question about server Apache</b><br />
+					Post by: <b>trigger</b> on <b>April 12, 2003, 10:06:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did not know that the server or browser did that. So what you are say is that instead of the way I was doing it:<br /><br />/&lt;p&gt;&lt;a href=&quot;http://123.123.123/otherfolder/index.html&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;/<br /><br />All I would have to put is <br /><br />/&lt;p&gt;&lt;a href=&quot;/otherfolder/index.html&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;/<br /><br />Let me know if this is correct. Maybe I should go buy the HTML TIPS and TRICKS book. There is certainly things that I do not know. It would probably make my life easier.<br /><br />Trigger</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Question about server Apache</b><br />
+					Post by: <b>imnes</b> on <b>April 12, 2003, 10:43:01 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's correct. &nbsp;<br /><br />And actually I would leave off the / and just link from where your page is to where the next page is. &nbsp;So if they're in the same directory, don't have and / at all. &nbsp;If it's back one directory do ../<br /><br />If it's in a subdirectory called users then do users/<br /><br /><br />That way even if you're script moves to a new subdirectory directory on another site all the links will still work.<br /><br />Here's a snippet of how I link files<br /><br /><div class="codeheader">Code:</div><div class="code"><br />Backup one directory, then under a users directory...<br />&lt;a href=&quot;../users/login.html&quot;&gt;Login&lt;/a&gt;<br /><br />File is in the same directory as this script...<br />&lt;a href=&quot;change.html&quot;&gt;Change your password&lt;/a&gt;<br /><br />File is in a subdirectory under this one...<br />&lt;a href=&quot;pics/thebighouse.gif&quot;&gt;A Big Ole House&lt;/a&gt;<br /></div><br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Question about server Apache</b><br />
+					Post by: <b>dpeach</b> on <b>April 12, 2003, 02:30:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">All this should work as imnes has stated. Apache should be configured so that the default html directory is (depending on the system) something like:<br />/var/www/html<br /><br />This is where you will put your pages so that what Nick is saying is true. If you have chosen to put your pages in another directory like /home/pages (which would not be best, but doable) you would need to tell Apache where the &quot;site root&quot; is. Also, by doing it Nick's way, you will be able to do all of your building and testing in one directory and then just move into your main directory when you are ready to go live and it should all work.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Thanks</b><br />
+					Post by: <b>trigger</b> on <b>April 12, 2003, 05:01:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for all the help guys.<br /><br />Trigger</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

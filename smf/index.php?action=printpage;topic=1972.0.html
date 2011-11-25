@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Okay, win32 codecs</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: SiliconFOXX on October 27, 2004, 07:56:48 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 27, 2004, 07:56:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I've tried researching playing back video in Linux on my own and...well, now I'm more confused than I was to begin with.<br /><br /><br />I've just got everything that came with Slack10.0, stock. &nbsp;I then installed the DivX 4.05 for Linux (pretty sure that's the version). &nbsp;Well, I suppose I still don't have some of those dastardly Win32 codecs for playback because Kaboodle (it's the default...I don't like it much but I don't know if there's better) won't play all of my mpgs or avis that play flawlessly on Windows.<br /><br />Interestingly it also can't handle playing back the DAT files on a VCD at ALL while Windows does it easily since they're just MPEGs with a different extension. &nbsp;Even renaming them in Linux doesn't fix the story (as expected due to a lack of dependency on eight-dot-three notation). &nbsp;I don't know if it's that relevant to the story but it concerns video playback.<br /><br /><br /><br />What exactly do I need to do or download codec wise? &nbsp;Should I download and install Mplayer? &nbsp;I ask about that because it &quot;apparently&quot; seems like it comes with everything but says something about needing KDE3.3 and I'm running 3.2 (and I'm afraid of trying to upgrade since swaret --upgrade kde only updated two libraries...also I've never installed a window manager or removed one). &nbsp;Like I said, I've researched but nobody seems to have much of a straight answer for me.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>dpeach</b> on <b>October 27, 2004, 08:38:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have no real firm answer, but here goes.<br /><br />I am running MPlayer on my Mandrake 10 box with KDE 3.2. It works for almost everything. On their site they have the codecs and tell you how to install them. It won't play every format known to man, and particularly some on the Windows Media Player files, but it does do the vast majority of what is out there.<br /><br />I have had problems with some .avi files. I get a couple of TechTV shows off the web on occasion. Every .avi file that one person puts up is unplayable by MPlayer. But the same episode by just about anyone else is useable for me.<br /><br />So that said. MPlayer may solve your problems and may not. I have not installed it or upgraded it in some time, so I don't know if it really does require KDE 3.3.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>rburt3</b> on <b>October 27, 2004, 11:52:28 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You also may want to give Kaffiene a try. I used to be an MPlayer guy myself until I came across this Xine-based multimedia gem. As for codecs, hopefully slack will take care of these as dependencies, you're golden, otherwise some codecs are a bit of a pain (realplayer) to get installed.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>imnes</b> on <b>October 27, 2004, 12:10:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Find out if your player (kaboodle?) is using xine on the back-end. &nbsp;If not - switch to something that does (like kaffeine as mentioned).<br /><br />You'll want to grab<br />http://www.mplayerhq.hu/MPlayer/releases/codecs/all-20040916.tar.bz2<br /><br />Extract it, move the contents to /usr/lib/win32 I believe.<br /><br />Then any xine player should be able to handle pretty much any video format. &nbsp;<br /><br />Good luck!<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 29, 2004, 07:15:27 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, I'll give Kaffine a try. &nbsp;Would there be any reason not to install Mplayer AND Kaffine, unless they both handle the same filetypes the same way?<br /><br /><br />I've also been running Totem in KDE (heh, gotta love running stuff from other desktop managers) and that has the same issue, I so imagine it's definitely in the codecs. &nbsp;I'm going to try to install that file you linked, imnes, and see if that changes anything.<br /><br /><br />Even if it does, I'm thinking I'll still try one or both of the aforementioned players, see what happens. &nbsp;Thank you for the assistance.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 29, 2004, 07:28:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey hey, I installed the codecs into /usr/lib/win32 like you said (heh, had to actually look up how to extract a bz2, that was fun and enlightening) and surprise, it actually works!<br /><br /><br />Still doesn't recognize the .dat files from a VCD but that's fine, I figure it just might require some other tweaking and playing with. &nbsp;Really, this is great, thank you!<br /><br /><br /><br />In case I need to find this kind of bz2 in the future, where might I go to look for it? &nbsp;Would the Mplayer essentialls file be on my list of things to install as codecs?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>dpeach</b> on <b>October 29, 2004, 09:05:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes, the MPlayer essentials package is the list of codecs you need for normal stuff. Then there is another set of codecs for more obscure things.<br /><br />Look in the MPlayer documentation and see where you are supposed to put those. You may need to dig into a config file in your installed MPlayer to see where it is really looking though. I remember having issues with my original install when I wanted to put more codecs in. I found out MPlayer was not looking in the default directory to find the codecs. And for some reason I still run Mandrake. :twisted: <br /><br />I don't remember how I found where it was looking. But I found it once, so I am sure you can. If it does not seem to be working right after you put the codecs where they are supposed to be, then check your MPlayer configuration.<br /><br />Someone may be able to enlighten us here. Can he use the codecs that are making the other programs work for MPlayer? I would think that a codec is the same for all players, but that is my guess, not based on any fact.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>imnes</b> on <b>October 29, 2004, 09:06:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just google for <br />win32 codecs<br /><br />And you'll find them. &nbsp;Usually from the mplayer or xine homepages. &nbsp;They usually have smaller packs you can download individual codecs, but I just go for the big all-in-one collections.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Okay, win32 codecs</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 29, 2004, 10:07:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the tip. &nbsp;I'm a bigger fan of &quot;all-in-one&quot; packs as well. &nbsp;Maybe it's not elegant, but then there's something to be said for &quot;just working&quot; in the Sledghammer approach.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

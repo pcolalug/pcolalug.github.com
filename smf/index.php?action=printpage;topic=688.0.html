@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Compress</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by:  on May 11, 2003, 12:56:20 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Compress</b><br />
+					Post by: <b></b> on <b>May 11, 2003, 12:56:20 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, here is another newbie question from Narsil &nbsp; :shock: &nbsp;.<br /><br />I created a tar file of my /usr/local/games directory. &nbsp;I did this because I finally got my RTCW server just the way I want it, including shrub mod and punkbuster, and I don't want to re-create it if I screw it up with VI, etc.... &nbsp;I used the following command in a terminal logged in under su, from my /usr/local directory:<br /><br />&quot;tar cvf mygamesdir.tar games&quot;<br /><br />This worked fine, and the tar file was created no problem. &nbsp;However, it is about 780 meg.....in other words too big to burn onto a CD.<br /><br />I used to be able to compress tar files when I was using Unix. &nbsp;I tried the &quot;compress -v mygamesdir.tar&quot; command that I used to use in Unix to make the &quot;Z&quot; file, and Mandrake told me that this was an unknown command.<br /><br />So.....the question is does Linux allow compression of a tar file? &nbsp;If so, what is the command line argument to do it? &nbsp;Also, what argument is used to un-compress it?<br /><br />If this is easy to do, I apologize in advance for my newbie ignorance.<br /><br />Narsil</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Compress</b><br />
+					Post by: <b>crowe</b> on <b>May 11, 2003, 03:21:38 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Try doing one of the following:<br /><br />&quot;tar -cvzf mygames.tar.gz games&quot;<br /><br />This will tell tar to use the gzip compression on the .tar file before exiting, resulting in a file that is both tar'ed and gzip'ed.<br /><br />You would un-compress this sort of file by doing a:<br /><br /><br />&quot;tar -zxvf mygames.tar.gz&quot;<br /><br />Another option is using bzip2 in place of gzip, such as:<br /><br /><br />&quot;tar -cvjf mygames.tar.bz2 games&quot;<br /><br />This is the same as before, but uses bzip2 rather than gzip. &nbsp;You'll probably want to use this one, since bzip2's compression is more or less superior to that of gzip's when used in this fashion.<br /><br />Similiarly, this is extracted with:<br /><br />&quot;tar -jxvf mygames.tar.bz2&quot;<br /><br /><br />Seems simple enough, no? &nbsp;8)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Compress</b><br />
+					Post by: <b></b> on <b>May 11, 2003, 09:09:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks Crowe, a million thanks in fact.<br /><br />Narsil</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Compress</b><br />
+					Post by: <b>dpeach</b> on <b>May 11, 2003, 09:47:14 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Did you try both compressions? What were your final file sizes? Uncompressed, gzipped, and bzipped.<br /><br />David</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Compress</b><br />
+					Post by: <b></b> on <b>May 12, 2003, 12:39:32 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I tried the bzip2 method, not the other.<br /><br />It was still too big to fit on one CD, so I temporarily removed the 6 large pk3 files from the /usr/local/games/wolfenstein/main dir. &nbsp;These are the files that need to be copied manually after the Linux RTCW install from the windows stock disk. &nbsp;(mp_pak0.pk3, mp_pak1.pk3, mp_pak2.pk3, pak0.pk3, sp_pak1.pk3, and sp_pak2.pk3).<br /><br />After that I used the tar command (bzip2 variety) to tar the /usr/local/games/wolfenstein directory, the /home/mark-c/.wolf directory, and the /usr/local/bin directory. &nbsp;I did each one seperately. &nbsp;They came out to be 71.2 Meg, 4 Meg, and 1 Kb respectively.<br /><br />I burned these files and the Linux RTCW install and update files onto one CD, then the 6 .pk3 files onto another, along with an instruction text file so that I will remember how to backup/restore this when it crashes in a flaming heap someday.<br /><br />Anyway, I now have 2 CD's that will allow me to restore my RTCW server back to working order in about 5 minutes (including punkbuster), no matter what happens to it. &nbsp;By the way, if anyone wants to try it out, the server name is Normandy Beach II. &nbsp;It is not up 24/7 however....<br /><br />Windows runs a great program called &quot;The Eye&quot; that allows you to see and join a multitude of games and locate a playing buddy. &nbsp;Does anyone know of a Linux program that does the same thing?<br /><br />Narsil</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Compress</b><br />
+					Post by: <b>danc</b> on <b>May 12, 2003, 06:53:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">Did you try both compressions? What were your final file sizes? Uncompressed, gzipped, and bzipped.</div><br /><br />Just for grins, I tried an experiment with this. &nbsp;I used my /usr/local/games/wolfenstein/main directory, which contains quite a few LARGE files which are already compressed (.pk3 map paks). &nbsp;Because of that, the compression results were not spectacular, as expected. &nbsp;Here's what I got:<br /><br />wolfmain.tar = 752 Mb<br />wolfmain.tar.gz = 685 Mb<br />wolfmain.tar.bz2 = 665 Mb<br /><br />While the .bz2 ended up the smallest, it took MUCH longer to do (10-15x) than the .gz<br /><br />I'm sure that with some text files, or a file type mixture, the compression would be much more noticeable. &nbsp;Anyway, it's interesting.<br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

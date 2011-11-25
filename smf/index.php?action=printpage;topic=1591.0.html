@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Yet another nVidia problem (and Mandrake 10)</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: dpeach on May 06, 2004, 01:56:57 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2004, 01:56:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I am using Mandrake 10 though I have to admit this has been the worst Mandrake for hardware issues I have installed in a long time (keyboard and mouse don't even work right). It was easier to get my hardware going on Gentoo than this!<br /><br />I have installed the nvidia driver per all the guides. I have installed the driver 3 or 4 times before and it has always worked fine. This time though it builds something from the kernel. I assume that it inserts a module of some kind. Everything seems to be fine till I reboot the machine. And then the X server crashes in relation to the driver nvidia.<br /><br />Did the installer build a new kernel that I need to point to so that it will use the nvidia module? If I re-run the installer everything seems to work fine. But a re-boot breaks it.<br /><br />Also, what is the proper command to start x from the command line in Mandrake 10? I have been using startx, but I know that is not the one that Mandrake has customized.<br /><br />Thanks for your help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>rburt3</b> on <b>May 06, 2004, 02:22:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">There seem to be some major issues with the nvidia driver kernel module and 2.6.x (where x seems to be around 3) kernels. I'm trying to track down a similar problem. The thing is that looking around at different forums, you get slightly different symptoms of what seems to be the same problem. APCI is the culpret for some, while AGP config may be the fix for others.<br /><br />For me, if X is configured to use the nvidia driver, the screen turns black and the whole machine locks up (no keyboard, no nothing) as soon as X starts. I'll keep you posted on what I find.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>lloydr</b> on <b>May 06, 2004, 03:09:01 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">with the nvidia module(4496 patched with the minion.de 2.6 kernel patches and 5336 stock from nvidia) i've never had a problem with it not working with 2.6.x kernel on my machines with entire line of 2.6.x kernels(2.6.3 i didn't use though because it had issues with my intel pro/1000 CSA gigabit lan) all running on slackware-current with my own 2.6.x kernel config....maybe a mandrake thing or does it happen on other distros too?<br /><br />but my friend that runs mandrake 10 however did have this problem and i'm not sure how he fixed it or if he did, but i know he was using startx for starting xserver...when i see him on aim ill ask him about it though<br /><br />c ya</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>crowe</b> on <b>May 06, 2004, 03:25:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">It may very well be a problem specific to Mandrake 10.<br /><br />I'm running the 2.6.4 kernel on my main (debian) box; &nbsp;the nvidia driver hasn't given me any trouble.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>geekforGod</b> on <b>May 06, 2004, 03:45:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, it may be Mandrake 10 specific, but I do have Mandrake 10 with the nvidia driver installed and running perfectly. Even played a little ET the other day. I have a Riva TNT2 Model 64 with 32 MB of RAM, in case that is of any help. <br /><br />All I remember changing was the driver from nv to nvidia. I don't think I had to change anything in my modules section. It already had glx and it didn't have dri or GLcore. I didn't add any other options. <br /><br />I didn't have any problems with my keyboard, but I did with my mouse. Logitech usb mouse with scroll. It would not work using the scroll in the PS2 port, but when I changed it to the USB port and changed the mouse type from PS2 to Auto it worked fine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2004, 04:47:27 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well, the problem for me with the nVidia driver is that it won't start up the next time I reboot. I get good numbers on glxgears. ET plays like a dream. Everything works fine (video wise) till I restart the machine. Even killing and restarting X works fine. That is what makes me think it has something to do with the kernel. It only is a problem when the kernel tries to load again.<br /><br />My keyboard problems are strange. My right Alt key does not work and my left Cntrl key does not work. But only in X. Outside of X they work as expected.<br /><br />My mouse problem is something that can probably be solved in the XF86Config-4 file, if I knew what I was doing. My left and right buttons work as expected as well as my scroll wheel. But the middle button (scroll wheel depressed) does not work.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2004, 05:51:38 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">After trying to follow these instructions (http://mgalug.org/node/view/29?PHPSESSID=05e34b7e1f0093749655a9b20d608490) I have things working on the video end. I say that I &quot;tried&quot; to follow the instructions because the nVidia installer crashed out on me and did not get to the point of doing it's kernel thingy.<br /><br />But I decided to reboot and get a fresh start. As far as video goes, it seems to be working perfectly. So I am done there.<br /><br />The strange case of the keyboard (which does not need to be discussed at length here) has changed it's state. I am able to use the right Cntl key for some items, but it does not always work. This happened after changing the line in XF86Config-4 that said I had a 105 key keyboard to 104 keys.<br /><br />Strange.<br /><br />Rburt3, I am not sure the above instructions will help since they are supposed to be Mandrake specific.<br /><br />Thanks for your help.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>danc</b> on <b>May 06, 2004, 09:14:06 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">David,<br /><br />I'm going to assume that you're using Mandrake 10 &quot;Community Edition&quot;... &nbsp;The nVidia/reboot problem was due to an error in one of the startup scripts, (occurs after you apply Updates), and the fix is:<br /><br />First, fix your /etc/X11/XF86Config-4 file to be right again (Driver<br />&quot;nvidia&quot; and make sure the &quot;Load GLX&quot; line is not commented out).<br /><br />Then, as root,<br />Edit the file &nbsp;/usr/share/harddrake/service_harddrake<br />&nbsp; &nbsp;and add the missing &quot;n&quot; in row 24, column 104.<br />&nbsp; &nbsp;It should read: &nbsp;qw(NVdriver nvidia.ko))<br /><br />They left the &quot;n&quot; out of &quot;nvidia.ko&quot;...<br /><br />After this edit, save and exit, and reboot. &nbsp;Should be working fine.<br /><br />This problem is only present for the Community Edition. &nbsp;I'm assuming that's what you have, as the &quot;Official&quot; version has not been released to the public yet (just Mandrake Club members). &nbsp;At the beginning of this thread you mentioned that this version was the worst Mandrake you'd seen in a while, and I would agree with you about Community Edition. &nbsp;However... I can assure you that Mandrake 10 Official is without a doubt the smoothest and most complete distro (of any flavor) that I have ever seen. &nbsp;It is as close to flawless as can be expected, and I am truly amazed with everything about it. &nbsp;I had just about given up on Mandrake myself, but this release has kept me in the Mandrake camp. &nbsp;I cannot recommend it highly enough.<br /><br />As for your mouse issues, perhaps you can post the relevant portions of your XF86Config-4 file, and we'll chew on it a little...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>rburt3</b> on <b>May 06, 2004, 09:31:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I retract my earlier statement. Its just the 2.6.5-mm and 2.6.6 series that seem to have other issues with the kernel module. My &nbsp;2.6.4-mm worked fine. Darn my need to experiement... :roll:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>dpeach</b> on <b>May 06, 2004, 09:38:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks Danc for the time. I checked those lines and everything is right...now. I did not have to change anything. But again, it is working now. So I will assume that something I did in one of the many guides that I read made the change.<br /><br />How do I know if I have the CE? I got it from bhoff who got it at the last Installfest. I don't think Official was out back then was it?<br /><br />I guess I shouldn't complain too much about Mandrake and the hardware issues (but I will anyway). They have been so good in the past at making stuff work the first time. I did not expect my scroll wheel to work out of the box, as it never has, but I did expect the middle button to work, as it always has. And keyboard problems? That just seems lame.<br /><br />I expect that my video problems are solved for the moment. I will start chipping away at the other issues now.<br /><br />Thanks everyone.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>danc</b> on <b>May 06, 2004, 10:21:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">How do I know if I have the CE? I got it from bhoff who got it at the last Installfest. I don't think Official was out back then was it?</div><br /><br />Yes, you've got the CE. &nbsp;The Official release should be public in a matter of days, and again, it is MUCH better. &nbsp;Do yourself a favor and get it.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>geekforGod</b> on <b>May 06, 2004, 10:50:00 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have Mandrake 10.0 Official, but I still had a few of these problems. Couldn't get my scroll to work under the PS/2 port. Had to change to USB and then it worked for some reason. Mplayer kept crashing, finally just decided to use xine. XMMS wouldn't work until I installed some ALSA stuff and configured it. <br /><br />However, now that everything is configured and running, it is great. Anyways, if I have a chance I'll let you guys borrow the 10.0 Official cds.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>lloydr</b> on <b>May 06, 2004, 11:12:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rburt3</div><div class="quote">I retract my earlier statement. Its just the 2.6.5-mm and 2.6.6 series that seem to have other issues with the kernel module. My &nbsp;2.6.4-mm worked fine. Darn my need to experiement... :roll:</div><br /><br />the -mm patchset always seems to hate my hardware(except the toshiba tecra laptop running the centrino set) so i completely gave up on it for my main rig lol <br />right now running happily 2.6.5 without a problem....sittin around waitin for 2.6.6 and hoping it dont have any issues when its stable lol<br /><br />so im gonna guess by the way its going, it musta been a mandrake specific problem? ill be sure to keep a lookout for any friends runnin drake that run into this issue</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>rburt3</b> on <b>May 07, 2004, 12:50:16 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This post (http://forums.gentoo.org/viewtopic.php?t=95678) on the Gentoo forums fixed it all up for me. Though I wonder, what's a good glxgears fps? I'm getting the following<div class="quoteheader">Quote from: glxgears</div><div class="quote">11388 frames in 5.0 seconds = 2277.600 FPS<br />11426 frames in 5.0 seconds = 2285.200 FPS<br />11787 frames in 5.0 seconds = 2357.400 FPS<br />11810 frames in 5.0 seconds = 2362.000 FPS<br />11802 frames in 5.0 seconds = 2360.400 FPS</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>lloydr</b> on <b>May 07, 2004, 12:56:06 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">um i average between 6000-7600fps with my p4 2.8c 800fsb HT, geforce4 Ti4600 128mb agp4x, 512mb dual channel ddr400 ram running slackware-current and 2.6.5 kernel with dropline-gnome 2.6<br /><br />&nbsp;but i dont really think its that great of a gauge of performance now that hardware has gotten a bit above what glx gears can stress too much....think it gets to a point where glxgears just cant show what means performance and what dont, probaly a better guage would be quake3, ut2003/ut2004, or something of that nature with a good benchmark run</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>rburt3</b> on <b>May 07, 2004, 08:21:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You're probably right on the benchmark thing. However, even though my system isn't quite as beefy (Athlon XP 2000+ (1.6Ghz), GeForce3 Ti200, 1024 Mb of PC2100, yadda yadda), I still think I ought to be getting better numbers. Maybe I'll finally pick up that copy of UT2004 this weekend and see what kind of numbers I get.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>danc</b> on <b>May 07, 2004, 08:33:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'd say your numbers are right. &nbsp;I get about 3500 fps, with an Athlon XP 2200+, GeForce4 Ti 4200 (64Mb), and 512Mb PC2700. &nbsp;This is normal according to fairly extensive research I've done...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>dpeach</b> on <b>May 07, 2004, 09:26:07 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">My numbers are approximately 4600. I clicked off of glx gears and started doing some reading. With glxgears in the background and not being displayed I was getting an average of 14500!<br /><br />I read the Gentoo thread and was surprised to see the fix. It seemed odd that the driver would barf on unconnected outputs (if you haven't read the thread, then the final post is really the only one that gives answers, but you don't know the problem until reading some of the earlier ones). Fortunately that was not my problem. Unfortunately, I don't know what was.<br /><br />Oh well. It works and I'm happy.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yet another nVidia problem (and Mandrake 10)</b><br />
+					Post by: <b>rburt3</b> on <b>May 07, 2004, 08:16:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: dpeach</div><div class="quote">Oh well. It works and I'm happy.</div><br />And that's really all that matters... ;)</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Abit KV7 Bios Issue</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: hitechwizard on February 13, 2004, 10:13:59 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>hitechwizard</b> on <b>February 13, 2004, 10:13:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Don't know how many others use Abit boards (I'm a big fan of them), but the KV7 currently has a small issue booting SATA drives when you set the USB keyboard and mouse support to BIOS control vs. OS control. No big issue if you use the PS/2 ports.<br /><br />It drove me nuts trying to figure it out, since you need BIOS control in order for linux to work riight from boot up. Just thought I'd save someone else the headache.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>June 01, 2004, 02:30:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Jessy<br />&nbsp; &nbsp;I wish I had been more attentive to the club post before I bought a KV7 ABIT mobo. I am building a linux box with the KV7 and AMD3000+ processor. My problem with the board is that Mandrake 10.0 , SUSE 9.1 Personal &nbsp;and SUSE 9.1 Live will not correctly detect my EIDE hard drives, yet Mandrake 9.2 installs correctly in hda. The others want to detect &nbsp;the hard drive as hde. I have tried three differect hard drives with the same effect. I know the Distro disks are good as I have installed them on my other computers. &nbsp;I wonder if anyone else has the KV7 board and if so, is it operating correctly, also is anyone running the 2.6 kernel on this mobo?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>June 01, 2004, 09:32:28 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Now I'm not sure if I do have a problem. I went ahead and installed Mandrake10.0 Official in hde and it installed OK. It booted up fine and found and read from the CDROM correctly. I had been lurking the ABIT forums and found references to hde and hdf in regards to SATA drives so maybe there has been something about linux I have been missing. I have been used to the first drive being hda. Anyone want to enlighten me?<br /><br />Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>hitechwizard</b> on <b>June 03, 2004, 09:18:13 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you have the SATA interfaces operating, anything with a 2.6.x kernel will identify them first as HDA-HDD, then the EIDE drives as HDE-HDH. If you were to disable the SATA interface in the BIOS, then your EIDE drives would have started at HDA like you were expecting.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>June 03, 2004, 09:40:29 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Jesse<br />&nbsp; I have my SATA interfaces disabled in the BIOS, but it has no effect. I get the same results regardless if I have the SATA enabled or disabled. It appears that maybe I have a BIOS problem. Is there a way to flash the BIOS in linux or will I have to load Windows to do it?<br />&nbsp; &nbsp; &nbsp;Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>June 04, 2004, 06:38:54 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Well Jesse<br />&nbsp; &nbsp; I realize that I need to install a copy of windows in order to flash my BIOS and after reading the instructions I feel that a copy of Windows98 will be the best to use because of DOS requirements.I assume from your original post that you are using SATA drives so if there are any others using the KV7 mobo with EIDE drives, I would really like to hear if they are designated correctly.<br /><br />&nbsp; &nbsp;Harold :?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>June 05, 2004, 09:02:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">This will be my last update on this problem. I loaded windows and used the app &quot;FlashMenu&quot; to Flash my BIOS with no resulting change nor improvement. I have requested a RMA from ABIT and I will ship my mobo to them when authorization is received.<br />&nbsp; &nbsp;Harold :roll:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>July 02, 2004, 01:55:10 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I changed my mind, I do have an update. I received another motherboard from ABIT and it has the same condition. Kernel 2.6.x distros used with EIDE drives are not compatible with KV7 ABIT mobos. I have yet to receive a reply from ABIT on this problem.<br /><br />Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>July 03, 2004, 09:53:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">ABIT issued a BIOS update early in june that fixed the problem about USB support that Jesse identified . I downloaded the KV7 version 1.5 and flashed my BIOS and I still have the same condition. I have contacted ABIT support again with my problem. I sure wish there was someone that has a KV7 board that is using EIDE drives,so they could verify my problem .<br /><br />&nbsp; &nbsp;Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>July 06, 2004, 09:39:17 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have had little to no feedback on this problem so it appears that Jesse and I are the only ones to purchase a KV7 mobo. I suspect the problem lies in the SATA support in the 2.6.x kernel. I ran across some chatter in the Kernel 2.6.7 changelog referring to SATA support so I searched out a distro that used the latest kernel. I downloaded and installed LORMALINUX, a Fedora based distro using 2.6.7-1. The install went without a hitch, hard drives properly identified as well as the CDROM. Internet and LAN connections went smoothly. At the very start of the installation, the installer installed a SATA driver, much like what is required for WindowsXP to install. I am going to research this a little more and try other Distros with various versions of 2.6.x.<br /><br />&nbsp; &nbsp;Harold</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>steve</b> on <b>July 06, 2004, 09:54:36 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I haven't paid much attention to this thread since I don't have the motherboard but thought I'd give the research a quick shot. I did a google on &quot;KV7 Suse 9.1&quot; (My current distro of choice) and it came back with this link (http://forums.suselinuxsupport.de/index.php?s=8ee9b7fb1b1e3e8f8543d22d72b626a4&amp;showtopic=1808) as the first hit in google.<br /><br />Basicaly the solution says:<br /><br />&quot; OK - fixed it. At the splash screen type into the command line:<br />ide=reverse<br />then select &quot;installation&quot; and off you go!<br /><br />I guess this had the effect of detecting the SATA controller *after* the onboard IDE<br />chipset, thus giving the appropriate device labels to your hardware.<br /><br />SuSE Sys Admin manual to the rescue again&quot;<br /><br />I hope this helps....<br /><br />Steve</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Abit KV7 Bios Issue</b><br />
+					Post by: <b>woodyharold</b> on <b>July 07, 2004, 11:14:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks Steve<br />&nbsp; &nbsp; It also works with Mandrake 10.0. &nbsp;I googled everything I could think of that &nbsp;I thought applied, but never specificely SUSE along with KV7. Now I will be able to install SUSE 9.1 Pro and forget about this problem. Thanks again.<br /><br />&nbsp; &nbsp;Harold</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - configuring mail</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: Brent on May 27, 2004, 11:29:37 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>configuring mail</b><br />
+					Post by: <b>Brent</b> on <b>May 27, 2004, 11:29:37 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey all,<br /><br />I'm trying to configure mail in slack 9.1. &nbsp;I just want to access my isp's pop and stmp server using pine, or nail, etc. &nbsp;I posed this question in yahoo chat and everyone suggests I use fetchmail and sendmail and ... &nbsp;I just want to check my email! lol <br /><br />personally, I think there should be a setting somewhere in pine, mutt or whatever ...something like this <br /><br />popserver= mail.blah.net<br />stmp= mail.blah.net<br /><br />p.s. &nbsp;I'd like to use a cli mail client so i can access it over ssh.<br /><br />Thx a million,<br />Brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>configuring mail</b><br />
+					Post by: <b>danc</b> on <b>May 28, 2004, 06:33:51 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm at work (on a windows machine), so I can't test this at the moment, but a quick Google search gave me this:<br /><br /><div class="quoteheader">Quote</div><div class="quote"><br />Now, let's open up and configure Pine. This is begun by typing<br /><br />pine<br /><br />(Note that it is usually case sensitive--typing Pine would return an error)<br /><br />The first time you open it you get some sort of welcome message--at any rate, type E to exit that message and it brings you to another list. Type S for setup and then C for configuration. The top line, personal-name will be highlighted. To change the value, type C for change, and then you can enter in your information. Hitting return saves it.<br /><br />So, we only have to configure three things here.<br /><br />personal-name<br />John Smith <br />This is simply your display name.<br /><br />userdomain<br />isp.com<br />The user domain is whatever is in your email address after the @sign.<br /><br />smtp-server<br />smtp.isp.com<br />This is the address of your smtp server, information that you will have received from your ISP.<br /><br />That's it, you're done. You can now send and receive email with Pine.</div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>configuring mail</b><br />
+					Post by: <b>danc</b> on <b>May 28, 2004, 07:31:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">(Moderator Note): &nbsp;Thread moved from &quot;Other Distributions&quot; to &quot;Other Software&quot; this date by danc.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

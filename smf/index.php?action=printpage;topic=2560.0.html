@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - suse ipconfig question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: jaymz_720 on August 20, 2005, 07:54:20 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>suse ipconfig question</b><br />
+					Post by: <b>jaymz_720</b> on <b>August 20, 2005, 07:54:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a small question for the suse users. How do I release an IP address in suse? I use the same connection between my PC (XP) and notebook (suse). I know how to release it from the command prompt in windows but I do not know how to do it from suse. I do not believe that renewing it in windows will work until I release it from suse.<br /><br />Thanks,<br /><br />James</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>suse ipconfig question</b><br />
+					Post by: <b>rugmonster</b> on <b>August 21, 2005, 09:10:09 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="codeheader">Code:</div><div class="code"># dhcpcd -k eth0</div><br /><br />That kills dhcpcd and tells it to send a DHCP_RELEASE to the dhcp server.<br /><br />Now, as to what connection you are sharing. Is this cable or DSL or something else?<br /><br />Cable, you can usually power cycle the modem when changing systems. The other option is to make the SuSE system have the same MAC address as your Windows desktop. Mind you, this will not be permanent, unless you add it to your network init script, but you could do something like this<br /><div class="codeheader">Code:</div><div class="code"># ifconfig eth0 hw ether xx&#58;xx&#58;xx&#58;xx&#58;xx&#58;xx</div><br />With DSL, I think most of the modems actually include a router so you would just need a switch.<br /><br />Finally, the best option is to get a Linksys WRT54G or GS and not even worry about dealing with DHCPCD or faking MAC addresses.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>suse ipconfig question</b><br />
+					Post by: <b>dpeach</b> on <b>August 21, 2005, 01:49:49 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: rugmonster</div><div class="quote">Finally, the best option is to get a Linksys WRT54G or GS and not even worry about dealing with DHCPCD or faking MAC addresses.</div><br /><br />And why is this the best option you ask? That is because at that point you will be able to have both of your computers connected to the Internet at the same time. And they will be networked together to help share your files between the two boxes.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>suse ipconfig question</b><br />
+					Post by: <b>jaymz_720</b> on <b>August 22, 2005, 12:22:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, thanks. It is DSL by the way. I have had difficulty connecting suse to wireless. Windows does okay, so when I'm around a wifi hotspot I use it instead. I spent two weeks trying to get sound to find out that the ext amp was turned on by default, so I'm almost expecting something like &quot;turn it on&quot;, but does anybody know how get suse to connect?<br /><br />James</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>suse ipconfig question</b><br />
+					Post by: <b>rugmonster</b> on <b>August 22, 2005, 02:18:24 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Depends on the chipset your wireless uses. Some chipsets have native support while others use NDISWRAPPER and the windows drivers. <br /><br />For example, my wireless card uses the Prism chipset. I have to load a firmware so that when the module is loaded, the firmware is loaded to the card. From there, I configure the wireless connection either with the Gnome Network Manager or the iwconfig command.<br /><br />Let us know what wireless NIC you are using. You can also do a search on Google and find out what path you should take, but if you are lost, let us know and we will help you out.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Printer Sharing RH9 HOW-TO by Sandspur</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Club Stuff => Articles => Topic started by: dpeach on May 14, 2003, 10:27:57 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Printer Sharing RH9 HOW-TO by Sandspur</b><br />
+					Post by: <b>dpeach</b> on <b>May 14, 2003, 10:27:57 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><b>PRINTER SHARING WITH RED HAT 9</b><br /><br /><i>By Chuck Steele<br />8 May 2003<br />sandspur@seii.net</i><br /><br /><b>INTRODUCTION</b><br />This HOWTO article is a description of how I got a small office/home office LAN to share a printer with Red Hat Linux 9. &nbsp;<br /><br />RH9 comes with the Common Unix Printing System (CUPS) as its default printing system and has a GUI configuration tool, redhat-config-printers. &nbsp;I found the &nbsp;GUI easier to use than the browser-based configuration tool for CUPS that came with RH8.2.<br /><br />The SOHO system in this example consists of two machines with fixed IP addresses, box #1 and box #2, connected through a switch with network services working. &nbsp;A low-end USB printer is connected to box #1 and is already configured and working. &nbsp;Our mission is to share the printer over the network.<br /><br /><b>LETS DO IT</b><br />Let us configure box #1 to accept print jobs from other hosts.<br /><br />Click on the Main Menu icon (The Red Hat) &nbsp;&gt; &nbsp;System Settings &nbsp;&gt; &nbsp;Printing. &nbsp;We are prompted for root's password and then root is presented with the &nbsp;CUPS printer configuration GUI. &nbsp;We can see information about the default printer. &nbsp;On box #1 we can see that the queue is named lp and the description is that the printer is an HP648C (It is important we remember the queue name for when we configure the printer on box #2.).<br /><br />Click on the drop-down menu Actions &nbsp;&gt; &nbsp;Sharing. &nbsp;There are two tabs, General and Queue.<br /><br />Click on the General tab. &nbsp;Check the check box This queue is available to other computers. &nbsp;Click on the Add button and you will be prompted to choose between four options with check boxes:<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; All hosts<br />&nbsp; &nbsp; &nbsp; &nbsp; Network devices<br />&nbsp; &nbsp; &nbsp; &nbsp; Network Address (for a range of addresses)<br />&nbsp; &nbsp; &nbsp; &nbsp; Single IP address<br /><br />I opted for Single IP address and typed in the IP address of box #2. &nbsp;Click on OK.<br /><br />Click on the Queue tab.<br /><br />There are two check boxes, Automatically find remote shared queues and Enable LPD protocol. &nbsp;Check them both and click on OK. &nbsp;<br /><br />Click on the Apply icon.<br /><br />When you click on the Apply icon printer configuration &nbsp;information &nbsp;is written to the /etc/cups/printers.conf file. &nbsp;The printers.conf file for box #1 looks something like this when viewed with vi:<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;DefaultPrinter lp&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; Info Created by redhat-config-printer 0.6x<br />&nbsp; &nbsp; &nbsp; &nbsp; Device URI usb:/dev/usb/lp0<br />&nbsp; &nbsp; &nbsp; &nbsp; Location HP648C<br />&nbsp; &nbsp; &nbsp; &nbsp; State Idle<br />&nbsp; &nbsp; &nbsp; &nbsp; Accepting Yes<br />&nbsp; &nbsp; &nbsp; &nbsp; JobSheets none none<br />&nbsp; &nbsp; &nbsp; &nbsp; Quota Period 0<br />&nbsp; &nbsp; &nbsp; &nbsp; PageLimit 0<br />&nbsp; &nbsp; &nbsp; &nbsp; KLimit 0<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;/Printer&gt;<br /><br />Box #1 should accept print jobs from box #2 now.<br /><br /><b>CONFIGURING THE PRINTER ON BOX #2</b><br />On box #2 we'll click on the Red Hat &nbsp;&gt; &nbsp;System Settings &nbsp;&gt; &nbsp;Printing icon and type in root's password when prompted.<br /><br />When the redhat-config-printers GUI appears click on the New icon and Red Hat's most excellent printer configuration wizard will present itself. &nbsp;Click on Foreward and fill in information in dialog boxes as you did on box #1 EXCEPT when you come to the Queue Type window.<br /><br />There is a little drop-down menu where the first and default choice is Locally connected printer. &nbsp;Click on the drop-down menu and select the Networked UNIX (LPD) choice. &nbsp;Two dialogue boxes will appear: &nbsp;Server and Queue. &nbsp;Type in the IP address of box #1 in the first box and lp in the Queue box (I told you earlier we needed to remember the name of the queue on box #1!).<br /><br />Click on Foreward and finish the printer configuration just as you did on box #1.<br /><br />When you are done click on the Apply icon and the information will be written to /etc/cups/printers.conf file. &nbsp;The printers.conf file on box #2 is different from the one for box #1. &nbsp;It looks like this viewed with vi:<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; # Printer configuration file for CUPS v1.1.15<br />&nbsp; &nbsp; &nbsp; &nbsp; # Written by cupsd on Thursday 8 May 2003 06:45:07 PM GMT<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;DefaultPrinter lp&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; Info Created by redhat-config-printer 0.6.x<br />&nbsp; &nbsp; &nbsp; &nbsp; DeviceURI lpd://192.168.0.16/lp<br />&nbsp; &nbsp; &nbsp; &nbsp; Location HP648C<br />&nbsp; &nbsp; &nbsp; &nbsp; State Idle<br />&nbsp; &nbsp; &nbsp; &nbsp; Accepting Yes<br />&nbsp; &nbsp; &nbsp; &nbsp; JobSheets none none<br />&nbsp; &nbsp; &nbsp; &nbsp; QuotaPeriod 0<br />&nbsp; &nbsp; &nbsp; &nbsp; PageLimit 0<br />&nbsp; &nbsp; &nbsp; &nbsp; KLimit 0<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;/Printer&gt;<br /><br /><b>THE MOMENT OF TRUTH</b><br />After we have hit the Apply icon pause, think of a penguin, and click on the Test icon. &nbsp;Select the CUPS test page option and if you and I have our acts together the remote printer will spit out a nice crisply printed test page.<br /><br /><b>FEEDBACK WELCOME</b><br />If you see any glaring errors or have any suggestions please contact me via e-mail &lt;sandspur@seii.net&gt;. &nbsp;PGP public key available on request.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Web Development on Linux</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Other Software => Topic started by: imnes on January 23, 2005, 05:11:22 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Web Development on Linux</b><br />
+					Post by: <b>imnes</b> on <b>January 23, 2005, 05:11:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, for all of us doing Web / HTML type work under Linux. &nbsp;Being able to test cross-browser function of your page is usually necessary. &nbsp;I've got Mozilla FireFox 1.0, Internet Explorer 6.0, and Opera installed on here. &nbsp;But being a Gnome person I really don't like having to install kde just to test for konqueror users. &nbsp;And having to install a mac emulator + OSX to test on Safari. &nbsp;<br /><br />Maybe this is a solution:<br /><br />I stumbled on this project today called GTK WebCore. &nbsp;If you guys remember the announcement (last year?) Apple took the KDE rendering core from konqueror (Khtml) and ported it to use in Safari. &nbsp;So as far as I know safari and konqueror should render pages similarly. &nbsp;Now someone's taken the Safari code and ported it back to Gtk. &nbsp;It comes with a reference browser implementation, so now you can supposedly get Safari / Konqueror browsing natively in GTK. &nbsp;<br /><br />I'm going through the build process right now on Ubuntu and saving the debian packages I create. &nbsp;If anyone wants to test them out I can make the packages available, but building the thing is pretty straightforward. <br /><br />You can check out their project at: http://gtk-webcore.sourceforge.net/<br /><br />And some screenshots of this new browser:<br /><br />http://homeweb.org/~nick/random-pictures/flower-apple.png<br />http://homeweb.org/~nick/random-pictures/flower-kde.png<br />http://homeweb.org/~nick/random-pictures/flower-slashdot.png<br />http://homeweb.org/~nick/random-pictures/flower-info.png<br /><br />And just to compare, konqueror hitting some of the same pages on another LUG members machine:<br /><br />http://www.homeweb.org/~nick/random-pictures/kde-konqueror.jpg<br />http://www.homeweb.org/~nick/random-pictures/apple-konqueror.jpg<br />http://www.homeweb.org/~nick/random-pictures/slashdot-konqueror.jpg<br /><br />The reference browser I think just exists to show you how to use their code and not for daily browsing - it is pretty buggy. &nbsp;But it's also brand new. &nbsp;It will segfault submitting some forms, and it also can't handle cleaning up URLs for you (if you type www.google.com into the location bar it doesn't know to turn it into http://www.google.com/)<br /><br />But for loading and previewing pages it's fine.<br /><br />Nick</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

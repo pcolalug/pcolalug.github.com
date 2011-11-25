@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Semi-simple KDE question</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Desktops => Topic started by: SiliconFOXX on March 19, 2004, 12:53:42 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Semi-simple KDE question</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>March 19, 2004, 12:53:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Okay, I give up. &nbsp;How are you SUPPOSED to start KDE from the command line in Slackware 9.1? &nbsp;startx points to gnome right now which is all well and good (since I primarily use it anyway) but starting KDE has become a bit of a humorous chore.<br /><br />&quot;startkde&quot; fails because it's looking for the X server and naturally it seems that this command does not initialize the X server. &nbsp;So! &nbsp;Just for the hell of it I decided to type &quot;xinit&quot; and after changing my screen to the quarter-of-the-screen-is-my-console I typed &quot;startkde&quot; whereupon it worked. &nbsp;However, it's also happening to be running from a terminal window which is mildly humorous but I don't think it's the sort of thing that should be happening. &nbsp;There's also the fact that if you kill the terminal window KDE dies.<br /><br /><br />Another semi-humorous solution has been to start KDE whilst in Gnome. &nbsp;Running one desktop inside of another I find a perverse pleasure in but again, I don't think is something &quot;right.&quot; I think it scares my windows box, though. :twisted: <br /><br /><br />Anyway, how am I SUPPOSED to start up KDE? &nbsp;And is there a quick/easy way to switch between KDE and Gnome in Slack?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Semi-simple KDE question</b><br />
+					Post by: <b>danc</b> on <b>March 19, 2004, 04:08:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Probably the easiest way would be to run the program &quot;xwmconfig&quot; from the command line... &nbsp; :lol: <br /><br />If you'd like, you can browse the directory /etc/X11/xinit where you'll see the scripts for starting the various desktops. &nbsp;I believe all the program above does is set the symlink &quot;xinitrc&quot; to point to the desired desktop script. &nbsp;You can change this manually if you're comfortable with that.<br /><br />On a related note, if you'd like X to start at bootup, just change the default runlevel from &quot;3&quot; to &quot;4&quot; in the /etc/inittab file (the &quot;id:3:initdefault:&quot; line).<br /><br />You mentioned you are using Gnome... &nbsp;If you haven't already, you really should check out Dropline Gnome at http://www.dropline.net/gnome<br />This provides you with an auto-updater and keeps everything very up to date, not to mention that it looks beautiful too. &nbsp;Check it out!<br /><br />BTW, here is an EXCELLENT &quot;book&quot; on Slackware, provides all the answers you'll need... &nbsp;http://www.slackware.org/book/<br /><br />Glad you're enjoying Slackware!<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Semi-simple KDE question</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>March 24, 2004, 10:38:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks a lot, I was thinking I'd have to screw around with redirecting the softlink of xinit manually or something crazy like that.<br /><br />Yeah, I'm running Dropline right now and I love it. &nbsp;Simple, effective, not cluttered at all (a big change from Windows), and it's not too &quot;busy.&quot; Still, I figured I'd give KDE and Fluxbox a go just to see if maybe I'll surprise myself.<br /><br /><br /><br />Right now I'm just figuring out how to upgrade my kernel. &nbsp;Don't want to be going through all the work of compiling the 2.6 and then not be able to boot it properly. &nbsp; :roll: <br /><br />Thanks again for putting Slackware on here. &nbsp;It rocks!</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

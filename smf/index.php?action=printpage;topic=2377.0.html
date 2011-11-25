@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - looking for usb wifi adapter</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Other Hardware => Topic started by: Brent on April 11, 2005, 08:11:57 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>looking for usb wifi adapter</b><br />
+					Post by: <b>Brent</b> on <b>April 11, 2005, 08:11:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey all,<br /><br />I'm looking for a usb wifi adapter that works under linux. &nbsp;Why usb? &nbsp;Well, if I ever get a laptop i want something i can just plug and play between systems.<br /><br />So far I've come across this link:<br />http://www.linux-wlan.org/docs/wlan_adapters.html.gz<br /><br />If you have any advice in this area, don't be shy.<br /><br />brent</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>re: looking for usb wifi adapter</b><br />
+					Post by: <b>erc</b> on <b>April 20, 2005, 12:29:47 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">You could always cheat and use NDIS like I did - that way, you could use any wifi adapter.<br /><br />NDIS works under Linux and *BSD.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>looking for usb wifi adapter</b><br />
+					Post by: <b>rugmonster</b> on <b>April 20, 2005, 05:05:31 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">NDISWrapper isn't a sure fire solution. Native support is always more desirable.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>NDISWrapper</b><br />
+					Post by: <b>erc</b> on <b>April 20, 2005, 06:54:52 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Obviously. &nbsp;NDISWrapper is for the vast majority of devices on the market which have only Windows drivers. &nbsp;NDISWrapper has worked for me in every device I've tested it on. &nbsp;Good enough for me :D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>looking for usb wifi adapter</b><br />
+					Post by: <b>danc</b> on <b>April 20, 2005, 07:15:03 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I make it a point to only support (buy) hardware that works with Linux natively. &nbsp;My reasoning is that if everyone did that, eventually all the hardware would be compatible. &nbsp; :D <br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>re: linux compatible hardware</b><br />
+					Post by: <b>erc</b> on <b>April 20, 2005, 07:23:30 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Sometimes you just can't find compatible hardware. &nbsp;Besides, this isn't going to make vendors supply Linux-compatible hardware - but press coverage will ;) &nbsp;Voting with one's wallet only works if the target is aware that you are doing so...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>looking for usb wifi adapter</b><br />
+					Post by: <b>imnes</b> on <b>April 20, 2005, 08:25:48 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I had trouble using ndiswrapper with a wifi card on a laptop, would lock up after a few minutes of using it. &nbsp; That's the only time I tried it though, I guess works better for some cards than others.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>looking for usb wifi adapter</b><br />
+					Post by: <b>erc</b> on <b>April 20, 2005, 08:52:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">That may be true. &nbsp;I'm using DSL on an old Toshiba 335CDS laptop, it's got a Linksys WPC11 rev. 4 card in it that's not supported natively by Linux, but it's running NDIS and has been up continuously for the last 4 months. &nbsp;I use it as a backup mail server, it talks UUCP over SSH-wrapped TCP/IP.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

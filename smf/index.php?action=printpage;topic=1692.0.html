@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Changing my network setup.</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: L.Rentz on June 10, 2004, 10:53:35 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing my network setup.</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 10, 2004, 10:53:35 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, &nbsp;let me see if I can explain this. &nbsp;Presently at home I have is a Cox broadband connection. &nbsp;I receive two IP's, &nbsp;one of which I pay $6.95 extra for /month that I would not mind one bit dropping if I could. I use one internet addressable IP on a windows box with one nic seperate from my internal network. &nbsp;I will refer to it as (W1). &nbsp;The other IP I plug into a router acting as a dhcp server for other linux and windows boxes I have running on an internal network. &nbsp; Well after hearing Scott's talk about ssh and scp I think I want to change things around a bit. &nbsp;Here is what I have in mind:<br /><br />(Option 1) &nbsp; I would like to take the internet addressable IP from (W1) and plug it directly into my main linux box (L1) which I will add another nic so it has 2 nics one for the internet addressable IP (so I can ssh and scp in from anywhere) and one connected to my router for my internal network which will provide a local ip for (L1) so it can function on my local network as well. &nbsp;<br /><br />(Option 2) &nbsp; I have a linksys routher that I know I can open a port and still ssh into the local network (which I dont know how to do and I will need a little help figuring out) and that would enable me to get rid of one of my IP's and save me $6.95 a month. &nbsp;I think I watched someone at the lug do that in the meeting he even exported the display which was to cool.<br /><br />What do you think would be the better choice and how hard would the configuration be? &nbsp;It would be a learning experience for me either way. &nbsp;I dont mind paying the $6.95 which I have been doing for a couple of years anyway, &nbsp;if it is the better choice. &nbsp;<br /><br />Thanks Guys for your help.<br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing my network setup.</b><br />
+					Post by: <b>rugmonster</b> on <b>June 10, 2004, 01:55:55 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">From someone who used to run a linux firewall and has since moved to using a Linksys WRT54G, I think it would be best to use the router. You can configure your port forwarding through the router's web interface, usually found by going to http://192.168.1.1 and using the default password of &quot;admin&quot; and no username if you've never changed it. <br /><br />Here (http://linksys.custhelp.com/cgi-bin/linksys.cfg/php/enduser/std_adp.php?p_faqid=568&amp;p_created=1084217376&amp;p_sid=MRAu-zdh&amp;p_lva=&amp;p_sp=cF9zcmNoPSZwX3NvcnRfYnk9JnBfZ3JpZHNvcnQ9JnBfcm93X2NudD02NTYmcF9wYWdlPTI*&amp;p_li=) are the instructions from Linksys on setting up port forwarding.<br /><br />The reason I don't use a linux box as a firewall anymore is for the fact that you have to have the router box always on. A linksys router will use less electricity and you don't have to worry about it crashing unless you have a bad firmware flash. The positive side of using a linux box as a firewall is you get experience with setting up iptables, but you can do this anyway (and recommend it).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing my network setup.</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 10, 2004, 04:42:04 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the link. &nbsp;So you think I would be better off loosing a IP and just using the router? &nbsp;<br /><br /><br /><div class="quoteheader">Quote</div><div class="quote">using the default password of &quot;admin&quot; and no username if you've never changed it.</div><br /><br />The first thing I do with anything that has a default password is change it. &nbsp;:) <br /><br />Lee</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing my network setup.</b><br />
+					Post by: <b>lloydr</b> on <b>June 10, 2004, 05:02:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Rugmonster</div><div class="quote">don't have to worry about it crashing unless you have a bad firmware flash.</div><br /><br />actually i've seen many linksys, belkin, d-link, netgear, netopia/cayman, etc consumer routers crash when under a load(seen a few actually crash very frequently, like every few days or weeks due to heavy transfers) or when you forward too many ports and it runs out of memory....on the flip side i've never had my linux router crash in the well over a year and some odd months that it's been running and considering we already have a good bit of systems running, 1 lowend stripped down pentium class machine that is even way overkill for a router really doesnt drag out much juice <br /><br />but if you do have a old computer laying around with 2 network cards, i'd recommend actually making a dedicated linux/bsd router. Probaly one of the easiest to get up and running would be smoothwall (http://smoothwall.org), but you can do it with any distro you choose but smoothwall is nice for making a quick linux router, has a nice web interface for checking iptables firewall logs and snort IDS logs, changing settings, setting port forwardings, checking transfer graphs, checking for updates, etc.... ipcop is another that was originally a fork of smoothwall<br /><br />best bet though is just use a router(whether it be a store bought router or a *nix based router) and make it simpler on yourself and use port forwarding...and dump the extra ip<br />I'm very happy with my linux router though, but might try a openbsd based pf router once I get more familiar with the inside and out of openbsd and possibly carp<br /><br />p.s. we do have a linksys WRT54G wireless router, works quite nicely as a 802.11b/g access point once u disable dhcp server and bridge the lan ports on the unit into your lan &nbsp;:wink: &nbsp;but i've heard that the linux distros for that particular model run well, u ever tried linux on your linksys 802.11g router? been wanting to try it for a while now actually, mainly just for toying with</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing my network setup.</b><br />
+					Post by: <b>rugmonster</b> on <b>June 10, 2004, 06:09:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yeah, I put the really popular third party firmware on it to try out PPTP VPN functionality, but found it was relatively slow and somewhat less stable than the Linksys firmware. The one thing I do like is I can boost the crap out of the signal and get 54mb all over my apartment and on the balcony, but feel bad for anyone else who wants to use channel 11 around me. :wink: <br /><br />Like I said before, I felt the linux router was a bit of an overkill since I was only using that box for routing. I didn't want to use it for anything else because I didn't want to bring it down. If you don't mind dedicating a box to it, go for it. I would put something like a folding client or SETI@Home on it because iptables doesn't take much to run.<br /><br />I do like pf on OpenBSD, except the way they handle ftp...I couldn't ever figure out how to do the stupid ftp proxy for incoming connections. If you don't care about hosting an ftp server from the internal side of the router, then no worries there. I also like the syntax for pf so much more than iptables.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing my network setup.</b><br />
+					Post by: <b>lloydr</b> on <b>June 10, 2004, 06:22:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">yea i LOVE the syntax of openbsd pf<br /><br />what 3rd party firmware are you using exactly? I've been looking at a few that allow boosting power of the 802.11b/g signal but wasn't really sure which would be death to the router/AP or require a quick change back to stock and which would actually work well<br /><br />I want to push a little more power through that 2dBi rubber duck and it's big brother 15dBi attached to the other antenna connection &nbsp;:twisted:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing my network setup.</b><br />
+					Post by: <b>rugmonster</b> on <b>June 10, 2004, 06:33:08 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The Sveasoft Samadhi firmware. I liked it with the exception of it seeming slower. I think the PPTP could have had something to do with it just straining the poor little router more than it needed to be.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Changing my network setup.</b><br />
+					Post by: <b>L.Rentz</b> on <b>June 10, 2004, 08:54:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Ok, &nbsp;I have port forwarding working. &nbsp;However is it safe to use the default ssh port 22 open? &nbsp;Is it wise to change the port on the ssh server? &nbsp;I thought I was going to be slick and port forward a diffierent port to port 22 on my router but that did not work. &nbsp;It would only work if I forwarded port 22 only. &nbsp;I thought it would do like nat and just translate it back to the odd port on the way back to me. &nbsp;Is this a correct senario? &nbsp;Can you forward for instance port 435 to port 22 mapped to an ip and it work on the way back out?<br /><br />Also, &nbsp;with ssh you can export a display, can you export sound as well?</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - IP address ?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Network => Topic started by: sandspur on October 19, 2003, 09:30:22 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IP address ?</b><br />
+					Post by: <b>sandspur</b> on <b>October 19, 2003, 09:30:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Anticipating getting my DSL service going early this week. &nbsp;I'd like to know if there is a command line way to determine what your IP address is at a given moment if you are using DHCP and you are logged on? &nbsp;Or with a dialup connection for that matter? &nbsp;Thanks.<br /><br />Chuck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: IP address ?</b><br />
+					Post by: <b>danc</b> on <b>October 19, 2003, 10:55:43 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: sandspur</div><div class="quote">Anticipating getting my DSL service going early this week. &nbsp;I'd like to know if there is a command line way to determine what your IP address is at a given moment if you are using DHCP and you are logged on? &nbsp;Or with a dialup connection for that matter? &nbsp;Thanks.</div><br />At the command line (might have to be root), just use: &nbsp;ifconfig<br /><br />This should produce something similar to:<br /><div class="codeheader">Code:</div><div class="code">&#91;root@palantir danc&#93;# ifconfig<br />eth0 &nbsp; &nbsp; &nbsp;Link encap&#58;Ethernet &nbsp;HWaddr 00&#58;0C&#58;76&#58;12&#58;9F&#58;19<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; inet addr&#58;192.168.254.104 &nbsp;Bcast&#58;192.168.254.255 &nbsp;Mask&#58;255.255.255.0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; UP BROADCAST RUNNING MULTICAST &nbsp;MTU&#58;1500 &nbsp;Metric&#58;1<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RX packets&#58;58424 errors&#58;0 dropped&#58;0 overruns&#58;0 frame&#58;0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TX packets&#58;75981 errors&#58;1 dropped&#58;0 overruns&#58;1 carrier&#58;0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; collisions&#58;0 txqueuelen&#58;100<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RX bytes&#58;14669149 &#40;13.9 Mb&#41; &nbsp;TX bytes&#58;6583349 &#40;6.2 Mb&#41;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Interrupt&#58;23 Base address&#58;0xd800<br />&nbsp;<br />lo &nbsp; &nbsp; &nbsp; &nbsp;Link encap&#58;Local Loopback<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; inet addr&#58;127.0.0.1 &nbsp;Mask&#58;255.0.0.0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; UP LOOPBACK RUNNING &nbsp;MTU&#58;16436 &nbsp;Metric&#58;1<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RX packets&#58;716 errors&#58;0 dropped&#58;0 overruns&#58;0 frame&#58;0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TX packets&#58;716 errors&#58;0 dropped&#58;0 overruns&#58;0 carrier&#58;0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; collisions&#58;0 txqueuelen&#58;0<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RX bytes&#58;35800 &#40;34.9 Kb&#41; &nbsp;TX bytes&#58;35800 &#40;34.9 Kb&#41;<br /></div><br />The &quot;eth0&quot; device is my network card (connected to router/cable modem), and you can see on the second line that my IP address is 192.168.254.104.<br /><br />Not sure what a dialup adapter would show as, maybe &quot;ppp0&quot; or &quot;tty0&quot;...<br /><br />Let us know if you have any more questions.<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IP address ?</b><br />
+					Post by: <b>ctrlz</b> on <b>October 19, 2003, 11:30:15 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">sandspur, are you looking for you WAN IP? or LAN IP?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>No go</b><br />
+					Post by: <b>sandspur</b> on <b>October 19, 2003, 12:26:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks danc and ctrlz.<br /><br />Dan I'm running RH9 and when I tried ifconfig as root I got an error message: &nbsp;&quot;bash: &nbsp;command not found.&quot; &nbsp;Maybe RH has another utility to do the same thing as ifconfig.<br /><br />ctrlz the WAN address.<br /><br />Chuck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>The why</b><br />
+					Post by: <b>sandspur</b> on <b>October 19, 2003, 12:38:57 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Here is why I want to know how to determine my IP address when I&quot;m connected.<br /><br />Was talking to a BellSouth DSL technical support person about how BellSouth would assign me a fixed IP address (Her name was Rhonda and confessed to being a Linux user at home.) and she said that the first time I logged on I'd have to have DHCP enabled and thereafter the IP address I first logged on with would be my fixed address. &nbsp;That is the &quot;why&quot; of my question.<br /><br />Of course I could read the instructions that come with the ethernet modem when it arrives but that is no fun &nbsp;:wink: <br /><br />Chuck</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: No go</b><br />
+					Post by: <b>danc</b> on <b>October 19, 2003, 01:19:51 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: sandspur</div><div class="quote">Dan I'm running RH9 and when I tried ifconfig as root I got an error message: &nbsp;&quot;bash: &nbsp;command not found.&quot; &nbsp;Maybe RH has another utility to do the same thing as ifconfig.</div><br />No, ifconfig is not distro-specific.<br /><br />Try (without quotes): &nbsp;&quot;/sbin/ifconfig&quot;<br /><br />The problem is that it's not in the path. &nbsp;Should work like above, if not let us know...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>IP address ?</b><br />
+					Post by: <b>dpeach</b> on <b>October 19, 2003, 01:49:59 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">The ifconfig (if you find it and get it working) should tell you both LAN and WAN. That is assuming that you are running this from a computer connected directly to your DSL modem/gateway. Otherwise, it will just tell you what address is assigned to that computer from your internal DHCP server.<br /><br />BTW, in Windows the command that gives you similar results is ipconfig. I am sure there are switches that will give you more information.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Yeah!</b><br />
+					Post by: <b>sandspur</b> on <b>October 19, 2003, 02:03:20 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks guys. &nbsp;Dan, the /sbin/ifconfig did it. &nbsp;I was online with my dialup account and saw the IP address for ppp0. &nbsp;Did an nmap port scan on it and it looks like this box. &nbsp;Will try a ssh login on that address too.<br /><br />Chuck</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

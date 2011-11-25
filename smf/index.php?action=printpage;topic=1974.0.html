@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Cleanup and Backup script</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Software => Programming/Development => Topic started by: danc on October 27, 2004, 02:12:47 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Cleanup and Backup script</b><br />
+					Post by: <b>danc</b> on <b>October 27, 2004, 02:12:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hi all,<br />The following are a couple of scripts I've written to assist me with a weekly backup. &nbsp;These could be easily used in a CRON job, but I prefer to run them manually, usually on Sundays.<br /><br />The first one is called &quot;cleanup&quot; (strangely enough...), and removes stuff that I don't care to back up, mostly cache directories, and looks like this:<br /><div class="codeheader">Code:</div><div class="code"><br />#!/bin/bash<br />#<br /># Script to cleanup various cache directories prior to weekly backup<br /># Written by Daniel Clough, 2004-01-20.<br /># Added &quot;updatedb&quot; function, 2004-08-15<br /><br />clear<br />echo<br />echo &quot;About to clear various cache directories,&quot;<br />echo &quot;and run the database update process...&quot;<br />read -p &quot;Press Return to begin...&quot;<br /><br />echo &quot;Clearing .thumbnails directory...&quot;<br />cd /home/danc/.thumbnails<br />rm -rf *<br />sleep 1<br /><br />echo &quot;Clearing Mozilla cache...&quot;<br />cd /home/danc/.mozilla/default/4a3ou0oe.slt/Cache<br />rm -rf *<br />sleep 1<br /><br />echo &quot;Clearing Firefox cache...&quot;<br />cd /home/danc/.mozilla/firefox/default.566/Cache<br />rm -rf *<br />sleep 1<br /><br />echo &quot;Clearing Galeon cache...&quot;<br />cd /home/danc/.galeon/mozilla/galeon/Cache<br />rm -rf *<br />sleep 1<br /><br />echo &quot;Clearing Epiphany cache...&quot;<br />cd /home/danc/.gnome2/epiphany/mozilla/epiphany/Cache<br />rm -rf *<br />sleep 1<br /><br />echo &quot;Clearing Evolution cache...&quot;<br />cd /home/danc/evolution/cache/http<br />rm -rf *<br />sleep 1<br />cd /home/danc/evolution/mail/pop/danc3@pop.east.cox.net/cache<br />rm -rf *<br />sleep 1<br />cd /home/danc/evolution/mail/pop/pop.east.cox.net&#58;danc3@127.0.0.1/cache<br />rm -rf *<br />sleep 3<br /><br />echo &quot;Running the database update...&quot;<br />cd /home/danc<br />sudo updatedb<br />sleep 1<br /><br />cd /home/danc/scripts<br />echo &quot;All cleaned up!&quot;<br /><br /># EOF<br /></div><br /><br />The second script does the actual backup of my home directory and my /etc directory. &nbsp;It first tars these directories up, puts a copy in a separate storage partition I have, and then burns the two tar files to a CDRW. &nbsp;I have two CDRW's that I use for this, and alternate them, so I always have two prior backups available if needed. &nbsp;The &quot;exclude&quot; function of tar is used to exclude a few directories in my home directory that I don't care about saving (like tmp and temp). &nbsp;Tar reads the desired exclusions from the file named &quot;exclude.lst&quot;, which is a simple text file listing of directory names. &nbsp;Here's the script:<br /><div class="codeheader">Code:</div><div class="code"><br />#!/bin/bash<br />#<br /># This is a script to back up my home directory &#40;/home/danc&#41;.<br /># It will first perform a tar/gzip of /home/danc, write it to a<br /># storage location &#40;/storage/backups&#41; and then to a CDRW.<br /># The backup filename will be today's date.<br /># Written by Daniel Clough, 2003-08-01.<br /># Modified 2004-01-20 to include &quot;exclude&quot; list<br /># Modified 2004-02-16 to include /etc directory in separate archive<br /><br /># Define some variables<br />HOMEDIR=/home/danc<br />BACKUPDIR=/storage/backups<br />FILENAME1=&quot;danc_$&#40;date +%Y%m%d&#41;&quot;<br />FILENAME2=&quot;etc_$&#40;date +%Y%m%d&#41;&quot;<br /><br /># Start<br />clear<br />echo<br />echo &quot;Starting backup script for $HOME and /etc, on $&#40;date +%F&#41;&quot;<br />echo &quot;Make sure the CDRW is inserted &#40;it will be erased first!&#41;&quot;<br />read -p &quot;and then press Return to begin...&quot;<br /><br />cd $HOMEDIR<br /><br /># Tar up the home directory<br />echo &quot;Creating tarball of $HOME...&quot;<br />tar -X exclude.lst -czf $FILENAME1.tar.gz .<br />sleep 3<br /><br /># Tar up the /etc directory<br />echo &quot;Creating tarball of /etc...&quot;<br />sudo tar -czf $FILENAME2.tar.gz /etc<br />sleep 3<br /><br /># Copy tarballs to storage partition<br />echo &quot;Copying tarballs to $BACKUPDIR...&quot;<br />cp $FILENAME1.tar.gz $BACKUPDIR<br />cp $FILENAME2.tar.gz $BACKUPDIR<br />sleep 3<br /><br /># Make filesystem to put on CDRW<br />echo &quot;Making iso filesystem to write to CDRW...&quot;<br />mkisofs -l -r -allow-multidot -o backup.iso $FILENAME1.tar.gz $FILENAME2.tar.gz<br />sleep 3<br /><br /># Write the backup to the CDRW<br />echo &quot;Writing backup to CDRW...&quot;<br />cdrecord -v blank=fast speed=4 dev=ATA&#58;1,0,0 backup.iso<br />sleep 5<br />echo &quot;CDRW writing complete!&quot;<br /><br /># Clean up the leftovers<br />rm -f $FILENAME1.tar.gz<br />sudo rm -f $FILENAME2.tar.gz<br />rm -f backup.iso<br /><br />echo &quot;Backup process complete!&quot;<br /><br /># EOF<br /></div><br /><br />Obviously some parts of these scripts are customized for my system, but could easily be modified for your use if desired. &nbsp;There are other enhancements which could be added too. &nbsp;If you have any questions about how these work, let me know... &nbsp;<br /><br />Happy scripting,<br />Dan</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

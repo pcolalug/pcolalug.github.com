@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Video Recording in Linux</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Hardware => Graphics/Video => Topic started by: SiliconFOXX on October 14, 2004, 09:06:13 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 09:06:13 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, here's a fun one. &nbsp;That Gainward 5700FX I got? &nbsp;Apparently its S-Video jack isn't just for output, it's for both input and output via a &quot;VIVO&quot; dongle that came with it. &nbsp;Apparently it has the capacity to record video as well as output it at the same time. &nbsp;Cool, huh? &nbsp;It even came with some software for Windows to let me do some recordings and video editing and thus my mind began swimming thinking about making some Halo 2 videos a few days before its release if we win the tournament on the sixth.<br /><br /><br />Well, then I remembered that while I've got a Windows partition I'm trying to NOT use it if at all possible. &nbsp;So, is there a way to use this feature on my card in Linux? &nbsp;Apparently in windows I'd just select it as the nvidia input or something like that, but I don't know how to actually record in Linux though the nVidia driver README apparently goes on just a bit as to how to set up the capability to record (still getting to that, though).<br /><br /><br /><br />Any thoughts on this? &nbsp;Any open-source programs for recording in this way? &nbsp;Thanks for the assistance, btw, and if I manage to get any videos done I'll have to find a way to put them here. :twisted:</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>rugmonster</b> on <b>October 14, 2004, 01:53:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">See here -&gt; http://rivatv.sourceforge.net/index.html<br /><br />Not to sound like a typical Linux elitist, but I'm finding these things by searching Google. I suggest you look these things up because not all of us like to be other's searching engine.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>danc</b> on <b>October 14, 2004, 03:04:42 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks, Rug!<br /><br />SiliconFOXX, besides Google, that Nvidia README might be a good place to start...<br /><br />&nbsp;:shock: <br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>October 14, 2004, 04:53:03 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Alright, I'll search harder, but thank you. &nbsp;The nVidia readme, as far as I read it anyway, went into configuring the card for it but not any programs for it. &nbsp;Without any programs for recording the video would be useless, no?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 04, 2004, 11:03:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">http://dvr.sourceforge.net/html/main.html<br /><br />Looks pretty cool and right about what I was looking for: &nbsp;simple, easy method of recording a video signal, preferably from a television (so I can record some Halo 2 music videos...hmm, splicing the audio and arranging video clips will be fun but that's another matter).<br /><br />Now my curiosity comes from V4L or Video4Linux. &nbsp;Like an idiot I don't think I built it into my latest kernel build which more than likely ANOTHER kernel rebuild. &nbsp;I think it was because I didn't see any reason since the drivers and such listed were for quickcams and specific capture cards, not like my 5700FX which has VIVO. &nbsp;Oh well.<br /><br /><br />I assume that if the program doesn't work that I can expect to just do a kernel rebuild and include &quot;Video4Linux?&quot; It wouldn't be more invasive than that, would it?<br /><br /><br /><br /><br />Oh, RivaTV unfortunately doesn't seem to support my card yet. &nbsp;Oh well.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 04, 2004, 05:05:56 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I've been poking around and have found a few programs for the purposes of &quot;music video&quot; editing that look promising. &nbsp;Of these there's AVIDEMUX and Kino though if I want the latest Kino there's no slack package. &nbsp;Nuts. &nbsp;Eh, whatever, right?<br /><br />I ran the AVIDEMUX and it works (after I got the libmp3lame.so anyway) but curiously it doesn't seem to play audio when previewing. &nbsp;Huh. &nbsp;I suppose that'll take more toying around but it seems to let you use a different audio track with the video but unless I can preview the audio I guess that'll go nowhere fast. &nbsp;Also interesting is that it seems &quot;not-exactly-intuitive&quot; with regards to cutting and inserting video. &nbsp;Well, perhaps that will come with practice, I'll keep you updated if that changes.<br /><br />Kino looks promising as well but haven't had a chance to play with it yet. &nbsp;When I do I'll post something up about it.<br /><br />DVR, likewise, looks good but until I install it I guess I won't know for certain whether or not it likes my kernel the way it is or if I'm going to have to build a new one with V4L.<br /><br /><br />Regardless, if I can get the video capture up and running here that'll be nice for some Halo 2 videos. &nbsp;I think I'm going to see if I can get it operational in Linux and then toy with both the toys in Windows as well as the toys here in Linux to master both.<br /><br />Unfortunately backing up DVDs in Linux to DVD instead of AVI is difficult, but I'm looking into it. &nbsp;As it's on a slightly different topic, I'll spare this thread from posting about it.<br />Other than that I'm just</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>imnes</b> on <b>November 04, 2004, 06:05:22 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: SiliconFOXX</div><div class="quote">Unfortunately backing up DVDs in Linux to DVD instead of AVI is difficult, but I'm looking into it. &nbsp;As it's on a slightly different topic, I'll spare this thread from posting about it.</div><br /><br />What distro are you running? &nbsp;I'm working on packaging DVD Shrink from Windows with the wine libraries and interfacing it to k3b for one-click DVD9 to DVDR backups. &nbsp;I'll let you know if I get all this stuff working. &nbsp;<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 05, 2004, 02:58:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'm running Slackware 10.0. &nbsp;That's AWESOME! &nbsp;I've been reading about using DVD Shrink in XP for a very nearly (or totally, maybe) solution for backing up DVDs but my only problem was that it was in XP which would reduce the time I spend in Linux. :lol:<br /><br />Hey, if you need any help or a tester I'd be more than willing to help out any way I can. &nbsp;Can't promise I can be TOO much help, I'm not exactly what I'd call a &quot;master&quot; of all things Linux, but I'd be more than happy to help out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>imnes</b> on <b>November 05, 2004, 05:19:26 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Making progress, the toughest part is figuring out which version of wine will work best for the job, since it takes for freakin-ever to compile each version of wine on my laptop.<br /><br />Anyway, I've got it working, but still have some stability issues. &nbsp;It seems to crash about 1 in 5 times I run it, always while sitting idle at the options dialog. &nbsp;I'm working through some native DLLs to see if I can figure out which built-in one is buggy.<br /><br />Also I still need to figure out how the program uses nero, if it just executes nero with some command line options then it will be easy to write a bridge application to route those options to k3b to use instead of nero. &nbsp;If it's using the nero SDK to burn directly then it's going to be more difficult. &nbsp;But right now I'm able to backup the disk to an ISO and then burn that myself.<br /><br />All the binaries are built on Linspire which is Debian, very non-bleeding-edge compiler and libraries so hopefully it will work on everyone else's systems ok.<br /><br />Here's a shot of the main options window:<br />http://www.homeweb.org/~nick/linux/dvdshrink/screens/main-window.png<br /><br />Here it is working on encoding a movie:<br /><br />http://www.homeweb.org/~nick/linux/dvdshrink/screens/encoding.png<br /><br />I'll keep you posted on progress and let a few people beta test this guy once I get it all working and an installer made for it.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 05, 2004, 06:13:45 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's flat-out awesome! &nbsp;If the compilation time is that slow, would it help if perhaps I or someone else with a faster machine compiled it and FTP'd it to you (assuming you've got an FTP server) or e-mailed it? &nbsp;I dunno if that would help out, but I know compiling anything on this Athlon64 can't take too terribly long. &nbsp;Kernel build took less than fifteen minutes (I think around eight) with tons of built-in stuff.<br /><br />I'll make a thread here on DVD movie backup so as not to hijack my own thread on Video-recording, :lol:.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>imnes</b> on <b>November 05, 2004, 06:23:52 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I'll let you know, right now it takes about an hour to build wine on this laptop :( &nbsp;But I think I'm almost there. &nbsp;Haven't had a crash in over an hour, I'm going to keep testing though.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 05, 2004, 06:33:33 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">If you don't mind me bothering you about it, what exactly is it that you're doing? &nbsp;I'm assuming that you're building wine to determine which release of wine is most compatible, but why build instead of using the packaged versions?<br /><br />(I'm interested in learning something, fyi, don't know too much about how you'd build wine into DVD Shrink and use it together like that. &nbsp;BTW, RE is one of my favorite movies).</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>imnes</b> on <b>November 05, 2004, 06:55:47 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">After trying to use lots of windows programs in Linux I found out that pretty much each program works well with a different version of wine. &nbsp;Some programs need older versions of wine to even run. &nbsp;I think it's because wine developers are constantly changing / &nbsp;fixing their version of the windows system DLLs, and I guess when they code in a fix for one app it causes unknown problems in others. &nbsp;I'm not really sure.<br /><br />One thing you can do is use native Windows DLLs which works great. &nbsp;But it's not legal to distribute those, so you build it and get it working on your system and that's it.<br /><br />Some of the commercial packages like Crossover Office and WineX are using commercial code from Microsoft and other developers to make their versions work with a lot of software.<br /><br />Some people have reported DVD Shrink to work with Crossover Office's version of Wine, I've tried Crossover 2.1.0 and 3.0.1 and I didn't have success in either version.<br /><br />Right now I'm using DVDShrink on last month's release of Wine and 4 windows DLLs. &nbsp;I need to find out if these DLLs are legal to redistribute, I think these ones are though. &nbsp;<br /><br />By default wine is setup to only allow one copy on your system at a time, one centralized config file etc. &nbsp;So when I'm buililding wine to work with one program I build it to only run that program. &nbsp;Instead of installing wine into /usr/bin, /usr/lib I installed into /opt/dvdshrink. &nbsp;And instead of having the config files go into ~/.wine/config I have one config file located in /opt/dvdshrink. &nbsp; &nbsp;This makes it easy to package the whole thing and send it to other people to use without disturbing any wine packages they already have installed on their system. &nbsp;Crossover Office and Transgaming WineX I think basically do the same thing with their installs.<br /><br />But basically getting software working in wine involves trying lots of different versions until you find one that works, and reading debug messages when wine crashes to find out what DLLs are causing problems. &nbsp;<br /><br />Dunno if that helps explain what's going on or not..<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>November 05, 2004, 07:05:21 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hey that explains a LOT, thank you.<br /><br />If the DLL turn out not to be legal, would it be alright if say I copied my own DLLs from my XP installation over into Linux and, using your source, compiled and ran it myself? &nbsp;Not exactly the best thing for mass distribution but if it works and it's legal, right?<br /><br />&lt;sigh&gt; You know you'd think that after this much reverse-engineering MS would just say, &quot;Fine, here you go, here's an emulator that works great, just pay us $50~100 for it.&quot; They'd be getting their money because you'd fork over just as much money as you would for their OS but they wouldn't have any animosity from the Linux community.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 11:23:54 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Any luck with the portage? &nbsp; :D</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>imnes</b> on <b>December 03, 2004, 11:45:14 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have it working in Linspire 4.5 but having trouble getting it to find the actual DVD drive and read the movie on other distributions. <br /><br />Worst case you can just use the command line tool dvdbackup to get the movie to your hard drive, then dvdsrink the file down to a 4.5gb iso and burn it to DVD afterwords. &nbsp;<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Video Recording in Linux</b><br />
+					Post by: <b>SiliconFOXX</b> on <b>December 03, 2004, 01:28:41 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hmm, that's not a bad idea, though I'm wondering why it wouldn't read the DVD drive on other distros. &nbsp;Are you using the libdvdread and libdvdcss libraries? &nbsp;I know the former at least allows you to mount it as a block device.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

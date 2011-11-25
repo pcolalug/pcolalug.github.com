@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Ubuntu root password</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Debian Based Distrtibutions => Topic started by: sandspur on July 02, 2007, 09:30:33 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Ubuntu root password</b><br />
+					Post by: <b>sandspur</b> on <b>July 02, 2007, 09:30:33 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Just did my first install of Ubuntu 6.06 on a laptop.&nbsp; Relatively painess.<br /><br />In the process I was prompted to make a user name and password but not set a root password.<br /><br />Subsequently learned that by default there is no set root password.&nbsp; With a little Googling I learned that setting the root password is pretty easy.<br /><br />In a terminal type:<br /><br /><b></b>sudo passwd root<b></b><br /><br />You will be prompted for a password.&nbsp; Type in your user password.&nbsp; You will ger a prompt:<br /><br />&nbsp;<b></b>Enter new UNIX password:<b></b><br /><br />Type in your desired mind-boggling entropy-heavy root password and hit <b></b>enter<b></b>.<br /><br />You will be prompted to type the password again.&nbsp; Do it.<br /><br />Neato!&nbsp; Done deal.&nbsp; Now I can really do some damage.<br /><br />Chuck<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu root password</b><br />
+					Post by: <b>Brent</b> on <b>July 02, 2007, 01:59:35 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I used to do that, but now I just use:<br />$ sudo su<br /><br />enter your password, and boom root prompt.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu root password</b><br />
+					Post by: <b>rugmonster</b> on <b>July 02, 2007, 10:03:32 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m just curious...<br /><br />With sudo, why would you even need to set a root password? Like Brent said, you always have sudo su, but I have become so accustom to just prefacing all of my commands that need root privilege with sudo that it is habit, even on systems that have a root user.<br /><br />I would rather use sudo, especially on systems where I&#039;m not the only admin so the logs show who is doing what with those elevated permissions.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu root password</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>July 04, 2007, 09:08:12 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote</div><div class="quote">Now entering single-user mode.&nbsp; Please enter the root password for maintainence:</div><br />The only time I use my root password.<br /><br />EDIT: I take that back, when I have to manually load modules to fix something I&#039;ll type in su because my shell will autocomplete module names if I&#039;m root.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu root password</b><br />
+					Post by: <b>rugmonster</b> on <b>July 04, 2007, 07:55:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">On Ubuntu systems, when you boot to runlevel 1, you get a root prompt. That I don&#039;t like so much, but if you don&#039;t have physical access to your system secured, you&#039;re screwed anyway. Ubuntu 7.04 will autocomplete module names as a non-root user.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Ubuntu root password</b><br />
+					Post by: <b>OmnipotentEntity</b> on <b>July 05, 2007, 02:13:04 am</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3193.msg15492.html#msg15492">Quote from: rugmonster on July 04, 2007, 07:55:16 pm</a></div><div class="quote">On Ubuntu systems, when you boot to runlevel 1, you get a root prompt. That I don&#039;t like so much, but if you don&#039;t have physical access to your system secured, you&#039;re screwed anyway. Ubuntu 7.04 will autocomplete module names as a non-root user.<br /></div><br />I run Debian, I get the prompt I described.<br /><br />Modprobe isn&#039;t in my user&#039;s path, and the way I have my zshrc set up it needs to be, I never got around to fixing it.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

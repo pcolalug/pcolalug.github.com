@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - w2k hosed itself</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => Other Linux Distributions => Topic started by: Brent on January 26, 2005, 04:30:31 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>w2k hosed itself</b><br />
+					Post by: <b>Brent</b> on <b>January 26, 2005, 04:30:31 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Argh, windows is stupid.<br /><br />I've spent the greater part of an afternoon fixing what windows messed up. &nbsp;When I installed win2k, not only did it insanely goof up my planned partiton layout, but it installed the bootloader on my backup fat32 partiton.<br /><br />Anyway, that fat32 partition has been around for a while, and it had some bad sectors on it, so I was gona reformat it. &nbsp;Well, I reformat it, windows apparently distroyed it's own bootloader in the process. &nbsp;Did I mention I can't even install linux (or lilo which could have possibly saved me) thanks to the partition layout?<br /><br />So anyway, I fire up my copy of knoppix, backup my important stuff to my fat32 partion, and slice and dice the huge monstrosity that is my windows partition. &nbsp;I've installed installed slackware right now. &nbsp;I guess I *might* reinstall w2k, (I've got a good game of civ3 going). &nbsp;Ugh windows, how I loathe thee.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>w2k hosed itself</b><br />
+					Post by: <b>danc</b> on <b>January 26, 2005, 06:39:50 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You may already know this, but.... if you must have both on your computer, it's always best to install Windows first, and then any Linux distros you want. &nbsp;The Linux bootloaders can handle Windows, but not the other way around.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>w2k hosed itself</b><br />
+					Post by: <b>Brent</b> on <b>January 26, 2005, 07:07:11 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">That's the standard advice, <br /><br />But I prefer to install linux before windows, just to make sure space is reserved for linux. &nbsp;I know how to go back and fix lilo later. &nbsp;Excentric? &nbsp;Maybe, but it lets windows no its place, 2nd to linux :^)</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>w2k hosed itself</b><br />
+					Post by: <b>danc</b> on <b>January 26, 2005, 07:30:48 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: Brent</div><div class="quote">But I prefer to install linux before windows, just to make sure space is reserved for linux.</div><br /><br />Not sure I follow that reasoning... &nbsp;Making a 10G partition from within the W2K installer (on an 80G drive for example), and installing Windows into it, doesn't reserve any space for Linux? &nbsp;To me, it would seem to leave 70G...<br /><br />Anyway, it's your system. &nbsp;Good luck.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>w2k hosed itself</b><br />
+					Post by: <b>Brent</b> on <b>January 26, 2005, 09:13:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">You would think...<br /><br />Something about that backup fat32 partition makes the installer act wierd.<br /><br />For instance, I just got through reinstalling win2k. &nbsp;It installed the ntldr on the backup C: partition again, and from the look of things if also has a rather large logical partition, which sucked up the space I had left &nbsp;to extend my backup partition later on. &nbsp;In any case, I'd rather have windows trying to work around linux, than linux trying to work around windows...</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>w2k hosed itself</b><br />
+					Post by: <b>geekforGod</b> on <b>January 27, 2005, 10:50:23 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">&lt;Strongbad&gt;<br />And the compy just peed the carpet<br />&lt;/Strongbad&gt;<br /><br />Sorry, whenever something goes wrong with computers now I can't help but hear that in my head.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

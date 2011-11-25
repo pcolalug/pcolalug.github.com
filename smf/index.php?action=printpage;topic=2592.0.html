@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Misc => Newbie Corner => Topic started by: silverglade22 on September 14, 2005, 10:27:29 am</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>silverglade22</b> on <b>September 14, 2005, 10:27:29 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have a feeling this is going to be the start of alot of posts..<br /><br />I have fresh Dvd (tested and all) of fedora core 4 and trying to install it on a Compaq Presario 1200-xl111. When I install in Grapical mode right after it asks me to test my fedora disk it stops sending information to the LCD and right before it happends I see &quot;Trident cyberblade generic&quot;, &quot;Monitor Unknown&quot;, and something about my mouse but we will worry about that later. When I do the Text install it fully installs but when it boots it gets to Audio (OK) i get the same black screen of death from the Grapical mode? Could someone point me in the way of some drivers? from what I have read others don`t seem to have this problem.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>dpeach</b> on <b>September 14, 2005, 10:42:26 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">Seems very obvious it is a video problem, which you have figured out.<br /><br />Do you know which video chipset you have? (Post please)<br /><br />Not familiar with Fedora, but is there a way to install and not boot into graphical mode at all? So that you only go to command line?<br /><br />Another thing I would try. When it does die out on you, are you able to hit Cntl+Alt+F2 and get a console? If so, you should be able to fix it by knowing your video chipset. We can help you with that if you can get that far.<br /><br />Welcome to the group.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>silverglade22</b> on <b>September 14, 2005, 04:11:39 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for the welcome.<br /><br />To answer your first question it has a Trident CyberBlade 3D with a max of 8mb of shared memory.<br /><br />I can install in a text mode and I did that but when it came time to boot the system it did the same thing it did in the graphical mode install.<br /><br />A good note Cntl+Alt+F2 did work after it died and it comes up as root but I do not know what to do from there.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>dpeach</b> on <b>September 14, 2005, 05:11:02 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: silverglade22</div><div class="quote">A good note Cntl+Alt+F2 did work after it died and it comes up as root but I do not know what to do from there.</div><br />Excellent!!<br /><br />The down side is that I am not sure what to do either. But the info you have provided will allow someone to help you on this. My job is to ask questions and get the info that others need to help with the problem. I may not be much technical help, but at least we are now headed in the right direction.<br /><br />Someone will be along shortly with the answers. If you jump into our IRC channel you can get immediate help. It is #pcolalug on freenode. Or just tune in here and you will get going probably before the night is over.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>danc</b> on <b>September 14, 2005, 06:01:44 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Hehe. &nbsp;The dpeach man underestimates himself... &nbsp; :wink: <br /><br />Silver, I don't know much about Fedora, but like dpeach said, you need to properly configure your &quot;X server&quot; which is what provides the graphical interface on Linux. &nbsp;Try this:<br /><br />1. &nbsp;Do the Ctrl-Alt-F2 sequence again, and at the login prompt, log in as &quot;root&quot;, using the root password you specified during the install.<br />2. &nbsp;Type the command: &nbsp;xorgconfig<br />3. &nbsp;If #2 does nothing, try this command: &nbsp;XF86config (or XF86Config) (note capital letters, things in Linux are case-sensitive)<br />4. &nbsp;If either #2 or #3 start a configuration program, just go through and answer all the questions. &nbsp;The important ones are which video card driver you use, and what resolution (horiz and vertical frequencies) you set the display at. &nbsp;If you don't know those specs, try Googling for your laptop specifications to get them (should be a range, like 30-90 or 50-120).<br />5. &nbsp;If you get that finished, log out (&quot;exit&quot; command) and then log in as your normal user name (NOT root).<br />6. &nbsp;Type &quot;startx&quot;<br />7. &nbsp;Tell us what happened...<br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>hitechwizard</b> on <b>September 15, 2005, 08:32:46 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">The cyberblade chipset apparently has serious issues with X, and the suggested &quot;fix&quot; is to use the VESA driver. (See http://www.linuxquestions.org/questions/history/344844)<br /><br />My opinion is that solution bites, as the VESA driver is &quot;the driver of last resort&quot;. My guess would be that since it is using shared memory, that the kernel is somehow &quot;stepping&quot; into video space and therefore is attempting to deal with corrupted RAM. My suggestion, to test this idea, is to go into the BIOS and reduce the &quot;shared memory&quot; footprint to either 1 or 2 meg vs. 8meg. This could make it possible to at least get you past the install, and at that point you'll just be missing color depth. Another option is to pass the option to the kernel (don't remember right it off the top of my head) to explicitly tell it how much memory is available (Total Memory - Video Shared Memory). My experience is that shared video cards take up the tail end of memory space, and then the BIOS reports the reduced about. While this may work for Windows, Linux &quot;sees&quot; that extra memory and is probably trying to use it for scratch memory. Another option (provided that Presario is a desktop) is to disable the onboard video and put another video card that has its own memory onboard.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>imnes</b> on <b>September 15, 2005, 02:37:43 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">From what I could find on google your particular chipset will work fine on Fedora Core 3 and earlier but is known not to work with 4.<br /><br />Might want to give some other distro a try.<br /><br />Nick</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>danc</b> on <b>September 15, 2005, 03:43:23 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I suggested to him (in the IRC channel last night) that he give Mandriva a try. &nbsp;He was downloading it last I knew... &nbsp;:lol: <br /><br />Dan</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>silverglade22</b> on <b>September 17, 2005, 11:40:02 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I did download it and its great &nbsp;:D &nbsp;my only problem is that is will not play dvds. I tells me i am missing a /lib/win32 and libdvdcss or something to that nature how would i go about installing these &quot;drivers&quot;?</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Fedora core 4 VS Compaq Presario 1200-xl111,  Round 1</b><br />
+					Post by: <b>crowe</b> on <b>September 17, 2005, 09:38:30 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader">Quote from: silverglade22</div><div class="quote">I did download it and its great &nbsp;:D &nbsp;my only problem is that is will not play dvds. I tells me i am missing a /lib/win32 and libdvdcss or something to that nature how would i go about installing these &quot;drivers&quot;?</div><br /><br />Codecs. &nbsp;Certain ones are not distributed with Mandriva (or any other distro that I'm aware of, for that matter) due to copyright issues.<br /><br />If you have urpmi, I believe that you can get the relevant codecs by way of<br /><div class="codeheader">Code:</div><div class="code">urpmi libdvdcss</div><br />and<br /><div class="codeheader">Code:</div><div class="code">urpmi win32-codecs xine-win32</div><br /><br />as root.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

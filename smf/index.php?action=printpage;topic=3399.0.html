@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Print Page - Wrtining to NTFS USB Drive</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Pensacola Linux User's Group</h1>
+		<h2 class="normaltext">Distributions => RPM Based Distributions => Topic started by: linuxnewbie on September 20, 2008, 07:52:18 pm</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Wrtining to NTFS USB Drive</b><br />
+					Post by: <b>linuxnewbie</b> on <b>September 20, 2008, 07:52:18 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;m using PCLinuxOS.&nbsp; I have a USB hard drive formatted in NTFS that I was hoping to share between my Windows and Linux computers.&nbsp; The USB hard drive will read files to PCLinuxOS, but I cant move files to the USB drive.&nbsp; I have looked on several support boards on the Internet, but nothing works.&nbsp; Konqueror lists the USB drive location as system:/media/sda1 </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Wrtining to NTFS USB Drive</b><br />
+					Post by: <b>danc</b> on <b>September 20, 2008, 09:39:40 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="index.php%3Ftopic=3399.msg16372.html#msg16372">Quote from: linuxnewbie on September 20, 2008, 07:52:18 pm</a></div><div class="quote">I&#039;m using PCLinuxOS.&nbsp; I have a USB hard drive formatted in NTFS that I was hoping to share between my Windows and Linux computers.&nbsp; The USB hard drive will read files to PCLinuxOS, but I cant move files to the USB drive.&nbsp; I have looked on several support boards on the Internet, but nothing works.&nbsp; Konqueror lists the USB drive location as system:/media/sda1 <br /></div><br /><br />It is not generally recommended to write to an NTFS formatted drive from Linux.&nbsp; It can be done, with the (somewhat) experimental &quot;ntfs-g&quot; driver, but I would never even consider using it on a drive which contained valuable data, as the chance for corrupting the entire drive is fairly high.&nbsp; I don&#039;t know if PCLinuxOS includes support for ntfs-g in it&#039;s kernel, but that&#039;s what you&#039;ll need to use if you really want to do it.<br /><br />Make sure you&#039;ve got good backups...<br /><br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Wrtining to NTFS USB Drive</b><br />
+					Post by: <b>bhoff</b> on <b>September 21, 2008, 08:59:00 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">I agree with Dan on this one, I would suggest formatting the USB drive fat and that would work quite well between both Linux and Windows.<br /></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Wrtining to NTFS USB Drive</b><br />
+					Post by: <b>linuxnewbie</b> on <b>September 21, 2008, 02:57:16 pm</b>
+					<hr />
+					<div style="margin: 0 5ex;">Thanks for letting me know about the dangers of using a USB NTFS formatted drive in Linux.&nbsp; I didn&#039;t hear anything about this in any of the support forums that I have looked at.&nbsp; I have two USB drives, so I can format one of them in FAT32.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Wrtining to NTFS USB Drive</b><br />
+					Post by: <b>dpeach</b> on <b>September 24, 2008, 05:49:22 am</b>
+					<hr />
+					<div style="margin: 0 5ex;">This is an interesting question to me. Did the drive come pre-formatted to NTFS? Or did you format it with NTFS?<br /><br />The reason I ask is that if it came pre-formatted to NTFS, wouldn&#039;t that make it a &quot;Windows Only&quot; USB drive? Why would they package it that way? Seems like they would want to hit the greatest audience and have the drive &quot;just work&quot; in Windows or Mac.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.13</a> |
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2011, Simple Machines LLC</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
