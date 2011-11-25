@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns="http://backend.userland.com/rss2" xml:lang="en-US">
+<channel>
+<title>Pensacola Linux User's Group Meeting Podcast</title>
+<link>http://www.pcolalug.org</link>
+<description>Podcast of regular monthly meetings</description>
+<language>en</language>
+<copyright>(C) 2005</copyright>
+<pubDate>Sat, 15 Oct 2005 18:00:00 CST</pubDate>
+<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+<ttl>1440</ttl>
+<image>
+<url></url>
+<title></title>
+<link>http://www.pcolalug.org</link>
+</image>
+<item>
+<title>15 Oct 2005</title>
+<description>RDF Site Summary</description>
+<pubDate>Sat, 15 Oct 2005 18:00:00 CST</pubDate>
+<enclosure url="http://www.pcolalug.org/meetings/10-15-05-pcolalug.mp3" length="20000000" type = "audio/mpeg" />
+<guid></guid>
+</item>
+<item>
+<title>19 Nov 2005</title>
+<description>GNU Privacy Guard</description>
+<pubDate>Sat, 19 Nov 2005 18:00:00 CST</pubDate>
+<enclosure url="http://www.pcolalug.org/audio/11-19-05-pcolalug.mp3" length="13321144" type="audio/mpeg" />
+<guid></guid>
+</item>
+</channel>
+</rss>

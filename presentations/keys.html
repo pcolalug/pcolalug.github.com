@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 2.0  (Win32)">
+	<META NAME="CREATED" CONTENT="20060920;15355557">
+	<META NAME="CHANGED" CONTENT="20060921;8360839">
+	<STYLE>
+	<!--
+		@page { size: 8.5in 11in; margin: 0.79in }
+		P { margin-bottom: 0.08in }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P STYLE="margin-bottom: 0in"><B>IMPORTING EXISTING PUBLIC AND SECRET
+ENCRYPTION KEYS FOR LINUX PGP</B></P>
+<P STYLE="margin-bottom: 0in"><B>By: Chuck Steele (sandspur),
+Pensacola LUG</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>INTRODUCTION</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">After Windows
+users install PGP 6.5.8 and later commercial versions of the program
+a graphical wizard walks them through getting started.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">The wizard asks
+them if they want to &ldquo;Import&rdquo; existing public and secret
+key rings. If the answer is &ldquo;no&rdquo; the wizard walks them
+through generating a new key pair.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Using existing key
+rings saves users very time-consuming hassles of distributing a new
+key to other users, revoking old keys, and getting public keys from
+one's PGP pals.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">I have never seen
+any discussion of importing existing PGP keys with Linux. That is the
+purpose of this article.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>USING EXISTING PUBLIC AND SECRET KEY
+RINGS WITH LINUX PGP 6.5.8</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Let us assume you
+are a Linux PGP user who is contemplating a new clean install on your
+PC. Your installation is going to fry all existing data on your hard
+drive including your PGP public and secret key rings.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">We want to
+&ldquo;export&rdquo; those keys before the games begin. This is very
+easy if you know how to do it.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">If you have Linux
+PGP 6.5.8 on your computer your public and secret key rings reside in
+the directory: <B>/home/user/.pgp</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">The files are
+<B>pubring.pkr </B>and <B>secring.skr.</B> You need to copy these
+files to a storage medium like a memory card. In the past I have even
+sent the files to myself as an e-mail attachment to a web based
+e-mail service for later retrieval. That is considered a big security
+NO-NO but I am more a wannabe than a security wizard.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>AFTER THE INSTALLATION</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">After your easy
+and flawless new installation you can get PGP downloaded at PGP
+International, <B>pgpi.org</B>.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">#There is an
+article about installing the .rpm version at
+<B>justlinux.com/nhf/Security</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Install the
+program. After the installation quit being root.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">We are going to
+generate a key pair for a bogus user:</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>pgp -kg</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Text will walk you
+through generating a new key pair. Use any user name and e-mail
+address you want because we are going to delete these keys soon.
+Example:</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in">Mister Bogus &lt;<A HREF="mailto:mrbogus@dingbat.com">mrbogus@dingbat.com</A>&gt;</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">When asked if you
+want to make this the default signing key answer &ldquo;no.&rdquo;
+The key you are going to import soon will be the default signing key.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Time to delete the
+new keys. 
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>cd /home/user/.pgp</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Your new keys live
+here. We are going to delete them.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>rm pubring.pkr</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>rm secring.skr</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Type <B>ls </B>and
+you will see that those keys are gone.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>IMPORTING YOUR OLD KEYS</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Copy your old
+<B>pubring.pkr </B>and <B>secring.skr</B> files from whatever storage
+medium you used earlier into your <B>home/user/.pgp</B> directory.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">To see if things
+are working right view the contents of <B>pubring.pkr </B>by typing
+the command <B>pgp -kv</B>.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">The public keys of
+your PGP pals should be in view.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><B>CONCLUSION</B></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">That is how you do
+it. Existing keys can be imported for the Gnu Privacy Guard too but
+that is a topic for another article.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">Have fun. Be
+sneaky.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium">#This article was
+composed with the Open Office Writer and Saved As HTML.</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>
